@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Example: Defining A Coordinate Frame for the Sgr Dwarf &mdash; Astropy v1.2.dev14978</title>
+    <title>Example: Defining A Coordinate Frame for the Sgr Dwarf &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="index.html" />
     <link rel="next" title="Description of Galactocentric coordinates transformation" href="galactocentric.html" />
     <link rel="prev" title="Using and Designing Coordinate Frames" href="frames.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -87,7 +87,7 @@
   <div class="section" id="example-defining-a-coordinate-frame-for-the-sgr-dwarf">
 <span id="sgr-example"></span><h1>Example: Defining A Coordinate Frame for the Sgr Dwarf<a class="headerlink" href="#example-defining-a-coordinate-frame-for-the-sgr-dwarf" title="Permalink to this headline">¶</a></h1>
 <p>This document describes in detail how to subclass and define a custom
-spherical coordinate frame, as discussed in <a class="reference internal" href="frames.html"><em>Using and Designing Coordinate Frames</em></a> and the
+spherical coordinate frame, as discussed in <a class="reference internal" href="frames.html"><span class="doc">Using and Designing Coordinate Frames</span></a> and the
 docstring for <a class="reference internal" href="../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame" title="astropy.coordinates.BaseCoordinateFrame"><code class="xref py py-obj docutils literal"><span class="pre">BaseCoordinateFrame</span></code></a>. In this
 example, we will define a coordinate system defined by the plane of orbit of
 the Sagittarius Dwarf Galaxy (hereafter Sgr; as defined in Majewski et
@@ -104,13 +104,13 @@ Here we will use Galactic coordinates, represented by the
 <p>The first step is to create a new class, which we&#8217;ll call
 <code class="docutils literal"><span class="pre">Sagittarius</span></code> and make it a subclass of
 <a class="reference internal" href="../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame" title="astropy.coordinates.BaseCoordinateFrame"><code class="xref py py-obj docutils literal"><span class="pre">BaseCoordinateFrame</span></code></a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
 
-<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">frame_transform_graph</span>
-<span class="kn">from</span> <span class="nn">astropy.coordinates.angles</span> <span class="kn">import</span> <span class="n">rotation_matrix</span>
-<span class="kn">import</span> <span class="nn">astropy.coordinates</span> <span class="kn">as</span> <span class="nn">coord</span>
-<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">frame_transform_graph</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates.angles</span> <span class="k">import</span> <span class="n">rotation_matrix</span>
+<span class="kn">import</span> <span class="nn">astropy.coordinates</span> <span class="k">as</span> <span class="nn">coord</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
 
 <span class="k">class</span> <span class="nc">Sagittarius</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">BaseCoordinateFrame</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -157,7 +157,7 @@ that return transformation matrices, or by simply defining a function that accep
 a coordinate and returns a new coordinate in the new system. We&#8217;ll start by
 constructing the rotation matrix, using the helper function
 <code class="docutils literal"><span class="pre">rotation_matrix</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Define the Euler angles (from Law &amp; Majewski 2010)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="c"># Define the Euler angles (from Law &amp; Majewski 2010)</span>
 <span class="n">SGR_PHI</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="o">+</span><span class="mf">3.75</span><span class="p">)</span>
 <span class="n">SGR_THETA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="o">-</span><span class="mf">13.46</span><span class="p">)</span>
 <span class="n">SGR_PSI</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="o">+</span><span class="mf">14.111534</span><span class="p">)</span>
@@ -172,8 +172,8 @@ constructing the rotation matrix, using the helper function
 <p>This is done at the module level, since it will be used by both the
 transformation from Sgr to Galactic as well as the inverse from Galactic to
 Sgr. Now we can define our first transformation function:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Galactic to Sgr coordinates</span>
-<span class="nd">@frame_transform_graph.transform</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">FunctionTransform</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">Galactic</span><span class="p">,</span> <span class="n">Sagittarius</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="c"># Galactic to Sgr coordinates</span>
+<span class="nd">@frame_transform_graph</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">FunctionTransform</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">Galactic</span><span class="p">,</span> <span class="n">Sagittarius</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">galactic_to_sgr</span><span class="p">(</span><span class="n">gal_coord</span><span class="p">,</span> <span class="n">sgr_frame</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Compute the transformation from Galactic spherical to</span>
 <span class="sd">        heliocentric Sgr coordinates.</span>
@@ -210,8 +210,8 @@ can simply copy any distance from the <a class="reference internal" href="../api
 object.</p>
 <p>We then register the inverse transformation by using the transpose of the
 rotation matrix (which is faster to compute than the inverse):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Sgr to Galactic coordinates</span>
-<span class="nd">@frame_transform_graph.transform</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">FunctionTransform</span><span class="p">,</span> <span class="n">Sagittarius</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">Galactic</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="c"># Sgr to Galactic coordinates</span>
+<span class="nd">@frame_transform_graph</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">FunctionTransform</span><span class="p">,</span> <span class="n">Sagittarius</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">Galactic</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">sgr_to_galactic</span><span class="p">(</span><span class="n">sgr_coord</span><span class="p">,</span> <span class="n">gal_frame</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Compute the transformation from heliocentric Sgr coordinates to</span>
 <span class="sd">        spherical Galactic.</span>
@@ -239,8 +239,8 @@ and <a class="reference internal" href="../api/astropy.coordinates.Galactic.html
 coordinate system and <code class="docutils literal"><span class="pre">Sagittarius</span></code> (as long as the other system has a
 path to transform to <a class="reference internal" href="../api/astropy.coordinates.Galactic.html#astropy.coordinates.Galactic" title="astropy.coordinates.Galactic"><code class="xref py py-obj docutils literal"><span class="pre">Galactic</span></code></a>). For example, to
 transform from ICRS coordinates to <code class="docutils literal"><span class="pre">Sagittarius</span></code>, we simply:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.coordinates</span> <span class="kn">as</span> <span class="nn">coord</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.coordinates</span> <span class="k">as</span> <span class="nn">coord</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">icrs</span> <span class="o">=</span> <span class="n">coord</span><span class="o">.</span><span class="n">ICRS</span><span class="p">(</span><span class="mf">280.161732</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="mf">11.91934</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">icrs</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">Sagittarius</span><span class="p">)</span>  
 <span class="go">&lt;Sagittarius Coordinate: (Lambda, Beta, distance) in (deg, deg, )</span>
@@ -528,7 +528,7 @@ Triaxial Milky Way Halo&#8221;, <a class="reference external" href="http://arxiv
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

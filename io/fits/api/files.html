@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>File Handling and Convenience Functions &mdash; Astropy v1.2.dev14978</title>
+    <title>File Handling and Convenience Functions &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="HDU Lists" href="hdulists.html" />
     <link rel="prev" title="astropy.io.fits History" href="../appendix/history.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14978</a>
+	<a href="../../../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -231,7 +231,7 @@ argument is optional.</p>
 <div><p>Output verification option.  Must be one of <code class="docutils literal"><span class="pre">&quot;fix&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code>,
 <code class="docutils literal"><span class="pre">&quot;ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;warn&quot;</span></code>, or <code class="docutils literal"><span class="pre">&quot;exception&quot;</span></code>.  May also be any
 combination of <code class="docutils literal"><span class="pre">&quot;fix&quot;</span></code> or <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code> with <code class="docutils literal"><span class="pre">&quot;+ignore&quot;</span></code>,
-<code class="docutils literal"><span class="pre">+warn</span></code>, or <code class="docutils literal"><span class="pre">+exception&quot;</span> <span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span>Verification options</span></a>
+<code class="docutils literal"><span class="pre">+warn</span></code>, or <code class="docutils literal"><span class="pre">+exception&quot;</span> <span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span class="std std-ref">Verification options</span></a>
 for more info.</p>
 </div></blockquote>
 <p><strong>clobber</strong> : bool, optional</p>
@@ -368,12 +368,12 @@ header associated with the data.  If the 3rd argument is not a
 <a class="reference internal" href="headers.html#astropy.io.fits.Header" title="astropy.io.fits.Header"><code class="xref py py-obj docutils literal"><span class="pre">Header</span></code></a>, it (and other positional arguments) are assumed to be the
 extension specification(s).  Header and extension specs can also be
 keyword arguments.  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">update</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">hdr</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">)</span>  <span class="c"># update the &#39;sci&#39; extension</span>
-<span class="n">update</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># update the 3rd extension</span>
-<span class="n">update</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">hdr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># update the 3rd extension</span>
-<span class="n">update</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># update the 2nd SCI extension</span>
-<span class="n">update</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">hdr</span><span class="p">)</span>  <span class="c"># update the 3rd extension</span>
-<span class="n">update</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">hdr</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c"># update the 5th extension</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">hdr</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">)</span>  <span class="c"># update the &#39;sci&#39; extension</span>
+<span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># update the 3rd extension</span>
+<span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">hdr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># update the 3rd extension</span>
+<span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># update the 2nd SCI extension</span>
+<span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">hdr</span><span class="p">)</span>  <span class="c"># update the 3rd extension</span>
+<span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">hdr</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c"># update the 5th extension</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -410,30 +410,30 @@ following rb, rb+, or ab+.</p>
 <div><p>The rest of the arguments are for extension specification.
 They are flexible and are best illustrated by examples.</p>
 <p>No extra arguments implies the primary header:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>By extension number:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>      <span class="c"># the primary header</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>      <span class="c"># the primary header</span>
 <span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>      <span class="c"># the second extension</span>
 <span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># the second extension</span>
 </pre></div>
 </div>
 <p>By name, i.e., <code class="docutils literal"><span class="pre">EXTNAME</span></code> value (if unique):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">)</span>
 <span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">extname</span><span class="o">=</span><span class="s">&#39;sci&#39;</span><span class="p">)</span>  <span class="c"># equivalent</span>
 </pre></div>
 </div>
 <p>Note <code class="docutils literal"><span class="pre">EXTNAME</span></code> values are not case sensitive</p>
 <p>By combination of <code class="docutils literal"><span class="pre">EXTNAME</span></code> and EXTVER`` as separate
 arguments or as a tuple:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># EXTNAME=&#39;SCI&#39; &amp; EXTVER=2</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="s">&#39;sci&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># EXTNAME=&#39;SCI&#39; &amp; EXTVER=2</span>
 <span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">extname</span><span class="o">=</span><span class="s">&#39;sci&#39;</span><span class="p">,</span> <span class="n">extver</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># equivalent</span>
 <span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;sci&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c"># equivalent</span>
 </pre></div>
 </div>
 <p>Ambiguous or conflicting specifications will raise an exception:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;sci&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">extname</span><span class="o">=</span><span class="s">&#39;err&#39;</span><span class="p">,</span> <span class="n">extver</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;sci&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">extname</span><span class="o">=</span><span class="s">&#39;err&#39;</span><span class="p">,</span> <span class="n">extver</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -452,7 +452,7 @@ respectively.</p>
 <blockquote>
 <div><p>When given, the data will be returned wrapped in the given ndarray
 subclass by calling:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -703,7 +703,7 @@ unmodified header.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

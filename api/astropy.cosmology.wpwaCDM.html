@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>wpwaCDM &mdash; Astropy v1.2.dev14978</title>
+    <title>wpwaCDM &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Cosmological Calculations (astropy.cosmology)" href="../cosmology/index.html" />
     <link rel="next" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="prev" title="wCDM" href="astropy.cosmology.wCDM.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../cosmology/index.html" accesskey="U">Cosmological Calculations (<code class="docutils literal"><span class="pre">astropy.cosmology</span></code>)</a> &raquo;</li>
@@ -164,12 +164,12 @@ computation that requires its value will raise an exception.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">wpwaCDM</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">wpwaCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">wpwaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">Ode0</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">wp</span><span class="o">=-</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">wa</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">zp</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The comoving distance in Mpc at redshift z:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.5</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span> <span class="o">=</span> <span class="n">cosmo</span><span class="o">.</span><span class="n">comoving_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -252,7 +252,7 @@ computation that requires its value will raise an exception.</p>
 <p>The scaling factor, I, is defined by <img class="math" src="../_images/math/614b6ea880330f22d851379fc380b76476633aca.png" alt="\rho(z) = \rho_0 I"/>,
 and in this case is given by</p>
 <div class="math">
-<p><img src="../_images/math/5fc5a55441654b42917e7246c95d931c63d5095f.png" alt="a_p = \frac{1}{1 + z_p}
+<p><img src="../_images/math/1bcd521d2b552f98fca54b47e427d0bd435ee1fe.png" alt="a_p = \frac{1}{1 + z_p}
 
 I = \left(1 + z\right)^{3 \left(1 + w_p + a_p w_a\right)}
 \exp \left(-3 w_a \frac{z}{1+z}\right)"/></p>
@@ -315,7 +315,7 @@ and <img class="math" src="../_images/math/261532347bed5c863d11694509f9a8debfe5d
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

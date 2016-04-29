@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Embedding a SAMP hub in a GUI &mdash; Astropy v1.2.dev14978</title>
+    <title>Embedding a SAMP hub in a GUI &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../../index.html" />
     <link rel="up" title="SAMP (Simple Application Messaging Protocol (astropy.vo.samp)" href="index.html" />
     <link rel="next" title="Conf" href="../../api/astropy.vo.samp.Conf.html" />
     <link rel="prev" title="Communication between integrated clients objects" href="example_clients.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev14978</a>
+	<a href="../../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" >Virtual Observatory Access (<code class="docutils literal"><span class="pre">astropy.vo</span></code>)</a> &raquo;</li>
@@ -91,15 +91,15 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>If you wish to embed a SAMP hub in your Python GUI tool, you will need to start
 the hub programmatically using:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="kn">import</span> <span class="n">SAMPHubServer</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="k">import</span> <span class="n">SAMPHubServer</span>
 <span class="n">hub</span> <span class="o">=</span> <span class="n">SAMPHubServer</span><span class="p">()</span>
 <span class="n">hub</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This launches the hub in a thread and is non-blocking. If you are not
 interested in connections from web SAMP clients, then you can simply use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="kn">import</span> <span class="n">SAMPHubServer</span>
-<span class="n">hub</span> <span class="o">=</span> <span class="n">SAMPHubServer</span><span class="p">(</span><span class="n">web_profile</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="k">import</span> <span class="n">SAMPHubServer</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">SAMPHubServer</span><span class="p">(</span><span class="n">web_profile</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
 <span class="n">hub</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -146,11 +146,11 @@ This may, in some cases, be the result of another GUI callback.</p>
 <h2>Example of embedding a SAMP hub in a Tk application<a class="headerlink" href="#example-of-embedding-a-samp-hub-in-a-tk-application" title="Permalink to this headline">¶</a></h2>
 <p>The following code is a full example of a simple Tk application that watches
 for web SAMP connections and opens the appropriate dialog:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">Tkinter</span> <span class="kn">as</span> <span class="nn">tk</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">Tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
 <span class="kn">import</span> <span class="nn">tkMessageBox</span>
 
-<span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="kn">import</span> <span class="n">SAMPHubServer</span>
-<span class="kn">from</span> <span class="nn">astropy.vo.samp.hub</span> <span class="kn">import</span> <span class="n">WebProfileDialog</span>
+<span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="k">import</span> <span class="n">SAMPHubServer</span>
+<span class="kn">from</span> <span class="nn">astropy.vo.samp.hub</span> <span class="k">import</span> <span class="n">WebProfileDialog</span>
 
 <span class="n">MESSAGE</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="s">A Web application which declares to be</span>
@@ -242,7 +242,7 @@ bring up the dialog.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Analytic Functions (astropy.analytic_functions) &mdash; Astropy v1.2.dev14978</title>
+    <title>Analytic Functions (astropy.analytic_functions) &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="next" title="blackbody_nu" href="../api/astropy.analytic_functions.blackbody.blackbody_nu.html" />
     <link rel="prev" title="leastsquare" href="../api/astropy.modeling.statistic.leastsquare.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       
@@ -95,12 +95,12 @@ parameters.</p>
 </div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.analytic_functions</span> <span class="kn">import</span> <span class="n">blackbody_lambda</span><span class="p">,</span> <span class="n">blackbody_nu</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.analytic_functions</span> <span class="k">import</span> <span class="n">blackbody_lambda</span><span class="p">,</span> <span class="n">blackbody_nu</span>
 </pre></div>
 </div>
 <p>Calculate blackbody flux for 10000 K at 6000 Angstrom:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">blackbody_lambda</span><span class="p">(</span><span class="mi">6000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">blackbody_lambda</span><span class="p">(</span><span class="mi">6000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">)</span>
 <span class="go">&lt;Quantity 15315791.836941158 erg / (Angstrom cm2 s sr)&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">blackbody_nu</span><span class="p">(</span><span class="mi">6000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">)</span>
 <span class="go">&lt;Quantity 0.00018391673686797075 erg / (cm2 Hz s sr)</span>
@@ -112,9 +112,9 @@ parameters.</p>
 <div class="section" id="blackbody-radiation">
 <span id="blackbody-planck-law"></span><h3>Blackbody Radiation<a class="headerlink" href="#blackbody-radiation" title="Permalink to this headline">¶</a></h3>
 <p>Blackbody flux is calculated with Planck law
-(<a class="reference internal" href="#ref-rybicki1979"><span>Rybicki &amp; Lightman 1979</span></a>):</p>
+(<a class="reference internal" href="#ref-rybicki1979"><span class="std std-ref">Rybicki &amp; Lightman 1979</span></a>):</p>
 <div class="math">
-<p><img src="../_images/math/ff02539a7095f623c694b27fa71b8f664213dc98.png" alt="B_{\lambda}(T) = \frac{2 h c^{2} / \lambda^{5}}{exp(h c / \lambda k T) - 1}
+<p><img src="../_images/math/93b07443dc5a212a91102db93459249e1f4ecb39.png" alt="B_{\lambda}(T) = \frac{2 h c^{2} / \lambda^{5}}{exp(h c / \lambda k T) - 1}
 
 B_{\nu}(T) = \frac{2 h \nu^{3} / c^{2}}{exp(h \nu / k T) - 1}"/></p>
 </div><p>where the unit of <img class="math" src="../_images/math/d7bcb70cb7564a44b367429ba531a48ccbfbcaa8.png" alt="B_{\lambda}(T)"/> is
@@ -125,14 +125,14 @@ B_{\nu}(T) = \frac{2 h \nu^{3} / c^{2}}{exp(h \nu / k T) - 1}"/></p>
 blackbody flux for <img class="math" src="../_images/math/d7bcb70cb7564a44b367429ba531a48ccbfbcaa8.png" alt="B_{\lambda}(T)"/> and <img class="math" src="../_images/math/4ba86b4c9bb82085089abff78a6c0ab94e571da8.png" alt="B_{\nu}(T)"/>, respectively.</p>
 <div class="section" id="examples">
 <span id="blackbody-examples"></span><h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.analytic_functions</span> <span class="kn">import</span> <span class="n">blackbody_lambda</span><span class="p">,</span> <span class="n">blackbody_nu</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.analytic_functions</span> <span class="k">import</span> <span class="n">blackbody_lambda</span><span class="p">,</span> <span class="n">blackbody_nu</span>
 </pre></div>
 </div>
 <p>Calculate blackbody flux for 5000 K at 100 and 10000 Angstrom while suppressing
 any Numpy warnings:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">wavelengths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">AA</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">wavelengths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">AA</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">5000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s">&#39;ignore&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">flux_lam</span> <span class="o">=</span> <span class="n">blackbody_lambda</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
@@ -228,7 +228,7 @@ temperature is an array with shape <code class="docutils literal"><span class="p
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

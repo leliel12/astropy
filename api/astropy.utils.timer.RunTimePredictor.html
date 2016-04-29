@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RunTimePredictor &mdash; Astropy v1.2.dev14978</title>
+    <title>RunTimePredictor &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Astropy Core Package Utilities (astropy.utils)" href="../utils/index.html" />
     <link rel="next" title="get_readable_fileobj" href="astropy.utils.data.get_readable_fileobj.html" />
     <link rel="prev" title="timefunc" href="astropy.utils.timer.timefunc.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../utils/index.html" accesskey="U">Astropy Core Package Utilities (<code class="docutils literal"><span class="pre">astropy.utils</span></code>)</a> &raquo;</li>
@@ -116,18 +116,18 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.timer</span> <span class="kn">import</span> <span class="n">RunTimePredictor</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.timer</span> <span class="k">import</span> <span class="n">RunTimePredictor</span>
 </pre></div>
 </div>
 <p>Set up a predictor for <img class="math" src="../_images/math/37555e3dbe10671329958915ec6f04406c34da22.png" alt="10^{x}"/>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">RunTimePredictor</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">RunTimePredictor</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Give it baseline data to use for prediction and
 get the function output values:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">time_func</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">time_func</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="nb">input</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;pow(10, {0})</span><span class="se">\n</span><span class="s">{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;pow(10, {0})</span><span class="se">\n</span><span class="s">{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
 <span class="go">pow(10, 10)</span>
 <span class="go">10000000000</span>
 <span class="go">pow(10, 210)</span>
@@ -142,23 +142,23 @@ get the function output values:</p>
 </div>
 <p>Fit a straight line assuming <img class="math" src="../_images/math/dac7effebc91b20f509d615b2f48091a162d4983.png" alt="\textnormal{arg}^{1}"/> relationship
 (coefficients are returned):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">do_fit</span><span class="p">()</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">do_fit</span><span class="p">()</span>  
 <span class="go">array([1.16777420e-05,  1.00135803e-08])</span>
 </pre></div>
 </div>
 <p>Predict run time for <img class="math" src="../_images/math/ea54e631f44a6be1f11748a09453583564e96a59.png" alt="10^{5000}"/>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">predict_time</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">predict_time</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>  
 <span class="go">6.174564361572262e-05</span>
 </pre></div>
 </div>
 <p>Plot the prediction:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlabeltext</span><span class="o">=</span><span class="s">&#39;Power of 10&#39;</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlabeltext</span><span class="o">=</span><span class="s">&#39;Power of 10&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/timer_prediction_pow10.png"><img alt="Example plot from `astropy.utils.timer.RunTimePredictor`" src="../_images/timer_prediction_pow10.png" style="width: 450px;" /></a>
 <p>When the changing argument is not the last, e.g.,
 <img class="math" src="../_images/math/aa671f6b3da82031edad0d70ab8a147323c4095b.png" alt="x^{2}"/>, something like this might work:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">RunTimePredictor</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">RunTimePredictor</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">time_func</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(2, 4), (3, 9), (5, 25)]</span>
@@ -277,7 +277,7 @@ They can be built up with <a class="reference internal" href="#astropy.utils.tim
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>xscale, yscale</strong> : {&#8216;linear&#8217;, &#8216;log&#8217;, &#8216;symlog&#8217;}</p>
 <blockquote>
-<div><p>Scaling for <a class="reference external" href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v1.5.1)"><code class="xref py py-obj docutils literal"><span class="pre">matplotlib.axes.Axes</span></code></a>.</p>
+<div><p>Scaling for <code class="xref py py-obj docutils literal"><span class="pre">matplotlib.axes.Axes</span></code>.</p>
 </div></blockquote>
 <p><strong>xlabeltext</strong> : str, optional</p>
 <blockquote>
@@ -377,7 +377,7 @@ the prediction.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

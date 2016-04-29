@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Models and Fitting (astropy.modeling) &mdash; Astropy v1.2.dev14978</title>
+    <title>Models and Fitting (astropy.modeling) &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="next" title="Instantiating and Evaluating Models" href="models.html" />
     <link rel="prev" title="custom_frame_mappings" href="../api/astropy.wcs.utils.custom_frame_mappings.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       
@@ -111,8 +111,8 @@ us know on the <a class="reference external" href="http://groups.google.com/grou
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>The examples here use the predefined models and assume the following modules
 have been imported:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span><span class="p">,</span> <span class="n">fitting</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">models</span><span class="p">,</span> <span class="n">fitting</span>
 </pre></div>
 </div>
 <div class="section" id="using-models">
@@ -120,9 +120,9 @@ have been imported:</p>
 <p>The <a class="reference internal" href="#module-astropy.modeling" title="astropy.modeling"><code class="xref py py-obj docutils literal"><span class="pre">astropy.modeling</span></code></a> package defines a number of models that are collected
 under a single namespace as <code class="docutils literal"><span class="pre">astropy.modeling.models</span></code>.  Models behave like
 parametrized functions:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">models</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="go">Model: Gaussian1D</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
 <span class="go">Outputs: (&#39;y&#39;,)</span>
@@ -134,7 +134,7 @@ parametrized functions:</p>
 </pre></div>
 </div>
 <p>Model parameters can be accessed as attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">amplitude</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">amplitude</span>
 <span class="go">Parameter(&#39;amplitude&#39;, value=1.2)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">mean</span>
 <span class="go">Parameter(&#39;mean&#39;, value=0.9)</span>
@@ -143,13 +143,13 @@ parametrized functions:</p>
 </pre></div>
 </div>
 <p>and can also be updated via those attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="mf">0.8</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="mf">0.8</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">amplitude</span>
 <span class="go">Parameter(&#39;amplitude&#39;, value=0.8)</span>
 </pre></div>
 </div>
 <p>Models can be evaluated by calling them as functions:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="go">0.22242984036255528</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 <span class="go">array([ 0.58091923,  0.71746405,  0.7929204 ,  0.78415894,  0.69394278,</span>
@@ -253,7 +253,7 @@ background in an image.</p>
 framework includes many useful features that are not demonstrated here, such as
 weighting of datapoints, fixing or linking parameters, and placing lower or
 upper limits on parameters. For more information on these, take a look at the
-<a class="reference internal" href="fitting.html"><em>Fitting Models to Data</em></a> documentation.</p>
+<a class="reference internal" href="fitting.html"><span class="doc">Fitting Models to Data</span></a> documentation.</p>
 </div>
 <div class="section" id="model-sets">
 <h3>Model sets<a class="headerlink" href="#model-sets" title="Permalink to this headline">¶</a></h3>
@@ -268,9 +268,9 @@ parameters.</p>
 number of models in the set when constructing the model.  The value of each
 parameter must be a list or array of length <code class="docutils literal"><span class="pre">N</span></code>, such that each item in
 the array corresponds to one model in the set:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                      <span class="n">stddev</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="n">n_models</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="go">Model: Gaussian1D</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
 <span class="go">Outputs: (&#39;y&#39;,)</span>
@@ -287,20 +287,20 @@ the array corresponds to one model in the set:</p>
 printing the model the parameter values are displayed as a table, with each row
 corresponding to a single model in the set.</p>
 <p>The number of models in a model set can be determined using the <a class="reference external" href="http://docs.python.org/library/functions.html#len" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">len</span></code></a> builtin:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="go">2</span>
 </pre></div>
 </div>
 <p>Single models have a length of 1, and are not considered a model set as such.</p>
 <p>When evaluating a model set, by default the input must be the same length as
 the number of models, with one input per model:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
 <span class="go">array([ 1.        ,  1.76499381])</span>
 </pre></div>
 </div>
 <p>The result is an array with one result per model in the set.  It is also
 possible to broadcast a single value to all models in the set:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">array([ 1.,  2.])</span>
 </pre></div>
 </div>
@@ -316,13 +316,13 @@ process, especially for linear models.</p>
 <p><span class="versionmodified">New in version 1.0: </span>This feature is experimental and expected to see significant further
 development, but the basic usage is stable and expected to see wide use.</p>
 </div>
-<p>While the Astropy modeling package makes it very easy to define <a class="reference internal" href="new.html"><em>new
-models</em></a> either from existing functions, or by writing a
+<p>While the Astropy modeling package makes it very easy to define <a class="reference internal" href="new.html"><span class="doc">new
+models</span></a> either from existing functions, or by writing a
 <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model" title="astropy.modeling.Model"><code class="xref py py-obj docutils literal"><span class="pre">Model</span></code></a> subclass, an additional way to create new models is
 by combining them using arithmetic expressions.  This works with models built
 into Astropy, and most user-defined models as well.  For example, it is
 possible to create a superposition of two Gaussians like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">models</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_plus_2</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">+</span> <span class="n">g2</span>
@@ -330,7 +330,7 @@ possible to create a superposition of two Gaussians like so:</p>
 </div>
 <p>The resulting object <code class="docutils literal"><span class="pre">g1_plus_2</span></code> is itself a new model.  Evaluating, say,
 <code class="docutils literal"><span class="pre">g1_plus_2(0.25)</span></code> is the same as evaluating <code class="docutils literal"><span class="pre">g1(0.25)</span> <span class="pre">+</span> <span class="pre">g2(0.25)</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_plus_2</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_plus_2</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>  
 <span class="go">0.5676756958301329</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_plus_2</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span> <span class="o">==</span> <span class="n">g1</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span> <span class="o">+</span> <span class="n">g2</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
 <span class="go">True</span>
@@ -340,7 +340,7 @@ possible to create a superposition of two Gaussians like so:</p>
 also possible to define entire new model <em>classes</em> using arithmetic expressions
 of other model classes.  This allows general compound models to be created
 without specifying any parameter values up front.  This more advanced usage is
-explained in more detail in the <a class="reference internal" href="compound-models.html#compound-model-classes"><span>compound model documentation</span></a>.</p>
+explained in more detail in the <a class="reference internal" href="compound-models.html#compound-model-classes"><span class="std std-ref">compound model documentation</span></a>.</p>
 <p>These new compound models can also be fitted to data, like most other models:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -374,7 +374,7 @@ explained in more detail in the <a class="reference internal" href="compound-mod
 <p>This works for 1-D models, 2-D models, and combinations thereof, though there
 are some complexities involved in correctly matching up the inputs and outputs
 of all models used to build a compound model.  You can learn more details in
-the <a class="reference internal" href="compound-models.html"><em>Compound Models</em></a> documentation.</p>
+the <a class="reference internal" href="compound-models.html"><span class="doc">Compound Models</span></a> documentation.</p>
 </div>
 </div>
 <div class="section" id="using-astropy-modeling">
@@ -467,10 +467,8 @@ and fitting routines.</p>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-76ff59fc4b03da4fc440410d20159ddca75ca65b.svg" type="image/svg+xml">
+<object data="../_images/inheritance-e0fe60302f8595a5635d535c1cbcdcaacb2a8fef.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.core.Fittable1DModel, astropy.modeling.core.Fittable2DModel, astropy.modeling.core.FittableModel, astropy.modeling.parameters.InputParameterError, astropy.modeling._compound_deprecated.LabeledInput, astropy.modeling.core.Model, astropy.modeling.core.ModelDefinitionError, astropy.modeling.parameters.Parameter, astropy.modeling._compound_deprecated.SerialCompositeModel, astropy.modeling._compound_deprecated.SummedCompositeModel</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.mappings">
@@ -496,10 +494,8 @@ which outputs from a source model are mapped to which inputs of a target model.<
 </div>
 <div class="section" id="id2">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-52d1d902f1adb2025ecffca2dbe8c727e4c82246.svg" type="image/svg+xml">
+<object data="../_images/inheritance-f14d9dcdaef3eecb1eacfbaa332b31f0eb4a2fc0.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.mappings.Mapping, astropy.modeling.mappings.Identity</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.functional_models">
@@ -616,10 +612,8 @@ which outputs from a source model are mapped to which inputs of a target model.<
 </div>
 <div class="section" id="id5">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-e6f77eb43f14f727e44d4389e2452b685263f7c7.svg" type="image/svg+xml">
+<object data="../_images/inheritance-f121e4621f6f4f1cab8c6faab2c7f655ecd4d931.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.functional_models.AiryDisk2D, astropy.modeling.functional_models.Moffat1D, astropy.modeling.functional_models.Moffat2D, astropy.modeling.functional_models.Box1D, astropy.modeling.functional_models.Box2D, astropy.modeling.functional_models.Const1D, astropy.modeling.functional_models.Const2D, astropy.modeling.functional_models.Ellipse2D, astropy.modeling.functional_models.Disk2D, astropy.modeling.functional_models.Gaussian1D, astropy.modeling.functional_models.GaussianAbsorption1D, astropy.modeling.functional_models.Gaussian2D, astropy.modeling.functional_models.Linear1D, astropy.modeling.functional_models.Lorentz1D, astropy.modeling.functional_models.MexicanHat1D, astropy.modeling.functional_models.MexicanHat2D, astropy.modeling.functional_models.RedshiftScaleFactor, astropy.modeling.functional_models.Redshift, astropy.modeling.functional_models.Scale, astropy.modeling.functional_models.Sersic1D, astropy.modeling.functional_models.Sersic2D, astropy.modeling.functional_models.Shift, astropy.modeling.functional_models.Sine1D, astropy.modeling.functional_models.Trapezoid1D, astropy.modeling.functional_models.TrapezoidDisk2D, astropy.modeling.functional_models.Ring2D, astropy.modeling.functional_models.Voigt1D</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.powerlaws">
@@ -650,10 +644,8 @@ which outputs from a source model are mapped to which inputs of a target model.<
 </div>
 <div class="section" id="id7">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-373a1bd48081c3eb56a91b316b8eeb7ef287c042.svg" type="image/svg+xml">
+<object data="../_images/inheritance-50fd81cbc5705f429eef3fcf20c97b99a72a3e0b.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.powerlaws.PowerLaw1D, astropy.modeling.powerlaws.BrokenPowerLaw1D, astropy.modeling.powerlaws.ExponentialCutoffPowerLaw1D, astropy.modeling.powerlaws.LogParabola1D</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.polynomial">
@@ -702,10 +694,8 @@ which outputs from a source model are mapped to which inputs of a target model.<
 </div>
 <div class="section" id="id9">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-0dc21dfeb1ba51e15a5402b24259af743f40467f.svg" type="image/svg+xml">
+<object data="../_images/inheritance-a1dd7ee02b2867c343869af0f2ca3250f71af726.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.polynomial.Chebyshev1D, astropy.modeling.polynomial.Chebyshev2D, astropy.modeling.polynomial.InverseSIP, astropy.modeling.polynomial.Legendre1D, astropy.modeling.polynomial.Legendre2D, astropy.modeling.polynomial.Polynomial1D, astropy.modeling.polynomial.Polynomial2D, astropy.modeling.polynomial.SIP, astropy.modeling.polynomial.OrthoPolynomialBase, astropy.modeling.polynomial.PolynomialModel</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.projections">
@@ -1093,10 +1083,8 @@ performed in radians.</p>
 </div>
 <div class="section" id="id12">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-cf5d044842a228f78b377bc9594adb507613ca81.svg" type="image/svg+xml">
+<object data="../_images/inheritance-be340935fccc68a39bd69efccefa41c96512d317.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.projections.Projection, astropy.modeling.projections.Pix2SkyProjection, astropy.modeling.projections.Sky2PixProjection, astropy.modeling.projections.Zenithal, astropy.modeling.projections.Cylindrical, astropy.modeling.projections.PseudoCylindrical, astropy.modeling.projections.Conic, astropy.modeling.projections.PseudoConic, astropy.modeling.projections.QuadCube, astropy.modeling.projections.HEALPix, astropy.modeling.projections.AffineTransformation2D, astropy.modeling.projections.Pix2Sky_ZenithalPerspective, astropy.modeling.projections.Sky2Pix_ZenithalPerspective, astropy.modeling.projections.Pix2Sky_SlantZenithalPerspective, astropy.modeling.projections.Sky2Pix_SlantZenithalPerspective, astropy.modeling.projections.Pix2Sky_Gnomonic, astropy.modeling.projections.Sky2Pix_Gnomonic, astropy.modeling.projections.Pix2Sky_Stereographic, astropy.modeling.projections.Sky2Pix_Stereographic, astropy.modeling.projections.Pix2Sky_SlantOrthographic, astropy.modeling.projections.Sky2Pix_SlantOrthographic, astropy.modeling.projections.Pix2Sky_ZenithalEquidistant, astropy.modeling.projections.Sky2Pix_ZenithalEquidistant, astropy.modeling.projections.Pix2Sky_ZenithalEqualArea, astropy.modeling.projections.Sky2Pix_ZenithalEqualArea, astropy.modeling.projections.Pix2Sky_Airy, astropy.modeling.projections.Sky2Pix_Airy, astropy.modeling.projections.Pix2Sky_CylindricalPerspective, astropy.modeling.projections.Sky2Pix_CylindricalPerspective, astropy.modeling.projections.Pix2Sky_CylindricalEqualArea, astropy.modeling.projections.Sky2Pix_CylindricalEqualArea, astropy.modeling.projections.Pix2Sky_PlateCarree, astropy.modeling.projections.Sky2Pix_PlateCarree, astropy.modeling.projections.Pix2Sky_Mercator, astropy.modeling.projections.Sky2Pix_Mercator, astropy.modeling.projections.Pix2Sky_SansonFlamsteed, astropy.modeling.projections.Sky2Pix_SansonFlamsteed, astropy.modeling.projections.Pix2Sky_Parabolic, astropy.modeling.projections.Sky2Pix_Parabolic, astropy.modeling.projections.Pix2Sky_Molleweide, astropy.modeling.projections.Sky2Pix_Molleweide, astropy.modeling.projections.Pix2Sky_HammerAitoff, astropy.modeling.projections.Sky2Pix_HammerAitoff, astropy.modeling.projections.Pix2Sky_ConicPerspective, astropy.modeling.projections.Sky2Pix_ConicPerspective, astropy.modeling.projections.Pix2Sky_ConicEqualArea, astropy.modeling.projections.Sky2Pix_ConicEqualArea, astropy.modeling.projections.Pix2Sky_ConicEquidistant, astropy.modeling.projections.Sky2Pix_ConicEquidistant, astropy.modeling.projections.Pix2Sky_ConicOrthomorphic, astropy.modeling.projections.Sky2Pix_ConicOrthomorphic, astropy.modeling.projections.Pix2Sky_BonneEqualArea, astropy.modeling.projections.Sky2Pix_BonneEqualArea, astropy.modeling.projections.Pix2Sky_Polyconic, astropy.modeling.projections.Sky2Pix_Polyconic, astropy.modeling.projections.Pix2Sky_TangentialSphericalCube, astropy.modeling.projections.Sky2Pix_TangentialSphericalCube, astropy.modeling.projections.Pix2Sky_COBEQuadSphericalCube, astropy.modeling.projections.Sky2Pix_COBEQuadSphericalCube, astropy.modeling.projections.Pix2Sky_QuadSphericalCube, astropy.modeling.projections.Sky2Pix_QuadSphericalCube, astropy.modeling.projections.Pix2Sky_HEALPix, astropy.modeling.projections.Sky2Pix_HEALPix, astropy.modeling.projections.Pix2Sky_HEALPixPolar, astropy.modeling.projections.Sky2Pix_HEALPixPolar, astropy.modeling.projections.Pix2Sky_ZenithalPerspective, astropy.modeling.projections.Sky2Pix_ZenithalPerspective, astropy.modeling.projections.Pix2Sky_SlantZenithalPerspective, astropy.modeling.projections.Sky2Pix_SlantZenithalPerspective, astropy.modeling.projections.Pix2Sky_Gnomonic, astropy.modeling.projections.Sky2Pix_Gnomonic, astropy.modeling.projections.Pix2Sky_Stereographic, astropy.modeling.projections.Sky2Pix_Stereographic, astropy.modeling.projections.Pix2Sky_SlantOrthographic, astropy.modeling.projections.Sky2Pix_SlantOrthographic, astropy.modeling.projections.Pix2Sky_ZenithalEquidistant, astropy.modeling.projections.Sky2Pix_ZenithalEquidistant, astropy.modeling.projections.Pix2Sky_ZenithalEqualArea, astropy.modeling.projections.Sky2Pix_ZenithalEqualArea, astropy.modeling.projections.Pix2Sky_Airy, astropy.modeling.projections.Sky2Pix_Airy, astropy.modeling.projections.Pix2Sky_CylindricalPerspective, astropy.modeling.projections.Sky2Pix_CylindricalPerspective, astropy.modeling.projections.Pix2Sky_CylindricalEqualArea, astropy.modeling.projections.Sky2Pix_CylindricalEqualArea, astropy.modeling.projections.Pix2Sky_PlateCarree, astropy.modeling.projections.Sky2Pix_PlateCarree, astropy.modeling.projections.Pix2Sky_Mercator, astropy.modeling.projections.Sky2Pix_Mercator, astropy.modeling.projections.Pix2Sky_SansonFlamsteed, astropy.modeling.projections.Sky2Pix_SansonFlamsteed, astropy.modeling.projections.Pix2Sky_Parabolic, astropy.modeling.projections.Sky2Pix_Parabolic, astropy.modeling.projections.Pix2Sky_Molleweide, astropy.modeling.projections.Sky2Pix_Molleweide, astropy.modeling.projections.Pix2Sky_HammerAitoff, astropy.modeling.projections.Sky2Pix_HammerAitoff, astropy.modeling.projections.Pix2Sky_ConicPerspective, astropy.modeling.projections.Sky2Pix_ConicPerspective, astropy.modeling.projections.Pix2Sky_ConicEqualArea, astropy.modeling.projections.Sky2Pix_ConicEqualArea, astropy.modeling.projections.Pix2Sky_ConicEquidistant, astropy.modeling.projections.Sky2Pix_ConicEquidistant, astropy.modeling.projections.Pix2Sky_ConicOrthomorphic, astropy.modeling.projections.Sky2Pix_ConicOrthomorphic, astropy.modeling.projections.Pix2Sky_BonneEqualArea, astropy.modeling.projections.Sky2Pix_BonneEqualArea, astropy.modeling.projections.Pix2Sky_Polyconic, astropy.modeling.projections.Sky2Pix_Polyconic, astropy.modeling.projections.Pix2Sky_TangentialSphericalCube, astropy.modeling.projections.Sky2Pix_TangentialSphericalCube, astropy.modeling.projections.Pix2Sky_COBEQuadSphericalCube, astropy.modeling.projections.Sky2Pix_COBEQuadSphericalCube, astropy.modeling.projections.Pix2Sky_QuadSphericalCube, astropy.modeling.projections.Sky2Pix_QuadSphericalCube, astropy.modeling.projections.Pix2Sky_HEALPix, astropy.modeling.projections.Sky2Pix_HEALPix, astropy.modeling.projections.Pix2Sky_HEALPixPolar, astropy.modeling.projections.Sky2Pix_HEALPixPolar</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.rotations">
@@ -1142,10 +1130,8 @@ setters/getters.</p>
 </div>
 <div class="section" id="id16">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-dfcbe84ef520d4c868c4b53f140661706cb141df.svg" type="image/svg+xml">
+<object data="../_images/inheritance-22f06c56f4133a1906d8c3e7c16145d4aaeb32e6.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.rotations.RotateCelestial2Native, astropy.modeling.rotations.RotateNative2Celestial, astropy.modeling.rotations.Rotation2D, astropy.modeling.rotations.EulerAngleRotation</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.fitting">
@@ -1197,10 +1183,8 @@ implementation.</p>
 </div>
 <div class="section" id="id18">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-8adc4e611922b4bfcd1aeeb60a435b85477c5a16.svg" type="image/svg+xml">
+<object data="../_images/inheritance-bab4c6dd60915f3ae25434e8ba6057f6a0c7c1e5.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.fitting.LinearLSQFitter, astropy.modeling.fitting.LevMarLSQFitter, astropy.modeling.fitting.SLSQPLSQFitter, astropy.modeling.fitting.SimplexLSQFitter, astropy.modeling.fitting.JointFitter, astropy.modeling.fitting.Fitter</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.optimizers">
@@ -1228,10 +1212,8 @@ implementation.</p>
 </div>
 <div class="section" id="id20">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-e738866b56105d13e51db8b748a6f628b18266f2.svg" type="image/svg+xml">
+<object data="../_images/inheritance-7a3689d2769a178e1a84d97d47b4406536aa4ac9.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.modeling.optimizers.Optimization, astropy.modeling.optimizers.SLSQP, astropy.modeling.optimizers.Simplex</p></object>
-</p>
 </div>
 </div>
 <div class="section" id="module-astropy.modeling.statistic">
@@ -1346,7 +1328,7 @@ implementation.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

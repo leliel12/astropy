@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release Procedures &mdash; Astropy v1.2.dev14978</title>
+    <title>Release Procedures &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="next" title="Workflow for Maintainers" href="workflow/maintainer_workflow.html" />
     <link rel="prev" title="C or Cython Extensions" href="ccython.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       
@@ -102,12 +102,12 @@ procedure is that ensures a consistent release process each time.</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p class="first">Ensure you have a GPG key pair available for when git needs to sign the
-tag you create for the release.  See <a class="reference internal" href="#key-signing-info"><span>Creating a GPG Signing Key and a Signed Tag</span></a> for more on
+tag you create for the release.  See <a class="reference internal" href="#key-signing-info"><span class="std std-ref">Creating a GPG Signing Key and a Signed Tag</span></a> for more on
 this.</p>
 </li>
 <li><p class="first">Update the list of contributors in the <code class="docutils literal"><span class="pre">creditsandlicense.rst</span></code> file. The
 easiest way to check this is do:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git shortlog -s
+<div class="highlight-default"><div class="highlight"><pre>$ git shortlog -s
 </pre></div>
 </div>
 <p>And just add anyone from that list who isn&#8217;t already credited.</p>
@@ -118,7 +118,7 @@ installed, as you will need it to generate the .c files needed for the
 release.</p>
 </li>
 <li><p class="first">Create and activate a virtualenv:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ virtualenv --system-site-packages astropy-release
+<div class="highlight-default"><div class="highlight"><pre>$ virtualenv --system-site-packages astropy-release
 $ source astropy-release/bin/activate
 </pre></div>
 </div>
@@ -130,12 +130,12 @@ where you don&#8217;t have any intermediate build files.  Either use a fresh
 <li><p class="first">Be sure you&#8217;re the &#8220;master&#8221; branch or, for a bug fix release, on the
 appropriate bug fix branch.  For example, if releasing version 0.2.2 make
 sure to:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git checkout v0.2.x
+<div class="highlight-default"><div class="highlight"><pre>$ git checkout v0.2.x
 </pre></div>
 </div>
 </li>
 <li><p class="first">Now install Astropy into the virtualenv:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python setup.py install
+<div class="highlight-default"><div class="highlight"><pre>$ python setup.py install
 </pre></div>
 </div>
 <p>This is necessary for two reasons.  First, the entry points for the
@@ -147,7 +147,7 @@ distribution.</p>
 <li><p class="first">Install zest.releaser into the virtualenv; use <code class="docutils literal"><span class="pre">--upgrade</span> <span class="pre">--force</span></code> to
 ensure that the latest version is installed in the virtualenv (if you&#8217;re
 running a csh variant make sure to run <code class="docutils literal"><span class="pre">rehash</span></code> afterwards too):</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install zest.releaser==3.49 --upgrade --force
+<div class="highlight-default"><div class="highlight"><pre>$ pip install zest.releaser==3.49 --upgrade --force
 </pre></div>
 </div>
 <div class="admonition note">
@@ -159,7 +159,7 @@ see <a class="reference external" href="https://github.com/zestsoftware/zest.rel
 </li>
 <li><p class="first">Ensure that all changes to the code have been committed, then start the
 release by running:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fullrelease
+<div class="highlight-default"><div class="highlight"><pre>$ fullrelease
 </pre></div>
 </div>
 </li>
@@ -195,12 +195,12 @@ has been updated in setup.py.  Enter &#8216;Y&#8217; to commit these changes.</p
 should complete the portion of the process that&#8217;s automated at this point.</p>
 </li>
 <li><p class="first">Check out the tag of the released version.  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git checkout v0.1
+<div class="highlight-default"><div class="highlight"><pre>$ git checkout v0.1
 </pre></div>
 </div>
 </li>
 <li><p class="first">Create the source distribution by doing:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git clean -dfx  # just in case
+<div class="highlight-default"><div class="highlight"><pre>$ git clean -dfx  # just in case
 $ python setup.py build sdist
 </pre></div>
 </div>
@@ -216,14 +216,14 @@ other generated files are built.</p>
 </div>
 </li>
 <li><p class="first">Register the release on PyPI with:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python setup.py register
+<div class="highlight-default"><div class="highlight"><pre>$ python setup.py register
 </pre></div>
 </div>
 </li>
 <li><p class="first">Upload the source distribution to PyPI; this is preceded by re-running
 the sdist command, which is necessary for the upload command to know
 which distribution to upload:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python setup.py build sdist upload --sign
+<div class="highlight-default"><div class="highlight"><pre>$ python setup.py build sdist upload --sign
 </pre></div>
 </div>
 </li>
@@ -236,7 +236,7 @@ the latest bugfix releases.</p>
 from older release lines that we may still want to make available.</p>
 </li>
 <li><p class="first">Update the &#8220;stable&#8221; branch to point to the new stable release For example:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git checkout stable
+<div class="highlight-default"><div class="highlight"><pre>$ git checkout stable
 $ git reset --hard v0.1
 $ git push origin stable --force
 </pre></div>
@@ -258,12 +258,12 @@ was &#8220;v&lt;major&gt;.&lt;minor&gt;.0&#8221;, create bug fix branch with the
 &#8220;v&lt;major&gt;.&lt;minor&gt;.x&#8221;.  Starting from the commit tagged as the release,
 just checkout a new branch and push it to the remote server.  For example,
 after releasing version 0.3, do:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git checkout -b v0.3.x
+<div class="highlight-default"><div class="highlight"><pre>$ git checkout -b v0.3.x
 </pre></div>
 </div>
 <p>Then edit <code class="docutils literal"><span class="pre">setup.py</span></code> so that the <code class="docutils literal"><span class="pre">VERSION</span></code> variable is
 <code class="docutils literal"><span class="pre">'0.3.1.dev'</span></code>, and commit that change. Then, do:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git push upstream v0.3.x
+<div class="highlight-default"><div class="highlight"><pre>$ git push upstream v0.3.x
 </pre></div>
 </div>
 </li>
@@ -362,7 +362,7 @@ issues that should include fixes in that release should be assigned that
 milestone.  Any issues that implement new features would go into the v0.3.0
 milestone&#8211;this is any work that goes in the master branch that should not
 be backported.  For a more detailed set of guidelines on using milestones, see
-<a class="reference internal" href="workflow/maintainer_workflow.html#milestones-and-labels"><span>Using Milestones and Labels</span></a>.</p>
+<a class="reference internal" href="workflow/maintainer_workflow.html#milestones-and-labels"><span class="std std-ref">Using Milestones and Labels</span></a>.</p>
 <div class="section" id="backporting-fixes-from-master">
 <h3>Backporting fixes from master<a class="headerlink" href="#backporting-fixes-from-master" title="Permalink to this headline">¶</a></h3>
 <p>Most fixes are backported using the <code class="docutils literal"><span class="pre">git</span> <span class="pre">cherry-pick</span></code> command, which applies
@@ -371,7 +371,7 @@ current bug fix branch is &#8216;v0.2.x&#8217;, and that a bug was fixed in mast
 commit <code class="docutils literal"><span class="pre">abcd1234</span></code>.  In order to backport the fix, simply checkout the v0.2.x
 branch (it&#8217;s also good to make sure it&#8217;s in sync with the main Astropy
 repository) and cherry-pick the appropriate commit:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git checkout v0.2.x
+<div class="highlight-default"><div class="highlight"><pre>$ git checkout v0.2.x
 $ git pull upstream v0.2.x
 $ git cherry-pick abcd1234
 </pre></div>
@@ -390,7 +390,7 @@ commit represents the <em>full</em> difference of all the commits in the pull re
 combined.  What this means is that it is only necessary to cherry-pick the
 merge commit (this requires adding the <code class="docutils literal"><span class="pre">-m</span> <span class="pre">1</span></code> option to the cherry-pick
 command).  For example, if <code class="docutils literal"><span class="pre">5678abcd</span></code> is a merge commit:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git checkout v0.2.x
+<div class="highlight-default"><div class="highlight"><pre>$ git checkout v0.2.x
 $ git pull upstream v0.2.x
 $ git cherry-pick -m 1 5678abcd
 </pre></div>
@@ -401,14 +401,14 @@ least thought.  However, if you&#8217;re not dealing with backporting a fix that
 not brought in as a pull request, read on.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="workflow/additional_git_topics.html#merge-commits-and-cherry-picks"><span>Merge commits and cherry picks</span></a> for further explanation of the
+<p class="last"><a class="reference internal" href="workflow/additional_git_topics.html#merge-commits-and-cherry-picks"><span class="std std-ref">Merge commits and cherry picks</span></a> for further explanation of the
 cherry-pick command and how it works with merge commits.</p>
 </div>
 <p>If not cherry-picking a merge commit there are still other options for dealing
 with multiple commits.  The simplest, though potentially tedious, is to simply
 run the cherry-pick command once for each commit in the correct order.
 However, as of Git 1.7.2 it is possible to merge a range of commits like so:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git cherry-pick 1234abcd..56789def
+<div class="highlight-default"><div class="highlight"><pre>$ git cherry-pick 1234abcd..56789def
 </pre></div>
 </div>
 <p>This works fine so long as the commits you want to pick are actually congruous
@@ -441,7 +441,7 @@ that branch when the PR is accepted.</li>
 <h3>Preparing the bug fix branch for release<a class="headerlink" href="#preparing-the-bug-fix-branch-for-release" title="Permalink to this headline">¶</a></h3>
 <p>There are two primary steps that need to be taken before creating a bug fix
 release. The rest of the procedure is the same as any other release as
-described in <a class="reference internal" href="#release-procedure"><span>Release Procedure</span></a> (although be sure to provide the
+described in <a class="reference internal" href="#release-procedure"><span class="std std-ref">Release Procedure</span></a> (although be sure to provide the
 right version number).</p>
 <ol class="arabic simple">
 <li>Any existing fixes to the issues assigned to the current bug fix release
@@ -452,13 +452,13 @@ user-visible issues&#8211;fixed for the current release.  The changelog should
 be updated in the master branch, and then merged into the bug fix branch.
 Most issues <em>should</em> already have changelog entries for them. But it&#8217;s
 typical to forget this, so if doesn&#8217;t exist yet please add one in
-the process of backporting.  See <a class="reference internal" href="workflow/maintainer_workflow.html#changelog-format"><span>Updating and Maintaining the Changelog</span></a> for more details.</li>
+the process of backporting.  See <a class="reference internal" href="workflow/maintainer_workflow.html#changelog-format"><span class="std std-ref">Updating and Maintaining the Changelog</span></a> for more details.</li>
 </ol>
 <p>To aid in this process there is a <a class="reference external" href="https://github.com/astropy/astropy-tools/blob/master/suggest_backports.py">suggest_backports.py script in the astropy-tools repository</a>.
 The script is not perfect and still needs a little work, but it will get most of
 the work done.  For example, if
 the current bug fix branch is called &#8216;v0.2.x&#8217; run it like so:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ suggest_backports.py astropy astropy v0.2.x -f backport.sh
+<div class="highlight-default"><div class="highlight"><pre>$ suggest_backports.py astropy astropy v0.2.x -f backport.sh
 </pre></div>
 </div>
 <p>This will search GitHub for all issues assigned to the next bug fix release
@@ -469,7 +469,7 @@ to backport all those fixes.</p>
 <p>The <code class="docutils literal"><span class="pre">suggest_backports.py</span></code> script will typically take a couple minutes to
 run, but once it&#8217;s done simply execute the generated script from within your
 local clone of the Astropy repository:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./backport.sh
+<div class="highlight-default"><div class="highlight"><pre>$ ./backport.sh
 </pre></div>
 </div>
 <p>This will checkout the appropriate bug fix branch (&#8216;v0.2.x&#8217; in this example),
@@ -497,7 +497,7 @@ cases can report false positives.</p>
 GitHub through the list of closed issues in the release milestone and check
 that each one has a fix in the bug fix branch.  Usually a quick way to do
 this is for each issue to run:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git log --oneline &lt;bugfix-branch&gt; | grep #&lt;issue&gt;
+<div class="highlight-default"><div class="highlight"><pre>$ git log --oneline &lt;bugfix-branch&gt; | grep #&lt;issue&gt;
 </pre></div>
 </div>
 <p class="last">Most fixes will mention their related issue in the commit message, so this
@@ -537,7 +537,7 @@ verify the integrity of system packages).  If you don&#8217;t have the <code cla
 command, consult the documentation for your system on how to install it.</p>
 <p>For OSX, GPG can be installed from MacPorts using <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">port</span> <span class="pre">install</span> <span class="pre">gnupg</span></code>.</p>
 <p>To create a new public/private key pair, simply run:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ gpg --gen-key
+<div class="highlight-default"><div class="highlight"><pre>$ gpg --gen-key
 </pre></div>
 </div>
 <p>This will take you through a few interactive steps. For the encryption
@@ -552,7 +552,7 @@ your git configuration to match the key info. Finally, choose a very good
 pass phrase that won&#8217;t be easily subject to brute force attacks.</p>
 <p>If you expect to use the same key for some time, it&#8217;s good to make a backup of
 both your public and private key:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ gpg --export --armor &gt; public.key
+<div class="highlight-default"><div class="highlight"><pre>$ gpg --export --armor &gt; public.key
 $ gpg --export-secret-key --armor &gt; private.key
 </pre></div>
 </div>
@@ -570,21 +570,21 @@ indefinitely (until you manually revoke it), and will be automatically synced
 with other keyservers around the world.  That makes it easy to retrieve your
 public key using the gpg command-line tool.</p>
 <p>To do this you will need your public key&#8217;s keyname.  To find this enter:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ gpg --list-keys
+<div class="highlight-default"><div class="highlight"><pre>$ gpg --list-keys
 </pre></div>
 </div>
 <p>This will output something like:</p>
-<div class="highlight-python"><div class="highlight"><pre>/path/to/.gnupg/pubring.gpg
----------------------------------------------
-pub   4096D/1234ABCD 2012-01-01
-uid                  Your Name &lt;your_email&gt;
-sub   4096g/567890EF 2012-01-01
+<div class="highlight-default"><div class="highlight"><pre><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/.</span><span class="n">gnupg</span><span class="o">/</span><span class="n">pubring</span><span class="o">.</span><span class="n">gpg</span>
+<span class="o">---------------------------------------------</span>
+<span class="n">pub</span>   <span class="mi">4096</span><span class="n">D</span><span class="o">/</span><span class="mi">1234</span><span class="n">ABCD</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>
+<span class="n">uid</span>                  <span class="n">Your</span> <span class="n">Name</span> <span class="o">&lt;</span><span class="n">your_email</span><span class="o">&gt;</span>
+<span class="n">sub</span>   <span class="mi">4096</span><span class="n">g</span><span class="o">/</span><span class="mi">567890</span><span class="n">EF</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>
 </pre></div>
 </div>
 <p>The 8 digit hex number on the line starting with &#8220;pub&#8221;&#8211;in this example the
 &#8220;1234ABCD&#8221; unique keyname for your public key.  To push it to a keyserver
 enter:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ gpg --send-keys 1234ABCD
+<div class="highlight-default"><div class="highlight"><pre>$ gpg --send-keys 1234ABCD
 </pre></div>
 </div>
 <p>But replace the 1234ABCD with the keyname for your public key.  Most systems
@@ -595,25 +595,25 @@ specify any more than that.</p>
 <h3>Create a tag<a class="headerlink" href="#create-a-tag" title="Permalink to this headline">¶</a></h3>
 <p>Now test creating a signed tag in git.  It&#8217;s safe to experiment with this&#8211;you
 can always delete the tag before pushing it to a remote repository:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git tag -s v0.1 -m &quot;Astropy version 0.1&quot;
+<div class="highlight-default"><div class="highlight"><pre>$ git tag -s v0.1 -m &quot;Astropy version 0.1&quot;
 </pre></div>
 </div>
 <p>This will ask for the password to unlock your private key in order to sign
 the tag with it.  Confirm that the default signing key selected by git is the
 correct one (it will be if you only have one key).</p>
 <p>Once the tag has been created, you can verify it with:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git tag -v v0.1
+<div class="highlight-default"><div class="highlight"><pre>$ git tag -v v0.1
 </pre></div>
 </div>
 <p>This should output something like:</p>
-<div class="highlight-python"><div class="highlight"><pre>object e8e3e3edc82b02f2088f4e974dbd2fe820c0d934
-type commit
-tag v0.1
-tagger Your Name &lt;your_email&gt; 1339779534 -0400
+<div class="highlight-default"><div class="highlight"><pre><span class="nb">object</span> <span class="n">e8e3e3edc82b02f2088f4e974dbd2fe820c0d934</span>
+<span class="nb">type</span> <span class="n">commit</span>
+<span class="n">tag</span> <span class="n">v0</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">tagger</span> <span class="n">Your</span> <span class="n">Name</span> <span class="o">&lt;</span><span class="n">your_email</span><span class="o">&gt;</span> <span class="mi">1339779534</span> <span class="o">-</span><span class="mi">0400</span>
 
-Astropy version 0.1
-gpg: Signature made Fri 15 Jun 2012 12:59:04 PM EDT using DSA key ID 0123ABCD
-gpg: Good signature from &quot;Your Name &lt;your_email&gt;&quot;
+<span class="n">Astropy</span> <span class="n">version</span> <span class="mf">0.1</span>
+<span class="n">gpg</span><span class="p">:</span> <span class="n">Signature</span> <span class="n">made</span> <span class="n">Fri</span> <span class="mi">15</span> <span class="n">Jun</span> <span class="mi">2012</span> <span class="mi">12</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">04</span> <span class="n">PM</span> <span class="n">EDT</span> <span class="n">using</span> <span class="n">DSA</span> <span class="n">key</span> <span class="n">ID</span> <span class="mi">0123</span><span class="n">ABCD</span>
+<span class="n">gpg</span><span class="p">:</span> <span class="n">Good</span> <span class="n">signature</span> <span class="kn">from</span> <span class="s">&quot;Your Name &lt;your_email&gt;&quot;</span>
 </pre></div>
 </div>
 <p>You can use this to verify signed tags from any repository as long as you have
@@ -622,7 +622,7 @@ yourself, so you already have your public key.</p>
 <p>Note that if you are planning to do a release following the steps below, you
 will want to delete the tag you just created, because the release script does
 that for you.  You can delete this tag by doing:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git tag -d v0.1
+<div class="highlight-default"><div class="highlight"><pre>$ git tag -d v0.1
 </pre></div>
 </div>
 </div>
@@ -638,7 +638,7 @@ ensure that you have the following dependencies installed:</p>
 <li><a class="reference external" href="http://pypi.python.org/pypi/bdist_mpkg/">bdist_mpkg</a></li>
 </ul>
 <p>To create a <code class="docutils literal"><span class="pre">.dmg</span></code> file, run:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py bdist_dmg
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">bdist_dmg</span>
 </pre></div>
 </div>
 <p>Note that for the actual release version, you should do this with the Python
@@ -696,7 +696,7 @@ virtual machine.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

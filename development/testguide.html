@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Testing Guidelines &mdash; Astropy v1.2.dev14978</title>
+    <title>Testing Guidelines &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="next" title="Writing Command-Line Scripts" href="scripts.html" />
     <link rel="prev" title="Astropy Docstring Rules" href="docrules.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       
@@ -113,7 +113,7 @@ turn off regular testing and enable PEP8 testing.</p>
 <p>This method of running the tests defaults to the version of <a class="reference external" href="http://pytest.org/latest/">py.test</a>
 that is bundled with Astropy. To use the locally-installed version, you
 can set the <code class="docutils literal"><span class="pre">ASTROPY_USE_SYSTEM_PYTEST</span></code> environment variable, eg.:</p>
-<div class="last highlight-python"><div class="highlight"><pre>&gt; ASTROPY_USE_SYSTEM_PYTEST=1 python setup.py test
+<div class="last highlight-default"><div class="highlight"><pre><span class="o">&gt;</span> <span class="n">ASTROPY_USE_SYSTEM_PYTEST</span><span class="o">=</span><span class="mi">1</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
 </pre></div>
 </div>
 </div>
@@ -122,7 +122,7 @@ can set the <code class="docutils literal"><span class="pre">ASTROPY_USE_SYSTEM_
 <h3>py.test<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>An alternative way to run tests from the command line is to switch to the source
 code directory of astropy and simply type:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="http://pytest.org/latest/">py.test</a> will look for files that <a class="reference external" href="http://pytest.org/latest/goodpractises.html#conventions-for-python-test-discovery">look like tests</a>
@@ -136,23 +136,23 @@ within those files.</p>
 any tests that make use of these extensions will not succeed.</p>
 </div>
 <p>You may specify a specific test file or directory at the command line:</p>
-<div class="highlight-python"><div class="highlight"><pre>py.test test_file.py
+<div class="highlight-default"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">test_file</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>To run a specific test within a file use the <code class="docutils literal"><span class="pre">-k</span></code> option:</p>
-<div class="highlight-python"><div class="highlight"><pre>py.test test_file.py -k &quot;test_function&quot;
+<div class="highlight-default"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">test_file</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">k</span> <span class="s">&quot;test_function&quot;</span>
 </pre></div>
 </div>
 <p>You may also use the <code class="docutils literal"><span class="pre">-k</span></code> option to not run tests py putting a <code class="docutils literal"><span class="pre">-</span></code> in front
 of the matching string:</p>
-<div class="highlight-python"><div class="highlight"><pre>py.test test_file.py -k &quot;-test_function&quot;
+<div class="highlight-default"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">test_file</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">k</span> <span class="s">&quot;-test_function&quot;</span>
 </pre></div>
 </div>
 <p>py.test has a number of <a class="reference external" href="http://pytest.org/latest/usage.html">command line usage options.</a></p>
 <p>Turn on PEP8 testing by adding the <code class="docutils literal"><span class="pre">--pep8</span></code> flag to the <a class="reference external" href="http://pytest.org/latest/">py.test</a> call. By
 default regular tests will also be run but these can be turned off by adding
 <code class="docutils literal"><span class="pre">-k</span> <span class="pre">pep8</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>py.test some_dir --pep8 -k pep8
+<div class="highlight-default"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">some_dir</span> <span class="o">--</span><span class="n">pep8</span> <span class="o">-</span><span class="n">k</span> <span class="n">pep8</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -167,27 +167,27 @@ version it is not up-to-date enough (<a class="reference external" href="http://
 <p>AstroPy includes a standalone version of py.test that allows to tests
 to be run even if py.test is not installed. Tests can be run from within
 AstroPy with:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This will run all the default tests for AstroPy.</p>
 <p>Tests for a specific package can be run by specifying the package in the call
 to the <code class="docutils literal"><span class="pre">test()</span></code> function:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s">&#39;io.fits&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s">&#39;io.fits&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This method works only with package names that can be mapped to Astropy
 directories. As an alternative you can test a specific directory or file
 with the <code class="docutils literal"><span class="pre">test_path</span></code> option:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">test_path</span><span class="o">=</span><span class="s">&#39;wcs/tests/test_wcs.py&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">test_path</span><span class="o">=</span><span class="s">&#39;wcs/tests/test_wcs.py&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">test_path</span></code> must be specified either relative to the working directory
 or absolutely.</p>
 <p>By default <a class="reference internal" href="#astropy-test">astropy.test()</a> will skip tests which retrieve data from the
 internet. To turn these tests on use the <code class="docutils literal"><span class="pre">remote_data</span></code> flag:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s">&#39;io.fits&#39;</span><span class="p">,</span> <span class="n">remote_data</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s">&#39;io.fits&#39;</span><span class="p">,</span> <span class="n">remote_data</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In addition, the <code class="docutils literal"><span class="pre">test</span></code> function supports any of the options that can be
@@ -200,7 +200,7 @@ and convenience options <code class="docutils literal"><span class="pre">verbose
 <p class="last">This method of running the tests defaults to the version of
 <a class="reference external" href="http://pytest.org/latest/">py.test</a> that is bundled with Astropy. To use the locally-installed
 version, you should set the <code class="docutils literal"><span class="pre">ASTROPY_USE_SYSTEM_PYTEST</span></code> environment
-variable (see <a class="reference internal" href="../config/index.html"><em>Configuration system (astropy.config)</em></a>) or the <a class="reference external" href="http://pytest.org/latest/">py.test</a> method described
+variable (see <a class="reference internal" href="../config/index.html"><span class="doc">Configuration system (astropy.config)</span></a>) or the <a class="reference external" href="http://pytest.org/latest/">py.test</a> method described
 above.</p>
 </div>
 </div>
@@ -216,11 +216,11 @@ locally without pushing to a continuous integration system.</p>
 a Python project and using that to configure the desired virtualenvs and start
 the tests.  So to run the Astropy tests on multiple Python versions using tox,
 simply install Tox:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install tox
+<div class="highlight-default"><div class="highlight"><pre>$ pip install tox
 </pre></div>
 </div>
 <p>and then from the root of an Astropy repository clone run:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ tox
+<div class="highlight-default"><div class="highlight"><pre>$ tox
 </pre></div>
 </div>
 <p>The Astropy tox configuration currently tests against Python versions 2.6, 2.7,
@@ -245,16 +245,16 @@ though it is probably worth defining a <a class="reference external" href="https
 <h4>Running parts of the test suite<a class="headerlink" href="#running-parts-of-the-test-suite" title="Permalink to this headline">¶</a></h4>
 <p>It is possible to run only the tests for a particular subpackage.  For
 example, to run only the <code class="docutils literal"><span class="pre">wcs</span></code> tests from the commandline:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py test -P wcs
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">-</span><span class="n">P</span> <span class="n">wcs</span>
 </pre></div>
 </div>
 <p>Or from Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="s">&quot;wcs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can also specify a single file to test from the commandline:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py test -t astropy/wcs/tests/test_wcs.py
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">-</span><span class="n">t</span> <span class="n">astropy</span><span class="o">/</span><span class="n">wcs</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">test_wcs</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>When the <code class="docutils literal"><span class="pre">-t</span></code> option is given a relative path, it is relative to the
@@ -262,7 +262,7 @@ installed root of astropy.  When <code class="docutils literal"><span class="pre
 documentation <code class="docutils literal"><span class="pre">.rst</span></code> file to test, it is relative to the root of the
 documentation, i.e. the <code class="docutils literal"><span class="pre">docs</span></code> directory in the source tree.  For
 example:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py test -t units/index.rst
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">-</span><span class="n">t</span> <span class="n">units</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 </div>
@@ -272,12 +272,12 @@ example:</p>
 files open.  Since this greatly slows down the time it takes to run
 the tests, it is turned off by default.</p>
 <p>To use it from the commandline, do:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py test --open-files
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">--</span><span class="nb">open</span><span class="o">-</span><span class="n">files</span>
 </pre></div>
 </div>
 <p>To use it from Python, do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">open_files</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">open_files</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -285,7 +285,7 @@ the tests, it is turned off by default.</p>
 <h4>Test coverage reports<a class="headerlink" href="#test-coverage-reports" title="Permalink to this headline">¶</a></h4>
 <p>Astropy can use <a class="reference external" href="http://nedbatchelder.com/code/coverage/">coverage.py</a> to
 generate test coverage reports.  To generate a test coverage report, use:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py test --coverage
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">--</span><span class="n">coverage</span>
 </pre></div>
 </div>
 <p>There is a <a class="reference external" href="http://nedbatchelder.com/code/coverage/config.html">coveragerc</a> file that
@@ -297,18 +297,18 @@ it.  In the source tree, it is at <code class="docutils literal"><span class="pr
 <h4>Running tests in parallel<a class="headerlink" href="#running-tests-in-parallel" title="Permalink to this headline">¶</a></h4>
 <p>It is possible to speed up astropy&#8217;s tests using the <a class="reference external" href="https://pypi.python.org/pypi/pytest-xdist">pytest-xdist</a> plugin.  This plugin can be
 installed using <a class="reference external" href="http://www.pip-installer.org/en/latest/">pip</a>:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install pytest-xdist
+<div class="highlight-default"><div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pytest</span><span class="o">-</span><span class="n">xdist</span>
 </pre></div>
 </div>
 <p>Once installed, tests can be run in parallel using the <code class="docutils literal"><span class="pre">'--parallel'</span></code>
 commandline option.  For example, to use 4 processes:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py test --parallel=4
+<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">--</span><span class="n">parallel</span><span class="o">=</span><span class="mi">4</span>
 </pre></div>
 </div>
 <p>Pass a negative number to <code class="docutils literal"><span class="pre">'--parallel'</span></code> to create the same number of
 processes as cores on your machine.</p>
 <p>Similarly, this feature can be invoked from Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -332,7 +332,7 @@ automatically discovered by <a class="reference external" href="http://pytest.or
 <h3>Simple example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h3>
 <p>The following example shows a simple function and a test to test this
 function:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Add one to the argument.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
@@ -342,26 +342,26 @@ function:</p>
 </pre></div>
 </div>
 <p>If we place this in a <code class="docutils literal"><span class="pre">test.py</span></code> file and then run:</p>
-<div class="highlight-python"><div class="highlight"><pre>py.test test.py
+<div class="highlight-default"><div class="highlight"><pre><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>The result is:</p>
-<div class="highlight-python"><div class="highlight"><pre>============================= test session starts ==============================
-python: platform darwin -- Python 2.7.2 -- pytest-1.1.1
-test object 1: /Users/tom/tmp/test.py
+<div class="highlight-default"><div class="highlight"><pre><span class="o">=============================</span> <span class="n">test</span> <span class="n">session</span> <span class="n">starts</span> <span class="o">==============================</span>
+<span class="n">python</span><span class="p">:</span> <span class="n">platform</span> <span class="n">darwin</span> <span class="o">--</span> <span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">2</span> <span class="o">--</span> <span class="n">pytest</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">test</span> <span class="nb">object</span> <span class="mi">1</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tom</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">py</span>
 
-test.py F
+<span class="n">test</span><span class="o">.</span><span class="n">py</span> <span class="n">F</span>
 
-=================================== FAILURES ===================================
-_________________________________ test_answer __________________________________
+<span class="o">===================================</span> <span class="n">FAILURES</span> <span class="o">===================================</span>
+<span class="n">_________________________________</span> <span class="n">test_answer</span> <span class="n">__________________________________</span>
 
-    def test_answer():
-&gt;       assert func(3) == 5
-E       assert 4 == 5
-E        +  where 4 = func(3)
+    <span class="k">def</span> <span class="nf">test_answer</span><span class="p">():</span>
+<span class="o">&gt;</span>       <span class="k">assert</span> <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+<span class="n">E</span>       <span class="k">assert</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">5</span>
+<span class="n">E</span>        <span class="o">+</span>  <span class="n">where</span> <span class="mi">4</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-test.py:5: AssertionError
-=========================== 1 failed in 0.07 seconds ===========================
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span> <span class="ne">AssertionError</span>
+<span class="o">===========================</span> <span class="mi">1</span> <span class="n">failed</span> <span class="ow">in</span> <span class="mf">0.07</span> <span class="n">seconds</span> <span class="o">===========================</span>
 </pre></div>
 </div>
 </div>
@@ -372,7 +372,7 @@ test.py:5: AssertionError
 <p>Each package should include a suite of unit tests, covering as many of
 the public methods/functions as possible. These tests should be
 included inside each sub-package, e.g:</p>
-<div class="highlight-python"><div class="highlight"><pre>astropy/io/fits/tests/
+<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span><span class="o">/</span><span class="n">io</span><span class="o">/</span><span class="n">fits</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">tests</span></code> directories should contain an <code class="docutils literal"><span class="pre">__init__.py</span></code> file so that
@@ -381,7 +381,7 @@ the tests can be imported and so that they can use relative imports.</p>
 <div class="section" id="interoperability-tests">
 <h4>Interoperability tests<a class="headerlink" href="#interoperability-tests" title="Permalink to this headline">¶</a></h4>
 <p>Tests involving two or more sub-packages should be included in:</p>
-<div class="highlight-python"><div class="highlight"><pre>astropy/tests/
+<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -464,7 +464,7 @@ config file which sets the cache location for the entire test run.  A
 other settings).  Currently it is not directly supported by the
 <code class="docutils literal"><span class="pre">./setup.py</span> <span class="pre">test</span></code> command, so it is necessary to use it with the <code class="docutils literal"><span class="pre">-a</span></code>
 argument like:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./setup.py test -a &quot;--cache-dir=/path/to/custom/cache/dir&quot;
+<div class="highlight-default"><div class="highlight"><pre>$ ./setup.py test -a &quot;--cache-dir=/path/to/custom/cache/dir&quot;
 </pre></div>
 </div>
 </div>
@@ -487,7 +487,7 @@ to be set up first. There are four ways to do this:</p>
 file, they are called before and after all the tests in the file respectively.
 These functions take one argument, which is the module itself, which makes it
 very easy to set module-wide variables:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">setup_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">setup_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Initialize the value of NUM.&quot;&quot;&quot;</span>
     <span class="n">module</span><span class="o">.</span><span class="n">NUM</span> <span class="o">=</span> <span class="mi">11</span>
 
@@ -503,7 +503,7 @@ very easy to set module-wide variables:</p>
 </div>
 <p>We can use this for example to download a remote test data file and have all
 the functions in the file access it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">setup_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Store a copy of the remote test file.&quot;&quot;&quot;</span>
@@ -524,7 +524,7 @@ the functions in the file access it:</p>
 <h4>Class-level setup/teardown<a class="headerlink" href="#class-level-setup-teardown" title="Permalink to this headline">¶</a></h4>
 <p>Tests can be organized into classes that have their own setup/teardown
 functions. In the following</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">add_nums</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">add_nums</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Add two numbers.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
@@ -556,28 +556,28 @@ tests in the class, and finally the <code class="docutils literal"><span class="
 <p>There are cases where one might want setup and teardown methods to be run
 before and after <em>each</em> test. For this, use the <code class="docutils literal"><span class="pre">setup_method</span></code> and
 <code class="docutils literal"><span class="pre">teardown_method</span></code> methods:</p>
-<div class="highlight-python"><div class="highlight"><pre>def add_nums(x, y):
-    &quot;&quot;&quot;Add two numbers.&quot;&quot;&quot;
-    return x + y
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">add_nums</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add two numbers.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-class TestAdd42(object):
-    &quot;&quot;&quot;Test for add_nums with y=42.&quot;&quot;&quot;
+<span class="k">class</span> <span class="nc">TestAdd42</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test for add_nums with y=42.&quot;&quot;&quot;</span>
 
-    def setup_method(self, method):
-        self.NUM = 42
+    <span class="k">def</span> <span class="nf">setup_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">NUM</span> <span class="o">=</span> <span class="mi">42</span>
 
-    def test_1(self):
-    &quot;&quot;&quot;Test behaviour for a specific input value.&quot;&quot;&quot;
-        added = add_nums(11, self.NUM)
-        assert added == 53
+    <span class="k">def</span> <span class="nf">test_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test behaviour for a specific input value.&quot;&quot;&quot;</span>
+        <span class="n">added</span> <span class="o">=</span> <span class="n">add_nums</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NUM</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">added</span> <span class="o">==</span> <span class="mi">53</span>
 
-    def test_2(self):
-    &quot;&quot;&quot;Test behaviour for another input value.&quot;&quot;&quot;
-        added = add_nums(13, self.NUM)
-        assert added == 55
+    <span class="k">def</span> <span class="nf">test_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test behaviour for another input value.&quot;&quot;&quot;</span>
+        <span class="n">added</span> <span class="o">=</span> <span class="n">add_nums</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NUM</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">added</span> <span class="o">==</span> <span class="mi">55</span>
 
-    def teardown_method(self, method):
-        pass
+    <span class="k">def</span> <span class="nf">teardown_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -586,7 +586,7 @@ class TestAdd42(object):
 <p>Finally, one can use <code class="docutils literal"><span class="pre">setup_function</span></code> and <code class="docutils literal"><span class="pre">teardown_function</span></code> to define a
 setup/teardown mechanism to be run before and after each function in a module.
 These take one argument, which is the function being tested:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">setup_function</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">setup_function</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
     <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">test_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -608,7 +608,7 @@ These take one argument, which is the function being tested:</p>
 <p>If you want to run a test several times for slightly different values, then
 it can be advantageous to use the <code class="docutils literal"><span class="pre">py.test</span></code> option to parametrize tests.
 For example, instead of writing:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
     <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
 
 <span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
@@ -620,7 +620,7 @@ For example, instead of writing:</p>
 </div>
 <p>You can use the <code class="docutils literal"><span class="pre">parametrize</span></code> decorator to loop over the different
 inputs:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@pytest.mark.parametrize</span><span class="p">((</span><span class="s">&#39;letter&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">((</span><span class="s">&#39;letter&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Check that the input is a string.&quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
@@ -633,15 +633,15 @@ inputs:</p>
 dependencies (e.g. Scipy), pytest should be instructed to skip the
 test if the dependencies are not present. The following example shows
 how this should be done:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">scipy</span>
-    <span class="n">HAS_SCIPY</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">HAS_SCIPY</span> <span class="o">=</span> <span class="k">True</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="n">HAS_SCIPY</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">HAS_SCIPY</span> <span class="o">=</span> <span class="k">False</span>
 
-<span class="nd">@pytest.mark.skipif</span><span class="p">(</span><span class="s">&#39;not HAS_SCIPY&#39;</span><span class="p">)</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skipif</span><span class="p">(</span><span class="s">&#39;not HAS_SCIPY&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_that_uses_scipy</span><span class="p">():</span>
     <span class="o">...</span>
 </pre></div>
@@ -654,7 +654,7 @@ present.</p>
 <h3>Using py.test helper functions<a class="headerlink" href="#using-py-test-helper-functions" title="Permalink to this headline">¶</a></h3>
 <p>If your tests need to use <a class="reference external" href="http://pytest.org/latest/builtin.html#pytest-helpers">py.test helper functions</a>, such as
 <code class="docutils literal"><span class="pre">pytest.raises</span></code>, import <code class="docutils literal"><span class="pre">pytest</span></code> into your test module like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">...tests.helper</span> <span class="kn">import</span> <span class="n">pytest</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">...tests.helper</span> <span class="k">import</span> <span class="n">pytest</span>
 </pre></div>
 </div>
 <p>You may need to adjust the relative import to work for the depth of
@@ -672,7 +672,7 @@ in the standard library, this one will reset all warning state before
 hand so one is assured to get the warnings reported, regardless of
 what errors may have been emitted by other tests previously.  Here is
 a real-world example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.tests.helper</span> <span class="kn">import</span> <span class="n">catch_warnings</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.tests.helper</span> <span class="k">import</span> <span class="n">catch_warnings</span>
 
 <span class="k">with</span> <span class="n">catch_warnings</span><span class="p">(</span><span class="n">MergeConflictWarning</span><span class="p">)</span> <span class="k">as</span> <span class="n">warning_lines</span><span class="p">:</span>
     <span class="c"># Test code which triggers a MergeConflictWarning</span>
@@ -702,10 +702,10 @@ can use the <a class="reference internal" href="../api/astropy.config.ConfigItem
 temporarily set a configuration item to that value, test within that
 context, and have it automatically return to its original value.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre>def test_pprint():
-    from ... import conf
-    with conf.set_temp(&#39;max_lines&#39;, 6):
-        # ...
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_pprint</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">...</span> <span class="k">import</span> <span class="n">conf</span>
+    <span class="k">with</span> <span class="n">conf</span><span class="o">.</span><span class="n">set_temp</span><span class="p">(</span><span class="s">&#39;max_lines&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="c"># ...</span>
 </pre></div>
 </div>
 </div>
@@ -717,7 +717,7 @@ context, and have it automatically return to its original value.</p>
 order to ensure that astropy supports user code written in both
 styles, the testing framework has a special feature to run a module
 containing tests in both modes.  Simply add the comment:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># TEST_UNICODE_LITERALS</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="c"># TEST_UNICODE_LITERALS</span>
 </pre></div>
 </div>
 <p>anywhere in the file, and all tests in that file will be tested twice:
@@ -729,14 +729,14 @@ where string literals are <a class="reference external" href="http://docs.python
 <p>Blocks of code may be ignored by the coverage testing by adding a
 comment containing the phrase <code class="docutils literal"><span class="pre">pragma:</span> <span class="pre">no</span> <span class="pre">cover</span></code> to the start of the
 block:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">this_rarely_happens</span><span class="p">:</span>  <span class="c"># pragma: no cover</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">if</span> <span class="n">this_rarely_happens</span><span class="p">:</span>  <span class="c"># pragma: no cover</span>
     <span class="n">this_call_is_ignored</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Blocks of code that are intended to run only in Python 2.x or 3.x may
 also be marked so that they will be ignored when appropriate by
 <code class="docutils literal"><span class="pre">coverage.py</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>  <span class="c"># pragma: py3</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>  <span class="c"># pragma: py3</span>
     <span class="n">do_it_the_python3_way</span><span class="p">()</span>
 <span class="k">else</span><span class="p">:</span>  <span class="c"># pragma: py2</span>
     <span class="n">do_it_the_python2_way</span><span class="p">()</span>
@@ -744,7 +744,7 @@ also be marked so that they will be ignored when appropriate by
 </div>
 <p>Using <code class="docutils literal"><span class="pre">six.PY3</span></code> and <code class="docutils literal"><span class="pre">six.PY2</span></code> will also automatically exclude
 blocks from coverage, without requiring the pragma comment:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY3</span><span class="p">:</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY3</span><span class="p">:</span>
     <span class="n">do_it_the_python3_way</span><span class="p">()</span>
 <span class="k">elif</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
     <span class="n">do_it_the_python2_way</span><span class="p">()</span>
@@ -807,7 +807,7 @@ usage as a doctest, the entire function can be skipped in the doctest
 collection phase.</p>
 <p>The value of <code class="docutils literal"><span class="pre">__doctest_skip__</span></code> should be a list of wildcard patterns
 for all functions/classes whose doctests should be skipped.  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">__doctest_skip__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;myfunction&#39;</span><span class="p">,</span> <span class="s">&#39;MyClass&#39;</span><span class="p">,</span> <span class="s">&#39;MyClass.*&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">__doctest_skip__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;myfunction&#39;</span><span class="p">,</span> <span class="s">&#39;MyClass&#39;</span><span class="p">,</span> <span class="s">&#39;MyClass.*&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>skips the doctests in a function called <code class="docutils literal"><span class="pre">myfunction</span></code>, the doctest for a
@@ -815,25 +815,25 @@ class called <code class="docutils literal"><span class="pre">MyClass</span></co
 <p>Module docstrings may contain doctests as well.  To skip the module-level
 doctests include the string <code class="docutils literal"><span class="pre">'.'</span></code> in <code class="docutils literal"><span class="pre">__doctest_skip__</span></code>.</p>
 <p>To skip all doctests in a module:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">__doctest_skip__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">__doctest_skip__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">In the Sphinx documentation, a doctest section can be skipped by
 making it part of a <code class="docutils literal"><span class="pre">doctest-skip</span></code> directive:</p>
-<div class="highlight-python"><div class="highlight"><pre>.. doctest-skip::
+<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="n">doctest</span><span class="o">-</span><span class="n">skip</span><span class="p">::</span>
 
-    &gt;&gt;&gt; # This is a doctest that will appear in the documentation,
-    &gt;&gt;&gt; # but will not be executed by the testing framework.
-    &gt;&gt;&gt; 1 / 0  # Divide by zero, ouch!
+    <span class="o">&gt;&gt;&gt;</span> <span class="c"># This is a doctest that will appear in the documentation,</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="c"># but will not be executed by the testing framework.</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>  <span class="c"># Divide by zero, ouch!</span>
 </pre></div>
 </div>
 <p>It is also possible to skip all doctests below a certain line using
 a <code class="docutils literal"><span class="pre">doctest-skip-all</span></code> comment.  Note the lack of <code class="docutils literal"><span class="pre">::</span></code> at the end
 of the line here:</p>
-<div class="highlight-python"><div class="highlight"><pre>.. doctest-skip-all
+<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="n">doctest</span><span class="o">-</span><span class="n">skip</span><span class="o">-</span><span class="nb">all</span>
 
-All doctests below here are skipped...
+<span class="n">All</span> <span class="n">doctests</span> <span class="n">below</span> <span class="n">here</span> <span class="n">are</span> <span class="n">skipped</span><span class="o">...</span>
 </pre></div>
 </div>
 </li>
@@ -844,7 +844,7 @@ be <em>importable</em> in order for the tests to run.  For example, if some test
 require the scipy module to work they will be skipped unless <code class="docutils literal"><span class="pre">import</span>
 <span class="pre">scipy</span></code> is possible.  It is also possible to use a tuple of wildcard
 patterns as a key in this dict:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">__doctest_requires__</span> <span class="o">=</span> <span class="p">{(</span><span class="s">&#39;func1&#39;</span><span class="p">,</span> <span class="s">&#39;func2&#39;</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;scipy&#39;</span><span class="p">]}</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">__doctest_requires__</span> <span class="o">=</span> <span class="p">{(</span><span class="s">&#39;func1&#39;</span><span class="p">,</span> <span class="s">&#39;func2&#39;</span><span class="p">):</span> <span class="p">[</span><span class="s">&#39;scipy&#39;</span><span class="p">]}</span>
 </pre></div>
 </div>
 <p>Having this module-level variable will require <code class="docutils literal"><span class="pre">scipy</span></code> to be importable
@@ -852,10 +852,10 @@ in order to run the doctests for functions <code class="docutils literal"><span 
 module.</p>
 <p>In the Sphinx documentation, a doctest requirement can be notated with the
 <code class="docutils literal"><span class="pre">doctest-requires</span></code> directive:</p>
-<div class="highlight-python"><div class="highlight"><pre>.. doctest-requires:: scipy
+<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="n">doctest</span><span class="o">-</span><span class="n">requires</span><span class="p">::</span> <span class="n">scipy</span>
 
-    &gt;&gt;&gt; import scipy
-    &gt;&gt;&gt; scipy.hamming(...)
+    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">scipy</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">scipy</span><span class="o">.</span><span class="n">hamming</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -872,7 +872,7 @@ contain the <code class="docutils literal"><span class="pre">__repr__</span></co
 on each run), or a test that expects an exception may output a traceback.</p>
 <p>The simplest way to generalize the example output is to use the ellipses
 <code class="docutils literal"><span class="pre">...</span></code>.  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">integer division or modulo by zero</span>
@@ -890,7 +890,7 @@ check that the code executes without errors), but allows the entire output
 to be ignored in cases where we don&#8217;t care what the output is.  This differs
 from using ellipses in that we can still provide complete example output, just
 without the test checking that it is exactly right.  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s">&#39;Hello world&#39;</span><span class="p">)</span>  
 <span class="go">We don&#39;t really care what the output is as long as there were no errors...</span>
 </pre></div>
 </div>
@@ -1017,7 +1017,7 @@ details on how to set up this machinery, see the <a class="reference external" h
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

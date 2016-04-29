@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Gaussian2D &mdash; Astropy v1.2.dev14978</title>
+    <title>Gaussian2D &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="../modeling/index.html" />
     <link rel="next" title="Linear1D" href="astropy.modeling.functional_models.Linear1D.html" />
     <link rel="prev" title="GaussianAbsorption1D" href="astropy.modeling.functional_models.GaussianAbsorption1D.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../modeling/index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -178,13 +178,13 @@ may be used.</p>
 <p>Model formula:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/331e7cd5b0f6e151802c882f4c86d75ea8ddf29a.png" alt="f(x, y) = A e^{-a\left(x - x_{0}\right)^{2}  -b\left(x - x_{0}\right)
+<p><img src="../_images/math/fda9b7cfa47db8821b1f9235e98f594956792e59.png" alt="f(x, y) = A e^{-a\left(x - x_{0}\right)^{2}  -b\left(x - x_{0}\right)
 \left(y - y_{0}\right)  -c\left(y - y_{0}\right)^{2}}"/></p>
 </div></div></blockquote>
 <p>Using the following definitions:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/c9da97db1b6b1b1c027a8e48f8aefff37e17a8ca.png" alt="a = \left(\frac{\cos^{2}{\left (\theta \right )}}{2 \sigma_{x}^{2}} +
+<p><img src="../_images/math/442f23cd78a2b2a64459a825b632d1a588204193.png" alt="a = \left(\frac{\cos^{2}{\left (\theta \right )}}{2 \sigma_{x}^{2}} +
 \frac{\sin^{2}{\left (\theta \right )}}{2 \sigma_{y}^{2}}\right)
 
 b = \left(\frac{\sin{\left (2 \theta \right )}}{2 \sigma_{x}^{2}} -
@@ -196,14 +196,14 @@ c = \left(\frac{\sin^{2}{\left (\theta \right )}}{2 \sigma_{x}^{2}} +
 <dl class="docutils">
 <dt>If using a <code class="docutils literal"><span class="pre">cov_matrix</span></code>, the model is of the form:</dt>
 <dd><div class="first last math">
-<p><img src="../_images/math/47c8e5b27b826ee38c0d4da9d9eadf9a10dc912c.png" alt="f(x, y) = A e^{-0.5 \left(\vec{x} - \vec{x}_{0}\right)^{T} \Sigma^{-1} \left(\vec{x} - \vec{x}_{0}\right)}"/></p>
+<p><img src="../_images/math/467143e94afd1e920d90233be7ffb96a0c4d677c.png" alt="f(x, y) = A e^{-0.5 \left(\vec{x} - \vec{x}_{0}\right)^{T} \Sigma^{-1} \left(\vec{x} - \vec{x}_{0}\right)}"/></p>
 </div></dd>
 </dl>
 <p>where <img class="math" src="../_images/math/d47841f95f78da996bb3d8aadec193b3d0457d77.png" alt="\vec{x} = [x, y]"/>, <img class="math" src="../_images/math/c2b42e5f1b80cba837d6f5beec676b3742753e70.png" alt="\vec{x}_{0} = [x_{0}, y_{0}]"/>,
 and <img class="math" src="../_images/math/19ac15bf260b22dcb61a1042c60259e4b0bfbd64.png" alt="\Sigma"/> is the covariance matrix:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/174430fdbcbeecafdfdca0bfeb85ed8922537b9f.png" alt="\Sigma = \left(\begin{array}{ccc}
+<p><img src="../_images/math/f27977ac3e35a07ca62d1dc9726d8a23f176b90a.png" alt="\Sigma = \left(\begin{array}{ccc}
 \sigma_x^2               &amp; \rho \sigma_x \sigma_y \\
 \rho \sigma_x \sigma_y &amp; \sigma_y^2
 \end{array}\right)"/></p>
@@ -340,7 +340,7 @@ corresponds to a <code class="docutils literal"><span class="pre">theta</span></
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

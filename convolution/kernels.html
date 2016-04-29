@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Convolution Kernels &mdash; Astropy v1.2.dev14978</title>
+    <title>Convolution Kernels &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Convolution and filtering (astropy.convolution)" href="index.html" />
     <link rel="next" title="convolve" href="../api/astropy.convolution.convolve.html" />
     <link rel="prev" title="Using the convolution functions" href="using.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Convolution and filtering (<code class="docutils literal"><span class="pre">astropy.convolution</span></code>)</a> &raquo;</li>
@@ -104,9 +104,9 @@ array, which can be used for discrete convolution with the binned data.</p>
 <h3>1D Kernels<a class="headerlink" href="#d-kernels" title="Permalink to this headline">¶</a></h3>
 <p>One application of filtering is to smooth noisy data. In this case we
 consider a noisy Lorentz curve:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Lorentz1D</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">Gaussian1DKernel</span><span class="p">,</span> <span class="n">Box1DKernel</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Lorentz1D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">Gaussian1DKernel</span><span class="p">,</span> <span class="n">Box1DKernel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lorentz</span> <span class="o">=</span> <span class="n">Lorentz1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data_1D</span> <span class="o">=</span> <span class="n">lorentz</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -114,13 +114,13 @@ consider a noisy Lorentz curve:</p>
 </div>
 <p>Smoothing the noisy data with a <a class="reference internal" href="../api/astropy.convolution.Gaussian1DKernel.html#astropy.convolution.Gaussian1DKernel" title="astropy.convolution.Gaussian1DKernel"><code class="xref py py-obj docutils literal"><span class="pre">Gaussian1DKernel</span></code></a>
 with a standard deviation of 2 pixels:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_kernel</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_kernel</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_data_gauss</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">data_1D</span><span class="p">,</span> <span class="n">gauss_kernel</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Smoothing the same data with a <a class="reference internal" href="../api/astropy.convolution.Box1DKernel.html#astropy.convolution.Box1DKernel" title="astropy.convolution.Box1DKernel"><code class="xref py py-obj docutils literal"><span class="pre">Box1DKernel</span></code></a> of
 width 5 pixels:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box_kernel</span> <span class="o">=</span> <span class="n">Box1DKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box_kernel</span> <span class="o">=</span> <span class="n">Box1DKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_data_box</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">data_1D</span><span class="p">,</span> <span class="n">box_kernel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -135,7 +135,7 @@ width 5 pixels:</p>
 the kernels with Numpy or Scipy convolution by passing the <code class="docutils literal"><span class="pre">array</span></code> attribute.
 This will be faster in most cases than the astropy convolution, but will not
 work properly if <code class="docutils literal"><span class="pre">NaN</span></code> values are present in the data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">data_1D</span><span class="p">,</span> <span class="n">box_kernel</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">data_1D</span><span class="p">,</span> <span class="n">box_kernel</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -145,9 +145,9 @@ work properly if <code class="docutils literal"><span class="pre">NaN</span></co
 direction. Therefore the use of 2D kernels is basically the same as for 1D
 kernels. We consider a small Gaussian shaped source of amplitude one in the
 middle of the image and add 10% noise:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">Gaussian2DKernel</span><span class="p">,</span> <span class="n">Tophat2DKernel</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Gaussian2D</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">Gaussian2DKernel</span><span class="p">,</span> <span class="n">Tophat2DKernel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Gaussian2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss</span> <span class="o">=</span> <span class="n">Gaussian2D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Fake image data including noise</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
@@ -159,13 +159,13 @@ middle of the image and add 10% noise:</p>
 <p>Smoothing the noisy data with a
 <a class="reference internal" href="../api/astropy.convolution.Gaussian2DKernel.html#astropy.convolution.Gaussian2DKernel" title="astropy.convolution.Gaussian2DKernel"><code class="xref py py-class docutils literal"><span class="pre">Gaussian2DKernel</span></code></a> with a standard
 deviation of 2 pixels:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_kernel</span> <span class="o">=</span> <span class="n">Gaussian2DKernel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_kernel</span> <span class="o">=</span> <span class="n">Gaussian2DKernel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_data_gauss</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">data_2D</span><span class="p">,</span> <span class="n">gauss_kernel</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Smoothing the noisy data with a
 <a class="reference internal" href="../api/astropy.convolution.Tophat2DKernel.html#astropy.convolution.Tophat2DKernel" title="astropy.convolution.Tophat2DKernel"><code class="xref py py-class docutils literal"><span class="pre">Tophat2DKernel</span></code></a> of width 5 pixels:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tophat_kernel</span> <span class="o">=</span> <span class="n">Tophat2DKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tophat_kernel</span> <span class="o">=</span> <span class="n">Tophat2DKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_data_tophat</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">data_2D</span><span class="p">,</span> <span class="n">tophat_kernel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -247,7 +247,7 @@ The best choice for the filter strongly depends on the application.</p>
 <p>As convolution is a linear operation, kernels can be added or subtracted from each other.
 They can also be multiplied with some number. One basic example would be the definition
 of a Difference of Gaussian filter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">Gaussian1DKernel</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">Gaussian1DKernel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_1</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_2</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">DoG</span> <span class="o">=</span> <span class="n">gauss_2</span> <span class="o">-</span> <span class="n">gauss_1</span>
@@ -255,13 +255,13 @@ of a Difference of Gaussian filter:</p>
 </div>
 <p>Another application is to convolve faked data with an instrument response function model.
 E.g. if the response function can be be described by the weighted sum of two Gaussians:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_1</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_1</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_2</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">SoG</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">gauss_1</span> <span class="o">+</span> <span class="n">gauss_2</span>
 </pre></div>
 </div>
 <p>Most times it will be necessary to normalize the resulting kernel by calling explicitly:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">SoG</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">SoG</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -270,29 +270,29 @@ E.g. if the response function can be be described by the weighted sum of two Gau
 <p>Furthermore two kernels can be convolved with each other, which is useful when
 data is filtered with two different kinds of kernels or to create a new,
 special kernel:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">Gaussian1DKernel</span><span class="p">,</span> <span class="n">convolve</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">Gaussian1DKernel</span><span class="p">,</span> <span class="n">convolve</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_1</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_2</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">broad_gaussian</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">gauss_2</span><span class="p">,</span>  <span class="n">gauss_1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Or in case of multistage smoothing:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Lorentz1D</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">Gaussian1DKernel</span><span class="p">,</span> <span class="n">Box1DKernel</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Lorentz1D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">Gaussian1DKernel</span><span class="p">,</span> <span class="n">Box1DKernel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lorentz</span> <span class="o">=</span> <span class="n">Lorentz1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data_1D</span> <span class="o">=</span> <span class="n">lorentz</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">box</span> <span class="o">=</span> <span class="n">Box1DKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_gauss</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">data_1D</span><span class="p">,</span> <span class="n">gauss</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_gauss_box</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">smoothed_gauss</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You would rather do the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">box</span> <span class="o">=</span> <span class="n">Box1DKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_gauss_box</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">data_1D</span><span class="p">,</span> <span class="n">convolve</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">gauss</span><span class="p">))</span>
 </pre></div>
@@ -310,14 +310,14 @@ discretization step the following modes are available:</p>
 <ul>
 <li><p class="first">Mode <code class="docutils literal"><span class="pre">'center'</span></code> (default) evaluates the response function on the grid by
 taking the value at the center of the bin.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">Gaussian1DKernel</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">Gaussian1DKernel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_center</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Mode <code class="docutils literal"><span class="pre">'linear_interp'</span></code> takes the values at the corners of the bin and linearly
 interpolates the value at the center:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_interp</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;linear_interp&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_interp</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;linear_interp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -326,7 +326,7 @@ oversampled grid. The oversample factor can be specified with the <code class="d
 argument. If the oversample factor is too large, the evaluation becomes slow.</p>
 </li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_oversample</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;oversample&#39;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_oversample</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;oversample&#39;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -334,7 +334,7 @@ argument. If the oversample factor is too large, the evaluation becomes slow.</p
 <code class="docutils literal"><span class="pre">scipy.integrate.quad</span></code> and <code class="docutils literal"><span class="pre">scipy.integrate.dblquad</span></code>. This mode is very
 slow and only recommended when highest accuracy is required.</li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_integrate</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;integrate&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gauss_integrate</span> <span class="o">=</span> <span class="n">Gaussian1DKernel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;integrate&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Especially in the range where the kernel width is in order of only a few pixels
@@ -406,7 +406,7 @@ both filters are derived from a normalized Gaussian function.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

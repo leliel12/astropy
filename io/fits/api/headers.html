@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Headers &mdash; Astropy v1.2.dev14978</title>
+    <title>Headers &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Cards" href="cards.html" />
     <link rel="prev" title="Header Data Units" href="hdus.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14978</a>
+	<a href="../../../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -101,21 +101,21 @@ It is also possible to use a 2-tuple as the index in the form (keyword,
 n)&#8211;this returns the n-th value with that keyword, in the case where there
 are duplicate keywords.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
 <span class="go">0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[(</span><span class="s">&#39;FOO&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>  <span class="c"># Return the value of the second FOO keyword</span>
 <span class="go">&#39;foo&#39;</span>
 </pre></div>
 </div>
 <p>The header may also be indexed by card number:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c"># Return the value of the first card in the header</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c"># Return the value of the first card in the header</span>
 <span class="go">&#39;T&#39;</span>
 </pre></div>
 </div>
 <p>Commentary keywords such as HISTORY and COMMENT are special cases: When
 indexing the Header object with either &#8216;HISTORY&#8217; or &#8216;COMMENT&#8217; a list of all
 the HISTORY/COMMENT values is returned:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;HISTORY&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;HISTORY&#39;</span><span class="p">]</span>
 <span class="go">This is the first history entry in this header.</span>
 <span class="go">This is the second history entry in this header.</span>
 <span class="gp">...</span>
@@ -291,12 +291,12 @@ looked at, but it should not be modified directly.</p>
 <code class="descname">comments</code><a class="headerlink" href="#astropy.io.fits.Header.comments" title="Permalink to this definition">¶</a></dt>
 <dd><p>View the comments associated with each keyword, if any.</p>
 <p>For example, to see the comment on the NAXIS keyword:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">comments</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">comments</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
 <span class="go">number of data axes</span>
 </pre></div>
 </div>
 <p>Comments can also be updated through this interface:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">comments</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Number of data axes&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">comments</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Number of data axes&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -549,8 +549,8 @@ file).</p>
 <dt id="astropy.io.fits.Header.fromtextfile">
 <em class="property">classmethod </em><code class="descname">fromtextfile</code><span class="sig-paren">(</span><em>fileobj</em>, <em>endcard=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/header.py#L711" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/header.html#Header.fromtextfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.Header.fromtextfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Equivalent to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Header</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">endcard</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-<span class="gp">... </span>                <span class="n">padding</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Header</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">endcard</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="n">padding</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -771,11 +771,11 @@ if no position is specified.</p>
 <code class="docutils literal"><span class="pre">header[keyword]</span> <span class="pre">=</span> <span class="pre">(value,</span> <span class="pre">comment)</span></code> respectively.</p>
 <p>New keywords can also be inserted relative to existing keywords
 using, for example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;NAXIS&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Number of axes&#39;</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;NAXIS&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Number of axes&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>to insert before an existing keyword, or:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&#39;NAXIS&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">,</span> <span class="mi">4096</span><span class="p">),</span> <span class="n">after</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&#39;NAXIS&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">,</span> <span class="mi">4096</span><span class="p">),</span> <span class="n">after</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>to insert after an existing keyword.</p>
@@ -935,8 +935,8 @@ multiple of 2880 characters</p>
 <dt id="astropy.io.fits.Header.totextfile">
 <code class="descname">totextfile</code><span class="sig-paren">(</span><em>fileobj</em>, <em>endcard=False</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/header.py#L722" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/header.html#Header.totextfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.Header.totextfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Equivalent to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Header</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">endcard</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-<span class="gp">... </span>              <span class="n">padding</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Header</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">endcard</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
+<span class="gp">... </span>              <span class="n">padding</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -954,11 +954,11 @@ iterable the items must be (keyword, value) tuples or (keyword, value,
 comment) tuples.</p>
 <p>Arbitrary arguments are also accepted, in which case the update() is
 called again with the kwargs dict as its only argument.  That is,</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">NAXIS1</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">NAXIS2</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">NAXIS1</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">NAXIS2</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>is equivalent to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s">&#39;NAXIS2&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">})</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s">&#39;NAXIS2&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">})</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -973,39 +973,39 @@ old API is being used.  Use of the old API should be considered
 follows:</p>
 <ul>
 <li><p class="first">Replace</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>with</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Replace</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>with</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Replace</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="n">before_keyword</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="n">before_keyword</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>with</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">before_keyword</span><span class="p">,</span> <span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">before_keyword</span><span class="p">,</span> <span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Replace</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="n">after_keyword</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="n">after_keyword</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>with</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">after_keyword</span><span class="p">,</span> <span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
-              <span class="n">after</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">after_keyword</span><span class="p">,</span> <span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+              <span class="n">after</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -1099,7 +1099,7 @@ preserved.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

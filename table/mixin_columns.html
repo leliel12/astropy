@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Mixin columns &mdash; Astropy v1.2.dev14978</title>
+    <title>Mixin columns &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="index.html" />
     <link rel="next" title="Table implementation details" href="implementation_details.html" />
     <link rel="prev" title="Interfacing with the pandas package" href="pandas.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -98,12 +98,12 @@ converted in any way but are used natively.</p>
 <li><a class="reference internal" href="../api/astropy.table.NdarrayMixin.html#astropy.table.NdarrayMixin" title="astropy.table.NdarrayMixin"><code class="xref py py-obj docutils literal"><span class="pre">NdarrayMixin</span></code></a></li>
 </ul>
 <p>As a first example we can create a table and add a time column:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.time</span> <span class="k">import</span> <span class="n">Time</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Time</span><span class="p">([</span><span class="s">&#39;2001-01-02T12:34:56&#39;</span><span class="p">,</span> <span class="s">&#39;2001-02-03T00:01:02&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="go">index           time</span>
 <span class="go">----- -----------------------</span>
 <span class="go">    1 2001-01-02T12:34:56.000</span>
@@ -111,7 +111,7 @@ converted in any way but are used natively.</p>
 </pre></div>
 </div>
 <p>The important point here is that the <code class="docutils literal"><span class="pre">time</span></code> column is a bona fide <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> object:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span>
 <span class="go">&lt;Time object: scale=&#39;utc&#39; format=&#39;isot&#39; value=[&#39;2001-01-02T12:34:56.000&#39; &#39;2001-02-03T00:01:02.000&#39;]&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mjd</span>
 <span class="go">array([ 51911.52425926,  51943.00071759])</span>
@@ -136,13 +136,13 @@ probably the best class to use.</p>
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> object and a <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> object with units of <code class="docutils literal"><span class="pre">m</span> <span class="pre">/</span> <span class="pre">s</span></code>.  In this case
 the quantity is converted to a <a class="reference internal" href="../api/astropy.table.Column.html#astropy.table.Column" title="astropy.table.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> (which has a <code class="docutils literal"><span class="pre">unit</span></code> attribute but
 does not have all the features of a <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a>):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Time</span><span class="p">([</span><span class="s">&#39;2001-01-02T12:34:56&#39;</span><span class="p">,</span> <span class="s">&#39;2001-02-03T00:01:02&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="go">index           time          velocity</span>
 <span class="go">                               m / s</span>
 <span class="go">----- ----------------------- --------</span>
@@ -160,7 +160,7 @@ does not have all the features of a <a class="reference internal" href="../api/a
 </pre></div>
 </div>
 <p>So instead let&#8217;s do the same thing using a quantity table <a class="reference internal" href="../api/astropy.table.QTable.html#astropy.table.QTable" title="astropy.table.QTable"><code class="xref py py-class docutils literal"><span class="pre">QTable</span></code></a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">QTable</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">QTable</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="p">[</span><span class="s">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -169,7 +169,7 @@ does not have all the features of a <a class="reference internal" href="../api/a
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">velocity</span></code> column is now a <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> and behaves accordingly:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">qt</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">qt</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">])</span>
 <span class="go">&lt;class &#39;astropy.units.quantity.Quantity&#39;&gt;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span>
@@ -180,7 +180,7 @@ does not have all the features of a <a class="reference internal" href="../api/a
 </pre></div>
 </div>
 <p>You can easily convert <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> to <a class="reference internal" href="../api/astropy.table.QTable.html#astropy.table.QTable" title="astropy.table.QTable"><code class="xref py py-class docutils literal"><span class="pre">QTable</span></code></a> and vice-versa:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt2</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt2</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">qt2</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">])</span>
 <span class="go">&lt;class &#39;astropy.units.quantity.Quantity&#39;&gt;</span>
 
@@ -194,7 +194,7 @@ does not have all the features of a <a class="reference internal" href="../api/a
 <h2>Mixin Attributes<a class="headerlink" href="#mixin-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The usual column attributes <code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">dtype</span></code>, <code class="docutils literal"><span class="pre">unit</span></code>, <code class="docutils literal"><span class="pre">format</span></code>, and
 <code class="docutils literal"><span class="pre">description</span></code> are available in any mixin column via the <code class="docutils literal"><span class="pre">info</span></code> property:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="p">[</span><span class="s">&#39;velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span>
 <span class="go">&#39;velocity&#39;</span>
 </pre></div>
 </div>
@@ -222,7 +222,7 @@ the table.  However, there are limitations in the current implementation.</p>
 mutable (data can changed internally) and that have an <code class="docutils literal"><span class="pre">insert()</span></code> method.
 <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> supports <code class="docutils literal"><span class="pre">insert()</span></code> but <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> and <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-class docutils literal"><span class="pre">SkyCoord</span></code></a> do not.  If we try to
 insert a row into the previously defined table an exception occurs:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="o">.</span><span class="n">add_row</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;2001-02-03T00:01:02&#39;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="o">.</span><span class="n">add_row</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;2001-02-03T00:01:02&#39;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span>
 <span class="gt">Traceback (most recent call last):</span>
   <span class="c">...</span>
 <span class="gr">ValueError</span>: <span class="n">Unable to insert row because of exception in column &#39;time&#39;:</span>
@@ -232,7 +232,7 @@ insert a row into the previously defined table an exception occurs:</p>
 <p><strong>Initializing from a list of rows or a list of dicts</strong></p>
 <p>This mode of initializing a table does not work with mixin columns, so both of
 the following will fail:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">([{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">([{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
 <span class="gp">... </span>             <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}])</span>
 <span class="gt">Traceback (most recent call last):</span>
  <span class="c">...</span>
@@ -271,20 +271,20 @@ that contain mixin columns:</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="operations.html#grouped-operations"><span>Grouped operations</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="operations.html#grouped-operations"><span class="std std-ref">Grouped operations</span></a></td>
 <td>Not implemented yet, but no fundamental limitation</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="operations.html#stack-vertically"><span>Stack vertically</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="operations.html#stack-vertically"><span class="std std-ref">Stack vertically</span></a></td>
 <td>Not implemented yet, pending definition of generic concatenation protocol</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="operations.html#stack-horizontally"><span>Stack horizontally</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="operations.html#stack-horizontally"><span class="std std-ref">Stack horizontally</span></a></td>
 <td>Works if output mixin columns do not require masking</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="operations.html#table-join"><span>Join</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="operations.html#table-join"><span class="std std-ref">Join</span></a></td>
 <td>Works if output mixin columns do not require masking; no mixin key
 columns allowed</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="operations.html#unique-rows"><span>Unique rows</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="operations.html#unique-rows"><span class="std std-ref">Unique rows</span></a></td>
 <td>Not implemented yet, uses grouped operations</td>
 </tr>
 </tbody>
@@ -326,7 +326,7 @@ concept</a> is available.</li>
 a mixin column class.  This class is a simple wrapper around a numpy array.  It
 is used in the astropy mixin test suite and is fully compliant as a mixin
 column.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.utils.data_info</span> <span class="kn">import</span> <span class="n">ParentDtypeInfo</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy.utils.data_info</span> <span class="k">import</span> <span class="n">ParentDtypeInfo</span>
 
 <span class="k">class</span> <span class="nc">ArrayWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -400,7 +400,7 @@ column.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

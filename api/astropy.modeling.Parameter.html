@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Parameter &mdash; Astropy v1.2.dev14978</title>
+    <title>Parameter &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="../modeling/index.html" />
     <link rel="next" title="SerialCompositeModel" href="astropy.modeling.SerialCompositeModel.html" />
     <link rel="prev" title="ModelDefinitionError" href="astropy.modeling.ModelDefinitionError.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../modeling/index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -106,7 +106,7 @@ model&#8217;s adjustable parameter values.</p>
 and are merely used by model classes to determine the names of their
 parameters and other information about each parameter such as their default
 values and default constraints.</p>
-<p>See <a class="reference internal" href="../modeling/parameters.html#modeling-parameters"><span>Parameters</span></a> for more details.</p>
+<p>See <a class="reference internal" href="../modeling/parameters.html#modeling-parameters"><span class="std std-ref">Parameters</span></a> for more details.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -311,12 +311,12 @@ should be raised, though this is not currently a requirement).</p>
 is set on, so the underlying validator method should have the same
 name as the <a class="reference internal" href="#astropy.modeling.Parameter" title="astropy.modeling.Parameter"><code class="xref py py-obj docutils literal"><span class="pre">Parameter</span></code></a> itself (think of this as analogous to
 <code class="docutils literal"><span class="pre">property.setter</span></code>).  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">Fittable1DModel</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">Fittable1DModel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TestModel</span><span class="p">(</span><span class="n">Fittable1DModel</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">a</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">b</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">()</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="nd">@a.validator</span>
+<span class="gp">... </span>    <span class="nd">@a</span><span class="o">.</span><span class="n">validator</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="c"># Remember, the value can be an array</span>
 <span class="gp">... </span>        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">):</span>
@@ -344,7 +344,7 @@ name as the <a class="reference internal" href="#astropy.modeling.Parameter" tit
 <p>On bound parameters this property returns the validator method itself,
 as a bound method on the <a class="reference internal" href="#astropy.modeling.Parameter" title="astropy.modeling.Parameter"><code class="xref py py-obj docutils literal"><span class="pre">Parameter</span></code></a>.  This is not often as useful, but
 it allows validating a parameter value without setting that parameter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">validator</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># Passes</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">validator</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># Passes</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">validator</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span>  
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
@@ -369,7 +369,7 @@ in the process (or an exact copy).</p>
 <p>The arguments to this method are the same as those for the <a class="reference internal" href="#astropy.modeling.Parameter" title="astropy.modeling.Parameter"><code class="xref py py-obj docutils literal"><span class="pre">Parameter</span></code></a>
 initializer.  This simply returns a new <a class="reference internal" href="#astropy.modeling.Parameter" title="astropy.modeling.Parameter"><code class="xref py py-obj docutils literal"><span class="pre">Parameter</span></code></a> instance with any
 or all of the attributes overridden, and so returns the equivalent of:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">Parameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<div class="code python highlight-default"><div class="highlight"><pre><span class="n">Parameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -400,7 +400,7 @@ or all of the attributes overridden, and so returns the equivalent of:</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table indexing &mdash; Astropy v1.2.dev14978</title>
+    <title>Table indexing &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="index.html" />
     <link rel="next" title="Masking and missing values" href="masking.html" />
     <link rel="prev" title="Table operations" href="operations.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -98,7 +98,7 @@ It is recommended to avoid using this engine in production code for now.</p>
 <div class="section" id="creating-an-index">
 <h2>Creating an index<a class="headerlink" href="#creating-an-index" title="Permalink to this headline">¶</a></h2>
 <p>To create an index on a table, use the <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.add_index" title="astropy.table.Table.add_index"><code class="xref py py-func docutils literal"><span class="pre">add_index()</span></code></a> method:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">add_index</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
 </pre></div>
@@ -107,13 +107,13 @@ It is recommended to avoid using this engine in production code for now.</p>
 uniquely valued elements.</p>
 <p>To create a composite index on multiple columns, pass a list of columns
 instead:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">add_index</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">add_index</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>In particular, the first index created using the
 <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.add_index" title="astropy.table.Table.add_index"><code class="xref py py-func docutils literal"><span class="pre">add_index()</span></code></a> method is considered the default index or the &#8220;primary key&#8221;. To
 retrieve an index from a table, use the <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.indices" title="astropy.table.Table.indices"><code class="xref py py-obj docutils literal"><span class="pre">indices</span></code></a> property:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>
 <span class="go"> a  rows</span>
 <span class="go">--- ----</span>
 <span class="go">  1    3</span>
@@ -135,7 +135,7 @@ retrieve an index from a table, use the <a class="reference internal" href="../a
 <p>Row retrieval can be accomplished using two table properties: <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.loc" title="astropy.table.Table.loc"><code class="xref py py-obj docutils literal"><span class="pre">loc</span></code></a> and
 <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.iloc" title="astropy.table.Table.iloc"><code class="xref py py-obj docutils literal"><span class="pre">iloc</span></code></a>. The <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.loc" title="astropy.table.Table.loc"><code class="xref py py-obj docutils literal"><span class="pre">loc</span></code></a> property can be indexed either by column value, range of
 column values (<em>including</em> the bounds), or a list or ndarray of column values:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)],</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;i8&#39;</span><span class="p">,</span> <span class="s">&#39;i8&#39;</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)],</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;i8&#39;</span><span class="p">,</span> <span class="s">&#39;i8&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">add_index</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="go">&lt;Row index=1&gt;</span>
@@ -172,7 +172,7 @@ column values (<em>including</em> the bounds), or a list or ndarray of column va
 <p>Note that by default, <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.loc" title="astropy.table.Table.loc"><code class="xref py py-obj docutils literal"><span class="pre">loc</span></code></a> uses the primary index, which here is column
 &#8216;a&#8217;. To use a different index, pass the indexed column name before the
 retrieval data:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">add_index</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">add_index</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 <span class="go">&lt;Table length=3&gt;</span>
 <span class="go">  a     b</span>
@@ -186,7 +186,7 @@ retrieval data:</p>
 <p>The property <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.iloc" title="astropy.table.Table.iloc"><code class="xref py py-obj docutils literal"><span class="pre">iloc</span></code></a> works similarly, except that the retrieval information must
 be either an int or a slice, and relates to the sorted order of the index
 rather than column values. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># smallest row by value &#39;a&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># smallest row by value &#39;a&#39;</span>
 <span class="go">&lt;Row index=0&gt;</span>
 <span class="go">  a     b</span>
 <span class="go">int64 int64</span>
@@ -228,16 +228,16 @@ currently three indexing modes: <em>freeze</em>, <em>copy_on_getitem</em>, and
 <em>discard_on_copy</em>. The <em>freeze</em> mode prevents automatic index updates whenever
 a column of the index is modified, and all indices refresh themselves after the
 context ends:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">index_mode</span><span class="p">(</span><span class="s">&#39;freeze&#39;</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">index_mode</span><span class="p">(</span><span class="s">&#39;freeze&#39;</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">... </span>   <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">])</span> <span class="c"># unmodified</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">])</span> <span class="c"># unmodified</span>
 <span class="go"> a  rows</span>
 <span class="go">--- ----</span>
 <span class="go">  1    0</span>
 <span class="go">  2    1</span>
 <span class="go">  3    2</span>
 <span class="go">  4    3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">])</span> <span class="c"># modified</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">])</span> <span class="c"># modified</span>
 <span class="go"> a  rows</span>
 <span class="go">--- ----</span>
 <span class="go">  0    0</span>
@@ -249,10 +249,10 @@ context ends:</p>
 <p>The <em>copy_on_getitem</em> mode forces columns to copy and relabel their indices upon
 slicing. In the absence of this mode, table slices will preserve
 indices while column slices will not:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">indices</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">indices</span>
 <span class="go">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">index_mode</span><span class="p">(</span><span class="s">&#39;copy_on_getitem&#39;</span><span class="p">):</span>
-<span class="gp">... </span>   <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
 <span class="go">[ a  rows</span>
 <span class="go">--- ----</span>
 <span class="go">  2    0</span>
@@ -261,7 +261,7 @@ indices while column slices will not:</p>
 </div>
 <p>The <em>discard_on_copy</em> mode prevents indices from being copied whenever a column
 or table is copied:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>
 <span class="go"> a  rows</span>
 <span class="go">--- ----</span>
@@ -278,7 +278,7 @@ or table is copied:</p>
 <span class="go"> 10    0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">t</span><span class="o">.</span><span class="n">index_mode</span><span class="p">(</span><span class="s">&#39;discard_on_copy&#39;</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="n">t2</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gp">... </span>   <span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
 <span class="go">[]</span>
 </pre></div>
 </div>
@@ -333,7 +333,7 @@ appropriate for an index created on an empty column since adding new values is q
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Executable Scripts &mdash; Astropy v1.2.dev14978</title>
+    <title>Executable Scripts &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Miscellaneous Features" href="misc.html" />
     <link rel="prev" title="Less Familiar Objects" href="unfamiliar.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14978</a>
+	<a href="../../../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -96,7 +96,7 @@ standard output.</p>
 <p>Example usage of <code class="docutils literal"><span class="pre">fitsinfo</span></code>:</p>
 <ol class="arabic">
 <li><p class="first">Print a summary of the HDUs in a FITS file:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsinfo filename.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsinfo filename.fits
 
 Filename: filename.fits
 No.    Name         Type      Cards   Dimensions   Format
@@ -109,7 +109,7 @@ No.    Name         Type      Cards   Dimensions   Format
 </div>
 </li>
 <li><p class="first">Print a summary of HDUs of all the FITS files in the current directory:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsinfo *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsinfo *.fits
 </pre></div>
 </div>
 </li>
@@ -123,34 +123,34 @@ readable format.</p>
 <p>Example uses of fitsheader:</p>
 <ol class="arabic">
 <li><p class="first">Print the header of all the HDUs of a .fits file:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsheader filename.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsheader filename.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Print the header of the third and fifth HDU extension:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsheader --extension 3 --extension 5 filename.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsheader --extension 3 --extension 5 filename.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Print the header of a named extension, e.g. select the HDU containing
 keywords EXTNAME=&#8217;SCI&#8217; and EXTVER=&#8216;2&#8217;:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsheader --extension &quot;SCI,2&quot; filename.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsheader --extension &quot;SCI,2&quot; filename.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Print only specific keywords:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsheader --keyword BITPIX --keyword NAXIS filename.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsheader --keyword BITPIX --keyword NAXIS filename.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Print keywords NAXIS, NAXIS1, NAXIS2, etc using a wildcard:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsheader --keyword NAXIS* filename.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitsheader --keyword NAXIS* filename.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Dump the header keywords of all the files in the current directory into a
 machine-readable csv file:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitsheader --table ascii.csv *.fits &gt; keywords.csv
+<div class="highlight-default"><div class="highlight"><pre>$ fitsheader --table ascii.csv *.fits &gt; keywords.csv
 </pre></div>
 </div>
 </li>
@@ -179,37 +179,37 @@ regardless of whether or not they currently exist or pass.  Use
 <ol class="arabic">
 <li><p class="first">Verify and update checksums, tolerating non-standard checksums, updating to
 standard checksum:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck --checksum either --write *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck --checksum either --write *.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Write new checksums,  even if existing checksums are bad or missing:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck --write --force *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck --write --force *.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify standard checksums and FITS compliance without changing the files:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck --compliance *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck --compliance *.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify original nonstandard checksums only:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck --checksum nonstandard *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck --checksum nonstandard *.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Only check and fix compliance problems,  ignoring checksums:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck --checksum none --compliance --write *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck --checksum none --compliance --write *.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify standard interoperable checksums:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck *.fits
 </pre></div>
 </div>
 </li>
 <li><p class="first">Delete checksum keywords:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fitscheck --checksum none --write *.fits
+<div class="highlight-default"><div class="highlight"><pre>$ fitscheck --checksum none --write *.fits
 </pre></div>
 </div>
 </li>
@@ -257,7 +257,7 @@ usage documentation.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

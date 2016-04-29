@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Relax constants &mdash; Astropy v1.2.dev14978</title>
+    <title>Relax constants &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="World Coordinate System (astropy.wcs)" href="index.html" />
     <link rel="next" title="astropy.wcs History" href="history.html" />
     <link rel="prev" title="World Coordinate System (astropy.wcs)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">World Coordinate System (<code class="docutils literal"><span class="pre">astropy.wcs</span></code>)</a> &raquo;</li>
@@ -112,7 +112,7 @@ what non-standard WCS keywords to accept.  The flag bits are subject
 to change in future and should be set by using the constants
 beginning with <code class="docutils literal"><span class="pre">WCSHDR_</span></code> in the <a class="reference internal" href="index.html#module-astropy.wcs" title="astropy.wcs"><code class="xref py py-obj docutils literal"><span class="pre">astropy.wcs</span></code></a> module.</p>
 <p>For example, to accept <code class="docutils literal"><span class="pre">CD00i00j</span></code> and <code class="docutils literal"><span class="pre">PC00i00j</span></code> use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">relax</span> <span class="o">=</span> <span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">WCSHDR_CD00i00j</span> <span class="o">|</span> <span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">WCSHDR_PC00i00j</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">relax</span> <span class="o">=</span> <span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">WCSHDR_CD00i00j</span> <span class="o">|</span> <span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">WCSHDR_PC00i00j</span>
 </pre></div>
 </div>
 <p>The parser always treats <code class="docutils literal"><span class="pre">EPOCH</span></code> as subordinate to <code class="docutils literal"><span class="pre">EQUINOXa</span></code> if
@@ -218,15 +218,15 @@ the standard.</p>
 <li><p class="first"><code class="docutils literal"><span class="pre">WCSHDR_LONGKEY</span></code>: Accept long forms of the alternate binary table
 and pixel list WCS keywords, i.e. with &#8220;a&#8221; non- blank.
 Specifically:</p>
-<div class="highlight-python"><div class="highlight"><pre>jCRPXna  TCRPXna  :  jCRPXn  jCRPna  TCRPXn  TCRPna  CRPIXja
-   -     TPCn_ka  :    -     ijPCna    -     TPn_ka  PCi_ja
-   -     TCDn_ka  :    -     ijCDna    -     TCn_ka  CDi_ja
-iCDLTna  TCDLTna  :  iCDLTn  iCDEna  TCDLTn  TCDEna  CDELTia
-iCUNIna  TCUNIna  :  iCUNIn  iCUNna  TCUNIn  TCUNna  CUNITia
-iCTYPna  TCTYPna  :  iCTYPn  iCTYna  TCTYPn  TCTYna  CTYPEia
-iCRVLna  TCRVLna  :  iCRVLn  iCRVna  TCRVLn  TCRVna  CRVALia
-iPVn_ma  TPVn_ma  :    -     iVn_ma    -     TVn_ma  PVi_ma
-iPSn_ma  TPSn_ma  :    -     iSn_ma    -     TSn_ma  PSi_ma
+<div class="highlight-default"><div class="highlight"><pre><span class="n">jCRPXna</span>  <span class="n">TCRPXna</span>  <span class="p">:</span>  <span class="n">jCRPXn</span>  <span class="n">jCRPna</span>  <span class="n">TCRPXn</span>  <span class="n">TCRPna</span>  <span class="n">CRPIXja</span>
+   <span class="o">-</span>     <span class="n">TPCn_ka</span>  <span class="p">:</span>    <span class="o">-</span>     <span class="n">ijPCna</span>    <span class="o">-</span>     <span class="n">TPn_ka</span>  <span class="n">PCi_ja</span>
+   <span class="o">-</span>     <span class="n">TCDn_ka</span>  <span class="p">:</span>    <span class="o">-</span>     <span class="n">ijCDna</span>    <span class="o">-</span>     <span class="n">TCn_ka</span>  <span class="n">CDi_ja</span>
+<span class="n">iCDLTna</span>  <span class="n">TCDLTna</span>  <span class="p">:</span>  <span class="n">iCDLTn</span>  <span class="n">iCDEna</span>  <span class="n">TCDLTn</span>  <span class="n">TCDEna</span>  <span class="n">CDELTia</span>
+<span class="n">iCUNIna</span>  <span class="n">TCUNIna</span>  <span class="p">:</span>  <span class="n">iCUNIn</span>  <span class="n">iCUNna</span>  <span class="n">TCUNIn</span>  <span class="n">TCUNna</span>  <span class="n">CUNITia</span>
+<span class="n">iCTYPna</span>  <span class="n">TCTYPna</span>  <span class="p">:</span>  <span class="n">iCTYPn</span>  <span class="n">iCTYna</span>  <span class="n">TCTYPn</span>  <span class="n">TCTYna</span>  <span class="n">CTYPEia</span>
+<span class="n">iCRVLna</span>  <span class="n">TCRVLna</span>  <span class="p">:</span>  <span class="n">iCRVLn</span>  <span class="n">iCRVna</span>  <span class="n">TCRVLn</span>  <span class="n">TCRVna</span>  <span class="n">CRVALia</span>
+<span class="n">iPVn_ma</span>  <span class="n">TPVn_ma</span>  <span class="p">:</span>    <span class="o">-</span>     <span class="n">iVn_ma</span>    <span class="o">-</span>     <span class="n">TVn_ma</span>  <span class="n">PVi_ma</span>
+<span class="n">iPSn_ma</span>  <span class="n">TPSn_ma</span>  <span class="p">:</span>    <span class="o">-</span>     <span class="n">iSn_ma</span>    <span class="o">-</span>     <span class="n">TSn_ma</span>  <span class="n">PSi_ma</span>
 </pre></div>
 </div>
 <p>where the primary and standard alternate forms together with the
@@ -243,9 +243,9 @@ unlikely to be written with any other intention.  Thus it should be
 safe to accept them provided, of course, that the resulting keyword
 does not exceed the 8-character limit.</p>
 <p>If <code class="docutils literal"><span class="pre">WCSHDR_CNAMn</span></code> is enabled then also accept:</p>
-<div class="highlight-python"><div class="highlight"><pre>iCNAMna  TCNAMna  :   ---   iCNAna    ---   TCNAna  CNAMEia
-iCRDEna  TCRDEna  :   ---   iCRDna    ---   TCRDna  CRDERia
-iCSYEna  TCSYEna  :   ---   iCSYna    ---   TCSYna  CSYERia
+<div class="highlight-default"><div class="highlight"><pre><span class="n">iCNAMna</span>  <span class="n">TCNAMna</span>  <span class="p">:</span>   <span class="o">---</span>   <span class="n">iCNAna</span>    <span class="o">---</span>   <span class="n">TCNAna</span>  <span class="n">CNAMEia</span>
+<span class="n">iCRDEna</span>  <span class="n">TCRDEna</span>  <span class="p">:</span>   <span class="o">---</span>   <span class="n">iCRDna</span>    <span class="o">---</span>   <span class="n">TCRDna</span>  <span class="n">CRDERia</span>
+<span class="n">iCSYEna</span>  <span class="n">TCSYEna</span>  <span class="p">:</span>   <span class="o">---</span>   <span class="n">iCSYna</span>    <span class="o">---</span>   <span class="n">TCSYna</span>  <span class="n">CSYERia</span>
 </pre></div>
 </div>
 <p>Note that <code class="docutils literal"><span class="pre">CNAMEia</span></code>, <code class="docutils literal"><span class="pre">CRDERia</span></code>, <code class="docutils literal"><span class="pre">CSYERia</span></code>, and their variants
@@ -264,39 +264,39 @@ column-specific form of the keyword.</p>
 arrays in a binary table, or all pixel list columns with alternate
 representation <code class="docutils literal"><span class="pre">a</span></code> unless overridden by <code class="docutils literal"><span class="pre">EQUIna</span></code>.</p>
 <p>Specifically the keywords are:</p>
-<div class="highlight-python"><div class="highlight"><pre>LATPOLEa  for LATPna
-LONPOLEa  for LONPna
-RESTFREQ  for RFRQna
-RESTFRQa  for RFRQna
-RESTWAVa  for RWAVna
+<div class="highlight-default"><div class="highlight"><pre><span class="n">LATPOLEa</span>  <span class="k">for</span> <span class="n">LATPna</span>
+<span class="n">LONPOLEa</span>  <span class="k">for</span> <span class="n">LONPna</span>
+<span class="n">RESTFREQ</span>  <span class="k">for</span> <span class="n">RFRQna</span>
+<span class="n">RESTFRQa</span>  <span class="k">for</span> <span class="n">RFRQna</span>
+<span class="n">RESTWAVa</span>  <span class="k">for</span> <span class="n">RWAVna</span>
 </pre></div>
 </div>
 <p>whose keyvalues are actually used by WCSLIB, and also keywords that
 provide auxiliary information that is simply stored in the wcsprm
 struct:</p>
-<div class="highlight-python"><div class="highlight"><pre>EPOCH         -       ... (No column-specific form.)
-EPOCHa        -       ... Only if WCSHDR_EPOCHa is set.
-EQUINOXa  for EQUIna
-RADESYSa  for RADEna
-RADECSYS  for RADEna  ... Only if WCSHDR_RADECSYS is set.
-SPECSYSa  for SPECna
-SSYSOBSa  for SOBSna
-SSYSSRCa  for SSRCna
-VELOSYSa  for VSYSna
-VELANGLa  for VANGna
-VELREF        -       ... (No column-specific form.)
-VELREFa       -       ... Only if WCSHDR_VELREFa is set.
-VSOURCEa  for VSOUna  ... Only if WCSHDR_VSOURCE is set.
-WCSNAMEa  for WCSNna  ... Or TWCSna (see below).
-ZSOURCEa  for ZSOUna
+<div class="highlight-default"><div class="highlight"><pre><span class="n">EPOCH</span>         <span class="o">-</span>       <span class="o">...</span> <span class="p">(</span><span class="n">No</span> <span class="n">column</span><span class="o">-</span><span class="n">specific</span> <span class="n">form</span><span class="o">.</span><span class="p">)</span>
+<span class="n">EPOCHa</span>        <span class="o">-</span>       <span class="o">...</span> <span class="n">Only</span> <span class="k">if</span> <span class="n">WCSHDR_EPOCHa</span> <span class="ow">is</span> <span class="nb">set</span><span class="o">.</span>
+<span class="n">EQUINOXa</span>  <span class="k">for</span> <span class="n">EQUIna</span>
+<span class="n">RADESYSa</span>  <span class="k">for</span> <span class="n">RADEna</span>
+<span class="n">RADECSYS</span>  <span class="k">for</span> <span class="n">RADEna</span>  <span class="o">...</span> <span class="n">Only</span> <span class="k">if</span> <span class="n">WCSHDR_RADECSYS</span> <span class="ow">is</span> <span class="nb">set</span><span class="o">.</span>
+<span class="n">SPECSYSa</span>  <span class="k">for</span> <span class="n">SPECna</span>
+<span class="n">SSYSOBSa</span>  <span class="k">for</span> <span class="n">SOBSna</span>
+<span class="n">SSYSSRCa</span>  <span class="k">for</span> <span class="n">SSRCna</span>
+<span class="n">VELOSYSa</span>  <span class="k">for</span> <span class="n">VSYSna</span>
+<span class="n">VELANGLa</span>  <span class="k">for</span> <span class="n">VANGna</span>
+<span class="n">VELREF</span>        <span class="o">-</span>       <span class="o">...</span> <span class="p">(</span><span class="n">No</span> <span class="n">column</span><span class="o">-</span><span class="n">specific</span> <span class="n">form</span><span class="o">.</span><span class="p">)</span>
+<span class="n">VELREFa</span>       <span class="o">-</span>       <span class="o">...</span> <span class="n">Only</span> <span class="k">if</span> <span class="n">WCSHDR_VELREFa</span> <span class="ow">is</span> <span class="nb">set</span><span class="o">.</span>
+<span class="n">VSOURCEa</span>  <span class="k">for</span> <span class="n">VSOUna</span>  <span class="o">...</span> <span class="n">Only</span> <span class="k">if</span> <span class="n">WCSHDR_VSOURCE</span> <span class="ow">is</span> <span class="nb">set</span><span class="o">.</span>
+<span class="n">WCSNAMEa</span>  <span class="k">for</span> <span class="n">WCSNna</span>  <span class="o">...</span> <span class="n">Or</span> <span class="n">TWCSna</span> <span class="p">(</span><span class="n">see</span> <span class="n">below</span><span class="p">)</span><span class="o">.</span>
+<span class="n">ZSOURCEa</span>  <span class="k">for</span> <span class="n">ZSOUna</span>
 
-DATE-AVG  for DAVGn
-DATE-OBS  for DOBSn
-MJD-AVG   for MJDAn
-MJD-OBS   for MJDOBn
-OBSGEO-X  for OBSGXn
-OBSGEO-Y  for OBSGYn
-OBSGEO-Z  for OBSGZn
+<span class="n">DATE</span><span class="o">-</span><span class="n">AVG</span>  <span class="k">for</span> <span class="n">DAVGn</span>
+<span class="n">DATE</span><span class="o">-</span><span class="n">OBS</span>  <span class="k">for</span> <span class="n">DOBSn</span>
+<span class="n">MJD</span><span class="o">-</span><span class="n">AVG</span>   <span class="k">for</span> <span class="n">MJDAn</span>
+<span class="n">MJD</span><span class="o">-</span><span class="n">OBS</span>   <span class="k">for</span> <span class="n">MJDOBn</span>
+<span class="n">OBSGEO</span><span class="o">-</span><span class="n">X</span>  <span class="k">for</span> <span class="n">OBSGXn</span>
+<span class="n">OBSGEO</span><span class="o">-</span><span class="n">Y</span>  <span class="k">for</span> <span class="n">OBSGYn</span>
+<span class="n">OBSGEO</span><span class="o">-</span><span class="n">Z</span>  <span class="k">for</span> <span class="n">OBSGZn</span>
 </pre></div>
 </div>
 <p>where the image-header keywords on the left provide default values
@@ -329,26 +329,26 @@ arrays in a binary table with alternate representation <code class="docutils lit
 unless overridden by <code class="docutils literal"><span class="pre">jCRPna</span></code>.</p>
 <p>Specifically the keywords are those listed above for <code class="docutils literal"><span class="pre">WCSHDR_AUXIMG</span></code>
 plus:</p>
-<div class="highlight-python"><div class="highlight"><pre>WCSAXESa  for WCAXna
+<div class="highlight-default"><div class="highlight"><pre><span class="n">WCSAXESa</span>  <span class="k">for</span> <span class="n">WCAXna</span>
 </pre></div>
 </div>
 <p>which defines the coordinate dimensionality, and the following
 keywords which are parameterized by axis number:</p>
-<div class="highlight-python"><div class="highlight"><pre>CRPIXja   for jCRPna
-PCi_ja    for ijPCna
-CDi_ja    for ijCDna
-CDELTia   for iCDEna
-CROTAi    for iCROTn
-CROTAia        -      ... Only if WCSHDR_CROTAia is set.
-CUNITia   for iCUNna
-CTYPEia   for iCTYna
-CRVALia   for iCRVna
-PVi_ma    for iVn_ma
-PSi_ma    for iSn_ma
+<div class="highlight-default"><div class="highlight"><pre><span class="n">CRPIXja</span>   <span class="k">for</span> <span class="n">jCRPna</span>
+<span class="n">PCi_ja</span>    <span class="k">for</span> <span class="n">ijPCna</span>
+<span class="n">CDi_ja</span>    <span class="k">for</span> <span class="n">ijCDna</span>
+<span class="n">CDELTia</span>   <span class="k">for</span> <span class="n">iCDEna</span>
+<span class="n">CROTAi</span>    <span class="k">for</span> <span class="n">iCROTn</span>
+<span class="n">CROTAia</span>        <span class="o">-</span>      <span class="o">...</span> <span class="n">Only</span> <span class="k">if</span> <span class="n">WCSHDR_CROTAia</span> <span class="ow">is</span> <span class="nb">set</span><span class="o">.</span>
+<span class="n">CUNITia</span>   <span class="k">for</span> <span class="n">iCUNna</span>
+<span class="n">CTYPEia</span>   <span class="k">for</span> <span class="n">iCTYna</span>
+<span class="n">CRVALia</span>   <span class="k">for</span> <span class="n">iCRVna</span>
+<span class="n">PVi_ma</span>    <span class="k">for</span> <span class="n">iVn_ma</span>
+<span class="n">PSi_ma</span>    <span class="k">for</span> <span class="n">iSn_ma</span>
 
-CNAMEia   for iCNAna
-CRDERia   for iCRDna
-CSYERia   for iCSYna
+<span class="n">CNAMEia</span>   <span class="k">for</span> <span class="n">iCNAna</span>
+<span class="n">CRDERia</span>   <span class="k">for</span> <span class="n">iCRDna</span>
+<span class="n">CSYERia</span>   <span class="k">for</span> <span class="n">iCSYna</span>
 </pre></div>
 </div>
 <p>where the image-header keywords on the left provide default values
@@ -532,7 +532,7 @@ potentially unsafe and is not recommended at this time.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

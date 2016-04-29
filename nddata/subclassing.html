@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Subclassing &mdash; Astropy v1.2.dev14978</title>
+    <title>Subclassing &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="index.html" />
     <link rel="next" title="astropy.nddata.utils" href="utils.html" />
     <link rel="prev" title="I/O mixin" href="mixins/ndio.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -117,8 +117,8 @@ something that presents a numpy-like interface) as the <code class="docutils lit
 <p>This is done by using classes to represent the uncertainties of a given type.
 For example, to set standard deviation uncertainties on the pixel values, you
 can do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">NDData</span><span class="p">,</span> <span class="n">StdDevUncertainty</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="k">import</span> <span class="n">NDData</span><span class="p">,</span> <span class="n">StdDevUncertainty</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>  <span class="c"># a 3-dimensional array with all zeros</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span> <span class="o">=</span> <span class="n">NDData</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">uncertainty</span> <span class="o">=</span> <span class="n">StdDevUncertainty</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">)</span>
@@ -127,7 +127,7 @@ can do:</p>
 </div>
 <p>New error classes should sub-class from <a class="reference internal" href="../api/astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>, and
 should provide methods with the following API:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyUncertainty</span><span class="p">(</span><span class="n">NDUncertainty</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyUncertainty</span><span class="p">(</span><span class="n">NDUncertainty</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">propagate_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_nddata</span><span class="p">,</span> <span class="n">result_data</span><span class="p">):</span>
         <span class="o">...</span>
@@ -162,7 +162,7 @@ the operations is <code class="docutils literal"><span class="pre">parent_nddata
 <span class="pre">other_nddata</span></code>.</p>
 <p>To make it easier and clearer to code up the error propagation, you can use
 variables with more explicit names, e.g:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyUncertainty</span><span class="p">(</span><span class="n">NDUncertainty</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyUncertainty</span><span class="p">(</span><span class="n">NDUncertainty</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">propogate_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_nddata</span><span class="p">,</span> <span class="n">result_data</span><span class="p">):</span>
 
@@ -206,7 +206,7 @@ attribute, but this does not have to be the case.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

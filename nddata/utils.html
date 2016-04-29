@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.nddata.utils &mdash; Astropy v1.2.dev14978</title>
+    <title>astropy.nddata.utils &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="index.html" />
     <link rel="next" title="extract_array" href="../api/astropy.nddata.utils.extract_array.html" />
     <link rel="prev" title="Subclassing" href="subclassing.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -102,15 +102,15 @@ postage stamp cutout image from a 2D array.  If an optional
 <a class="reference internal" href="../api/astropy.nddata.utils.Cutout2D.html#astropy.nddata.utils.Cutout2D" title="astropy.nddata.utils.Cutout2D"><code class="xref py py-obj docutils literal"><span class="pre">Cutout2D</span></code></a> object will contain an updated
 <a class="reference internal" href="../api/astropy.wcs.WCS.html#astropy.wcs.WCS" title="astropy.wcs.WCS"><code class="xref py py-obj docutils literal"><span class="pre">WCS</span></code></a> corresponding to the cutout array.</p>
 <p>First, let&#8217;s simulate a single source on a 2D data array. If you would like to
-simulate many sources, see <a class="reference internal" href="../modeling/bounding-boxes.html#bounding-boxes"><span>Efficient Model Rendering with Bounding Boxes</span></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Gaussian2D</span>
+simulate many sources, see <a class="reference internal" href="../modeling/bounding-boxes.html#bounding-boxes"><span class="std std-ref">Efficient Model Rendering with Bounding Boxes</span></a>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Gaussian2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">Gaussian2D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now, let&#8217;s display the image:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s">&#39;lower&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -121,26 +121,26 @@ simulate many sources, see <a class="reference internal" href="../modeling/bound
 <p>Now let&#8217;s create a cutout for the single object in this image.  We
 create a cutout centered at position <code class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span> <span class="pre">=</span> <span class="pre">(49.7,</span> <span class="pre">100.1)</span></code> with a
 size of <code class="docutils literal"><span class="pre">(ny,</span> <span class="pre">nx)</span> <span class="pre">=</span> <span class="pre">(40,</span> <span class="pre">50)</span></code> pixels:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">Cutout2D</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="k">import</span> <span class="n">Cutout2D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mf">49.7</span><span class="p">,</span> <span class="mf">100.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>     <span class="c"># pixels</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">size</span></code> keyword can also be a <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> object:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">((</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">pixel</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">((</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">pixel</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or contain <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> objects:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pixel</span><span class="p">,</span> <span class="mi">50</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pixel</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pixel</span><span class="p">,</span> <span class="mi">50</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pixel</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>A square cutout image can be generated by passing an integer or
 a scalar <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="mi">40</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="mi">40</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout2</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">pixel</span>
@@ -153,7 +153,7 @@ a scalar <a class="reference internal" href="../api/astropy.units.Quantity.html#
 original <code class="docutils literal"><span class="pre">data</span></code> array.  If <code class="docutils literal"><span class="pre">copy=True</span></code>, then <code class="docutils literal"><span class="pre">cutout.data</span></code> will
 hold a copy of the original <code class="docutils literal"><span class="pre">data</span></code>.  Let&#8217;s display the cutout
 image:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s">&#39;lower&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -163,7 +163,7 @@ image:</p>
 </div>
 <p>The cutout object can plot its bounding box on the original data using
 the <a class="reference internal" href="../api/astropy.nddata.utils.Cutout2D.html#astropy.nddata.utils.Cutout2D.plot_on_original" title="astropy.nddata.utils.Cutout2D.plot_on_original"><code class="xref py py-meth docutils literal"><span class="pre">plot_on_original()</span></code></a> method:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s">&#39;lower&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s">&#39;lower&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span><span class="o">.</span><span class="n">plot_on_original</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -173,41 +173,41 @@ the <a class="reference internal" href="../api/astropy.nddata.utils.Cutout2D.htm
 </div>
 <p>Many properties of the cutout array are also stored as attributes,
 including:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># shape of the cutout array</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># shape of the cutout array</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="go">(40, 50)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># rounded pixel index of the input position</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">position_original</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">position_original</span><span class="p">)</span>
 <span class="go">(50, 100)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># corresponding position in the cutout array</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">position_cutout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">position_cutout</span><span class="p">)</span>
 <span class="go">(25, 20)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># (non-rounded) input position in both the original and cutout arrays</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">((</span><span class="n">cutout</span><span class="o">.</span><span class="n">input_position_original</span><span class="p">,</span> <span class="n">cutout</span><span class="o">.</span><span class="n">input_position_cutout</span><span class="p">))</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">cutout</span><span class="o">.</span><span class="n">input_position_original</span><span class="p">,</span> <span class="n">cutout</span><span class="o">.</span><span class="n">input_position_cutout</span><span class="p">))</span>  
 <span class="go">((49.7, 100.1), (24.700000000000003, 20.099999999999994))</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># the origin pixel in both arrays</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">((</span><span class="n">cutout</span><span class="o">.</span><span class="n">origin_original</span><span class="p">,</span> <span class="n">cutout</span><span class="o">.</span><span class="n">origin_cutout</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">cutout</span><span class="o">.</span><span class="n">origin_original</span><span class="p">,</span> <span class="n">cutout</span><span class="o">.</span><span class="n">origin_cutout</span><span class="p">))</span>
 <span class="go">((25, 80), (0, 0))</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># tuple of slice objects for the original array</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">slices_original</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">slices_original</span><span class="p">)</span>
 <span class="go">(slice(80, 120, None), slice(25, 75, None))</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># tuple of slice objects for the cutout array</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">slices_cutout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">slices_cutout</span><span class="p">)</span>
 <span class="go">(slice(0, 40, None), slice(0, 50, None))</span>
 </pre></div>
 </div>
 <p>There are also two <a class="reference internal" href="../api/astropy.nddata.utils.Cutout2D.html#astropy.nddata.utils.Cutout2D" title="astropy.nddata.utils.Cutout2D"><code class="xref py py-obj docutils literal"><span class="pre">Cutout2D</span></code></a> methods to convert
 pixel positions between the original and cutout arrays:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">to_original_position</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">to_original_position</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
 <span class="go">(27, 81)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">to_cutout_position</span><span class="p">((</span><span class="mi">27</span><span class="p">,</span> <span class="mi">81</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">to_cutout_position</span><span class="p">((</span><span class="mi">27</span><span class="p">,</span> <span class="mi">81</span><span class="p">)))</span>
 <span class="go">(2, 1)</span>
 </pre></div>
 </div>
@@ -228,22 +228,22 @@ overlapping elements are returned, thus the resulting cutout array may
 be smaller than the requested <code class="docutils literal"><span class="pre">size</span></code>.</p>
 <p>The default uses <code class="docutils literal"><span class="pre">mode='trim'</span></code>, which can result in cutout arrays
 that are smaller than the requested <code class="docutils literal"><span class="pre">size</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">20.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">20.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout1</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;trim&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="go">[[ 0.  1.]</span>
 <span class="go"> [ 4.  5.]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="go">(2, 2)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">((</span><span class="n">cutout1</span><span class="o">.</span><span class="n">position_original</span><span class="p">,</span> <span class="n">cutout1</span><span class="o">.</span><span class="n">position_cutout</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">cutout1</span><span class="o">.</span><span class="n">position_original</span><span class="p">,</span> <span class="n">cutout1</span><span class="o">.</span><span class="n">position_cutout</span><span class="p">))</span>
 <span class="go">((0, 0), (0, 0))</span>
 </pre></div>
 </div>
 <p>With <code class="docutils literal"><span class="pre">mode='partial'</span></code>, the cutout will never be trimmed.  Instead it
 will be filled with <code class="docutils literal"><span class="pre">fill_value</span></code> (the default is <code class="docutils literal"><span class="pre">numpy.nan</span></code>) if
 the cutout is not fully contained in the data array:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout2</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;partial&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout2</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout2</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;partial&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout2</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="go">[[ nan  nan  nan]</span>
 <span class="go"> [ nan   0.   1.]</span>
 <span class="go"> [ nan   4.   5.]]</span>
@@ -252,19 +252,19 @@ the cutout is not fully contained in the data array:</p>
 <p>Note that for the <code class="docutils literal"><span class="pre">'partial'</span></code> mode, the positions (and several other
 attributes) are calculated for on the <em>valid</em> (non-filled) cutout
 values:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">((</span><span class="n">cutout2</span><span class="o">.</span><span class="n">position_original</span><span class="p">,</span> <span class="n">cutout2</span><span class="o">.</span><span class="n">position_cutout</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">cutout2</span><span class="o">.</span><span class="n">position_original</span><span class="p">,</span> <span class="n">cutout2</span><span class="o">.</span><span class="n">position_cutout</span><span class="p">))</span>
 <span class="go">((0, 0), (1, 1))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">((</span><span class="n">cutout2</span><span class="o">.</span><span class="n">origin_original</span><span class="p">,</span> <span class="n">cutout2</span><span class="o">.</span><span class="n">origin_cutout</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">cutout2</span><span class="o">.</span><span class="n">origin_original</span><span class="p">,</span> <span class="n">cutout2</span><span class="o">.</span><span class="n">origin_cutout</span><span class="p">))</span>
 <span class="go">((0, 0), (1, 1))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout2</span><span class="o">.</span><span class="n">slices_original</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout2</span><span class="o">.</span><span class="n">slices_original</span><span class="p">)</span>
 <span class="go">(slice(0, 2, None), slice(0, 2, None))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cutout2</span><span class="o">.</span><span class="n">slices_cutout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cutout2</span><span class="o">.</span><span class="n">slices_cutout</span><span class="p">)</span>
 <span class="go">(slice(1, 3, None), slice(1, 3, None))</span>
 </pre></div>
 </div>
 <p>Using <code class="docutils literal"><span class="pre">mode='strict'</span></code> will raise an exception if the cutout is not
 fully contained in the data array:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout3</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;strict&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout3</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;strict&#39;</span><span class="p">)</span>
 <span class="go">PartialOverlapError: Arrays overlap only partially.</span>
 </pre></div>
 </div>
@@ -277,8 +277,8 @@ object must be input via the <code class="docutils literal"><span class="pre">wc
 <p>First, let&#8217;s define a <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> position and a
 <a class="reference internal" href="../api/astropy.wcs.WCS.html#astropy.wcs.WCS" title="astropy.wcs.WCS"><code class="xref py py-obj docutils literal"><span class="pre">WCS</span></code></a> object for our data (usually this would come from
 your FITS header):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">SkyCoord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="k">import</span> <span class="n">WCS</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">position</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="s">&#39;13h11m29.96s -01d19m18.7s&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">wcs</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="n">naxis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">3.</span>
@@ -292,7 +292,7 @@ your FITS header):</p>
 </div>
 <p>Now let&#8217;s create the cutout array using the
 <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> position and <code class="docutils literal"><span class="pre">wcs</span></code> object:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s">&#39;lower&#39;</span><span class="p">)</span>   
 </pre></div>
 </div>
@@ -305,7 +305,7 @@ contains the propagated <a class="reference internal" href="../api/astropy.wcs.W
 Let&#8217;s find the sky coordinates for a given pixel in the cutout array.
 Note that we need to use the <code class="docutils literal"><span class="pre">cutout.wcs</span></code> object for the cutout
 positions:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.wcs.utils</span> <span class="kn">import</span> <span class="n">pixel_to_skycoord</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.wcs.utils</span> <span class="k">import</span> <span class="n">pixel_to_skycoord</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x_cutout</span><span class="p">,</span> <span class="n">y_cutout</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pixel_to_skycoord</span><span class="p">(</span><span class="n">x_cutout</span><span class="p">,</span> <span class="n">y_cutout</span><span class="p">,</span> <span class="n">cutout</span><span class="o">.</span><span class="n">wcs</span><span class="p">)</span>    
 <span class="go">&lt;SkyCoord (ICRS): (ra, dec) in deg</span>
@@ -314,7 +314,7 @@ positions:</p>
 </div>
 <p>We now find the corresponding pixel in the original <code class="docutils literal"><span class="pre">data</span></code> array and
 its sky coordinates:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span> <span class="o">=</span> <span class="n">cutout</span><span class="o">.</span><span class="n">to_original_position</span><span class="p">((</span><span class="n">x_cutout</span><span class="p">,</span> <span class="n">y_cutout</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span> <span class="o">=</span> <span class="n">cutout</span><span class="o">.</span><span class="n">to_original_position</span><span class="p">((</span><span class="n">x_cutout</span><span class="p">,</span> <span class="n">y_cutout</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pixel_to_skycoord</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">,</span> <span class="n">wcs</span><span class="p">)</span>    
 <span class="go">&lt;SkyCoord (ICRS): (ra, dec) in deg</span>
 <span class="go">    (197.8747893, -1.32207626)&gt;</span>
@@ -332,7 +332,7 @@ input via the <code class="docutils literal"><span class="pre">wcs</span></code>
 <p>For this example, we&#8217;ll use the data, <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>
 position, and <code class="docutils literal"><span class="pre">wcs</span></code> object from above to create a cutout with size
 1.5 x 2.5 arcseconds:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">((</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">((</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cutout</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s">&#39;lower&#39;</span><span class="p">)</span>   
 </pre></div>
@@ -442,7 +442,7 @@ position, and <code class="docutils literal"><span class="pre">wcs</span></code>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

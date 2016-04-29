@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Cds &mdash; Astropy v1.2.dev14978</title>
+    <title>Cds &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="ASCII Tables (astropy.io.ascii)" href="../io/ascii/index.html" />
     <link rel="next" title="Column" href="astropy.io.ascii.Column.html" />
     <link rel="prev" title="BasicHeader" href="astropy.io.ascii.BasicHeader.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../io/ascii/index.html" accesskey="U">ASCII Tables (<code class="docutils literal"><span class="pre">astropy.io.ascii</span></code>)</a> &raquo;</li>
@@ -92,31 +92,31 @@
 <dd><p>Bases: <a class="reference internal" href="astropy.io.ascii.BaseReader.html#astropy.io.ascii.BaseReader" title="astropy.io.ascii.core.BaseReader"><code class="docutils literal"><span class="pre">astropy.io.ascii.BaseReader</span></code></a></p>
 <p>Read a CDS format table.  See <a class="reference external" href="http://vizier.u-strasbg.fr/doc/catstd.htx">http://vizier.u-strasbg.fr/doc/catstd.htx</a>.
 Example:</p>
-<div class="highlight-python"><div class="highlight"><pre>Table: Table name here
-= ==============================================================================
-Catalog reference paper
-    Bibliography info here
-================================================================================
-ADC_Keywords: Keyword ; Another keyword ; etc
+<div class="highlight-default"><div class="highlight"><pre><span class="n">Table</span><span class="p">:</span> <span class="n">Table</span> <span class="n">name</span> <span class="n">here</span>
+<span class="o">=</span> <span class="o">==============================================================================</span>
+<span class="n">Catalog</span> <span class="n">reference</span> <span class="n">paper</span>
+    <span class="n">Bibliography</span> <span class="n">info</span> <span class="n">here</span>
+<span class="o">================================================================================</span>
+<span class="n">ADC_Keywords</span><span class="p">:</span> <span class="n">Keyword</span> <span class="p">;</span> <span class="n">Another</span> <span class="n">keyword</span> <span class="p">;</span> <span class="n">etc</span>
 
-Description:
-    Catalog description here.
-================================================================================
-Byte-by-byte Description of file: datafile3.txt
---------------------------------------------------------------------------------
-   Bytes Format Units  Label  Explanations
---------------------------------------------------------------------------------
-   1-  3 I3     ---    Index  Running identification number
-   5-  6 I2     h      RAh    Hour of Right Ascension (J2000)
-   8-  9 I2     min    RAm    Minute of Right Ascension (J2000)
-  11- 15 F5.2   s      RAs    Second of Right Ascension (J2000)
---------------------------------------------------------------------------------
-Note (1): A CDS file can contain sections with various metadata.
-          Notes can be multiple lines.
-Note (2): Another note.
---------------------------------------------------------------------------------
-  1 03 28 39.09
-  2 04 18 24.11
+<span class="n">Description</span><span class="p">:</span>
+    <span class="n">Catalog</span> <span class="n">description</span> <span class="n">here</span><span class="o">.</span>
+<span class="o">================================================================================</span>
+<span class="n">Byte</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">byte</span> <span class="n">Description</span> <span class="n">of</span> <span class="n">file</span><span class="p">:</span> <span class="n">datafile3</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+   <span class="n">Bytes</span> <span class="n">Format</span> <span class="n">Units</span>  <span class="n">Label</span>  <span class="n">Explanations</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+   <span class="mi">1</span><span class="o">-</span>  <span class="mi">3</span> <span class="n">I3</span>     <span class="o">---</span>    <span class="n">Index</span>  <span class="n">Running</span> <span class="n">identification</span> <span class="n">number</span>
+   <span class="mi">5</span><span class="o">-</span>  <span class="mi">6</span> <span class="n">I2</span>     <span class="n">h</span>      <span class="n">RAh</span>    <span class="n">Hour</span> <span class="n">of</span> <span class="n">Right</span> <span class="n">Ascension</span> <span class="p">(</span><span class="n">J2000</span><span class="p">)</span>
+   <span class="mi">8</span><span class="o">-</span>  <span class="mi">9</span> <span class="n">I2</span>     <span class="nb">min</span>    <span class="n">RAm</span>    <span class="n">Minute</span> <span class="n">of</span> <span class="n">Right</span> <span class="n">Ascension</span> <span class="p">(</span><span class="n">J2000</span><span class="p">)</span>
+  <span class="mi">11</span><span class="o">-</span> <span class="mi">15</span> <span class="n">F5</span><span class="o">.</span><span class="mi">2</span>   <span class="n">s</span>      <span class="n">RAs</span>    <span class="n">Second</span> <span class="n">of</span> <span class="n">Right</span> <span class="n">Ascension</span> <span class="p">(</span><span class="n">J2000</span><span class="p">)</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="n">Note</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">A</span> <span class="n">CDS</span> <span class="n">file</span> <span class="n">can</span> <span class="n">contain</span> <span class="n">sections</span> <span class="k">with</span> <span class="n">various</span> <span class="n">metadata</span><span class="o">.</span>
+          <span class="n">Notes</span> <span class="n">can</span> <span class="n">be</span> <span class="n">multiple</span> <span class="n">lines</span><span class="o">.</span>
+<span class="n">Note</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">Another</span> <span class="n">note</span><span class="o">.</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+  <span class="mi">1</span> <span class="mi">03</span> <span class="mi">28</span> <span class="mf">39.09</span>
+  <span class="mi">2</span> <span class="mi">04</span> <span class="mi">18</span> <span class="mf">24.11</span>
 </pre></div>
 </div>
 <p><strong>About parsing the CDS format</strong></p>
@@ -133,7 +133,7 @@ delimiter line (dashes or equal signs only).</p>
 <p>Use the <code class="docutils literal"><span class="pre">ascii.read()</span></code> function as normal, with an optional <code class="docutils literal"><span class="pre">readme</span></code>
 parameter indicating the CDS ReadMe file.  If not supplied it is assumed that
 the header information is at the top of the given table.  Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">ascii</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">ascii</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;t/cds.dat&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;t/vizier/table1.dat&quot;</span><span class="p">,</span> <span class="n">readme</span><span class="o">=</span><span class="s">&quot;t/vizier/ReadMe&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;t/cds/multi/lhs2065.dat&quot;</span><span class="p">,</span> <span class="n">readme</span><span class="o">=</span><span class="s">&quot;t/cds/multi/ReadMe&quot;</span><span class="p">)</span>
@@ -143,7 +143,7 @@ the header information is at the top of the given table.  Examples:</p>
 <p>The table name and the CDS ReadMe file can be entered as URLs.  This can be used
 to directly load tables from the Internet.  For example, Vizier tables from the
 CDS:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;ftp://cdsarc.u-strasbg.fr/pub/cats/VII/253/snrs.dat&quot;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;ftp://cdsarc.u-strasbg.fr/pub/cats/VII/253/snrs.dat&quot;</span><span class="p">,</span>
 <span class="gp">... </span>            <span class="n">readme</span><span class="o">=</span><span class="s">&quot;ftp://cdsarc.u-strasbg.fr/pub/cats/VII/253/ReadMe&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -160,7 +160,7 @@ executed with a table filename, the header information for the
 specified table is taken from the <code class="docutils literal"><span class="pre">readme</span></code> file.  An
 <code class="docutils literal"><span class="pre">InconsistentTableError</span></code> is raised if the <code class="docutils literal"><span class="pre">readme</span></code> file does not
 have header information for the given table.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">readme</span> <span class="o">=</span> <span class="s">&quot;t/vizier/ReadMe&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">readme</span> <span class="o">=</span> <span class="s">&quot;t/vizier/ReadMe&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="n">ascii</span><span class="o">.</span><span class="n">Cds</span><span class="p">,</span> <span class="n">readme</span><span class="o">=</span><span class="n">readme</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;t/vizier/table1.dat&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># table5.dat has the same ReadMe file</span>
@@ -169,7 +169,7 @@ have header information for the given table.</p>
 </div>
 <p>If no <code class="docutils literal"><span class="pre">readme</span></code> parameter is specified, then the header
 information is assumed to be at the top of the given table.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="n">ascii</span><span class="o">.</span><span class="n">Cds</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="n">ascii</span><span class="o">.</span><span class="n">Cds</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;t/cds.dat&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c">#The following gives InconsistentTableError, since no</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c">#readme file was given and table1.dat does not have a header.</span>
@@ -238,7 +238,7 @@ information is assumed to be at the top of the given table.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

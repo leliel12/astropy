@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Verification &mdash; Astropy v1.2.dev14978</title>
+    <title>Verification &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Less Familiar Objects" href="unfamiliar.html" />
     <link rel="prev" title="Table Data" href="table.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14978</a>
+	<a href="../../../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -208,14 +208,14 @@ will not be fixable.</li>
 values will be verified. Each FITS HDU has a fixed set of required keywords in
 a fixed order. For example, the Primary HDU&#8217;s header must at least have the
 following keywords:</p>
-<div class="highlight-python"><div class="highlight"><pre>SIMPLE =                     T /
-BITPIX =                     8 /
-NAXIS  =                     0
+<div class="highlight-default"><div class="highlight"><pre><span class="n">SIMPLE</span> <span class="o">=</span>                     <span class="n">T</span> <span class="o">/</span>
+<span class="n">BITPIX</span> <span class="o">=</span>                     <span class="mi">8</span> <span class="o">/</span>
+<span class="n">NAXIS</span>  <span class="o">=</span>                     <span class="mi">0</span>
 </pre></div>
 </div>
 <p>If any of the mandatory keywords are missing or in the wrong order, the fix
 option will fix them:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">header</span>               <span class="c"># has a &#39;bad&#39; header</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">header</span>               <span class="c"># has a &#39;bad&#39; header</span>
 <span class="go">SIMPLE =                     T /</span>
 <span class="go">NAXIS  =                     0</span>
 <span class="go">BITPIX =                     8 /</span>
@@ -244,7 +244,7 @@ possibilities. Here is a lit of fixable and not fixable Cards:</p>
 <li>unparsable values will be &#8220;fixed&#8221; as a string</li>
 </ol>
 <p>Here are some examples of fixable cards:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span> <span class="c"># has a bunch of fixable cards</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span> <span class="c"># has a bunch of fixable cards</span>
 <span class="go">FIX1 = 2.1e23</span>
 <span class="go">FIX2= 2</span>
 <span class="go">FIX3 = string value without quotes</span>
@@ -272,7 +272,7 @@ possibilities. Here is a lit of fixable and not fixable Cards:</p>
 <li>illegal characters in keyword name</li>
 </ol>
 <p>We&#8217;ll summarize the verification with a &#8220;life-cycle&#8221; example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()</span>  <span class="c"># create a PrimaryHDU</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()</span>  <span class="c"># create a PrimaryHDU</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Try to add an non-standard FITS keyword &#39;P.I.&#39; (FITS does no allow</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># &#39;.&#39; in the keyword), if using the update() method - doesn&#39;t work!</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="p">[</span><span class="s">&#39;P.I.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Hubble&#39;</span>
@@ -350,35 +350,35 @@ must supply the checksum keyword argument with a value of True in the call to
 the writeto function.  It is possible to write only the DATASUM card to the
 header by supplying the checksum keyword argument with a value of &#8216;datasum&#8217;.</p>
 <p>Here are some examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open the file pix.fits verifying the checksum values for all HDUs</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;pix.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open the file pix.fits verifying the checksum values for all HDUs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;pix.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open the file in.fits where checksum verification fails for the</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open the file in.fits where checksum verification fails for the</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># primary HDU</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="go">Warning:  Checksum verification failed for HDU #0.</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Create file out.fits containing an HDU constructed from data and</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Create file out.fits containing an HDU constructed from data and</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># header containing both CHECKSUM and DATASUM cards.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Create file out.fits containing all the HDUs in the HDULIST</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Create file out.fits containing all the HDUs in the HDULIST</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># hdul with each HDU header containing only the DATASUM card</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="s">&#39;datasum&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Create file out.fits containing the HDU hdu with both CHECKSUM</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Create file out.fits containing the HDU hdu with both CHECKSUM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># and DATASUM cards in the header</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Append a new HDU constructed from array data to the end of</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Append a new HDU constructed from array data to the end of</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># the file existingfile.fits with only the appended HDU</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># containing both CHECKSUM and DATASUM cards.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;existingfile.fits&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;existingfile.fits&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -418,7 +418,7 @@ header by supplying the checksum keyword argument with a value of &#8216;datasum
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

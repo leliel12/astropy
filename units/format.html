@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>String representations of units &mdash; Astropy v1.2.dev14978</title>
+    <title>String representations of units &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Units and Quantities (astropy.units)" href="index.html" />
     <link rel="next" title="Equivalencies" href="equivalencies.html" />
     <link rel="prev" title="Magnitudes and other Logarithmic Units" href="logarithmic_units.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Units and Quantities (<code class="docutils literal"><span class="pre">astropy.units</span></code>)</a> &raquo;</li>
@@ -98,8 +98,8 @@ so things like <code class="docutils literal"><span class="pre">0.003f</span></c
 the <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> value, without affecting the unit. Specifiers like
 <code class="docutils literal"><span class="pre">20s</span></code>, which would only apply to a string, will be applied to the
 whole string representation of the <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a>. This means you can do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
 <span class="go">&lt;Quantity 10.0 km&gt;</span>
@@ -113,7 +113,7 @@ whole string representation of the <a class="reference internal" href="../api/as
 </div>
 <p>To format both the value and the unit separately, you can access the <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a>
 class attributes within new-style format strings:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
 <span class="go">&lt;Quantity 10.0 km&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;{0.value:0.003f} in {0.unit:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>  
@@ -123,7 +123,7 @@ class attributes within new-style format strings:</p>
 <p>Because Numpy arrays don&#8217;t accept most format specifiers, using specifiers like
 <code class="docutils literal"><span class="pre">0.003f</span></code> will not work when applied to a Numpy array or non-scalar <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a>.
 Use <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.array_str.html#numpy.array_str" title="(in NumPy v1.10)"><code class="xref py py-func docutils literal"><span class="pre">numpy.array_str()</span></code></a> instead. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;{0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array_str</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">q</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
 <span class="go">&#39;[ 0.   0.1  0.2  0.3  0.4  0.6  0.7  0.8  0.9  1. ] m&#39;</span>
 </pre></div>
@@ -138,12 +138,12 @@ user-defined units.  The format specifier (and
 <a class="reference internal" href="../api/astropy.units.UnitBase.html#astropy.units.UnitBase.to_string" title="astropy.units.core.UnitBase"><code class="xref py py-obj docutils literal"><span class="pre">to_string</span></code></a>) functions also take an
 optional parameter to select a different format, including
 <code class="docutils literal"><span class="pre">&quot;latex&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;unicode&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;cds&quot;</span></code>, and others, defined below.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;{0.value:0.003f} in {0.unit:latex}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;{0.value:0.003f} in {0.unit:latex}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>  
 <span class="go">&#39;10.000 in $\\mathrm{km}$&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span> <span class="o">/</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fluxunit</span><span class="p">)</span>
 <span class="go">u&#39;erg / (cm2 s)&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;{0:console}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fluxunit</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s">&quot;{0:console}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fluxunit</span><span class="p">))</span>
 <span class="go"> erg</span>
 <span class="go">------</span>
 <span class="go">s cm^2</span>
@@ -156,7 +156,7 @@ optional parameter to select a different format, including
 <p>The <a class="reference internal" href="../api/astropy.units.UnitBase.html#astropy.units.UnitBase.to_string" title="astropy.units.core.UnitBase"><code class="xref py py-obj docutils literal"><span class="pre">to_string</span></code></a> method is an alternative way to
 format units as strings, and is the underlying implementation of the
 <a class="reference external" href="http://docs.python.org/library/functions.html#format" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a>-style usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span> <span class="o">/</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span> <span class="o">/</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 <span class="go">u&#39;$\\mathrm{\\frac{erg}{s\\,cm^{2}}}$&#39;</span>
 </pre></div>
@@ -166,12 +166,12 @@ format units as strings, and is the underlying implementation of the
 <h2>Creating units from strings<a class="headerlink" href="#creating-units-from-strings" title="Permalink to this headline">¶</a></h2>
 <p>Units can also be created from strings in a number of different
 formats using the <a class="reference internal" href="../api/astropy.units.Unit.html#astropy.units.Unit" title="astropy.units.Unit"><code class="xref py py-obj docutils literal"><span class="pre">Unit</span></code></a> class:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;m&quot;</span><span class="p">)</span>
 <span class="go">Unit(&quot;m&quot;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;erg / (s cm2)&quot;</span><span class="p">)</span>
 <span class="go">Unit(&quot;erg / (cm2 s)&quot;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;erg.s-1.cm-2&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;cds&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;erg.s-1.cm-2&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&quot;cds&quot;</span><span class="p">)</span>
 <span class="go">Unit(&quot;erg / (cm2 s)&quot;)</span>
 </pre></div>
 </div>
@@ -216,26 +216,26 @@ following formats:</p>
 <a class="reference external" href="http://www.iau.org/static/publications/stylemanual1989.pdf">IAU Style Manual</a>
 recommendations for unit presentation.  This format is
 automatically used when printing a unit in the IPython notebook:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span>  
 </pre></div>
 </div>
 <div class="math">
-<p><img src="../_images/math/9fb9f782790637a259499c47a0eda34c232f987c.png" alt="\mathrm{\frac{erg}{s\,cm^{2}}}"/></p>
+<p><img src="../_images/math/1a7cf9d14302410787ed2aa83f8a6f8bf0339fbc.png" alt="\mathrm{\frac{erg}{s\,cm^{2}}}"/></p>
 </div></li>
 <li><p class="first"><code class="docutils literal"><span class="pre">&quot;latex_inline&quot;</span></code>: Writes units out using LaTeX math syntax using the
 <a class="reference external" href="http://www.iau.org/static/publications/stylemanual1989.pdf">IAU Style Manual</a>
 recommendations for unit presentation, using negative powers instead of
 fractions, as required by some journals (e.g., <a class="reference external" href="http://aas.org/authors/manuscript-preparation-aj-apj-author-instructions#_Toc2.2">Apj and AJ</a>.)
 Best suited for unit representation inline with text:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;latex_inline&#39;</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fluxunit</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;latex_inline&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 <div class="math">
-<p><img src="../_images/math/d1456a46a39fc17a714e92ce0e4c31b3b90429c9.png" alt="\mathrm{erg\,s^{-1}\,cm^{-2}}"/></p>
+<p><img src="../_images/math/7af7301a5d1e979ce0b564a0ebea433a8d17c3d6.png" alt="\mathrm{erg\,s^{-1}\,cm^{-2}}"/></p>
 </div></li>
 <li><p class="first"><code class="docutils literal"><span class="pre">&quot;console&quot;</span></code>: Writes a multi-line representation of the unit
 useful for display in a text console:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;console&#39;</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;console&#39;</span><span class="p">))</span>
 <span class="go"> erg</span>
 <span class="go">------</span>
 <span class="go">s cm^2</span>
@@ -244,7 +244,7 @@ useful for display in a text console:</p>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">&quot;unicode&quot;</span></code>: Same as <code class="docutils literal"><span class="pre">&quot;console&quot;</span></code>, except uses Unicode
 characters:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Ry</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;unicode&#39;</span><span class="p">))</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Ry</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;unicode&#39;</span><span class="p">))</span>  
 <span class="go">                m² kg</span>
 <span class="go">2.1798721×10-¹⁸ ─────</span>
 <span class="go">                 s²</span>
@@ -261,8 +261,8 @@ correspond to any given standard, <a class="reference internal" href="index.html
 consistent way to store and pass around unit strings that did not
 parse.</p>
 <p>Normally, passing an unrecognized unit string raises an exception:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># The FITS standard uses &#39;angstrom&#39;, not &#39;Angstroem&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;Angstroem&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;fits&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># The FITS standard uses &#39;angstrom&#39;, not &#39;Angstroem&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;Angstroem&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&quot;fits&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
   <span class="c">...</span>
 <span class="gr">ValueError</span>: <span class="n">&#39;Angstroem&#39; did not parse as fits unit: At col 0, Unit</span>
@@ -283,7 +283,7 @@ instance.</li>
 </ul>
 </div></blockquote>
 <p>So, for example, one can do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;Angstroem&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;fits&quot;</span><span class="p">,</span> <span class="n">parse_strict</span><span class="o">=</span><span class="s">&quot;warn&quot;</span><span class="p">)</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&quot;Angstroem&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&quot;fits&quot;</span><span class="p">,</span> <span class="n">parse_strict</span><span class="o">=</span><span class="s">&quot;warn&quot;</span><span class="p">)</span>  
 <span class="go">WARNING: UnitsWarning: &#39;Angstroem&#39; did not parse as unit format</span>
 <span class="go">&#39;fits&#39;: At col 0, &#39;Angstroem&#39; is not a valid unit in string</span>
 <span class="go">&#39;Angstroem&#39; [astropy.units.core]</span>
@@ -293,7 +293,7 @@ instance.</li>
 original string it was created with, so it can be written back out,
 but any meaningful operations on it, such as converting to another
 unit or composing with other units, will fail.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>  
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>  
 <span class="go">&#39;Angstroem&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="p">)</span>  
 <span class="gt">Traceback (most recent call last):</span>
@@ -339,7 +339,7 @@ unit or composing with other units, will fail.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Configuration system (astropy.config) &mdash; Astropy v1.2.dev14978</title>
+    <title>Configuration system (astropy.config) &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="next" title="Configuration transition" href="config_0_4_transition.html" />
     <link rel="prev" title="WebProfileDialog" href="../api/astropy.vo.samp.WebProfileDialog.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       
@@ -92,7 +92,7 @@ source code to make those changes.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The configuration system got a major overhaul in astropy 0.4 as
-part of APE3.  See <a class="reference internal" href="config_0_4_transition.html#config-0-4-transition"><span>Configuration transition</span></a> for information
+part of APE3.  See <a class="reference internal" href="config_0_4_transition.html#config-0-4-transition"><span class="std std-ref">Configuration transition</span></a> for information
 about updating code to use the new API.</p>
 </div>
 </div>
@@ -102,7 +102,7 @@ about updating code to use the new API.</p>
 configuration file.  It will be automatically generated with all the
 default values commented out the first time you import Astropy.  You
 can find the exact location by doing:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.config</span> <span class="kn">import</span> <span class="n">get_config_dir</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.config</span> <span class="k">import</span> <span class="n">get_config_dir</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">get_config_dir</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -122,7 +122,7 @@ It should have all of the sections you might want, with descriptions and the
 type of the value that is accepted.  Feel free to edit this as you wish, and
 any of these changes will be reflected when you next start Astropy.  Or, if you
 want to see your changes immediately in your current Astropy session, just do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.config</span> <span class="kn">import</span> <span class="n">reload_config</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.config</span> <span class="k">import</span> <span class="n">reload_config</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">reload_config</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -147,7 +147,7 @@ parameters related to data files live in <code class="docutils literal"><span cl
 This object has properties for getting and setting individual
 configuration parameters.  For instance to get the default URL for
 astropy remote data do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">conf</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="k">import</span> <span class="n">conf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">dataurl</span>
 <span class="go">&#39;http://data.astropy.org/&#39;</span>
 </pre></div>
@@ -171,7 +171,7 @@ like:</p>
 </pre></div>
 </div>
 <p>You should be able to modify the values at run-time this way:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">conf</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="k">import</span> <span class="n">conf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">dataurl</span>
 <span class="go">&#39;http://data.astropy.org/&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">dataurl</span> <span class="o">=</span> <span class="s">&#39;http://astropydata.mywebsite.com&#39;</span>
@@ -200,12 +200,12 @@ configuration file to say:</p>
 </pre></div>
 </div>
 <p>And then run the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="s">&#39;dataurl&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="s">&#39;dataurl&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="s">&#39;remote_timeout&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This should update the variables with the values from the configuration file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">dataurl</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">dataurl</span>
 <span class="go">&#39;http://myotherdata.mywebsite.com/&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">remote_timeout</span>
 <span class="go">6.3</span>
@@ -213,16 +213,16 @@ configuration file to say:</p>
 </div>
 <p>You can reload all configuration parameters of a <code class="docutils literal"><span class="pre">conf</span></code> object at
 once by calling <code class="docutils literal"><span class="pre">reload</span></code> with no parameters:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Or if you want to reload all astropy configuration at once, use the
 <a class="reference internal" href="../api/astropy.config.reload_config.html#astropy.config.reload_config" title="astropy.config.reload_config"><code class="xref py py-obj docutils literal"><span class="pre">reload_config</span></code></a> function:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">reload_config</span><span class="p">(</span><span class="s">&#39;astropy&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">reload_config</span><span class="p">(</span><span class="s">&#39;astropy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can also reset a configuration parameter back to its default value.  Note that this is the default value defined in the Python code, and has nothing to do with the configuration file on disk:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="s">&#39;dataurl&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="s">&#39;dataurl&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">dataurl</span>
 <span class="go">&#39;http://data.astropy.org/&#39;</span>
 </pre></div>
@@ -260,9 +260,9 @@ it (and it is recommended for affiliated packages).</p>
 <code class="docutils literal"><span class="pre">conf</span></code> object with a number of configuration parameters.  They
 should be defined at the top level, i.e. in the <code class="docutils literal"><span class="pre">__init__.py</span></code> of
 each subpackage that has configuration items:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot; This is the docstring at the beginning of a module</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot; This is the docstring at the beginning of a module</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">_config</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">_config</span>
 
 <span class="k">class</span> <span class="nc">Conf</span><span class="p">(</span><span class="n">_config</span><span class="o">.</span><span class="n">ConfigNamespace</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -307,7 +307,7 @@ parameter are in comment lines starting with two hash characters
 type from the type of the <code class="docutils literal"><span class="pre">defaultvalue</span></code> it is given when it is
 created.  The item can only be set to be an object of this type.
 Hence:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">some_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;A description.&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">some_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;A description.&#39;</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">conf</span><span class="o">.</span><span class="n">some_setting</span> <span class="o">=</span> <span class="mf">1.2</span>
 </pre></div>
@@ -318,7 +318,7 @@ particular set of options, you should pass in a list as the
 <code class="docutils literal"><span class="pre">defaultvalue</span></code> option.  The first entry in the list will be taken as
 the default, and the list as a whole gives all the valid options.  For
 example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">an_option</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">an_option</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span>
     <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">],</span>
     <span class="s">&quot;This option can be &#39;a&#39;, &#39;b&#39;, or &#39;c&#39;&quot;</span><span class="p">)</span>
 <span class="o">...</span>
@@ -330,7 +330,7 @@ example:</p>
 </div>
 <p>Finally, a <a class="reference internal" href="../api/astropy.config.ConfigItem.html#astropy.config.ConfigItem" title="astropy.config.ConfigItem"><code class="xref py py-obj docutils literal"><span class="pre">ConfigItem</span></code></a> can be explicitly given a type
 via the <code class="docutils literal"><span class="pre">cfgtype</span></code> option:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">an_int_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">an_int_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span>
     <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;A description.&#39;</span><span class="p">,</span> <span class="n">cfgtype</span><span class="o">=</span><span class="s">&#39;integer&#39;</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">conf</span><span class="o">.</span><span class="n">an_int_setting</span> <span class="o">=</span> <span class="mi">3</span>     <span class="c"># works fine</span>
@@ -339,7 +339,7 @@ via the <code class="docutils literal"><span class="pre">cfgtype</span></code> o
 </div>
 <p>If the default value&#8217;s type doesn&#8217;t match <code class="docutils literal"><span class="pre">cfgtype</span></code>, the
 <a class="reference internal" href="../api/astropy.config.ConfigItem.html#astropy.config.ConfigItem" title="astropy.config.ConfigItem"><code class="xref py py-obj docutils literal"><span class="pre">ConfigItem</span></code></a> cannot be created:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">an_int_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">an_int_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span>
     <span class="mf">4.2</span><span class="p">,</span> <span class="s">&#39;A description.&#39;</span><span class="p">,</span> <span class="n">cfgtype</span><span class="o">=</span><span class="s">&#39;integer&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -348,7 +348,7 @@ is usually what you want.  The main exception is when you want your
 configuration item to be a list.  The default behavior will treat that
 as a list of <em>options</em> unless you explicitly tell it that the
 <a class="reference internal" href="../api/astropy.config.ConfigItem.html#astropy.config.ConfigItem" title="astropy.config.ConfigItem"><code class="xref py py-obj docutils literal"><span class="pre">ConfigItem</span></code></a> itself is supposed to be a list:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a_list_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s">&#39;A description.&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="n">a_list_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s">&#39;A description.&#39;</span><span class="p">)</span>
 
 <span class="n">a_list_setting</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s">&#39;A description.&#39;</span><span class="p">,</span> <span class="n">cfgtype</span><span class="o">=</span><span class="s">&#39;list&#39;</span><span class="p">)</span>
 </pre></div>
@@ -382,13 +382,13 @@ values immediately before use instead of just storing their initial
 value to some other variable (or used as a default for a
 function). For example, the following will work, but is incorrect
 usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">some_func</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="n">conf</span><span class="o">.</span><span class="n">some_setting</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">some_func</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="n">conf</span><span class="o">.</span><span class="n">some_setting</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">val</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>This works fine as long as the user doesn&#8217;t change its value during
 runtime, but if they do, the function won&#8217;t know about the change:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">some_func</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">some_func</span><span class="p">()</span>
 <span class="go">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">some_setting</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">some_func</span><span class="p">()</span>  <span class="c"># naively should return 5, because 3 + 2 = 5</span>
@@ -396,7 +396,7 @@ runtime, but if they do, the function won&#8217;t know about the change:</p>
 </pre></div>
 </div>
 <p>There are two ways around this.  The typical/intended way is:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The `SOME_SETTING` configuration item influences this output</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -404,11 +404,11 @@ runtime, but if they do, the function won&#8217;t know about the change:</p>
 </pre></div>
 </div>
 <p>Or, if the option needs to be available as a function parameter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">some_func</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">some_func</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="k">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    If not specified, `val` is set by the `SOME_SETTING` configuration item.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">some_setting</span> <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">else</span> <span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">some_setting</span> <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="k">None</span> <span class="k">else</span> <span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -424,7 +424,7 @@ runtime, but if they do, the function won&#8217;t know about the change:</p>
 </li>
 </ul>
 </div>
-<p><a class="reference internal" href="../logging.html"><em>Logging system</em></a> (overview of <a class="reference internal" href="../logging.html#module-astropy.logger" title="astropy.logger"><code class="xref py py-obj docutils literal"><span class="pre">astropy.logger</span></code></a>)</p>
+<p><a class="reference internal" href="../logging.html"><span class="doc">Logging system</span></a> (overview of <a class="reference internal" href="../logging.html#module-astropy.logger" title="astropy.logger"><code class="xref py py-obj docutils literal"><span class="pre">astropy.logger</span></code></a>)</p>
 </div>
 <div class="section" id="reference-api">
 <h2>Reference/API<a class="headerlink" href="#reference-api" title="Permalink to this headline">¶</a></h2>
@@ -487,10 +487,8 @@ affiliated package index.</p>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
-<p class="graphviz">
-<object data="../_images/inheritance-65ce97188463f8f335747093bf7d7863eaf9f1da.svg" type="image/svg+xml">
+<object data="../_images/inheritance-c999484a8d031b46b941987fd134e4c74a786346.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of astropy.config.configuration.ConfigItem, astropy.config.configuration.ConfigNamespace, astropy.config.configuration.ConfigurationMissingWarning, astropy.config.configuration.InvalidConfigurationItemWarning, astropy.config.paths.set_temp_cache, astropy.config.paths.set_temp_config</p></object>
-</p>
 </div>
 </div>
 </div>
@@ -545,7 +543,7 @@ affiliated package index.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

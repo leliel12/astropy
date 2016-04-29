@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Python virtual environments &mdash; Astropy v1.2.dev14978</title>
+    <title>Python virtual environments &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../_static/copybutton.js"></script>
 
@@ -55,7 +55,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev14978</a>
+	<a href="../../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       
@@ -95,19 +95,19 @@ use <a class="reference external" href="http://conda.pydata.org/docs/">conda</a>
 <p>In both cases you will go through the same basic steps; the commands to
 accomplish each step are given for both <a class="reference external" href="http://conda.pydata.org/docs/">conda</a> and <a class="reference external" href="http://pypi.python.org/pypi/virtualenvwrapper">virtualenvwrapper</a>:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#setup-for-env"><span>Set up for virtual environments</span></a></li>
-<li><a class="reference internal" href="#list-env"><span>List virtual environments</span></a></li>
-<li><a class="reference internal" href="#create-env"><span>Create a new virtual environment</span></a></li>
-<li><a class="reference internal" href="#activate-env"><span>Activate a virtual environment</span></a></li>
-<li><a class="reference internal" href="#deactivate-env"><span>Deactivate a virtual environment</span></a></li>
-<li><a class="reference internal" href="#delete-env"><span>Delete a virtual environment</span></a></li>
+<li><a class="reference internal" href="#setup-for-env"><span class="std std-ref">Set up for virtual environments</span></a></li>
+<li><a class="reference internal" href="#list-env"><span class="std std-ref">List virtual environments</span></a></li>
+<li><a class="reference internal" href="#create-env"><span class="std std-ref">Create a new virtual environment</span></a></li>
+<li><a class="reference internal" href="#activate-env"><span class="std std-ref">Activate a virtual environment</span></a></li>
+<li><a class="reference internal" href="#deactivate-env"><span class="std std-ref">Deactivate a virtual environment</span></a></li>
+<li><a class="reference internal" href="#delete-env"><span class="std std-ref">Delete a virtual environment</span></a></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
 <li>You <strong>cannot</strong> use <a class="reference external" href="http://pypi.python.org/pypi/virtualenvwrapper">virtualenvwrapper</a> or <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> within anaconda.</li>
 <li><a class="reference external" href="http://pypi.python.org/pypi/virtualenvwrapper">virtualenvwrapper</a> works with bash and bash-like shells; see
-<a class="reference internal" href="virtualenv_detail.html#using-virtualenv"><span>Using virtualenv</span></a> for alternatives.</li>
+<a class="reference internal" href="virtualenv_detail.html#using-virtualenv"><span class="std std-ref">Using virtualenv</span></a> for alternatives.</li>
 </ul>
 </div>
 <div class="section" id="set-up-for-virtual-environments">
@@ -119,7 +119,7 @@ accomplish each step are given for both <a class="reference external" href="http
 with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">virtualenvwrapper</span></code>.</p>
 </li>
 <li><p class="first">From the <a class="reference external" href="http://virtualenvwrapper.readthedocs.org/en/latest/install.html">documentation for virtualenvwrapper</a>, you also need to:</p>
-<div class="highlight-python"><div class="highlight"><pre>export WORKON_HOME=$HOME/.virtualenvs
+<div class="highlight-default"><div class="highlight"><pre>export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/
 source /usr/local/bin/virtualenvwrapper.sh
 </pre></div>
@@ -143,7 +143,7 @@ and this is the easy way to find out.</p>
 <dd><ul class="first last simple">
 <li>If this displays nothing you have no virtual environments</li>
 <li>If this displays <code class="docutils literal"><span class="pre">workon:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> then you haven&#8217;t done
-the <a class="reference internal" href="#setup-for-env"><span>Set up for virtual environments</span></a>; do that.</li>
+the <a class="reference internal" href="#setup-for-env"><span class="std std-ref">Set up for virtual environments</span></a>; do that.</li>
 <li>For more detailed information about installed environments use
 <code class="docutils literal"><span class="pre">lsvirtualenv</span></code>.</li>
 </ul>
@@ -183,7 +183,7 @@ environment.</p>
 <dd><ul class="first last">
 <li><p class="first">Make an environment called <code class="docutils literal"><span class="pre">ENV</span></code> with all of the packages in your normal
 python environment:</p>
-<div class="highlight-python"><div class="highlight"><pre>``mkvirtualenv --system-site-packages ENV``
+<div class="highlight-default"><div class="highlight"><pre>``mkvirtualenv --system-site-packages ENV``
 </pre></div>
 </div>
 </li>
@@ -206,7 +206,7 @@ can install packages within the virtual environment.</p>
 <dd><ul class="first last">
 <li><p class="first">Make an environment called <code class="docutils literal"><span class="pre">ENV</span></code> with all of the packages in your main
 anaconda environment:</p>
-<div class="highlight-python"><div class="highlight"><pre>``conda create -n ENV anaconda``
+<div class="highlight-default"><div class="highlight"><pre>``conda create -n ENV anaconda``
 </pre></div>
 </div>
 </li>
@@ -238,12 +238,12 @@ look something like this: <code class="docutils literal"><span class="pre">(ENV)
 addition to activating new ones.</p>
 <ul>
 <li><p class="first"><a class="reference external" href="http://pypi.python.org/pypi/virtualenvwrapper">virtualenvwrapper</a>: Activate the environment <code class="docutils literal"><span class="pre">ENV</span></code> with:</p>
-<div class="highlight-python"><div class="highlight"><pre>workon ENV
+<div class="highlight-default"><div class="highlight"><pre><span class="n">workon</span> <span class="n">ENV</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">` conda`: Activate the environment <code class="docutils literal"><span class="pre">ENV</span></code> with:</p>
-<div class="highlight-python"><div class="highlight"><pre>source activate ENV
+<div class="highlight-default"><div class="highlight"><pre><span class="n">source</span> <span class="n">activate</span> <span class="n">ENV</span>
 </pre></div>
 </div>
 </li>
@@ -310,7 +310,7 @@ which the <code class="docutils literal"><span class="pre">ENV</span></code> is 
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>

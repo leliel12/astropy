@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Efficient Model Rendering with Bounding Boxes &mdash; Astropy v1.2.dev14978</title>
+    <title>Efficient Model Rendering with Bounding Boxes &mdash; Astropy v1.2.dev14979</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14978',
+        VERSION:     '1.2.dev14979',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="index.html" />
     <link rel="next" title="Algorithms" href="algorithms.html" />
     <link rel="prev" title="Defining New Model Classes" href="new.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14978</a>
+	<a href="../index.html">Astropy v1.2.dev14979</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -102,7 +102,7 @@ evaluate a model on an output array, or input coordinate arrays, limiting the
 evaluation to the <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.bounding_box" title="astropy.modeling.Model.bounding_box"><code class="xref py py-obj docutils literal"><span class="pre">bounding_box</span></code></a> region if
 it is set. This function will also produce postage stamp images of the model if
 no other input array is passed. To instead extract postage stamps from the data
-array itself, see <a class="reference internal" href="../nddata/utils.html#cutout-images"><span>2D Cutout Images</span></a>.</p>
+array itself, see <a class="reference internal" href="../nddata/utils.html#cutout-images"><span class="std std-ref">2D Cutout Images</span></a>.</p>
 <div class="section" id="using-the-bounding-box">
 <h2>Using the Bounding Box<a class="headerlink" href="#using-the-bounding-box" title="Permalink to this headline">¶</a></h2>
 <p>For basic usage, see <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.bounding_box" title="astropy.modeling.Model.bounding_box"><code class="xref py py-obj docutils literal"><span class="pre">Model.bounding_box</span></code></a>.  By default no
@@ -114,7 +114,7 @@ are noted in the documentation. For example, see <code class="docutils literal">
 <p><a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.bounding_box" title="astropy.modeling.Model.bounding_box"><code class="xref py py-obj docutils literal"><span class="pre">Model.bounding_box</span></code></a> can be set by the
 user to any callable. This is particularly useful for fitting models created
 with <a class="reference internal" href="../api/astropy.modeling.custom_model.html#astropy.modeling.custom_model" title="astropy.modeling.custom_model"><code class="xref py py-obj docutils literal"><span class="pre">custom_model</span></code></a> or as a compound model:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">custom_model</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">custom_model</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">ellipsoid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">rsq</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">((</span><span class="n">z</span> <span class="o">-</span> <span class="n">z0</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="gp">... </span>    <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">rsq</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">amp</span>
@@ -270,7 +270,7 @@ a factor of 10 with negligible loss of information.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
     Last built 29 Apr 2016. <br/>
   </p>
 </footer>
