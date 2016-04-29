@@ -1,0 +1,8 @@
+
+
+circvar
+=====================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: circvar

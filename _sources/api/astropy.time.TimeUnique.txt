@@ -1,0 +1,29 @@
+
+.. include:: ../time/references.txt
+
+
+TimeUnique
+=======================
+
+.. currentmodule:: astropy.time
+
+.. autoclass:: TimeUnique
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

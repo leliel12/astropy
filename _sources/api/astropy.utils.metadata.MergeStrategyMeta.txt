@@ -1,0 +1,27 @@
+
+
+MergeStrategyMeta
+========================================
+
+.. currentmodule:: astropy.utils.metadata
+
+.. autoclass:: MergeStrategyMeta
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

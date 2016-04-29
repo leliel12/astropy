@@ -1,0 +1,67 @@
+
+
+FunctionQuantity
+=======================================
+
+.. currentmodule:: astropy.units.function
+
+.. autoclass:: FunctionQuantity
+   :show-inheritance:
+
+   
+
+   
+   
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+   
+      ~FunctionQuantity.cgs
+      ~FunctionQuantity.equivalencies
+      ~FunctionQuantity.physical
+      ~FunctionQuantity.si
+      ~FunctionQuantity.unit
+
+   
+   
+
+   
+   
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+   
+      ~FunctionQuantity.decompose
+      ~FunctionQuantity.to
+
+   
+   
+
+   
+   
+
+   .. rubric:: Attributes Documentation
+
+   
+   .. autoattribute:: cgs
+   .. autoattribute:: equivalencies
+   .. autoattribute:: physical
+   .. autoattribute:: si
+   .. autoattribute:: unit
+
+   
+   
+
+   
+   
+
+   .. rubric:: Methods Documentation
+
+   
+   .. automethod:: decompose
+   .. automethod:: to
+
+   
+   

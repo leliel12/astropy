@@ -1,0 +1,29 @@
+
+
+OrderedDescriptor
+====================================
+
+.. currentmodule:: astropy.utils.misc
+
+.. autoclass:: OrderedDescriptor
+   :show-inheritance:
+
+   
+     
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

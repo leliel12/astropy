@@ -1,0 +1,8 @@
+
+
+enable_merge_strategies
+==============================================
+
+.. currentmodule:: astropy.utils.metadata
+
+.. autofunction:: enable_merge_strategies

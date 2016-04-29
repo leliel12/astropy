@@ -1,0 +1,8 @@
+
+
+MergeConflictError
+=========================================
+
+.. currentmodule:: astropy.utils.metadata
+
+.. autoexception:: MergeConflictError

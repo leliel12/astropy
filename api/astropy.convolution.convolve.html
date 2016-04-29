@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>convolve &mdash; Astropy v1.2.dev14978</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.dev14978',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="up" title="Convolution and filtering (astropy.convolution)" href="../convolution/index.html" />
+    <link rel="next" title="convolve_fft" href="astropy.convolution.convolve_fft.html" />
+    <link rel="prev" title="Convolution Kernels" href="../convolution/kernels.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="astropy.convolution.convolve_fft.html" title="convolve_fft">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../convolution/kernels.html" title="Convolution Kernels">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Astropy v1.2.dev14978</a>
+	 &raquo;
+      </li>
+      <li><a href="../convolution/index.html" accesskey="U">Convolution and filtering (<code class="docutils literal"><span class="pre">astropy.convolution</span></code>)</a> &raquo;</li>
+      
+      <li>convolve</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="convolve">
+<h1>convolve<a class="headerlink" href="#convolve" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="astropy.convolution.convolve">
+<code class="descclassname">astropy.convolution.</code><code class="descname">convolve</code><span class="sig-paren">(</span><em>array</em>, <em>kernel</em>, <em>boundary='fill'</em>, <em>fill_value=0.0</em>, <em>normalize_kernel=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/convolution/convolve.py#L22" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/convolution/convolve.html#convolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.convolution.convolve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convolve an array with a kernel.</p>
+<p>This routine differs from <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html#scipy.ndimage.convolve" title="(in SciPy v0.17.0)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.ndimage.convolve</span></code></a> because
+it includes a special treatment for <code class="docutils literal"><span class="pre">NaN</span></code> values. Rather than
+including <code class="docutils literal"><span class="pre">NaN</span></code> values in the array in the convolution calculation, which
+causes large <code class="docutils literal"><span class="pre">NaN</span></code> holes in the convolved array, <code class="docutils literal"><span class="pre">NaN</span></code> values are
+replaced with interpolated values using the kernel as an interpolation
+function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>array</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a></p>
+<blockquote>
+<div><p>The array to convolve. This should be a 1, 2, or 3-dimensional array
+or a list or a set of nested lists representing a 1, 2, or
+3-dimensional array.</p>
+</div></blockquote>
+<p><strong>kernel</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference internal" href="astropy.convolution.Kernel.html#astropy.convolution.Kernel" title="astropy.convolution.Kernel"><code class="xref py py-obj docutils literal"><span class="pre">Kernel</span></code></a></p>
+<blockquote>
+<div><p>The convolution kernel. The number of dimensions should match those
+for the array, and the dimensions should be odd in all directions.</p>
+</div></blockquote>
+<p><strong>boundary</strong> : str, optional</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>A flag indicating how to handle boundaries:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt><a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></dt>
+<dd><p class="first last">Set the <code class="docutils literal"><span class="pre">result</span></code> values to zero where the kernel
+extends beyond the edge of the array (default).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;fill&#8217;</dt>
+<dd><p class="first last">Set values outside the array boundary to <code class="docutils literal"><span class="pre">fill_value</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;wrap&#8217;</dt>
+<dd><p class="first last">Periodic boundary that wrap to the other side of <code class="docutils literal"><span class="pre">array</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;extend&#8217;</dt>
+<dd><p class="first last">Set values outside the array to the nearest <code class="docutils literal"><span class="pre">array</span></code>
+value.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>fill_value</strong> : float, optional</p>
+<blockquote>
+<div><p>The value to use outside the array when using <code class="docutils literal"><span class="pre">boundary='fill'</span></code></p>
+</div></blockquote>
+<p><strong>normalize_kernel</strong> : bool, optional</p>
+<blockquote>
+<div><p>Whether to normalize the kernel prior to convolving</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a></p>
+<blockquote class="last">
+<div><p>An array with the same dimensions and as the input array,
+convolved with kernel.  The data type depends on the input
+array type.  If array is a floating point type, then the
+return array keeps the same data type, otherwise the type
+is <code class="docutils literal"><span class="pre">numpy.float</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Masked arrays are not supported at this time.  The convolution
+is always done at <code class="docutils literal"><span class="pre">numpy.float</span></code> precision.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">convolve</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/astropy.convolution.convolve.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Last built 29 Apr 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>

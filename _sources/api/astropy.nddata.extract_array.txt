@@ -1,0 +1,8 @@
+
+
+extract_array
+============================
+
+.. currentmodule:: astropy.nddata
+
+.. autofunction:: extract_array

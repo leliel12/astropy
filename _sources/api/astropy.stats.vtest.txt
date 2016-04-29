@@ -1,0 +1,8 @@
+
+
+vtest
+===================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: vtest

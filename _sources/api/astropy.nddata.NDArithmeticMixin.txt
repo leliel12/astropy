@@ -1,0 +1,56 @@
+
+
+NDArithmeticMixin
+================================
+
+.. currentmodule:: astropy.nddata
+
+.. autoclass:: NDArithmeticMixin
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+   
+      ~NDArithmeticMixin.add
+      ~NDArithmeticMixin.divide
+      ~NDArithmeticMixin.ic_addition
+      ~NDArithmeticMixin.ic_division
+      ~NDArithmeticMixin.ic_multiplication
+      ~NDArithmeticMixin.ic_subtraction
+      ~NDArithmeticMixin.multiply
+      ~NDArithmeticMixin.subtract
+
+   
+   
+
+   
+   
+   
+
+   
+   
+
+   .. rubric:: Methods Documentation
+
+   
+   .. automethod:: add
+   .. automethod:: divide
+   .. automethod:: ic_addition
+   .. automethod:: ic_division
+   .. automethod:: ic_multiplication
+   .. automethod:: ic_subtraction
+   .. automethod:: multiply
+   .. automethod:: subtract
+
+   
+   

@@ -1,0 +1,8 @@
+
+
+merge
+============================
+
+.. currentmodule:: astropy.utils.metadata
+
+.. autofunction:: merge

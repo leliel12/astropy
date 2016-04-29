@@ -1,0 +1,8 @@
+
+
+histogram
+=======================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: histogram

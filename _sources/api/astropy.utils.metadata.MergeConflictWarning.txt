@@ -1,0 +1,8 @@
+
+
+MergeConflictWarning
+===========================================
+
+.. currentmodule:: astropy.utils.metadata
+
+.. autoexception:: MergeConflictWarning

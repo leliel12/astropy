@@ -1,0 +1,8 @@
+
+
+add_array
+========================
+
+.. currentmodule:: astropy.nddata
+
+.. autofunction:: add_array

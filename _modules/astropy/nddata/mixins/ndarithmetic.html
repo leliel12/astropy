@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>astropy.nddata.mixins.ndarithmetic &mdash; Astropy v1.2.dev14978</title>
+    
+    <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.2.dev14978',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev14978" href="../../../../index.html" />
+    <link rel="up" title="astropy.nddata" href="../../nddata.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../../../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../../../../index.html">Astropy v1.2.dev14978</a>
+	 &raquo;
+      </li>
+      <li><a href="../../../index.html" >Module code</a> &raquo;</li>
+      <li><a href="../../nddata.html" accesskey="U">astropy.nddata</a> &raquo;</li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for astropy.nddata.mixins.ndarithmetic</h1><div class="highlight"><pre>
+<span class="c"># Licensed under a 3-clause BSD style license - see LICENSE.rst</span>
+<span class="c"># This module implements the Arithmetic mixin to the NDData class.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..nduncertainty</span> <span class="kn">import</span> <span class="n">NDUncertainty</span>
+<span class="kn">from</span> <span class="nn">...units</span> <span class="kn">import</span> <span class="n">dimensionless_unscaled</span>
+<span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">format_doc</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;NDArithmeticMixin&#39;</span><span class="p">]</span>
+
+<span class="c"># Global so it doesn&#39;t pollute the class dict unnecessarily:</span>
+
+<span class="c"># Docstring templates for add, subtract, multiply, divide methods.</span>
+<span class="n">_arit_doc</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">    Performs {name} by evaluating ``self`` {op} ``operand``.</span>
+
+<span class="s">    For the inverse operation or operations between different subclasses take a</span>
+<span class="s">    look at</span>
+<span class="s">    :meth:`~astropy.nddata.NDArithmeticMixin.ic_{name}` .</span>
+
+<span class="s">    Parameters</span>
+<span class="s">    ----------</span>
+<span class="s">    operand : `NDData`-like instance or convertible to one.</span>
+<span class="s">        The second operand in the operation.</span>
+
+<span class="s">    propagate_uncertainties : `bool` or ``None``, optional</span>
+<span class="s">        If ``None`` the result will have no uncertainty. If ``False`` the</span>
+<span class="s">        result will have a copied version of the first operand that has an</span>
+<span class="s">        uncertainty. If ``True`` the result will have a correctly propagated</span>
+<span class="s">        uncertainty from the uncertainties of the operands but this assumes</span>
+<span class="s">        that the uncertainties are `NDUncertainty`-like. Default is ``True``.</span>
+
+<span class="s">    handle_mask : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
+<span class="s">        If ``None`` the result will have no mask. If ``&#39;first_found&#39;`` the</span>
+<span class="s">        result will have a copied version of the first operand that has a</span>
+<span class="s">        mask). If it is a callable then the specified callable must</span>
+<span class="s">        create the results ``mask`` and if necessary provide a copy.</span>
+<span class="s">        Default is `numpy.logical_or`.</span>
+
+<span class="s">    handle_meta : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
+<span class="s">        If ``None`` the result will have no meta. If ``&#39;first_found&#39;`` the</span>
+<span class="s">        result will have a copied version of the first operand that has a</span>
+<span class="s">        (not empty) meta. If it is a callable then the specified callable must</span>
+<span class="s">        create the results ``meta`` and if necessary provide a copy.</span>
+<span class="s">        Default is ``None``.</span>
+
+<span class="s">    compare_wcs : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
+<span class="s">        If ``None`` the result will have no wcs and no comparison between</span>
+<span class="s">        the wcs of the operands is made. If ``&#39;first_found&#39;`` the</span>
+<span class="s">        result will have a copied version of the first operand that has a</span>
+<span class="s">        wcs. If it is a callable then the specified callable must</span>
+<span class="s">        compare the ``wcs``. The resulting ``wcs`` will be like if ``False``</span>
+<span class="s">        was given otherwise it raises a ``ValueError`` if the comparison was</span>
+<span class="s">        not successful. Default is ``&#39;first_found&#39;``.</span>
+
+<span class="s">    uncertainty_correlation : number or `~numpy.ndarray`, optional</span>
+<span class="s">        The correlation between the two operands is used for correct error</span>
+<span class="s">        propagation for correlated data as given in:</span>
+<span class="s">        https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas</span>
+<span class="s">        Default is 0.</span>
+
+
+<span class="s">    kwargs :</span>
+<span class="s">        Any other parameter that should be passed to the callables used.</span>
+
+<span class="s">    Returns</span>
+<span class="s">    -------</span>
+<span class="s">    result : `~astropy.nddata.NDData`-like</span>
+<span class="s">        The resulting dataset</span>
+
+<span class="s">    Notes</span>
+<span class="s">    -----</span>
+<span class="s">    If a ``callable`` is used for ``mask``, ``wcs`` or ``meta`` the</span>
+<span class="s">    callable must accept the corresponding attributes as first two</span>
+<span class="s">    parameters. If the callable also needs additional parameters these can be</span>
+<span class="s">    defined as ``kwargs`` and must start with ``&quot;wcs_&quot;`` (for wcs callable) or</span>
+<span class="s">    ``&quot;meta_&quot;`` (for meta callable). This startstring is removed before the</span>
+<span class="s">    callable is called.</span>
+<span class="s">    &quot;&quot;&quot;</span>
+
+<span class="n">_arit_cls_doc</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">    Like :meth:`NDArithmeticMixin.{0}` you can {0} two operands.</span>
+
+<span class="s">    This method is avaiable as classmethod in order to allow arithmetic</span>
+<span class="s">    operations between arbitary objects as long as they are convertable to</span>
+<span class="s">    the class that called the method. Therefore the name prefix ``ic_`` which</span>
+<span class="s">    stands for ``interclass`` operations.</span>
+
+<span class="s">    Parameters</span>
+<span class="s">    ----------</span>
+<span class="s">    operand1 : `NDData`-like or convertable to `NDData`</span>
+<span class="s">        the first operand in the operation.</span>
+
+<span class="s">    operand2 : `NDData`-like or convertable to `NDData`</span>
+<span class="s">        the second operand in the operation.</span>
+
+<span class="s">    kwargs :</span>
+<span class="s">        see :meth:`NDArithmeticMixin.{0}`</span>
+
+<span class="s">    Returns</span>
+<span class="s">    -------</span>
+<span class="s">    result : `NDData`-like</span>
+<span class="s">        The result of the operation. The class of the result is the class from</span>
+<span class="s">        where the method was invoked.</span>
+<span class="s">    &quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="NDArithmeticMixin"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin">[docs]</a><span class="k">class</span> <span class="nc">NDArithmeticMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin class to add arithmetic to an NDData object.</span>
+
+<span class="sd">    When subclassing, be sure to list the superclasses in the correct order</span>
+<span class="sd">    so that the subclass sees NDData as the main superclass. See</span>
+<span class="sd">    `~astropy.nddata.NDDataArray` for an example.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This class only aims at covering the most common cases so there are certain</span>
+<span class="sd">    restrictions on the saved attributes::</span>
+
+<span class="sd">        - ``uncertainty`` : has to be something that has a `NDUncertainty`-like</span>
+<span class="sd">          interface for uncertainty propagation</span>
+<span class="sd">        - ``mask`` : has to be something that can be used by a bitwise ``or``</span>
+<span class="sd">          operation.</span>
+<span class="sd">        - ``wcs`` : has to implement a way of comparing with ``=`` to allow</span>
+<span class="sd">          the operation.</span>
+
+<span class="sd">    But there is a workaround that allows to disable handling a specific</span>
+<span class="sd">    attribute and to simply set the results attribute to ``None`` or to</span>
+<span class="sd">    copy the existing attribute (and neglecting the other).</span>
+<span class="sd">    For example for uncertainties not representing an `NDUncertainty`-like</span>
+<span class="sd">    interface you can alter the ``propagate_uncertainties`` parameter in</span>
+<span class="sd">    :meth:`NDArithmeticMixin.add`. ``None`` means that the result will have no</span>
+<span class="sd">    uncertainty, ``False`` means it takes the uncertainty of the first operand</span>
+<span class="sd">    (if this does not exist from the second operand) as the result&#39;s</span>
+<span class="sd">    uncertainty. This behaviour is also explained in the docstring for the</span>
+<span class="sd">    different arithmetic operations.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    1. It is not tried to decompose the units, mainly due to the internal</span>
+<span class="sd">       mechanics of `~astropy.units.Quantity`, so the resulting data might have</span>
+<span class="sd">       units like ``km/m`` if you divided for example 100km by 5m. So this</span>
+<span class="sd">       Mixin has adopted this behaviour.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    TODO: Just here because the examples fit more into the main documentation</span>
+<span class="sd">    than in here.</span>
+
+<span class="sd">    For example::</span>
+
+<span class="sd">        &gt;&gt;&gt; from astropy.nddata import *</span>
+<span class="sd">        &gt;&gt;&gt; class NDDataWithMath(NDArithmeticMixin, NDData): pass</span>
+<span class="sd">        &gt;&gt;&gt; nd = NDDataWithMath([1,2,3], unit=&#39;meter&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; nd_inv = nd.ic_division(1, nd)</span>
+<span class="sd">        &gt;&gt;&gt; nd_inv.__class__.__name__</span>
+<span class="sd">        &#39;NDDataWithMath&#39;</span>
+<span class="sd">        &gt;&gt;&gt; nd_inv.data</span>
+<span class="sd">        array([ 1.        ,  0.5       ,  0.33333333])</span>
+<span class="sd">        &gt;&gt;&gt; nd_inv.unit</span>
+<span class="sd">        Unit(&quot;1 / m&quot;)</span>
+
+<span class="sd">    This method also allows that the result of unrelated objects is tried</span>
+<span class="sd">    with what this class implements as arithmetics and give a result that</span>
+<span class="sd">    is the same class as the class that called the method.</span>
+
+<span class="sd">        &gt;&gt;&gt; nd2 = nd.ic_multiplication([1,2],3)</span>
+<span class="sd">        &gt;&gt;&gt; nd2.__class__.__name__</span>
+<span class="sd">        &#39;NDDataWithMath&#39;</span>
+<span class="sd">        &gt;&gt;&gt; nd2.data</span>
+<span class="sd">        array([3, 6])</span>
+
+<span class="sd">    Since this is a classmethod we don&#39;t need an instance to use them:</span>
+
+<span class="sd">        &gt;&gt;&gt; nd3 = NDDataWithMath.ic_subtraction(5, NDData([1,2,3]))</span>
+<span class="sd">        &gt;&gt;&gt; nd3.__class__.__name__</span>
+<span class="sd">        &#39;NDDataWithMath&#39;</span>
+<span class="sd">        &gt;&gt;&gt; nd3.data</span>
+<span class="sd">        array([4, 3, 2])</span>
+
+<span class="sd">    And it allows to handle arithmetics with different subclasses.</span>
+
+<span class="sd">        &gt;&gt;&gt; class NDDataWithMathAndSlicing(NDSlicingMixin,NDArithmeticMixin, NDData): pass</span>
+<span class="sd">        &gt;&gt;&gt; nd = NDDataWithMath([5,5,5])</span>
+<span class="sd">        &gt;&gt;&gt; nd2 = NDDataWithMathAndSlicing([3,2,5])</span>
+<span class="sd">        &gt;&gt;&gt; nd3 = nd2.ic_addition(nd, nd2)</span>
+<span class="sd">        &gt;&gt;&gt; nd3.__class__.__name__</span>
+<span class="sd">        &#39;NDDataWithMathAndSlicing&#39;</span>
+<span class="sd">        &gt;&gt;&gt; nd3.data</span>
+<span class="sd">        array([ 8,  7, 10])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_arithmetic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
+                    <span class="n">propagate_uncertainties</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">handle_mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">,</span>
+                    <span class="n">handle_meta</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">uncertainty_correlation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="n">compare_wcs</span><span class="o">=</span><span class="s">&#39;first_found&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Base method which calculates the result of the arithmetic operation.</span>
+
+<span class="sd">        This method determines the result of the arithmetic operation on the</span>
+<span class="sd">        ``data`` including their units and then forwards to other methods</span>
+<span class="sd">        to calculate the other properties for the result (like uncertainty).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        operation : callable</span>
+<span class="sd">            The operation that is performed on the `NDData`. Supported are</span>
+<span class="sd">            `numpy.add`, `numpy.subtract`, `numpy.multiply` and</span>
+<span class="sd">            `numpy.true_divide`.</span>
+
+<span class="sd">        operand : `NDData` instance or something that can be converted to one.</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        propagate_uncertainties : `bool` or ``None``, optional</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        handle_mask : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        handle_meta : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        compare_wcs : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        uncertainty_correlation : ``Number`` or `~numpy.ndarray`, optional</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        kwargs :</span>
+<span class="sd">            Any other parameter that should be passed to the</span>
+<span class="sd">            different :meth:`NDArithmeticMixin._arithmetic_mask` (or wcs, ...)</span>
+<span class="sd">            methods.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result : `~numpy.ndarray` or `~astropy.units.Quantity`</span>
+<span class="sd">            The resulting data as array (in case both operands were without</span>
+<span class="sd">            unit) or as quantity if at least one had a unit.</span>
+
+<span class="sd">        kwargs : `dict`</span>
+<span class="sd">            The kwargs should contain all the other attributes (besides data</span>
+<span class="sd">            and unit) needed to create a new instance for the result. Creating</span>
+<span class="sd">            the new instance is up to the calling method, for example</span>
+<span class="sd">            :meth:`NDArithmeticMixin.add`.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Convert the operand to the same class this allows for arithmetic</span>
+        <span class="c"># operations with numbers, lists, numpy arrays, numpy masked arrays</span>
+        <span class="c"># astropy quantities, masked quantities and of other subclasses of</span>
+        <span class="c"># NDData</span>
+        <span class="n">operand</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">operand</span><span class="p">)</span>
+
+        <span class="c"># Find the appropriate keywords for the appropriate method (not sure</span>
+        <span class="c"># if data and uncertainty are ever used ...)</span>
+        <span class="n">kwds2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;mask&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&#39;meta&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&#39;wcs&#39;</span><span class="p">:</span> <span class="p">{},</span>
+                 <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&#39;uncertainty&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kwds</span><span class="p">:</span>
+            <span class="n">splitted</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">kwds2</span><span class="p">[</span><span class="n">splitted</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">splitted</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&#39;Unknown prefix {0} for parameter {1}&#39;</span>
+                               <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">splitted</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">))</span>
+
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c"># First check that the WCS allows the arithmetic operation</span>
+        <span class="k">if</span> <span class="n">compare_wcs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="n">compare_wcs</span> <span class="o">==</span> <span class="s">&#39;first_found&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">wcs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic_wcs</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
+                                                 <span class="n">compare_wcs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds2</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">])</span>
+
+        <span class="c"># Then calculate the resulting data (which can but not needs to be a</span>
+        <span class="c"># quantity)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic_data</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds2</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">])</span>
+
+        <span class="c"># Determine the other properties</span>
+        <span class="k">if</span> <span class="n">propagate_uncertainties</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;uncertainty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">propagate_uncertainties</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;uncertainty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;uncertainty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;uncertainty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic_uncertainty</span><span class="p">(</span>
+                <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">uncertainty_correlation</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwds2</span><span class="p">[</span><span class="s">&#39;uncertainty&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">handle_mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="n">handle_mask</span> <span class="o">==</span> <span class="s">&#39;first_found&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic_mask</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
+                                                   <span class="n">handle_mask</span><span class="p">,</span>
+                                                   <span class="o">**</span><span class="n">kwds2</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">handle_meta</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="n">handle_meta</span> <span class="o">==</span> <span class="s">&#39;first_found&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic_meta</span><span class="p">(</span>
+                <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">handle_meta</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds2</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">])</span>
+
+        <span class="c"># Wrap the individual results into a new instance of the same class.</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span>
+
+    <span class="k">def</span> <span class="nf">_arithmetic_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the resulting data</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        operation : callable</span>
+<span class="sd">            see `NDArithmeticMixin._arithmetic` parameter description.</span>
+
+<span class="sd">        operand : `NDData`-like instance</span>
+<span class="sd">            The second operand wrapped in an instance of the same class as</span>
+<span class="sd">            self.</span>
+
+<span class="sd">        kwds :</span>
+<span class="sd">            Additional parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result_data : `~numpy.ndarray` or `~astropy.units.Quantity`</span>
+<span class="sd">            If both operands had no unit the resulting data is a simple numpy</span>
+<span class="sd">            array, but if any of the operands had a unit the return is a</span>
+<span class="sd">            Quantity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># Do the calculation with or without units</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">operand</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">operand</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">dimensionless_unscaled</span><span class="p">,</span>
+                               <span class="n">operand</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">operand</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operand</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+                               <span class="n">operand</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">dimensionless_unscaled</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+                               <span class="n">operand</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">operand</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">_arithmetic_uncertainty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">correlation</span><span class="p">,</span>
+                                <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the resulting uncertainty.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        operation : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin._arithmetic` parameter description.</span>
+
+<span class="sd">        operand : `NDData`-like instance</span>
+<span class="sd">            The second operand wrapped in an instance of the same class as</span>
+<span class="sd">            self.</span>
+
+<span class="sd">        result : `~astropy.units.Quantity` or `~numpy.ndarray`</span>
+<span class="sd">            The result of :meth:`NDArithmeticMixin._arithmetic_data`.</span>
+
+<span class="sd">        correlation : number or `~numpy.ndarray`</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add` parameter description.</span>
+
+<span class="sd">        kwds :</span>
+<span class="sd">            Additional parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result_uncertainty : `NDUncertainty` subclass instance or None</span>
+<span class="sd">            The resulting uncertainty already saved in the same `NDUncertainty`</span>
+<span class="sd">            subclass that ``self`` had (or ``operand`` if self had no</span>
+<span class="sd">            uncertainty). ``None`` only if both had no uncertainty.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># Make sure these uncertainties are NDUncertainties so this kind of</span>
+        <span class="c"># propagation is possible.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span>
+                <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">,</span> <span class="n">NDUncertainty</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;Uncertainty propagation is only defined for &quot;</span>
+                            <span class="s">&quot;subclasses of NDUncertainty.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span>
+                <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">,</span> <span class="n">NDUncertainty</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;Uncertainty propagation is only defined for &quot;</span>
+                            <span class="s">&quot;subclasses of NDUncertainty.&quot;</span><span class="p">)</span>
+
+        <span class="c"># Now do the uncertainty propagation</span>
+        <span class="c"># TODO: There is no enforced requirement that actually forbids the</span>
+        <span class="c"># uncertainty to have negative entries but with correlation the</span>
+        <span class="c"># sign of the uncertainty DOES matter.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># Neither has uncertainties so the result should have none.</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># Create a temporary uncertainty to allow uncertainty propagation</span>
+            <span class="c"># to yield the correct results. (issue #4152)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="o">=</span> <span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+            <span class="n">result_uncert</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
+                                                       <span class="n">result</span><span class="p">,</span> <span class="n">correlation</span><span class="p">)</span>
+            <span class="c"># Delete the temporary uncertainty again.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">return</span> <span class="n">result_uncert</span>
+
+        <span class="k">elif</span> <span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># As with self.uncertainty is None but the other way around.</span>
+            <span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+            <span class="n">result_uncert</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
+                                                       <span class="n">result</span><span class="p">,</span> <span class="n">correlation</span><span class="p">)</span>
+            <span class="n">operand</span><span class="o">.</span><span class="n">uncertainty</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">return</span> <span class="n">result_uncert</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># Both have uncertainties so just propagate.</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span>
+                                              <span class="n">correlation</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arithmetic_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">handle_mask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the resulting mask</span>
+
+<span class="sd">        This is implemented as the piecewise ``or`` operation if both have a</span>
+<span class="sd">        mask.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        operation : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin._arithmetic` parameter description.</span>
+<span class="sd">            By default, the ``operation`` will be ignored.</span>
+
+<span class="sd">        operand : `NDData`-like instance</span>
+<span class="sd">            The second operand wrapped in an instance of the same class as</span>
+<span class="sd">            self.</span>
+
+<span class="sd">        handle_mask : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        kwds :</span>
+<span class="sd">            Additional parameters given to ``handle_mask``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result_mask : any type</span>
+<span class="sd">            If only one mask was present this mask is returned.</span>
+<span class="sd">            If neither had a mask ``None`` is returned. Otherwise</span>
+<span class="sd">            ``handle_mask`` must create (and copy) the returned mask.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># If only one mask is present we need not bother about any type checks</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">operand</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># Make a copy so there is no reference in the result.</span>
+            <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operand</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># Now lets calculate the resulting mask (operation enforces copy)</span>
+            <span class="k">return</span> <span class="n">handle_mask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">operand</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arithmetic_wcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">compare_wcs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the resulting wcs.</span>
+
+<span class="sd">        There is actually no calculation involved but it is a good place to</span>
+<span class="sd">        compare wcs information of both operands. This is currently not working</span>
+<span class="sd">        properly with `~astropy.wcs.WCS` (which is the suggested class for</span>
+<span class="sd">        storing as wcs property) but it will not break it neither.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        operation : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin._arithmetic` parameter description.</span>
+<span class="sd">            By default, the ``operation`` will be ignored.</span>
+
+<span class="sd">        operand : `NDData` instance or subclass</span>
+<span class="sd">            The second operand wrapped in an instance of the same class as</span>
+<span class="sd">            self.</span>
+
+<span class="sd">        compare_wcs : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add` parameter description.</span>
+
+<span class="sd">        kwds :</span>
+<span class="sd">            Additional parameters given to ``compare_wcs``.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If ``compare_wcs`` returns ``False``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result_wcs : any type</span>
+<span class="sd">            The ``wcs`` of the first operand is returned.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># ok, not really arithmetics but we need to check which wcs makes sense</span>
+        <span class="c"># for the result and this is an ideal place to compare the two WCS,</span>
+        <span class="c"># too.</span>
+
+        <span class="c"># I&#39;ll assume that the comparison returned None or False in case they</span>
+        <span class="c"># are not equal.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">compare_wcs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="p">,</span> <span class="n">operand</span><span class="o">.</span><span class="n">wcs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;WCS are not equal.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span>
+
+    <span class="k">def</span> <span class="nf">_arithmetic_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">handle_meta</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the resulting meta.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        operation : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin._arithmetic` parameter description.</span>
+<span class="sd">            By default, the ``operation`` will be ignored.</span>
+
+<span class="sd">        operand : `NDData`-like instance</span>
+<span class="sd">            The second operand wrapped in an instance of the same class as</span>
+<span class="sd">            self.</span>
+
+<span class="sd">        handle_meta : callable</span>
+<span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
+
+<span class="sd">        kwds :</span>
+<span class="sd">            Additional parameters given to ``handle_meta``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result_meta : any type</span>
+<span class="sd">            The result of ``handle_meta``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Just return what handle_meta does with both of the metas.</span>
+        <span class="k">return</span> <span class="n">handle_meta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="n">operand</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;addition&#39;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.add"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;subtraction&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.subtract"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;multiplication&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.multiply"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.multiply">[docs]</a>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;division&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.divide"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.divide">[docs]</a>    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="c"># TODO: Sharedmethod instead of classmethod? (embray)</span>
+    <span class="c"># http://docs.astropy.org/en/v1.0.5/api/astropy.utils.decorators.sharedmethod.html#astropy.utils.decorators.sharedmethod</span>
+    <span class="c"># But that only allows for one documentation and we need the first operand.</span>
+    <span class="c"># Also it doesn&#39;t allow sphinx to build two documentations one for the</span>
+    <span class="c"># classmethod and one of the instance method and since creating one</span>
+    <span class="c"># doc that applies to both is not-trivial I set this option back for now.</span>
+    <span class="c"># So I decided to temporarly alter the name that there are not too obvious</span>
+    <span class="c"># name clashes by adding a &#39;ic_&#39; prefix that stands for &#39;interclass&#39;</span>
+    <span class="c"># arithmetic operations</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;add&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.ic_addition"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_addition">[docs]</a>    <span class="k">def</span> <span class="nf">ic_addition</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># Convert the first operand to the implicit passed class (cls)</span>
+        <span class="c"># this allows for reverse operations.</span>
+        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
+        <span class="c"># Call the instance function for addition to proceed</span>
+        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;subtract&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.ic_subtraction"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_subtraction">[docs]</a>    <span class="k">def</span> <span class="nf">ic_subtraction</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;multiply&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.ic_multiplication"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_multiplication">[docs]</a>    <span class="k">def</span> <span class="nf">ic_multiplication</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;divide&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.ic_division"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_division">[docs]</a>    <span class="k">def</span> <span class="nf">ic_division</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Last built 29 Apr 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>

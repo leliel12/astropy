@@ -1,0 +1,27 @@
+
+
+PseudoConic
+========================================
+
+.. currentmodule:: astropy.modeling.projections
+
+.. autoclass:: PseudoConic
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

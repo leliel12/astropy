@@ -1,0 +1,8 @@
+
+
+assert_follows_unicode_guidelines
+======================================================
+
+.. currentmodule:: astropy.tests.helper
+
+.. autofunction:: assert_follows_unicode_guidelines

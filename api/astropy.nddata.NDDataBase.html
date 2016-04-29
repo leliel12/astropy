@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NDDataBase &mdash; Astropy v1.2.dev14978</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.dev14978',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
+    <link rel="next" title="NDIOMixin" href="astropy.nddata.NDIOMixin.html" />
+    <link rel="prev" title="NDDataArray" href="astropy.nddata.NDDataArray.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="astropy.nddata.NDIOMixin.html" title="NDIOMixin">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="astropy.nddata.NDDataArray.html" title="NDDataArray">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Astropy v1.2.dev14978</a>
+	 &raquo;
+      </li>
+      <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
+      
+      <li>NDDataBase</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="nddatabase">
+<h1>NDDataBase<a class="headerlink" href="#nddatabase" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="astropy.nddata.NDDataBase">
+<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">NDDataBase</code><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nddata_base.py#L15" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/nddata_base.html#NDDataBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDDataBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base metaclass that defines the interface for N-dimensional datasets with
+associated meta informations used in <code class="docutils literal"><span class="pre">astropy</span></code>.</p>
+<p>All properties and methods have to be overridden in subclasses. See
+<a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> for a subclass that defines this interface on
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>-like based <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<p class="rubric">Attributes Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.data" title="astropy.nddata.NDDataBase.data"><code class="xref py py-obj docutils literal"><span class="pre">data</span></code></a></td>
+<td>The stored dataset.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.mask" title="astropy.nddata.NDDataBase.mask"><code class="xref py py-obj docutils literal"><span class="pre">mask</span></code></a></td>
+<td>Mask for the dataset.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.meta" title="astropy.nddata.NDDataBase.meta"><code class="xref py py-obj docutils literal"><span class="pre">meta</span></code></a></td>
+<td>Meta information about the dataset.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.uncertainty" title="astropy.nddata.NDDataBase.uncertainty"><code class="xref py py-obj docutils literal"><span class="pre">uncertainty</span></code></a></td>
+<td>Uncertainty in the dataset.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.unit" title="astropy.nddata.NDDataBase.unit"><code class="xref py py-obj docutils literal"><span class="pre">unit</span></code></a></td>
+<td>Unit for the dataset.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.wcs" title="astropy.nddata.NDDataBase.wcs"><code class="xref py py-obj docutils literal"><span class="pre">wcs</span></code></a></td>
+<td>A world coordinate system (WCS) for the dataset.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="attribute">
+<dt id="astropy.nddata.NDDataBase.data">
+<code class="descname">data</code><a class="headerlink" href="#astropy.nddata.NDDataBase.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stored dataset.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDDataBase.mask">
+<code class="descname">mask</code><a class="headerlink" href="#astropy.nddata.NDDataBase.mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mask for the dataset.</p>
+<p>Masks should follow the <code class="docutils literal"><span class="pre">numpy</span></code> convention that valid data points are
+marked by <code class="docutils literal"><span class="pre">False</span></code> and invalid ones with <code class="docutils literal"><span class="pre">True</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDDataBase.meta">
+<code class="descname">meta</code><a class="headerlink" href="#astropy.nddata.NDDataBase.meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Meta information about the dataset.</p>
+<p>Should be <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code></a>-like.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDDataBase.uncertainty">
+<code class="descname">uncertainty</code><a class="headerlink" href="#astropy.nddata.NDDataBase.uncertainty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uncertainty in the dataset.</p>
+<p>Should have an attribute <code class="docutils literal"><span class="pre">uncertainty_type</span></code> that defines what kind of
+uncertainty is stored, such as <code class="docutils literal"><span class="pre">'std'</span></code> for standard deviation or
+<code class="docutils literal"><span class="pre">'var'</span></code> for variance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDDataBase.unit">
+<code class="descname">unit</code><a class="headerlink" href="#astropy.nddata.NDDataBase.unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit for the dataset.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDDataBase.wcs">
+<code class="descname">wcs</code><a class="headerlink" href="#astropy.nddata.NDDataBase.wcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>A world coordinate system (WCS) for the dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">NDDataBase</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/astropy.nddata.NDDataBase.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Last built 29 Apr 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+
+
+Identity
+==================================
+
+.. currentmodule:: astropy.modeling.mappings
+
+.. autoclass:: Identity
+   :show-inheritance:
+
+   
+     
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

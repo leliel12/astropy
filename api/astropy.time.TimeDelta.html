@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TimeDelta &mdash; Astropy v1.2.dev14978</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.dev14978',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="up" title="Time and Dates (astropy.time)" href="../time/index.html" />
+    <link rel="next" title="TimeDeltaFormat" href="astropy.time.TimeDeltaFormat.html" />
+    <link rel="prev" title="TimeDecimalYear" href="astropy.time.TimeDecimalYear.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="astropy.time.TimeDeltaFormat.html" title="TimeDeltaFormat">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="astropy.time.TimeDecimalYear.html" title="TimeDecimalYear">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Astropy v1.2.dev14978</a>
+	 &raquo;
+      </li>
+      <li><a href="../time/index.html" accesskey="U">Time and Dates (<code class="docutils literal"><span class="pre">astropy.time</span></code>)</a> &raquo;</li>
+      
+      <li>TimeDelta</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="timedelta">
+<h1>TimeDelta<a class="headerlink" href="#timedelta" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="astropy.time.TimeDelta">
+<em class="property">class </em><code class="descclassname">astropy.time.</code><code class="descname">TimeDelta</code><span class="sig-paren">(</span><em>val</em>, <em>val2=None</em>, <em>format=None</em>, <em>scale=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/core.py#L1527" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/core.html#TimeDelta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeDelta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="astropy.time.Time.html#astropy.time.Time" title="astropy.time.core.Time"><code class="docutils literal"><span class="pre">astropy.time.Time</span></code></a></p>
+<p>Represent the time difference between two times.</p>
+<p>A TimeDelta object is initialized with one or more times in the <code class="docutils literal"><span class="pre">val</span></code>
+argument.  The input times in <code class="docutils literal"><span class="pre">val</span></code> must conform to the specified
+<code class="docutils literal"><span class="pre">format</span></code>.  The optional <code class="docutils literal"><span class="pre">val2</span></code> time input should be supplied only for
+numeric input formats (e.g. JD) where very high precision (better than
+64-bit precision) is required.</p>
+<p>The allowed values for <code class="docutils literal"><span class="pre">format</span></code> can be listed with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">TimeDelta</span><span class="o">.</span><span class="n">FORMATS</span><span class="p">)</span>
+<span class="go">[&#39;sec&#39;, &#39;jd&#39;]</span>
+</pre></div>
+</div>
+<p>Note that for time differences, the scale can be among three groups:
+geocentric (&#8216;tai&#8217;, &#8216;tt&#8217;, &#8216;tcg&#8217;), barycentric (&#8216;tcb&#8217;, &#8216;tdb&#8217;), and rotational
+(&#8216;ut1&#8217;). Within each of these, the scales for time differences are the
+same. Conversion between geocentric and barycentric is possible, as there
+is only a scale factor change, but one cannot convert to or from &#8216;ut1&#8217;, as
+this requires knowledge of the actual times, not just their difference. For
+a similar reason, &#8216;utc&#8217; is not a valid scale for a time difference: a UTC
+day is not always 86400 seconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : numpy ndarray, list, str, number, or <a class="reference internal" href="#astropy.time.TimeDelta" title="astropy.time.TimeDelta"><code class="xref py py-obj docutils literal"><span class="pre">TimeDelta</span></code></a> object</p>
+<blockquote>
+<div><p>Data to initialize table.</p>
+</div></blockquote>
+<p><strong>val2</strong> : numpy ndarray, list, str, or number; optional</p>
+<blockquote>
+<div><p>Data to initialize table.</p>
+</div></blockquote>
+<p><strong>format</strong> : str, optional</p>
+<blockquote>
+<div><p>Format of input value(s)</p>
+</div></blockquote>
+<p><strong>scale</strong> : str, optional</p>
+<blockquote>
+<div><p>Time scale of input value(s), must be one of the following values:
+(&#8216;tdb&#8217;, &#8216;tt&#8217;, &#8216;ut1&#8217;, &#8216;tcg&#8217;, &#8216;tcb&#8217;, &#8216;tai&#8217;). If not given (or
+<code class="docutils literal"><span class="pre">None</span></code>), the scale is arbitrary; when added or subtracted from a
+<code class="docutils literal"><span class="pre">Time</span></code> instance, it will be used without conversion.</p>
+</div></blockquote>
+<p><strong>copy</strong> : bool, optional</p>
+<blockquote class="last">
+<div><p>Make a copy of the input values</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.time.TimeDelta.FORMATS" title="astropy.time.TimeDelta.FORMATS"><code class="xref py py-obj docutils literal"><span class="pre">FORMATS</span></code></a></td>
+<td>Dict of time delta formats.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.time.TimeDelta.SCALES" title="astropy.time.TimeDelta.SCALES"><code class="xref py py-obj docutils literal"><span class="pre">SCALES</span></code></a></td>
+<td>List of time delta scales.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.time.TimeDelta.replicate" title="astropy.time.TimeDelta.replicate"><code class="xref py py-obj docutils literal"><span class="pre">replicate</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.time.TimeDelta.to" title="astropy.time.TimeDelta.to"><code class="xref py py-obj docutils literal"><span class="pre">to</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="attribute">
+<dt id="astropy.time.TimeDelta.FORMATS">
+<code class="descname">FORMATS</code><em class="property"> = OrderedDict([('sec', &lt;class 'astropy.time.formats.TimeDeltaSec'&gt;), ('jd', &lt;class 'astropy.time.formats.TimeDeltaJD'&gt;)])</em><a class="headerlink" href="#astropy.time.TimeDelta.FORMATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of time delta formats.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.time.TimeDelta.SCALES">
+<code class="descname">SCALES</code><em class="property"> = dict_keys(['tcb', 'ut1', 'tt', 'tdb', 'tcg', 'tai'])</em><a class="headerlink" href="#astropy.time.TimeDelta.SCALES" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of time delta scales.</p>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="astropy.time.TimeDelta.replicate">
+<code class="descname">replicate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/core.py#L1594" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/core.html#TimeDelta.replicate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeDelta.replicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="astropy.time.TimeDelta.to">
+<code class="descname">to</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/core.py#L1766" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/core.html#TimeDelta.to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeDelta.to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">TimeDelta</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/astropy.time.TimeDelta.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Last built 29 Apr 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>

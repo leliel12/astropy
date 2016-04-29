@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Data Visualization (astropy.visualization) &mdash; Astropy v1.2.dev14978</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.dev14978',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="next" title="Image stretching and normalization" href="normalization.html" />
+    <link rel="prev" title="TrapezoidDisk2DKernel" href="../api/astropy.convolution.TrapezoidDisk2DKernel.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="normalization.html" title="Image stretching and normalization">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../api/astropy.convolution.TrapezoidDisk2DKernel.html" title="TrapezoidDisk2DKernel">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Astropy v1.2.dev14978</a>
+	 &raquo;
+      </li>
+      
+      <li>Data Visualization (<code class="docutils literal"><span class="pre">astropy.visualization</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="data-visualization-astropy-visualization">
+<span id="astropy-visualization"></span><h1>Data Visualization (<a class="reference internal" href="#module-astropy.visualization" title="astropy.visualization"><code class="xref py py-obj docutils literal"><span class="pre">astropy.visualization</span></code></a>)<a class="headerlink" href="#data-visualization-astropy-visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-astropy.visualization" title="astropy.visualization"><code class="xref py py-obj docutils literal"><span class="pre">astropy.visualization</span></code></a> provides functionality that can be helpful when
+visualizing data.
+At the moment, functionalities include enhanced histograms,
+image normalizing (including both scaling and stretching),
+and custom plotting styles for matplotlib.</p>
+</div>
+<div class="section" id="using-astropy-visualization">
+<h2>Using <a class="reference internal" href="#module-astropy.visualization" title="astropy.visualization"><code class="xref py py-obj docutils literal"><span class="pre">astropy.visualization</span></code></a><a class="headerlink" href="#using-astropy-visualization" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="normalization.html">Image stretching and normalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html#intervals-and-normalization">Intervals and Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html#stretching">Stretching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html#combining-transformations">Combining transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html#matplotlib-normalization">Matplotlib normalization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="histogram.html">Choosing Histogram Bins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="histogram.html#normal-reference-rules">Normal Reference Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram.html#bayesian-models">Bayesian Models</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="scripts">
+<span id="fits2bitmap"></span><h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h2>
+<p>This module includes a command-line script, <code class="docutils literal"><span class="pre">fits2bitmap</span></code> to convert FITS
+images to bitmaps, including scaling and stretching of the image. To find out
+more about the available options and how to use it, type:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fits2bitmap --help
+</pre></div>
+</div>
+</div>
+<div class="section" id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-astropy.visualization.mpl_style">
+<span id="astropy-visualization-mpl-style-module"></span><h3>astropy.visualization.mpl_style Module<a class="headerlink" href="#module-astropy.visualization.mpl_style" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-astropy.visualization">
+<span id="astropy-visualization-package"></span><h3>astropy.visualization Package<a class="headerlink" href="#module-astropy.visualization" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.hist.html#astropy.visualization.hist" title="astropy.visualization.hist"><code class="xref py py-obj docutils literal"><span class="pre">hist</span></code></a>(x[,&nbsp;bins,&nbsp;ax])</td>
+<td>Enhanced histogram function</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.quantity_support.html#astropy.visualization.quantity_support" title="astropy.visualization.quantity_support"><code class="xref py py-obj docutils literal"><span class="pre">quantity_support</span></code></a>([format])</td>
+<td>Enable support for plotting <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">astropy.units.Quantity</span></code></a> instances in matplotlib.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.scale_image.html#astropy.visualization.scale_image" title="astropy.visualization.scale_image"><code class="xref py py-obj docutils literal"><span class="pre">scale_image</span></code></a>(image[,&nbsp;scale,&nbsp;power,&nbsp;asinh_a,&nbsp;...])</td>
+<td>Perform scaling/stretching of an image between minimum and maximum cut levels.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.AsinhStretch.html#astropy.visualization.AsinhStretch" title="astropy.visualization.AsinhStretch"><code class="xref py py-obj docutils literal"><span class="pre">AsinhStretch</span></code></a>([a])</td>
+<td>An asinh stretch.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.AsymmetricPercentileInterval.html#astropy.visualization.AsymmetricPercentileInterval" title="astropy.visualization.AsymmetricPercentileInterval"><code class="xref py py-obj docutils literal"><span class="pre">AsymmetricPercentileInterval</span></code></a>(...[,&nbsp;n_samples])</td>
+<td>Interval based on a keeping a specified fraction of pixels (can be asymmetric).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.BaseInterval.html#astropy.visualization.BaseInterval" title="astropy.visualization.BaseInterval"><code class="xref py py-obj docutils literal"><span class="pre">BaseInterval</span></code></a></td>
+<td>Base class for the interval classes, which, when called with an array of values, return an interval computed following different algorithms.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.BaseStretch.html#astropy.visualization.BaseStretch" title="astropy.visualization.BaseStretch"><code class="xref py py-obj docutils literal"><span class="pre">BaseStretch</span></code></a></td>
+<td>Base class for the stretch classes, which, when called with an array of values in the range [0:1], return an transformed array of values, also in the range [0:1].</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.BaseTransform.html#astropy.visualization.BaseTransform" title="astropy.visualization.BaseTransform"><code class="xref py py-obj docutils literal"><span class="pre">BaseTransform</span></code></a></td>
+<td>A transformation object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.CompositeTransform.html#astropy.visualization.CompositeTransform" title="astropy.visualization.CompositeTransform"><code class="xref py py-obj docutils literal"><span class="pre">CompositeTransform</span></code></a>(transform_1,&nbsp;transform_2)</td>
+<td>A combination of two transforms.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.ContrastBiasStretch.html#astropy.visualization.ContrastBiasStretch" title="astropy.visualization.ContrastBiasStretch"><code class="xref py py-obj docutils literal"><span class="pre">ContrastBiasStretch</span></code></a>(contrast,&nbsp;bias)</td>
+<td>A stretch that takes into account contrast and bias.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.HistEqStretch.html#astropy.visualization.HistEqStretch" title="astropy.visualization.HistEqStretch"><code class="xref py py-obj docutils literal"><span class="pre">HistEqStretch</span></code></a>(data[,&nbsp;values])</td>
+<td>A histogram equalization stretch.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.LinearStretch.html#astropy.visualization.LinearStretch" title="astropy.visualization.LinearStretch"><code class="xref py py-obj docutils literal"><span class="pre">LinearStretch</span></code></a></td>
+<td>A linear stretch.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.LogStretch.html#astropy.visualization.LogStretch" title="astropy.visualization.LogStretch"><code class="xref py py-obj docutils literal"><span class="pre">LogStretch</span></code></a>([a])</td>
+<td>A log stretch.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.ManualInterval.html#astropy.visualization.ManualInterval" title="astropy.visualization.ManualInterval"><code class="xref py py-obj docutils literal"><span class="pre">ManualInterval</span></code></a>(vmin,&nbsp;vmax)</td>
+<td>Interval based on user-specified values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.MinMaxInterval.html#astropy.visualization.MinMaxInterval" title="astropy.visualization.MinMaxInterval"><code class="xref py py-obj docutils literal"><span class="pre">MinMaxInterval</span></code></a></td>
+<td>Interval based on the minimum and maximum values in the data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.PercentileInterval.html#astropy.visualization.PercentileInterval" title="astropy.visualization.PercentileInterval"><code class="xref py py-obj docutils literal"><span class="pre">PercentileInterval</span></code></a>(percentile[,&nbsp;n_samples])</td>
+<td>Interval based on a keeping a specified fraction of pixels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.PowerDistStretch.html#astropy.visualization.PowerDistStretch" title="astropy.visualization.PowerDistStretch"><code class="xref py py-obj docutils literal"><span class="pre">PowerDistStretch</span></code></a>([a])</td>
+<td>An alternative power stretch.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.PowerStretch.html#astropy.visualization.PowerStretch" title="astropy.visualization.PowerStretch"><code class="xref py py-obj docutils literal"><span class="pre">PowerStretch</span></code></a>(a)</td>
+<td>A power stretch.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.SinhStretch.html#astropy.visualization.SinhStretch" title="astropy.visualization.SinhStretch"><code class="xref py py-obj docutils literal"><span class="pre">SinhStretch</span></code></a>([a])</td>
+<td>A sinh stretch.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.SqrtStretch.html#astropy.visualization.SqrtStretch" title="astropy.visualization.SqrtStretch"><code class="xref py py-obj docutils literal"><span class="pre">SqrtStretch</span></code></a></td>
+<td>A square root stretch.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.visualization.SquaredStretch.html#astropy.visualization.SquaredStretch" title="astropy.visualization.SquaredStretch"><code class="xref py py-obj docutils literal"><span class="pre">SquaredStretch</span></code></a>()</td>
+<td>A convenience class for a power stretch of 2.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
+<p class="graphviz">
+<object data="../_images/inheritance-174a050a64f33adad5e51afdb464e6dd23bd4acd.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of astropy.visualization.stretch.AsinhStretch, astropy.visualization.interval.AsymmetricPercentileInterval, astropy.visualization.interval.BaseInterval, astropy.visualization.stretch.BaseStretch, astropy.visualization.transform.BaseTransform, astropy.visualization.transform.CompositeTransform, astropy.visualization.stretch.ContrastBiasStretch, astropy.visualization.stretch.HistEqStretch, astropy.visualization.stretch.LinearStretch, astropy.visualization.stretch.LogStretch, astropy.visualization.interval.ManualInterval, astropy.visualization.interval.MinMaxInterval, astropy.visualization.interval.PercentileInterval, astropy.visualization.stretch.PowerDistStretch, astropy.visualization.stretch.PowerStretch, astropy.visualization.stretch.SinhStretch, astropy.visualization.stretch.SqrtStretch, astropy.visualization.stretch.SquaredStretch</p></object>
+</p>
+</div>
+</div>
+<div class="section" id="module-astropy.visualization.mpl_normalize">
+<span id="astropy-visualization-mpl-normalize-module"></span><h3>astropy.visualization.mpl_normalize Module<a class="headerlink" href="#module-astropy.visualization.mpl_normalize" title="Permalink to this headline">¶</a></h3>
+<p>Normalization class for Matplotlib that can be used to produce colorbars.</p>
+<div class="section" id="id1">
+<h4>Classes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.visualization.mpl_normalize.ImageNormalize.html#astropy.visualization.mpl_normalize.ImageNormalize" title="astropy.visualization.mpl_normalize.ImageNormalize"><code class="xref py py-obj docutils literal"><span class="pre">ImageNormalize</span></code></a>([vmin,&nbsp;vmax,&nbsp;stretch,&nbsp;clip])</td>
+<td>Normalization class to be used with Matplotlib.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p class="graphviz">
+<object data="../_images/inheritance-9da13c55459e3b3e33319d8ce0507fd647b92bca.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of astropy.visualization.mpl_normalize.ImageNormalize</p></object>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">Data Visualization (<code class="docutils literal"><span class="pre">astropy.visualization</span></code>)</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#using-astropy-visualization">Using <code class="docutils literal"><span class="pre">astropy.visualization</span></code></a></li>
+<li><a class="reference internal" href="#scripts">Scripts</a></li>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-astropy.visualization.mpl_style">astropy.visualization.mpl_style Module</a></li>
+<li><a class="reference internal" href="#module-astropy.visualization">astropy.visualization Package</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-astropy.visualization.mpl_normalize">astropy.visualization.mpl_normalize Module</a><ul>
+<li><a class="reference internal" href="#id1">Classes</a></li>
+<li><a class="reference internal" href="#id2">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="http://github.com/astropy/astropy/tree/master/docs/visualization/index.rst">Edit This Page on Github</a> &nbsp;
+    <a href="../_sources/visualization/index.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Last built 29 Apr 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>

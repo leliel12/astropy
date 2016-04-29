@@ -1,0 +1,8 @@
+
+
+bayesian_blocks
+=============================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: bayesian_blocks

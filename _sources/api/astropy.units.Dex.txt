@@ -1,0 +1,27 @@
+
+
+Dex
+=================
+
+.. currentmodule:: astropy.units
+
+.. autoclass:: Dex
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

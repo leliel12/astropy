@@ -1,0 +1,8 @@
+
+
+UnitConversionError
+=================================
+
+.. currentmodule:: astropy.units
+
+.. autoexception:: UnitConversionError

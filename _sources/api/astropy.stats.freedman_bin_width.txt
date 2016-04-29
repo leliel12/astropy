@@ -1,0 +1,8 @@
+
+
+freedman_bin_width
+================================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: freedman_bin_width

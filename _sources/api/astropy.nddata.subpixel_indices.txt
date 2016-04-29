@@ -1,0 +1,8 @@
+
+
+subpixel_indices
+===============================
+
+.. currentmodule:: astropy.nddata
+
+.. autofunction:: subpixel_indices

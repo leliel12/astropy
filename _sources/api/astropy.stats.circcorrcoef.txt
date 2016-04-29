@@ -1,0 +1,8 @@
+
+
+circcorrcoef
+==========================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: circcorrcoef

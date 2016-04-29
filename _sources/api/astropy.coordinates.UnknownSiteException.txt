@@ -1,0 +1,10 @@
+
+.. include:: ../coordinates/references.txt
+
+
+UnknownSiteException
+========================================
+
+.. currentmodule:: astropy.coordinates
+
+.. autoexception:: UnknownSiteException

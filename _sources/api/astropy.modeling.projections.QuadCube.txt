@@ -1,0 +1,27 @@
+
+
+QuadCube
+=====================================
+
+.. currentmodule:: astropy.modeling.projections
+
+.. autoclass:: QuadCube
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

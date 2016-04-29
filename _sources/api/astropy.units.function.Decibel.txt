@@ -1,0 +1,27 @@
+
+
+Decibel
+==============================
+
+.. currentmodule:: astropy.units.function
+
+.. autoclass:: Decibel
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

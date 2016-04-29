@@ -1,0 +1,8 @@
+
+
+knuth_bin_width
+=============================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: knuth_bin_width

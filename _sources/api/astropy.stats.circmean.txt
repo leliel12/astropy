@@ -1,0 +1,8 @@
+
+
+circmean
+======================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: circmean

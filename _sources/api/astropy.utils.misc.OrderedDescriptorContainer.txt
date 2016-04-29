@@ -1,0 +1,29 @@
+
+
+OrderedDescriptorContainer
+=============================================
+
+.. currentmodule:: astropy.utils.misc
+
+.. autoclass:: OrderedDescriptorContainer
+   :show-inheritance:
+
+   
+     
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

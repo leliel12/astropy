@@ -1,0 +1,8 @@
+
+
+circmoment
+========================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: circmoment

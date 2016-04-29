@@ -1,0 +1,8 @@
+
+
+scott_bin_width
+=============================
+
+.. currentmodule:: astropy.stats
+
+.. autofunction:: scott_bin_width

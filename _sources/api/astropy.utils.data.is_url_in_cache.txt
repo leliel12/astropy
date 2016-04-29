@@ -1,0 +1,8 @@
+
+
+is_url_in_cache
+==================================
+
+.. currentmodule:: astropy.utils.data
+
+.. autofunction:: is_url_in_cache

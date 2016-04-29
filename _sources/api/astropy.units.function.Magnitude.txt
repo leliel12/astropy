@@ -1,0 +1,27 @@
+
+
+Magnitude
+================================
+
+.. currentmodule:: astropy.units.function
+
+.. autoclass:: Magnitude
+   :show-inheritance:
+
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

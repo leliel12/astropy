@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NDUncertainty &mdash; Astropy v1.2.dev14978</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.dev14978',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev14978" href="../index.html" />
+    <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
+    <link rel="next" title="NoOverlapError" href="astropy.nddata.NoOverlapError.html" />
+    <link rel="prev" title="NDSlicingMixin" href="astropy.nddata.NDSlicingMixin.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="astropy.nddata.NoOverlapError.html" title="NoOverlapError">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="astropy.nddata.NDSlicingMixin.html" title="NDSlicingMixin">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Astropy v1.2.dev14978</a>
+	 &raquo;
+      </li>
+      <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
+      
+      <li>NDUncertainty</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="nduncertainty">
+<h1>NDUncertainty<a class="headerlink" href="#nduncertainty" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="astropy.nddata.NDUncertainty">
+<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">NDUncertainty</code><span class="sig-paren">(</span><em>array=None</em>, <em>unit=None</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nduncertainty.py#L70" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/nduncertainty.html#NDUncertainty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDUncertainty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This is the base class for uncertainty classes used with NDData.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>array: any type, optional</strong></p>
+<blockquote>
+<div><p>The array or value (the parameter name is due to historical reasons) of
+the uncertainty.
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> or <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>
+subclasses are recommended.
+If the <a class="reference internal" href="#astropy.nddata.NDUncertainty.array" title="astropy.nddata.NDUncertainty.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a> is <a class="reference external" href="http://docs.python.org/library/functions.html#list" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">list</span></code></a>-like or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>-like it will be cast
+to a base <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>.
+Default is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+</div></blockquote>
+<p><strong>unit: `~astropy.units.Unit` or str, optional</strong></p>
+<blockquote>
+<div><p>The unit of the uncertainty <code class="docutils literal"><span class="pre">array</span></code>. If input is a string this will
+be converted to an <a class="reference internal" href="astropy.units.Unit.html#astropy.units.Unit" title="astropy.units.Unit"><code class="xref py py-obj docutils literal"><span class="pre">Unit</span></code></a>.
+Default is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+</div></blockquote>
+<p><strong>copy</strong> : <a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a>, optional</p>
+<blockquote>
+<div><p>Save the array as copy or as reference. <code class="docutils literal"><span class="pre">True</span></code> copies the
+uncertainty array before saving it while <code class="docutils literal"><span class="pre">False</span></code> tries to save it
+as reference. Note however that it is not always possible to
+save is as reference.
+Default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>IncompatibleUncertaintiesException</strong></p>
+<blockquote class="last">
+<div><p>If given another <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>-like class as <code class="docutils literal"><span class="pre">array</span></code> if their
+<code class="docutils literal"><span class="pre">uncertainty_type</span></code> is not the same.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ol class="arabic simple">
+<li>NDUncertainty is an abstract class and should <em>never</em> be instantiated
+directly.</li>
+<li>NDUncertainty takes a <code class="docutils literal"><span class="pre">unit</span></code> parameter and if the <a class="reference internal" href="#astropy.nddata.NDUncertainty.array" title="astropy.nddata.NDUncertainty.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a> is something
+with a unit (like a <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> or another
+<a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>) the <a class="reference internal" href="#astropy.nddata.NDUncertainty.unit" title="astropy.nddata.NDUncertainty.unit"><code class="xref py py-obj docutils literal"><span class="pre">unit</span></code></a> parameter is considered the true unit of
+the <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> instance and a warning is issued that the unit is
+overwritten. <em>No</em> conversion is done while overwriting the unit so the
+uncertainty <code class="docutils literal"><span class="pre">array</span></code> is not altered.</li>
+<li>NDUncertainty provides a :meth:<code class="docutils literal"><span class="pre">__getitem__</span></code> method so slicing is in
+theory supported but that relies on the <a class="reference internal" href="#astropy.nddata.NDUncertainty.array" title="astropy.nddata.NDUncertainty.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a> being something that
+actually can be sliced.</li>
+<li>Subclasses need to define:<ul>
+<li>property <code class="docutils literal"><span class="pre">uncertainty_type</span></code> which should be a small string defining
+the kind of uncertainty. Recommened is <code class="docutils literal"><span class="pre">std</span></code> for standard deviation
+<code class="docutils literal"><span class="pre">var</span></code> for variance (following the <code class="docutils literal"><span class="pre">numpy</span></code> conventions).</li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">_propagate_add()</span></code> and similar ones which takes the
+uncertainty of the other element and the resulting data (or quantity)
+and calculates the array (or quantity) which represents the resulting
+uncertainty.</li>
+<li>Most of the time a subclasses will need to extend or override the
+<code class="xref py py-meth docutils literal"><span class="pre">NDUncertainty._convert_uncertainty()</span></code>. This method is responsible
+for checking that the other uncertainty has a class that can be used
+for uncertainty propagation. (<a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> only checks that it is
+another instance or subclass of <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>). For subclasses that
+cannot propagate with arbitary other uncertainties they should check
+that the other uncertainty has the same class as they are <em>or</em> convert
+it to such a class. (Handling units should be part of the
+<code class="docutils literal"><span class="pre">_propagate_*</span></code> methods and <em>NOT</em> done in there).</li>
+<li>The <a class="reference internal" href="#astropy.nddata.NDUncertainty.propagate" title="astropy.nddata.NDUncertainty.propagate"><code class="xref py py-meth docutils literal"><span class="pre">NDUncertainty.propagate()</span></code></a> method should
+only be overriden if one wants to allow other operations than
+<code class="docutils literal"><span class="pre">addition</span></code>, <code class="docutils literal"><span class="pre">subtraction</span></code>, <code class="docutils literal"><span class="pre">multiplication</span></code> or <code class="docutils literal"><span class="pre">division</span></code>.
+This function is the common entry point of any arithmetic computation
+that tries to propagate uncertainties and is responsible for calling
+the appropriate <code class="docutils literal"><span class="pre">_propagate_*</span></code> method and then returns another
+instance of the same class with the results uncertainty.</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> and it&#8217;s subclasses can only be used for uncertainty
+propagation if their <code class="docutils literal"><span class="pre">parent_nddata</span></code> attribute is a reference to the
+<a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> object. This is needed since many kinds of propagation need the
+actual data besides the uncertainty.</li>
+<li>If a <code class="docutils literal"><span class="pre">unit</span></code> is implicit (<code class="docutils literal"><span class="pre">data</span></code> had a unit) or explicitly passed
+to the <code class="docutils literal"><span class="pre">__init__</span></code> one should be sure that this unit is identical or
+convertable to the unit of the parent. Otherwise uncertainty propagation
+should fail.</li>
+</ol>
+<p class="rubric">Attributes Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDUncertainty.array" title="astropy.nddata.NDUncertainty.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a></td>
+<td><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>: the uncertainty&#8217;s value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDUncertainty.parent_nddata" title="astropy.nddata.NDUncertainty.parent_nddata"><code class="xref py py-obj docutils literal"><span class="pre">parent_nddata</span></code></a></td>
+<td><a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> reference: The <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> whose uncertainty this is.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDUncertainty.supports_correlated" title="astropy.nddata.NDUncertainty.supports_correlated"><code class="xref py py-obj docutils literal"><span class="pre">supports_correlated</span></code></a></td>
+<td><a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a>: Supports uncertainty propagation with correlated uncertainties?</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDUncertainty.uncertainty_type" title="astropy.nddata.NDUncertainty.uncertainty_type"><code class="xref py py-obj docutils literal"><span class="pre">uncertainty_type</span></code></a></td>
+<td><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a>: Short description which kind of uncertainty is saved.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDUncertainty.unit" title="astropy.nddata.NDUncertainty.unit"><code class="xref py py-obj docutils literal"><span class="pre">unit</span></code></a></td>
+<td><a class="reference internal" href="astropy.units.Unit.html#astropy.units.Unit" title="astropy.units.Unit"><code class="xref py py-obj docutils literal"><span class="pre">Unit</span></code></a>: The unit of the uncertainty.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDUncertainty.propagate" title="astropy.nddata.NDUncertainty.propagate"><code class="xref py py-obj docutils literal"><span class="pre">propagate</span></code></a>(operation,&nbsp;other_nddata,&nbsp;...)</td>
+<td>Calculate the resulting uncertainty given an operation on the data.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="attribute">
+<dt id="astropy.nddata.NDUncertainty.array">
+<code class="descname">array</code><a class="headerlink" href="#astropy.nddata.NDUncertainty.array" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>: the uncertainty&#8217;s value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDUncertainty.parent_nddata">
+<code class="descname">parent_nddata</code><a class="headerlink" href="#astropy.nddata.NDUncertainty.parent_nddata" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> reference: The <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> whose uncertainty this is.</p>
+<p>In case the reference is not set uncertainty propagation will not be
+possible since almost all kinds of propagation need the uncertain
+data besides the uncertainty.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDUncertainty.supports_correlated">
+<code class="descname">supports_correlated</code><a class="headerlink" href="#astropy.nddata.NDUncertainty.supports_correlated" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a>: Supports uncertainty propagation with correlated uncertainties?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDUncertainty.uncertainty_type">
+<code class="descname">uncertainty_type</code><a class="headerlink" href="#astropy.nddata.NDUncertainty.uncertainty_type" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a>: Short description which kind of uncertainty is saved.</p>
+<p>Defined as abstract property so subclasses <em>have</em> to override this
+and return a string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="astropy.nddata.NDUncertainty.unit">
+<code class="descname">unit</code><a class="headerlink" href="#astropy.nddata.NDUncertainty.unit" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="astropy.units.Unit.html#astropy.units.Unit" title="astropy.units.Unit"><code class="xref py py-obj docutils literal"><span class="pre">Unit</span></code></a>: The unit of the uncertainty.</p>
+<p>Even though it is not enforced the unit should be convertable to the
+<code class="docutils literal"><span class="pre">parent_nddata</span></code> unit. Otherwise uncertainty propagation might give
+wrong results.</p>
+<p>If the unit is not set the unit of the parent will be returned.</p>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="astropy.nddata.NDUncertainty.propagate">
+<code class="descname">propagate</code><span class="sig-paren">(</span><em>operation</em>, <em>other_nddata</em>, <em>result_data</em>, <em>correlation</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nduncertainty.py#L272" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/nduncertainty.html#NDUncertainty.propagate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDUncertainty.propagate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the resulting uncertainty given an operation on the data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operation: callable</strong></p>
+<blockquote>
+<div><p>The operation that is performed on the <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>. Supported are
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.add.html#numpy.add" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.add</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.subtract.html#numpy.subtract" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.subtract</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.multiply.html#numpy.multiply" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.multiply</span></code></a> and
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.true_divide.html#numpy.true_divide" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.true_divide</span></code></a>.</p>
+</div></blockquote>
+<p><strong>other_nddata: `NDData` instance</strong></p>
+<blockquote>
+<div><p>The second NDData in the arithmetic operation.</p>
+</div></blockquote>
+<p><strong>result_data: `~numpy.ndarray` or `~astropy.units.Quantity`</strong></p>
+<blockquote>
+<div><p>The result of the arithmetic operations. This saves some duplicate
+calculations.</p>
+</div></blockquote>
+<p><strong>correlation: number or `~numpy.ndarray`</strong></p>
+<blockquote>
+<div><p>The correlation (rho) is defined between the uncertainties in
+sigma_AB = sigma_A * sigma_B * rho. A value of <code class="docutils literal"><span class="pre">0</span></code> means
+uncorrelated operands.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">resulting_uncertainty: <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> instance</p>
+<blockquote>
+<div><p>Another instance of the same <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> subclass containing
+the uncertainty of the result.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError:</strong></p>
+<blockquote class="last">
+<div><p>If the <code class="docutils literal"><span class="pre">operation</span></code> is not supported or if correlation is not zero
+but the subclass does not support correlated uncertainties.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This method at first tries to convert the <code class="docutils literal"><span class="pre">uncertainty</span></code> of the
+other operand to a <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> subclass that is useable for
+uncertainty propagation (this check and optional conversion is done
+in <code class="xref py py-meth docutils literal"><span class="pre">NDUncertainty._convert_uncertainty()</span></code>) and then the
+appropriate <code class="docutils literal"><span class="pre">_propagate_*</span></code> method for calculating the resulting
+uncertainty is invoked. Afterwards this function wraps it into
+another instance of <a class="reference internal" href="#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a> and returns it.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">NDUncertainty</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/astropy.nddata.NDUncertainty.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.5. &nbsp;
+    Last built 29 Apr 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>
