@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14979</title>
+    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14980</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14979',
+        VERSION:     '1.2.dev14980',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
     <link rel="next" title="akaike_info_criterion" href="../api/astropy.stats.akaike_info_criterion.html" />
     <link rel="prev" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14979</a>
+	<a href="../index.html">Astropy v1.2.dev14980</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -86,13 +86,13 @@
             
   <div class="section" id="lomb-scargle-periodograms">
 <span id="stats-lombscargle"></span><h1>Lomb-Scargle Periodograms<a class="headerlink" href="#lomb-scargle-periodograms" title="Permalink to this headline">¶</a></h1>
-<p>The Lomb-Scargle Periodogram (after Lomb <a class="footnote-reference" href="#id13" id="id1">[1]</a>, and Scargle <a class="footnote-reference" href="#id14" id="id2">[2]</a>)
+<p>The Lomb-Scargle Periodogram (after Lomb <a class="footnote-reference" href="#id15" id="id1">[1]</a>, and Scargle <a class="footnote-reference" href="#id16" id="id2">[2]</a>)
 is a commonly-used statistical tool designed to detect periodic signals
 in unevenly-spaced observations.
 The <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> class is a unified interface to several
 implementations of the Lomb-Scargle periodogram, including a fast <em>O[NlogN]</em>
-implementation following the algorithm presented by Press &amp; Rybicki <a class="footnote-reference" href="#id15" id="id3">[3]</a>.</p>
-<p>The code here is adapted from the <a class="reference external" href="http://astroml.org/gatspy">gatspy</a> package, described in <a class="footnote-reference" href="#id16" id="id4">[4]</a> and <a class="footnote-reference" href="#id17" id="id5">[5]</a>.</p>
+implementation following the algorithm presented by Press &amp; Rybicki <a class="footnote-reference" href="#id17" id="id3">[3]</a>.</p>
+<p>The code here is adapted from the <a class="reference external" href="http://astroml.org/">astroml</a> package (<a class="footnote-reference" href="#id18" id="id4">[4]</a>, <a class="footnote-reference" href="#id19" id="id5">[5]</a>) and the <a class="reference external" href="http://astroml.org/gatspy">gatspy</a> package (<a class="footnote-reference" href="#id20" id="id6">[6]</a>, <a class="footnote-reference" href="#id21" id="id7">[7]</a>).</p>
 <div class="section" id="basic-usage">
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
 <p>The Lomb-Scargle periodogram is designed to detect periodic signals in
@@ -272,17 +272,8 @@ which can be selected using the <code class="docutils literal"><span class="pre"
 By design all methods will return the same results (some approximate),
 and each has its advandages and disadganvages.</p>
 <p>For example, to compute a periodogram using the fast chi-square method
-of Palmer (2009) <a class="footnote-reference" href="#id18" id="id6">[6]</a>, you can do the following:</p>
-<p>First we generate some data:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">rand</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">rand</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Next we compute the periodogram using <code class="docutils literal"><span class="pre">method='fastchi2'</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="k">import</span> <span class="n">LombScargle</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;fastchi2&#39;</span><span class="p">)</span>
+of Palmer (2009) <a class="footnote-reference" href="#id22" id="id8">[8]</a>, you can specify <code class="docutils literal"><span class="pre">method='fastchi2'</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;fastchi2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>There are currently six methods available in the package:</p>
@@ -294,16 +285,18 @@ from the following methods using heuristics driven by the input data.</p>
 <div class="section" id="method-slow">
 <h3><code class="docutils literal"><span class="pre">method='slow'</span></code><a class="headerlink" href="#method-slow" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">slow</span></code> method is a pure-Python implementation of the original Lomb-Scargle
-periodogram (<a class="footnote-reference" href="#id13" id="id7">[1]</a>, <a class="footnote-reference" href="#id14" id="id8">[2]</a>), enhanced to account for observational noise,
+periodogram (<a class="footnote-reference" href="#id15" id="id9">[1]</a>, <a class="footnote-reference" href="#id16" id="id10">[2]</a>), enhanced to account for observational noise,
 and to allow a floating mean (sometimes called the <em>generalized periodogram</em>;
-see e.g. <a class="footnote-reference" href="#id19" id="id9">[7]</a>). The method is not particularly fast, scaling approximately
+see e.g. <a class="footnote-reference" href="#id23" id="id11">[9]</a>). The method is not particularly fast, scaling approximately
 as <img class="math" src="../_images/math/eab00b2b434f64ee3ac09a64d73da0e3eabde270.png" alt="O[NM]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> data points and <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies.</p>
 </div>
 <div class="section" id="method-cython">
 <h3><code class="docutils literal"><span class="pre">method='cython'</span></code><a class="headerlink" href="#method-cython" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">cython</span></code> method is a cython implementation of the same algorithm used for
 <code class="docutils literal"><span class="pre">method='slow'</span></code>. It is slightly faster than the pure-python implementation,
-but much more memory-efficient as the size of the inputs grow.</p>
+but much more memory-efficient as the size of the inputs grow. The computational
+scaling is approximately <img class="math" src="../_images/math/eab00b2b434f64ee3ac09a64d73da0e3eabde270.png" alt="O[NM]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> data points and
+<img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies.</p>
 </div>
 <div class="section" id="method-scipy">
 <h3><code class="docutils literal"><span class="pre">method='scipy'</span></code><a class="headerlink" href="#method-scipy" title="Permalink to this headline">¶</a></h3>
@@ -316,7 +309,7 @@ data or extensions such as the floating mean. The scaling is approximately
 <div class="section" id="method-fast">
 <h3><code class="docutils literal"><span class="pre">method='fast'</span></code><a class="headerlink" href="#method-fast" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">fast</span></code> method is a pure-Python implementation of the fast periodogram of
-Press &amp; Rybicki <a class="footnote-reference" href="#id15" id="id10">[3]</a>. It uses an <em>extirpolation</em> approach to approximate
+Press &amp; Rybicki <a class="footnote-reference" href="#id17" id="id12">[3]</a>. It uses an <em>extirpolation</em> approach to approximate
 the periodogram frequencies using a fast Fourier transform. As with the
 <code class="docutils literal"><span class="pre">slow</span></code> method, it can handle data errors and floating mean.
 The scaling is approximately <img class="math" src="../_images/math/859157910165b4275b02a03f279d0ab5fcb9b2d7.png" alt="O[N\log M]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/>
@@ -325,7 +318,7 @@ data points and <img class="math" src="../_images/math/2de38926392ba23abeac75eff
 <div class="section" id="method-chi2">
 <h3><code class="docutils literal"><span class="pre">method='chi2'</span></code><a class="headerlink" href="#method-chi2" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">chi2</span></code> method is a pure-Python implementation based on matrix algebra
-(see, e.g. <a class="footnote-reference" href="#id17" id="id11">[5]</a>). It utilizes the fact that the Lomb-Scargle periodogram at
+(see, e.g. <a class="footnote-reference" href="#id21" id="id13">[7]</a>). It utilizes the fact that the Lomb-Scargle periodogram at
 each frequency is equivalent to the least-squares fit of a sinusoid to the
 data. The advantage of the <code class="docutils literal"><span class="pre">chi2</span></code> method is that it allows extensions of
 the periodogram to multiple Fourier terms, specified by the <code class="docutils literal"><span class="pre">nterms</span></code>
@@ -335,7 +328,7 @@ parameter. For the standard problem, it is slightly slower than
 </div>
 <div class="section" id="method-fastchi2">
 <h3><code class="docutils literal"><span class="pre">method='fastchi2'</span></code><a class="headerlink" href="#method-fastchi2" title="Permalink to this headline">¶</a></h3>
-<p>The fast chi-squared method of Palmer <a class="footnote-reference" href="#id18" id="id12">[6]</a> is equivalent to the <code class="docutils literal"><span class="pre">chi2</span></code> method,
+<p>The fast chi-squared method of Palmer (2009) <a class="footnote-reference" href="#id22" id="id14">[8]</a> is equivalent to the <code class="docutils literal"><span class="pre">chi2</span></code> method,
 but the matrices are constructed using the FFT-based approach of the <code class="docutils literal"><span class="pre">fast</span></code>
 method. The result is a relatively efficient periodogram (though not nearly
 as efficient as the <code class="docutils literal"><span class="pre">fast</span></code> method) which can be extended to multiple terms.
@@ -444,53 +437,68 @@ and results must be interpreted carefully.</p>
 </div>
 <div class="section" id="literature-references">
 <h2>Literature References<a class="headerlink" href="#literature-references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Lomb, N.R. <em>Least-squares frequency analysis of unequally spaced data</em>.
-Ap&amp;SS 39 pp. 447-462 (1976)</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id14" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> Scargle, J. D. <em>Studies in astronomical time series analysis. II -
-Statistical aspects of spectral analysis of unevenly spaced data</em>.
-ApJ 1:263 pp. 835-853 (1982)</td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id15" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id10">2</a>)</em> Press W.H. and Rybicki, G.B, <em>Fast algorithm for spectral analysis
-of unevenly sampled data</em>. ApJ 1:338, p. 277 (1989)</td></tr>
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> Lomb, N.R. <em>Least-squares frequency analysis of unequally spaced data</em>.
+Ap&amp;SS 39 pp. 447-462 (1976)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id16" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>VanderPlas, J. <em>Gatspy: General Tools for Astronomical Time Series
-in Python</em> (2015) <a class="reference external" href="http://dx.doi.org/10.5281/zenodo.14833">http://dx.doi.org/10.5281/zenodo.14833</a></td></tr>
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id10">2</a>)</em> Scargle, J. D. <em>Studies in astronomical time series analysis. II -
+Statistical aspects of spectral analysis of unevenly spaced data</em>.
+ApJ 1:263 pp. 835-853 (1982)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[5]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id11">2</a>)</em> VanderPlas, J. &amp; Ivezic, Z. <em>Periodograms for Multiband Astronomical
-Time Series</em>. ApJ 812.1:18 (2015)</td></tr>
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id12">2</a>)</em> Press W.H. and Rybicki, G.B, <em>Fast algorithm for spectral analysis
+of unevenly sampled data</em>. ApJ 1:338, p. 277 (1989)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[6]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id12">2</a>)</em> Palmer, D. <em>A Fast Chi-squared Technique for Period Search of
-Irregularly Sampled Data</em>. ApJ 695.1:496 (2009)</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>Vanderplas, J., Connolly, A. Ivezic, Z. &amp; Gray, A. <em>Introduction to
+astroML: Machine learning for astrophysics</em>. Proceedings of the
+Conference on Intelligent Data Understanding (2012)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[7]</a></td><td>Zechmeister, M. and Kurster, M. <em>The generalised Lomb-Scargle
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Vanderplas, J., Connolly, A. Ivezic, Z. &amp; Gray, A. <em>Statistics,
+Data Mining and Machine Learning in Astronomy</em>. Princeton Press (2014)}</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td>VanderPlas, J. <em>Gatspy: General Tools for Astronomical Time Series
+in Python</em> (2015) <a class="reference external" href="http://dx.doi.org/10.5281/zenodo.14833">http://dx.doi.org/10.5281/zenodo.14833</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id21" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td><em>(<a class="fn-backref" href="#id7">1</a>, <a class="fn-backref" href="#id13">2</a>)</em> VanderPlas, J. &amp; Ivezic, Z. <em>Periodograms for Multiband Astronomical
+Time Series</em>. ApJ 812.1:18 (2015)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[8]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id14">2</a>)</em> Palmer, D. <em>A Fast Chi-squared Technique for Period Search of
+Irregularly Sampled Data</em>. ApJ 695.1:496 (2009)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id23" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[9]</a></td><td>Zechmeister, M. and Kurster, M. <em>The generalised Lomb-Scargle
 periodogram. A new formalism for the floating-mean and Keplerian
 periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 </tbody>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Astronomical Coordinate Systems (astropy.coordinates) &mdash; Astropy v1.2.dev14979</title>
+    <title>Astronomical Coordinate Systems (astropy.coordinates) &mdash; Astropy v1.2.dev14980</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14979',
+        VERSION:     '1.2.dev14980',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14979" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
     <link rel="next" title="Working with Angles" href="angles.html" />
     <link rel="prev" title="TimezoneInfo" href="../api/astropy.time.TimezoneInfo.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14979</a>
+	<a href="../index.html">Astropy v1.2.dev14980</a>
 	 &raquo;
       </li>
       
@@ -414,50 +414,50 @@ number next to the arrow.  These priorities are used to decide the
 preferred order when two transformation paths have the same number
 of steps.  These priorities are defined such that the path with a
 <em>smaller</em> total priority is favored.</p>
-<object data="../_images/graphviz-78a7c57fc250ac55b9ef640c4dabb50afe910ac2.svg" type="image/svg+xml">
+<object data="../_images/graphviz-55f861b4d540dd9ef38fe69c54a07b4cdb485887.svg" type="image/svg+xml">
             <p class="warning">digraph AstropyCoordinateTransformGraph {
-AltAz [shape=oval label=&quot;AltAz\n`altaz`&quot;]; CIRS [shape=oval label=&quot;CIRS\n`cirs`&quot;]; ICRS [shape=oval label=&quot;ICRS\n`icrs`&quot;]; GCRS [shape=oval label=&quot;GCRS\n`gcrs`&quot;]; ITRS [shape=oval label=&quot;ITRS\n`itrs`&quot;]; FK4 [shape=oval label=&quot;FK4\n`fk4`&quot;]; FK4NoETerms [shape=oval label=&quot;FK4NoETerms\n`fk4noeterms`&quot;]; FK5 [shape=oval label=&quot;FK5\n`fk5`&quot;]; Galactic [shape=oval label=&quot;Galactic\n`galactic`&quot;]; Supergalactic [shape=oval label=&quot;Supergalactic\n`supergalactic`&quot;]; Galactocentric [shape=oval label=&quot;Galactocentric\n`galactocentric`&quot;]; HeliocentricTrueEcliptic [shape=oval label=&quot;HeliocentricTrueEcliptic\n`heliocentrictrueecliptic`&quot;]; BarycentricTrueEcliptic [shape=oval label=&quot;BarycentricTrueEcliptic\n`barycentrictrueecliptic`&quot;]; GeocentricTrueEcliptic [shape=oval label=&quot;GeocentricTrueEcliptic\n`geocentrictrueecliptic`&quot;]; PrecessedGeocentric [shape=oval label=&quot;PrecessedGeocentric\n`precessedgeocentric`&quot;]; HCRS [shape=oval label=&quot;HCRS\n`hcrs`&quot;];
-AltAz -&gt; AltAz[ label = &quot;1.0&quot; ];
-AltAz -&gt; CIRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; ICRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; AltAz[ label = &quot;1.0&quot; ];
-CIRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; ITRS[ label = &quot;1.0&quot; ];
-FK4 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK4 -&gt; FK4[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK5[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK4[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; Galactic[ label = &quot;1.0&quot; ];
-Galactic -&gt; FK5[ label = &quot;1.0&quot; ];
-Galactic -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-Galactic -&gt; Supergalactic[ label = &quot;1.0&quot; ];
-Galactocentric -&gt; ICRS[ label = &quot;1.0&quot; ];
+Supergalactic [shape=oval label=&quot;Supergalactic\n`supergalactic`&quot;]; Galactic [shape=oval label=&quot;Galactic\n`galactic`&quot;]; HeliocentricTrueEcliptic [shape=oval label=&quot;HeliocentricTrueEcliptic\n`heliocentrictrueecliptic`&quot;]; ICRS [shape=oval label=&quot;ICRS\n`icrs`&quot;]; ITRS [shape=oval label=&quot;ITRS\n`itrs`&quot;]; CIRS [shape=oval label=&quot;CIRS\n`cirs`&quot;]; BarycentricTrueEcliptic [shape=oval label=&quot;BarycentricTrueEcliptic\n`barycentrictrueecliptic`&quot;]; GeocentricTrueEcliptic [shape=oval label=&quot;GeocentricTrueEcliptic\n`geocentrictrueecliptic`&quot;]; GCRS [shape=oval label=&quot;GCRS\n`gcrs`&quot;]; AltAz [shape=oval label=&quot;AltAz\n`altaz`&quot;]; PrecessedGeocentric [shape=oval label=&quot;PrecessedGeocentric\n`precessedgeocentric`&quot;]; HCRS [shape=oval label=&quot;HCRS\n`hcrs`&quot;]; Galactocentric [shape=oval label=&quot;Galactocentric\n`galactocentric`&quot;]; FK5 [shape=oval label=&quot;FK5\n`fk5`&quot;]; FK4NoETerms [shape=oval label=&quot;FK4NoETerms\n`fk4noeterms`&quot;]; FK4 [shape=oval label=&quot;FK4\n`fk4`&quot;];
 Supergalactic -&gt; Galactic[ label = &quot;1.0&quot; ];
 HeliocentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+ITRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+ITRS -&gt; ITRS[ label = &quot;1.0&quot; ];
+BarycentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
+GeocentricTrueEcliptic -&gt; GCRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; ITRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; AltAz[ label = &quot;1.0&quot; ];
+CIRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; ICRS[ label = &quot;1.0&quot; ];
+PrecessedGeocentric -&gt; GCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; GeocentricTrueEcliptic[ label = &quot;1.0&quot; ];
+GCRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; PrecessedGeocentric[ label = &quot;1.0&quot; ];
+GCRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; ICRS[ label = &quot;1.0&quot; ];
 ICRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; FK5[ label = &quot;1.0&quot; ];
 ICRS -&gt; BarycentricTrueEcliptic[ label = &quot;1.0&quot; ];
 ICRS -&gt; Galactocentric[ label = &quot;1.0&quot; ];
 ICRS -&gt; HeliocentricTrueEcliptic[ label = &quot;1.0&quot; ];
-FK5 -&gt; FK5[ label = &quot;1.0&quot; ];
-FK5 -&gt; ICRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; FK5[ label = &quot;1.0&quot; ];
+ICRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; Galactic[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK5[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK4[ label = &quot;1.0&quot; ];
+Galactic -&gt; Supergalactic[ label = &quot;1.0&quot; ];
+Galactic -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+Galactic -&gt; FK5[ label = &quot;1.0&quot; ];
+Galactocentric -&gt; ICRS[ label = &quot;1.0&quot; ];
+HCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
 FK5 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
 FK5 -&gt; Galactic[ label = &quot;1.0&quot; ];
-GeocentricTrueEcliptic -&gt; GCRS[ label = &quot;1.0&quot; ];
-ITRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-ITRS -&gt; ITRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; ICRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; GeocentricTrueEcliptic[ label = &quot;1.0&quot; ];
-GCRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; PrecessedGeocentric[ label = &quot;1.0&quot; ];
-GCRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
-BarycentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
-HCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
-PrecessedGeocentric -&gt; GCRS[ label = &quot;1.0&quot; ];
+FK5 -&gt; FK5[ label = &quot;1.0&quot; ];
+FK5 -&gt; ICRS[ label = &quot;1.0&quot; ];
+AltAz -&gt; CIRS[ label = &quot;1.0&quot; ];
+AltAz -&gt; AltAz[ label = &quot;1.0&quot; ];
+FK4 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+FK4 -&gt; FK4[ label = &quot;1.0&quot; ];
 
 overlap=false
 }</p></object>
