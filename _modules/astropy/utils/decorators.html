@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.utils.decorators &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.utils.decorators &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -280,9 +280,9 @@
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">deprecate</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">deprecate</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">deprecate</span></div>
+    <span class="k">return</span> <span class="n">deprecate</span>
 
-
+</div>
 <div class="viewcode-block" id="deprecated_attribute"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.deprecated_attribute.html#astropy.nddata.deprecated_attribute">[docs]</a><span class="k">def</span> <span class="nf">deprecated_attribute</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                          <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -343,12 +343,12 @@
     <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">private_name</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="nb">property</span><span class="p">(</span><span class="n">get</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="n">delete</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="nb">property</span><span class="p">(</span><span class="n">get</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="n">delete</span><span class="p">)</span>
 
 
 <span class="c"># TODO: This can still be made to work for setters by implementing an</span>
 <span class="c"># accompanying metaclass that supports it; we just don&#39;t need that right this</span>
-<span class="c"># second</span>
+<span class="c"># second</span></div>
 <div class="viewcode-block" id="classproperty"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.classproperty.html#astropy.nddata.classproperty">[docs]</a><span class="k">class</span> <span class="nc">classproperty</span><span class="p">(</span><span class="nb">property</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Similar to `property`, but allows class-level properties.  That is,</span>
@@ -494,18 +494,18 @@
         <span class="k">return</span> <span class="n">val</span>
 
 <div class="viewcode-block" id="classproperty.getter"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.classproperty.html#astropy.nddata.classproperty.getter">[docs]</a>    <span class="k">def</span> <span class="nf">getter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">classproperty</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wrap_fget</span><span class="p">(</span><span class="n">fget</span><span class="p">))</span></div>
-
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">classproperty</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wrap_fget</span><span class="p">(</span><span class="n">fget</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="classproperty.setter"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.classproperty.html#astropy.nddata.classproperty.setter">[docs]</a>    <span class="k">def</span> <span class="nf">setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fset</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s">&quot;classproperty can only be read-only; use a metaclass to &quot;</span>
-            <span class="s">&quot;implement modifiable class-level properties&quot;</span><span class="p">)</span></div>
-
+            <span class="s">&quot;implement modifiable class-level properties&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="classproperty.deleter"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.classproperty.html#astropy.nddata.classproperty.deleter">[docs]</a>    <span class="k">def</span> <span class="nf">deleter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fdel</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s">&quot;classproperty can only be read-only; use a metaclass to &quot;</span>
-            <span class="s">&quot;implement modifiable class-level properties&quot;</span><span class="p">)</span></div>
-
+            <span class="s">&quot;implement modifiable class-level properties&quot;</span><span class="p">)</span>
+</div>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_wrap_fget</span><span class="p">(</span><span class="n">orig_fget</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orig_fget</span><span class="p">,</span> <span class="nb">classmethod</span><span class="p">):</span>
@@ -521,9 +521,9 @@
         <span class="c"># Set the __wrapped__ attribute manually for support on Python 2</span>
         <span class="n">fget</span><span class="o">.</span><span class="n">__wrapped__</span> <span class="o">=</span> <span class="n">orig_fget</span>
 
-        <span class="k">return</span> <span class="n">fget</span></div>
+        <span class="k">return</span> <span class="n">fget</span>
 
-
+</div>
 <div class="viewcode-block" id="lazyproperty"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.lazyproperty.html#astropy.nddata.lazyproperty">[docs]</a><span class="k">class</span> <span class="nc">lazyproperty</span><span class="p">(</span><span class="nb">property</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Works similarly to property(), but computes the value only once.</span>
@@ -592,9 +592,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">__dict__</span><span class="p">:</span>
-            <span class="k">del</span> <span class="n">obj</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_key</span><span class="p">]</span></div>
+            <span class="k">del</span> <span class="n">obj</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_key</span><span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="sharedmethod"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.sharedmethod.html#astropy.nddata.sharedmethod">[docs]</a><span class="k">class</span> <span class="nc">sharedmethod</span><span class="p">(</span><span class="nb">classmethod</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This is a method decorator that allows both an instancemethod and a</span>
@@ -681,9 +681,9 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="nd">@staticmethod</span>
         <span class="k">def</span> <span class="nf">_make_method</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">instance</span><span class="p">))</span></div>
+            <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">instance</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="wraps"><a class="viewcode-back" href="../../../api/astropy.utils.decorators.wraps.html#astropy.nddata.wraps">[docs]</a><span class="k">def</span> <span class="nf">wraps</span><span class="p">(</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">assigned</span><span class="o">=</span><span class="n">functools</span><span class="o">.</span><span class="n">WRAPPER_ASSIGNMENTS</span><span class="p">,</span>
           <span class="n">updated</span><span class="o">=</span><span class="n">functools</span><span class="o">.</span><span class="n">WRAPPER_UPDATES</span><span class="p">,</span> <span class="n">exclude_args</span><span class="o">=</span><span class="p">()):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -712,9 +712,9 @@
                                         <span class="n">updated</span><span class="o">=</span><span class="n">updated</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">func</span>
 
-    <span class="k">return</span> <span class="n">wrapper</span></div>
+    <span class="k">return</span> <span class="n">wrapper</span>
 
-
+</div>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">wraps</span><span class="o">.</span><span class="n">__doc__</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
     <span class="n">wraps</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">+=</span> <span class="n">functools</span><span class="o">.</span><span class="n">wraps</span><span class="o">.</span><span class="n">__doc__</span>
 
@@ -1028,8 +1028,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

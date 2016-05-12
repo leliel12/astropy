@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>bayesian_info_criterion &mdash; Astropy v1.2.dev14980</title>
+    <title>bayesian_info_criterion &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="bayesian_info_criterion_lsq" href="astropy.stats.bayesian_info_criterion_lsq.html" />
     <link rel="prev" title="bayesian_blocks" href="astropy.stats.bayesian_blocks.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -98,7 +98,7 @@ better fittings. The decision is in favor of the model with the lowest
 BIC.</p>
 <p>BIC is given as</p>
 <div class="math">
-<p><img src="../_images/math/5f23627aa45719ac9e88980c6f40e91f3439d266.png" alt="\mathrm{BIC} = k \ln(n) - 2L,"/></p>
+<p><img src="../_images/math/890aa3e262967a5d2909f42b228b8facfd46d8c0.png" alt="\mathrm{BIC} = k \ln(n) - 2L,"/></p>
 </div><p>in which <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> is the sample size, <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> is the number of free
 parameters, and <img class="math" src="../_images/math/0a5711c7a37994043b2bc3bb374adca232491762.png" alt="L"/> is the log likelihood function of the model
 evaluated at the maximum likelihood estimate (i. e., the parameters for
@@ -189,7 +189,7 @@ Gaussian model (mu, sigma) and a t-Student model (mu, sigma, delta).
 In addition, assume that the t model has presented a higher likelihood.
 The question that the BIC is proposed to answer is: &#8220;Is the increase in
 likelihood due to larger number of parameters?&#8221;</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats.info_theory</span> <span class="k">import</span> <span class="n">bayesian_info_criterion</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats.info_theory</span> <span class="kn">import</span> <span class="n">bayesian_info_criterion</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lnL_g</span> <span class="o">=</span> <span class="o">-</span><span class="mf">176.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lnL_t</span> <span class="o">=</span> <span class="o">-</span><span class="mf">173.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n_params_g</span> <span class="o">=</span> <span class="mi">2</span>
@@ -229,8 +229,8 @@ likelihood for t-Student model is due to the larger number of parameters.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

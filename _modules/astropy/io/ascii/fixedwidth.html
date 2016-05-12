@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.ascii.fixedwidth &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.ascii.fixedwidth &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -117,8 +117,8 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">vals</span></div>
-
+                <span class="k">yield</span> <span class="n">vals</span>
+</div>
 <div class="viewcode-block" id="FixedWidthSplitter.join"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FixedWidthSplitter.html#astropy.io.ascii.FixedWidthSplitter.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">widths</span><span class="p">):</span>
         <span class="n">pad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter_pad</span> <span class="ow">or</span> <span class="s">&#39;&#39;</span>
         <span class="n">delimiter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span> <span class="ow">or</span> <span class="s">&#39;&#39;</span>
@@ -130,9 +130,9 @@
             <span class="n">bookend_left</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
             <span class="n">bookend_right</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="o">+</span> <span class="n">val</span> <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">width</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">widths</span><span class="p">)]</span>
-        <span class="k">return</span> <span class="n">bookend_left</span> <span class="o">+</span> <span class="n">padded_delim</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">+</span> <span class="n">bookend_right</span></div></div>
+        <span class="k">return</span> <span class="n">bookend_left</span> <span class="o">+</span> <span class="n">padded_delim</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">+</span> <span class="n">bookend_right</span>
 
-
+</div></div>
 <span class="k">class</span> <span class="nc">FixedWidthHeaderSplitter</span><span class="p">(</span><span class="n">DefaultSplitter</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Splitter class that splits on ``|``.&#39;&#39;&#39;</span>
     <span class="n">delimiter</span> <span class="o">=</span> <span class="s">&#39;|&#39;</span>
@@ -154,8 +154,8 @@
                 <span class="k">break</span>
         <span class="k">else</span><span class="p">:</span>  <span class="c"># No header line matching</span>
             <span class="k">raise</span> <span class="n">InconsistentTableError</span><span class="p">(</span><span class="s">&#39;No header line found in table&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">line</span></div>
-
+        <span class="k">return</span> <span class="n">line</span>
+</div>
 <div class="viewcode-block" id="FixedWidthHeader.get_cols"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FixedWidthHeader.html#astropy.io.ascii.FixedWidthHeader.get_cols">[docs]</a>    <span class="k">def</span> <span class="nf">get_cols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize the header Column objects from the table ``lines``.</span>
@@ -228,8 +228,8 @@
         <span class="c"># Set column start and end positions.</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">):</span>
             <span class="n">col</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">starts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">col</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">ends</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
-
+            <span class="n">col</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">ends</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="FixedWidthHeader.get_fixedwidth_params"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FixedWidthHeader.html#astropy.io.ascii.FixedWidthHeader.get_fixedwidth_params">[docs]</a>    <span class="k">def</span> <span class="nf">get_fixedwidth_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Split ``line`` on the delimiter and determine column values and</span>
@@ -290,14 +290,14 @@
                 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">ends</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c"># Assume each col starts where the last ended</span>
             <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">ends</span><span class="p">)]</span>
 
-        <span class="k">return</span> <span class="n">vals</span><span class="p">,</span> <span class="n">starts</span><span class="p">,</span> <span class="n">ends</span></div>
-
+        <span class="k">return</span> <span class="n">vals</span><span class="p">,</span> <span class="n">starts</span><span class="p">,</span> <span class="n">ends</span>
+</div>
 <div class="viewcode-block" id="FixedWidthHeader.write"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FixedWidthHeader.html#astropy.io.ascii.FixedWidthHeader.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="c"># Header line not written until data are formatted.  Until then it is</span>
         <span class="c"># not known how wide each column will be for fixed width.</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span>
 
-
+</div></div>
 <div class="viewcode-block" id="FixedWidthData"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FixedWidthData.html#astropy.io.ascii.FixedWidthData">[docs]</a><span class="k">class</span> <span class="nc">FixedWidthData</span><span class="p">(</span><span class="n">basic</span><span class="o">.</span><span class="n">BasicData</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base table data reader.</span>
@@ -332,9 +332,9 @@
         <span class="k">for</span> <span class="n">vals</span> <span class="ow">in</span> <span class="n">vals_list</span><span class="p">:</span>
             <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">widths</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">lines</span></div></div>
+        <span class="k">return</span> <span class="n">lines</span>
 
-
+</div></div>
 <div class="viewcode-block" id="FixedWidth"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FixedWidth.html#astropy.io.ascii.FixedWidth">[docs]</a><span class="k">class</span> <span class="nc">FixedWidth</span><span class="p">(</span><span class="n">basic</span><span class="o">.</span><span class="n">Basic</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Read or write a fixed width table with a single header line that defines column</span>
@@ -373,9 +373,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">delimiter_pad</span> <span class="o">=</span> <span class="n">delimiter_pad</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">bookend</span> <span class="o">=</span> <span class="n">bookend</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">col_starts</span> <span class="o">=</span> <span class="n">col_starts</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">col_ends</span> <span class="o">=</span> <span class="n">col_ends</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">col_ends</span> <span class="o">=</span> <span class="n">col_ends</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">FixedWidthNoHeaderHeader</span><span class="p">(</span><span class="n">FixedWidthHeader</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Header reader for fixed with tables with no header line&#39;&#39;&#39;</span>
     <span class="n">start_line</span> <span class="o">=</span> <span class="bp">None</span>
@@ -420,9 +420,9 @@
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col_starts</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">col_ends</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">delimiter_pad</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="n">bookend</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">FixedWidthNoHeader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">col_starts</span><span class="p">,</span> <span class="n">col_ends</span><span class="p">,</span>
-                            <span class="n">delimiter_pad</span><span class="o">=</span><span class="n">delimiter_pad</span><span class="p">,</span> <span class="n">bookend</span><span class="o">=</span><span class="n">bookend</span><span class="p">)</span></div>
+                            <span class="n">delimiter_pad</span><span class="o">=</span><span class="n">delimiter_pad</span><span class="p">,</span> <span class="n">bookend</span><span class="o">=</span><span class="n">bookend</span><span class="p">)</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">FixedWidthTwoLineHeader</span><span class="p">(</span><span class="n">FixedWidthHeader</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Header reader for fixed width tables splitting on whitespace.</span>
 
@@ -496,8 +496,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

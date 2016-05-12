@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TransformGraph &mdash; Astropy v1.2.dev14980</title>
+    <title>TransformGraph &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="../coordinates/index.html" />
     <link rel="next" title="UnitSphericalRepresentation" href="astropy.coordinates.UnitSphericalRepresentation.html" />
     <link rel="prev" title="TimeFrameAttribute" href="astropy.coordinates.TimeFrameAttribute.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../coordinates/index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -463,7 +463,7 @@ are <code class="docutils literal"><span class="pre">fromsys</span></code> and <
 initialize the class manually and use <a class="reference internal" href="#astropy.coordinates.TransformGraph.add_transform" title="astropy.coordinates.TransformGraph.add_transform"><code class="xref py py-obj docutils literal"><span class="pre">add_transform</span></code></a> instead of
 using this decorator.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">graph</span> <span class="o">=</span> <span class="n">TransformGraph</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">graph</span> <span class="o">=</span> <span class="n">TransformGraph</span><span class="p">()</span>
 
 <span class="k">class</span> <span class="nc">Frame1</span><span class="p">(</span><span class="n">BaseCoordinateFrame</span><span class="p">):</span>
    <span class="o">...</span>
@@ -471,7 +471,7 @@ using this decorator.</p>
 <span class="k">class</span> <span class="nc">Frame2</span><span class="p">(</span><span class="n">BaseCoordinateFrame</span><span class="p">):</span>
     <span class="o">...</span>
 
-<span class="nd">@graph</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">FunctionTransform</span><span class="p">,</span> <span class="n">Frame1</span><span class="p">,</span> <span class="n">Frame2</span><span class="p">)</span>
+<span class="nd">@graph.transform</span><span class="p">(</span><span class="n">FunctionTransform</span><span class="p">,</span> <span class="n">Frame1</span><span class="p">,</span> <span class="n">Frame2</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">f1_to_f2</span><span class="p">(</span><span class="n">f1_obj</span><span class="p">):</span>
     <span class="o">...</span> <span class="n">do</span> <span class="n">something</span> <span class="k">with</span> <span class="n">f1_obj</span> <span class="o">...</span>
     <span class="k">return</span> <span class="n">f2_obj</span>
@@ -505,8 +505,8 @@ using this decorator.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

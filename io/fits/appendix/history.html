@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits History &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits History &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="File Handling and Convenience Functions" href="../api/files.html" />
     <link rel="prev" title="Header Interface Transition Guide" href="header_transition.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -904,7 +904,7 @@ be used interchangeably with a dict, where the keys are header keywords.</p>
 <li><p class="first">New keywords can be added to the header using normal keyword assignment
 (previously it was necessary to use <code class="docutils literal"><span class="pre">Header.update</span></code> to add new
 keywords).  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>will update the existing &#8216;FOO&#8217; keyword if it already exists, or add a new
@@ -912,13 +912,13 @@ one if it doesn&#8217;t exist, just like a dict.</p>
 </li>
 <li><p class="first">It is possible to assign both a value and a comment at the same time using
 a tuple:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Number of axes&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Number of axes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">To add/update a new card and ensure it&#8217;s added in a specific location, use
 <code class="docutils literal"><span class="pre">Header.set()</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;NAXIS&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Number of axes&#39;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;BITPIX&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;NAXIS&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Number of axes&#39;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;BITPIX&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This works the same as the old <code class="docutils literal"><span class="pre">Header.update()</span></code>.  <code class="docutils literal"><span class="pre">Header.update()</span></code>
@@ -931,7 +931,7 @@ objects in a header, use <code class="docutils literal"><span class="pre">Header
 </li>
 <li><p class="first">To access card comments, it is still possible to either go through the
 card itself, or through <code class="docutils literal"><span class="pre">Header.comments</span></code>.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">comment</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">comment</span>
 <span class="go">Number of axes</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">comments</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
 <span class="go">Number of axes</span>
@@ -1567,7 +1567,7 @@ returns None if no file is associated with the HDUList.</p>
 </li>
 <li><p class="first">Support the python 2.5 &#8216;with&#8217; statement when opening fits files.
 (CNSHD766308)  It is now possible to use the following construct:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">with_statement</span> <span class="kn">import</span> <span class="nn">pyfits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">with_statement</span> <span class="kn">import</span> <span class="nn">pyfits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;input.fits&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
 <span class="gp">... </span>   <span class="c">#process hdul</span>
 <span class="go">&gt;&gt;&gt;</span>
@@ -1598,16 +1598,16 @@ open function when handling unsigned integer 16 conversion.</p>
 indexing the table using the column name.  This is consistent with Record
 Arrays in numpy (array with fields).  (CNSHD763378)  The following example
 will illustrate this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;input.fits&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">names</span>
 <span class="go">[&#39;c1&#39;,&#39;c2&#39;,&#39;c3&#39;,&#39;c4&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">table</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s">&#39;c2&#39;</span><span class="p">)</span> <span class="c"># this is the data for column 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">table</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s">&#39;c2&#39;</span><span class="p">)</span> <span class="c"># this is the data for column 2</span>
 <span class="go">[&#39;abc&#39; &#39;xy&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;c2&#39;</span><span class="p">]</span> <span class="c"># this is also the data for column 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;c2&#39;</span><span class="p">]</span> <span class="c"># this is also the data for column 2</span>
 <span class="go">array([&#39;abc&#39;, &#39;xy &#39;], dtype=&#39;|S3&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c"># this is the data for row 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c"># this is the data for row 1</span>
 <span class="go">(2, &#39;xy&#39;, 6.6999997138977054, True)</span>
 </pre></div>
 </div>
@@ -1620,26 +1620,26 @@ for a BinaryTableHDU from a fits file directly into a numpy Record Array
 using the pyfits.getdata convenience function.  (CNSHD749034)  Thanks to
 Erin Sheldon at Brookhaven National Laboratory for help with this.</p>
 <p>The following should illustrate these new capabilities:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s">&#39;x&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">),(</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="s">&#39;2i4&#39;</span><span class="p">)])</span> \
 <span class="gp">... </span><span class="c"># Create a numpy Record Array with fields</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">BinTableHDU</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Create a Binary Table HDU directly from the Record Array</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span>
 <span class="go">[(0.0, array([0, 0], dtype=int32))</span>
 <span class="go"> (0.0, array([0, 0], dtype=int32))</span>
 <span class="go"> (0.0, array([0, 0], dtype=int32))</span>
 <span class="go"> (0.0, array([0, 0], dtype=int32))</span>
 <span class="go"> (0.0, array([0, 0], dtype=int32))]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;test1.fits&#39;</span><span class="p">,</span><span class="n">clobber</span><span class="o">=</span><span class="k">True</span><span class="p">)</span> \
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;test1.fits&#39;</span><span class="p">,</span><span class="n">clobber</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Write the HDU to a file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;test1.fits&#39;</span><span class="p">)</span>
 <span class="go">Filename: test1.fits</span>
 <span class="go">No.    Name         Type      Cards   Dimensions   Format</span>
 <span class="go">0    PRIMARY     PrimaryHDU       4  ()            uint8</span>
 <span class="go">1                BinTableHDU     12  5R x 2C       [E, 2J]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="k">True</span><span class="p">)</span> \
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Write the Record Array directly to a file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Append another Record Array to the file</span>
@@ -1651,9 +1651,9 @@ Erin Sheldon at Brookhaven National Laboratory for help with this.</p>
 <span class="go">2                BinTableHDU     12  5R x 2C       [E, 2J]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span><span class="n">ext</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Get the first extension from the file as a FITS_rec</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="go">&lt;class &#39;pyfits.core.FITS_rec&#39;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">d</span>
 <span class="go">[(0.0, array([0, 0], dtype=int32))</span>
 <span class="go"> (0.0, array([0, 0], dtype=int32))</span>
 <span class="go"> (0.0, array([0, 0], dtype=int32))</span>
@@ -1662,18 +1662,18 @@ Erin Sheldon at Brookhaven National Laboratory for help with this.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span><span class="n">ext</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">view</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Get the first extension from the file as a numpy Record</span>
 <span class="go">      Array</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="go">&lt;type &#39;numpy.ndarray&#39;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">d</span>
 <span class="go">[(0.0, [0, 0]) (0.0, [0, 0]) (0.0, [0, 0]) (0.0, [0, 0])</span>
 <span class="go"> (0.0, [0, 0])]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">d</span><span class="o">.</span><span class="n">dtype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">d</span><span class="o">.</span><span class="n">dtype</span>
 <span class="go">[(&#39;x&#39;, &#39;&gt;f4&#39;), (&#39;y&#39;, &#39;&gt;i4&#39;, 2)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span><span class="n">ext</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">upper</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">,</span><span class="n">ext</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">upper</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
 <span class="gp">... </span>                 <span class="n">view</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">FITS_rec</span><span class="p">)</span> \
 <span class="gp">... </span><span class="c"># Force the Record Array field names to be in upper case</span>
 <span class="go">      regardless of how they are stored in the file</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">d</span><span class="o">.</span><span class="n">dtype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">d</span><span class="o">.</span><span class="n">dtype</span>
 <span class="go">[(&#39;X&#39;, &#39;&gt;f4&#39;), (&#39;Y&#39;, &#39;&gt;i4&#39;, 2)]</span>
 </pre></div>
 </div>
@@ -1691,8 +1691,8 @@ provided file-like object.  (CNSHD770036)</p>
 <p>An illustration of the new capabilities follows.  In this example fits data
 is written to standard output which is associated with a file opened in
 write-only mode:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
@@ -1700,7 +1700,7 @@ write-only mode:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hdu</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmpfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;tmpfile.py&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">tmpfile</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">__stdout__</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmpfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;tmpfile.py&#39;</span><span class="p">)</span>
@@ -1715,7 +1715,7 @@ write-only mode:</p>
 represents the data from a row of a table.  Pyfits now supports the slice
 syntax to retrieve values from the row.  The following illustrates this new
 syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;table.fits&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;table.fits&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">row</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">row</span>
 <span class="go">(&#39;clear&#39;, &#39;nicmos&#39;, 1, 30, &#39;clear&#39;, &#39;idno= 100&#39;)</span>
@@ -1736,11 +1736,11 @@ syntax:</p>
 </li>
 <li><p class="first">Allow the assignment of a row value for a pyfits table using a tuple or a
 list as input.  The following example illustrates this new feature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;5E&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;5E&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coldefs</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">ColDefs</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c4</span><span class="p">,</span><span class="n">c5</span><span class="p">])</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">new_table</span><span class="p">(</span><span class="n">coldefs</span><span class="p">,</span> <span class="n">nrows</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
@@ -1748,19 +1748,19 @@ list as input.  The following example illustrates this new feature:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Assigning data to a table&#39;s row using a tuple</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;NGC1&#39;</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="s">&#39;A Note&#39;</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">3.3</span><span class="p">,</span><span class="mf">4.4</span><span class="p">,</span><span class="mf">5.5</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">num</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
-<span class="gp">... </span><span class="k">True</span><span class="p">)</span>
+<span class="gp">... </span><span class="bp">True</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Assigning data to a tables row using a list</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;JIM1&#39;</span><span class="p">,</span><span class="s">&#39;33&#39;</span><span class="p">,</span><span class="s">&#39;A Note&#39;</span><span class="p">,</span>
-<span class="gp">... </span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">4.</span><span class="p">,</span><span class="mf">5.</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">num</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span><span class="k">True</span><span class="p">]</span>
+<span class="gp">... </span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">4.</span><span class="p">,</span><span class="mf">5.</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">num</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span><span class="bp">True</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Allow the creation of a Variable Length Format (P format) column from a list
 of data.  The following example illustrates this new feature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.2e-20</span><span class="p">,</span><span class="mf">7.3e-20</span><span class="p">]),</span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.2e-20</span><span class="p">,</span><span class="mf">7.3e-20</span><span class="p">]),</span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span>
 <span class="gp">... </span><span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">acol</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;testa&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;PD()&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">acol</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;testa&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;PD()&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">acol</span><span class="o">.</span><span class="n">array</span>
 <span class="go">_VLF([[  7.20000000e-20   7.30000000e-20], [ 0.], [ 0.]],</span>
 <span class="go">dtype=object)</span>
@@ -1770,26 +1770,26 @@ of data.  The following example illustrates this new feature:</p>
 </li>
 <li><p class="first">Allow the assignment of multiple rows in a table using the slice syntax. The
 following example illustrates this new feature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">312</span><span class="p">,</span><span class="mi">334</span><span class="p">,</span><span class="mi">308</span><span class="p">,</span><span class="mi">317</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">312</span><span class="p">,</span><span class="mi">334</span><span class="p">,</span><span class="mi">308</span><span class="p">,</span><span class="mi">317</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">&#39;NGC1&#39;</span><span class="p">,</span><span class="s">&#39;NGC2&#39;</span><span class="p">,</span><span class="s">&#39;NGC3&#39;</span><span class="p">,</span><span class="s">&#39;NCG4&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">array</span><span class="o">=</span><span class="n">counts</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;5E&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;5E&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coldefs</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">ColDefs</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c4</span><span class="p">,</span><span class="n">c5</span><span class="p">])</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">new_table</span><span class="p">(</span><span class="n">coldefs</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">112</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">117</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">&#39;NGC5&#39;</span><span class="p">,</span><span class="s">&#39;NGC6&#39;</span><span class="p">,</span><span class="s">&#39;NGC7&#39;</span><span class="p">,</span><span class="s">&#39;NCG8&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">array</span><span class="o">=</span><span class="n">counts</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;5E&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;5E&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coldefs</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">ColDefs</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c4</span><span class="p">,</span><span class="n">c5</span><span class="p">])</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">new_table</span><span class="p">(</span><span class="n">coldefs</span><span class="p">)</span>
@@ -1803,7 +1803,7 @@ following example illustrates this new feature:</p>
 <span class="gp">... </span>  <span class="n">table</span> <span class="n">will</span> <span class="n">still</span> <span class="n">be</span> <span class="n">initialized</span> <span class="n">to</span> <span class="n">the</span> <span class="n">default</span> <span class="n">values</span><span class="o">.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu2</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span> <span class="o">=</span> <span class="n">tbhdu</span><span class="o">.</span><span class="n">data</span>
 <span class="go">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">tbhdu2</span><span class="o">.</span><span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">tbhdu2</span><span class="o">.</span><span class="n">data</span>
 <span class="go">[ (&#39;NGC1&#39;, 312, &#39;0.0&#39;, array([ 0.,  0.,  0.,  0.,  0.],</span>
 <span class="go">dtype=float32), True)</span>
 <span class="go">  (&#39;NGC2&#39;, 334, &#39;0.0&#39;, array([ 0.,  0.,  0.,  0.,  0.],</span>
@@ -1857,9 +1857,9 @@ warning, but the data will still be treated as image data.</p>
 </li>
 <li><p class="first">Corrected a bug that restricted the ability to create a custom HDU class and
 use it with pyfits.  The bug fix will allow something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyPrimaryHDU</span><span class="p">(</span><span class="n">pyfits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="k">None</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="n">pyfits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="sd">&quot;&quot;&quot;</span>
@@ -1941,7 +1941,7 @@ pyfits.</p>
 </li>
 <li><p class="first">Adding the checksum=True keyword argument to the open convenience function
 will cause checksums to be verified on file open:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;in.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -1949,13 +1949,13 @@ will cause checksums to be verified on file open:</p>
 file by using the keyword argument checksum=True in calls to the writeto
 convenience function, the HDUList.writeto method, the writeto methods of all
 of the HDU classes, and the append convenience function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;out.fits&#39;</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Implemented a new insert method to the HDUList class that allows for the
 insertion of a HDU into a HDUList at a given index:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">hdu</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">hdu</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -1982,7 +1982,7 @@ contained several new-line characters at the end of each header and at the
 end of the file.  However, since some people want to be able to open these
 non-standard files anyway, an option was added to the open convenience
 function to allow these files to be opened without exception:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;infile.fits&#39;</span><span class="p">,</span><span class="n">ignore_missing_end</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;infile.fits&#39;</span><span class="p">,</span><span class="n">ignore_missing_end</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -2056,14 +2056,14 @@ case as it is in the file.</p>
 <li><p class="first">With the following function call, pyfits will maintain the case of all
 characters in the EXTNAME card values of all extension HDU&#8217;s during the
 entire python session, or until another call to the function is made:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">setExtensionNameCaseSensitive</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">The following function call will return pyfits to its default (all upper
 case) behavior:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">setExtensionNameCaseSensitive</span><span class="p">(</span><span class="k">False</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pyfits</span><span class="o">.</span><span class="n">setExtensionNameCaseSensitive</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -2165,16 +2165,16 @@ integer value used to represent undefined pixels (if any) in the image.</p>
 CompImageHDU object from an uncompressed image data array and its
 associated image header.  From there, the HDU can be treated just like any
 image HDU:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">CompImageHDU</span><span class="p">(</span><span class="n">imageData</span><span class="p">,</span><span class="n">imageHeader</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">CompImageHDU</span><span class="p">(</span><span class="n">imageData</span><span class="p">,</span><span class="n">imageHeader</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdu</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;compressed_image.fits&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">The signature for the CompImageHDU initializer method describes the
 possible options for constructing a CompImageHDU object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="k">None</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
              <span class="n">compressionType</span><span class="o">=</span><span class="s">&#39;RICE_1&#39;</span><span class="p">,</span>
-             <span class="n">tileSize</span><span class="o">=</span><span class="k">None</span><span class="p">,</span>
+             <span class="n">tileSize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
              <span class="n">hcompScale</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>
              <span class="n">hcompSmooth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
              <span class="n">quantizeLevel</span><span class="o">=</span><span class="mf">16.</span><span class="p">):</span>
@@ -2229,7 +2229,7 @@ written to a file, the data will be reverse scaled into an integer 16 array
 and written out to the file and the BSCALE/BZERO header cards will be
 written with the values 1 and 32768 respectively.  (CHSHD736064) Reference
 the following example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyfits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="o">=</span><span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;o4sp040b0_raw.fits&#39;</span><span class="p">,</span><span class="n">uint16</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="go">array([[1507, 1509, 1505, ..., 1498, 1500, 1487],</span>
@@ -2328,20 +2328,20 @@ proposal for representing a more general distortion model&#8221;.</p>
 <li><p class="first">Record-valued keyword cards are string-valued cards where the string is
 interpreted as a definition giving a record field name, and its floating
 point value.  In a FITS header they have the following syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">keyword</span><span class="o">=</span> <span class="s">&#39;field-specifier: float&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">keyword</span><span class="o">=</span> <span class="s">&#39;field-specifier: float&#39;</span>
 </pre></div>
 </div>
 <p>where keyword is a standard eight-character FITS keyword name, float is
 the standard FITS ASCII representation of a floating point number, and
 these are separated by a colon followed by a single blank.</p>
 <p>The grammar for field-specifier is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">field</span><span class="o">-</span><span class="n">specifier</span><span class="p">:</span>
-    <span class="n">field</span>
-    <span class="n">field</span><span class="o">-</span><span class="n">specifier</span><span class="o">.</span><span class="n">field</span>
+<div class="highlight-python"><div class="highlight"><pre>field-specifier:
+    field
+    field-specifier.field
 
-<span class="n">field</span><span class="p">:</span>
-    <span class="n">identifier</span>
-    <span class="n">identifier</span><span class="o">.</span><span class="n">index</span>
+field:
+    identifier
+    identifier.index
 </pre></div>
 </div>
 <p>where identifier is a sequence of letters (upper or lower case),
@@ -2353,7 +2353,7 @@ elements though it need not be used for that purpose.</p>
 be present in a FITS header.  The field-specifier may be viewed as part of
 the keyword name.</p>
 <p>Some examples follow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">DP1</span>     <span class="o">=</span> <span class="s">&#39;NAXIS: 2&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DP1</span>     <span class="o">=</span> <span class="s">&#39;NAXIS: 2&#39;</span>
 <span class="n">DP1</span>     <span class="o">=</span> <span class="s">&#39;AXIS.1: 1&#39;</span>
 <span class="n">DP1</span>     <span class="o">=</span> <span class="s">&#39;AXIS.2: 2&#39;</span>
 <span class="n">DP1</span>     <span class="o">=</span> <span class="s">&#39;NAUX: 2&#39;</span>
@@ -2375,9 +2375,9 @@ not.</p>
 </li>
 <li><p class="first">When accessed using the card index of the HDU&#8217;s header the value returned
 will be the entire string value of the card.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
 <span class="go">NAXIS: 2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
 <span class="go">AXIS.1: 1</span>
 </pre></div>
 </div>
@@ -2385,7 +2385,7 @@ will be the entire string value of the card.  For example:</p>
 <li><p class="first">When accessed using the keyword name exclusive of the field-specifier, the
 entire string value of the header card with the lowest index having that
 keyword name will be returned.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1&#39;</span><span class="p">]</span>
 <span class="go">NAXIS: 2</span>
 </pre></div>
 </div>
@@ -2393,7 +2393,7 @@ keyword name will be returned.  For example:</p>
 <li><p class="first">When accessing using the keyword name and the field-specifier, the value
 returned will be the floating point value associated with the
 record-valued keyword card.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span>
 <span class="go">2.0</span>
 </pre></div>
 </div>
@@ -2404,10 +2404,10 @@ KeyError for keyword name access).</p>
 </li>
 <li><p class="first">Updating the value of a record-valued keyword card can also be
 accomplished using either index or keyword name.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span>
 <span class="go">2.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.NAXIS&#39;</span><span class="p">]</span>
 <span class="go">3.0</span>
 </pre></div>
 </div>
@@ -2415,14 +2415,14 @@ accomplished using either index or keyword name.  For example:</p>
 <li><p class="first">Adding a new record-valued keyword card to an existing header is
 accomplished using the Header.update() method just like any other card.
 For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span> <span class="s">&#39;AXIS.3: 1&#39;</span><span class="p">,</span> <span class="s">&#39;a comment&#39;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;DP1.AXIS.2&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span> <span class="s">&#39;AXIS.3: 1&#39;</span><span class="p">,</span> <span class="s">&#39;a comment&#39;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;DP1.AXIS.2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Deleting a record-valued keyword card from an existing header is
 accomplished using the standard list deletion syntax just like any other
 card.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
@@ -2442,27 +2442,27 @@ The third key &#8216;...&#8217; must appear at the end of the keyword name strin
 will match all keywords that match the preceding pattern down all levels
 of the field-specifier.  All combinations of ?, *, and ... are permitted
 (though ... is only permitted at the end).  Some examples follow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;AXIS.1: 1&#39;</span>
 <span class="go">DP1     = &#39;AXIS.2: 2&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.*&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;NAXIS: 2&#39;</span>
 <span class="go">DP1     = &#39;NAUX: 2&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AUX...&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;AUX.1.COEFF.0: 0&#39;</span>
 <span class="go">DP1     = &#39;AUX.1.POWER.0: 1&#39;</span>
 <span class="go">DP1     = &#39;AUX.1.COEFF.1: 0.00048828125&#39;</span>
 <span class="go">DP1     = &#39;AUX.1.POWER.1: 1&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP?.NAXIS&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;NAXIS: 2&#39;</span>
 <span class="go">DP2     = &#39;NAXIS: 2&#39;</span>
 <span class="go">DP3     = &#39;NAXIS: 2&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.A*S.*&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;AXIS.1: 1&#39;</span>
 <span class="go">DP1     = &#39;AXIS.2: 2&#39;</span>
 </pre></div>
@@ -2471,7 +2471,7 @@ of the field-specifier.  All combinations of ?, *, and ... are permitted
 <li><p class="first">The use of the special pattern matching keys for adding or updating header
 cards in an existing header is not allowed.  However, the deletion of
 cards from the header using the special keys is allowed.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP3.A*...&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP3.A*...&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
@@ -2481,8 +2481,8 @@ cards from the header using the special keys is allowed.  For example:</p>
 matching keys will return a CardList object.  This CardList object can
 itself be searched in order to further refine the list of Cards.  For
 example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1...&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1...&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;NAXIS: 2&#39;</span>
 <span class="go">DP1     = &#39;AXIS.1: 1&#39;</span>
 <span class="go">DP1     = &#39;AXIS.2: 2&#39;</span>
@@ -2490,7 +2490,7 @@ example:</p>
 <span class="go">DP1     = &#39;AUX.1.COEFF.1: 0.000488&#39;</span>
 <span class="go">DP1     = &#39;AUX.2.COEFF.2: 0.00097656&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl1</span><span class="o">=</span><span class="n">cl</span><span class="p">[</span><span class="s">&#39;*.*AUX...&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl1</span>
 <span class="go">DP1     = &#39;NAUX: 2&#39;</span>
 <span class="go">DP1     = &#39;AUX.1.COEFF.1: 0.000488&#39;</span>
 <span class="go">DP1     = &#39;AUX.2.COEFF.2: 0.00097656&#39;</span>
@@ -2499,8 +2499,8 @@ example:</p>
 <ul>
 <li><p class="first">The CardList keys() method will allow the retrieval of all of the key
 values in the CardList.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;AXIS.1: 1&#39;</span>
 <span class="go">DP1     = &#39;AXIS.2: 2&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -2510,8 +2510,8 @@ values in the CardList.  For example:</p>
 </li>
 <li><p class="first">The CardList values() method will allow the retrieval of all of the values
 in the CardList.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span>
 <span class="go">DP1     = &#39;AXIS.1: 1&#39;</span>
 <span class="go">DP1     = &#39;AXIS.2: 2&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
@@ -2521,19 +2521,19 @@ in the CardList.  For example:</p>
 </li>
 <li><p class="first">Individual cards can be retrieved from the list using standard list
 indexing.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">=</span><span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">c</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">c</span>
 <span class="go">DP1     = &#39;AXIS.1: 1&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">=</span><span class="n">cl</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.2&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">c</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">c</span>
 <span class="go">DP1     = &#39;AXIS.2: 2&#39;</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Individual card values can be retrieved from the list using the value
 attribute of the card.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
 <span class="go">1.0</span>
 </pre></div>
@@ -2543,14 +2543,14 @@ attribute of the card.  For example:</p>
 header.  Therefore, modifying a card in the CardList also modifies it in
 the source header.  However, making an addition or a deletion to the
 CardList will not affect the source header.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
 <span class="go">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">=</span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.*&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">4.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdr</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
 <span class="go">4.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cl</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cl</span><span class="p">[</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">]</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
 <span class="gr">KeyError</span>: <span class="n">&quot;Keyword &#39;DP1.AXIS.1&#39; not found.&quot;</span>
@@ -2575,7 +2575,7 @@ followed by a space, followed by the actual value.  The second option is
 to provide the key as a string containing the keyword and field-specifier,
 in which case the value must be the actual floating point value.  For
 example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span> <span class="s">&#39;NAXIS: 2&#39;</span><span class="p">,</span> <span class="s">&#39;Number of variables&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span> <span class="s">&#39;NAXIS: 2&#39;</span><span class="p">,</span> <span class="s">&#39;Number of variables&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="p">(</span><span class="s">&#39;DP1.AXIS.1&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s">&#39;Axis number&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2589,11 +2589,11 @@ the 8 character keyword.</p>
 <li><p class="first">Just like standard Cards, a RecordValuedKeywordCard may be constructed
 from a string using the fromstring() method or verified using the verify()
 method.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="p">()</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="p">()</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
 <span class="go">         &quot;DP1     = &#39;NAXIS: 2&#39; / Number of independent variables&quot;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="p">()</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
 <span class="go">         &quot;DP1     = &#39;AXIS.1: X&#39; / Axis number&quot;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">c1</span><span class="p">;</span> <span class="nb">print</span> <span class="n">c2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">c1</span><span class="p">;</span> <span class="k">print</span> <span class="n">c2</span>
 <span class="go">DP1     = &#39;NAXIS: 2&#39; / Number of independent variables</span>
 <span class="go">DP1     = &#39;AXIS.1: X&#39; / Axis number</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span>
@@ -2606,9 +2606,9 @@ method.  For example:</p>
 be turned into a RecordValuedKeywordCard using the class method coerce.
 If the card object does not meet the required criteria then the original
 card object is just returned.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">Card</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX: 1&#39;</span><span class="p">,</span><span class="s">&#39;comment&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">Card</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX: 1&#39;</span><span class="p">,</span><span class="s">&#39;comment&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
 <span class="go">&lt;&#39;pyfits.NP_pyfits.RecordValuedKeywordCard&#39;&gt;</span>
 </pre></div>
 </div>
@@ -2619,31 +2619,31 @@ create the appropriate card object (Card or RecordValuedKeywordCard) given
 input key, value, and comment, and createCardFromString which will create
 the appropriate card object given an input string.  These two methods are
 also available as convenience functions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX: 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX: 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX: 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX: 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
 <span class="go">&lt;&#39;pyfits.NP_pyfits.RecordValuedKeywordCard&#39;&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">createCard</span><span class="p">(</span><span class="s">&#39;DP1&#39;</span><span class="p">,</span><span class="s">&#39;AUX 1&#39;</span><span class="p">,</span><span class="s">&#39;comment)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
 <span class="go">&lt;&#39;pyfits.NP_pyfits.Card&#39;&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">createCardFromString</span> \
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">RecordValuedKeywordCard</span><span class="o">.</span><span class="n">createCardFromString</span> \
 <span class="go">         (&quot;DP1 = &#39;AUX: 1.0&#39; / comment&quot;)</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">createCardFromString</span><span class="p">(</span><span class="s">&quot;DP1     = &#39;AUX: 1.0&#39; / comment&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">createCardFromString</span><span class="p">(</span><span class="s">&quot;DP1     = &#39;AUX: 1.0&#39; / comment&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
 <span class="go">&lt;&#39;pyfits.NP_pyfits.RecordValuedKeywordCard&#39;&gt;</span>
 </pre></div>
 </div>
@@ -3231,8 +3231,8 @@ to support mask arrays (planned).  (At least a couple of months off).</li>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

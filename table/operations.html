@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table operations &mdash; Astropy v1.2.dev14980</title>
+    <title>Table operations &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="index.html" />
     <link rel="next" title="Table indexing" href="indexing.html" />
     <link rel="prev" title="Modifying a table" href="modify_table.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -133,7 +133,7 @@ table from one or more input tables.  This includes:</p>
 <p>Sometimes in a table or table column there are natural groups within the dataset for which
 it makes sense to compute some derived values.  A simple example is a list of objects with
 photometry from various observing runs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  mag_v</span>
 <span class="gp">... </span><span class="s">                    M31     2012-01-02  17.0   17.5</span>
 <span class="gp">... </span><span class="s">                    M31     2012-01-02  17.1   17.4</span>
@@ -145,7 +145,7 @@ photometry from various observing runs:</p>
 <span class="gp">... </span><span class="s">                    M82     2012-03-26  15.7   16.5</span>
 <span class="gp">... </span><span class="s">                    M101    2012-03-26  15.1   13.5</span>
 <span class="gp">... </span><span class="s">                    M101    2012-03-26  14.8   14.3</span>
-<span class="gp">... </span><span class="s">                    &quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                    &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="table-groups">
@@ -154,8 +154,8 @@ photometry from various observing runs:</p>
 <code class="docutils literal"><span class="pre">name</span></code> column with the <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.group_by" title="astropy.table.Table.group_by"><code class="xref py py-func docutils literal"><span class="pre">group_by()</span></code></a> method.  This returns
 a new table sorted by <code class="docutils literal"><span class="pre">name</span></code> which has a <code class="docutils literal"><span class="pre">groups</span></code> property specifying the unique
 values of <code class="docutils literal"><span class="pre">name</span></code> and the corresponding table rows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_by_name</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_by_name</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="p">)</span>  
 <span class="go">name  obs_date  mag_b mag_v</span>
 <span class="go">---- ---------- ----- -----</span>
 <span class="go">M101 2012-01-02  15.1  13.5  &lt;&lt; First group (index=0, key=&#39;M101&#39;)</span>
@@ -169,13 +169,13 @@ values of <code class="docutils literal"><span class="pre">name</span></code> an
 <span class="go"> M82 2012-02-14  15.2  15.5</span>
 <span class="go"> M82 2012-03-26  15.7  16.5</span>
 <span class="go">                             &lt;&lt; End of groups (index=10)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span>
 <span class="go">name</span>
 <span class="go">----</span>
 <span class="go">M101</span>
 <span class="go"> M31</span>
 <span class="go"> M82</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
 <span class="go">[ 0  4  7 10]</span>
 </pre></div>
 </div>
@@ -197,7 +197,7 @@ form a key value that is used to sort the original table and generate
 the required groups.</p>
 <p>As an example, to get the average magnitudes for each object on each observing
 night, we would first group the table on both <code class="docutils literal"><span class="pre">name</span></code> and <code class="docutils literal"><span class="pre">obs_date</span></code> as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;obs_date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;obs_date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span>
 <span class="go">name  obs_date</span>
 <span class="go">---- ----------</span>
 <span class="go">M101 2012-01-02</span>
@@ -216,7 +216,7 @@ night, we would first group the table on both <code class="docutils literal"><sp
 groups or subsets of groups.  In all cases this returns a new grouped table.
 For instance to get the sub-table which corresponds to the second group (index=1)
 do:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="go">name  obs_date  mag_b mag_v</span>
 <span class="go">---- ---------- ----- -----</span>
 <span class="go"> M31 2012-01-02  17.0  17.5</span>
@@ -225,8 +225,8 @@ do:</p>
 </pre></div>
 </div>
 <p>To get the first and second groups together use a slice:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">groups01</span> <span class="o">=</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">groups01</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">groups01</span> <span class="o">=</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">groups01</span><span class="p">)</span>
 <span class="go">name  obs_date  mag_b mag_v</span>
 <span class="go">---- ---------- ----- -----</span>
 <span class="go">M101 2012-01-02  15.1  13.5</span>
@@ -236,7 +236,7 @@ do:</p>
 <span class="go"> M31 2012-01-02  17.0  17.5</span>
 <span class="go"> M31 2012-01-02  17.1  17.4</span>
 <span class="go"> M31 2012-02-14  16.9  17.3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">groups01</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">groups01</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span>
 <span class="go">name</span>
 <span class="go">----</span>
 <span class="go">M101</span>
@@ -245,8 +245,8 @@ do:</p>
 </div>
 <p>You can also supply a numpy array of indices or a boolean mask to select particular
 groups, e.g.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;M101&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;M101&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
 <span class="go">name  obs_date  mag_b mag_v</span>
 <span class="go">---- ---------- ----- -----</span>
 <span class="go">M101 2012-01-02  15.1  13.5</span>
@@ -256,10 +256,10 @@ groups, e.g.:</p>
 </pre></div>
 </div>
 <p>One can iterate over the group sub-tables and corresponding keys with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;****** {0} *******&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]))</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;****** {0} *******&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">****** M101 *******</span>
 <span class="go">name  obs_date  mag_b mag_v</span>
@@ -293,16 +293,16 @@ manipulation with grouped operations.  This can apply both to columns within a
 there is no option of providing one or more column names since that
 doesn&#8217;t make sense for a <a class="reference internal" href="../api/astropy.table.Column.html#astropy.table.Column" title="astropy.table.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Column</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Column</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Column</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">key_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;qux&#39;</span><span class="p">,</span> <span class="s">&#39;qux&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cg</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">key_vals</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cg</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">cg</span><span class="o">.</span><span class="n">groups</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;****** {0} *******&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;****** {0} *******&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">****** bar *******</span>
 <span class="go"> a</span>
@@ -331,9 +331,9 @@ argument and return a single scalar value.  Common function examples are
 <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html#numpy.sum" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.sum</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html#numpy.mean" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.mean</span></code></a>, and <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.std</span></code></a>.</p>
 <p>For the example grouped table <code class="docutils literal"><span class="pre">obs_by_name</span></code> from above we compute the group means with
 the <a class="reference internal" href="../api/astropy.table.TableGroups.html#astropy.table.TableGroups.aggregate" title="astropy.table.groups.TableGroups"><code class="xref py py-obj docutils literal"><span class="pre">aggregate</span></code></a> method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_mean</span> <span class="o">=</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_mean</span> <span class="o">=</span> <span class="n">obs_by_name</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>  
 <span class="go">WARNING: Cannot aggregate column &#39;obs_date&#39; [astropy.table.groups]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_mean</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_mean</span><span class="p">)</span>  
 <span class="go">name mag_b mag_v</span>
 <span class="go">---- ----- ------</span>
 <span class="go">M101  15.0 13.725</span>
@@ -351,14 +351,14 @@ column is one of the <code class="docutils literal"><span class="pre">keys</span
 it is automatically ignored from aggregation.</p>
 <p>From a grouped table it is possible to select one or more columns on which
 to perform the aggregation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="p">[</span><span class="s">&#39;mag_b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="p">[</span><span class="s">&#39;mag_b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
 <span class="go">mag_b</span>
 <span class="go">-----</span>
 <span class="go"> 15.0</span>
 <span class="go"> 17.0</span>
 <span class="go"> 15.7</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;mag_v&#39;</span><span class="p">,</span> <span class="s">&#39;mag_b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">obs_by_name</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;mag_v&#39;</span><span class="p">,</span> <span class="s">&#39;mag_b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
 <span class="go">name mag_v  mag_b</span>
 <span class="go">---- ------ -----</span>
 <span class="go">M101 13.725  15.0</span>
@@ -367,12 +367,12 @@ to perform the aggregation:</p>
 </pre></div>
 </div>
 <p>A single column of data can be aggregated as well:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Column</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Column</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">key_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;qux&#39;</span><span class="p">,</span> <span class="s">&#39;qux&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cg</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">key_vals</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cg_sums</span> <span class="o">=</span> <span class="n">cg</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">cg_sum</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cg</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">cg_sums</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sum for {0} = {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">cg_sum</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Sum for {0} = {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">cg_sum</span><span class="p">))</span>
 <span class="gp">...</span>
 <span class="go">Sum for bar = 2</span>
 <span class="go">Sum for foo = 8</span>
@@ -407,16 +407,16 @@ which is passed to this method must accept two arguments:</p>
 </ul>
 <p>It must then return either <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  As an example, the following
 will select all table groups with only positive values in the non-key columns:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">all_positive</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">key_colnames</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">all_positive</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">key_colnames</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">colnames</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">colnames</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key_colnames</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">colnames</span><span class="p">:</span>
 <span class="gp">... </span>        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
-<span class="gp">... </span>            <span class="k">return</span> <span class="k">False</span>
-<span class="gp">... </span>    <span class="k">return</span> <span class="k">True</span>
+<span class="gp">... </span>            <span class="k">return</span> <span class="bp">False</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="bp">True</span>
 </pre></div>
 </div>
 <p>An example of using this function is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot; a   b    c</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot; a   b    c</span>
 <span class="gp">... </span><span class="s">                  -2  7.0   0</span>
 <span class="gp">... </span><span class="s">                  -2  5.0   1</span>
 <span class="gp">... </span><span class="s">                   1  3.0  -5</span>
@@ -425,12 +425,12 @@ will select all table groups with only positive values in the non-key columns:</
 <span class="gp">... </span><span class="s">                   0  0.0   4</span>
 <span class="gp">... </span><span class="s">                   3  3.0   5</span>
 <span class="gp">... </span><span class="s">                   3 -2.0   6</span>
-<span class="gp">... </span><span class="s">                   3  1.0   7&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                   3  1.0   7&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tg</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t_positive</span> <span class="o">=</span> <span class="n">tg</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">all_positive</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">t_positive</span><span class="o">.</span><span class="n">groups</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go"> a   b   c</span>
 <span class="go">--- --- ---</span>
@@ -448,10 +448,10 @@ in the non-key columns, so those are the ones that are selected.</p>
 <a class="reference internal" href="../api/astropy.table.ColumnGroups.html#astropy.table.ColumnGroups.filter" title="astropy.table.groups.ColumnGroups"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>, method but in this case the filtering
 function takes only a single argument which is the column group.  It still must return
 either <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">all_positive</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">all_positive</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">column</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="k">return</span> <span class="k">False</span>
-    <span class="k">return</span> <span class="k">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="bp">True</span>
 </pre></div>
 </div>
 </div>
@@ -476,7 +476,7 @@ accomplish binning on key values such as time, phase or row number.</p>
 <p>The common theme in all these cases is to convert the key value array into
 a new float- or int-valued array whose values are identical for rows in the same
 output bin.  As an example, generate a fake light curve:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">year</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">2000.0</span><span class="p">,</span> <span class="mf">2010.0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c"># 200 observations over 10 years</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">year</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">2000.0</span><span class="p">,</span> <span class="mf">2010.0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c"># 200 observations over 10 years</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">period</span> <span class="o">=</span> <span class="mf">1.811</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y0</span> <span class="o">=</span> <span class="mf">2005.2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mag</span> <span class="o">=</span> <span class="mf">14.0</span> <span class="o">+</span> <span class="mf">1.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">year</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="n">period</span><span class="p">)</span>
@@ -486,19 +486,19 @@ output bin.  As an example, generate a fake light curve:</p>
 </div>
 <p>Now make an array that will be used for binning the data by 0.25 year
 intervals:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">year_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">year</span> <span class="o">/</span> <span class="mf">0.25</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">year_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">year</span> <span class="o">/</span> <span class="mf">0.25</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This has the property that all samples in each 0.25 year bin have the same
 value of <code class="docutils literal"><span class="pre">year_bin</span></code>.  Think of <code class="docutils literal"><span class="pre">year_bin</span></code> as the bin number for <code class="docutils literal"><span class="pre">year</span></code>.
 Then do the binning by grouping and immediately aggregating with <code class="docutils literal"><span class="pre">np.mean</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">dat_grouped</span> <span class="o">=</span> <span class="n">dat</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">year_bin</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">dat_grouped</span> <span class="o">=</span> <span class="n">dat</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">year_bin</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dat_binned</span> <span class="o">=</span> <span class="n">dat_grouped</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Then one might plot the results with <code class="docutils literal"><span class="pre">plt.plot(dat_binned['year'],</span> <span class="pre">dat_binned['mag'],</span>
 <span class="pre">'.')</span></code>.   Alternately one could bin into 10 phase bins:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">phase_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">phase</span> <span class="o">/</span> <span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">phase_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">phase</span> <span class="o">/</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dat_grouped</span> <span class="o">=</span> <span class="n">dat</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">phase_bin</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dat_binned</span> <span class="o">=</span> <span class="n">dat_grouped</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
@@ -513,20 +513,20 @@ concatenating or appending tables in the row direction.  It corresponds roughly
 to the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html#numpy.vstack" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.vstack</span></code></a> function.</p>
 <p>For example, suppose one has two tables of observations with several
 column names in common:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obs1</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  logLx</span>
 <span class="gp">... </span><span class="s">                     M31     2012-01-02  17.0   42.5</span>
 <span class="gp">... </span><span class="s">                     M82     2012-10-29  16.2   43.5</span>
-<span class="gp">... </span><span class="s">                     M101    2012-10-31  15.1   44.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                     M101    2012-10-31  15.1   44.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obs2</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    logLx</span>
 <span class="gp">... </span><span class="s">                     NGC3516 2011-11-11  42.1</span>
 <span class="gp">... </span><span class="s">                     M31     1999-01-05  43.1</span>
-<span class="gp">... </span><span class="s">                     M82     2012-10-30  45.0&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                     M82     2012-10-30  45.0&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now we can stack these two tables:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">]))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">]))</span>
 <span class="go">  name   obs_date  mag_b logLx</span>
 <span class="go">------- ---------- ----- -----</span>
 <span class="go">    M31 2012-01-02  17.0  42.5</span>
@@ -541,7 +541,7 @@ column names in common:</p>
 table those values are marked as missing.  This is the default behavior and corresponds to
 <code class="docutils literal"><span class="pre">join_type='outer'</span></code>.  There are two other allowed values for the <code class="docutils literal"><span class="pre">join_type</span></code> argument,
 <code class="docutils literal"><span class="pre">'inner'</span></code> and <code class="docutils literal"><span class="pre">'exact'</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">))</span>
 <span class="go">  name   obs_date  logLx</span>
 <span class="go">------- ---------- -----</span>
 <span class="go">    M31 2012-01-02  42.5</span>
@@ -551,7 +551,7 @@ table those values are marked as missing.  This is the default behavior and corr
 <span class="go">    M31 1999-01-05  43.1</span>
 <span class="go">    M82 2012-10-30  45.0</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;exact&#39;</span><span class="p">))</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;exact&#39;</span><span class="p">))</span>  
 <span class="gt">Traceback (most recent call last):</span>
   <span class="c">...</span>
 <span class="gr">TableMergeError</span>: <span class="n">Inconsistent columns in input arrays (use &#39;inner&#39;</span>
@@ -563,9 +563,9 @@ present in the output table.  When <code class="docutils literal"><span class="p
 <a class="reference internal" href="../api/astropy.table.vstack.html#astropy.table.vstack" title="astropy.table.vstack"><code class="xref py py-obj docutils literal"><span class="pre">vstack</span></code></a> requires that all the input tables
 have exactly the same column names.</p>
 <p>More than two tables can be stacked by supplying a list of table objects:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obs3</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  logLx</span>
-<span class="gp">... </span><span class="s">                     M45     2012-02-03  15.0   40.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">,</span> <span class="n">obs3</span><span class="p">]))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obs3</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  logLx</span>
+<span class="gp">... </span><span class="s">                     M45     2012-02-03  15.0   40.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">vstack</span><span class="p">([</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">,</span> <span class="n">obs3</span><span class="p">]))</span>
 <span class="go">  name   obs_date  mag_b logLx</span>
 <span class="go">------- ---------- ----- -----</span>
 <span class="go">    M31 2012-01-02  17.0  42.5</span>
@@ -588,18 +588,18 @@ full table as one of the inputs.</p>
 <a class="reference internal" href="../api/astropy.table.hstack.html#astropy.table.hstack" title="astropy.table.hstack"><code class="xref py py-obj docutils literal"><span class="pre">hstack</span></code></a> function.    It corresponds roughly
 to the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html#numpy.hstack" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.hstack</span></code></a> function.</p>
 <p>For example, suppose one has the following two tables:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">hstack</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">hstack</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;a   b    c</span>
 <span class="gp">... </span><span class="s">                   1   foo  1.4</span>
 <span class="gp">... </span><span class="s">                   2   bar  2.1</span>
-<span class="gp">... </span><span class="s">                   3   baz  2.8&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                   3   baz  2.8&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;d     e</span>
 <span class="gp">... </span><span class="s">                   ham   eggs</span>
-<span class="gp">... </span><span class="s">                   spam  toast&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                   spam  toast&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now we can stack these two tables horizontally:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]))</span>
 <span class="go"> a   b   c   d     e</span>
 <span class="go">--- --- --- ---- -----</span>
 <span class="go">  1 foo 1.4  ham  eggs</span>
@@ -613,13 +613,13 @@ that can take values <code class="docutils literal"><span class="pre">'inner'</s
 values.  This is illustrated in the example above.  The other options give the
 intersection of rows, where <code class="docutils literal"><span class="pre">'exact'</span></code> requires that all tables have exactly the same
 number of rows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">))</span>
 <span class="go"> a   b   c   d     e</span>
 <span class="go">--- --- --- ---- -----</span>
 <span class="go">  1 foo 1.4  ham  eggs</span>
 <span class="go">  2 bar 2.1 spam toast</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;exact&#39;</span><span class="p">))</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;exact&#39;</span><span class="p">))</span>  
 <span class="gt">Traceback (most recent call last):</span>
   <span class="c">...</span>
 <span class="gr">TableMergeError</span>: <span class="n">Inconsistent number of rows in input arrays (use &#39;inner&#39; or</span>
@@ -629,9 +629,9 @@ number of rows:</p>
 <p>More than two tables can be stacked by supplying a list of table objects.  The example
 below also illustrates the behavior when there is a conflict in the input column names
 (see the section on <a class="reference internal" href="#column-renaming">Column renaming</a> for details):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t3</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;a    b</span>
-<span class="gp">... </span><span class="s">                   M45  2012-02-03&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">]))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t3</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;a    b</span>
+<span class="gp">... </span><span class="s">                   M45  2012-02-03&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">]))</span>
 <span class="go">a_1 b_1  c   d     e   a_3    b_3</span>
 <span class="go">--- --- --- ---- ----- --- ----------</span>
 <span class="go">  1 foo 1.4  ham  eggs M45 2012-02-03</span>
@@ -650,15 +650,15 @@ operation.  This provides a flexible and powerful way to combine tables based on
 values in one or more key columns.</p>
 <p>For example, suppose one has two tables of observations, the first with B and V magnitudes
 and the second with X-ray luminosities of an overlapping (but not identical) sample:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">join</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">join</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">optical</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  mag_v</span>
 <span class="gp">... </span><span class="s">                        M31     2012-01-02  17.0   16.0</span>
 <span class="gp">... </span><span class="s">                        M82     2012-10-29  16.2   15.2</span>
-<span class="gp">... </span><span class="s">                        M101    2012-10-31  15.1   15.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                        M101    2012-10-31  15.1   15.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xray</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;   name    obs_date    logLx</span>
 <span class="gp">... </span><span class="s">                        NGC3516 2011-11-11  42.1</span>
 <span class="gp">... </span><span class="s">                        M31     1999-01-05  43.1</span>
-<span class="gp">... </span><span class="s">                        M82     2012-10-29  45.0&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                        M82     2012-10-29  45.0&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The <a class="reference internal" href="../api/astropy.table.join.html#astropy.table.join" title="astropy.table.join"><code class="xref py py-func docutils literal"><span class="pre">join()</span></code></a> method allows one to merge these two tables into a single table based on
@@ -666,8 +666,8 @@ matching values in the &#8220;key columns&#8221;.  By default the key columns ar
 that are common to both tables.  In this case the key columns are <code class="docutils literal"><span class="pre">name</span></code> and
 <code class="docutils literal"><span class="pre">obs_date</span></code>.  We can find all the observations of the same object on the same date as
 follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">opt_xray</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">opt_xray</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">opt_xray</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">opt_xray</span><span class="p">)</span>
 <span class="go">name  obs_date  mag_b mag_v logLx</span>
 <span class="go">---- ---------- ----- ----- -----</span>
 <span class="go"> M82 2012-10-29  16.2  15.2  45.0</span>
@@ -675,7 +675,7 @@ follows:</p>
 </div>
 <p>We can perform the match only by <code class="docutils literal"><span class="pre">name</span></code> by providing the <code class="docutils literal"><span class="pre">keys</span></code> argument, which can be
 either a single column name or a list of column names:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">))</span>
 <span class="go">name obs_date_1 mag_b mag_v obs_date_2 logLx</span>
 <span class="go">---- ---------- ----- ----- ---------- -----</span>
 <span class="go"> M31 2012-01-02  17.0  16.0 1999-01-05  43.1</span>
@@ -692,7 +692,7 @@ the &#8220;left&#8221; (<code class="docutils literal"><span class="pre">optical
 the two tables on the key columns.</p>
 <p>If one wants to make a new table which has <em>every</em> row from the left table and includes
 matching values from the right table when available, this is known as a left join:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">))</span>
 <span class="go">name  obs_date  mag_b mag_v logLx</span>
 <span class="go">---- ---------- ----- ----- -----</span>
 <span class="go">M101 2012-10-31  15.1  15.5    --</span>
@@ -702,11 +702,11 @@ matching values from the right table when available, this is known as a left joi
 </div>
 <p>Two of the observations do not have X-ray data, as indicated by the <code class="docutils literal"><span class="pre">--</span></code> in the table.
 When there are any missing values the output will be a masked table (see
-<a class="reference internal" href="masking.html#masking-and-missing-values"><span class="std std-ref">Masking and missing values</span></a> for more information).  You might be
+<a class="reference internal" href="masking.html#masking-and-missing-values"><span>Masking and missing values</span></a> for more information).  You might be
 surprised that there is no X-ray data for M31 in the output.  Remember that the default
 matching key includes both <code class="docutils literal"><span class="pre">name</span></code> and <code class="docutils literal"><span class="pre">obs_date</span></code>.  Specifying the key as only the
 <code class="docutils literal"><span class="pre">name</span></code> column gives:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">))</span>
 <span class="go">name obs_date_1 mag_b mag_v obs_date_2 logLx</span>
 <span class="go">---- ---------- ----- ----- ---------- -----</span>
 <span class="go">M101 2012-10-31  15.1  15.5         --    --</span>
@@ -717,7 +717,7 @@ matching key includes both <code class="docutils literal"><span class="pre">name
 <p>Likewise one can construct a new table with every row of the right table and matching left
 values (when available) using <code class="docutils literal"><span class="pre">join_type='right'</span></code>.</p>
 <p>Finally, to make a table with the union of rows from both tables do an &#8220;outer&#8221; join:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;outer&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;outer&#39;</span><span class="p">))</span>
 <span class="go">  name   obs_date  mag_b mag_v logLx</span>
 <span class="go">------- ---------- ----- ----- -----</span>
 <span class="go">   M101 2012-10-31  15.1  15.5    --</span>
@@ -733,23 +733,23 @@ values (when available) using <code class="docutils literal"><span class="pre">j
 <p>The <a class="reference internal" href="../api/astropy.table.join.html#astropy.table.join" title="astropy.table.join"><code class="xref py py-func docutils literal"><span class="pre">join()</span></code></a> function requires the key column names to be identical in the
 two tables. However, in the following one table has a <code class="docutils literal"><span class="pre">'name'</span></code> column
 while the other has an <code class="docutils literal"><span class="pre">'obj_id'</span></code> column:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">optical</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  mag_v</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">optical</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  mag_v</span>
 <span class="gp">... </span><span class="s">                        M31     2012-01-02  17.0   16.0</span>
 <span class="gp">... </span><span class="s">                        M82     2012-10-29  16.2   15.2</span>
-<span class="gp">... </span><span class="s">                        M101    2012-10-31  15.1   15.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                        M101    2012-10-31  15.1   15.5&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xray_1</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;   obj_id    obs_date    logLx</span>
 <span class="gp">... </span><span class="s">                          NGC3516 2011-11-11  42.1</span>
 <span class="gp">... </span><span class="s">                          M31     1999-01-05  43.1</span>
-<span class="gp">... </span><span class="s">                          M82     2012-10-29  45.0&quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                          M82     2012-10-29  45.0&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In order to perform a match based on the names of the objects, one has to
 temporarily rename one of the columns mentioned above, right before creating
 the new table:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xray_1</span><span class="o">.</span><span class="n">rename_column</span><span class="p">(</span><span class="s">&#39;obj_id&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xray_1</span><span class="o">.</span><span class="n">rename_column</span><span class="p">(</span><span class="s">&#39;obj_id&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">opt_xray_1</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray_1</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xray_1</span><span class="o">.</span><span class="n">rename_column</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;obj_id&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">opt_xray_1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">opt_xray_1</span><span class="p">)</span>
 <span class="go">name obs_date_1 mag_b mag_v obs_date_2 logLx</span>
 <span class="go">---- ---------- ----- ----- ---------- -----</span>
 <span class="go">M31 2012-01-02  17.0  16.0 1999-01-05  43.1</span>
@@ -757,7 +757,7 @@ the new table:</p>
 </pre></div>
 </div>
 <p>The original <code class="docutils literal"><span class="pre">xray_1</span></code> table remains unchanged after the operation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">xray_1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">xray_1</span><span class="p">)</span>
 <span class="go">obj_id  obs_date  logLx</span>
 <span class="go">------- ---------- -----</span>
 <span class="go">NGC3516 2011-11-11  42.1</span>
@@ -770,17 +770,17 @@ the new table:</p>
 <h3>Identical key values<a class="headerlink" href="#identical-key-values" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> join operation works even if there are multiple rows with identical key
 values.  For example the following tables have multiple rows for the key column <code class="docutils literal"><span class="pre">x</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">join</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">join</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">left</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;L1&#39;</span><span class="p">,</span> <span class="s">&#39;L2&#39;</span><span class="p">,</span> <span class="s">&#39;L3&#39;</span><span class="p">,</span> <span class="s">&#39;L4&#39;</span><span class="p">]],</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;key&#39;</span><span class="p">,</span> <span class="s">&#39;L&#39;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">right</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;R1&#39;</span><span class="p">,</span> <span class="s">&#39;R2&#39;</span><span class="p">,</span> <span class="s">&#39;R3&#39;</span><span class="p">,</span> <span class="s">&#39;R4&#39;</span><span class="p">]],</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;key&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
 <span class="go">key  L</span>
 <span class="go">--- ---</span>
 <span class="go">  0  L1</span>
 <span class="go">  1  L2</span>
 <span class="go">  1  L3</span>
 <span class="go">  2  L4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
 <span class="go">key  R</span>
 <span class="go">--- ---</span>
 <span class="go">  1  R1</span>
@@ -793,7 +793,7 @@ values.  For example the following tables have multiple rows for the key column 
 product</a>.  For each matching key, every
 combination of the left and right tables is represented.  When there is no match in either
 the left or right table, the corresponding column values are designated as missing.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;outer&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;outer&#39;</span><span class="p">))</span>
 <span class="go">key  L   R</span>
 <span class="go">--- --- ---</span>
 <span class="go">  0  L1  --</span>
@@ -814,7 +814,7 @@ can vary.</p>
 </div>
 <p>An inner join is the same but only returns rows where there is a key match in both the
 left and right tables:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">))</span>
 <span class="go">key  L   R</span>
 <span class="go">--- --- ---</span>
 <span class="go">  1  L2  R1</span>
@@ -850,7 +850,7 @@ the input tables.</dd>
 </dl>
 <p>This is most easily understood by example using the <code class="docutils literal"><span class="pre">optical</span></code> and <code class="docutils literal"><span class="pre">xray</span></code> tables
 in the <a class="reference internal" href="../api/astropy.table.join.html#astropy.table.join" title="astropy.table.join"><code class="xref py py-func docutils literal"><span class="pre">join()</span></code></a> example defined previously:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">optical</span><span class="p">,</span> <span class="n">xray</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">,</span>
 <span class="gp">... </span>           <span class="n">table_names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;OPTICAL&#39;</span><span class="p">,</span> <span class="s">&#39;XRAY&#39;</span><span class="p">],</span>
 <span class="gp">... </span>           <span class="n">uniq_col_name</span><span class="o">=</span><span class="s">&#39;{table_name}_{col_name}&#39;</span><span class="p">))</span>
 <span class="go">name OPTICAL_obs_date mag_b mag_v XRAY_obs_date logLx</span>
@@ -910,7 +910,7 @@ strategies. The linked documentation strings provide details.</p>
 <p>In addition to the table and column <code class="docutils literal"><span class="pre">meta</span></code> attributes, the column attributes <code class="docutils literal"><span class="pre">unit</span></code>,
 <code class="docutils literal"><span class="pre">format</span></code>, and <code class="docutils literal"><span class="pre">description</span></code> are merged by going through the input tables in
 order and taking the first value which is defined (i.e. is not None).  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="k">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">col1</span> <span class="o">=</span> <span class="n">Column</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">col2</span> <span class="o">=</span> <span class="n">Column</span><span class="p">([</span><span class="mi">2</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;cm&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">col3</span> <span class="o">=</span> <span class="n">Column</span><span class="p">([</span><span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
@@ -940,7 +940,7 @@ it returns with a sorted table containing all the fully unique rows.</p>
 <p>A simple example is a list of objects with photometry from various observing
 runs. Using <code class="docutils literal"><span class="pre">'name'</span></code> as the only <code class="docutils literal"><span class="pre">keys</span></code>, it returns with the first
 occurrence of each of the three targets:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">table</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">table</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;&quot;&quot;name    obs_date    mag_b  mag_v</span>
 <span class="gp">... </span><span class="s">                          M31     2012-01-02  17.0   17.5</span>
 <span class="gp">... </span><span class="s">                          M82     2012-02-14  16.2   14.5</span>
@@ -954,9 +954,9 @@ occurrence of each of the three targets:</p>
 <span class="gp">... </span><span class="s">                          M82     2012-03-26  15.7   16.5</span>
 <span class="gp">... </span><span class="s">                          M101    2012-03-26  15.1   13.5</span>
 <span class="gp">... </span><span class="s">                          M101    2012-03-26  14.8   14.3</span>
-<span class="gp">... </span><span class="s">                          &quot;&quot;&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s">                          &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">unique_by_name</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unique_by_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">unique_by_name</span><span class="p">)</span>
 <span class="go">name  obs_date  mag_b mag_v</span>
 <span class="go">---- ---------- ----- -----</span>
 <span class="go">M101 2012-01-02  15.1  13.5</span>
@@ -965,8 +965,8 @@ occurrence of each of the three targets:</p>
 </pre></div>
 </div>
 <p>Using multiple columns as <code class="docutils literal"><span class="pre">keys</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">unique_by_name_date</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;obs_date&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unique_by_name_date</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">unique_by_name_date</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;obs_date&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">unique_by_name_date</span><span class="p">)</span>
 <span class="go">name  obs_date  mag_b mag_v</span>
 <span class="go">---- ---------- ----- -----</span>
 <span class="go">M101 2012-01-02  15.1  13.5</span>
@@ -1030,8 +1030,8 @@ occurrence of each of the three targets:</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

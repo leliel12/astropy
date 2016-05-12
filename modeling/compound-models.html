@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Compound Models &mdash; Astropy v1.2.dev14980</title>
+    <title>Compound Models &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="index.html" />
     <link rel="next" title="Defining New Model Classes" href="new.html" />
     <link rel="prev" title="Fitting Models to Data" href="fitting.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -89,7 +89,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
 </div>
-<p>As noted in the <a class="reference internal" href="index.html#compound-models-intro"><span class="std std-ref">introduction to the modeling package</span></a>, it is now possible to create new models just by
+<p>As noted in the <a class="reference internal" href="index.html#compound-models-intro"><span>introduction to the modeling package</span></a>, it is now possible to create new models just by
 combining existing models using the arithmetic operators <code class="docutils literal"><span class="pre">+</span></code>, <code class="docutils literal"><span class="pre">-</span></code>, <code class="docutils literal"><span class="pre">*</span></code>,
 <code class="docutils literal"><span class="pre">/</span></code>, and <code class="docutils literal"><span class="pre">**</span></code>, as well as by model composition using <code class="docutils literal"><span class="pre">|</span></code> and
 concatenation (explained below) with <code class="docutils literal"><span class="pre">&amp;</span></code>.</p>
@@ -116,7 +116,7 @@ most models, at least, have one or more parameters that must be specified
 before the model can be evaluated on some input data. However, we can still
 get some information about a model class from its representation.  For
 example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Gaussian1D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Gaussian1D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Gaussian1D</span>
 <span class="go">&lt;class &#39;astropy.modeling.functional_models.Gaussian1D&#39;&gt;</span>
 <span class="go">Name: Gaussian1D</span>
@@ -127,7 +127,7 @@ example:</p>
 </div>
 <p>We can then create a model <em>instance</em> by passing in values for the three
 parameters:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_gaussian</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_gaussian</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_gaussian</span>  
 <span class="go">&lt;Gaussian1D(amplitude=1.0, mean=0.0, stddev=0.2)&gt;</span>
 </pre></div>
@@ -136,7 +136,7 @@ parameters:</p>
 with all its parameters (and in principle other details like fit constraints)
 filled in so that we can perform calculations with it as though it were a
 function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_gaussian</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_gaussian</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  
 <span class="go">0.6065306597126334</span>
 </pre></div>
 </div>
@@ -146,7 +146,7 @@ will be made where necessary.</p>
 </li>
 <li><p class="first">A <em>compound model</em> can be created by combining two or more existing models&#8211;
 be they model <em>instances</em> or <em>classes</em>, and can be models that come with
-Astropy, <a class="reference internal" href="new.html"><span class="doc">user defined models</span></a>, or other compound models&#8211;using
+Astropy, <a class="reference internal" href="new.html"><em>user defined models</em></a>, or other compound models&#8211;using
 Python expressions consisting of one or more of the supported binary
 operators.</p>
 </li>
@@ -163,7 +163,7 @@ within this document, but it may be helpful to understand the distinction.</p>
 </div>
 <div class="section" id="creating-compound-models">
 <h2>Creating compound models<a class="headerlink" href="#creating-compound-models" title="Permalink to this headline">¶</a></h2>
-<p>As discussed in the <a class="reference internal" href="index.html#compound-models-intro"><span class="std std-ref">introduction to compound models</span></a>, the only way, currently, to create compound models is
+<p>As discussed in the <a class="reference internal" href="index.html#compound-models-intro"><span>introduction to compound models</span></a>, the only way, currently, to create compound models is
 to combine existing single models and/or compound models using expressions in
 Python with the binary operators <code class="docutils literal"><span class="pre">+</span></code>, <code class="docutils literal"><span class="pre">-</span></code>, <code class="docutils literal"><span class="pre">*</span></code>, <code class="docutils literal"><span class="pre">/</span></code>, <code class="docutils literal"><span class="pre">**</span></code>, <code class="docutils literal"><span class="pre">|</span></code>,
 and <code class="docutils literal"><span class="pre">&amp;</span></code>, each of which is discussed in the following sections.  The operands
@@ -175,12 +175,12 @@ other words, any object for which either <code class="docutils literal"><span cl
 <p>We start by demonstrating how new compound model <em>classes</em> can be created
 by combining other classes.  This is more advanced usage, but it&#8217;s useful to
 understand that this is what&#8217;s going on under the hood in the more basic usage
-of <a class="reference internal" href="#compound-model-instances"><span class="std std-ref">compound model instances</span></a>.</p>
+of <a class="reference internal" href="#compound-model-instances"><span>compound model instances</span></a>.</p>
 <p>When all models involved in the expression are classes, the result of the
 expression is, itself, a class (remember, classes in Python are themselves also
 objects just like strings and integers or model instances):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span> <span class="o">=</span> <span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">Model</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span> <span class="o">=</span> <span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">TwoGaussians</span><span class="p">,</span> <span class="n">Model</span><span class="p">)</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">issubclass</span><span class="p">(</span><span class="n">TwoGaussians</span><span class="p">,</span> <span class="n">Model</span><span class="p">)</span>
@@ -189,7 +189,7 @@ objects just like strings and integers or model instances):</p>
 </div>
 <p>When we inspect the variable <code class="docutils literal"><span class="pre">TwoGaussians</span></code> by printing its representation at
 the command prompt we can get some more information about it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span>
 <span class="go">&lt;class &#39;__main__.CompoundModel...&#39;&gt;</span>
 <span class="go">Name: CompoundModel...</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
@@ -212,7 +212,7 @@ the command prompt we can get some more information about it:</p>
 </div>
 <p>There are a number of things to point out here:  This model class has six
 fittable parameters.  How parameters are handled is discussed further in the
-section on <a class="reference internal" href="#compound-model-parameters"><span class="std std-ref">Parameters</span></a>.  We also see that there is a
+section on <a class="reference internal" href="#compound-model-parameters"><span>Parameters</span></a>.  We also see that there is a
 listing of the <em>expression</em> that was used to create this compound model, which
 in this case is summarized as <code class="docutils literal"><span class="pre">[0]</span> <span class="pre">+</span> <span class="pre">[1]</span></code>.  The <code class="docutils literal"><span class="pre">[0]</span></code> and <code class="docutils literal"><span class="pre">[1]</span></code> refer to
 the first and second components of the model listed next (in this case both
@@ -223,7 +223,7 @@ The existing compound model is not treated as a single model&#8211;instead the
 expression represented by that compound model is extended.  An expression
 involving two or more compound models results in a new expression that is the
 concatenation of all involved models&#8217; expressions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">FourGaussians</span> <span class="o">=</span> <span class="n">TwoGaussians</span> <span class="o">+</span> <span class="n">TwoGaussians</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">FourGaussians</span> <span class="o">=</span> <span class="n">TwoGaussians</span> <span class="o">+</span> <span class="n">TwoGaussians</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">FourGaussians</span>
 <span class="go">&lt;class &#39;__main__.CompoundModel...&#39;&gt;</span>
 <span class="go">Name: CompoundModel...</span>
@@ -264,7 +264,7 @@ but for now there are a couple workarounds for creating compound model classes
 with friendlier names.  The first is to use the
 <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.rename" title="astropy.modeling.Model.rename"><code class="xref py py-obj docutils literal"><span class="pre">Model.rename</span></code></a> class method on the result of
 the model expression:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span> <span class="o">=</span> <span class="p">(</span><span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;TwoGaussians&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span> <span class="o">=</span> <span class="p">(</span><span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;TwoGaussians&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span>
 <span class="go">&lt;class &#39;__main__.TwoGaussians&#39;&gt;</span>
 <span class="go">Name: TwoGaussians (CompoundModel...)</span>
@@ -276,7 +276,7 @@ of it with the desired name.  This does not impose any additional overhead.  An
 alternative syntax, which is equivalent to what
 <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.rename" title="astropy.modeling.Model.rename"><code class="xref py py-obj docutils literal"><span class="pre">rename</span></code></a> is doing, is to directly use the model
 expression as the base class of a new class:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TwoGaussians</span><span class="p">(</span><span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TwoGaussians</span><span class="p">(</span><span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="sd">&quot;&quot;&quot;A superposition of two Gaussians.&quot;&quot;&quot;</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">TwoGaussians</span>
@@ -293,7 +293,7 @@ may be possible to customize other aspects of compound model classes in this
 way.  Single model classes can also be given custom names by using
 <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.rename" title="astropy.modeling.Model.rename"><code class="xref py py-obj docutils literal"><span class="pre">rename</span></code></a>, and model instances can be given names as
 well.  This can be used to good effect, for example as shown in the section on
-<a class="reference internal" href="#compound-model-indexing"><span class="std std-ref">Indexing and slicing</span></a>.</p>
+<a class="reference internal" href="#compound-model-indexing"><span>Indexing and slicing</span></a>.</p>
 </div>
 <div class="section" id="compound-models-with-model-instances">
 <span id="compound-model-instances"></span><h3>Compound models with model instances<a class="headerlink" href="#compound-models-with-model-instances" title="Permalink to this headline">¶</a></h3>
@@ -303,7 +303,7 @@ models from existing models.  However, many may find it more useful most of the
 time, especially when providing an initial guess to a fitter, to create a new
 model from a combination of model <em>instances</em> with already defined parameter
 values.  This can also be done and works mostly the same way:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">both_gaussians</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">both_gaussians</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">both_gaussians</span>  
 <span class="go">&lt;CompoundModel...(amplitude_0=1.0, mean_0=0.0, stddev_0=0.2, amplitude_1=2.5, mean_1=0.5, stddev_1=0.1)&gt;</span>
 </pre></div>
@@ -311,7 +311,7 @@ values.  This can also be done and works mostly the same way:</p>
 <p>Unlike when a model was created from model classes, this expression does not
 directly return a new class; instead it creates a model instance that is ready
 to be used for evaluation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">both_gaussians</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">both_gaussians</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  
 <span class="go">0.6343031510582392</span>
 </pre></div>
 </div>
@@ -320,7 +320,7 @@ returning a class.  It is worth understanding that the way this works under the
 hood is to create the compound class, and then immediately instantiate it with
 the already known parameter values.  We can see this by checking the type of
 <code class="docutils literal"><span class="pre">both_gaussians</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">both_gaussians</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">both_gaussians</span><span class="p">)</span>  
 <span class="go">&lt;class &#39;__main__.CompoundModel...&#39;&gt;</span>
 <span class="go">Name: CompoundModel...</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
@@ -335,7 +335,7 @@ the already known parameter values.  We can see this by checking the type of
 </div>
 <p>It is also possible, and sometimes useful, to make a compound model from a
 combination of classes <em>and</em> instances in the same expression:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Linear1D</span><span class="p">,</span> <span class="n">Sine1D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Linear1D</span><span class="p">,</span> <span class="n">Sine1D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">MyModel</span> <span class="o">=</span> <span class="n">Linear1D</span> <span class="o">+</span> <span class="n">Sine1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">MyModel</span>
 <span class="go">&lt;class &#39;__main__.CompoundModel...&#39;&gt;</span>
@@ -362,13 +362,13 @@ immediately obvious by the representation) the difference is that the
 possible to instantiate one of these models by specifying just the <code class="docutils literal"><span class="pre">slope</span></code>
 and <code class="docutils literal"><span class="pre">intercept</span></code> parameters for the
 <a class="reference internal" href="../api/astropy.modeling.functional_models.Linear1D.html#astropy.modeling.functional_models.Linear1D" title="astropy.modeling.functional_models.Linear1D"><code class="xref py py-obj docutils literal"><span class="pre">Linear1D</span></code></a> part of the model:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_model</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>  
 <span class="go">1.25</span>
 </pre></div>
 </div>
 <p>This does not prevent the other parameters from being overridden, however:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">(</span><span class="n">slope_0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">intercept_0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">frequency_1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">(</span><span class="n">slope_0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">intercept_0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">frequency_1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_model</span><span class="p">(</span><span class="mf">0.125</span><span class="p">)</span>  
 <span class="go">1.125</span>
 </pre></div>
@@ -438,8 +438,8 @@ inputs.</p>
 <p>For simple functional models this is exactly the same as functional
 composition, except for the aforementioned caveat about ordering.  For
 example, to create the following compound model:</p>
-<object data="../_images/graphviz-bb7dc17629350b12759e3d8c9b2a69fa322a1ac8.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-a2e0cf23d381ab35383cac8cbf7c67cd92fafc44.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     out0 [shape=&quot;none&quot;, label=&quot;output 0&quot;];
     redshift0 [shape=&quot;box&quot;, label=&quot;Redshift&quot;];
@@ -448,7 +448,8 @@ example, to create the following compound model:</p>
     in0 -&gt; redshift0;
     redshift0 -&gt; gaussian0;
     gaussian0 -&gt; out0;
-}</p></object>
+}" />
+</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">RedshiftScaleFactor</span><span class="p">,</span> <span class="n">Gaussian1D</span>
 
@@ -508,8 +509,8 @@ applies.  If each input is thought of as a coordinate axis, then this defines a
 pipeline of transformations for the coordinates on each axis (though it does
 not necessarily guarantee that these transformations are separable).  For
 example:</p>
-<object data="../_images/graphviz-4e0dd327f19048e10d484abc3e27051f0a37ba6a.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-dc81abdaf25da0b5bd15d66427540b368b627d18.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     in1 [shape=&quot;none&quot;, label=&quot;input 1&quot;];
     out0 [shape=&quot;none&quot;, label=&quot;output 0&quot;];
@@ -523,7 +524,8 @@ example:</p>
     rot0 -&gt; gaussian0;
     gaussian0 -&gt; out0;
     gaussian0 -&gt; out1;
-}</p></object>
+}" />
+</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Rotation2D</span><span class="p">,</span> <span class="n">Gaussian2D</span>
 
@@ -556,7 +558,7 @@ rotation could be added to arbitrary models.</p>
 </div>
 <p>Normally it is not possible to compose, say, a model with two outputs and a
 function of only one input:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Rotation2D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Rotation2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Rotation2D</span> <span class="o">|</span> <span class="n">Gaussian1D</span>  
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
@@ -564,9 +566,9 @@ function of only one input:</p>
 </pre></div>
 </div>
 <p>However, as we will see in the next section,
-<a class="reference internal" href="#compound-model-concatenation"><span class="std std-ref">Model concatenation</span></a>, provides a means of creating models
+<a class="reference internal" href="#compound-model-concatenation"><span>Model concatenation</span></a>, provides a means of creating models
 that apply transformations to only some of the outputs from a model,
-especially when used in concert with <a class="reference internal" href="#compound-model-mappings"><span class="std std-ref">mappings</span></a>.</p>
+especially when used in concert with <a class="reference internal" href="#compound-model-mappings"><span>mappings</span></a>.</p>
 </div>
 <div class="section" id="model-concatenation">
 <span id="compound-model-concatenation"></span><h3>Model concatenation<a class="headerlink" href="#model-concatenation" title="Permalink to this headline">¶</a></h3>
@@ -580,8 +582,8 @@ something like a tuple of models.</p>
 <p>For example, given two coordinate axes, we can scale each coordinate
 by a different factor by concatenating two
 <a class="reference internal" href="../api/astropy.modeling.functional_models.Scale.html#astropy.modeling.functional_models.Scale" title="astropy.modeling.functional_models.Scale"><code class="xref py py-obj docutils literal"><span class="pre">Scale</span></code></a> models.</p>
-<object data="../_images/graphviz-2c66752838df5407dc65917cc6c75f159c18eeb3.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-fa50450291843fbf90c30ffe9ff54c036057a343.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     in1 [shape=&quot;none&quot;, label=&quot;input 1&quot;];
     out0 [shape=&quot;none&quot;, label=&quot;output 0&quot;];
@@ -594,8 +596,9 @@ by a different factor by concatenating two
 
     in1 -&gt; scale1;
     scale1 -&gt; out1;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Scale</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Scale</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">separate_scales</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Scale</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">3.4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">separate_scales</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
 <span class="go">(1.2, 6.8)</span>
@@ -604,8 +607,8 @@ by a different factor by concatenating two
 <p>We can also combine concatenation with composition to build chains of
 transformations that use both &#8220;1D&#8221; and &#8220;2D&#8221; models on two (or more) coordinate
 axes:</p>
-<object data="../_images/graphviz-ed32cccc8928f28605a2168514ca4b78ef9ee9ee.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-c6ecd7ae578452cf4c3740efba2e9491ee00c89c.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     in1 [shape=&quot;none&quot;, label=&quot;input 1&quot;];
     out0 [shape=&quot;none&quot;, label=&quot;output 0&quot;];
@@ -622,8 +625,9 @@ axes:</p>
 
     rot0 -&gt; out0;
     rot0 -&gt; out1;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">scale_and_rotate</span> <span class="o">=</span> <span class="p">((</span><span class="n">Scale</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Scale</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">3.4</span><span class="p">))</span> <span class="o">|</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">scale_and_rotate</span> <span class="o">=</span> <span class="p">((</span><span class="n">Scale</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Scale</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">3.4</span><span class="p">))</span> <span class="o">|</span>
 <span class="gp">... </span>                    <span class="n">Rotation2D</span><span class="p">(</span><span class="mi">90</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scale_and_rotate</span><span class="o">.</span><span class="n">n_inputs</span>
 <span class="go">2</span>
@@ -636,8 +640,8 @@ axes:</p>
 <p>This is of course equivalent to an
 <a class="reference internal" href="../api/astropy.modeling.projections.AffineTransformation2D.html#astropy.modeling.projections.AffineTransformation2D" title="astropy.modeling.projections.AffineTransformation2D"><code class="xref py py-obj docutils literal"><span class="pre">AffineTransformation2D</span></code></a> with the appropriate
 transformation matrix:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">allclose</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">AffineTransformation2D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">allclose</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">AffineTransformation2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">affine</span> <span class="o">=</span> <span class="n">AffineTransformation2D</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># May be small numerical differences due to different implementations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">allclose</span><span class="p">(</span><span class="n">scale_and_rotate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">affine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -653,7 +657,7 @@ compound model each component of the model is assigned an integer index
 starting from zero.  These indices are assigned simply by reading the
 expression that defined the model, from left to right, regardless of the order
 of operations.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Const1D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Const1D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Const1D</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">Const1D</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;B&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Const1D</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;C&#39;</span><span class="p">)</span>
@@ -688,7 +692,7 @@ jump around when mentally mapping them to the expression.</p>
 <p>We can pull out each individual component of the compound model <code class="docutils literal"><span class="pre">M</span></code> by using
 indexing notation on it.  Following from the above example, <code class="docutils literal"><span class="pre">M[1]</span></code> should
 return the model <code class="docutils literal"><span class="pre">B</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="go">&lt;class &#39;__main__.B&#39;&gt;</span>
 <span class="go">Name: B (Const1D)</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
@@ -703,7 +707,7 @@ The start point is inclusive and the end point is exclusive.  So a slice like
 <code class="docutils literal"><span class="pre">M[1:3]</span></code> (or just <code class="docutils literal"><span class="pre">M[1:]</span></code>) selects models <code class="docutils literal"><span class="pre">B</span></code> and <code class="docutils literal"><span class="pre">C</span></code> (and all
 <em>operators</em> between them).  So the resulting model evaluates just the
 subexpression <code class="docutils literal"><span class="pre">B</span> <span class="pre">*</span> <span class="pre">C</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="go">&lt;class &#39;astropy.modeling.utils.CompoundModel...&#39;&gt;</span>
 <span class="go">Name: CompoundModel...</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
@@ -722,7 +726,7 @@ subexpression <code class="docutils literal"><span class="pre">B</span> <span cl
 </div>
 <p>The new compound model for the subexpression can be instantiated and evaluated
 like any other:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">:](</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">:](</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
 <span class="go">&lt;CompoundModel...(amplitude_1=2.0, amplitude_2=3.0)&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -733,7 +737,7 @@ like any other:</p>
 example, it was useful to give each component a unique name (<code class="docutils literal"><span class="pre">A</span></code>, <code class="docutils literal"><span class="pre">B</span></code>,
 <code class="docutils literal"><span class="pre">C</span></code>) in order to differentiate between them.  This can also be used for
 indexing and slicing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="s">&#39;B&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="s">&#39;B&#39;</span><span class="p">]</span>
 <span class="go">&lt;class &#39;__main__.B&#39;&gt;</span>
 <span class="go">Name: B (Const1D)</span>
 <span class="go">Inputs: (&#39;x&#39;,)</span>
@@ -749,7 +753,7 @@ unique name&#8211;if some components have duplicate names then they can only be
 accessed by their integer index.  This may improve in a future release.</p>
 <p>Slicing also works with names.  When using names the start and end points are
 <em>both inclusive</em>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="s">&#39;B&#39;</span><span class="p">:</span><span class="s">&#39;C&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="s">&#39;B&#39;</span><span class="p">:</span><span class="s">&#39;C&#39;</span><span class="p">]</span>
 <span class="go">&lt;class &#39;astropy.modeling.utils.CompoundModel...&#39;&gt;</span>
 <span class="gp">...</span>
 <span class="go">Expression: [0] * [1]</span>
@@ -768,7 +772,7 @@ accessed by their integer index.  This may improve in a future release.</p>
 instances.  Individual model instances can be given a name by passing in the
 <code class="docutils literal"><span class="pre">name=</span></code> argument when instantiating them.  These names are used in the same was
 as class names were in the class-based examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Const1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Const1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Const1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;B&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Const1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;C&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span>
@@ -776,7 +780,7 @@ as class names were in the class-based examples:</p>
 </div>
 <p>Because this model is composed entirely of constants it doesn&#8217;t matter what
 input we pass in, so 0 is used without loss of generality:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">7.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">:](</span><span class="mi">0</span><span class="p">)</span>  <span class="c"># b * c</span>
 <span class="go">6.0</span>
@@ -796,7 +800,7 @@ This is also one of the biggest areas for possible improvements&#8211;the curren
 behavior is meant to be practical, but is not ideal.  (Some possible
 improvements include being able to rename parameters, and providing a means of
 narrowing down the number of parameters in a compound model.)</p>
-<p>As explained in the general documentation for model <a class="reference internal" href="parameters.html#modeling-parameters"><span class="std std-ref">parameters</span></a>, every model has an attribute called
+<p>As explained in the general documentation for model <a class="reference internal" href="parameters.html#modeling-parameters"><span>parameters</span></a>, every model has an attribute called
 <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.param_names" title="astropy.modeling.Model.param_names"><code class="xref py py-obj docutils literal"><span class="pre">param_names</span></code></a> that contains a tuple of all the model&#8217;s
 adjustable parameters.  These names are given in a canonical order that also
 corresponds to the order in which the parameters should be specified when
@@ -804,10 +808,10 @@ instantiating the model.</p>
 <p>The simple scheme used currently for naming parameters in a compound model is
 this:  The <code class="docutils literal"><span class="pre">param_names</span></code> from each component model are concatenated with each
 other in order from left to right as explained in the section on
-<a class="reference internal" href="#compound-model-indexing"><span class="std std-ref">Indexing and slicing</span></a>.  However, each parameter name is appended with
+<a class="reference internal" href="#compound-model-indexing"><span>Indexing and slicing</span></a>.  However, each parameter name is appended with
 <code class="docutils literal"><span class="pre">_&lt;#&gt;</span></code>, where <code class="docutils literal"><span class="pre">&lt;#&gt;</span></code> is the index of the component model that parameter
 belongs to.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Gaussian1D</span><span class="o">.</span><span class="n">param_names</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Gaussian1D</span><span class="o">.</span><span class="n">param_names</span>
 <span class="go">(&#39;amplitude&#39;, &#39;mean&#39;, &#39;stddev&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">)</span><span class="o">.</span><span class="n">param_names</span>
 <span class="go">(&#39;amplitude_0&#39;, &#39;mean_0&#39;, &#39;stddev_0&#39;, &#39;amplitude_1&#39;, &#39;mean_1&#39;, &#39;stddev_1&#39;)</span>
@@ -815,7 +819,7 @@ belongs to.  For example:</p>
 </div>
 <p>For consistency&#8217;s sake, this scheme is followed even if not all of the
 components have overlapping parameter names:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">RedshiftScaleFactor</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">RedshiftScaleFactor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">RedshiftScaleFactor</span> <span class="o">|</span> <span class="p">(</span><span class="n">Gaussian1D</span> <span class="o">+</span> <span class="n">Gaussian1D</span><span class="p">))</span><span class="o">.</span><span class="n">param_names</span>
 <span class="go">(&#39;z_0&#39;, &#39;amplitude_1&#39;, &#39;mean_1&#39;, &#39;stddev_1&#39;, &#39;amplitude_2&#39;, &#39;mean_2&#39;,</span>
 <span class="go">&#39;stddev_2&#39;)</span>
@@ -824,24 +828,24 @@ components have overlapping parameter names:</p>
 <p>On some level a scheme like this is necessary in order for the compound model
 to maintain some consistency with other models with respect to the interface to
 its parameters.  However, if one gets lost it is also possible to take
-advantage of <a class="reference internal" href="#compound-model-indexing"><span class="std std-ref">indexing</span></a> to make things easier.
+advantage of <a class="reference internal" href="#compound-model-indexing"><span>indexing</span></a> to make things easier.
 When returning a single component from a compound model the parameters
 associated with that component are accessible through their original names, but
 are still tied back to the compound model:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;B&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">amplitude_0</span>
 <span class="go">Parameter(&#39;amplitude_0&#39;, value=1.0)</span>
 </pre></div>
 </div>
 <p>is equivalent to:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="s">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">amplitude</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="s">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">amplitude</span>
 <span class="go">Parameter(&#39;amplitude&#39;, value=1.0)</span>
 </pre></div>
 </div>
 <p>You can think of these both as different &#8220;views&#8221; of the same parameter.
 Updating one updates the other:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">amplitude_0</span> <span class="o">=</span> <span class="mi">42</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">amplitude_0</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="s">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">amplitude</span>
 <span class="go">Parameter(&#39;amplitude&#39;, value=42.0)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="s">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="mi">99</span>
@@ -852,7 +856,7 @@ Updating one updates the other:</p>
 <p>Note, however, that the original
 <a class="reference internal" href="../api/astropy.modeling.functional_models.Gaussian1D.html#astropy.modeling.functional_models.Gaussian1D" title="astropy.modeling.functional_models.Gaussian1D"><code class="xref py py-obj docutils literal"><span class="pre">Gaussian1D</span></code></a> instance <code class="docutils literal"><span class="pre">a</span></code> has not been
 updated:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">amplitude</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">amplitude</span>
 <span class="go">Parameter(&#39;amplitude&#39;, value=1.0)</span>
 </pre></div>
 </div>
@@ -862,11 +866,11 @@ the original models.</p>
 <div class="section" id="advanced-mappings">
 <span id="compound-model-mappings"></span><h2>Advanced mappings<a class="headerlink" href="#advanced-mappings" title="Permalink to this headline">¶</a></h2>
 <p>We have seen in some previous examples how models can be chained together to
-form a &#8220;pipeline&#8221; of transformations by using model <a class="reference internal" href="#compound-model-composition"><span class="std std-ref">composition</span></a> and <a class="reference internal" href="#compound-model-concatenation"><span class="std std-ref">concatenation</span></a>.  To aid the creation of more complex chains of
+form a &#8220;pipeline&#8221; of transformations by using model <a class="reference internal" href="#compound-model-composition"><span>composition</span></a> and <a class="reference internal" href="#compound-model-concatenation"><span>concatenation</span></a>.  To aid the creation of more complex chains of
 transformations (for example for a WCS transformation) a new class of
 &#8220;<a class="reference internal" href="index.html#module-astropy.modeling.mappings" title="astropy.modeling.mappings"><code class="xref py py-obj docutils literal"><span class="pre">mapping</span></code></a>&#8221; models is provided.</p>
 <p>Mapping models do not (currently) take any parameters, nor do they perform any
-numeric operation.  They are for use solely with the <a class="reference internal" href="#compound-model-concatenation"><span class="std std-ref">concatenation</span></a> (<code class="docutils literal"><span class="pre">&amp;</span></code>) and <a class="reference internal" href="#compound-model-composition"><span class="std std-ref">composition</span></a> (<code class="docutils literal"><span class="pre">|</span></code>) operators, and can be used to control how
+numeric operation.  They are for use solely with the <a class="reference internal" href="#compound-model-concatenation"><span>concatenation</span></a> (<code class="docutils literal"><span class="pre">&amp;</span></code>) and <a class="reference internal" href="#compound-model-composition"><span>composition</span></a> (<code class="docutils literal"><span class="pre">|</span></code>) operators, and can be used to control how
 the inputs and outputs of models are ordered, and how outputs from one model
 are mapped to inputs of another model in a composition.</p>
 <p>Currently there are only two mapping models:
@@ -876,13 +880,13 @@ are mapped to inputs of another model in a composition.</p>
 inputs through, unchanged.  It must be instantiated with an integer specifying
 the number of inputs/outputs it accepts.  This can be used to trivially expand
 the &#8220;dimensionality&#8221; of a model in terms of the number of inputs it accepts.
-In the section on <a class="reference internal" href="#compound-model-concatenation"><span class="std std-ref">concatenation</span></a> we saw
+In the section on <a class="reference internal" href="#compound-model-concatenation"><span>concatenation</span></a> we saw
 an example like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Scale</span><span class="p">(</span><span class="mf">3.4</span><span class="p">))</span> <span class="o">|</span> <span class="n">Rotation2D</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Scale</span><span class="p">(</span><span class="mf">3.4</span><span class="p">))</span> <span class="o">|</span> <span class="n">Rotation2D</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 </pre></div>
 </div>
-<object data="../_images/graphviz-ed32cccc8928f28605a2168514ca4b78ef9ee9ee.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-c6ecd7ae578452cf4c3740efba2e9491ee00c89c.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     in1 [shape=&quot;none&quot;, label=&quot;input 1&quot;];
     out0 [shape=&quot;none&quot;, label=&quot;output 0&quot;];
@@ -899,7 +903,8 @@ an example like:</p>
 
     rot0 -&gt; out0;
     rot0 -&gt; out1;
-}</p></object>
+}" />
+</p>
 <p>where two coordinate inputs are scaled individually and then rotated into each
 other.  However, say we wanted to scale only one of those coordinates.  It
 would be fine to simply use <code class="docutils literal"><span class="pre">Scale(1)</span></code> for one them, or any other model that
@@ -907,8 +912,8 @@ is effectively a no-op.  But that also adds unnecessary computational overhead,
 so we might as well simply specify that that coordinate is not to be scaled or
 transformed in any way.  This is a good use case for
 <a class="reference internal" href="../api/astropy.modeling.mappings.Identity.html#astropy.modeling.mappings.Identity" title="astropy.modeling.mappings.Identity"><code class="xref py py-obj docutils literal"><span class="pre">Identity</span></code></a>:</p>
-<object data="../_images/graphviz-bfc30c4a4455b8c62187d26b5f357c5de4037bd6.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-a5836924ff2c0deb7fdb89e79722f708d27feca7.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     in1 [shape=&quot;none&quot;, label=&quot;input 1&quot;];
     out0 [shape=&quot;none&quot;, label=&quot;output 0&quot;];
@@ -925,8 +930,9 @@ transformed in any way.  This is a good use case for
 
     rot0 -&gt; out0;
     rot0 -&gt; out1;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Identity</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Identity</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Identity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
 <span class="go">(1.2, 2.0)</span>
@@ -936,8 +942,8 @@ transformed in any way.  This is a good use case for
 can use this to build up more complicated steps in a many-axis WCS
 transformation.  If for example we had 3 axes and only wanted to scale the
 first one:</p>
-<object data="../_images/graphviz-d880b1b8ee9af354d8a61d20c8b3e4383678a97f.svg" type="image/svg+xml">
-            <p class="warning">digraph {
+<p class="graphviz">
+<img src="../_images/graphviz-79ae1c25e4a723741a25bdef223aa9cf0bb66acd.svg" alt="digraph {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
     in1 [shape=&quot;none&quot;, label=&quot;input 1&quot;];
     in2 [shape=&quot;none&quot;, label=&quot;input 2&quot;];
@@ -954,8 +960,9 @@ first one:</p>
     in2 -&gt; identity0;
     identity0 -&gt; out1;
     identity0 -&gt; out2;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Identity</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Identity</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  
 <span class="go">(1.2, 2.0, 3.0)</span>
 </pre></div>
@@ -974,8 +981,8 @@ number of inputs&#8211;it will not pull values out of thin air).  The elements o
 this mapping are integers corresponding to the indices of the inputs.  For
 example, a mapping of <code class="docutils literal"><span class="pre">Mapping((0,))</span></code> is equivalent to <code class="docutils literal"><span class="pre">Identity(1)</span></code>&#8211;it
 simply takes the first (0-th) input and returns it:</p>
-<object data="../_images/graphviz-85932c1b6d60d748ecdec3c60caf8435e15611dd.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-76cb6ee1ac41873d9dc6c14ada049ad646aeaa30.svg" alt="digraph G {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
 
     subgraph cluster_A {
@@ -990,8 +997,9 @@ simply takes the first (0-th) input and returns it:</p>
 
     in0 -&gt; a;
     a -&gt; out0;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Mapping</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Mapping</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="go">1.0</span>
@@ -1000,8 +1008,8 @@ simply takes the first (0-th) input and returns it:</p>
 <p>Likewise <code class="docutils literal"><span class="pre">Mapping((0,</span> <span class="pre">1))</span></code> is equivalent to <code class="docutils literal"><span class="pre">Identity(2)</span></code>, and so on.
 However, <a class="reference internal" href="../api/astropy.modeling.mappings.Mapping.html#astropy.modeling.mappings.Mapping" title="astropy.modeling.mappings.Mapping"><code class="xref py py-obj docutils literal"><span class="pre">Mapping</span></code></a> also allows outputs to be
 reordered arbitrarily:</p>
-<object data="../_images/graphviz-576ca4b1b246a37cf23a911102969d23bb3c3b22.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-a9b65fe60b1cf946da6f348ad930cab06c8dd49a.svg" alt="digraph G {
     {
         rank=same;
         in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
@@ -1040,14 +1048,15 @@ reordered arbitrarily:</p>
     in1 -&gt; b;
     c -&gt; out0;
     d -&gt; out1;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="go">(2.0, 1.0)</span>
 </pre></div>
 </div>
-<object data="../_images/graphviz-4d8dfbda51a8e12f67583a767baf4445363e284a.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-1f93e2205aaf9c2eab76f8b77a5a9a611557f16a.svg" alt="digraph G {
     {
         rank=same;
         in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
@@ -1093,15 +1102,16 @@ reordered arbitrarily:</p>
     d -&gt; out0;
     e -&gt; out1;
     f -&gt; out2;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="go">(2.0, 1.0, 3.0)</span>
 </pre></div>
 </div>
 <p>Outputs may also be dropped:</p>
-<object data="../_images/graphviz-499ece41b9b7da010cba5c7a32b8c5e883258ab2.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-88e74c5fe52a822059b3230656b396fc1f10d0ee.svg" alt="digraph G {
     {
         rank=same;
         in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
@@ -1133,14 +1143,15 @@ reordered arbitrarily:</p>
     in0 -&gt; a;
     in1 -&gt; b;
     c -&gt; out0;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">1</span><span class="p">,))</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">1</span><span class="p">,))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="go">2.0</span>
 </pre></div>
 </div>
-<object data="../_images/graphviz-45c2ae2a3a147db9d13bc53c49bfb3760cd076e2.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-35f7740ed2d31a17497203de90d297e9aa63683d.svg" alt="digraph G {
     {
         rank=same;
         in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
@@ -1182,15 +1193,16 @@ reordered arbitrarily:</p>
     in2 -&gt; c;
     d -&gt; out0;
     e -&gt; out1;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="go">(1.0, 3.0)</span>
 </pre></div>
 </div>
 <p>Or duplicated:</p>
-<object data="../_images/graphviz-e307e006d2854577d1b0413221727fa7fb3983c4.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-952cee08d7152c4cf95c4c9e35c08a4ccec1dca6.svg" alt="digraph G {
     in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
 
     subgraph cluster_A {
@@ -1220,14 +1232,15 @@ reordered arbitrarily:</p>
     in0 -&gt; a;
     b -&gt; out0;
     c -&gt; out1;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="go">(1.0, 1.0)</span>
 </pre></div>
 </div>
-<object data="../_images/graphviz-19508249fa12b8b231f2837764cdef836523ecde.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-e8e3a645a806221b9f4dc9131df0389e90071e60.svg" alt="digraph G {
     {
         rank=same;
         in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
@@ -1277,16 +1290,17 @@ reordered arbitrarily:</p>
     e -&gt; out1;
     f -&gt; out2;
     g -&gt; out3;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="go">(1.0, 2.0, 2.0, 3.0)</span>
 </pre></div>
 </div>
 <p>A complicated example that performs multiple transformations, some separable,
 some not, on three coordinate axes might look something like:</p>
-<object data="../_images/graphviz-a3be6b5ac9ca5c6dda0fb3091d4c0ad87d3df7a9.svg" type="image/svg+xml">
-            <p class="warning">digraph G {
+<p class="graphviz">
+<img src="../_images/graphviz-e49c788a00ec2d8505f66da0631c1cab2246f796.svg" alt="digraph G {
     {
         rank=same;
         in0 [shape=&quot;none&quot;, label=&quot;input 0&quot;];
@@ -1349,9 +1363,10 @@ some not, on three coordinate axes might look something like:</p>
     poly2 -&gt; out0;
     poly2 -&gt; out1;
     gaussian0 -&gt; out2;
-}</p></object>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Polynomial1D</span> <span class="k">as</span> <span class="n">Poly1D</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Polynomial2D</span> <span class="k">as</span> <span class="n">Poly2D</span>
+}" />
+</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Polynomial1D</span> <span class="k">as</span> <span class="n">Poly1D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Polynomial2D</span> <span class="k">as</span> <span class="n">Poly2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="p">((</span><span class="n">Poly1D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">c0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c3</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Identity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Poly1D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">c2</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="o">|</span>
 <span class="gp">... </span>     <span class="n">Mapping</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">|</span>
 <span class="gp">... </span>     <span class="p">(</span><span class="n">Poly2D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">c0_0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c1_1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c2_2</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Gaussian1D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
@@ -1415,8 +1430,8 @@ is a possible enhancement for future versions.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

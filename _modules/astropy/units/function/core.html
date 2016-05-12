@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.units.function.core &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.units.function.core &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -153,18 +153,18 @@
 
 <span class="sd">        This method should be overridden by subclasses.  It is used to</span>
 <span class="sd">        provide automatic transformations using an equivalency.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
-
+<span class="sd">        &quot;&quot;&quot;</span>
+</div>
     <span class="nd">@abstractmethod</span>
 <div class="viewcode-block" id="FunctionUnitBase.to_physical"><a class="viewcode-back" href="../../../../api/astropy.units.function.FunctionUnitBase.html#astropy.units.FunctionUnitBase.to_physical">[docs]</a>    <span class="k">def</span> <span class="nf">to_physical</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Transformation from value in function to value in physical units.</span>
 
 <span class="sd">        This method should be overridden by subclasses.  It is used to</span>
 <span class="sd">        provide automatic transformations using an equivalency.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        &quot;&quot;&quot;</span>
     <span class="c"># ^^^^^ the above four need to be set by subclasses</span>
 
-    <span class="c"># have priority over arrays, regular units, and regular quantities</span>
+    <span class="c"># have priority over arrays, regular units, and regular quantities</span></div>
     <span class="n">__array_priority__</span> <span class="o">=</span> <span class="mi">30000</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_unit</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">function_unit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -223,8 +223,8 @@
 
 <span class="sd">        For details, see `~astropy.units.UnitBase.decompose`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">bases</span><span class="p">))</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">bases</span><span class="p">))</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">si</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Copy the current function unit with the physical unit in SI.&quot;&quot;&quot;</span>
@@ -293,8 +293,8 @@
             <span class="k">else</span> <span class="n">other</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">other_physical_unit</span><span class="p">,</span>
-                                                <span class="n">equivalencies</span><span class="p">)</span></div>
-
+                                                <span class="n">equivalencies</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FunctionUnitBase.to"><a class="viewcode-back" href="../../../../api/astropy.units.function.FunctionUnitBase.html#astropy.units.FunctionUnitBase.to">[docs]</a>    <span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="p">[]):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the converted values in the specified unit.</span>
@@ -349,11 +349,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="c"># when other is not a function unit</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_physical</span><span class="p">(</span><span class="n">value</span><span class="p">),</span>
-                                         <span class="n">equivalencies</span><span class="p">)</span></div>
-
+                                         <span class="n">equivalencies</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FunctionUnitBase.is_unity"><a class="viewcode-back" href="../../../../api/astropy.units.function.FunctionUnitBase.html#astropy.units.FunctionUnitBase.is_unity">[docs]</a>    <span class="k">def</span> <span class="nf">is_unity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">False</span></div>
-
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
     <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span> <span class="o">==</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="s">&#39;physical_unit&#39;</span><span class="p">,</span>
                                               <span class="n">dimensionless_unscaled</span><span class="p">)</span> <span class="ow">and</span>
@@ -454,8 +454,8 @@
                 <span class="n">pu_str</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>   <span class="c"># need to strip leading and trailing &quot;$&quot;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">self_str</span> <span class="o">+=</span> <span class="s">&#39;({0})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pu_str</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">self_str</span></div>
-
+        <span class="k">return</span> <span class="n">self_str</span>
+</div>
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return string representation for unit.&quot;&quot;&quot;</span>
         <span class="n">self_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">function_unit</span><span class="p">)</span>
@@ -488,9 +488,9 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">function_unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">function_unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">physical_unit</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="FunctionQuantity"><a class="viewcode-back" href="../../../../api/astropy.units.function.FunctionQuantity.html#astropy.units.FunctionQuantity">[docs]</a><span class="k">class</span> <span class="nc">FunctionQuantity</span><span class="p">(</span><span class="n">Quantity</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A representation of a (scaled) function of a number with a unit.</span>
 
@@ -658,9 +658,9 @@
 
 <span class="sd">        For details, see `~astropy.units.Quantity.decompose`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">bases</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">bases</span><span class="p">))</span>
 
-    <span class="c"># vvvv methods overridden to add additional behaviour</span>
+    <span class="c"># vvvv methods overridden to add additional behaviour</span></div>
 <div class="viewcode-block" id="FunctionQuantity.to"><a class="viewcode-back" href="../../../../api/astropy.units.function.FunctionQuantity.html#astropy.units.FunctionQuantity.to">[docs]</a>    <span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="p">[]):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new quantity with the specified units.</span>
 
@@ -681,8 +681,8 @@
         <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">FunctionQuantity</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">equivalencies</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">FunctionUnitBase</span><span class="p">):</span>
             <span class="n">result</span><span class="o">.</span><span class="n">_full_unit</span> <span class="o">=</span> <span class="n">unit</span>
-        <span class="k">return</span> <span class="n">result</span></div>
-
+        <span class="k">return</span> <span class="n">result</span>
+</div>
     <span class="k">def</span> <span class="nf">__array_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">FunctionQuantity</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_full_unit</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_full_unit</span>
@@ -842,8 +842,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Astropy v1.2.dev14980</title>
+    <title>Installation &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
     <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="index.html" />
     <link rel="next" title="Getting Started with Astropy" href="getting_started.html" />
     <link rel="prev" title="Overview" href="overview.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="index.html">Astropy v1.2.dev14980</a>
+	<a href="index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -122,13 +122,13 @@ are needed. Astropy will import even if these dependencies are not installed.</p
 <div class="section" id="using-pip">
 <h3>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
 <p>To install Astropy with <a class="reference external" href="http://www.pip-installer.org/en/latest/">pip</a>, simply run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span> <span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre>pip install --no-deps astropy
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Users of the Anaconda python distribution should follow the instructions
-for <a class="reference internal" href="#anaconda-install"><span class="std std-ref">Anaconda python distribution</span></a>.</p>
+for <a class="reference internal" href="#anaconda-install"><span>Anaconda python distribution</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -150,7 +150,7 @@ to install the package into your home directory.  You can read more
 about how to do this in the <a class="reference external" href="http://www.pip-installer.org/en/1.2.1/other-tools.html#using-pip-with-the-user-scheme">pip documentation</a>.</p>
 <p>Alternatively, if you intend to do development on other software that uses
 Astropy, such as an affiliated package, consider installing Astropy into a
-<a class="reference internal" href="development/workflow/virtualenv_detail.html#using-virtualenv"><span class="std std-ref">virtualenv</span></a>.</p>
+<a class="reference internal" href="development/workflow/virtualenv_detail.html#using-virtualenv"><span>virtualenv</span></a>.</p>
 <p class="last">Do <strong>not</strong> install Astropy or other third-party packages using <code class="docutils literal"><span class="pre">sudo</span></code>
 unless you are fully aware of the risks.</p>
 </div>
@@ -159,7 +159,7 @@ unless you are fully aware of the risks.</p>
 <span id="anaconda-install"></span><h3>Anaconda python distribution<a class="headerlink" href="#anaconda-python-distribution" title="Permalink to this headline">¶</a></h3>
 <p>Astropy is installed by default with Anaconda. To update to the latest version
 run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">conda</span> <span class="n">update</span> <span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre>conda update astropy
 </pre></div>
 </div>
 <div class="admonition note">
@@ -182,8 +182,8 @@ at <a class="reference external" href="https://pypi.python.org/pypi/astropy">PyP
 <div class="section" id="testing-an-installed-astropy">
 <span id="testing-installed-astropy"></span><h3>Testing an installed Astropy<a class="headerlink" href="#testing-an-installed-astropy" title="Permalink to this headline">¶</a></h3>
 <p>The easiest way to test your installed version of astropy is running
-correctly is to use the <a class="reference internal" href="development/testguide.html#astropy-test"><span class="std std-ref">astropy.test()</span></a> function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
+correctly is to use the <a class="reference internal" href="development/testguide.html#astropy-test"><span>astropy.test()</span></a> function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -192,8 +192,8 @@ the <a class="reference external" href="http://github.com/astropy/astropy/issues
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This way of running the tests may not work if you do it in the
-astropy source distribution.  See <a class="reference internal" href="#sourcebuildtest"><span class="std std-ref">Testing a source code build of Astropy</span></a> for how to
-run the tests from the source code directory, or <a class="reference internal" href="development/testguide.html#running-tests"><span class="std std-ref">Running Tests</span></a>
+astropy source distribution.  See <a class="reference internal" href="#sourcebuildtest"><span>Testing a source code build of Astropy</span></a> for how to
+run the tests from the source code directory, or <a class="reference internal" href="development/testguide.html#running-tests"><span>Running Tests</span></a>
 for more details.</p>
 </div>
 <div class="admonition note">
@@ -222,11 +222,11 @@ not require Cython.)</p>
 the easiest route. In order to build from source, you&#8217;ll need the python development package
 for your distro.</p>
 <p>For Debian/Ubuntu:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install python-dev
 </pre></div>
 </div>
 <p>For Fedora/RHEL:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">devel</span>
+<div class="highlight-python"><div class="highlight"><pre>sudo yum install python-devel
 </pre></div>
 </div>
 </div>
@@ -234,7 +234,7 @@ for your distro.</p>
 <h3>Prerequisites for Mac OS X<a class="headerlink" href="#prerequisites-for-mac-os-x" title="Permalink to this headline">¶</a></h3>
 <p>On MacOS X you will need the XCode command line tools which can be installed using</p>
 <p>For installing XCode command line tools:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
 </pre></div>
 </div>
 <p>and follow the onscreen instructions to install the command line tools required.</p>
@@ -267,13 +267,13 @@ line tools from <a class="reference external" href="https://developer.apple.com/
 <h4>Development repository<a class="headerlink" href="#development-repository" title="Permalink to this headline">¶</a></h4>
 <p>The latest development version of Astropy can be cloned from github
 using this command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">astropy</span><span class="o">/</span><span class="n">astropy</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-python"><div class="highlight"><pre>git clone git://github.com/astropy/astropy.git
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you wish to participate in the development of Astropy, see
-<a class="reference internal" href="index.html#developer-docs"><span class="std std-ref">Developer Documentation</span></a>.  This document covers only the basics
+<a class="reference internal" href="index.html#developer-docs"><span>Developer Documentation</span></a>.  This document covers only the basics
 necessary to install Astropy.</p>
 </div>
 </div>
@@ -289,11 +289,11 @@ provided by your system.</p>
 astropy setup process will try to download and install it before
 continuing to install astropy.</p>
 <p>To build Astropy (from the root of the source tree):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build
 </pre></div>
 </div>
 <p>To install Astropy (from the root of the source tree):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install
 </pre></div>
 </div>
 </div>
@@ -302,7 +302,7 @@ continuing to install astropy.</p>
 <p>If you get an error mentioning that you do not have the correct permissions to
 install Astropy into the default <code class="docutils literal"><span class="pre">site-packages</span></code> directory, you can try
 installing with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install --user
 </pre></div>
 </div>
 <p>which will install into a default directory in your home directory.</p>
@@ -314,22 +314,22 @@ Astropy.  However, if you wish to use the system-wide installation of
 one of those libraries, you can pass one or more of the
 <code class="docutils literal"><span class="pre">--use-system-X</span></code> flags to the <code class="docutils literal"><span class="pre">setup.py</span> <span class="pre">build</span></code> command.</p>
 <p>For example, to build Astropy using the system <a class="reference external" href="http://www.libexpat.org/">libexpat</a>, use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">expat</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build --use-system-expat
 </pre></div>
 </div>
 <p>To build using all of the system libraries, use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">libraries</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build --use-system-libraries
 </pre></div>
 </div>
 <p>To see which system libraries Astropy knows how to build against, use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span> <span class="o">--</span><span class="n">help</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build --help
 </pre></div>
 </div>
 <p>As with all distutils commandline options, they may also be provided in a
 <code class="docutils literal"><span class="pre">setup.cfg</span></code> in the same directory as <code class="docutils literal"><span class="pre">setup.py</span></code>.  For example, to use
 the system <a class="reference external" href="http://www.libexpat.org/">libexpat</a>, add the following to the
 <code class="docutils literal"><span class="pre">setup.cfg</span></code> file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">[</span><span class="n">build</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">build</span><span class="p">]</span>
 <span class="n">use_system_expat</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
@@ -383,7 +383,7 @@ Python installation.</p>
 entries in the Windows registry for Python. You can download <a class="reference external" href="https://gist.github.com/embray/6042780#file-win_register_python-py">this script</a>
 and execute it with the same Python as the one you want to install Astropy
 into.  For example to add the missing registry entries to your Python 2.7:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">C</span><span class="p">:</span>\<span class="o">&gt;</span><span class="n">C</span><span class="p">:</span>\<span class="n">Python27</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Path</span>\<span class="n">To</span>\<span class="n">Downloads</span>\<span class="n">win_register_python</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-python"><div class="highlight"><pre>C:\&gt;C:\Python27\python.exe C:\Path\To\Downloads\win_register_python.py
 </pre></div>
 </div>
 </div>
@@ -426,21 +426,21 @@ documentation using LaTeX, the <code class="docutils literal"><span class="pre">
 </div>
 <p>There are two ways to build the Astropy documentation. The most straightforward
 way is to execute the command (from the astropy source directory):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_docs</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build_docs
 </pre></div>
 </div>
 <p>The documentation will be built in the <code class="docutils literal"><span class="pre">docs/_build/html</span></code> directory, and can
 be read by pointing a web browser to <code class="docutils literal"><span class="pre">docs/_build/html/index.html</span></code>.</p>
 <p>The LaTeX documentation can be generated by using the command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_docs</span> <span class="o">-</span><span class="n">b</span> <span class="n">latex</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build_docs -b latex
 </pre></div>
 </div>
 <p>The LaTeX file <code class="docutils literal"><span class="pre">Astropy.tex</span></code> will be created in the <code class="docutils literal"><span class="pre">docs/_build/latex</span></code>
 directory, and can be compiled using <code class="docutils literal"><span class="pre">pdflatex</span></code>.</p>
 <p>The above method builds the API documentation from the source code.
 Alternatively, you can do:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">cd</span> <span class="n">docs</span>
-<span class="n">make</span> <span class="n">html</span>
+<div class="highlight-python"><div class="highlight"><pre>cd docs
+make html
 </pre></div>
 </div>
 <p>And the documentation will be generated in the same location, but using the
@@ -450,10 +450,10 @@ Alternatively, you can do:</p>
 <span id="sourcebuildtest"></span><h3>Testing a source code build of Astropy<a class="headerlink" href="#testing-a-source-code-build-of-astropy" title="Permalink to this headline">¶</a></h3>
 <p>The easiest way to test that your Astropy built correctly (without
 installing astropy) is to run this from the root of the source tree:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py test
 </pre></div>
 </div>
-<p>There are also alternative methods of <a class="reference internal" href="development/testguide.html#running-tests"><span class="std std-ref">Running Tests</span></a>.</p>
+<p>There are also alternative methods of <a class="reference internal" href="development/testguide.html#running-tests"><span>Running Tests</span></a>.</p>
 </div>
 </div>
 </div>
@@ -511,8 +511,8 @@ installing astropy) is to run this from the root of the source tree:</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.time.core &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.time.core &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -401,8 +401,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># call `utcnow` immediately to be sure it&#39;s ASAP</span>
         <span class="n">dtnow</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="n">dtnow</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;datetime&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;utc&#39;</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="n">dtnow</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;datetime&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;utc&#39;</span><span class="p">)</span>
+</div>
     <span class="n">info</span> <span class="o">=</span> <span class="n">TimeInfo</span><span class="p">()</span>
 
     <span class="nd">@property</span>
@@ -695,8 +695,8 @@
 
         <span class="c"># calculate light travel time correction</span>
         <span class="n">tcor_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">spos</span> <span class="o">*</span> <span class="n">cpos</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span>
-        <span class="k">return</span> <span class="n">TimeDelta</span><span class="p">(</span><span class="n">tcor_val</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;tdb&#39;</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">TimeDelta</span><span class="p">(</span><span class="n">tcor_val</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;tdb&#39;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.sidereal_time"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.sidereal_time">[docs]</a>    <span class="k">def</span> <span class="nf">sidereal_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate sidereal time.</span>
 
@@ -757,8 +757,8 @@
                                   <span class="n">wrap_angle</span><span class="o">=</span><span class="mf">180.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
 
         <span class="n">gst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erfa_sidereal_time</span><span class="p">(</span><span class="n">available_models</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">upper</span><span class="p">()])</span>
-        <span class="k">return</span> <span class="n">Longitude</span><span class="p">(</span><span class="n">gst</span> <span class="o">+</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">Longitude</span><span class="p">(</span><span class="n">gst</span> <span class="o">+</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">)</span>
+</div>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sidereal_time</span><span class="o">.</span><span class="n">__doc__</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
         <span class="n">sidereal_time</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">sidereal_time</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="s">&#39;apparent&#39;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">SIDEREAL_TIME_MODELS</span><span class="p">[</span><span class="s">&#39;apparent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
@@ -801,8 +801,8 @@
 <span class="sd">        tm : Time object</span>
 <span class="sd">            Copy of this object</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="n">format</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;copy&#39;</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="n">format</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;copy&#39;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.replicate"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.replicate">[docs]</a>    <span class="k">def</span> <span class="nf">replicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a replica of the Time object, optionally changing the format.</span>
@@ -837,8 +837,8 @@
         <span class="c"># This also avoids quite a bit of unnecessary work in __init__</span>
         <span class="c">#  tm = self.__class__(self._time.jd1, self._time.jd2,</span>
         <span class="c">#                      format=&#39;jd&#39;, scale=self.scale, copy=copy)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="n">format</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;copy&#39;</span> <span class="k">if</span> <span class="n">copy</span> <span class="k">else</span> <span class="bp">None</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="n">format</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;copy&#39;</span> <span class="k">if</span> <span class="n">copy</span> <span class="k">else</span> <span class="bp">None</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_replicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Replicate a time object, possibly applying a method to the arrays.</span>
 
@@ -961,8 +961,8 @@
 <span class="sd">        data. If you want an error to be raise if the data is copied, you</span>
 <span class="sd">        should assign the new shape to the shape attribute.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;reshape&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;reshape&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.ravel"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.ravel">[docs]</a>    <span class="k">def</span> <span class="nf">ravel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return an instance with the time array collapsed into one dimension.</span>
 
@@ -971,23 +971,23 @@
 <span class="sd">        If you want an error to be raise if the data is copied, you should</span>
 <span class="sd">        should assign shape ``(-1,)`` to the shape attribute.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;ravel&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;ravel&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.flatten"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.flatten">[docs]</a>    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy with the time array collapsed into one dimension.</span>
 
 <span class="sd">        Parameters are as for :meth:`~numpy.ndarray.flatten`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;flatten&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;flatten&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.transpose"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.transpose">[docs]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a time instance with the data transposed.</span>
 
 <span class="sd">        Parameters are as for :meth:`~numpy.ndarray.transpose`.  All internal</span>
 <span class="sd">        data are views of the data of the original.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;transpose&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;transpose&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">T</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a time instance with the data transposed.</span>
@@ -1006,32 +1006,32 @@
 <span class="sd">        Parameters are as for :meth:`~numpy.ndarray.swapaxes`.  All internal</span>
 <span class="sd">        data are views of the data of the original.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;swapaxes&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;swapaxes&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.diagonal"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.diagonal">[docs]</a>    <span class="k">def</span> <span class="nf">diagonal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a time instance with the specified diagonals.</span>
 
 <span class="sd">        Parameters are as for :meth:`~numpy.ndarray.diagonal`.  All internal</span>
 <span class="sd">        data are views of the data of the original.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;diagonal&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;diagonal&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.squeeze"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.squeeze">[docs]</a>    <span class="k">def</span> <span class="nf">squeeze</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a time instance with single-dimensional shape entries removed</span>
 
 <span class="sd">        Parameters are as for :meth:`~numpy.ndarray.squeeze`.  All internal</span>
 <span class="sd">        data are views of the data of the original.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;squeeze&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;squeeze&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.take"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.take">[docs]</a>    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;raise&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a Time object formed from the elements the given indices.</span>
 
 <span class="sd">        Parameters are as for :meth:`~numpy.ndarray.take`, except that,</span>
 <span class="sd">        obviously, no output array can be given.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;take&#39;</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replicate</span><span class="p">(</span><span class="s">&#39;take&#39;</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_advanced_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Turn argmin, argmax output into an advanced index.</span>
 
@@ -1100,8 +1100,8 @@
         <span class="c"># approx_jd1, approx_jd2 = day_frac(approx, 0.)</span>
         <span class="c"># dt = (self.jd1 - approx_jd1) + (self.jd2 - approx_jd2)</span>
         <span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">-</span> <span class="n">approx</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
-        <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.argmax"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.argmax">[docs]</a>    <span class="k">def</span> <span class="nf">argmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return indices of the maximum values along the given axis.</span>
 
@@ -1119,8 +1119,8 @@
             <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
         <span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">-</span> <span class="n">approx</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
-        <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.argsort"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.argsort">[docs]</a>    <span class="k">def</span> <span class="nf">argsort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the indices that would sort the time array.</span>
 
@@ -1134,8 +1134,8 @@
         <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">lexsort</span><span class="p">((</span><span class="n">jd_remainder</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">jd_approx</span><span class="o">.</span><span class="n">ravel</span><span class="p">()))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">lexsort</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">(</span><span class="n">jd_remainder</span><span class="p">,</span> <span class="n">jd_approx</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
-
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">lexsort</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">(</span><span class="n">jd_remainder</span><span class="p">,</span> <span class="n">jd_approx</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Time.min"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Minimum along a given axis.</span>
 
@@ -1150,8 +1150,8 @@
         <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Since `Time` instances are immutable, ``out`` &quot;</span>
                              <span class="s">&quot;cannot be set to anything but ``None``.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_advanced_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)]</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_advanced_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)]</span>
+</div>
 <div class="viewcode-block" id="Time.max"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.max">[docs]</a>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Maximum along a given axis.</span>
 
@@ -1166,8 +1166,8 @@
         <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Since `Time` instances are immutable, ``out`` &quot;</span>
                              <span class="s">&quot;cannot be set to anything but ``None``.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_advanced_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)]</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_advanced_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)]</span>
+</div>
 <div class="viewcode-block" id="Time.ptp"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.ptp">[docs]</a>    <span class="k">def</span> <span class="nf">ptp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Peak to peak (maximum - minimum) along a given axis.</span>
 
@@ -1183,8 +1183,8 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Since `Time` instances are immutable, ``out`` &quot;</span>
                              <span class="s">&quot;cannot be set to anything but ``None``.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span> <span class="o">-</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">))</span></div>
-
+                <span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="Time.sort"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy sorted along the specified axis.</span>
 
@@ -1200,8 +1200,8 @@
 <span class="sd">            By default, sort over the last axis.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_advanced_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span> <span class="n">axis</span><span class="p">,</span>
-                                         <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)]</span></div>
-
+                                         <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)]</span>
+</div>
     <span class="nd">@lazyproperty</span>
     <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1334,9 +1334,9 @@
             <span class="kn">from</span> <span class="nn">..utils.iers</span> <span class="kn">import</span> <span class="n">IERS</span>
             <span class="n">iers_table</span> <span class="o">=</span> <span class="n">IERS</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">iers_table</span><span class="o">.</span><span class="n">ut1_utc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">utc</span><span class="p">,</span> <span class="n">return_status</span><span class="o">=</span><span class="n">return_status</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">iers_table</span><span class="o">.</span><span class="n">ut1_utc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">utc</span><span class="p">,</span> <span class="n">return_status</span><span class="o">=</span><span class="n">return_status</span><span class="p">)</span>
 
-    <span class="c"># Property for ERFA DUT arg = UT1 - UTC</span>
+    <span class="c"># Property for ERFA DUT arg = UT1 - UTC</span></div>
     <span class="k">def</span> <span class="nf">_get_delta_ut1_utc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jd1</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">jd2</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get ERFA DUT arg = UT1 - UTC.  This getter takes optional jd1 and</span>
@@ -1593,11 +1593,11 @@
 
 <div class="viewcode-block" id="Time.to_datetime"><a class="viewcode-back" href="../../../api/astropy.time.Time.html#astropy.coordinates.Time.to_datetime">[docs]</a>    <span class="k">def</span> <span class="nf">to_datetime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">tm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replicate</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;datetime&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">tm</span><span class="o">.</span><span class="n">_shaped_like_input</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">timezone</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="n">tm</span><span class="o">.</span><span class="n">_shaped_like_input</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">timezone</span><span class="p">))</span>
+</div>
+    <span class="n">to_datetime</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">TimeDatetime</span><span class="o">.</span><span class="n">to_value</span><span class="o">.</span><span class="n">__doc__</span>
 
-    <span class="n">to_datetime</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">TimeDatetime</span><span class="o">.</span><span class="n">to_value</span><span class="o">.</span><span class="n">__doc__</span></div>
-
-
+</div>
 <div class="viewcode-block" id="TimeDelta"><a class="viewcode-back" href="../../../api/astropy.time.TimeDelta.html#astropy.coordinates.TimeDelta">[docs]</a><span class="k">class</span> <span class="nc">TimeDelta</span><span class="p">(</span><span class="n">Time</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represent the time difference between two times.</span>
@@ -1668,8 +1668,8 @@
 <div class="viewcode-block" id="TimeDelta.replicate"><a class="viewcode-back" href="../../../api/astropy.time.TimeDelta.html#astropy.coordinates.TimeDelta.replicate">[docs]</a>    <span class="k">def</span> <span class="nf">replicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeDelta</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">replicate</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">out</span><span class="o">.</span><span class="n">SCALES</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SCALES</span>
-        <span class="k">return</span> <span class="n">out</span></div>
-
+        <span class="k">return</span> <span class="n">out</span>
+</div>
     <span class="k">def</span> <span class="nf">_set_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This is the key routine that actually does time scale conversions.</span>
@@ -1839,13 +1839,13 @@
 
 <div class="viewcode-block" id="TimeDelta.to"><a class="viewcode-back" href="../../../api/astropy.time.TimeDelta.html#astropy.coordinates.TimeDelta.to">[docs]</a>    <span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">jd2</span><span class="p">,</span>
-                          <span class="n">u</span><span class="o">.</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+                          <span class="n">u</span><span class="o">.</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="ScaleValueError"><a class="viewcode-back" href="../../../api/astropy.time.ScaleValueError.html#astropy.coordinates.ScaleValueError">[docs]</a><span class="k">class</span> <span class="nc">ScaleValueError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">pass</span></div>
+    <span class="k">pass</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_make_array</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Take ``val`` and convert/reshape to an array.  If ``copy`` is `True`</span>
@@ -1892,8 +1892,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

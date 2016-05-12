@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.card &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits.card &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -218,16 +218,16 @@
 <div class="viewcode-block" id="CardList.copy"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Make a (deep)copy of the `CardList`.&quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="n">CardList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span></div>
-
+        <span class="k">return</span> <span class="n">CardList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.keys`&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.keys"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list of all keywords from the `CardList`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.values`&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.values"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -238,8 +238,8 @@
 <span class="sd">        ``field_specifier``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.append`&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.append"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">useblanks</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -265,12 +265,12 @@
 <span class="sd">           card.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">useblanks</span><span class="o">=</span><span class="n">useblanks</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">useblanks</span><span class="o">=</span><span class="n">useblanks</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom</span><span class="p">)</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.extend`&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.extend"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.extend">[docs]</a>    <span class="k">def</span> <span class="nf">extend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cards</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.insert`&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.insert"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">useblanks</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -293,24 +293,24 @@
 <span class="sd">            even if there are blank cards in front of ``END``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">useblanks</span><span class="o">=</span><span class="n">useblanks</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">useblanks</span><span class="o">=</span><span class="n">useblanks</span><span class="p">)</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.remove`&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.remove"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">card</span><span class="p">):</span>
-        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card</span><span class="p">)]</span></div>
-
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card</span><span class="p">)]</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.pop`&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.pop"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.pop">[docs]</a>    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">index</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.index`&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.index"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.index">[docs]</a>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">card</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_cards</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_cards</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.count`&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.count"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">card</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_cards</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">card</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_cards</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`Header.index`&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.index_of"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.index_of">[docs]</a>    <span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">backward</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -336,8 +336,8 @@
         <span class="k">if</span> <span class="n">_is_int</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_cardindex</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&#39;Illegal key data type </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></div>
-
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&#39;Illegal key data type </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;``header[&lt;wildcard_pattern&gt;]``&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.filter_list"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.filter_list">[docs]</a>    <span class="k">def</span> <span class="nf">filter_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -357,8 +357,8 @@
 <span class="sd">            requested cards.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="n">CardList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="n">key</span><span class="p">])</span></div>
-
+        <span class="k">return</span> <span class="n">CardList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">pending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <div class="viewcode-block" id="CardList.count_blanks"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.CardList.count_blanks">[docs]</a>    <span class="k">def</span> <span class="nf">count_blanks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -366,9 +366,9 @@
 <span class="sd">        card.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_countblanks</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">_countblanks</span><span class="p">()</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Card"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.Card">[docs]</a><span class="k">class</span> <span class="nc">Card</span><span class="p">(</span><span class="n">_Verify</span><span class="p">):</span>
 
     <span class="n">length</span> <span class="o">=</span> <span class="n">CARD_LENGTH</span>
@@ -871,8 +871,8 @@
 <div class="viewcode-block" id="Card.ascardimage"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.Card.ascardimage">[docs]</a>    <span class="k">def</span> <span class="nf">ascardimage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s">&#39;silentfix&#39;</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_verified</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Card.fromstring"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.Card.fromstring">[docs]</a>    <span class="k">def</span> <span class="nf">fromstring</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -885,8 +885,8 @@
         <span class="n">card</span> <span class="o">=</span> <span class="n">cls</span><span class="p">()</span>
         <span class="n">card</span><span class="o">.</span><span class="n">_image</span> <span class="o">=</span> <span class="n">_pad</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
         <span class="n">card</span><span class="o">.</span><span class="n">_verified</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">return</span> <span class="n">card</span></div>
-
+        <span class="k">return</span> <span class="n">card</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Card.normalize_keyword"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.Card.normalize_keyword">[docs]</a>    <span class="k">def</span> <span class="nf">normalize_keyword</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">keyword</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -919,8 +919,8 @@
             <span class="k">return</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">9</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c"># A normal FITS keyword, but provided in non-standard case</span>
-            <span class="k">return</span> <span class="n">keyword</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span></div>
-
+            <span class="k">return</span> <span class="n">keyword</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</div>
     <span class="k">def</span> <span class="nf">_check_if_rvkc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determine whether or not the card is a record-valued keyword card.</span>
@@ -1499,9 +1499,9 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="n">VerifyError</span><span class="p">(</span><span class="s">&#39;CONTINUE cards must have string values.&#39;</span><span class="p">)</span>
 
-            <span class="k">yield</span> <span class="n">card</span></div>
+            <span class="k">yield</span> <span class="n">card</span>
 
-
+</div>
 <div class="viewcode-block" id="create_card"><a class="viewcode-back" href="../../../../io/fits/api/cards.html#astropy.io.fits.create_card">[docs]</a><span class="k">def</span> <span class="nf">create_card</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Card</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="p">)</span></div>
 <span class="n">create_card</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">Card</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">__doc__</span>
@@ -1653,8 +1653,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

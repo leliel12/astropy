@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.earth &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.coordinates.earth &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -197,8 +197,8 @@
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_arrays</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
         <span class="n">struc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">_location_dtype</span><span class="p">)</span>
         <span class="n">struc</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="n">struc</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="n">struc</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">EarthLocation</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">struc</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">EarthLocation</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">struc</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="EarthLocation.from_geodetic"><a class="viewcode-back" href="../../../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation.from_geodetic">[docs]</a>    <span class="k">def</span> <span class="nf">from_geodetic</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">ellipsoid</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -249,8 +249,8 @@
         <span class="bp">self</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_location_dtype</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">lon</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">meter</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ellipsoid</span> <span class="o">=</span> <span class="n">ellipsoid</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">height</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">height</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="EarthLocation.of_site"><a class="viewcode-back" href="../../../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation.of_site">[docs]</a>    <span class="k">def</span> <span class="nf">of_site</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">site_name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -298,8 +298,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newel</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">from_geodetic</span><span class="p">(</span><span class="o">*</span><span class="n">el</span><span class="o">.</span><span class="n">to_geodetic</span><span class="p">())</span>
             <span class="n">newel</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span>
-            <span class="k">return</span> <span class="n">newel</span></div>
-
+            <span class="k">return</span> <span class="n">newel</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="EarthLocation.get_site_names"><a class="viewcode-back" href="../../../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation.get_site_names">[docs]</a>    <span class="k">def</span> <span class="nf">get_site_names</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -326,8 +326,8 @@
 <span class="sd">        of_site : Gets the actual location object for one of the sites names</span>
 <span class="sd">                  this returns.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_get_site_registry</span><span class="p">()</span><span class="o">.</span><span class="n">names</span></div>
-
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_get_site_registry</span><span class="p">()</span><span class="o">.</span><span class="n">names</span>
+</div>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_get_site_registry</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">force_builtin</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -420,8 +420,8 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">Longitude</span><span class="p">(</span><span class="n">lon</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span>
                           <span class="n">wrap_angle</span><span class="o">=</span><span class="mf">180.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span>
                 <span class="n">Latitude</span><span class="p">(</span><span class="n">lat</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span>
-                <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">height</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">meter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">))</span></div>
-
+                <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">height</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">meter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">))</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">longitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Longitude of the location, for the default ellipsoid.&quot;&quot;&quot;</span>
@@ -445,8 +445,8 @@
 
 <div class="viewcode-block" id="EarthLocation.to_geocentric"><a class="viewcode-back" href="../../../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation.to_geocentric">[docs]</a>    <span class="k">def</span> <span class="nf">to_geocentric</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert to a tuple with X, Y, and Z as quantities&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="EarthLocation.get_itrs"><a class="viewcode-back" href="../../../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation.get_itrs">[docs]</a>    <span class="k">def</span> <span class="nf">get_itrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates an `~astropy.coordinates.ITRS` object with the location of</span>
@@ -463,8 +463,8 @@
 <span class="sd">        itrs : `~astropy.coordinates.ITRS`</span>
 <span class="sd">            The new object in the ITRS frame</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ITRS</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">obstime</span><span class="o">=</span><span class="n">obstime</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">ITRS</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">obstime</span><span class="o">=</span><span class="n">obstime</span><span class="p">)</span>
+</div>
     <span class="n">itrs</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_itrs</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s">&quot;&quot;&quot;An `~astropy.coordinates.ITRS` object  with</span>
 <span class="s">                                     for the location of this object at the</span>
 <span class="s">                                     default ``obstime``.&quot;&quot;&quot;</span><span class="p">)</span>
@@ -507,10 +507,10 @@
         <span class="n">converted</span> <span class="o">=</span> <span class="n">array_view</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">equivalencies</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_view</span><span class="p">(</span><span class="n">converted</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
                               <span class="n">unit</span><span class="p">)</span></div>
-    <span class="n">to</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">__doc__</span></div>
+    <span class="n">to</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">__doc__</span>
 
 
-<span class="c"># need to do this here at the bottom to avoid circular dependencies</span>
+<span class="c"># need to do this here at the bottom to avoid circular dependencies</span></div>
 <span class="kn">from</span> <span class="nn">.sites</span> <span class="kn">import</span> <span class="n">get_builtin_sites</span><span class="p">,</span> <span class="n">get_downloaded_sites</span>
 </pre></div>
 
@@ -530,8 +530,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

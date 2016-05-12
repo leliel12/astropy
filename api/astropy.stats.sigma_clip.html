@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sigma_clip &mdash; Astropy v1.2.dev14980</title>
+    <title>sigma_clip &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="sigma_clipped_stats" href="astropy.stats.sigma_clipped_stats.html" />
     <link rel="prev" title="scott_bin_width" href="astropy.stats.scott_bin_width.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -143,12 +143,12 @@ central value. Defaults to the median (<a class="reference external" href="http:
 center. Must be a callable that takes in a masked array and
 outputs a width estimator. Masked (rejected) pixels are those
 where:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">deviation</span> <span class="o">&lt;</span> <span class="p">(</span><span class="o">-</span><span class="n">sigma_lower</span> <span class="o">*</span> <span class="n">stdfunc</span><span class="p">(</span><span class="n">deviation</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">deviation</span> <span class="o">&lt;</span> <span class="p">(</span><span class="o">-</span><span class="n">sigma_lower</span> <span class="o">*</span> <span class="n">stdfunc</span><span class="p">(</span><span class="n">deviation</span><span class="p">))</span>
 <span class="n">deviation</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">sigma_upper</span> <span class="o">*</span> <span class="n">stdfunc</span><span class="p">(</span><span class="n">deviation</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>where:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">deviation</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">cenfunc</span><span class="p">(</span><span class="n">data</span> <span class="p">[,</span><span class="n">axis</span><span class="o">=</span><span class="nb">int</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre>deviation = data - cenfunc(data [,axis=int])
 </pre></div>
 </div>
 <p>Defaults to the standard deviation (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.std</span></code></a>).</p>
@@ -181,11 +181,11 @@ points rejected by the algorithm have been masked.</p>
 <p class="rubric">Notes</p>
 <ol class="arabic">
 <li><p class="first">The routine works by calculating:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">deviation</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">cenfunc</span><span class="p">(</span><span class="n">data</span> <span class="p">[,</span><span class="n">axis</span><span class="o">=</span><span class="nb">int</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre>deviation = data - cenfunc(data [,axis=int])
 </pre></div>
 </div>
 <p>and then setting a mask for points outside the range:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">deviation</span> <span class="o">&lt;</span> <span class="p">(</span><span class="o">-</span><span class="n">sigma_lower</span> <span class="o">*</span> <span class="n">stdfunc</span><span class="p">(</span><span class="n">deviation</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">deviation</span> <span class="o">&lt;</span> <span class="p">(</span><span class="o">-</span><span class="n">sigma_lower</span> <span class="o">*</span> <span class="n">stdfunc</span><span class="p">(</span><span class="n">deviation</span><span class="p">))</span>
 <span class="n">deviation</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">sigma_upper</span> <span class="o">*</span> <span class="n">stdfunc</span><span class="p">(</span><span class="n">deviation</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -195,7 +195,7 @@ data are rejected.</p>
 <li><p class="first">Most numpy functions deal well with masked arrays, but if one
 would like to have an array with just the good (or bad) values, one
 can use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">good_only</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">filtered_data</span><span class="o">.</span><span class="n">mask</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">good_only</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">filtered_data</span><span class="o">.</span><span class="n">mask</span><span class="p">]</span>
 <span class="n">bad_only</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">filtered_data</span><span class="o">.</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -208,8 +208,8 @@ done along an axis).</p>
 <p>This example generates random variates from a Gaussian distribution
 and returns a masked array in which all points that are more than 2
 sample standard deviations from the median are masked:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="k">import</span> <span class="n">sigma_clip</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="k">import</span> <span class="n">randn</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">sigma_clip</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randvar</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filtered_data</span> <span class="o">=</span> <span class="n">sigma_clip</span><span class="p">(</span><span class="n">randvar</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">iters</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
@@ -217,19 +217,19 @@ sample standard deviations from the median are masked:</p>
 <p>This example sigma clips on a similar distribution, but uses 3 sigma
 relative to the sample <em>mean</em>, clips until convergence, and does not
 copy the data:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="k">import</span> <span class="n">sigma_clip</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="k">import</span> <span class="n">randn</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">mean</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">sigma_clip</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randvar</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered_data</span> <span class="o">=</span> <span class="n">sigma_clip</span><span class="p">(</span><span class="n">randvar</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">iters</span><span class="o">=</span><span class="k">None</span><span class="p">,</span>
-<span class="gp">... </span>                           <span class="n">cenfunc</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered_data</span> <span class="o">=</span> <span class="n">sigma_clip</span><span class="p">(</span><span class="n">randvar</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">iters</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">cenfunc</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This example sigma clips along one axis on a similar distribution
 (with bad points inserted):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="k">import</span> <span class="n">sigma_clip</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="k">import</span> <span class="n">normal</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">arange</span><span class="p">,</span> <span class="n">diag</span><span class="p">,</span> <span class="n">ones</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">sigma_clip</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">normal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span><span class="p">,</span> <span class="n">diag</span><span class="p">,</span> <span class="n">ones</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="n">normal</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filtered_data</span> <span class="o">=</span> <span class="n">sigma_clip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">2.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -262,8 +262,8 @@ variance is higher.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

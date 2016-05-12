@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.diff &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits.diff &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -441,9 +441,9 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">))</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39;Extension HDU </span><span class="si">%d</span><span class="s">:&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="n">idx</span><span class="p">)</span>
-            <span class="n">hdu_diff</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+            <span class="n">hdu_diff</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="HDUDiff"><a class="viewcode-back" href="../../../../io/fits/api/diff.html#astropy.io.fits.HDUDiff">[docs]</a><span class="k">class</span> <span class="nc">HDUDiff</span><span class="p">(</span><span class="n">_BaseDiff</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diff two HDU objects, including their headers and their data (but only if</span>
@@ -556,9 +556,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_data</span><span class="o">.</span><span class="n">identical</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&quot; Data contains differences:&quot;</span><span class="p">))</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">diff_data</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">diff_data</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="HeaderDiff"><a class="viewcode-back" href="../../../../io/fits/api/diff.html#astropy.io.fits.HeaderDiff">[docs]</a><span class="k">class</span> <span class="nc">HeaderDiff</span><span class="p">(</span><span class="n">_BaseDiff</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diff two `Header` objects.</span>
@@ -808,14 +808,14 @@
                                          <span class="n">ind</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span><span class="p">)</span>
                 <span class="n">report_diff_keyword_attr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileobj</span><span class="p">,</span> <span class="s">&#39;comments&#39;</span><span class="p">,</span>
                                          <span class="bp">self</span><span class="o">.</span><span class="n">diff_keyword_comments</span><span class="p">,</span> <span class="n">keyword</span><span class="p">,</span>
-                                         <span class="n">ind</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span><span class="p">)</span></div>
+                                         <span class="n">ind</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_indent</span><span class="p">)</span>
 
 <span class="c"># TODO: It might be good if there was also a threshold option for percentage of</span>
 <span class="c"># different pixels: For example ignore if only 1% of the pixels are different</span>
 <span class="c"># within some threshold.  There are lots of possibilities here, but hold off</span>
 <span class="c"># for now until specific cases come up.</span>
 
-
+</div>
 <div class="viewcode-block" id="ImageDataDiff"><a class="viewcode-back" href="../../../../io/fits/api/diff.html#astropy.io.fits.ImageDataDiff">[docs]</a><span class="k">class</span> <span class="nc">ImageDataDiff</span><span class="p">(</span><span class="n">_BaseDiff</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diff two image data arrays (really any array from a PRIMARY HDU or an IMAGE</span>
@@ -929,9 +929,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">numdiffs</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39; ...&#39;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39; </span><span class="si">%d</span><span class="s"> different pixels found (</span><span class="si">%.2f%%</span><span class="s"> different).&#39;</span><span class="p">)</span> <span class="o">%</span>
-                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_ratio</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span></div>
+                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_ratio</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="RawDataDiff"><a class="viewcode-back" href="../../../../io/fits/api/diff.html#astropy.io.fits.RawDataDiff">[docs]</a><span class="k">class</span> <span class="nc">RawDataDiff</span><span class="p">(</span><span class="n">ImageDataDiff</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    `RawDataDiff` is just a special case of `ImageDataDiff` where the images</span>
@@ -994,9 +994,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39; ...&#39;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39; </span><span class="si">%d</span><span class="s"> different bytes found (</span><span class="si">%.2f%%</span><span class="s"> different).&#39;</span><span class="p">)</span> <span class="o">%</span>
-                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_ratio</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span></div>
+                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_ratio</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="TableDataDiff"><a class="viewcode-back" href="../../../../io/fits/api/diff.html#astropy.io.fits.TableDataDiff">[docs]</a><span class="k">class</span> <span class="nc">TableDataDiff</span><span class="p">(</span><span class="n">_BaseDiff</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diff two table data arrays. It doesn&#39;t matter whether the data originally</span>
@@ -1268,9 +1268,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_writeln</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="s">&#39; </span><span class="si">%d</span><span class="s"> different table data element(s) found &#39;</span>
                         <span class="s">&#39;(</span><span class="si">%.2f%%</span><span class="s"> different).&#39;</span><span class="p">)</span> <span class="o">%</span>
-                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_ratio</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span></div>
+                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diff_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">diff_ratio</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">diff_values</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diff two scalar values.  If both values are floats they are compared to</span>
@@ -1391,8 +1391,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

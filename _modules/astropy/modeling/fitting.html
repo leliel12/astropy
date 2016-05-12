@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.modeling.fitting &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.modeling.fitting &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -212,8 +212,8 @@
         <span class="n">meas</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">fps</span><span class="p">)</span>
         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_method</span><span class="p">(</span><span class="n">meas</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">res</span></div>
-
+        <span class="k">return</span> <span class="n">res</span>
+</div>
     <span class="nd">@abc.abstractmethod</span>
 <div class="viewcode-block" id="Fitter.__call__"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.Fitter.html#astropy.modeling.fitting.Fitter.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -223,12 +223,12 @@
 <span class="sd">        Fitter subclasses should implement this method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;Subclasses should implement this method.&quot;</span><span class="p">)</span></div></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;Subclasses should implement this method.&quot;</span><span class="p">)</span>
 
 
 <span class="c"># TODO: I have ongoing branch elsewhere that&#39;s refactoring this module so that</span>
 <span class="c"># all the fitter classes in here are Fitter subclasses.  In the meantime we</span>
-<span class="c"># need to specify that _FitterMeta is its metaclass.</span>
+<span class="c"># need to specify that _FitterMeta is its metaclass.</span></div></div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">_FitterMeta</span><span class="p">)</span>
 <div class="viewcode-block" id="LinearLSQFitter"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.LinearLSQFitter.html#astropy.modeling.fitting.LinearLSQFitter">[docs]</a><span class="k">class</span> <span class="nc">LinearLSQFitter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -412,9 +412,9 @@
                           <span class="n">AstropyUserWarning</span><span class="p">)</span>
 
         <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">,</span> <span class="n">lacoef</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
-        <span class="k">return</span> <span class="n">model_copy</span></div></div>
+        <span class="k">return</span> <span class="n">model_copy</span>
 
-
+</div></div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">_FitterMeta</span><span class="p">)</span>
 <div class="viewcode-block" id="LevMarLSQFitter"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.LevMarLSQFitter.html#astropy.modeling.fitting.LevMarLSQFitter">[docs]</a><span class="k">class</span> <span class="nc">LevMarLSQFitter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -479,8 +479,8 @@
         <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">meas</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">weights</span> <span class="o">*</span> <span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">meas</span><span class="p">))</span></div>
-
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">weights</span> <span class="o">*</span> <span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">meas</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="LevMarLSQFitter.__call__"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.LevMarLSQFitter.html#astropy.modeling.fitting.LevMarLSQFitter.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                  <span class="n">maxiter</span><span class="o">=</span><span class="n">DEFAULT_MAXITER</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="n">DEFAULT_ACC</span><span class="p">,</span>
                  <span class="n">epsilon</span><span class="o">=</span><span class="n">DEFAULT_EPS</span><span class="p">,</span> <span class="n">estimate_jacobian</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
@@ -552,8 +552,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fit_info</span><span class="p">[</span><span class="s">&#39;param_cov&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
 
-        <span class="k">return</span> <span class="n">model_copy</span></div>
-
+        <span class="k">return</span> <span class="n">model_copy</span>
+</div>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_wrap_deriv</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -592,9 +592,9 @@
             <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)]</span></div>
+                <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)]</span>
 
-
+</div>
 <div class="viewcode-block" id="SLSQPLSQFitter"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.SLSQPLSQFitter.html#astropy.modeling.fitting.SLSQPLSQFitter">[docs]</a><span class="k">class</span> <span class="nc">SLSQPLSQFitter</span><span class="p">(</span><span class="n">Fitter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SLSQP optimization algorithm and least squares statistic.</span>
@@ -657,9 +657,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">objective_function</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">farg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">,</span> <span class="n">fitparams</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">model_copy</span></div></div>
+        <span class="k">return</span> <span class="n">model_copy</span>
 
-
+</div></div>
 <div class="viewcode-block" id="SimplexLSQFitter"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.SimplexLSQFitter.html#astropy.modeling.fitting.SimplexLSQFitter">[docs]</a><span class="k">class</span> <span class="nc">SimplexLSQFitter</span><span class="p">(</span><span class="n">Fitter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 
@@ -721,9 +721,9 @@
         <span class="n">fitparams</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_opt_method</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">objective_function</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">farg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">,</span> <span class="n">fitparams</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">model_copy</span></div></div>
+        <span class="k">return</span> <span class="n">model_copy</span>
 
-
+</div></div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">_FitterMeta</span><span class="p">)</span>
 <div class="viewcode-block" id="JointFitter"><a class="viewcode-back" href="../../../api/astropy.modeling.fitting.JointFitter.html#astropy.modeling.fitting.JointFitter">[docs]</a><span class="k">class</span> <span class="nc">JointFitter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -814,8 +814,8 @@
                     <span class="k">del</span> <span class="n">mfparams</span><span class="p">[:</span><span class="n">plen</span><span class="p">]</span>
             <span class="n">modelfit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">margs</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="o">*</span><span class="n">mparams</span><span class="p">)</span>
             <span class="n">fitted</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">modelfit</span> <span class="o">-</span> <span class="n">margs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">fitted</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">fitted</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_verify_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;Expected &gt;1 models, </span><span class="si">%d</span><span class="s"> is given&quot;</span> <span class="o">%</span>
@@ -871,9 +871,9 @@
                     <span class="n">plen</span> <span class="o">=</span> <span class="n">slice_</span><span class="o">.</span><span class="n">stop</span> <span class="o">-</span> <span class="n">slice_</span><span class="o">.</span><span class="n">start</span>
                     <span class="n">mparams</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">mfparams</span><span class="p">[:</span><span class="n">plen</span><span class="p">])</span>
                     <span class="k">del</span> <span class="n">mfparams</span><span class="p">[:</span><span class="n">plen</span><span class="p">]</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mparams</span><span class="p">)</span></div></div>
+            <span class="n">model</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mparams</span><span class="p">)</span>
 
-
+</div></div>
 <span class="k">def</span> <span class="nf">_convert_input</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">n_models</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">model_set_axis</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Convert inputs to float arrays.&quot;&quot;&quot;</span>
 
@@ -1067,8 +1067,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

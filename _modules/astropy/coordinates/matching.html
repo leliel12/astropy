@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.matching &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.coordinates.matching &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -153,9 +153,9 @@
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="n">sep2d</span> <span class="o">=</span> <span class="n">catalogcoord</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">separation</span><span class="p">(</span><span class="n">matchcoord</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">idx</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">matchxyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">sep2d</span><span class="p">,</span> <span class="n">dist</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">matchxyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">*</span> <span class="n">catunit</span></div>
+    <span class="k">return</span> <span class="n">idx</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">matchxyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">sep2d</span><span class="p">,</span> <span class="n">dist</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">matchxyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">*</span> <span class="n">catunit</span>
 
-
+</div>
 <div class="viewcode-block" id="match_coordinates_sky"><a class="viewcode-back" href="../../../api/astropy.coordinates.match_coordinates_sky.html#astropy.coordinates.match_coordinates_sky">[docs]</a><span class="k">def</span> <span class="nf">match_coordinates_sky</span><span class="p">(</span><span class="n">matchcoord</span><span class="p">,</span> <span class="n">catalogcoord</span><span class="p">,</span> <span class="n">nthneighbor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storekdtree</span><span class="o">=</span><span class="s">&#39;_kdtree_sky&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Finds the nearest on-sky matches of a coordinate or coordinates in</span>
@@ -232,9 +232,9 @@
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">storekdtree</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
         <span class="nb">setattr</span><span class="p">(</span><span class="n">catalogcoord</span><span class="p">,</span> <span class="n">storekdtree</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">newcat_u</span><span class="p">,</span> <span class="n">storekdtree</span><span class="p">))</span>
 
-    <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sep2d</span><span class="p">,</span> <span class="n">sep3d</span></div>
+    <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sep2d</span><span class="p">,</span> <span class="n">sep3d</span>
 
-
+</div>
 <div class="viewcode-block" id="search_around_3d"><a class="viewcode-back" href="../../../api/astropy.coordinates.search_around_3d.html#astropy.coordinates.search_around_3d">[docs]</a><span class="k">def</span> <span class="nf">search_around_3d</span><span class="p">(</span><span class="n">coords1</span><span class="p">,</span> <span class="n">coords2</span><span class="p">,</span> <span class="n">distlimit</span><span class="p">,</span> <span class="n">storekdtree</span><span class="o">=</span><span class="s">&#39;_kdtree_3d&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Searches for pairs of points that are at least as close as a specified</span>
@@ -329,9 +329,9 @@
         <span class="n">d2ds</span> <span class="o">=</span> <span class="n">coords1</span><span class="p">[</span><span class="n">idxs1</span><span class="p">]</span><span class="o">.</span><span class="n">separation</span><span class="p">(</span><span class="n">coords2</span><span class="p">[</span><span class="n">idxs2</span><span class="p">])</span>
         <span class="n">d3ds</span> <span class="o">=</span> <span class="n">coords1</span><span class="p">[</span><span class="n">idxs1</span><span class="p">]</span><span class="o">.</span><span class="n">separation_3d</span><span class="p">(</span><span class="n">coords2</span><span class="p">[</span><span class="n">idxs2</span><span class="p">])</span>
 
-    <span class="k">return</span> <span class="n">idxs1</span><span class="p">,</span> <span class="n">idxs2</span><span class="p">,</span> <span class="n">d2ds</span><span class="p">,</span> <span class="n">d3ds</span></div>
+    <span class="k">return</span> <span class="n">idxs1</span><span class="p">,</span> <span class="n">idxs2</span><span class="p">,</span> <span class="n">d2ds</span><span class="p">,</span> <span class="n">d3ds</span>
 
-
+</div>
 <div class="viewcode-block" id="search_around_sky"><a class="viewcode-back" href="../../../api/astropy.coordinates.search_around_sky.html#astropy.coordinates.search_around_sky">[docs]</a><span class="k">def</span> <span class="nf">search_around_sky</span><span class="p">(</span><span class="n">coords1</span><span class="p">,</span> <span class="n">coords2</span><span class="p">,</span> <span class="n">seplimit</span><span class="p">,</span> <span class="n">storekdtree</span><span class="o">=</span><span class="s">&#39;_kdtree_sky&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Searches for pairs of points that have an angular separation at least as</span>
@@ -444,9 +444,9 @@
             <span class="c"># distance, computed from d2ds</span>
             <span class="n">d3ds</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">d2ds</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">idxs1</span><span class="p">,</span> <span class="n">idxs2</span><span class="p">,</span> <span class="n">d2ds</span><span class="p">,</span> <span class="n">d3ds</span></div>
+    <span class="k">return</span> <span class="n">idxs1</span><span class="p">,</span> <span class="n">idxs2</span><span class="p">,</span> <span class="n">d2ds</span><span class="p">,</span> <span class="n">d3ds</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_get_cartesian_kdtree</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">attrname_or_kdt</span><span class="o">=</span><span class="s">&#39;_kdtree&#39;</span><span class="p">,</span> <span class="n">forceunit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This is a utility function to retrieve (and build/cache, if necessary)</span>
@@ -531,8 +531,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

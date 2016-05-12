@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.wcs.utils &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.wcs.utils &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="astropy.wcs" href="../wcs.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" >Module code</a> &raquo;</li>
@@ -112,9 +112,9 @@
     <span class="n">newwcs</span> <span class="o">=</span> <span class="n">wcs</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">inds</span><span class="p">)</span>
     <span class="n">newwcs</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">ctype</span><span class="p">[</span><span class="n">add_before_ind</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;STOKES&#39;</span>
     <span class="n">newwcs</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cname</span><span class="p">[</span><span class="n">add_before_ind</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;STOKES&#39;</span>
-    <span class="k">return</span> <span class="n">newwcs</span></div>
+    <span class="k">return</span> <span class="n">newwcs</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_wcs_to_celestial_frame_builtin</span><span class="p">(</span><span class="n">wcs</span><span class="p">):</span>
 
     <span class="kn">from</span> <span class="nn">..coordinates</span> <span class="kn">import</span> <span class="n">FK4</span><span class="p">,</span> <span class="n">FK4NoETerms</span><span class="p">,</span> <span class="n">FK5</span><span class="p">,</span> <span class="n">ICRS</span><span class="p">,</span> <span class="n">Galactic</span>
@@ -182,9 +182,9 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">):</span>
-        <span class="n">WCS_FRAME_MAPPINGS</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></div>
+        <span class="n">WCS_FRAME_MAPPINGS</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
-
+</div>
 <div class="viewcode-block" id="wcs_to_celestial_frame"><a class="viewcode-back" href="../../../api/astropy.wcs.utils.wcs_to_celestial_frame.html#astropy.wcs.utils.wcs_to_celestial_frame">[docs]</a><span class="k">def</span> <span class="nf">wcs_to_celestial_frame</span><span class="p">(</span><span class="n">wcs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For a given WCS, return the coordinate frame that matches the celestial</span>
@@ -220,9 +220,9 @@
             <span class="k">if</span> <span class="n">frame</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">frame</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Could not determine celestial frame corresponding to &quot;</span>
-                     <span class="s">&quot;the specified WCS object&quot;</span><span class="p">)</span></div>
+                     <span class="s">&quot;the specified WCS object&quot;</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="proj_plane_pixel_scales"><a class="viewcode-back" href="../../../api/astropy.wcs.utils.proj_plane_pixel_scales.html#astropy.wcs.utils.proj_plane_pixel_scales">[docs]</a><span class="k">def</span> <span class="nf">proj_plane_pixel_scales</span><span class="p">(</span><span class="n">wcs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For a WCS returns pixel scales along each axis of the image pixel at</span>
@@ -264,9 +264,9 @@
 <span class="sd">    astropy.wcs.utils.proj_plane_pixel_area</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">wcs</span><span class="o">.</span><span class="n">pixel_scale_matrix</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">wcs</span><span class="o">.</span><span class="n">pixel_scale_matrix</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="proj_plane_pixel_area"><a class="viewcode-back" href="../../../api/astropy.wcs.utils.proj_plane_pixel_area.html#astropy.wcs.utils.proj_plane_pixel_area">[docs]</a><span class="k">def</span> <span class="nf">proj_plane_pixel_area</span><span class="p">(</span><span class="n">wcs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For a **celestial** WCS (see `astropy.wcs.WCS.celestial`) returns pixel</span>
@@ -325,9 +325,9 @@
     <span class="n">psm</span> <span class="o">=</span> <span class="n">wcs</span><span class="o">.</span><span class="n">celestial</span><span class="o">.</span><span class="n">pixel_scale_matrix</span>
     <span class="k">if</span> <span class="n">psm</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Pixel area is defined only for 2D pixels.&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">psm</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">psm</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="is_proj_plane_distorted"><a class="viewcode-back" href="../../../api/astropy.wcs.utils.is_proj_plane_distorted.html#astropy.wcs.utils.is_proj_plane_distorted">[docs]</a><span class="k">def</span> <span class="nf">is_proj_plane_distorted</span><span class="p">(</span><span class="n">wcs</span><span class="p">,</span> <span class="n">maxerr</span><span class="o">=</span><span class="mf">1.0e-5</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For a WCS returns `False` if square image (detector) pixels stay square</span>
@@ -375,9 +375,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">cwcs</span> <span class="o">=</span> <span class="n">wcs</span><span class="o">.</span><span class="n">celestial</span>
     <span class="k">return</span> <span class="p">(</span><span class="ow">not</span> <span class="n">_is_cd_orthogonal</span><span class="p">(</span><span class="n">cwcs</span><span class="o">.</span><span class="n">pixel_scale_matrix</span><span class="p">,</span> <span class="n">maxerr</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="n">_has_distortion</span><span class="p">(</span><span class="n">cwcs</span><span class="p">))</span></div>
+            <span class="n">_has_distortion</span><span class="p">(</span><span class="n">cwcs</span><span class="p">))</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_is_cd_orthogonal</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">maxerr</span><span class="p">):</span>
     <span class="n">shape</span> <span class="o">=</span> <span class="n">cd</span><span class="o">.</span><span class="n">shape</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
@@ -419,9 +419,9 @@
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="o">*</span><span class="n">pccd</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">pccd</span><span class="p">),</span> <span class="mi">0</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diagonal</span><span class="p">(</span><span class="n">pccd</span><span class="p">))</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;WCS is rotated, cannot determine consistent pixel scales&quot;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;WCS is rotated, cannot determine consistent pixel scales&quot;</span><span class="p">)</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_has_distortion</span><span class="p">(</span><span class="n">wcs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    `True` if contains any SIP or image distortion components.</span>
@@ -501,9 +501,9 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;mode should be either &#39;all&#39; or &#39;wcs&#39;&quot;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span></div>
+    <span class="k">return</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span>
 
-
+</div>
 <div class="viewcode-block" id="pixel_to_skycoord"><a class="viewcode-back" href="../../../api/astropy.wcs.utils.pixel_to_skycoord.html#astropy.wcs.utils.pixel_to_skycoord">[docs]</a><span class="k">def</span> <span class="nf">pixel_to_skycoord</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">wcs</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="n">cls</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert a set of pixel coordinates into a `~astropy.coordinates.SkyCoord`</span>
@@ -596,8 +596,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

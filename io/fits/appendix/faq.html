@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits FAQ &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits FAQ &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Header Interface Transition Guide" href="header_transition.html" />
     <link rel="prev" title="Examples" href="../usage/examples.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -197,7 +197,7 @@ occurred and the path through the code that led to it.</p>
 exceptions raised by Astropy are by design.  For example, one of the most
 common exceptions is a <a class="reference external" href="http://docs.python.org/library/exceptions.html#exceptions.KeyError" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">KeyError</span></code></a> when an attempt is made to read
 the value of a non-existent keyword in a header:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
 <span class="gt">Traceback (most recent call last):</span>
@@ -205,7 +205,7 @@ the value of a non-existent keyword in a header:</p>
   File <span class="nb">&quot;/path/to/astropy/io/fits/header.py&quot;</span>, line <span class="m">125</span>, in <span class="n">__getitem__</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_cardindex</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span><span class="o">.</span><span class="n">value</span>
   File <span class="nb">&quot;/path/to/astropy/io/fits/header.py&quot;</span>, line <span class="m">1535</span>, in <span class="n">_cardindex</span>
-    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Keyword %r not found.&quot;</span> <span class="o">%</span> <span class="n">keyword</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Keyword </span><span class="si">%r</span><span class="s"> not found.&quot;</span> <span class="o">%</span> <span class="n">keyword</span><span class="p">)</span>
 <span class="gr">KeyError</span>: <span class="n">&quot;Keyword &#39;NAXIS&#39; not found.&quot;</span>
 </pre></div>
 </div>
@@ -250,11 +250,11 @@ exceptional conditions in the code that are recoverable, but that the user may
 want to be informed of.  One of the most common warnings in <a class="reference internal" href="../index.html#module-astropy.io.fits" title="astropy.io.fits"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.fits</span></code></a>
 occurs when updating a header value in such a way that the comment must be
 truncated to preserve space:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Card</span> <span class="ow">is</span> <span class="n">too</span> <span class="n">long</span><span class="p">,</span> <span class="n">comment</span> <span class="ow">is</span> <span class="n">truncated</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>Card is too long, comment is truncated.
 </pre></div>
 </div>
 <p>Any console output generated by Astropy can be assumed to be from the warnings
-subsystem.  See Astropy&#8217;s documentation on the <a class="reference internal" href="../../../warnings.html#python-warnings"><span class="std std-ref">Python warnings system</span></a> for more
+subsystem.  See Astropy&#8217;s documentation on the <a class="reference internal" href="../../../warnings.html#python-warnings"><span>Python warnings system</span></a> for more
 information on how to control and quiet warnings.</p>
 </div>
 <div class="section" id="what-convention-does-astropy-use-for-indexing-such-as-of-image-coordinates">
@@ -275,14 +275,14 @@ FITS header.</p>
 <p>In general, for N-dimensional arrays, row-major orders means that the
 right-most axis is the one that varies the fastest while moving over the
 array data linearly.  For example, the 3-dimensional array:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">[[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span>
  <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]]</span>
 </pre></div>
 </div>
 <p>is represented linearly in row-major order as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Since 2 immediately follows 1, you can see that the right-most (or inner-most)
@@ -296,7 +296,7 @@ is likely to cause more difficulties than it&#8217;s worth.</p>
 <h3><a class="toc-backref" href="#id12">How do I open a very large image that won&#8217;t fit in memory?</a><a class="headerlink" href="#how-do-i-open-a-very-large-image-that-won-t-fit-in-memory" title="Permalink to this headline">¶</a></h3>
 <p>In PyFITS, prior to version 3.1, when the data portion of an HDU is accessed,
 the data is read into memory in its entirety.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;myimage.fits&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">pyfits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;myimage.fits&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="gp">...</span>
 </pre></div>
@@ -326,7 +326,7 @@ entire array, though this is an area that will see improvement in the future.</p
 is the sections interface.  It is largely replaced by the better support for
 mmap, but may still be useful on systems with more limited virtual-memory
 space, such as on 32-bit systems.  Support for scaled image data is flakey with
-sections too, though that will be fixed.  See the documentation on <a class="reference internal" href="../usage/image.html#data-sections"><span class="std std-ref">image
+sections too, though that will be fixed.  See the documentation on <a class="reference internal" href="../usage/image.html#data-sections"><span>image
 sections</span></a> for more details on using this interface.</p>
 </div>
 <div class="section" id="how-can-i-create-a-very-large-fits-file-from-scratch">
@@ -335,8 +335,8 @@ sections</span></a> for more details on using this interface.</p>
 built-in facilities for creating large files (larger than will fit in memory)
 from scratch (though it may in the future).</p>
 <p>Normally to create a single image FITS file one would do something like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="go">&gt;&gt; data = numpy.zeros((40000, 40000), dtype=numpy.float64)</span>
 <span class="go">&gt;&gt; hdu = fits.PrimaryHDU(data=data)</span>
 <span class="go">&gt;&gt; hdu.writeto(&#39;large.fits&#39;)</span>
@@ -356,7 +356,7 @@ enough header blocks so that there is plenty of padding in which to add new
 keywords without having to resize the whole file.  Say you want the header to
 use 4 blocks by default.  Then, excluding the END card which Astropy will add
 automatically, create the header and pad it out to 36 * 4 cards like so:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 <span class="go"># This is a stub array that we&#39;ll be using the initialize the HDU; its</span>
 <span class="go"># exact size is irrelevant, as long as it has the desired number of</span>
 <span class="go"># dimensions</span>
@@ -372,7 +372,7 @@ cause Astropy to &#8220;helpfully&#8221; reset the NAXISn keywords to match the 
 dummy array.  That is because it works hard to ensure that only valid FITS
 files are written.  Instead, we can write <em>just</em> the header to a file using
 the <a class="reference internal" href="../api/headers.html#astropy.io.fits.Header.tofile" title="astropy.io.fits.Header.tofile"><code class="xref py py-obj docutils literal"><span class="pre">Header.tofile</span></code></a> method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40000</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="p">[</span><span class="s">&#39;NAXIS2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">header</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="s">&#39;large.fits&#39;</span><span class="p">)</span>
 </pre></div>
@@ -381,7 +381,7 @@ the <a class="reference internal" href="../api/headers.html#astropy.io.fits.Head
 data (plus the length of the header).  This can be done very efficiently on
 most systems by seeking past the end of the file and writing a single byte,
 like so:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;large.fits&#39;</span><span class="p">,</span> <span class="s">&#39;rb+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fobj</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;large.fits&#39;</span><span class="p">,</span> <span class="s">&#39;rb+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fobj</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="c"># Seek past the length of the header, plus the length of the</span>
 <span class="gp">... </span>    <span class="c"># Data we want to write.</span>
 <span class="gp">... </span>    <span class="c"># The -1 is to account for the final byte taht we are about to</span>
@@ -404,7 +404,7 @@ general, use of the <a class="reference internal" href="../index.html#module-ast
 creation and manipulation of large tables.  The FITS format itself is not
 designed for efficient on-disk or in-memory manipulation of table structures.
 For large, heavy-duty table data it might be better too look into using <a class="reference external" href="http://www.hdfgroup.org/HDF5/">HDF5</a>
-through the <a class="reference external" href="http://www.pytables.org/moin">PyTables</a> library.  The <a class="reference internal" href="../../../table/index.html#astropy-table"><span class="std std-ref">Astropy Table</span></a>
+through the <a class="reference external" href="http://www.pytables.org/moin">PyTables</a> library.  The <a class="reference internal" href="../../../table/index.html#astropy-table"><span>Astropy Table</span></a>
 interface can provide an abstraction layer between different on-disk table
 formats as well (for example for converting a table between FITS and HDF5).</p>
 <p>PyTables makes use of Numpy under the hood, and can be used to write binary
@@ -418,7 +418,7 @@ this FAQ might provide an example of how to do this.</p>
 <a class="reference internal" href="../api/hdulists.html#astropy.io.fits.HDUList" title="astropy.io.fits.HDUList"><code class="xref py py-obj docutils literal"><span class="pre">HDUList</span></code></a> object is returned, which holds all the HDUs in the
 file.  This <code class="docutils literal"><span class="pre">HDUList</span></code> class is a subclass of Python&#8217;s builtin <a class="reference external" href="http://docs.python.org/library/functions.html#list" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">list</span></code></a>, and can
 be created from scratch and used as such:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new_hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new_hdul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new_hdul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">())</span>
@@ -427,7 +427,7 @@ be created from scratch and used as such:</p>
 </div>
 <p>Or the HDU instances can be created first (or read from an existing FITS file)
 and the HDUList instantiated like so:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu1</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdu1</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdu2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new_hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">([</span><span class="n">hdu1</span><span class="p">,</span> <span class="n">hdu2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new_hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s">&#39;test.fits&#39;</span><span class="p">)</span>
@@ -443,7 +443,7 @@ provided manually).</p>
 BSCALE and/or BZERO keywords (that is, BSCALE != 1 and/or BZERO != 0), then
 the raw data in the file must be rescaled to its physical values according to
 the formula:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">physical_value</span> <span class="o">=</span> <span class="n">BZERO</span> <span class="o">+</span> <span class="n">BSCALE</span> <span class="o">*</span> <span class="n">array_value</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">physical_value</span> <span class="o">=</span> <span class="n">BZERO</span> <span class="o">+</span> <span class="n">BSCALE</span> <span class="o">*</span> <span class="n">array_value</span>
 </pre></div>
 </div>
 <p>As BZERO and BSCALE are floating point values, the resulting value must be a
@@ -454,7 +454,7 @@ values are single-precision (32-bit) floats.  If the original values were
 it, because it doesn&#8217;t happen until the data portion of the HDU is accessed
 (to allow things like updating the header without rescaling the data).  For
 example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;scaled.fits&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;scaled.fits&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="s">&#39;SCI&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;BITPIX&#39;</span><span class="p">]</span>
 <span class="go">32</span>
@@ -475,7 +475,7 @@ remain as integers, a great deal of precision is lost.  So it is best to err
 on the side of not losing data, at the cost of causing some confusion at
 first.</p>
 <p>If the data must be returned to integers before saving, use the <a class="reference internal" href="../api/images.html#astropy.io.fits.ImageHDU.scale" title="astropy.io.fits.hdu.image.ImageHDU"><code class="xref py py-obj docutils literal"><span class="pre">ImageHDU.scale</span></code></a> method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="s">&#39;int32&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="s">&#39;int32&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;BITPIX&#39;</span><span class="p">]</span>
 <span class="go">32</span>
 </pre></div>
@@ -490,7 +490,7 @@ data needs to be modified corresponding to changes in the physical values.</p>
 you don&#8217;t intend for the code to access the data, it&#8217;s good to err on the side
 of caution here), use the <code class="docutils literal"><span class="pre">do_not_scale_image_data</span></code> argument when opening
 the file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;scaled.fits&#39;</span><span class="p">,</span> <span class="n">do_not_scale_image_data</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;scaled.fits&#39;</span><span class="p">,</span> <span class="n">do_not_scale_image_data</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="s">&#39;SCI&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span>
 <span class="go">dtype(&#39;int32&#39;)</span>
@@ -513,7 +513,7 @@ formats), so all floating point values assigned to a header are stored in the
 fixed format.  There are plans to add support for more flexible formatting.</p>
 <p>In the meantime it is possible to add or update cards by manually formatting
 the card image from a string, as it should appear in the FITS file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Card</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s">&#39;FOO     = 1234567890.123456789&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Card</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s">&#39;FOO     = 1234567890.123456789&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
@@ -555,7 +555,7 @@ liking.</p>
 <div class="section" id="i-m-opening-many-fits-files-in-a-loop-and-getting-oserror-too-many-open-files">
 <h3><a class="toc-backref" href="#id18">I&#8217;m opening many FITS files in a loop and getting OSError: Too many open files</a><a class="headerlink" href="#i-m-opening-many-fits-files-in-a-loop-and-getting-oserror-too-many-open-files" title="Permalink to this headline">¶</a></h3>
 <p>Say you have some code like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">hdul</span><span class="p">:</span>
@@ -568,12 +568,12 @@ liking.</p>
 <p>The details may differ, but the qualitative point is that the data to many
 HDUs and/or FITS files are being accessed in a loop.  This may result in
 an exception like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">OSError</span><span class="p">:</span> <span class="p">[</span><span class="n">Errno</span> <span class="mi">24</span><span class="p">]</span> <span class="n">Too</span> <span class="n">many</span> <span class="nb">open</span> <span class="n">files</span><span class="p">:</span> <span class="s">&#39;my_data.fits&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
+OSError: [Errno 24] Too many open files: &#39;my_data.fits&#39;
 </pre></div>
 </div>
-<p>As explained in the <a class="reference internal" href="../index.html#fits-large-files"><span class="std std-ref">note on working with large files</span></a>,
+<p>As explained in the <a class="reference internal" href="../index.html#fits-large-files"><span>note on working with large files</span></a>,
 because Astropy uses mmap by default to read the data in a FITS file, even if
 you correctly close a file with <a class="reference internal" href="../api/hdulists.html#astropy.io.fits.HDUList.close" title="astropy.io.fits.HDUList.close"><code class="xref py py-obj docutils literal"><span class="pre">HDUList.close</span></code></a>
 a handle is kept open to that file so that the memory-mapped data array can
@@ -585,7 +585,7 @@ rapidly, this may not happen immediately.  Or in some cases if the HDU object
 persists, the data array attached to it may persist too.  The easiest
 workaround is to <em>manually</em> delete the <code class="docutils literal"><span class="pre">.data</span></code> attribute on the HDU object so
 that the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> reference is freed and the mmap can be closed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">hdul</span><span class="p">:</span>
@@ -752,8 +752,8 @@ handle to the FITS file is opened using each library&#8217;s basic semantics, an
 then the entire data array of the files is copied into a temporary array in
 memory (for example if we were blitting the image to a video buffer).  For
 Astropy the test is written:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">read_test_pyfits</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="k">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">read_test_pyfits</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
@@ -761,39 +761,39 @@ Astropy the test is written:</p>
 <p>The test was timed in IPython on a Linux system with kernel version 2.6.32, a
 6-core Intel Xeon X5650 CPU clocked at 2.67 GHz per core, and 11.6 GB of RAM
 using:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="o">%</span><span class="n">timeit</span> <span class="n">read_test_pyfits</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre>for filename in filenames:
+    print(filename)
+    %timeit read_test_pyfits(filename)
 </pre></div>
 </div>
 <p>where <code class="docutils literal"><span class="pre">filenames</span></code> is just a list of the aforementioned generated sample
 files.  The results were:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="mi">256</span><span class="n">x256</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">1.28</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="mi">1024</span><span class="n">x1024</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">100</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">4.24</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="mi">4096</span><span class="n">x4096</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">10</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">60.6</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="mi">256</span><span class="n">x1024x1024</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">1</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">1.15</span> <span class="n">s</span> <span class="n">per</span> <span class="n">loop</span>
+<div class="highlight-python"><div class="highlight"><pre>256x256.fits
+1000 loops, best of 3: 1.28 ms per loop
+1024x1024.fits
+100 loops, best of 3: 4.24 ms per loop
+4096x4096.fits
+10 loops, best of 3: 60.6 ms per loop
+256x1024x1024.fits
+1 loops, best of 3: 1.15 s per loop
 </pre></div>
 </div>
 <p>For <code class="docutils literal"><span class="pre">fitsio</span></code> the test was:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">read_test_fitsio</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">read_test_fitsio</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">fitsio</span><span class="o">.</span><span class="n">FITS</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This was also run in a loop over all the sample files, producing the results:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="mi">256</span><span class="n">x256</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">476</span> <span class="n">µs</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="mi">1024</span><span class="n">x1024</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">100</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">12.2</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="mi">4096</span><span class="n">x4096</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">10</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">136</span> <span class="n">ms</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="mi">256</span><span class="n">x1024x1024</span><span class="o">.</span><span class="n">fits</span>
-<span class="mi">1</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">3.65</span> <span class="n">s</span> <span class="n">per</span> <span class="n">loop</span>
+<div class="highlight-python"><div class="highlight"><pre>256x256.fits
+1000 loops, best of 3: 476 µs per loop
+1024x1024.fits
+100 loops, best of 3: 12.2 ms per loop
+4096x4096.fits
+10 loops, best of 3: 136 ms per loop
+256x1024x1024.fits
+1 loops, best of 3: 3.65 s per loop
 </pre></div>
 </div>
 <p>It should be made clear that the sample files were rewritten with new random
@@ -901,8 +901,8 @@ to perform row selection.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

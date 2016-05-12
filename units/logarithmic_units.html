@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Magnitudes and other Logarithmic Units &mdash; Astropy v1.2.dev14980</title>
+    <title>Magnitudes and other Logarithmic Units &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Units and Quantities (astropy.units)" href="index.html" />
     <link rel="next" title="String representations of units" href="format.html" />
     <link rel="prev" title="Decomposing and composing units" href="decomposing_and_composing.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Units and Quantities (<code class="docutils literal"><span class="pre">astropy.units</span></code>)</a> &raquo;</li>
@@ -94,7 +94,7 @@ units are supported in <code class="docutils literal"><span class="pre">astropy<
 <h2>Creating Logarithmic Quantities<a class="headerlink" href="#creating-logarithmic-quantities" title="Permalink to this headline">¶</a></h2>
 <p>One can create logarithmic quantities either directly or by multiplication with
 a logarithmic unit.  For instance:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span><span class="o">,</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">c</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span><span class="o">,</span> <span class="nn">astropy.constants</span> <span class="kn">as</span> <span class="nn">c</span><span class="o">,</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Magnitude</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">)</span>
 <span class="go">&lt;Magnitude -10.0 mag&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Magnitude</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">ct</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
@@ -121,7 +121,7 @@ by <a class="reference internal" href="../api/astropy.units.Unit.html#astropy.un
 <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity.value" title="astropy.units.Quantity.value"><code class="xref py py-obj docutils literal"><span class="pre">value</span></code></a> attribute. In addition, one can convert easily
 to a <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> with the physical unit using the
 <a class="reference internal" href="../api/astropy.units.function.FunctionQuantity.html#astropy.units.function.FunctionQuantity.physical" title="astropy.units.function.FunctionQuantity.physical"><code class="xref py py-obj docutils literal"><span class="pre">physical</span></code></a> attribute:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span> <span class="o">=</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">dex</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span> <span class="o">=</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">dex</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span><span class="o">.</span><span class="n">value</span>
 <span class="go">5.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span><span class="o">.</span><span class="n">physical</span>
@@ -135,7 +135,7 @@ to a <a class="reference internal" href="../api/astropy.units.Quantity.html#astr
 units using the <a class="reference internal" href="../api/astropy.units.function.FunctionQuantity.html#astropy.units.function.FunctionQuantity.to" title="astropy.units.function.FunctionQuantity.to"><code class="xref py py-meth docutils literal"><span class="pre">to()</span></code></a> method.
 Here, if the requested unit is not a logarithmic unit, the object will be
 automatically converted to its physical unit:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span> <span class="o">=</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">dex</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span> <span class="o">=</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">dex</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">&lt;Quantity 1000.0 m / s2&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s">&#39;dex(m/s2)&#39;</span><span class="p">)</span>
@@ -145,7 +145,7 @@ automatically converted to its physical unit:</p>
 <p>For convenience, the <a class="reference internal" href="../api/astropy.units.function.FunctionQuantity.html#astropy.units.function.FunctionQuantity.si" title="astropy.units.function.FunctionQuantity.si"><code class="xref py py-obj docutils literal"><span class="pre">si</span></code></a> and
 <a class="reference internal" href="../api/astropy.units.function.FunctionQuantity.html#astropy.units.function.FunctionQuantity.cgs" title="astropy.units.function.FunctionQuantity.cgs"><code class="xref py py-obj docutils literal"><span class="pre">cgs</span></code></a> attributes can be used
 to convert the <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> to base S.I. or c.g.s units:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span><span class="o">.</span><span class="n">si</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logg</span><span class="o">.</span><span class="n">si</span>
 <span class="go">&lt;Dex 3.0 dex(m / s2)&gt;</span>
 </pre></div>
 </div>
@@ -156,7 +156,7 @@ to convert the <a class="reference internal" href="../api/astropy.units.Quantity
 multiplying and dividing the physical units as appropriate.  It may be best
 seen through an example of a very simple photometric reduction.  First,
 calculate instrumental magnitudes assuming some count rates for three objects:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tint</span> <span class="o">=</span> <span class="mf">1000.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">s</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tint</span> <span class="o">=</span> <span class="mf">1000.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">s</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cr_b</span> <span class="o">=</span> <span class="p">([</span><span class="mf">3000.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">ct</span><span class="p">)</span> <span class="o">/</span> <span class="n">tint</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cr_v</span> <span class="o">=</span> <span class="p">([</span><span class="mf">4000.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">ct</span><span class="p">)</span> <span class="o">/</span> <span class="n">tint</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b_i</span><span class="p">,</span> <span class="n">v_i</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Magnitude</span><span class="p">(</span><span class="n">cr_b</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">Magnitude</span><span class="p">(</span><span class="n">cr_v</span><span class="p">)</span>
@@ -166,13 +166,13 @@ calculate instrumental magnitudes assuming some count rates for three objects:</
 </pre></div>
 </div>
 <p>Then, the instrumental B-V color is simply:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b_i</span> <span class="o">-</span> <span class="n">v_i</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b_i</span> <span class="o">-</span> <span class="n">v_i</span>
 <span class="go">&lt;Magnitude [ 0.31234684,-0.11439373, 0.55462187] mag&gt;</span>
 </pre></div>
 </div>
 <p>Note that the physical unit has become dimensionless.  The following step might
 be used to correct for atmospheric extinction:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">atm_ext_b</span><span class="p">,</span> <span class="n">atm_ext_v</span> <span class="o">=</span> <span class="mf">0.12</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span><span class="p">,</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">atm_ext_b</span><span class="p">,</span> <span class="n">atm_ext_v</span> <span class="o">=</span> <span class="mf">0.12</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span><span class="p">,</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">secz</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">45</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b_i0</span> <span class="o">=</span> <span class="n">b_i</span> <span class="o">-</span> <span class="n">atm_ext_b</span> <span class="o">*</span> <span class="n">secz</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v_i0</span> <span class="o">=</span> <span class="n">v_i</span> <span class="o">-</span> <span class="n">atm_ext_b</span> <span class="o">*</span> <span class="n">secz</span>
@@ -183,7 +183,7 @@ be used to correct for atmospheric extinction:</p>
 </div>
 <p>Since the extinction is dimensionless, the units do not change.  Now suppose
 the first star has a known ST magnitude, so we can calculate zero points:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b_ref</span><span class="p">,</span> <span class="n">v_ref</span> <span class="o">=</span> <span class="mf">17.2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="p">,</span> <span class="mf">17.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b_ref</span><span class="p">,</span> <span class="n">v_ref</span> <span class="o">=</span> <span class="mf">17.2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="p">,</span> <span class="mf">17.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b_ref</span><span class="p">,</span> <span class="n">v_ref</span>  
 <span class="go">(&lt;Magnitude 17.2 mag(ST)&gt;, &lt;Magnitude 17.0 mag(ST)&gt;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zp_b</span><span class="p">,</span> <span class="n">zp_v</span> <span class="o">=</span> <span class="n">b_ref</span> <span class="o">-</span> <span class="n">b_i0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v_ref</span> <span class="o">-</span> <span class="n">v_i0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -193,7 +193,7 @@ the first star has a known ST magnitude, so we can calculate zero points:</p>
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal"><span class="pre">ST</span></code> is a short-hand for the ST zero-point flux:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)</span>  
 <span class="go">&lt;Quantity 3.6307805477010028e-09 erg / (Angstrom cm2 s)&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="o">-</span><span class="mf">21.1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)</span>  
 <span class="go">&lt;Quantity 1. erg / (Angstrom cm2 s)&gt;</span>
@@ -206,7 +206,7 @@ present, as these are defined in terms of flux densities, i.e.,
 do not depend on the filter the measurement was made with.</p>
 </div>
 <p>Now applying the calibration, we find (note the proper change in units):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">b_i0</span> <span class="o">+</span> <span class="n">zp_b</span><span class="p">,</span> <span class="n">v_i0</span> <span class="o">+</span> <span class="n">zp_v</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">b_i0</span> <span class="o">+</span> <span class="n">zp_b</span><span class="p">,</span> <span class="n">v_i0</span> <span class="o">+</span> <span class="n">zp_v</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="p">,</span> <span class="n">V</span>  
 <span class="go">(&lt;Magnitude [ 17.2       , 20.89280314, 22.95257499] mag(ST)&gt;,</span>
 <span class="go"> &lt;Magnitude [ 17.        , 21.1195437 , 22.51029996] mag(ST)&gt;)</span>
@@ -214,13 +214,13 @@ do not depend on the filter the measurement was made with.</p>
 </div>
 <p>We could convert these magnitudes to another system, e.g., ABMag, using
 appropriate equivalency:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">V</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">ABmag</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">spectral_density</span><span class="p">(</span><span class="mf">5500.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">))</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">V</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">ABmag</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">spectral_density</span><span class="p">(</span><span class="mf">5500.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">))</span>  
 <span class="go">&lt;Magnitude [ 16.99023831, 21.10978201, 22.50053827] mag(AB)&gt;</span>
 </pre></div>
 </div>
 <p>Suppose we also knew the intrinsic color of the first star, then we can
 calculate the reddening:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B_V0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B_V0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">EB_V</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span> <span class="o">-</span> <span class="n">V</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">B_V0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R_V</span> <span class="o">=</span> <span class="mf">3.1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A_V</span> <span class="o">=</span> <span class="n">R_V</span> <span class="o">*</span> <span class="n">EB_V</span>
@@ -240,7 +240,7 @@ quantities, allow units like <code class="docutils literal"><span class="pre">ma
 far, but it is fun).  For instance, suppose we also knew the absolute
 magnitude, then we can define the appropriate corresponding luminosity and
 absolute magnitude and calculate the distance modulus:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ST0abs</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&#39;STabs&#39;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="o">.</span><span class="n">physical_unit</span> <span class="o">*</span> <span class="mf">4.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mf">10.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ST0abs</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s">&#39;STabs&#39;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">STmag</span><span class="o">.</span><span class="n">physical_unit</span> <span class="o">*</span> <span class="mf">4.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mf">10.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">STabsmag</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span><span class="p">(</span><span class="n">ST0abs</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M_V</span> <span class="o">=</span> <span class="mf">5.76</span> <span class="o">*</span> <span class="n">STabsmag</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M_B</span> <span class="o">=</span> <span class="n">M_V</span> <span class="o">+</span> <span class="n">B_V0</span>
@@ -253,7 +253,7 @@ absolute magnitude and calculate the distance modulus:</p>
 </div>
 <p>With a proper equivalency, we can also convert to distance without remembering
 the 5-5log rule:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">radius_and_inverse_area</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="o">**-</span><span class="mi">2</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">radius_and_inverse_area</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="o">**-</span><span class="mi">2</span><span class="p">,</span>
 <span class="gp">... </span>                           <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="mf">4.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span>
 <span class="gp">... </span>                           <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="mf">4.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)))]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">DM</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="n">radius_and_inverse_area</span><span class="p">)</span>  
@@ -266,7 +266,7 @@ the 5-5log rule:</p>
 <p>For logarithmic quantities, most numpy functions and many array methods do not
 make sense, hence they are disabled.  But one can use those one would expect to
 work:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">v_i</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">v_i</span><span class="p">)</span>  
 <span class="go">&lt;Magnitude 4.005149978319905 mag(ct / s)&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">v_i</span><span class="p">)</span>  
 <span class="go">&lt;Magnitude 2.339711494548601 mag&gt;</span>
@@ -288,7 +288,7 @@ logarithmic quantities will be converted to normal <a class="reference internal"
 appropriate unit of <code class="docutils literal"><span class="pre">mag</span></code>, <code class="docutils literal"><span class="pre">dB</span></code>, or <code class="docutils literal"><span class="pre">dex</span></code>.  With this, it is possible to
 use composite units like <code class="docutils literal"><span class="pre">mag/d</span></code> or <code class="docutils literal"><span class="pre">dB/m</span></code>, which cannot easily be
 supported as logarithmic units.  For instance:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">dBm</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">dB</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">mW</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">dBm</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">dB</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">mW</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">signal_in</span><span class="p">,</span> <span class="n">signal_out</span> <span class="o">=</span> <span class="mf">100.</span> <span class="o">*</span> <span class="n">dBm</span><span class="p">,</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">dBm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cable_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">signal_in</span> <span class="o">-</span> <span class="n">signal_out</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">100.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">signal_in</span><span class="p">,</span> <span class="n">signal_out</span><span class="p">,</span> <span class="n">cable_loss</span>
@@ -343,8 +343,8 @@ supported as logarithmic units.  For instance:</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

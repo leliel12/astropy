@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.transformations &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.coordinates.transformations &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -153,8 +153,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_cached_names_dct</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cached_frame_set</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_shortestpaths</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_composite_cache</span> <span class="o">=</span> <span class="p">{}</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_composite_cache</span> <span class="o">=</span> <span class="p">{}</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.add_transform"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.add_transform">[docs]</a>    <span class="k">def</span> <span class="nf">add_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">,</span> <span class="n">transform</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a new coordinate transformation to the graph.</span>
@@ -185,8 +185,8 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;transform must be callable&#39;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">[</span><span class="n">fromsys</span><span class="p">][</span><span class="n">tosys</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">invalidate_cache</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">invalidate_cache</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.remove_transform"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.remove_transform">[docs]</a>    <span class="k">def</span> <span class="nf">remove_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">,</span> <span class="n">transform</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Removes a coordinate transform from the graph.</span>
@@ -233,8 +233,8 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Current transform from {0} to {1} is not &#39;</span>
                                      <span class="s">&#39;{2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">,</span> <span class="n">transform</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">invalidate_cache</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">invalidate_cache</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.find_shortest_path"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.find_shortest_path">[docs]</a>    <span class="k">def</span> <span class="nf">find_shortest_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes the shortest distance along the transform graph from</span>
@@ -351,8 +351,8 @@
 
         <span class="c"># cache for later use</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_shortestpaths</span><span class="p">[</span><span class="n">fromsys</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="n">tosys</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="n">tosys</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.get_transform"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.get_transform">[docs]</a>    <span class="k">def</span> <span class="nf">get_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates and returns the `CompositeTransform` for a transformation</span>
@@ -402,8 +402,8 @@
             <span class="n">comptrans</span> <span class="o">=</span> <span class="n">CompositeTransform</span><span class="p">(</span><span class="n">transforms</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">,</span>
                                            <span class="n">register_graph</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_composite_cache</span><span class="p">[</span><span class="n">fttuple</span><span class="p">]</span> <span class="o">=</span> <span class="n">comptrans</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_composite_cache</span><span class="p">[</span><span class="n">fttuple</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_composite_cache</span><span class="p">[</span><span class="n">fttuple</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.lookup_name"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.lookup_name">[docs]</a>    <span class="k">def</span> <span class="nf">lookup_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Tries to locate the coordinate class with the provided alias.</span>
@@ -420,8 +420,8 @@
 <span class="sd">            no such class exists.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cached_names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cached_names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.get_names"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.get_names">[docs]</a>    <span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns all available transform names. They will all be</span>
@@ -432,8 +432,8 @@
 <span class="sd">        nms : list</span>
 <span class="sd">            The aliases for coordinate systems.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">iterkeys</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cached_names</span><span class="p">))</span></div>
-
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">iterkeys</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cached_names</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.to_dot_graph"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.to_dot_graph">[docs]</a>    <span class="k">def</span> <span class="nf">to_dot_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">priorities</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">addnodes</span><span class="o">=</span><span class="p">[],</span> <span class="n">savefn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                      <span class="n">savelayout</span><span class="o">=</span><span class="s">&#39;plain&#39;</span><span class="p">,</span> <span class="n">saveformat</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -525,8 +525,8 @@
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">savefn</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">dotgraph</span></div>
-
+        <span class="k">return</span> <span class="n">dotgraph</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.to_networkx_graph"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.to_networkx_graph">[docs]</a>    <span class="k">def</span> <span class="nf">to_networkx_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts this transform graph into a networkx graph.</span>
@@ -559,8 +559,8 @@
                 <span class="n">pri</span> <span class="o">=</span> <span class="n">agraph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">priority</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">agraph</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="s">&#39;priority&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1</span>
                 <span class="n">nxgraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">pri</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">nxgraph</span></div>
-
+        <span class="k">return</span> <span class="n">nxgraph</span>
+</div>
 <div class="viewcode-block" id="TransformGraph.transform"><a class="viewcode-back" href="../../../api/astropy.coordinates.TransformGraph.html#astropy.coordinates.TransformGraph.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transcls</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A function decorator for defining transformations.</span>
@@ -622,11 +622,11 @@
             <span class="n">transcls</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">fromsys</span><span class="p">,</span> <span class="n">tosys</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="n">priority</span><span class="p">,</span>
                      <span class="n">register_graph</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">func</span>
-        <span class="k">return</span> <span class="n">deco</span></div></div>
+        <span class="k">return</span> <span class="n">deco</span>
 
 
 <span class="c">#&lt;--------------------Define the builtin transform classes---------------------&gt;</span>
-
+</div></div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">)</span>
 <div class="viewcode-block" id="CoordinateTransform"><a class="viewcode-back" href="../../../api/astropy.coordinates.CoordinateTransform.html#astropy.coordinates.CoordinateTransform">[docs]</a><span class="k">class</span> <span class="nc">CoordinateTransform</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -685,8 +685,8 @@
 <span class="sd">        graph : a TransformGraph object</span>
 <span class="sd">            The graph to register this transformation with.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">graph</span><span class="o">.</span><span class="n">add_transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fromsys</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tosys</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
-
+        <span class="n">graph</span><span class="o">.</span><span class="n">add_transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fromsys</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tosys</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="CoordinateTransform.unregister"><a class="viewcode-back" href="../../../api/astropy.coordinates.CoordinateTransform.html#astropy.coordinates.CoordinateTransform.unregister">[docs]</a>    <span class="k">def</span> <span class="nf">unregister</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove this transformation from the requested transformation</span>
@@ -702,8 +702,8 @@
 <span class="sd">        ValueError</span>
 <span class="sd">            If this is not currently in the transform graph.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">graph</span><span class="o">.</span><span class="n">remove_transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fromsys</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tosys</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
-
+        <span class="n">graph</span><span class="o">.</span><span class="n">remove_transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fromsys</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tosys</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+</div>
     <span class="nd">@abstractmethod</span>
 <div class="viewcode-block" id="CoordinateTransform.__call__"><a class="viewcode-back" href="../../../api/astropy.coordinates.CoordinateTransform.html#astropy.coordinates.CoordinateTransform.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromcoord</span><span class="p">,</span> <span class="n">toframe</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -725,9 +725,9 @@
 <span class="sd">        -------</span>
 <span class="sd">        tocoord : tosys object</span>
 <span class="sd">            The new coordinate after the transform has been applied.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div></div>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-
+</div></div>
 <div class="viewcode-block" id="FunctionTransform"><a class="viewcode-back" href="../../../api/astropy.coordinates.FunctionTransform.html#astropy.coordinates.FunctionTransform">[docs]</a><span class="k">class</span> <span class="nc">FunctionTransform</span><span class="p">(</span><span class="n">CoordinateTransform</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A coordinate transformation defined by a function that accepts a</span>
@@ -781,9 +781,9 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tosys</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;the transformation function yielded {0} but &#39;</span>
                 <span class="s">&#39;should have been of type {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tosys</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">res</span></div></div>
+        <span class="k">return</span> <span class="n">res</span>
 
-
+</div></div>
 <div class="viewcode-block" id="StaticMatrixTransform"><a class="viewcode-back" href="../../../api/astropy.coordinates.StaticMatrixTransform.html#astropy.coordinates.StaticMatrixTransform">[docs]</a><span class="k">class</span> <span class="nc">StaticMatrixTransform</span><span class="p">(</span><span class="n">CoordinateTransform</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A coordinate transformation defined as a 3 x 3 cartesian</span>
@@ -848,9 +848,9 @@
         <span class="n">frameattrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">attrnm</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fromcoord</span><span class="p">,</span> <span class="n">attrnm</span><span class="p">))</span>
                            <span class="k">for</span> <span class="n">attrnm</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">overlapping_frame_attr_names</span><span class="p">])</span>
 
-        <span class="k">return</span> <span class="n">toframe</span><span class="o">.</span><span class="n">realize_frame</span><span class="p">(</span><span class="n">newrep</span><span class="p">,</span> <span class="o">**</span><span class="n">frameattrs</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">toframe</span><span class="o">.</span><span class="n">realize_frame</span><span class="p">(</span><span class="n">newrep</span><span class="p">,</span> <span class="o">**</span><span class="n">frameattrs</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="DynamicMatrixTransform"><a class="viewcode-back" href="../../../api/astropy.coordinates.DynamicMatrixTransform.html#astropy.coordinates.DynamicMatrixTransform">[docs]</a><span class="k">class</span> <span class="nc">DynamicMatrixTransform</span><span class="p">(</span><span class="n">CoordinateTransform</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A coordinate transformation specified as a function that yields a</span>
@@ -909,9 +909,9 @@
             <span class="c">#think it has a valid distance</span>
             <span class="n">newrep</span> <span class="o">=</span> <span class="n">newrep</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">fromcoord</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">toframe</span><span class="o">.</span><span class="n">realize_frame</span><span class="p">(</span><span class="n">newrep</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">toframe</span><span class="o">.</span><span class="n">realize_frame</span><span class="p">(</span><span class="n">newrep</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="CompositeTransform"><a class="viewcode-back" href="../../../api/astropy.coordinates.CompositeTransform.html#astropy.coordinates.CompositeTransform">[docs]</a><span class="k">class</span> <span class="nc">CompositeTransform</span><span class="p">(</span><span class="n">CoordinateTransform</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A transformation constructed by combining together a series of single-step</span>
@@ -1012,8 +1012,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.convolution.core &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.convolution.core &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -192,8 +192,8 @@
                               <span class="s">&#39; &gt; {0}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MAX_NORMALIZATION</span><span class="p">),</span>
                               <span class="n">AstropyUserWarning</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_kernel_sum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kernel_sum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -260,9 +260,9 @@
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">context</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ufunc</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">NotImplemented</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">array</span></div>
+            <span class="k">return</span> <span class="n">array</span>
 
-
+</div>
 <div class="viewcode-block" id="Kernel1D"><a class="viewcode-back" href="../../../api/astropy.convolution.Kernel1D.html#astropy.convolution.Kernel1D">[docs]</a><span class="k">class</span> <span class="nc">Kernel1D</span><span class="p">(</span><span class="n">Kernel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class for 1D filter kernels.</span>
@@ -318,9 +318,9 @@
         <span class="k">elif</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">None</span>
 
-        <span class="nb">super</span><span class="p">(</span><span class="n">Kernel1D</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Kernel1D</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="Kernel2D"><a class="viewcode-back" href="../../../api/astropy.convolution.Kernel2D.html#astropy.convolution.Kernel2D">[docs]</a><span class="k">class</span> <span class="nc">Kernel2D</span><span class="p">(</span><span class="n">Kernel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class for 2D filter kernels.</span>
@@ -389,9 +389,9 @@
         <span class="k">elif</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">None</span>
 
-        <span class="nb">super</span><span class="p">(</span><span class="n">Kernel2D</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Kernel2D</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="kernel_arithmetics"><a class="viewcode-back" href="../../../api/astropy.convolution.kernel_arithmetics.html#astropy.convolution.kernel_arithmetics">[docs]</a><span class="k">def</span> <span class="nf">kernel_arithmetics</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">operation</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add, subtract or multiply two kernels.</span>
@@ -466,8 +466,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

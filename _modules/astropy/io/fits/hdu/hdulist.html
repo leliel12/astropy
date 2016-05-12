@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.hdu.hdulist &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits.hdu.hdulist &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../../index.html" />
     <link rel="up" title="Module code" href="../../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -352,8 +352,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_readfrom</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span>
-                             <span class="n">save_backup</span><span class="o">=</span><span class="n">save_backup</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+                             <span class="n">save_backup</span><span class="o">=</span><span class="n">save_backup</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="HDUList.fromstring"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.fromstring">[docs]</a>    <span class="k">def</span> <span class="nf">fromstring</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -383,8 +383,8 @@
 <span class="sd">            An :class:`HDUList` object representing the in-memory FITS file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_readfrom</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_readfrom</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="HDUList.fileinfo"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.fileinfo">[docs]</a>    <span class="k">def</span> <span class="nf">fileinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a dictionary detailing information about the locations</span>
@@ -450,8 +450,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">output</span> <span class="o">=</span> <span class="bp">None</span>
 
-        <span class="k">return</span> <span class="n">output</span></div>
-
+        <span class="k">return</span> <span class="n">output</span>
+</div>
 <div class="viewcode-block" id="HDUList.insert"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">hdu</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Insert an HDU into the `HDUList` at the given ``index``.</span>
@@ -515,8 +515,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_truncate</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="c"># make sure the EXTEND keyword is in primary HDU if there is extension</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_extend</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_extend</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="HDUList.append"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Append a new HDU to the `HDUList`.</span>
@@ -562,8 +562,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_truncate</span> <span class="o">=</span> <span class="bp">False</span>
 
         <span class="c"># make sure the EXTEND keyword is in primary HDU if there is extension</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_extend</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_extend</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="HDUList.index_of"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.index_of">[docs]</a>    <span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the index of an HDU from the `HDUList`.</span>
@@ -611,8 +611,8 @@
             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&#39;There are </span><span class="si">%d</span><span class="s"> extensions of </span><span class="si">%s</span><span class="s">.&#39;</span>
                            <span class="o">%</span> <span class="p">(</span><span class="n">nfound</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">key</span><span class="p">)))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">found</span></div>
-
+            <span class="k">return</span> <span class="n">found</span>
+</div>
 <div class="viewcode-block" id="HDUList.readall"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.readall">[docs]</a>    <span class="k">def</span> <span class="nf">readall</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Read data of all HDUs into memory.</span>
@@ -620,8 +620,8 @@
 
         <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">continue</span></div>
-
+                <span class="k">continue</span>
+</div>
     <span class="nd">@ignore_sigint</span>
 <div class="viewcode-block" id="HDUList.flush"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.flush">[docs]</a>    <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_verify</span><span class="o">=</span><span class="s">&#39;fix&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -685,8 +685,8 @@
                     <span class="k">finally</span><span class="p">:</span>
                         <span class="n">hdu</span><span class="o">.</span><span class="n">_postwriteto</span><span class="p">()</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s">&#39;update&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_flush_update</span><span class="p">()</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">_flush_update</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="HDUList.update_extend"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.update_extend">[docs]</a>    <span class="k">def</span> <span class="nf">update_extend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make sure that if the primary header needs the keyword ``EXTEND`` that</span>
@@ -711,8 +711,8 @@
                 <span class="n">hdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;EXTEND&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;NAXIS&#39;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">n</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="s">&#39;NAXIS&#39;</span><span class="p">]</span>
-                <span class="n">hdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;EXTEND&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;NAXIS&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span></div>
-
+                <span class="n">hdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;EXTEND&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s">&#39;NAXIS&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="HDUList.writeto"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.writeto">[docs]</a>    <span class="k">def</span> <span class="nf">writeto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">,</span> <span class="n">output_verify</span><span class="o">=</span><span class="s">&#39;exception&#39;</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                 <span class="n">checksum</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -767,8 +767,8 @@
             <span class="k">finally</span><span class="p">:</span>
                 <span class="n">hdu</span><span class="o">.</span><span class="n">_postwriteto</span><span class="p">()</span>
 
-        <span class="n">hdulist</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">output_verify</span><span class="o">=</span><span class="n">output_verify</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">)</span></div>
-
+        <span class="n">hdulist</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">output_verify</span><span class="o">=</span><span class="n">output_verify</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="HDUList.close"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_verify</span><span class="o">=</span><span class="s">&#39;exception&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Close the associated FITS file and memmap object, if any.</span>
@@ -798,8 +798,8 @@
 
         <span class="c"># Give individual HDUs an opportunity to do on-close cleanup</span>
         <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-            <span class="n">hdu</span><span class="o">.</span><span class="n">_close</span><span class="p">(</span><span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">)</span></div>
-
+            <span class="n">hdu</span><span class="o">.</span><span class="n">_close</span><span class="p">(</span><span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="HDUList.info"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Summarize the info of the HDUs in this `HDUList`.</span>
@@ -843,8 +843,8 @@
             <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
             <span class="n">output</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span></div>
-
+            <span class="k">return</span> <span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+</div>
 <div class="viewcode-block" id="HDUList.filename"><a class="viewcode-back" href="../../../../../io/fits/api/hdulists.html#astropy.io.fits.HDUList.filename">[docs]</a>    <span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the file name associated with the HDUList object if one exists.</span>
@@ -859,8 +859,8 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">):</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">name</span>
-        <span class="k">return</span> <span class="bp">None</span></div>
-
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_readfrom</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fileobj</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                   <span class="n">memmap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_backup</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1199,8 +1199,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

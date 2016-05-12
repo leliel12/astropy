@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.time.formats &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.time.formats &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -270,8 +270,8 @@
 <span class="sd">        Set internal jd1 and jd2 from val1 and val2.  Must be provided</span>
 <span class="sd">        by derived classes.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
-
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</div>
 <div class="viewcode-block" id="TimeFormat.to_value"><a class="viewcode-back" href="../../../api/astropy.time.TimeFormat.html#astropy.time.TimeFormat.to_value">[docs]</a>    <span class="k">def</span> <span class="nf">to_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return time representation from internal jd1 and jd2.  This is</span>
@@ -280,13 +280,13 @@
 <span class="sd">        require ``parent`` or have other optional args for ``to_value``</span>
 <span class="sd">        should compute and return the value directly.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeJD"><a class="viewcode-back" href="../../../api/astropy.time.TimeJD.html#astropy.time.TimeJD">[docs]</a><span class="k">class</span> <span class="nc">TimeJD</span><span class="p">(</span><span class="n">TimeFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Julian Date time format.</span>
@@ -298,13 +298,13 @@
 
 <div class="viewcode-block" id="TimeJD.set_jds"><a class="viewcode-back" href="../../../api/astropy.time.TimeJD.html#astropy.time.TimeJD.set_jds">[docs]</a>    <span class="k">def</span> <span class="nf">set_jds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">)</span>  <span class="c"># Validate scale.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeMJD"><a class="viewcode-back" href="../../../api/astropy.time.TimeMJD.html#astropy.time.TimeMJD">[docs]</a><span class="k">class</span> <span class="nc">TimeMJD</span><span class="p">(</span><span class="n">TimeFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Modified Julian Date time format.</span>
@@ -320,13 +320,13 @@
         <span class="c"># first one is probably biggest.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">)</span>  <span class="c"># Validate scale.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+=</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DJM0</span>  <span class="c"># erfa.DJM0=2400000.5 (from erfam.h)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+=</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DJM0</span>  <span class="c"># erfa.DJM0=2400000.5 (from erfam.h)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">-</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DJM0</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">-</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DJM0</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeDecimalYear"><a class="viewcode-back" href="../../../api/astropy.time.TimeDecimalYear.html#astropy.time.TimeDecimalYear">[docs]</a><span class="k">class</span> <span class="nc">TimeDecimalYear</span><span class="p">(</span><span class="n">TimeFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Time as a decimal year, with integer values corresponding to midnight</span>
@@ -364,8 +364,8 @@
         <span class="n">t_end</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">jd1_end</span><span class="p">,</span> <span class="n">jd2_end</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;jd&#39;</span><span class="p">)</span>
         <span class="n">t_frac</span> <span class="o">=</span> <span class="n">t_start</span> <span class="o">+</span> <span class="p">(</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">t_start</span><span class="p">)</span> <span class="o">*</span> <span class="n">y_frac</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">t_frac</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="n">t_frac</span><span class="o">.</span><span class="n">jd2</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">t_frac</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="n">t_frac</span><span class="o">.</span><span class="n">jd2</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;ascii&#39;</span><span class="p">)</span>
@@ -389,9 +389,9 @@
         <span class="n">dt_end</span> <span class="o">=</span> <span class="p">(</span><span class="n">jd1_end</span> <span class="o">-</span> <span class="n">jd1_start</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">jd2_end</span> <span class="o">-</span> <span class="n">jd2_start</span><span class="p">)</span>
         <span class="n">decimalyear</span> <span class="o">=</span> <span class="n">iy_start</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">/</span> <span class="n">dt_end</span>
 
-        <span class="k">return</span> <span class="n">decimalyear</span></div>
+        <span class="k">return</span> <span class="n">decimalyear</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeFromEpoch"><a class="viewcode-back" href="../../../api/astropy.time.TimeFromEpoch.html#astropy.time.TimeFromEpoch">[docs]</a><span class="k">class</span> <span class="nc">TimeFromEpoch</span><span class="p">(</span><span class="n">TimeFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class for times that represent the interval from a particular</span>
@@ -448,8 +448,8 @@
                                           <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">err</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">jd1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">jd2</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">jd2</span>
+</div>
 <div class="viewcode-block" id="TimeFromEpoch.to_value"><a class="viewcode-back" href="../../../api/astropy.time.TimeFromEpoch.html#astropy.time.TimeFromEpoch.to_value">[docs]</a>    <span class="k">def</span> <span class="nf">to_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="c"># Make sure that scale is the same as epoch scale so we can just</span>
         <span class="c"># subtract the epoch and convert</span>
@@ -463,11 +463,11 @@
 
         <span class="n">time_from_epoch</span> <span class="o">=</span> <span class="p">((</span><span class="n">jd1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch</span><span class="o">.</span><span class="n">jd1</span><span class="p">)</span> <span class="o">+</span>
                            <span class="p">(</span><span class="n">jd2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch</span><span class="o">.</span><span class="n">jd2</span><span class="p">))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span>
-        <span class="k">return</span> <span class="n">time_from_epoch</span></div>
+        <span class="k">return</span> <span class="n">time_from_epoch</span>
+</div>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">to_value</span><span class="p">)</span>
 
-    <span class="n">value</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">to_value</span><span class="p">)</span></div>
-
-
+</div>
 <div class="viewcode-block" id="TimeUnix"><a class="viewcode-back" href="../../../api/astropy.time.TimeUnix.html#astropy.time.TimeUnix">[docs]</a><span class="k">class</span> <span class="nc">TimeUnix</span><span class="p">(</span><span class="n">TimeFromEpoch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Unix time: seconds from 1970-01-01 00:00:00 UTC.</span>
@@ -484,9 +484,9 @@
     <span class="n">epoch_val</span> <span class="o">=</span> <span class="s">&#39;1970-01-01 00:00:00&#39;</span>
     <span class="n">epoch_val2</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">epoch_scale</span> <span class="o">=</span> <span class="s">&#39;utc&#39;</span>
-    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;iso&#39;</span></div>
+    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;iso&#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeCxcSec"><a class="viewcode-back" href="../../../api/astropy.time.TimeCxcSec.html#astropy.time.TimeCxcSec">[docs]</a><span class="k">class</span> <span class="nc">TimeCxcSec</span><span class="p">(</span><span class="n">TimeFromEpoch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Chandra X-ray Center seconds from 1998-01-01 00:00:00 TT.</span>
@@ -497,9 +497,9 @@
     <span class="n">epoch_val</span> <span class="o">=</span> <span class="s">&#39;1998-01-01 00:00:00&#39;</span>
     <span class="n">epoch_val2</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">epoch_scale</span> <span class="o">=</span> <span class="s">&#39;tt&#39;</span>
-    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;iso&#39;</span></div>
+    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;iso&#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeGPS"><a class="viewcode-back" href="../../../api/astropy.time.TimeGPS.html#astropy.time.TimeGPS">[docs]</a><span class="k">class</span> <span class="nc">TimeGPS</span><span class="p">(</span><span class="n">TimeFromEpoch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;GPS time: seconds from 1980-01-06 00:00:00 UTC</span>
 <span class="sd">    For example, 630720013.0 is midnight on January 1, 2000.</span>
@@ -519,9 +519,9 @@
     <span class="c"># above epoch is the same as Time(&#39;1980-01-06 00:00:00&#39;, scale=&#39;utc&#39;).tai</span>
     <span class="n">epoch_val2</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">epoch_scale</span> <span class="o">=</span> <span class="s">&#39;tai&#39;</span>
-    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;iso&#39;</span></div>
+    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;iso&#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="TimePlotDate"><a class="viewcode-back" href="../../../api/astropy.time.TimePlotDate.html#astropy.time.TimePlotDate">[docs]</a><span class="k">class</span> <span class="nc">TimePlotDate</span><span class="p">(</span><span class="n">TimeFromEpoch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Matplotlib `~matplotlib.pyplot.plot_date` input:</span>
@@ -546,17 +546,17 @@
     <span class="n">epoch_val</span> <span class="o">=</span> <span class="mf">1721424.5</span>  <span class="c"># Time(&#39;0001-01-01 00:00:00&#39;, scale=&#39;tai&#39;).jd - 1</span>
     <span class="n">epoch_val2</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">epoch_scale</span> <span class="o">=</span> <span class="s">&#39;utc&#39;</span>
-    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;jd&#39;</span></div>
+    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s">&#39;jd&#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeUnique"><a class="viewcode-back" href="../../../api/astropy.time.TimeUnique.html#astropy.time.TimeUnique">[docs]</a><span class="k">class</span> <span class="nc">TimeUnique</span><span class="p">(</span><span class="n">TimeFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class for time formats that can uniquely create a time object</span>
 <span class="sd">    without requiring an explicit format specifier.  This class does</span>
 <span class="sd">    nothing but provide inheritance to identify a class as unique.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">TimeAstropyTime</span><span class="p">(</span><span class="n">TimeUnique</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Instantiate date from an Astropy Time object (or list thereof).</span>
@@ -638,8 +638,8 @@
             <span class="n">dsec</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">second</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">microsecond</span> <span class="o">/</span> <span class="mf">1e6</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">erfa</span><span class="o">.</span><span class="n">dtf2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;ascii&#39;</span><span class="p">),</span>
-                                        <span class="o">*</span><span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span></div>
-
+                                        <span class="o">*</span><span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</div>
 <div class="viewcode-block" id="TimeDatetime.to_value"><a class="viewcode-back" href="../../../api/astropy.time.TimeDatetime.html#astropy.time.TimeDatetime.to_value">[docs]</a>    <span class="k">def</span> <span class="nf">to_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert to (potentially timezone-aware) `~datetime.datetime` object.</span>
@@ -681,10 +681,10 @@
                                              <span class="n">tzinfo</span><span class="o">=</span><span class="n">TimezoneInfo</span><span class="p">())</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">timezone</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">out</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">iy</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">ihr</span><span class="p">,</span> <span class="n">imin</span><span class="p">,</span> <span class="n">isec</span><span class="p">,</span> <span class="n">ifracsec</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
-
-    <span class="n">value</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">to_value</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</div>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">to_value</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="TimezoneInfo"><a class="viewcode-back" href="../../../api/astropy.time.TimezoneInfo.html#astropy.time.TimezoneInfo">[docs]</a><span class="k">class</span> <span class="nc">TimezoneInfo</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Subclass of the `~datetime.tzinfo` object, used in the</span>
@@ -727,14 +727,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_dst</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">dst</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 
 <div class="viewcode-block" id="TimezoneInfo.utcoffset"><a class="viewcode-back" href="../../../api/astropy.time.TimezoneInfo.html#astropy.time.TimezoneInfo.utcoffset">[docs]</a>    <span class="k">def</span> <span class="nf">utcoffset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_utcoffset</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_utcoffset</span>
+</div>
 <div class="viewcode-block" id="TimezoneInfo.tzname"><a class="viewcode-back" href="../../../api/astropy.time.TimezoneInfo.html#astropy.time.TimezoneInfo.tzname">[docs]</a>    <span class="k">def</span> <span class="nf">tzname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tzname</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tzname</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="TimezoneInfo.dst"><a class="viewcode-back" href="../../../api/astropy.time.TimezoneInfo.html#astropy.time.TimezoneInfo.dst">[docs]</a>    <span class="k">def</span> <span class="nf">dst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dst</span></div></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dst</span>
+</div></div>
 <div class="viewcode-block" id="TimeString"><a class="viewcode-back" href="../../../api/astropy.time.TimeString.html#astropy.time.TimeString">[docs]</a><span class="k">class</span> <span class="nc">TimeString</span><span class="p">(</span><span class="n">TimeUnique</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class for string-like time representations.</span>
@@ -790,8 +790,8 @@
             <span class="k">return</span> <span class="n">vals</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Time {0} does not match {1} format&#39;</span>
-                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span></div>
-
+                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="TimeString.set_jds"><a class="viewcode-back" href="../../../api/astropy.time.TimeString.html#astropy.time.TimeString.set_jds">[docs]</a>    <span class="k">def</span> <span class="nf">set_jds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Parse the time strings contained in val1 and set jd1, jd2&quot;&quot;&quot;</span>
         <span class="c"># Select subformats based on current self.in_subfmt</span>
@@ -806,8 +806,8 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">subfmts</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">erfa</span><span class="o">.</span><span class="n">dtf2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;ascii&#39;</span><span class="p">),</span>
-                                        <span class="o">*</span><span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span></div>
-
+                                        <span class="o">*</span><span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</div>
 <div class="viewcode-block" id="TimeString.str_kwargs"><a class="viewcode-back" href="../../../api/astropy.time.TimeString.html#astropy.time.TimeString.str_kwargs">[docs]</a>    <span class="k">def</span> <span class="nf">str_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generator that yields a dict of values corresponding to the</span>
@@ -837,16 +837,16 @@
 
             <span class="k">yield</span> <span class="p">{</span><span class="s">&#39;year&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">iy</span><span class="p">),</span> <span class="s">&#39;mon&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">im</span><span class="p">),</span> <span class="s">&#39;day&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span>
                    <span class="s">&#39;hour&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">ihr</span><span class="p">),</span> <span class="s">&#39;min&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">imin</span><span class="p">),</span> <span class="s">&#39;sec&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">isec</span><span class="p">),</span>
-                   <span class="s">&#39;fracsec&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">ifracsec</span><span class="p">),</span> <span class="s">&#39;yday&#39;</span><span class="p">:</span> <span class="n">yday</span><span class="p">}</span></div>
-
+                   <span class="s">&#39;fracsec&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">ifracsec</span><span class="p">),</span> <span class="s">&#39;yday&#39;</span><span class="p">:</span> <span class="n">yday</span><span class="p">}</span>
+</div>
 <div class="viewcode-block" id="TimeString.format_string"><a class="viewcode-back" href="../../../api/astropy.time.TimeString.html#astropy.time.TimeString.format_string">[docs]</a>    <span class="k">def</span> <span class="nf">format_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_fmt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Write time to a string using a given format.</span>
 
 <span class="sd">        By default, just interprets str_fmt as a format string,</span>
 <span class="sd">        but subclasses can add to this.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">str_fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">str_fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c"># Select the first available subformat based on current</span>
@@ -876,9 +876,9 @@
         <span class="n">subfmts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subfmts</span> <span class="k">if</span> <span class="n">fnmatchcase</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pattern</span><span class="p">)]</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subfmts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;No subformats match {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pattern</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">subfmts</span></div>
+        <span class="k">return</span> <span class="n">subfmts</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeISO"><a class="viewcode-back" href="../../../api/astropy.time.TimeISO.html#astropy.time.TimeISO">[docs]</a><span class="k">class</span> <span class="nc">TimeISO</span><span class="p">(</span><span class="n">TimeString</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ISO 8601 compliant date-time format &quot;YYYY-MM-DD HH:MM:SS.sss...&quot;.</span>
@@ -910,9 +910,9 @@
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Time input terminating in &#39;Z&#39; must have &quot;</span>
                                  <span class="s">&quot;scale=&#39;UTC&#39;&quot;</span><span class="p">)</span>
             <span class="n">timestr</span> <span class="o">=</span> <span class="n">timestr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeISO</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="n">subfmts</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeISO</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="n">subfmts</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="TimeISOT"><a class="viewcode-back" href="../../../api/astropy.time.TimeISOT.html#astropy.time.TimeISOT">[docs]</a><span class="k">class</span> <span class="nc">TimeISOT</span><span class="p">(</span><span class="n">TimeISO</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ISO 8601 compliant date-time format &quot;YYYY-MM-DDTHH:MM:SS.sss...&quot;.</span>
@@ -936,9 +936,9 @@
                 <span class="s">&#39;{year:d}-{mon:02d}-{day:02d}T{hour:02d}:{min:02d}&#39;</span><span class="p">),</span>
                <span class="p">(</span><span class="s">&#39;date&#39;</span><span class="p">,</span>
                 <span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">,</span>
-                <span class="s">&#39;{year:d}-{mon:02d}-{day:02d}&#39;</span><span class="p">))</span></div>
+                <span class="s">&#39;{year:d}-{mon:02d}-{day:02d}&#39;</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeYearDayTime"><a class="viewcode-back" href="../../../api/astropy.time.TimeYearDayTime.html#astropy.time.TimeYearDayTime">[docs]</a><span class="k">class</span> <span class="nc">TimeYearDayTime</span><span class="p">(</span><span class="n">TimeISO</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Year, day-of-year and time as &quot;YYYY:DOY:HH:MM:SS.sss...&quot;.</span>
@@ -961,9 +961,9 @@
                 <span class="s">&#39;{year:d}:{yday:03d}:{hour:02d}:{min:02d}&#39;</span><span class="p">),</span>
                <span class="p">(</span><span class="s">&#39;date&#39;</span><span class="p">,</span>
                 <span class="s">&#39;%Y:%j&#39;</span><span class="p">,</span>
-                <span class="s">&#39;{year:d}:{yday:03d}&#39;</span><span class="p">))</span></div>
+                <span class="s">&#39;{year:d}:{yday:03d}&#39;</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeFITS"><a class="viewcode-back" href="../../../api/astropy.time.TimeFITS.html#astropy.time.TimeFITS">[docs]</a><span class="k">class</span> <span class="nc">TimeFITS</span><span class="p">(</span><span class="n">TimeString</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    FITS format: &quot;[±Y]YYYY-MM-DD[THH:MM:SS[.sss]][(SCALE[(REALIZATION)])]&quot;.</span>
@@ -1045,8 +1045,8 @@
                                  <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
         <span class="k">return</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">tm</span><span class="p">[</span><span class="s">&#39;year&#39;</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">tm</span><span class="p">[</span><span class="s">&#39;mon&#39;</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">tm</span><span class="p">[</span><span class="s">&#39;mday&#39;</span><span class="p">]),</span>
                 <span class="nb">int</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;hour&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;min&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
-                <span class="nb">float</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;sec&#39;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))]</span></div>
-
+                <span class="nb">float</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;sec&#39;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))]</span>
+</div>
 <div class="viewcode-block" id="TimeFITS.format_string"><a class="viewcode-back" href="../../../api/astropy.time.TimeFITS.html#astropy.time.TimeFITS.format_string">[docs]</a>    <span class="k">def</span> <span class="nf">format_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_fmt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Format time-string: append the scale to the normal ISOT format.&quot;&quot;&quot;</span>
         <span class="n">time_str</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeFITS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">format_string</span><span class="p">(</span><span class="n">str_fmt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1054,8 +1054,8 @@
             <span class="k">return</span> <span class="s">&#39;{0}({1}({2}))&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_str</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fits_scale</span><span class="p">,</span>
                                           <span class="bp">self</span><span class="o">.</span><span class="n">_fits_realization</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">&#39;{0}({1})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_str</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span></div>
-
+            <span class="k">return</span> <span class="s">&#39;{0}({1})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_str</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert times to strings, using signed 5 digit if necessary.&quot;&quot;&quot;</span>
@@ -1065,9 +1065,9 @@
             <span class="n">jd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
             <span class="k">if</span> <span class="n">jd</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">1721425.5</span> <span class="ow">or</span> <span class="n">jd</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">5373484.5</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">out_subfmt</span> <span class="o">=</span> <span class="s">&#39;long&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_subfmt</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeFITS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">value</span></div>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeFITS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeEpochDate"><a class="viewcode-back" href="../../../api/astropy.time.TimeEpochDate.html#astropy.time.TimeEpochDate">[docs]</a><span class="k">class</span> <span class="nc">TimeEpochDate</span><span class="p">(</span><span class="n">TimeFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class for support floating point Besselian and Julian epoch dates</span>
@@ -1076,14 +1076,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">)</span>  <span class="c"># validate scale.</span>
         <span class="n">epoch_to_jd</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">erfa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch_to_jd</span><span class="p">)</span>
         <span class="n">jd1</span><span class="p">,</span> <span class="n">jd2</span> <span class="o">=</span> <span class="n">epoch_to_jd</span><span class="p">(</span><span class="n">val1</span> <span class="o">+</span> <span class="n">val2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">jd1</span><span class="p">,</span> <span class="n">jd2</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">jd1</span><span class="p">,</span> <span class="n">jd2</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">jd_to_epoch</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">erfa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd_to_epoch</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">jd_to_epoch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">jd_to_epoch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeBesselianEpoch"><a class="viewcode-back" href="../../../api/astropy.time.TimeBesselianEpoch.html#astropy.time.TimeBesselianEpoch">[docs]</a><span class="k">class</span> <span class="nc">TimeBesselianEpoch</span><span class="p">(</span><span class="n">TimeEpochDate</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Besselian Epoch year as floating point value(s) like 1950.0&quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;byear&#39;</span>
@@ -1097,17 +1097,17 @@
                              <span class="s">&quot;as the interpretation would be ambiguous. &quot;</span>
                              <span class="s">&quot;Use float with Besselian year instead. &quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeBesselianEpoch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_check_val_type</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TimeBesselianEpoch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_check_val_type</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeJulianEpoch"><a class="viewcode-back" href="../../../api/astropy.time.TimeJulianEpoch.html#astropy.time.TimeJulianEpoch">[docs]</a><span class="k">class</span> <span class="nc">TimeJulianEpoch</span><span class="p">(</span><span class="n">TimeEpochDate</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Julian Epoch year as floating point value(s) like 2000.0&quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;jyear&#39;</span>
     <span class="n">unit</span> <span class="o">=</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DJY</span>  <span class="c"># 365.25, the Julian year, for conversion to quantities</span>
     <span class="n">epoch_to_jd</span> <span class="o">=</span> <span class="s">&#39;epj2jd&#39;</span>
-    <span class="n">jd_to_epoch</span> <span class="o">=</span> <span class="s">&#39;epj&#39;</span></div>
+    <span class="n">jd_to_epoch</span> <span class="o">=</span> <span class="s">&#39;epj&#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeEpochDateString"><a class="viewcode-back" href="../../../api/astropy.time.TimeEpochDateString.html#astropy.time.TimeEpochDateString">[docs]</a><span class="k">class</span> <span class="nc">TimeEpochDateString</span><span class="p">(</span><span class="n">TimeString</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base class to support string Besselian and Julian epoch dates</span>
@@ -1131,8 +1131,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">)</span>  <span class="c"># validate scale.</span>
         <span class="n">epoch_to_jd</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">erfa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch_to_jd</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">epoch_to_jd</span><span class="p">(</span><span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">epoch_to_jd</span><span class="p">(</span><span class="n">iterator</span><span class="o">.</span><span class="n">operands</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">jd_to_epoch</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">erfa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd_to_epoch</span><span class="p">)</span>
@@ -1140,25 +1140,25 @@
         <span class="c"># Use old-style format since it is a factor of 2 faster</span>
         <span class="n">str_fmt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch_prefix</span> <span class="o">+</span> <span class="s">&#39;%.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">precision</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;f&#39;</span>
         <span class="n">outs</span> <span class="o">=</span> <span class="p">[</span><span class="n">str_fmt</span> <span class="o">%</span> <span class="n">year</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="o">.</span><span class="n">flat</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">outs</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">outs</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeBesselianEpochString"><a class="viewcode-back" href="../../../api/astropy.time.TimeBesselianEpochString.html#astropy.time.TimeBesselianEpochString">[docs]</a><span class="k">class</span> <span class="nc">TimeBesselianEpochString</span><span class="p">(</span><span class="n">TimeEpochDateString</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Besselian Epoch year as string value(s) like &#39;B1950.0&#39;&quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;byear_str&#39;</span>
     <span class="n">epoch_to_jd</span> <span class="o">=</span> <span class="s">&#39;epb2jd&#39;</span>
     <span class="n">jd_to_epoch</span> <span class="o">=</span> <span class="s">&#39;epb&#39;</span>
-    <span class="n">epoch_prefix</span> <span class="o">=</span> <span class="s">&#39;B&#39;</span></div>
+    <span class="n">epoch_prefix</span> <span class="o">=</span> <span class="s">&#39;B&#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeJulianEpochString"><a class="viewcode-back" href="../../../api/astropy.time.TimeJulianEpochString.html#astropy.time.TimeJulianEpochString">[docs]</a><span class="k">class</span> <span class="nc">TimeJulianEpochString</span><span class="p">(</span><span class="n">TimeEpochDateString</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Julian Epoch year as string value(s) like &#39;J2000.0&#39;&quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;jyear_str&#39;</span>
     <span class="n">epoch_to_jd</span> <span class="o">=</span> <span class="s">&#39;epj2jd&#39;</span>
     <span class="n">jd_to_epoch</span> <span class="o">=</span> <span class="s">&#39;epj&#39;</span>
-    <span class="n">epoch_prefix</span> <span class="o">=</span> <span class="s">&#39;J&#39;</span></div>
+    <span class="n">epoch_prefix</span> <span class="o">=</span> <span class="s">&#39;J&#39;</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">TimeDeltaFormatMeta</span><span class="p">(</span><span class="n">TimeFormatMeta</span><span class="p">):</span>
     <span class="n">_registry</span> <span class="o">=</span> <span class="n">TIME_DELTA_FORMATS</span>
 
@@ -1180,25 +1180,25 @@
 
 <div class="viewcode-block" id="TimeDeltaFormat.set_jds"><a class="viewcode-back" href="../../../api/astropy.time.TimeDeltaFormat.html#astropy.time.TimeDeltaFormat.set_jds">[docs]</a>    <span class="k">def</span> <span class="nf">set_jds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">)</span>  <span class="c"># Validate scale.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="n">divisor</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span> <span class="o">=</span> <span class="n">day_frac</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="n">divisor</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeDeltaSec"><a class="viewcode-back" href="../../../api/astropy.time.TimeDeltaSec.html#astropy.time.TimeDeltaSec">[docs]</a><span class="k">class</span> <span class="nc">TimeDeltaSec</span><span class="p">(</span><span class="n">TimeDeltaFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Time delta in SI seconds&quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;sec&#39;</span>
-    <span class="n">unit</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DAYSEC</span>  <span class="c"># for quantity input</span></div>
+    <span class="n">unit</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">erfa</span><span class="o">.</span><span class="n">DAYSEC</span>  <span class="c"># for quantity input</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeDeltaJD"><a class="viewcode-back" href="../../../api/astropy.time.TimeDeltaJD.html#astropy.time.TimeDeltaJD">[docs]</a><span class="k">class</span> <span class="nc">TimeDeltaJD</span><span class="p">(</span><span class="n">TimeDeltaFormat</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Time delta in Julian days (86400 SI seconds)&quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;jd&#39;</span>
-    <span class="n">unit</span> <span class="o">=</span> <span class="mf">1.</span></div>
+    <span class="n">unit</span> <span class="o">=</span> <span class="mf">1.</span>
 
-
+</div>
 <span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">Time</span><span class="p">,</span> <span class="n">TIME_SCALES</span><span class="p">,</span> <span class="n">TIME_DELTA_SCALES</span><span class="p">,</span> <span class="n">ScaleValueError</span>
 </pre></div>
 
@@ -1218,8 +1218,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

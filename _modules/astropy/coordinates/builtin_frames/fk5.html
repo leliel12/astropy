@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.builtin_frames.fk5 &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.coordinates.builtin_frames.fk5 &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -137,11 +137,11 @@
 <span class="sd">        newcoord : array</span>
 <span class="sd">            The precession matrix to transform to the new equinox</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">earth</span><span class="o">.</span><span class="n">precession_matrix_Capitaine</span><span class="p">(</span><span class="n">oldequinox</span><span class="p">,</span> <span class="n">newequinox</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">earth</span><span class="o">.</span><span class="n">precession_matrix_Capitaine</span><span class="p">(</span><span class="n">oldequinox</span><span class="p">,</span> <span class="n">newequinox</span><span class="p">)</span>
 
 
 <span class="c"># This is the &quot;self-transform&quot;.  Defined at module level because the decorator</span>
-<span class="c">#  needs a reference to the FK5 class</span>
+<span class="c">#  needs a reference to the FK5 class</span></div>
 <span class="nd">@frame_transform_graph.transform</span><span class="p">(</span><span class="n">DynamicMatrixTransform</span><span class="p">,</span> <span class="n">FK5</span><span class="p">,</span> <span class="n">FK5</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">fk5_to_fk5</span><span class="p">(</span><span class="n">fk5coord1</span><span class="p">,</span> <span class="n">fk5frame2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">fk5coord1</span><span class="o">.</span><span class="n">_precession_matrix</span><span class="p">(</span><span class="n">fk5coord1</span><span class="o">.</span><span class="n">equinox</span><span class="p">,</span> <span class="n">fk5frame2</span><span class="o">.</span><span class="n">equinox</span><span class="p">)</span>
@@ -163,8 +163,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

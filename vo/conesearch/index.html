@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>VO Simple Cone Search &mdash; Astropy v1.2.dev14980</title>
+    <title>VO Simple Cone Search &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../index.html" />
     <link rel="up" title="Virtual Observatory Access (astropy.vo)" href="../index.html" />
     <link rel="next" title="Using astropy.vo.client" href="client.html" />
     <link rel="prev" title="Virtual Observatory Access (astropy.vo)" href="../index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">Virtual Observatory Access (<code class="docutils literal"><span class="pre">astropy.vo</span></code>)</a> &raquo;</li>
@@ -105,8 +105,8 @@ catalogs below:</p>
 <li>USNO B1</li>
 </ul>
 <p>This subset undergoes daily validations hosted by STScI using
-<a class="reference internal" href="validator.html#vo-sec-validator-validate"><span class="std std-ref">Validation for Simple Cone Search</span></a>. Those that pass without critical
-warnings or exceptions are used by <a class="reference internal" href="client.html#vo-sec-client-scs"><span class="std std-ref">Simple Cone Search</span></a> by
+<a class="reference internal" href="validator.html#vo-sec-validator-validate"><span>Validation for Simple Cone Search</span></a>. Those that pass without critical
+warnings or exceptions are used by <a class="reference internal" href="client.html#vo-sec-client-scs"><span>Simple Cone Search</span></a> by
 default. They are controlled by <a class="reference internal" href="../../api/astropy.vo.Conf.html#astropy.vo.Conf.conesearch_dbname" title="astropy.vo.Conf.conesearch_dbname"><code class="xref py py-obj docutils literal"><span class="pre">astropy.vo.Conf.conesearch_dbname</span></code></a>:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal"><span class="pre">'conesearch_good'</span></code>
@@ -132,11 +132,11 @@ keyword that can be set to <code class="docutils literal"><span class="pre">True
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>This section only contains minimal examples showing how to perform
 basic Cone Search.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.vo.client</span> <span class="k">import</span> <span class="n">conesearch</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.vo.client</span> <span class="kn">import</span> <span class="n">conesearch</span>
 </pre></div>
 </div>
 <p>List the available Cone Search catalogs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conesearch</span><span class="o">.</span><span class="n">list_catalogs</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">conesearch</span><span class="o">.</span><span class="n">list_catalogs</span><span class="p">()</span>
 <span class="go">[u&#39;2MASS All-Sky Point Source Catalog 1&#39;,</span>
 <span class="go"> u&#39;Guide Star Catalog v2 1&#39;,</span>
 <span class="go"> u&#39;SDSS DR7 - Sloan Digital Sky Survey Data Release 7 1&#39;,</span>
@@ -156,12 +156,12 @@ basic Cone Search.</p>
 </pre></div>
 </div>
 <p>Select a 2MASS catalog from the list above that is to be searched:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_catname</span> <span class="o">=</span> <span class="s">&#39;Two Micron All Sky Survey (2MASS) 1&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_catname</span> <span class="o">=</span> <span class="s">&#39;Two Micron All Sky Survey (2MASS) 1&#39;</span>
 </pre></div>
 </div>
 <p>Query the selected 2MASS catalog around M31 with a 0.1-degree search radius:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">SkyCoord</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s">&#39;M31&#39;</span><span class="p">)</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">dec</span>
 <span class="go">(&lt;Longitude 10.6847083 deg&gt;, &lt;Latitude 41.26875 deg&gt;)</span>
@@ -185,7 +185,7 @@ basic Cone Search.</p>
 </pre></div>
 </div>
 <p>Get the number of matches and returned column names:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">size</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">size</span>
 <span class="go">2008</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span>
 <span class="go">(&#39;cx&#39;,</span>
@@ -199,7 +199,7 @@ basic Cone Search.</p>
 </pre></div>
 </div>
 <p>Extract RA and DEC of the matches:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="s">&#39;ra&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="s">&#39;ra&#39;</span><span class="p">]</span>
 <span class="go">masked_array(data = [10.620983 10.672264 10.651166 ..., 10.805599],</span>
 <span class="go">             mask = [False False False ..., False],</span>
 <span class="go">       fill_value = 1e+20)</span>
@@ -231,8 +231,8 @@ basic Cone Search.</p>
 </div>
 <p>They are designed to be used in a work flow as illustrated below:</p>
 <a class="reference internal image-reference" href="../../_images/astropy_vo_flowchart.png"><img alt="VO work flow" src="../../_images/astropy_vo_flowchart.png" style="width: 500px;" /></a>
-<p>The one that a typical user needs is the <a class="reference internal" href="client.html#vo-sec-client-scs"><span class="std std-ref">Simple Cone Search</span></a> component
-(see <a class="reference internal" href="client.html#vo-sec-scs-examples"><span class="std std-ref">Cone Search Examples</span></a>).</p>
+<p>The one that a typical user needs is the <a class="reference internal" href="client.html#vo-sec-client-scs"><span>Simple Cone Search</span></a> component
+(see <a class="reference internal" href="client.html#vo-sec-scs-examples"><span>Cone Search Examples</span></a>).</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -411,8 +411,9 @@ functionality.</p>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h3>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h3>
-<object data="../../_images/inheritance-6263871e8ebf9d0b529be54d6a56ca5ad48bcf6d.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.vo.client.exceptions.BaseVOError, astropy.vo.client.exceptions.VOSError, astropy.vo.client.exceptions.MissingCatalog, astropy.vo.client.exceptions.DuplicateCatalogName, astropy.vo.client.exceptions.DuplicateCatalogURL, astropy.vo.client.exceptions.InvalidAccessURL, astropy.vo.client.exceptions.ConeSearchError</p></object>
+<p class="graphviz">
+<img src="../../_images/inheritance-e0f9d5b6885f344fa04dfa4e7eee306f3de724ae.svg" alt="Inheritance diagram of astropy.vo.client.exceptions.BaseVOError, astropy.vo.client.exceptions.VOSError, astropy.vo.client.exceptions.MissingCatalog, astropy.vo.client.exceptions.DuplicateCatalogName, astropy.vo.client.exceptions.DuplicateCatalogURL, astropy.vo.client.exceptions.InvalidAccessURL, astropy.vo.client.exceptions.ConeSearchError" class="inheritance"/>
+</p>
 </div>
 </div>
 <div class="section" id="module-astropy.vo.validator">
@@ -433,8 +434,9 @@ functionality.</p>
 </div>
 <div class="section" id="id7">
 <h3>Class Inheritance Diagram<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<object data="../../_images/inheritance-d597ea2a188c59156f5bb7d4093b99a9e4b98706.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.vo.validator.Conf</p></object>
+<p class="graphviz">
+<img src="../../_images/inheritance-5ebf8034776219706d913c113fb3bef2b049bdfe.svg" alt="Inheritance diagram of astropy.vo.validator.Conf" class="inheritance"/>
+</p>
 </div>
 </div>
 <div class="section" id="module-astropy.vo.validator.validate">
@@ -495,8 +497,9 @@ functionality.</p>
 </div>
 <div class="section" id="id11">
 <h3>Class Inheritance Diagram<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<object data="../../_images/inheritance-a44bfc753b0b7acf69e9f82c7af06eadeedcb9bb.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.vo.validator.exceptions.BaseVOValidationError, astropy.vo.validator.exceptions.ValidationMultiprocessingError</p></object>
+<p class="graphviz">
+<img src="../../_images/inheritance-b4b9284750271396642a16f30ca95c3c1b3f2fe8.svg" alt="Inheritance diagram of astropy.vo.validator.exceptions.BaseVOValidationError, astropy.vo.validator.exceptions.ValidationMultiprocessingError" class="inheritance"/>
+</p>
 </div>
 </div>
 </div>
@@ -573,8 +576,8 @@ functionality.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

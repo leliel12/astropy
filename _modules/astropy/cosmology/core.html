@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.cosmology.core &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.cosmology.core &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -548,8 +548,8 @@
                 <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">errstr</span> <span class="o">%</span> <span class="n">newarg</span><span class="p">)</span>
             <span class="n">argdict</span><span class="p">[</span><span class="n">newarg</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">newarg</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">argdict</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">argdict</span><span class="p">)</span>
+</div>
     <span class="nd">@abstractmethod</span>
 <div class="viewcode-block" id="FLRW.w"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.w">[docs]</a>    <span class="k">def</span> <span class="nf">w</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; The dark energy equation of state.</span>
@@ -573,8 +573,8 @@
 
 <span class="sd">        This must be overridden by subclasses.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;w(z) is not implemented&quot;</span><span class="p">)</span></div>
-
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;w(z) is not implemented&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.Om"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Om">[docs]</a>    <span class="k">def</span> <span class="nf">Om</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the density parameter for non-relativistic matter</span>
 <span class="sd">        at redshift ``z``.</span>
@@ -598,8 +598,8 @@
 
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.Ob"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Ob">[docs]</a>    <span class="k">def</span> <span class="nf">Ob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the density parameter for baryonic matter at redshift ``z``.</span>
 
@@ -624,8 +624,8 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Baryon density not set for this cosmology&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.Odm"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Odm">[docs]</a>    <span class="k">def</span> <span class="nf">Odm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the density parameter for dark matter at redshift ``z``.</span>
 
@@ -655,8 +655,8 @@
                              <span class="s">&quot;unclear meaning of dark matter density&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Odm0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Odm0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.Ok"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Ok">[docs]</a>    <span class="k">def</span> <span class="nf">Ok</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the equivalent density parameter for curvature</span>
 <span class="sd">        at redshift ``z``.</span>
@@ -681,8 +681,8 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ok0</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mf">0.0</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ok0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ok0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.Ode"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Ode">[docs]</a>    <span class="k">def</span> <span class="nf">Ode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the density parameter for dark energy at redshift ``z``.</span>
 
@@ -707,8 +707,8 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mf">0.0</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">de_density_scale</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">de_density_scale</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.Ogamma"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Ogamma">[docs]</a>    <span class="k">def</span> <span class="nf">Ogamma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the density parameter for photons at redshift ``z``.</span>
 
@@ -726,8 +726,8 @@
 
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ogamma0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ogamma0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.Onu"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Onu">[docs]</a>    <span class="k">def</span> <span class="nf">Onu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the density parameter for massless neutrinos at</span>
 <span class="sd">        redshift ``z``.</span>
@@ -755,8 +755,8 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Onu0</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mf">0.0</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ogamma</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nu_relative_density</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ogamma</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nu_relative_density</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.Tcmb"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Tcmb">[docs]</a>    <span class="k">def</span> <span class="nf">Tcmb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the CMB temperature at redshift ``z``.</span>
 
@@ -773,8 +773,8 @@
 
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.Tnu"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.Tnu">[docs]</a>    <span class="k">def</span> <span class="nf">Tnu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return the neutrino temperature at redshift ``z``.</span>
 
@@ -791,8 +791,8 @@
 
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Tnu0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Tnu0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.nu_relative_density"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.nu_relative_density">[docs]</a>    <span class="k">def</span> <span class="nf">nu_relative_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Neutrino density function relative to the energy density in</span>
 <span class="sd">        photons.</span>
@@ -862,8 +862,8 @@
         <span class="n">rel_mass_per</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">curr_nu_y</span><span class="p">)</span> <span class="o">**</span> <span class="n">p</span><span class="p">)</span> <span class="o">**</span> <span class="n">invp</span>
         <span class="n">rel_mass</span> <span class="o">=</span> <span class="n">rel_mass_per</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nmasslessnu</span>
 
-        <span class="k">return</span> <span class="n">prefac</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_neff_per_nu</span> <span class="o">*</span> <span class="n">rel_mass</span></div>
-
+        <span class="k">return</span> <span class="n">prefac</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_neff_per_nu</span> <span class="o">*</span> <span class="n">rel_mass</span>
+</div>
     <span class="k">def</span> <span class="nf">_w_integrand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ln1pz</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Internal convenience function for w(z) integral.&quot;&quot;&quot;</span>
 
@@ -922,8 +922,8 @@
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">ival</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">ival</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_w_integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">z</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">ival</span><span class="p">)</span></div>
-
+            <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">ival</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.efunc">[docs]</a>    <span class="k">def</span> <span class="nf">efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Function used to calculate H(z), the Hubble parameter.</span>
 
@@ -956,8 +956,8 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span>
-                       <span class="n">Ode0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">de_density_scale</span><span class="p">(</span><span class="n">z</span><span class="p">))</span></div>
-
+                       <span class="n">Ode0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">de_density_scale</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="FLRW.inv_efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.inv_efunc">[docs]</a>    <span class="k">def</span> <span class="nf">inv_efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Inverse of efunc.</span>
 
@@ -983,8 +983,8 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
         <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span>
-                <span class="n">Ode0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">de_density_scale</span><span class="p">(</span><span class="n">z</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span></div>
-
+                <span class="n">Ode0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">de_density_scale</span><span class="p">(</span><span class="n">z</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_lookback_time_integrand_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Integrand of the lookback time.</span>
 
@@ -1055,8 +1055,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="n">zp1</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="n">zp1</span>
+</div>
     <span class="k">def</span> <span class="nf">_abs_distance_integrand_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Integrand of the absorption distance.</span>
 
@@ -1125,8 +1125,8 @@
             <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span>
-        <span class="k">return</span> <span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inv_efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.H"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.H">[docs]</a>    <span class="k">def</span> <span class="nf">H</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Hubble parameter (km/s/Mpc) at redshift ``z``.</span>
 
@@ -1141,8 +1141,8 @@
 <span class="sd">          Hubble parameter at each input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">efunc</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.scale_factor"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.scale_factor">[docs]</a>    <span class="k">def</span> <span class="nf">scale_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Scale factor at redshift ``z``.</span>
 
@@ -1162,8 +1162,8 @@
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.lookback_time"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.lookback_time">[docs]</a>    <span class="k">def</span> <span class="nf">lookback_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Lookback time in Gyr to redshift ``z``.</span>
 
@@ -1187,8 +1187,8 @@
 
         <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
         <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">red</span><span class="p">:</span> <span class="n">quad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lookback_time_integrand_scalar</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">red</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hubble_time</span> <span class="o">*</span> <span class="n">vectorize_if_needed</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hubble_time</span> <span class="o">*</span> <span class="n">vectorize_if_needed</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.lookback_distance"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.lookback_distance">[docs]</a>    <span class="k">def</span> <span class="nf">lookback_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The lookback distance is the light travel time distance to a given</span>
@@ -1206,8 +1206,8 @@
 <span class="sd">        d : `~astropy.units.Quantity`</span>
 <span class="sd">          Lookback distance in Mpc</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lookback_time</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lookback_time</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.age"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.age">[docs]</a>    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Age of the universe in Gyr at redshift ``z``.</span>
 
@@ -1229,8 +1229,8 @@
         <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
         <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">red</span><span class="p">:</span> <span class="n">quad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lookback_time_integrand_scalar</span><span class="p">,</span>
                              <span class="n">red</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hubble_time</span> <span class="o">*</span> <span class="n">vectorize_if_needed</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hubble_time</span> <span class="o">*</span> <span class="n">vectorize_if_needed</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.critical_density"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.critical_density">[docs]</a>    <span class="k">def</span> <span class="nf">critical_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Critical density in grams per cubic cm at redshift ``z``.</span>
 
@@ -1245,8 +1245,8 @@
 <span class="sd">          Critical density in g/cm^3 at each input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_critical_density0</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efunc</span><span class="p">(</span><span class="n">z</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_critical_density0</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efunc</span><span class="p">(</span><span class="n">z</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
+</div>
 <div class="viewcode-block" id="FLRW.comoving_distance"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.comoving_distance">[docs]</a>    <span class="k">def</span> <span class="nf">comoving_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Comoving line-of-sight distance in Mpc at a given</span>
 <span class="sd">        redshift.</span>
@@ -1266,8 +1266,8 @@
 <span class="sd">          Comoving distance in Mpc to each input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comoving_distance_z1z2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comoving_distance_z1z2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_comoving_distance_z1z2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Comoving line-of-sight distance in Mpc between objects at</span>
 <span class="sd">        redshifts z1 and z2.</span>
@@ -1316,8 +1316,8 @@
 <span class="sd">        texts.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comoving_transverse_distance_z1z2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comoving_transverse_distance_z1z2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_comoving_transverse_distance_z1z2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Comoving transverse distance in Mpc between two redshifts.</span>
 
@@ -1379,8 +1379,8 @@
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comoving_transverse_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comoving_transverse_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.luminosity_distance"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.luminosity_distance">[docs]</a>    <span class="k">def</span> <span class="nf">luminosity_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Luminosity distance in Mpc at redshift ``z``.</span>
 
@@ -1410,8 +1410,8 @@
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">comoving_transverse_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">comoving_transverse_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.angular_diameter_distance_z1z2"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.angular_diameter_distance_z1z2">[docs]</a>    <span class="k">def</span> <span class="nf">angular_diameter_distance_z1z2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Angular diameter distance between objects at 2 redshifts.</span>
 <span class="sd">        Useful for gravitational lensing.</span>
@@ -1431,8 +1431,8 @@
 
         <span class="n">z1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
         <span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comoving_transverse_distance_z1z2</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z2</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comoving_transverse_distance_z1z2</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z2</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.absorption_distance"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.absorption_distance">[docs]</a>    <span class="k">def</span> <span class="nf">absorption_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Absorption distance at redshift ``z``.</span>
 
@@ -1458,8 +1458,8 @@
 
         <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
         <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">red</span><span class="p">:</span> <span class="n">quad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_abs_distance_integrand_scalar</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">red</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">vectorize_if_needed</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">vectorize_if_needed</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.distmod"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.distmod">[docs]</a>    <span class="k">def</span> <span class="nf">distmod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Distance modulus at redshift ``z``.</span>
 
@@ -1486,8 +1486,8 @@
         <span class="c">#  the distance modulus can be negative -- which is okay because</span>
         <span class="c">#  it enters as the square.</span>
         <span class="n">val</span> <span class="o">=</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">luminosity_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">))</span> <span class="o">+</span> <span class="mf">25.0</span>
-        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.comoving_volume"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.comoving_volume">[docs]</a>    <span class="k">def</span> <span class="nf">comoving_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Comoving volume in cubic Mpc at redshift ``z``.</span>
 
@@ -1520,8 +1520,8 @@
         <span class="k">if</span> <span class="n">Ok0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">term1</span> <span class="o">*</span> <span class="p">(</span><span class="n">term2</span> <span class="o">-</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ok0</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsinh</span><span class="p">(</span><span class="n">term3</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">term1</span> <span class="o">*</span> <span class="p">(</span><span class="n">term2</span> <span class="o">-</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ok0</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">term3</span><span class="p">))</span></div>
-
+            <span class="k">return</span> <span class="n">term1</span> <span class="o">*</span> <span class="p">(</span><span class="n">term2</span> <span class="o">-</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ok0</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">term3</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="FLRW.differential_comoving_volume"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.differential_comoving_volume">[docs]</a>    <span class="k">def</span> <span class="nf">differential_comoving_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Differential comoving volume at redshift z.</span>
 
@@ -1546,8 +1546,8 @@
         <span class="n">da</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
         <span class="k">return</span> <span class="n">dh</span> <span class="o">*</span> <span class="p">((</span><span class="n">zp1</span> <span class="o">*</span> <span class="n">da</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efunc</span><span class="p">(</span><span class="n">z</span><span class="p">),</span>
-                                                          <span class="n">u</span><span class="o">.</span><span class="n">steradian</span><span class="p">)</span></div>
-
+                                                          <span class="n">u</span><span class="o">.</span><span class="n">steradian</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.kpc_comoving_per_arcmin"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.kpc_comoving_per_arcmin">[docs]</a>    <span class="k">def</span> <span class="nf">kpc_comoving_per_arcmin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Separation in transverse comoving kpc corresponding to an</span>
 <span class="sd">        arcminute at redshift ``z``.</span>
@@ -1564,8 +1564,8 @@
 <span class="sd">          input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comoving_transverse_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">)</span> <span class="o">*</span>
-                <span class="n">arcmin_in_radians</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span></div>
-
+                <span class="n">arcmin_in_radians</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.kpc_proper_per_arcmin"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.kpc_proper_per_arcmin">[docs]</a>    <span class="k">def</span> <span class="nf">kpc_proper_per_arcmin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Separation in transverse proper kpc corresponding to an</span>
 <span class="sd">        arcminute at redshift ``z``.</span>
@@ -1582,8 +1582,8 @@
 <span class="sd">          input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">)</span> <span class="o">*</span>
-                <span class="n">arcmin_in_radians</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span></div>
-
+                <span class="n">arcmin_in_radians</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.arcsec_per_kpc_comoving"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.arcsec_per_kpc_comoving">[docs]</a>    <span class="k">def</span> <span class="nf">arcsec_per_kpc_comoving</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Angular separation in arcsec corresponding to a comoving kpc</span>
 <span class="sd">        at redshift ``z``.</span>
@@ -1600,8 +1600,8 @@
 <span class="sd">          at each input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comoving_transverse_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">)</span> <span class="o">*</span>
-                           <span class="n">arcsec_in_radians</span><span class="p">)</span></div>
-
+                           <span class="n">arcsec_in_radians</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FLRW.arcsec_per_kpc_proper"><a class="viewcode-back" href="../../../api/astropy.cosmology.FLRW.html#astropy.cosmology.FLRW.arcsec_per_kpc_proper">[docs]</a>    <span class="k">def</span> <span class="nf">arcsec_per_kpc_proper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Angular separation in arcsec corresponding to a proper kpc at</span>
 <span class="sd">        redshift ``z``.</span>
@@ -1618,9 +1618,9 @@
 <span class="sd">          at each input redshift.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">)</span> <span class="o">*</span>
-                           <span class="n">arcsec_in_radians</span><span class="p">)</span></div></div>
+                           <span class="n">arcsec_in_radians</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="LambdaCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM">[docs]</a><span class="k">class</span> <span class="nc">LambdaCDM</span><span class="p">(</span><span class="n">FLRW</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a cosmological constant and curvature.</span>
 
@@ -1722,8 +1722,8 @@
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span></div>
-
+            <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="LambdaCDM.de_density_scale"><a class="viewcode-back" href="../../../api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM.de_density_scale">[docs]</a>    <span class="k">def</span> <span class="nf">de_density_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Evaluates the redshift dependence of the dark energy density.</span>
 
@@ -1746,8 +1746,8 @@
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="k">return</span> <span class="mf">1.</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span></div>
-
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="LambdaCDM.efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM.efunc">[docs]</a>    <span class="k">def</span> <span class="nf">efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Function used to calculate H(z), the Hubble parameter.</span>
 
@@ -1778,8 +1778,8 @@
             <span class="n">Or</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ogamma0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Onu0</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="LambdaCDM.inv_efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM.inv_efunc">[docs]</a>    <span class="k">def</span> <span class="nf">inv_efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot; Function used to calculate :math:`\frac{1}{H_z}`.</span>
 
@@ -1808,9 +1808,9 @@
             <span class="n">Or</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ogamma0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Onu0</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
-        <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="FlatLambdaCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.FlatLambdaCDM.html#astropy.cosmology.FlatLambdaCDM">[docs]</a><span class="k">class</span> <span class="nc">FlatLambdaCDM</span><span class="p">(</span><span class="n">LambdaCDM</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a cosmological constant and no curvature.</span>
 
@@ -1915,8 +1915,8 @@
             <span class="n">Or</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ogamma0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Onu0</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FlatLambdaCDM.inv_efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.FlatLambdaCDM.html#astropy.cosmology.FlatLambdaCDM.inv_efunc">[docs]</a>    <span class="k">def</span> <span class="nf">inv_efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;Function used to calculate :math:`\frac{1}{H_z}`.</span>
 
@@ -1943,16 +1943,16 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">Or</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ogamma0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Onu0</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ode0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">retstr</span> <span class="o">=</span> <span class="s">&quot;{0}H0={1:.3g}, Om0={2:.3g}, Tcmb0={3:.4g}, &quot;</span>\
                  <span class="s">&quot;Neff={4:.3g}, m_nu={5}, Ob0={6:s})&quot;</span>
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span>
-                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
+                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="wCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.wCDM.html#astropy.cosmology.wCDM">[docs]</a><span class="k">class</span> <span class="nc">wCDM</span><span class="p">(</span><span class="n">FLRW</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a constant dark energy equation of state</span>
 <span class="sd">    and curvature.</span>
@@ -2068,8 +2068,8 @@
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span></div>
-
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="wCDM.de_density_scale"><a class="viewcode-back" href="../../../api/astropy.cosmology.wCDM.html#astropy.cosmology.wCDM.de_density_scale">[docs]</a>    <span class="k">def</span> <span class="nf">de_density_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Evaluates the redshift dependence of the dark energy density.</span>
 
@@ -2092,8 +2092,8 @@
 
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">))</span></div>
-
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="wCDM.efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.wCDM.html#astropy.cosmology.wCDM.efunc">[docs]</a>    <span class="k">def</span> <span class="nf">efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Function used to calculate H(z), the Hubble parameter.</span>
 
@@ -2122,8 +2122,8 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span>
-                       <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span></div>
-
+                       <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span>
+</div>
 <div class="viewcode-block" id="wCDM.inv_efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.wCDM.html#astropy.cosmology.wCDM.inv_efunc">[docs]</a>    <span class="k">def</span> <span class="nf">inv_efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot; Function used to calculate :math:`\frac{1}{H_z}`.</span>
 
@@ -2152,16 +2152,16 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
 
         <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Ok0</span><span class="p">)</span> <span class="o">+</span>
-                <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span></div>
-
+                <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">retstr</span> <span class="o">=</span> <span class="s">&quot;{0}H0={1:.3g}, Om0={2:.3g}, Ode0={3:.3g}, w0={4:.3g}, &quot;</span>\
                  <span class="s">&quot;Tcmb0={5:.4g}, Neff={6:.3g}, m_nu={7}, Ob0={8:s})&quot;</span>
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span>
-                             <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span> <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span> <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="FlatwCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.FlatwCDM.html#astropy.cosmology.FlatwCDM">[docs]</a><span class="k">class</span> <span class="nc">FlatwCDM</span><span class="p">(</span><span class="n">wCDM</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a constant dark energy equation of state</span>
 <span class="sd">    and no spatial curvature.</span>
@@ -2273,8 +2273,8 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span>
 
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">+</span>
-                       <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span></div>
-
+                       <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span>
+</div>
 <div class="viewcode-block" id="FlatwCDM.inv_efunc"><a class="viewcode-back" href="../../../api/astropy.cosmology.FlatwCDM.html#astropy.cosmology.FlatwCDM.inv_efunc">[docs]</a>    <span class="k">def</span> <span class="nf">inv_efunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot; Function used to calculate :math:`\frac{1}{H_z}`.</span>
 
@@ -2303,15 +2303,15 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span>
 
         <span class="k">return</span> <span class="p">(</span><span class="n">zp1</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Or</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">+</span> <span class="n">Om0</span><span class="p">)</span> <span class="o">+</span>
-                <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span></div>
-
+                <span class="n">Ode0</span> <span class="o">*</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">w0</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">retstr</span> <span class="o">=</span> <span class="s">&quot;{0}H0={1:.3g}, Om0={2:.3g}, w0={3:.3g}, Tcmb0={4:.4g}, &quot;</span>\
                  <span class="s">&quot;Neff={5:.3g}, m_nu={6}, Ob0={7:s})&quot;</span>
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span>
-                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
-
+                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="w0waCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.w0waCDM.html#astropy.cosmology.w0waCDM">[docs]</a><span class="k">class</span> <span class="nc">w0waCDM</span><span class="p">(</span><span class="n">FLRW</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a CPL dark energy equation of state and curvature.</span>
 
@@ -2438,8 +2438,8 @@
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="w0waCDM.de_density_scale"><a class="viewcode-back" href="../../../api/astropy.cosmology.w0waCDM.html#astropy.cosmology.w0waCDM.de_density_scale">[docs]</a>    <span class="k">def</span> <span class="nf">de_density_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Evaluates the redshift dependence of the dark energy density.</span>
 
@@ -2468,8 +2468,8 @@
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">z</span>
         <span class="k">return</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span><span class="p">))</span> <span class="o">*</span> \
-            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="n">zp1</span><span class="p">)</span></div>
-
+            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="n">zp1</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">retstr</span> <span class="o">=</span> <span class="s">&quot;{0}H0={1:.3g}, Om0={2:.3g}, &quot;</span>\
                  <span class="s">&quot;Ode0={3:.3g}, w0={4:.3g}, wa={5:.3g}, Tcmb0={6:.4g}, &quot;</span>\
@@ -2477,9 +2477,9 @@
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span>
-                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
+                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="Flatw0waCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.Flatw0waCDM.html#astropy.cosmology.Flatw0waCDM">[docs]</a><span class="k">class</span> <span class="nc">Flatw0waCDM</span><span class="p">(</span><span class="n">w0waCDM</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a CPL dark energy equation of state and no</span>
 <span class="sd">    curvature.</span>
@@ -2576,9 +2576,9 @@
                  <span class="s">&quot;Ob0={7:s})&quot;</span>
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span>
-                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
+                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="wpwaCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.wpwaCDM.html#astropy.cosmology.wpwaCDM">[docs]</a><span class="k">class</span> <span class="nc">wpwaCDM</span><span class="p">(</span><span class="n">FLRW</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a CPL dark energy equation of state, a pivot</span>
 <span class="sd">    redshift, and curvature.</span>
@@ -2722,8 +2722,8 @@
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
         <span class="n">apiv</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zp</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wp</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="p">(</span><span class="n">apiv</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">))</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wp</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="p">(</span><span class="n">apiv</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="wpwaCDM.de_density_scale"><a class="viewcode-back" href="../../../api/astropy.cosmology.wpwaCDM.html#astropy.cosmology.wpwaCDM.de_density_scale">[docs]</a>    <span class="k">def</span> <span class="nf">de_density_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Evaluates the redshift dependence of the dark energy density.</span>
 
@@ -2755,8 +2755,8 @@
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span>
         <span class="n">apiv</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zp</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wp</span> <span class="o">+</span> <span class="n">apiv</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span><span class="p">))</span> <span class="o">*</span> \
-            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="n">zp1</span><span class="p">)</span></div>
-
+            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span> <span class="o">*</span> <span class="n">z</span> <span class="o">/</span> <span class="n">zp1</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">retstr</span> <span class="o">=</span> <span class="s">&quot;{0}H0={1:.3g}, Om0={2:.3g}, Ode0={3:.3g}, wp={4:.3g}, &quot;</span>\
                  <span class="s">&quot;wa={5:.3g}, zp={6:.3g}, Tcmb0={7:.4g}, Neff={8:.3g}, &quot;</span>\
@@ -2764,9 +2764,9 @@
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zp</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span>
-                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
+                             <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="w0wzCDM"><a class="viewcode-back" href="../../../api/astropy.cosmology.w0wzCDM.html#astropy.cosmology.w0wzCDM">[docs]</a><span class="k">class</span> <span class="nc">w0wzCDM</span><span class="p">(</span><span class="n">FLRW</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;FLRW cosmology with a variable dark energy equation of state</span>
 <span class="sd">    and curvature.</span>
@@ -2896,8 +2896,8 @@
         <span class="k">if</span> <span class="n">isiterable</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wz</span> <span class="o">*</span> <span class="n">z</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wz</span> <span class="o">*</span> <span class="n">z</span>
+</div>
 <div class="viewcode-block" id="w0wzCDM.de_density_scale"><a class="viewcode-back" href="../../../api/astropy.cosmology.w0wzCDM.html#astropy.cosmology.w0wzCDM.de_density_scale">[docs]</a>    <span class="k">def</span> <span class="nf">de_density_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Evaluates the redshift dependence of the dark energy density.</span>
 
@@ -2926,17 +2926,17 @@
             <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
         <span class="n">zp1</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">z</span>
         <span class="k">return</span> <span class="n">zp1</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wz</span><span class="p">))</span> <span class="o">*</span>\
-            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wz</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span></div>
-
+            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wz</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">retstr</span> <span class="o">=</span> <span class="s">&quot;{0}H0={1:.3g}, Om0={2:.3g}, &quot;</span>\
                  <span class="s">&quot;Ode0={3:.3g}, w0={4:.3g}, wz={5:.3g} Tcmb0={6:.4g}, &quot;</span>\
                  <span class="s">&quot;Neff={7:.3g}, m_nu={8}, Ob0={9:s})&quot;</span>
         <span class="k">return</span> <span class="n">retstr</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namelead</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Om0</span><span class="p">,</span>
                              <span class="bp">self</span><span class="o">.</span><span class="n">_Ode0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wz</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Tcmb0</span><span class="p">,</span>
-                             <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span> <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span></div>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">_Neff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_nu</span><span class="p">,</span> <span class="n">_float_or_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Ob0</span><span class="p">))</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_float_or_none</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Helper function to format a variable that can be a float or None&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
@@ -3014,8 +3014,8 @@
                 <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Unknown cosmology &#39;</span><span class="si">%s</span><span class="s">&#39;. Valid cosmologies:</span><span class="se">\n</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span>
                     <span class="n">arg</span><span class="p">,</span> <span class="n">parameters</span><span class="o">.</span><span class="n">available</span><span class="p">)</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">cosmo</span></div>
-
+        <span class="k">return</span> <span class="n">cosmo</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="default_cosmology.validate"><a class="viewcode-back" href="../../../api/astropy.cosmology.default_cosmology.html#astropy.cosmology.default_cosmology.validate">[docs]</a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
@@ -3044,8 +3044,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

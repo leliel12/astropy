@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.utils.metadata &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.utils.metadata &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -96,13 +96,13 @@
            <span class="s">&#39;MergeStrategyMeta&#39;</span><span class="p">,</span> <span class="s">&#39;enable_merge_strategies&#39;</span><span class="p">,</span> <span class="s">&#39;merge&#39;</span><span class="p">,</span> <span class="s">&#39;MetaData&#39;</span><span class="p">]</span>
 
 <div class="viewcode-block" id="MergeConflictError"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergeConflictError.html#astropy.utils.metadata.MergeConflictError">[docs]</a><span class="k">class</span> <span class="nc">MergeConflictError</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
-    <span class="k">pass</span></div>
+    <span class="k">pass</span>
 
-
+</div>
 <div class="viewcode-block" id="MergeConflictWarning"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergeConflictWarning.html#astropy.utils.metadata.MergeConflictWarning">[docs]</a><span class="k">class</span> <span class="nc">MergeConflictWarning</span><span class="p">(</span><span class="n">AstropyWarning</span><span class="p">):</span>
-    <span class="k">pass</span></div>
+    <span class="k">pass</span>
 
-
+</div>
 <span class="n">MERGE_STRATEGIES</span> <span class="o">=</span> <span class="p">[]</span>
 
 
@@ -141,8 +141,8 @@
             <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span> <span class="o">*</span> <span class="n">arr</span><span class="o">.</span><span class="n">itemsize</span>
 
     <span class="n">arr_common</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrs</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">arr_common</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">str</span></div>
-
+    <span class="k">return</span> <span class="n">arr_common</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">str</span>
+</div>
 <div class="viewcode-block" id="MergeStrategyMeta"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergeStrategyMeta.html#astropy.utils.metadata.MergeStrategyMeta">[docs]</a><span class="k">class</span> <span class="nc">MergeStrategyMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Metaclass that registers MergeStrategy subclasses into the</span>
@@ -173,9 +173,9 @@
             <span class="k">for</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">types</span><span class="p">):</span>
                 <span class="n">MERGE_STRATEGIES</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">cls</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">cls</span></div>
+        <span class="k">return</span> <span class="n">cls</span>
 
-
+</div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">MergeStrategyMeta</span><span class="p">)</span>
 <div class="viewcode-block" id="MergeStrategy"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergeStrategy.html#astropy.utils.metadata.MergeStrategy">[docs]</a><span class="k">class</span> <span class="nc">MergeStrategy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -230,10 +230,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c"># Set ``enabled = True`` to globally enable applying this merge strategy.</span>
     <span class="c"># This is not generally recommended.</span>
-    <span class="n">enabled</span> <span class="o">=</span> <span class="bp">False</span></div>
+    <span class="n">enabled</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="c"># types = [(left_types, right_types), ...]</span>
-
+</div>
 <div class="viewcode-block" id="MergePlus"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergePlus.html#astropy.utils.metadata.MergePlus">[docs]</a><span class="k">class</span> <span class="nc">MergePlus</span><span class="p">(</span><span class="n">MergeStrategy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Merge ``left`` and ``right`` objects using the plus operator.  This</span>
@@ -244,9 +244,9 @@
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="MergePlus.merge"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergePlus.html#astropy.utils.metadata.MergePlus.merge">[docs]</a>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span></div></div>
+        <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
 
-
+</div></div>
 <div class="viewcode-block" id="MergeNpConcatenate"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergeNpConcatenate.html#astropy.utils.metadata.MergeNpConcatenate">[docs]</a><span class="k">class</span> <span class="nc">MergeNpConcatenate</span><span class="p">(</span><span class="n">MergeStrategy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Merge ``left`` and ``right`` objects using np.concatenate.  This</span>
@@ -264,9 +264,9 @@
 <div class="viewcode-block" id="MergeNpConcatenate.merge"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MergeNpConcatenate.html#astropy.utils.metadata.MergeNpConcatenate.merge">[docs]</a>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
         <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
         <span class="n">common_dtype</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">])</span>  <span class="c"># Ensure left and right have compatible dtype</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">])</span></div></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">])</span>
 
-
+</div></div>
 <span class="k">def</span> <span class="nf">_both_isinstance</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span>
 
@@ -351,9 +351,9 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">return</span> <span class="n">_EnableMergeStrategies</span><span class="p">(</span><span class="o">*</span><span class="n">merge_strategies</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">_EnableMergeStrategies</span><span class="p">(</span><span class="o">*</span><span class="n">merge_strategies</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="merge"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.merge.html#astropy.utils.metadata.merge">[docs]</a><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">merge_func</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">metadata_conflicts</span><span class="o">=</span><span class="s">&#39;warn&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Merge the ``left`` and ``right`` metadata objects.</span>
@@ -421,9 +421,9 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">out</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">out</span></div>
+    <span class="k">return</span> <span class="n">out</span>
 
-
+</div>
 <div class="viewcode-block" id="MetaData"><a class="viewcode-back" href="../../../api/astropy.utils.metadata.MetaData.html#astropy.utils.metadata.MetaData">[docs]</a><span class="k">class</span> <span class="nc">MetaData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A descriptor for classes that have a ``meta`` property.</span>
@@ -462,8 +462,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

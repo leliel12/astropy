@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.votable.exceptions &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.votable.exceptions &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="astropy.io.votable" href="../votable.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" >Module code</a> &raquo;</li>
@@ -164,18 +164,18 @@
             <span class="n">exception_class</span> <span class="o">=</span> <span class="n">warning_class</span>
         <span class="n">vo_raise</span><span class="p">(</span><span class="n">exception_class</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">vo_warn</span><span class="p">(</span><span class="n">warning_class</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span></div>
+        <span class="n">vo_warn</span><span class="p">(</span><span class="n">warning_class</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="vo_raise"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.vo_raise">[docs]</a><span class="k">def</span> <span class="nf">vo_raise</span><span class="p">(</span><span class="n">exception_class</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Raise an exception, with proper position information if available.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">config</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">raise</span> <span class="n">exception_class</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span></div>
+    <span class="k">raise</span> <span class="n">exception_class</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="vo_reraise"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.vo_reraise">[docs]</a><span class="k">def</span> <span class="nf">vo_reraise</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">additional</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Raise an exception, with proper position information if available.</span>
@@ -191,9 +191,9 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">additional</span><span class="p">):</span>
         <span class="n">message</span> <span class="o">+=</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">additional</span>
     <span class="n">exc</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">message</span><span class="p">,)</span>
-    <span class="k">raise</span> <span class="n">exc</span></div>
+    <span class="k">raise</span> <span class="n">exc</span>
 
-
+</div>
 <div class="viewcode-block" id="vo_warn"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.vo_warn">[docs]</a><span class="k">def</span> <span class="nf">vo_warn</span><span class="p">(</span><span class="n">warning_class</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Warn, with proper position information if available.</span>
@@ -201,9 +201,9 @@
     <span class="k">if</span> <span class="n">config</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">warning</span> <span class="o">=</span> <span class="n">warning_class</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
-    <span class="n">_suppressed_warning</span><span class="p">(</span><span class="n">warning</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span></div>
+    <span class="n">_suppressed_warning</span><span class="p">(</span><span class="n">warning</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">warn_unknown_attrs</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">good_attr</span><span class="o">=</span><span class="p">[],</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">attr</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">good_attr</span><span class="p">:</span>
@@ -255,9 +255,9 @@
             <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
         <span class="n">result</span><span class="p">[</span><span class="s">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span>
 
-    <span class="k">return</span> <span class="n">result</span></div>
+    <span class="k">return</span> <span class="n">result</span>
 
-
+</div>
 <div class="viewcode-block" id="VOWarning"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.VOWarning">[docs]</a><span class="k">class</span> <span class="nc">VOWarning</span><span class="p">(</span><span class="n">AstropyWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The base class of all VO warnings and exceptions.</span>
@@ -283,39 +283,39 @@
     <span class="k">def</span> <span class="nf">get_short_name</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">default_args</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">message_template</span> <span class="o">%</span> <span class="n">cls</span><span class="o">.</span><span class="n">default_args</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">message_template</span></div>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">message_template</span>
 
-
+</div>
 <div class="viewcode-block" id="VOTableChangeWarning"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.VOTableChangeWarning">[docs]</a><span class="k">class</span> <span class="nc">VOTableChangeWarning</span><span class="p">(</span><span class="n">VOWarning</span><span class="p">,</span> <span class="ne">SyntaxWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A change has been made to the input XML file.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="VOTableSpecWarning"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.VOTableSpecWarning">[docs]</a><span class="k">class</span> <span class="nc">VOTableSpecWarning</span><span class="p">(</span><span class="n">VOWarning</span><span class="p">,</span> <span class="ne">SyntaxWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The input XML file violates the spec, but there is an obvious workaround.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="UnimplementedWarning"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.UnimplementedWarning">[docs]</a><span class="k">class</span> <span class="nc">UnimplementedWarning</span><span class="p">(</span><span class="n">VOWarning</span><span class="p">,</span> <span class="ne">SyntaxWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A feature of the VOTABLE_ spec is not implemented.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="IOWarning"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.IOWarning">[docs]</a><span class="k">class</span> <span class="nc">IOWarning</span><span class="p">(</span><span class="n">VOWarning</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A network or IO error occurred, but was recovered using the cache.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="VOTableSpecError"><a class="viewcode-back" href="../../../../io/votable/api_exceptions.html#astropy.io.votable.exceptions.VOTableSpecError">[docs]</a><span class="k">class</span> <span class="nc">VOTableSpecError</span><span class="p">(</span><span class="n">VOWarning</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The input XML file violates the spec and there is no good workaround.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">W01</span><span class="p">(</span><span class="n">VOTableSpecWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The VOTable spec states:</span>
@@ -1544,8 +1544,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

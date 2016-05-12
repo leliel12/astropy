@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.table.sorted_array &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.table.sorted_array &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="astropy.table" href="../table.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" >Module code</a> &raquo;</li>
@@ -143,8 +143,8 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Cannot add duplicate value &quot;{0}&quot; in a &#39;</span>
                              <span class="s">&#39;unique index&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">insert_row</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_get_key_slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Retrieve the ith slice of the sorted array</span>
@@ -195,9 +195,9 @@
             <span class="k">if</span> <span class="n">begin</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">):</span> <span class="c"># greater than all keys</span>
                 <span class="k">return</span> <span class="n">begin</span>
 
-        <span class="k">return</span> <span class="n">begin</span></div>
+        <span class="k">return</span> <span class="n">begin</span>
 
-
+</div>
 <div class="viewcode-block" id="SortedArray.find"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Find all rows matching the given key.</span>
@@ -231,8 +231,8 @@
             <span class="k">if</span> <span class="n">begin</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">):</span> <span class="c"># greater than all keys</span>
                 <span class="k">return</span> <span class="p">[]</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">begin</span><span class="p">:</span><span class="n">end</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">begin</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="SortedArray.range"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Find values in the given range.</span>
@@ -266,8 +266,8 @@
                 <span class="n">upper_pos</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c"># data[upper_pos] &lt; upper</span>
             <span class="k">elif</span> <span class="n">upper_bound</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="p">:</span>
                 <span class="n">upper_pos</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c"># data[upper_pos] &lt;= upper</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">lower_pos</span><span class="p">:</span><span class="n">upper_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">lower_pos</span><span class="p">:</span><span class="n">upper_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="SortedArray.remove"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Remove the given entry from the sorted array.</span>
@@ -292,8 +292,8 @@
         <span class="n">keep_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
         <span class="n">keep_mask</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">keep_mask</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">True</span></div>
-
+        <span class="k">return</span> <span class="bp">True</span>
+</div>
 <div class="viewcode-block" id="SortedArray.shift_left"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.shift_left">[docs]</a>    <span class="k">def</span> <span class="nf">shift_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Decrement all row numbers greater than the input row.</span>
@@ -303,8 +303,8 @@
 <span class="sd">        row : int</span>
 <span class="sd">            Input row number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">&gt;</span> <span class="n">row</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">&gt;</span> <span class="n">row</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</div>
 <div class="viewcode-block" id="SortedArray.shift_right"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.shift_right">[docs]</a>    <span class="k">def</span> <span class="nf">shift_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Increment all row numbers greater than or equal to the input row.</span>
@@ -314,8 +314,8 @@
 <span class="sd">        row : int</span>
 <span class="sd">            Input row number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">&gt;=</span> <span class="n">row</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">&gt;=</span> <span class="n">row</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</div>
 <div class="viewcode-block" id="SortedArray.replace_rows"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.replace_rows">[docs]</a>    <span class="k">def</span> <span class="nf">replace_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row_map</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Replace all rows with the values they map to in the</span>
@@ -339,8 +339,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">keep_rows</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-            <span class="p">[</span><span class="n">row_map</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">keep_rows</span><span class="p">]])</span></div>
-
+            <span class="p">[</span><span class="n">row_map</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">[</span><span class="n">keep_rows</span><span class="p">]])</span>
+</div>
 <div class="viewcode-block" id="SortedArray.items"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Retrieve all array items as a list of pairs of the form</span>
@@ -355,20 +355,20 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">last_key</span> <span class="o">=</span> <span class="n">key</span>
                 <span class="n">array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="p">[</span><span class="n">row</span><span class="p">]))</span>
-        <span class="k">return</span> <span class="n">array</span></div>
-
+        <span class="k">return</span> <span class="n">array</span>
+</div>
 <div class="viewcode-block" id="SortedArray.sort"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Make row order align with key order.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">))</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row_index</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="SortedArray.sorted_data"><a class="viewcode-back" href="../../../api/astropy.table.SortedArray.html#astropy.table.SortedArray.sorted_data">[docs]</a>    <span class="k">def</span> <span class="nf">sorted_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Return rows in sorted order.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_index</span>
+</div>
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Return a sliced reference to this sorted array.</span>
@@ -405,8 +405,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

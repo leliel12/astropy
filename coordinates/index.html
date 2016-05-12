@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Astronomical Coordinate Systems (astropy.coordinates) &mdash; Astropy v1.2.dev14980</title>
+    <title>Astronomical Coordinate Systems (astropy.coordinates) &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="next" title="Working with Angles" href="angles.html" />
     <link rel="prev" title="TimezoneInfo" href="../api/astropy.time.TimezoneInfo.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -97,8 +97,8 @@ class. <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.h
 approach that supports inputs provided in a number of convenient
 formats.  The following ways of initializing a coordinate are all
 equivalent:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">SkyCoord</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.625</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.2</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mf">10.625</span><span class="p">,</span> <span class="mf">41.2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span>
@@ -127,7 +127,7 @@ to apply the same operation to many different coordinates (say, from a
 catalog), this is a better choice than a list of <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> objects,
 because it will be <em>much</em> faster than applying the operation to each
 <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> in a for loop.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
 <span class="go">&lt;SkyCoord (ICRS): (ra, dec) in deg</span>
 <span class="go">    [(10.0, 41.0), (11.0, -5.0)]&gt;</span>
@@ -142,7 +142,7 @@ because it will be <em>much</em> faster than applying the operation to each
 coordinate (e.g. RA, Dec) and get a specific string representation of the full
 coordinate.</p>
 <p>The component values are accessed using aptly named attributes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">ra</span>  
 <span class="go">&lt;Longitude 10.68458 deg&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hour</span>  
@@ -159,7 +159,7 @@ coordinate.</p>
 </div>
 <p>Coordinates can easily be converted to strings using the
 <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord.to_string" title="astropy.coordinates.SkyCoord.to_string"><code class="xref py py-meth docutils literal"><span class="pre">to_string()</span></code></a> method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;decimal&#39;</span><span class="p">)</span>
 <span class="go">&#39;10.6846 41.2692&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;dms&#39;</span><span class="p">)</span>
@@ -168,14 +168,14 @@ coordinate.</p>
 <span class="go">&#39;00h42m44.2992s +41d16m09.012s&#39;</span>
 </pre></div>
 </div>
-<p>For additional information see the section on <a class="reference internal" href="angles.html#working-with-angles"><span class="std std-ref">Working with Angles</span></a>.</p>
+<p>For additional information see the section on <a class="reference internal" href="angles.html#working-with-angles"><span>Working with Angles</span></a>.</p>
 </div>
 <div class="section" id="transformation">
 <h3>Transformation<a class="headerlink" href="#transformation" title="Permalink to this headline">¶</a></h3>
 <p>The simplest way to transform to a new coordinate frame is by accessing
 the appropriately-named attribute.  For instance to get the coordinate in
 the Galactic frame use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c_icrs</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c_icrs</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c_icrs</span><span class="o">.</span><span class="n">galactic</span>  
 <span class="go">&lt;SkyCoord (Galactic): (l, b) in deg</span>
 <span class="go">    (121.174241811, -21.5728855724)&gt;</span>
@@ -183,12 +183,12 @@ the Galactic frame use:</p>
 </div>
 <p>For more control, you can use the <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord.transform_to" title="astropy.coordinates.SkyCoord.transform_to"><code class="xref py py-obj docutils literal"><span class="pre">transform_to</span></code></a>
 method, which accepts a frame name, frame class, or frame instance:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c_fk5</span> <span class="o">=</span> <span class="n">c_icrs</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="s">&#39;fk5&#39;</span><span class="p">)</span>  <span class="c"># c_icrs.fk5 does the same thing</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c_fk5</span> <span class="o">=</span> <span class="n">c_icrs</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="s">&#39;fk5&#39;</span><span class="p">)</span>  <span class="c"># c_icrs.fk5 does the same thing</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c_fk5</span>  
 <span class="go">&lt;SkyCoord (FK5: equinox=J2000.000): (ra, dec) in deg</span>
 <span class="go">    (10.6845915393, 41.2691714591)&gt;</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">FK5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">FK5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c_fk5</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">FK5</span><span class="p">(</span><span class="n">equinox</span><span class="o">=</span><span class="s">&#39;J1975&#39;</span><span class="p">))</span>  <span class="c"># precess to a different equinox  </span>
 <span class="go">&lt;SkyCoord (FK5: equinox=J1975.000): (ra, dec) in deg</span>
 <span class="go">    (10.3420913461, 41.1323211229)&gt;</span>
@@ -198,7 +198,7 @@ method, which accepts a frame name, frame class, or frame instance:</p>
 straightforward to convert from celestial coordinates to
 <a class="reference internal" href="../api/astropy.coordinates.AltAz.html#astropy.coordinates.AltAz" title="astropy.coordinates.AltAz"><code class="xref py py-obj docutils literal"><span class="pre">AltAz</span></code></a> coordinates, allowing the use of <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>
 as a tool for planning observations.  For a more complete example of
-this, see <a class="reference internal" href="observing-example.html"><span class="doc">Example: Observation Planning</span></a>.</p>
+this, see <a class="reference internal" href="observing-example.html"><em>Example: Observation Planning</em></a>.</p>
 </div>
 <div class="section" id="representation">
 <h3>Representation<a class="headerlink" href="#representation" title="Permalink to this headline">¶</a></h3>
@@ -208,7 +208,7 @@ convenient to initialize or work with a coordinate using a different
 representation such as cartesian or cylindrical.  This can be done by setting
 the <code class="docutils literal"><span class="pre">representation</span></code> for either <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> objects or low-level frame
 coordinate objects:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;kpc&#39;</span><span class="p">,</span> <span class="n">representation</span><span class="o">=</span><span class="s">&#39;cartesian&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;kpc&#39;</span><span class="p">,</span> <span class="n">representation</span><span class="o">=</span><span class="s">&#39;cartesian&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
 <span class="go">&lt;SkyCoord (ICRS): (x, y, z) in kpc</span>
 <span class="go">    (1.0, 2.0, 3.0)&gt;</span>
@@ -221,7 +221,7 @@ coordinate objects:</p>
 <span class="go">    (2.2360679775, 63.4349488229, 3.0)&gt;</span>
 </pre></div>
 </div>
-<p>For all the details see <a class="reference internal" href="skycoord.html#astropy-skycoord-representations"><span class="std std-ref">Representations</span></a>.</p>
+<p>For all the details see <a class="reference internal" href="skycoord.html#astropy-skycoord-representations"><span>Representations</span></a>.</p>
 </div>
 <div class="section" id="distance">
 <h3>Distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h3>
@@ -229,7 +229,7 @@ coordinate objects:</p>
 center) can also be assigned to a <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>. With two angles and a
 distance, a unique point in 3D space is available, which also allows
 conversion to the Cartesian representation of this location:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">Distance</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Distance</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">10.68458</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mf">41.26917</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">770</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartesian</span><span class="o">.</span><span class="n">x</span>  
 <span class="go">&lt;Quantity 568.7128654235232 kpc&gt;</span>
@@ -241,7 +241,7 @@ conversion to the Cartesian representation of this location:</p>
 </div>
 <p>With distances assigned, <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> convenience methods are more powerful, as
 they can make use of the 3D information. For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">9</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">9</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">11</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">11.5</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">.</span><span class="n">separation_3d</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>  
 <span class="go">&lt;Distance 1.5228602415117989 pc&gt;</span>
@@ -252,8 +252,8 @@ they can make use of the 3D information. For example:</p>
 <h3>Convenience methods<a class="headerlink" href="#convenience-methods" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> defines a number of convenience methods as well, like on-sky
 separation between two coordinates and catalog matching (detailed in
-<a class="reference internal" href="matchsep.html#astropy-coordinates-matching"><span class="std std-ref">Matching Catalogs</span></a>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">9</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
+<a class="reference internal" href="matchsep.html#astropy-coordinates-matching"><span>Matching Catalogs</span></a>):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">9</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">11</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;fk5&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">.</span><span class="n">separation</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>  <span class="c"># Differing frames handled correctly  </span>
 <span class="go">&lt;Angle 1.4045335865905868 deg&gt;</span>
@@ -264,14 +264,14 @@ coordinates for named objects assuming you have an active internet
 connection. The <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord.from_name" title="astropy.coordinates.SkyCoord.from_name"><code class="xref py py-obj docutils literal"><span class="pre">from_name</span></code></a> method of <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>
 uses <a class="reference external" href="http://cds.u-strasbg.fr/cgi-bin/Sesame">Sesame</a> to retrieve coordinates
 for a particular named object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s">&quot;M42&quot;</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s">&quot;M42&quot;</span><span class="p">)</span>  
 <span class="go">&lt;SkyCoord (ICRS): (ra, dec) in deg</span>
 <span class="go">    (83.82208, -5.39111)&gt;</span>
 </pre></div>
 </div>
 <p>For sites (primarily observatories) on the Earth, <a class="reference internal" href="#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">astropy.coordinates</span></code></a> provides
 a similar quick way to get an <a class="reference internal" href="../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation" title="astropy.coordinates.EarthLocation"><code class="xref py py-obj docutils literal"><span class="pre">EarthLocation</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">EarthLocation</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">EarthLocation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">EarthLocation</span><span class="o">.</span><span class="n">of_site</span><span class="p">(</span><span class="s">&#39;Apache Point Observatory&#39;</span><span class="p">)</span>  
 <span class="go">&lt;EarthLocation (-1463969.3018517173, -5166673.342234327, 3434985.7120456537) m&gt;</span>
 </pre></div>
@@ -290,7 +290,7 @@ manually, or use more specialized functionality like that in the
 <p class="last">Also note that these two methods retrieve data from the internet to
 determine the celestial or Earth coordinates. The online data may be
 updated, so if you need to guarantee that your scripts are reproducible
-in the long term, see the <a class="reference internal" href="remote_methods.html"><span class="doc">Usage tips/suggestions for methods that access remote resources</span></a> section.</p>
+in the long term, see the <a class="reference internal" href="remote_methods.html"><em>Usage tips/suggestions for methods that access remote resources</em></a> section.</p>
 </div>
 </div>
 </div>
@@ -308,7 +308,7 @@ This background information is not necessary for simply using
 level class, but it is helpful for more advanced usage, particularly
 creating your own frame, transformations, or representations. Another
 useful piece of background information are some
-<a class="reference internal" href="definitions.html#astropy-coordinates-definitions"><span class="std std-ref">Important Definitions</span></a> as they are used in
+<a class="reference internal" href="definitions.html#astropy-coordinates-definitions"><span>Important Definitions</span></a> as they are used in
 <a class="reference internal" href="#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">coordinates</span></code></a>.</p>
 <p><a class="reference internal" href="#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">coordinates</span></code></a> is built on a three-tiered system of objects:
 representations, frames, and a high-level class.  Representations
@@ -354,7 +354,7 @@ the major capabilities of the package, and hence is a useful supplement to
 this document.  You can see it by either looking at it directly if you
 downloaded a copy of the astropy source code, or typing the following in an
 IPython session:</p>
-<div class="highlight-default"><div class="highlight"><pre>In [1]: from astropy.coordinates.tests import test_api_ape5
+<div class="highlight-python"><div class="highlight"><pre>In [1]: from astropy.coordinates.tests import test_api_ape5
 In [2]: test_api_ape5??
 </pre></div>
 </div>
@@ -414,53 +414,54 @@ number next to the arrow.  These priorities are used to decide the
 preferred order when two transformation paths have the same number
 of steps.  These priorities are defined such that the path with a
 <em>smaller</em> total priority is favored.</p>
-<object data="../_images/graphviz-55f861b4d540dd9ef38fe69c54a07b4cdb485887.svg" type="image/svg+xml">
-            <p class="warning">digraph AstropyCoordinateTransformGraph {
-Supergalactic [shape=oval label=&quot;Supergalactic\n`supergalactic`&quot;]; Galactic [shape=oval label=&quot;Galactic\n`galactic`&quot;]; HeliocentricTrueEcliptic [shape=oval label=&quot;HeliocentricTrueEcliptic\n`heliocentrictrueecliptic`&quot;]; ICRS [shape=oval label=&quot;ICRS\n`icrs`&quot;]; ITRS [shape=oval label=&quot;ITRS\n`itrs`&quot;]; CIRS [shape=oval label=&quot;CIRS\n`cirs`&quot;]; BarycentricTrueEcliptic [shape=oval label=&quot;BarycentricTrueEcliptic\n`barycentrictrueecliptic`&quot;]; GeocentricTrueEcliptic [shape=oval label=&quot;GeocentricTrueEcliptic\n`geocentrictrueecliptic`&quot;]; GCRS [shape=oval label=&quot;GCRS\n`gcrs`&quot;]; AltAz [shape=oval label=&quot;AltAz\n`altaz`&quot;]; PrecessedGeocentric [shape=oval label=&quot;PrecessedGeocentric\n`precessedgeocentric`&quot;]; HCRS [shape=oval label=&quot;HCRS\n`hcrs`&quot;]; Galactocentric [shape=oval label=&quot;Galactocentric\n`galactocentric`&quot;]; FK5 [shape=oval label=&quot;FK5\n`fk5`&quot;]; FK4NoETerms [shape=oval label=&quot;FK4NoETerms\n`fk4noeterms`&quot;]; FK4 [shape=oval label=&quot;FK4\n`fk4`&quot;];
-Supergalactic -&gt; Galactic[ label = &quot;1.0&quot; ];
-HeliocentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
-ITRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-ITRS -&gt; ITRS[ label = &quot;1.0&quot; ];
+<p class="graphviz">
+<img src="../_images/graphviz-b8a47ffef5c82c343a9b9ab94efbb1394a1fe856.svg" alt="digraph AstropyCoordinateTransformGraph {
+BarycentricTrueEcliptic [shape=oval label=&quot;BarycentricTrueEcliptic\n`barycentrictrueecliptic`&quot;]; ICRS [shape=oval label=&quot;ICRS\n`icrs`&quot;]; GCRS [shape=oval label=&quot;GCRS\n`gcrs`&quot;]; HCRS [shape=oval label=&quot;HCRS\n`hcrs`&quot;]; GeocentricTrueEcliptic [shape=oval label=&quot;GeocentricTrueEcliptic\n`geocentrictrueecliptic`&quot;]; CIRS [shape=oval label=&quot;CIRS\n`cirs`&quot;]; PrecessedGeocentric [shape=oval label=&quot;PrecessedGeocentric\n`precessedgeocentric`&quot;]; Galactocentric [shape=oval label=&quot;Galactocentric\n`galactocentric`&quot;]; AltAz [shape=oval label=&quot;AltAz\n`altaz`&quot;]; Galactic [shape=oval label=&quot;Galactic\n`galactic`&quot;]; FK5 [shape=oval label=&quot;FK5\n`fk5`&quot;]; Supergalactic [shape=oval label=&quot;Supergalactic\n`supergalactic`&quot;]; FK4NoETerms [shape=oval label=&quot;FK4NoETerms\n`fk4noeterms`&quot;]; HeliocentricTrueEcliptic [shape=oval label=&quot;HeliocentricTrueEcliptic\n`heliocentrictrueecliptic`&quot;]; FK4 [shape=oval label=&quot;FK4\n`fk4`&quot;]; ITRS [shape=oval label=&quot;ITRS\n`itrs`&quot;];
 BarycentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
-GeocentricTrueEcliptic -&gt; GCRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; ITRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; AltAz[ label = &quot;1.0&quot; ];
-CIRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; ICRS[ label = &quot;1.0&quot; ];
-PrecessedGeocentric -&gt; GCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
 GCRS -&gt; GeocentricTrueEcliptic[ label = &quot;1.0&quot; ];
 GCRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
 GCRS -&gt; PrecessedGeocentric[ label = &quot;1.0&quot; ];
-GCRS -&gt; GCRS[ label = &quot;1.0&quot; ];
 GCRS -&gt; ICRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; BarycentricTrueEcliptic[ label = &quot;1.0&quot; ];
-ICRS -&gt; Galactocentric[ label = &quot;1.0&quot; ];
-ICRS -&gt; HeliocentricTrueEcliptic[ label = &quot;1.0&quot; ];
-ICRS -&gt; FK5[ label = &quot;1.0&quot; ];
-ICRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; Galactic[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK5[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK4[ label = &quot;1.0&quot; ];
+Galactocentric -&gt; ICRS[ label = &quot;1.0&quot; ];
+AltAz -&gt; AltAz[ label = &quot;1.0&quot; ];
+AltAz -&gt; CIRS[ label = &quot;1.0&quot; ];
+Galactic -&gt; FK5[ label = &quot;1.0&quot; ];
 Galactic -&gt; Supergalactic[ label = &quot;1.0&quot; ];
 Galactic -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-Galactic -&gt; FK5[ label = &quot;1.0&quot; ];
-Galactocentric -&gt; ICRS[ label = &quot;1.0&quot; ];
-HCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
-FK5 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK5 -&gt; Galactic[ label = &quot;1.0&quot; ];
-FK5 -&gt; FK5[ label = &quot;1.0&quot; ];
-FK5 -&gt; ICRS[ label = &quot;1.0&quot; ];
-AltAz -&gt; CIRS[ label = &quot;1.0&quot; ];
-AltAz -&gt; AltAz[ label = &quot;1.0&quot; ];
-FK4 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+GeocentricTrueEcliptic -&gt; GCRS[ label = &quot;1.0&quot; ];
+HeliocentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
 FK4 -&gt; FK4[ label = &quot;1.0&quot; ];
+FK4 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+PrecessedGeocentric -&gt; GCRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; ITRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; AltAz[ label = &quot;1.0&quot; ];
+CIRS -&gt; ICRS[ label = &quot;1.0&quot; ];
+CIRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+ITRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+ITRS -&gt; ITRS[ label = &quot;1.0&quot; ];
+FK5 -&gt; FK5[ label = &quot;1.0&quot; ];
+FK5 -&gt; Galactic[ label = &quot;1.0&quot; ];
+FK5 -&gt; ICRS[ label = &quot;1.0&quot; ];
+FK5 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+Supergalactic -&gt; Galactic[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK4[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; Galactic[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK5[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+HCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; Galactocentric[ label = &quot;1.0&quot; ];
+ICRS -&gt; HeliocentricTrueEcliptic[ label = &quot;1.0&quot; ];
+ICRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; FK5[ label = &quot;1.0&quot; ];
+ICRS -&gt; BarycentricTrueEcliptic[ label = &quot;1.0&quot; ];
 
 overlap=false
-}</p></object>
+}" />
+</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The ecliptic coordinate systems (added in Astropy v1.1) have not been
@@ -677,8 +678,9 @@ ecliptic coordinates.</p>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
-<object data="../_images/inheritance-b009c2635369024305873cf656cccd347869bc50.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.coordinates.builtin_frames.altaz.AltAz, astropy.coordinates.angles.Angle, astropy.coordinates.builtin_frames.ecliptic.BarycentricTrueEcliptic, astropy.coordinates.baseframe.BaseCoordinateFrame, astropy.coordinates.representation.BaseRepresentation, astropy.coordinates.errors.BoundsError, astropy.coordinates.builtin_frames.cirs.CIRS, astropy.coordinates.representation.CartesianRepresentation, astropy.coordinates.transformations.CompositeTransform, astropy.coordinates.errors.ConvertError, astropy.coordinates.transformations.CoordinateTransform, astropy.coordinates.representation.CylindricalRepresentation, astropy.coordinates.distances.Distance, astropy.coordinates.transformations.DynamicMatrixTransform, astropy.coordinates.earth.EarthLocation, astropy.coordinates.baseframe.EarthLocationAttribute, astropy.coordinates.builtin_frames.fk4.FK4, astropy.coordinates.builtin_frames.fk4.FK4NoETerms, astropy.coordinates.builtin_frames.fk5.FK5, astropy.coordinates.baseframe.FrameAttribute, astropy.coordinates.transformations.FunctionTransform, astropy.coordinates.builtin_frames.gcrs.GCRS, astropy.coordinates.builtin_frames.galactic.Galactic, astropy.coordinates.builtin_frames.galactocentric.Galactocentric, astropy.coordinates.baseframe.GenericFrame, astropy.coordinates.builtin_frames.ecliptic.GeocentricTrueEcliptic, astropy.coordinates.builtin_frames.hcrs.HCRS, astropy.coordinates.builtin_frames.ecliptic.HeliocentricTrueEcliptic, astropy.coordinates.builtin_frames.icrs.ICRS, astropy.coordinates.builtin_frames.itrs.ITRS, astropy.coordinates.errors.IllegalHourError, astropy.coordinates.errors.IllegalHourWarning, astropy.coordinates.errors.IllegalMinuteError, astropy.coordinates.errors.IllegalMinuteWarning, astropy.coordinates.errors.IllegalSecondError, astropy.coordinates.errors.IllegalSecondWarning, astropy.coordinates.angles.Latitude, astropy.coordinates.angles.Longitude, astropy.coordinates.representation.PhysicsSphericalRepresentation, astropy.coordinates.builtin_frames.gcrs.PrecessedGeocentric, astropy.coordinates.baseframe.QuantityFrameAttribute, astropy.coordinates.errors.RangeError, astropy.coordinates.baseframe.RepresentationMapping, astropy.coordinates.sky_coordinate.SkyCoord, astropy.coordinates.representation.SphericalRepresentation, astropy.coordinates.transformations.StaticMatrixTransform, astropy.coordinates.builtin_frames.supergalactic.Supergalactic, astropy.coordinates.baseframe.TimeFrameAttribute, astropy.coordinates.transformations.TransformGraph, astropy.coordinates.representation.UnitSphericalRepresentation, astropy.coordinates.errors.UnknownSiteException</p></object>
+<p class="graphviz">
+<img src="../_images/inheritance-c7eac41606b1ebfc17818cddd162378b2b5c138f.svg" alt="Inheritance diagram of astropy.coordinates.builtin_frames.altaz.AltAz, astropy.coordinates.angles.Angle, astropy.coordinates.builtin_frames.ecliptic.BarycentricTrueEcliptic, astropy.coordinates.baseframe.BaseCoordinateFrame, astropy.coordinates.representation.BaseRepresentation, astropy.coordinates.errors.BoundsError, astropy.coordinates.builtin_frames.cirs.CIRS, astropy.coordinates.representation.CartesianRepresentation, astropy.coordinates.transformations.CompositeTransform, astropy.coordinates.errors.ConvertError, astropy.coordinates.transformations.CoordinateTransform, astropy.coordinates.representation.CylindricalRepresentation, astropy.coordinates.distances.Distance, astropy.coordinates.transformations.DynamicMatrixTransform, astropy.coordinates.earth.EarthLocation, astropy.coordinates.baseframe.EarthLocationAttribute, astropy.coordinates.builtin_frames.fk4.FK4, astropy.coordinates.builtin_frames.fk4.FK4NoETerms, astropy.coordinates.builtin_frames.fk5.FK5, astropy.coordinates.baseframe.FrameAttribute, astropy.coordinates.transformations.FunctionTransform, astropy.coordinates.builtin_frames.gcrs.GCRS, astropy.coordinates.builtin_frames.galactic.Galactic, astropy.coordinates.builtin_frames.galactocentric.Galactocentric, astropy.coordinates.baseframe.GenericFrame, astropy.coordinates.builtin_frames.ecliptic.GeocentricTrueEcliptic, astropy.coordinates.builtin_frames.hcrs.HCRS, astropy.coordinates.builtin_frames.ecliptic.HeliocentricTrueEcliptic, astropy.coordinates.builtin_frames.icrs.ICRS, astropy.coordinates.builtin_frames.itrs.ITRS, astropy.coordinates.errors.IllegalHourError, astropy.coordinates.errors.IllegalHourWarning, astropy.coordinates.errors.IllegalMinuteError, astropy.coordinates.errors.IllegalMinuteWarning, astropy.coordinates.errors.IllegalSecondError, astropy.coordinates.errors.IllegalSecondWarning, astropy.coordinates.angles.Latitude, astropy.coordinates.angles.Longitude, astropy.coordinates.representation.PhysicsSphericalRepresentation, astropy.coordinates.builtin_frames.gcrs.PrecessedGeocentric, astropy.coordinates.baseframe.QuantityFrameAttribute, astropy.coordinates.errors.RangeError, astropy.coordinates.baseframe.RepresentationMapping, astropy.coordinates.sky_coordinate.SkyCoord, astropy.coordinates.representation.SphericalRepresentation, astropy.coordinates.transformations.StaticMatrixTransform, astropy.coordinates.builtin_frames.supergalactic.Supergalactic, astropy.coordinates.baseframe.TimeFrameAttribute, astropy.coordinates.transformations.TransformGraph, astropy.coordinates.representation.UnitSphericalRepresentation, astropy.coordinates.errors.UnknownSiteException" class="inheritance"/>
+</p>
 </div>
 </div>
 </div>
@@ -730,8 +732,8 @@ ecliptic coordinates.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

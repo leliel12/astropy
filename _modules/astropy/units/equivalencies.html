@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.units.equivalencies &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.units.equivalencies &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -103,17 +103,17 @@
 <span class="sd">    allows this independent of the power to which the angle is raised,</span>
 <span class="sd">    and independent of whether it is part of a more complicated unit.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[(</span><span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="p">,</span> <span class="bp">None</span><span class="p">)]</span></div>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="p">,</span> <span class="bp">None</span><span class="p">)]</span>
 
-
+</div>
 <div class="viewcode-block" id="logarithmic"><a class="viewcode-back" href="../../../api/astropy.units.logarithmic.html#astropy.units.logarithmic">[docs]</a><span class="k">def</span> <span class="nf">logarithmic</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Allow logarithmic units to be converted to dimensionless fractions&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span>
         <span class="p">(</span><span class="n">dimensionless_unscaled</span><span class="p">,</span> <span class="n">function_units</span><span class="o">.</span><span class="n">dex</span><span class="p">,</span>
          <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">10.</span><span class="o">**</span><span class="n">x</span><span class="p">)</span>
-    <span class="p">]</span></div>
+    <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="parallax"><a class="viewcode-back" href="../../../api/astropy.units.parallax.html#astropy.units.parallax">[docs]</a><span class="k">def</span> <span class="nf">parallax</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of equivalence pairs that handle the conversion</span>
@@ -121,9 +121,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">arcsecond</span><span class="p">,</span> <span class="n">astrophys</span><span class="o">.</span><span class="n">parsec</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span>
-    <span class="p">]</span></div>
+    <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="spectral"><a class="viewcode-back" href="../../../api/astropy.units.spectral.html#astropy.units.spectral">[docs]</a><span class="k">def</span> <span class="nf">spectral</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of equivalence pairs that handle spectral</span>
@@ -156,9 +156,9 @@
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">Hz</span><span class="p">,</span> <span class="n">inv_m_ang</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">two_pi</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
          <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_si</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">two_pi</span><span class="p">),</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">J</span><span class="p">,</span> <span class="n">inv_m_ang</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">two_pi</span> <span class="o">/</span> <span class="n">hc</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">hc</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">two_pi</span><span class="p">)</span>
-    <span class="p">]</span></div>
+    <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="spectral_density"><a class="viewcode-back" href="../../../api/astropy.units.spectral_density.html#astropy.units.spectral_density">[docs]</a><span class="k">def</span> <span class="nf">spectral_density</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of equivalence pairs that handle spectral density</span>
@@ -251,9 +251,9 @@
         <span class="p">(</span><span class="n">photlam</span><span class="p">,</span> <span class="n">photnu</span><span class="p">,</span> <span class="n">converter_photlam_photnu</span><span class="p">,</span> <span class="n">iconverter_photlam_photnu</span><span class="p">),</span>
         <span class="p">(</span><span class="n">photnu</span><span class="p">,</span> <span class="n">fnu</span><span class="p">,</span> <span class="n">converter_photnu_fnu</span><span class="p">,</span> <span class="n">iconverter_photnu_fnu</span><span class="p">),</span>
         <span class="p">(</span><span class="n">photnu</span><span class="p">,</span> <span class="n">fla</span><span class="p">,</span> <span class="n">converter_photnu_fla</span><span class="p">,</span> <span class="n">iconverter_photnu_fla</span><span class="p">)</span>
-    <span class="p">]</span></div>
+    <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="doppler_radio"><a class="viewcode-back" href="../../../api/astropy.units.equivalencies.doppler_radio.html#astropy.units.doppler_radio">[docs]</a><span class="k">def</span> <span class="nf">doppler_radio</span><span class="p">(</span><span class="n">rest</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    Return the equivalency pairs for the radio convention for velocity.</span>
@@ -318,9 +318,9 @@
     <span class="k">return</span> <span class="p">[(</span><span class="n">si</span><span class="o">.</span><span class="n">Hz</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_freq</span><span class="p">,</span> <span class="n">from_vel_freq</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_wav</span><span class="p">,</span> <span class="n">from_vel_wav</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_en</span><span class="p">,</span> <span class="n">from_vel_en</span><span class="p">),</span>
-            <span class="p">]</span></div>
+            <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="doppler_optical"><a class="viewcode-back" href="../../../api/astropy.units.equivalencies.doppler_optical.html#astropy.units.doppler_optical">[docs]</a><span class="k">def</span> <span class="nf">doppler_optical</span><span class="p">(</span><span class="n">rest</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    Return the equivalency pairs for the optical convention for velocity.</span>
@@ -386,9 +386,9 @@
     <span class="k">return</span> <span class="p">[(</span><span class="n">si</span><span class="o">.</span><span class="n">Hz</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_freq</span><span class="p">,</span> <span class="n">from_vel_freq</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_wav</span><span class="p">,</span> <span class="n">from_vel_wav</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_en</span><span class="p">,</span> <span class="n">from_vel_en</span><span class="p">),</span>
-            <span class="p">]</span></div>
+            <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="doppler_relativistic"><a class="viewcode-back" href="../../../api/astropy.units.equivalencies.doppler_relativistic.html#astropy.units.doppler_relativistic">[docs]</a><span class="k">def</span> <span class="nf">doppler_relativistic</span><span class="p">(</span><span class="n">rest</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    Return the equivalency pairs for the relativistic convention for velocity.</span>
@@ -461,9 +461,9 @@
     <span class="k">return</span> <span class="p">[(</span><span class="n">si</span><span class="o">.</span><span class="n">Hz</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_freq</span><span class="p">,</span> <span class="n">from_vel_freq</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_wav</span><span class="p">,</span> <span class="n">from_vel_wav</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to_vel_en</span><span class="p">,</span> <span class="n">from_vel_en</span><span class="p">),</span>
-            <span class="p">]</span></div>
+            <span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="mass_energy"><a class="viewcode-back" href="../../../api/astropy.units.mass_energy.html#astropy.units.mass_energy">[docs]</a><span class="k">def</span> <span class="nf">mass_energy</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of equivalence pairs that handle the conversion</span>
@@ -480,8 +480,8 @@
              <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
             <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">kg</span> <span class="o">/</span> <span class="n">si</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">J</span> <span class="o">/</span> <span class="n">si</span><span class="o">.</span><span class="n">s</span> <span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">_si</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span>
              <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
-    <span class="p">]</span></div>
-
+    <span class="p">]</span>
+</div>
 <div class="viewcode-block" id="brightness_temperature"><a class="viewcode-back" href="../../../api/astropy.units.equivalencies.brightness_temperature.html#astropy.units.brightness_temperature">[docs]</a><span class="k">def</span> <span class="nf">brightness_temperature</span><span class="p">(</span><span class="n">beam_area</span><span class="p">,</span> <span class="n">disp</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Defines the conversion between Jy/beam and &quot;brightness temperature&quot;,</span>
@@ -541,9 +541,9 @@
         <span class="n">factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">astrophys</span><span class="o">.</span><span class="n">Jy</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">_si</span><span class="o">.</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">nu</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">x_K</span> <span class="o">*</span> <span class="n">beam</span> <span class="o">/</span> <span class="n">factor</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="p">[(</span><span class="n">astrophys</span><span class="o">.</span><span class="n">Jy</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">convert_Jy_to_K</span><span class="p">,</span> <span class="n">convert_K_to_Jy</span><span class="p">)]</span></div>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">astrophys</span><span class="o">.</span><span class="n">Jy</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">convert_Jy_to_K</span><span class="p">,</span> <span class="n">convert_K_to_Jy</span><span class="p">)]</span>
 
-
+</div>
 <div class="viewcode-block" id="temperature"><a class="viewcode-back" href="../../../api/astropy.units.temperature.html#astropy.units.temperature">[docs]</a><span class="k">def</span> <span class="nf">temperature</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Convert between Kelvin, Celsius, and Fahrenheit here because</span>
 <span class="sd">    Unit and CompositeUnit cannot do addition or subtraction properly.</span>
@@ -553,14 +553,14 @@
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">deg_C</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">),</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">deg_C</span><span class="p">,</span> <span class="n">deg_F</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span><span class="p">),</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">deg_F</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">,</span>
-         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">)]</span></div>
-
+         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">)]</span>
+</div>
 <div class="viewcode-block" id="temperature_energy"><a class="viewcode-back" href="../../../api/astropy.units.temperature_energy.html#astropy.units.temperature_energy">[docs]</a><span class="k">def</span> <span class="nf">temperature_energy</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Convert between Kelvin and keV(eV) to an equivalent amount.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">_si</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">k_B</span><span class="p">),</span>
-         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">_si</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">k_B</span><span class="p">))]</span></div>
-
+         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">_si</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">k_B</span><span class="p">))]</span>
+</div>
 <span class="k">def</span> <span class="nf">assert_is_spectral_unit</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">value</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">Hz</span><span class="p">,</span> <span class="n">spectral</span><span class="p">())</span>
@@ -585,8 +585,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

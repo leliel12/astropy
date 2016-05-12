@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>WCS &mdash; Astropy v1.2.dev14980</title>
+    <title>WCS &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="World Coordinate System (astropy.wcs)" href="../wcs/index.html" />
     <link rel="next" title="WCSBase" href="astropy.wcs.WCSBase.html" />
     <link rel="prev" title="Tabprm" href="astropy.wcs.Tabprm.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../wcs/index.html" accesskey="U">World Coordinate System (<code class="docutils literal"><span class="pre">astropy.wcs</span></code>)</a> &raquo;</li>
@@ -129,7 +129,7 @@ of the WCS standard.</li>
 <li><a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: Recognize only FITS keywords defined by the
 published WCS standard.</li>
 <li><a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to accept.
-See <a class="reference internal" href="../wcs/relax.html#relaxread"><span class="std std-ref">Header-reading relaxation constants</span></a> for details.</li>
+See <a class="reference internal" href="../wcs/relax.html#relaxread"><span>Header-reading relaxation constants</span></a> for details.</li>
 </ul>
 </div></blockquote>
 <p><strong>naxis</strong> : int or sequence, optional</p>
@@ -740,40 +740,40 @@ that need to be converted to <a class="reference internal" href="#astropy.wcs.WC
 of calling <a class="reference internal" href="#astropy.wcs.WCS.all_world2pix" title="astropy.wcs.WCS.all_world2pix"><code class="xref py py-meth docutils literal"><span class="pre">all_world2pix()</span></code></a> for each data point. Also
 see the note to the <code class="docutils literal"><span class="pre">adaptive</span></code> parameter.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.io.fits</span> <span class="k">as</span> <span class="nn">fits</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.wcs</span> <span class="k">as</span> <span class="nn">wcs</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.io.fits</span> <span class="kn">as</span> <span class="nn">fits</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.wcs</span> <span class="kn">as</span> <span class="nn">wcs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wcs</span><span class="o">.</span><span class="n">__path__</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;tests/data/j94f05bgq_flt.fits&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wcs</span><span class="o">.</span><span class="n">__path__</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;tests/data/j94f05bgq_flt.fits&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdulist</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">wcs</span><span class="o">.</span><span class="n">WCS</span><span class="p">(</span><span class="n">hdulist</span><span class="p">[(</span><span class="s">&#39;sci&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="n">hdulist</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdulist</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_pix2world</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_pix2world</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
 <span class="go">[ 5.52645627  5.52649663  5.52653698]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
 <span class="go">[-72.05171757 -72.05171276 -72.05170795]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">radec</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_pix2world</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">radec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">radec</span><span class="p">)</span>
 <span class="go">[[  5.52645627 -72.05171757]</span>
 <span class="go"> [  5.52649663 -72.05171276]</span>
 <span class="go"> [  5.52653698 -72.05170795]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_world2pix</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">[ 1.00000238  2.00000237  3.00000236]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">[ 0.99999996  0.99999997  0.99999997]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_world2pix</span><span class="p">(</span><span class="n">radec</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">[[ 1.00000238  0.99999996]</span>
 <span class="go"> [ 2.00000237  0.99999997]</span>
 <span class="go"> [ 3.00000236  0.99999997]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_world2pix</span><span class="p">(</span><span class="n">radec</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="gp">... </span>                     <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-10</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+<span class="gp">... </span>                     <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-10</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
 <span class="gr">NoConvergence</span>: <span class="n">&#39;WCS.all_world2pix&#39; failed to converge to the</span>
@@ -781,29 +781,29 @@ see the note to the <code class="docutils literal"><span class="pre">adaptive</s
 <span class="go">diverging at least for one input point.</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Now try to use some diverging data:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Now try to use some diverging data:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">divradec</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_pix2world</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
 <span class="gp">... </span>                            <span class="p">[</span><span class="mf">10000.0</span><span class="p">,</span> <span class="mf">50000.0</span><span class="p">],</span>
 <span class="gp">... </span>                            <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">divradec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">divradec</span><span class="p">)</span>
 <span class="go">[[  5.52645627 -72.05171757]</span>
 <span class="go"> [  7.15976932 -70.8140779 ]</span>
 <span class="go"> [  5.52653698 -72.05170795]]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># First, turn detect_divergence on:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># First, turn detect_divergence on:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="gp">... </span>  <span class="n">xy</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_world2pix</span><span class="p">(</span><span class="n">divradec</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">,</span> <span class="n">adaptive</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">detect_divergence</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">quiet</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+<span class="gp">... </span>                       <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">,</span> <span class="n">adaptive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">detect_divergence</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">except</span> <span class="n">wcs</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">NoConvergence</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Indices of diverging points: {0}&quot;</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Indices of diverging points: {0}&quot;</span>
 <span class="gp">... </span>        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">divergent</span><span class="p">))</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Indices of poorly converging points: {0}&quot;</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Indices of poorly converging points: {0}&quot;</span>
 <span class="gp">... </span>        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">slow_conv</span><span class="p">))</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Best solution:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">best_solution</span><span class="p">))</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Achieved accuracy:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">accuracy</span><span class="p">))</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Best solution:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">best_solution</span><span class="p">))</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Achieved accuracy:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">accuracy</span><span class="p">))</span>
 <span class="go">Indices of diverging points: [1]</span>
 <span class="go">Indices of poorly converging points: None</span>
 <span class="go">Best solution:</span>
@@ -822,19 +822,19 @@ see the note to the <code class="docutils literal"><span class="pre">adaptive</s
 <span class="go">diverging at least for one input point.</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># This time turn detect_divergence off:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># This time turn detect_divergence off:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="gp">... </span>  <span class="n">xy</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_world2pix</span><span class="p">(</span><span class="n">divradec</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">,</span> <span class="n">adaptive</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">detect_divergence</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">quiet</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+<span class="gp">... </span>                       <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">,</span> <span class="n">adaptive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">detect_divergence</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">except</span> <span class="n">wcs</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">NoConvergence</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Indices of diverging points: {0}&quot;</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Indices of diverging points: {0}&quot;</span>
 <span class="gp">... </span>        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">divergent</span><span class="p">))</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Indices of poorly converging points: {0}&quot;</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Indices of poorly converging points: {0}&quot;</span>
 <span class="gp">... </span>        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">slow_conv</span><span class="p">))</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Best solution:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">best_solution</span><span class="p">))</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Achieved accuracy:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">accuracy</span><span class="p">))</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Best solution:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">best_solution</span><span class="p">))</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;Achieved accuracy:</span><span class="se">\n</span><span class="s">{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">accuracy</span><span class="p">))</span>
 <span class="go">Indices of diverging points: [1]</span>
 <span class="go">Indices of poorly converging points: None</span>
 <span class="go">Best solution:</span>
@@ -1454,7 +1454,7 @@ combination of <code class="docutils literal"><span class="pre">'longitude'</spa
 the same order as they occur in the input image by combining the
 integer constants with the &#8216;binary or&#8217; (<code class="docutils literal"><span class="pre">|</span></code>) operator.  For
 example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">wcs</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">WCSSUB_LONGITUDE</span> <span class="o">|</span> <span class="n">WCSSUB_LATITUDE</span> <span class="o">|</span> <span class="n">WCSSUB_SPECTRAL</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">wcs</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">WCSSUB_LONGITUDE</span> <span class="o">|</span> <span class="n">WCSSUB_LATITUDE</span> <span class="o">|</span> <span class="n">WCSSUB_SPECTRAL</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>would extract the longitude, latitude, and spectral axes in the same
@@ -1464,7 +1464,7 @@ object would have three dimensions.</p>
 <code class="docutils literal"><span class="pre">WCSSUB_LONGITUDE</span> <span class="pre">|</span> <span class="pre">WCSSUB_LATITUDE</span> <span class="pre">|</span> <span class="pre">WCSSUB_CUBEFACE</span></code>.</p>
 <p>The codes may also be negated to extract all but the types specified,
 for example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">wcs</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">wcs</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span>
   <span class="n">WCSSUB_LONGITUDE</span><span class="p">,</span>
   <span class="n">WCSSUB_LATITUDE</span><span class="p">,</span>
   <span class="n">WCSSUB_CUBEFACE</span><span class="p">,</span>
@@ -1529,7 +1529,7 @@ considered to be safe and recommended.</li>
 <li><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: Write all recognized informal extensions of the
 WCS standard.</li>
 <li><a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to
-write.  See <a class="reference internal" href="../wcs/relax.html#relaxwrite"><span class="std std-ref">Header-writing relaxation constants</span></a> for details.</li>
+write.  See <a class="reference internal" href="../wcs/relax.html#relaxwrite"><span>Header-writing relaxation constants</span></a> for details.</li>
 </ul>
 </div></blockquote>
 <p><strong>key</strong> : str</p>
@@ -1574,7 +1574,7 @@ considered to be safe and recommended.</li>
 <li><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: Write all recognized informal extensions of the
 WCS standard.</li>
 <li><a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to
-write.  See <a class="reference internal" href="../wcs/relax.html#relaxwrite"><span class="std std-ref">Header-writing relaxation constants</span></a> for details.</li>
+write.  See <a class="reference internal" href="../wcs/relax.html#relaxwrite"><span>Header-writing relaxation constants</span></a> for details.</li>
 </ul>
 <p>If the <code class="docutils literal"><span class="pre">relax</span></code> keyword argument is not given and any
 keywords were omitted from the output, an
@@ -1839,8 +1839,8 @@ members can be used to determine the order of the axes.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

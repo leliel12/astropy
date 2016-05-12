@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>What’s New in Astropy 0.4? &mdash; Astropy v1.2.dev14980</title>
+    <title>What’s New in Astropy 0.4? &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Major Release History" href="index.html" />
     <link rel="next" title="What’s New in Astropy 0.3?" href="0.3.html" />
-    <link rel="prev" title="What’s New in Astropy 1.1?" href="1.1.html" />
+    <link rel="prev" title="What’s New in Astropy 1.0?" href="1.0.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -63,13 +63,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="1.1.html" title="What’s New in Astropy 1.1?">
+	<a href="1.0.html" title="What’s New in Astropy 1.0?">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Major Release History</a> &raquo;</li>
@@ -90,7 +90,7 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Astropy 0.4 is a major release that adds new functionality since the
 0.3.x series of releases. A new sub-package is included (see <a class="reference internal" href="#samp">SAMP</a>),
-a major overhaul of the <a class="reference internal" href="../coordinates/index.html#astropy-coordinates"><span class="std std-ref">Coordinates</span></a>
+a major overhaul of the <a class="reference internal" href="../coordinates/index.html#astropy-coordinates"><span>Coordinates</span></a>
 sub-package has been completed (see <a class="reference internal" href="#coordinates">Coordinates</a>),
 and many new features and improvements have been implemented for the
 existing sub-packages. In addition to usability improvements, we have
@@ -107,13 +107,13 @@ improvements have occurred.  Since v0.3, by the numbers:</p>
 </div>
 <div class="section" id="coordinates">
 <h2>Coordinates<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../coordinates/index.html#astropy-coordinates"><span class="std std-ref">Astronomical Coordinate Systems (astropy.coordinates)</span></a> sub-package has been largely re-designed based
+<p>The <a class="reference internal" href="../coordinates/index.html#astropy-coordinates"><span>Astronomical Coordinate Systems (astropy.coordinates)</span></a> sub-package has been largely re-designed based
 on broad community discussion and experience with v0.2 and v0.3.  The key
 motivation was to implement coordinates within an extensible framework that
 cleanly separates the distinct aspects of data representation, coordinate
 frame representation and transformation, and user interface.  This is described
 in the <a class="reference external" href="https://github.com/astropy/astropy-APEs/blob/master/APE5.rst">APE5</a>
-document. Details of the new usage are given in the <a class="reference internal" href="../coordinates/index.html#astropy-coordinates"><span class="std std-ref">Astronomical Coordinate Systems (astropy.coordinates)</span></a>
+document. Details of the new usage are given in the <a class="reference internal" href="../coordinates/index.html#astropy-coordinates"><span>Astronomical Coordinate Systems (astropy.coordinates)</span></a>
 section of the documentation.</p>
 <p><em>An important point is that this sub-package is now considered stable and we do
 not expect any further major interface changes.</em></p>
@@ -122,15 +122,15 @@ coordinate functionality is the  <a class="reference internal" href="../api/astr
 instead of classes like <a class="reference internal" href="../api/astropy.coordinates.ICRS.html#astropy.coordinates.ICRS" title="astropy.coordinates.ICRS"><code class="xref py py-obj docutils literal"><span class="pre">ICRS</span></code></a> or
 <a class="reference internal" href="../api/astropy.coordinates.Galactic.html#astropy.coordinates.Galactic" title="astropy.coordinates.Galactic"><code class="xref py py-obj docutils literal"><span class="pre">Galactic</span></code></a> (which are now
 called &#8220;frame&#8221; classes).  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">SkyCoord</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coordinate</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mf">123.4</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mf">56.7</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s">&#39;icrs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The frame classes can still be used to create coordinate objects as before, but
 they are now more powerful because they can represent abstract coordinate
 frames without underlying data.  The more typical use for frame classes is now:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">FK4</span>  <span class="c"># Or ICRS, Galactic, or similar</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">FK4</span>  <span class="c"># Or ICRS, Galactic, or similar</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fk4_frame</span> <span class="o">=</span> <span class="n">FK4</span><span class="p">(</span><span class="n">equinox</span><span class="o">=</span><span class="s">&#39;J1980.0&#39;</span><span class="p">,</span> <span class="n">obstime</span><span class="o">=</span><span class="s">&#39;2011-06-12T01:12:34&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coordinate</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">fk4_frame</span><span class="p">)</span>
 <span class="go">&lt;SkyCoord (FK4): equinox=J1980.000, obstime=2011-06-12T01:12:34.000, ra=123.001698182 deg, dec=56.7609162301 deg&gt;</span>
@@ -141,7 +141,7 @@ describe how to represent a point in a frame as a tuple of quantities, for
 instance as spherical, cylindrical, or cartesian coordinates.  Any coordinate
 object can now be created using values in a number of common representations
 and be displayed using those representations.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coordinate</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">representation</span><span class="o">=</span><span class="s">&#39;cartesian&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coordinate</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">pc</span><span class="p">,</span> <span class="n">representation</span><span class="o">=</span><span class="s">&#39;cartesian&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coordinate</span>
 <span class="go">&lt;SkyCoord (ICRS): x=1.0 pc, y=2.0 pc, z=3.0 pc&gt;</span>
 
@@ -153,19 +153,19 @@ and be displayed using those representations.  For example:</p>
 </div>
 <div class="section" id="samp">
 <h2>SAMP<a class="headerlink" href="#samp" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../vo/samp/index.html#vo-samp"><span class="std std-ref">SAMP (Simple Application Messaging Protocol (astropy.vo.samp)</span></a> sub-package is a new sub-package (adapted from the <a class="reference external" href="http://packages.python.org/sampy/">SAMPy
+<p>The <a class="reference internal" href="../vo/samp/index.html#vo-samp"><span>SAMP (Simple Application Messaging Protocol (astropy.vo.samp)</span></a> sub-package is a new sub-package (adapted from the <a class="reference external" href="http://packages.python.org/sampy/">SAMPy
 package</a>) that contains an
 implementation of the <a class="reference external" href="http://www.ivoa.net/documents/SAMP/">Simple Application Messaging Protocol (SAMP)</a> standard that allows communication
 with any SAMP-enabled application (such as <a class="reference external" href="http://www.star.bris.ac.uk/~mbt/topcat/">TOPCAT</a>, <a class="reference external" href="http://hea-www.harvard.edu/RD/ds9">SAO Ds9</a>, and <a class="reference external" href="http://aladin.u-strasbg.fr">Aladin</a>). This sub-package includes both classes for a
 hub and a client, as well as an <em>integrated client</em> which automatically
 connects to any running SAMP hub and acts as a client:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="k">import</span> <span class="n">SAMPIntegratedClient</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.vo.samp</span> <span class="kn">import</span> <span class="n">SAMPIntegratedClient</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">SAMPIntegratedClient</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>We can then use the client to communicate with other clients:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_registered_clients</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_registered_clients</span><span class="p">()</span>
 <span class="go">[&#39;hub&#39;, &#39;c1&#39;, &#39;c2&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">(</span><span class="s">&#39;c1&#39;</span><span class="p">)</span>
 <span class="go">{&#39;author.affiliation&#39;: &#39;Astrophysics Group, Bristol University&#39;,</span>
@@ -180,7 +180,7 @@ connects to any running SAMP hub and acts as a client:</p>
 </pre></div>
 </div>
 <p>and we can then send for example tables and images over SAMP to other
-applications (see <a class="reference internal" href="../vo/samp/index.html#vo-samp"><span class="std std-ref">SAMP (Simple Application Messaging Protocol (astropy.vo.samp)</span></a> for examples of how to do this).</p>
+applications (see <a class="reference internal" href="../vo/samp/index.html#vo-samp"><span>SAMP (Simple Application Messaging Protocol (astropy.vo.samp)</span></a> for examples of how to do this).</p>
 </div>
 <div class="section" id="quantity">
 <h2>Quantity<a class="headerlink" href="#quantity" title="Permalink to this headline">¶</a></h2>
@@ -188,12 +188,12 @@ applications (see <a class="reference internal" href="../vo/samp/index.html#vo-s
 and is now substantially faster.  Additionally, the <a class="reference internal" href="../time/index.html#module-astropy.time" title="astropy.time"><code class="xref py py-obj docutils literal"><span class="pre">time</span></code></a>,
 <a class="reference internal" href="../coordinates/index.html#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">coordinates</span></code></a>, and <a class="reference internal" href="../table/index.html#module-astropy.table" title="astropy.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a> subpackages integrate
 better with <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>, with further improvements on the
-way for <a class="reference internal" href="../table/index.html#module-astropy.table" title="astropy.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>. See <a class="reference internal" href="../units/quantity.html"><span class="doc">Quantity</span></a> and the other
+way for <a class="reference internal" href="../table/index.html#module-astropy.table" title="astropy.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>. See <a class="reference internal" href="../units/quantity.html"><em>Quantity</em></a> and the other
 subpackage documentation sections for more details.</p>
 </div>
 <div class="section" id="inspecting-fits-headers-from-the-command-line">
 <h2>Inspecting FITS headers from the command line<a class="headerlink" href="#inspecting-fits-headers-from-the-command-line" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../io/fits/index.html#astropy-io-fits"><span class="std std-ref">FITS File handling (astropy.io.fits)</span></a> sub-package now provides a command line script for
+<p>The <a class="reference internal" href="../io/fits/index.html#astropy-io-fits"><span>FITS File handling (astropy.io.fits)</span></a> sub-package now provides a command line script for
 inspecting the header(s) of a FITS file. With Astropy 0.4 installed, run
 <code class="docutils literal"><span class="pre">fitsheader</span> <span class="pre">file.fits</span></code> in your terminal to print the header information to
 the screen in a human-readable format. Run <code class="docutils literal"><span class="pre">fitsheader</span> <span class="pre">--help</span></code> to see the
@@ -201,7 +201,7 @@ full usage documentation.</p>
 </div>
 <div class="section" id="reading-and-writing-html-tables">
 <h2>Reading and writing HTML tables<a class="headerlink" href="#reading-and-writing-html-tables" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../io/ascii/index.html#io-ascii"><span class="std std-ref">ASCII Tables (astropy.io.ascii)</span></a> sub-package now provides the capability to read a table
+<p>The <a class="reference internal" href="../io/ascii/index.html#io-ascii"><span>ASCII Tables (astropy.io.ascii)</span></a> sub-package now provides the capability to read a table
 within an HTML file or web URL into an astropy <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> object.
 This requires the <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup4</a> package to be installed.
 Conversely a <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> object can now be written out as an HTML
@@ -241,7 +241,7 @@ described in
 <a class="reference external" href="https://github.com/astropy/astropy-APEs/blob/master/APE3.rst">APE3</a>.
 If you have previously edited the astropy configuration file (typically
 located at <code class="docutils literal"><span class="pre">~/.astropy/config/astropy.cfg</span></code>) then you should read over
-<a class="reference internal" href="../config/config_0_4_transition.html#config-0-4-transition"><span class="std std-ref">Configuration transition</span></a> in order to understand how to update it
+<a class="reference internal" href="../config/config_0_4_transition.html#config-0-4-transition"><span>Configuration transition</span></a> in order to understand how to update it
 to the new mechanism.</p>
 </div>
 <div class="section" id="deprecation-and-backward-incompatible-changes">
@@ -277,7 +277,7 @@ them to do so.</li>
 <div class="section" id="full-change-log">
 <h2>Full change log<a class="headerlink" href="#full-change-log" title="Permalink to this headline">¶</a></h2>
 <p>To see a detailed list of all changes in version 0.4 and prior, please see the
-<a class="reference internal" href="../changelog.html#changelog"><span class="std std-ref">Full Changelog</span></a>.</p>
+<a class="reference internal" href="../changelog.html#changelog"><span>Full Changelog</span></a>.</p>
 </div>
 <div class="section" id="note-on-future-versions">
 <h2>Note on future versions<a class="headerlink" href="#note-on-future-versions" title="Permalink to this headline">¶</a></h2>
@@ -323,8 +323,8 @@ release (1.0) will drop support for Python 3.1 and 3.2.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

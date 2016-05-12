@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>How to make a code contribution &mdash; Astropy v1.2.dev14980</title>
+    <title>How to make a code contribution &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../index.html" />
     <link rel="next" title="Coding Guidelines" href="../codeguide.html" />
-    <link rel="prev" title="Try the development version" href="get_devel_version.html" />
+    <link rel="prev" title="How to make a code contribution" href="" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../_static/copybutton.js"></script>
 
@@ -62,13 +62,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="get_devel_version.html" title="Try the development version">
+	<a href="" title="How to make a code contribution">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -87,14 +87,14 @@
 <p>This document outlines the process for contributing code to the Astropy
 project.</p>
 <p><strong>Already experienced with git? Contributed before?</strong> Jump right to
-<a class="reference internal" href="#astropy-git"><span class="std std-ref">Astropy Guidelines for git</span></a>.</p>
+<a class="reference internal" href="#astropy-git"><span>Astropy Guidelines for git</span></a>.</p>
 <div class="section" id="pre-requisites">
 <h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
 <p>Before following the steps in this document you need:</p>
 <ul class="simple">
 <li>an account on <a class="reference external" href="http://github.com">GitHub</a></li>
 <li>a local copy of the astropy source. Instructions for doing that, including the
-basics you need for setting up git and GitHub, are at <a class="reference internal" href="get_devel_version.html#get-devel"><span class="std std-ref">Try the development version</span></a>.</li>
+basics you need for setting up git and GitHub, are at <a class="reference internal" href="get_devel_version.html#get-devel"><span>Try the development version</span></a>.</li>
 </ul>
 </div>
 <div class="section" id="strongly-recommended-but-not-required">
@@ -103,7 +103,7 @@ basics you need for setting up git and GitHub, are at <a class="reference intern
 environment in which you also use the stable version. It can be done —
 but can only be done <em>successfully</em> if you always remember whether the
 development version or stable version is the active one.</p>
-<p><a class="reference internal" href="virtual_pythons.html#virtual-envs"><span class="std std-ref">Python virtual environments</span></a> offer a better solution and take only a few minutes to set
+<p><a class="reference internal" href="virtual_pythons.html#virtual-envs"><span>Python virtual environments</span></a> offer a better solution and take only a few minutes to set
 up. It is well worth your time.</p>
 <p>Not sure what your first contribution should be? Take a look at the <a class="reference external" href="https://github.com/astropy/astropy/issues">Astropy
 issue list</a> and grab one labeled &#8220;package-novice&#8221;. These issues are the
@@ -124,16 +124,16 @@ minutes to look at these resources:</p>
 <li><a class="reference external" href="http://git-scm.com/book/en/Getting-Started-Git-Basics">Git Basics</a>, part of a much longer <a class="reference external" href="http://git-scm.com/book/">git book</a>.</li>
 </ul>
 <p>In practice, you need only a handful of <a class="reference external" href="http://git-scm.com/">git</a> commands to make contributions
-to Astropy. There is a more extensive list of <a class="reference internal" href="git_resources.html#git-resources"><span class="std std-ref">Git resources</span></a> if you
+to Astropy. There is a more extensive list of <a class="reference internal" href="git_resources.html#git-resources"><span>Git resources</span></a> if you
 want more background.</p>
 </div>
 <div class="section" id="double-check-your-setup">
 <h3>Double check your setup<a class="headerlink" href="#double-check-your-setup" title="Permalink to this headline">¶</a></h3>
 <p>Before going further, make sure you have set up astropy as described in
-<a class="reference internal" href="get_devel_version.html#get-devel"><span class="std std-ref">Try the development version</span></a>.</p>
+<a class="reference internal" href="get_devel_version.html#get-devel"><span>Try the development version</span></a>.</p>
 <p>In a terminal window, change directory to the one containing your clone of
 Astropy. Then, run <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span></code>; the output should look something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span>
 <span class="n">astropy</span>
 </pre></div>
 </div>
@@ -148,7 +148,7 @@ a repository is, itself, a repository. That can lead to some confusion,
 especially for the branch called <code class="docutils literal"><span class="pre">master</span></code>. If you list all of the branches
 your clone of git knows about with <code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> you will see there are
 <em>three</em> different branches called <code class="docutils literal"><span class="pre">master</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">*</span> <span class="n">master</span>                              <span class="c"># this is master in your local repo</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">*</span> <span class="n">master</span>                              <span class="c"># this is master in your local repo</span>
 <span class="n">remotes</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span><span class="o">/</span><span class="n">master</span>   <span class="c"># master on your fork of Astropy on GitHub</span>
 <span class="n">remotes</span><span class="o">/</span><span class="n">astropy</span><span class="o">/</span><span class="n">master</span>                <span class="c"># the official development branch of Astropy</span>
 </pre></div>
@@ -179,7 +179,7 @@ your changes.</li>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A good graphical interface to git makes some of these steps much
-easier. Some options are described in <a class="reference internal" href="git_install.html#git-gui-options"><span class="std std-ref">Get a git GUI (optional)</span></a>.</p>
+easier. Some options are described in <a class="reference internal" href="git_install.html#git-gui-options"><span>Get a git GUI (optional)</span></a>.</p>
 </div>
 </div>
 <div class="section" id="if-something-goes-wrong">
@@ -205,7 +205,7 @@ should represent one logical set of changes.</li>
 <li>Ask on the <a class="reference external" href="http://groups.google.com/group/astropy-dev">astropy-dev mailing list</a> if you get stuck.</li>
 <li>Never merge changes from <code class="docutils literal"><span class="pre">astropy/master</span></code> into your feature branch. If
 changes in the development version require changes to our code you can
-<a class="reference internal" href="#rebase"><span class="std std-ref">Rebase, but only if asked</span></a>.</li>
+<a class="reference internal" href="#rebase"><span>Rebase, but only if asked</span></a>.</li>
 </ul>
 <p>In addition there are a couple of <a class="reference external" href="http://git-scm.com/">git</a> naming conventions used in this
 document:</p>
@@ -220,16 +220,16 @@ document:</p>
 <h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <p>These, conceptually, are the steps you will follow in contributing to Astropy:</p>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#fetch-latest"><span class="std std-ref">Fetch the latest Astropy</span></a></li>
-<li><a class="reference internal" href="#make-feature-branch"><span class="std std-ref">Make a new feature branch</span></a>; you will make your changes on this branch.</li>
-<li><a class="reference internal" href="#install-branch"><span class="std std-ref">Install your branch</span></a></li>
-<li>Follow <a class="reference internal" href="#edit-flow"><span class="std std-ref">The editing workflow</span></a> to write/edit/document/test code - make
+<li><a class="reference internal" href="#fetch-latest"><span>Fetch the latest Astropy</span></a></li>
+<li><a class="reference internal" href="#make-feature-branch"><span>Make a new feature branch</span></a>; you will make your changes on this branch.</li>
+<li><a class="reference internal" href="#install-branch"><span>Install your branch</span></a></li>
+<li>Follow <a class="reference internal" href="#edit-flow"><span>The editing workflow</span></a> to write/edit/document/test code - make
 frequent, small commits.</li>
-<li><a class="reference internal" href="#add-changelog"><span class="std std-ref">Add a changelog entry</span></a></li>
-<li><a class="reference internal" href="#push-to-github"><span class="std std-ref">Copy your changes to GitHub</span></a></li>
-<li>From GitHub, <a class="reference internal" href="#pull-request"><span class="std std-ref">Ask for your changes to be reviewed</span></a> to let the Astropy maintainers know
+<li><a class="reference internal" href="#add-changelog"><span>Add a changelog entry</span></a></li>
+<li><a class="reference internal" href="#push-to-github"><span>Copy your changes to GitHub</span></a></li>
+<li>From GitHub, <a class="reference internal" href="#pull-request"><span>Ask for your changes to be reviewed</span></a> to let the Astropy maintainers know
 you have contributions to review.</li>
-<li><a class="reference internal" href="#revise-and-push"><span class="std std-ref">Revise and push as necessary</span></a> in response to comments on the pull
+<li><a class="reference internal" href="#revise-and-push"><span>Revise and push as necessary</span></a> in response to comments on the pull
 request. Pushing those changes to GitHub automatically updates the
 pull request.</li>
 </ol>
@@ -237,14 +237,14 @@ pull request.</li>
 This in turn makes it easier for project maintainers (that might be you) to
 see what you&#8217;ve done, and why you did it.</p>
 <p>A worked example that follows these steps for fixing an Astropy issue is at
-<a class="reference internal" href="git_edit_workflow_examples.html#astropy-fix-example"><span class="std std-ref">Contributing code to Astropy, a worked example</span></a>.</p>
-<p>Some additional topics related to <a class="reference external" href="http://git-scm.com/">git</a> are in <a class="reference internal" href="additional_git_topics.html#additional-git"><span class="std std-ref">Some other things you might want to do</span></a>.</p>
+<a class="reference internal" href="git_edit_workflow_examples.html#astropy-fix-example"><span>Contributing code to Astropy, a worked example</span></a>.</p>
+<p>Some additional topics related to <a class="reference external" href="http://git-scm.com/">git</a> are in <a class="reference internal" href="additional_git_topics.html#additional-git"><span>Some other things you might want to do</span></a>.</p>
 </div>
 <div class="section" id="fetch-the-latest-astropy">
 <span id="fetch-latest"></span><h2>Fetch the latest Astropy<a class="headerlink" href="#fetch-the-latest-astropy" title="Permalink to this headline">¶</a></h2>
 <p>From time to time you should fetch the development version (i.e. Astropy
 <code class="docutils literal"><span class="pre">astropy/master</span></code>) changes from GitHub:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">fetch</span> <span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre>git fetch astropy
 </pre></div>
 </div>
 <p>This will pull down any commits you don&#8217;t have, and set the remote branches to
@@ -266,12 +266,12 @@ what the changes in the branch are for. Branch names like <code class="docutils 
 or <code class="docutils literal"><span class="pre">buxfix-for-issue-42</span></code> clearly describe the purpose of the branch.</p>
 <p>Always make your branch from <code class="docutils literal"><span class="pre">astropy/master</span></code> so that you are basing your
 changes on the latest version of Astropy:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="c"># Update the mirror of trunk</span>
-<span class="n">git</span> <span class="n">fetch</span> <span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre># Update the mirror of trunk
+git fetch astropy
 
-<span class="c"># Make new feature branch starting at astropy/master</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="n">my</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">feature</span> <span class="n">astropy</span><span class="o">/</span><span class="n">master</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">my</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">feature</span>
+# Make new feature branch starting at astropy/master
+git branch my-new-feature astropy/master
+git checkout my-new-feature
 </pre></div>
 </div>
 </div>
@@ -282,7 +282,7 @@ know it should be connected to your fork on GitHub. You need that connection
 for your proposed changes to be managed by the Astropy maintainers on GitHub.</p>
 <p>To connect your local branch to GitHub, you <a class="reference external" href="http://schacon.github.com/git/git-push.html">git push</a> this new branch up to
 your GitHub repo with the <code class="docutils literal"><span class="pre">--set-upstream</span></code> option:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span> <span class="n">my</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">feature</span>
+<div class="highlight-python"><div class="highlight"><pre>git push --set-upstream your-github-username my-new-feature
 </pre></div>
 </div>
 <p>From now on git will know that <code class="docutils literal"><span class="pre">my-new-feature</span></code> is related to the
@@ -294,7 +294,7 @@ setup in this section will make that easier.</p>
 <div class="section" id="install-your-branch">
 <span id="install-branch"></span><h2>Install your branch<a class="headerlink" href="#install-your-branch" title="Permalink to this headline">¶</a></h2>
 <p>Ideally you should set up a python virtual environment just for this fix;
-instructions for doing to are at <a class="reference internal" href="virtual_pythons.html#virtual-envs"><span class="std std-ref">Python virtual environments</span></a>. Doing so ensures you
+instructions for doing to are at <a class="reference internal" href="virtual_pythons.html#virtual-envs"><span>Python virtual environments</span></a>. Doing so ensures you
 will not corrupt your main astropy install and makes it very easy to recover
 from mistakes.</p>
 <p>Once you have activated that environment you need to install the version of
@@ -329,7 +329,7 @@ documentation.</li>
 <h3>In more detail<a class="headerlink" href="#in-more-detail" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Make some changes to one or more files. You should follow the Astropy
-<a class="reference internal" href="../codeguide.html#code-guide"><span class="std std-ref">Coding Guidelines</span></a>. Each logical set of changes should be treated as one
+<a class="reference internal" href="../codeguide.html#code-guide"><span>Coding Guidelines</span></a>. Each logical set of changes should be treated as one
 commit. For example, if you are fixing a known bug in Astropy and notice
 a different bug while implementing your fix, implement the fix to that new
 bug as a different set of changes.</p>
@@ -337,30 +337,30 @@ bug as a different set of changes.</p>
 <li><p class="first">Test that your changes do not lead to <em>regressions</em>, i.e. that your
 changes do not break existing code, by running the Astropy tests. You can
 run all of the Astropy tests from ipython with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>If your change involves only a small part of Astropy, e.g. Time, you can
 run just those tests:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">astropy</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Make sure your code includes appropriate docstrings, described at
-<a class="reference internal" href="../docrules.html#doc-rules"><span class="std std-ref">Astropy Docstring Rules</span></a>. If appropriate, as when you are adding a new feature,
+<a class="reference internal" href="../docrules.html#doc-rules"><span>Astropy Docstring Rules</span></a>. If appropriate, as when you are adding a new feature,
 you should update the appropriate documentation in the <code class="docutils literal"><span class="pre">docs</span></code> directory;
-a detailed description is in <a class="reference internal" href="../docguide.html#documentation-guidelines"><span class="std std-ref">Writing Documentation</span></a>.</p>
+a detailed description is in <a class="reference internal" href="../docguide.html#documentation-guidelines"><span>Writing Documentation</span></a>.</p>
 </li>
 <li><p class="first">If you have sphinx installed, you can also check that
 the documentation builds and looks correct by running, from the
 <code class="docutils literal"><span class="pre">astropy</span></code> directory:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_docs</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build_docs
 </pre></div>
 </div>
 <p>The last line should just state <code class="docutils literal"><span class="pre">build</span> <span class="pre">succeeded</span></code>, and should not mention
-any warnings.  (For more details, see <a class="reference internal" href="../docguide.html#documentation-guidelines"><span class="std std-ref">Writing Documentation</span></a>.)</p>
+any warnings.  (For more details, see <a class="reference internal" href="../docguide.html#documentation-guidelines"><span>Writing Documentation</span></a>.)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If the build_docs command is not found, try running <code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span>
@@ -369,14 +369,14 @@ any warnings.  (For more details, see <a class="reference internal" href="../doc
 </li>
 <li><p class="first">Add tests of your new code, if appropriate. Some changes (e.g. to
 documentation) do not need tests. Detailed instructions are at
-<a class="reference internal" href="../testguide.html#testing-guidelines"><span class="std std-ref">Testing Guidelines</span></a>, but if you have no experience writing tests or
+<a class="reference internal" href="../testguide.html#testing-guidelines"><span>Testing Guidelines</span></a>, but if you have no experience writing tests or
 with the <a class="reference external" href="http://pytest.org/latest/">py.test</a> testing framework submit your changes without adding
 tests, but mention in the pull request that you have not written tests. An
-example of writing a test is in <a class="reference internal" href="git_edit_workflow_examples.html#astropy-fix-example"><span class="std std-ref">Contributing code to Astropy, a worked example</span></a>.</p>
+example of writing a test is in <a class="reference internal" href="git_edit_workflow_examples.html#astropy-fix-example"><span>Contributing code to Astropy, a worked example</span></a>.</p>
 </li>
 <li><p class="first">Stage your changes using <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code> and commit them using <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code>.
 An example of doing that, based on the fix for an actual Astropy issue, is
-at <a class="reference internal" href="git_edit_workflow_examples.html#astropy-fix-example"><span class="std std-ref">Contributing code to Astropy, a worked example</span></a>.</p>
+at <a class="reference internal" href="git_edit_workflow_examples.html#astropy-fix-example"><span>Contributing code to Astropy, a worked example</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Make your <a class="reference external" href="http://git-scm.com/">git</a> commit messages short and descriptive. If a commit
@@ -399,7 +399,7 @@ that does many things at once. Repeat the steps above as necessary!</p>
 made. Include the pull request number if the change fixes an issue. An
 example entry, for the changes which fixed
 <a class="reference external" href="https://github.com/astropy/astropy/pull/1845">issue 1845</a>, is:</p>
-<div class="highlight-default"><div class="highlight"><pre>- ``astropy.wcs.Wcs.printwcs`` will no longer warn that ``cdelt`` is
+<div class="highlight-python"><div class="highlight"><pre>- ``astropy.wcs.Wcs.printwcs`` will no longer warn that ``cdelt`` is
   being ignored when none was present in the FITS file. [#1845]
 </pre></div>
 </div>
@@ -415,7 +415,7 @@ names and the like is encouraged.</p>
 <div class="section" id="copy-your-changes-to-github">
 <span id="push-to-github"></span><h2>Copy your changes to GitHub<a class="headerlink" href="#copy-your-changes-to-github" title="Permalink to this headline">¶</a></h2>
 <p>This step is easy because of the way you created the feature branch. Just:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">push</span>
+<div class="highlight-python"><div class="highlight"><pre>git push
 </pre></div>
 </div>
 </div>
@@ -465,12 +465,12 @@ This results in re-writing the history of commits, which is why you should do it
 only if asked.</p>
 <p>It is easier to make mistakes rebasing than other areas of <a class="reference external" href="http://git-scm.com/">git</a>, so before you
 start make a branch to serve as a backup copy of your work:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">branch</span> <span class="n">tmp</span> <span class="n">my</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">feature</span> <span class="c"># make temporary branch--will be deleted later</span>
+<div class="highlight-python"><div class="highlight"><pre>git branch tmp my-new-feature # make temporary branch--will be deleted later
 </pre></div>
 </div>
 <p>The actual rebasing is usually easy:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">fetch</span> <span class="n">astropy</span><span class="o">/</span><span class="n">master</span>  <span class="c"># get the latest development astropy</span>
-<span class="n">git</span> <span class="n">rebase</span> <span class="n">astropy</span><span class="o">/</span><span class="n">master</span> <span class="n">my</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">feature</span>
+<div class="highlight-python"><div class="highlight"><pre>git fetch astropy/master  # get the latest development astropy
+git rebase astropy/master my-new-feature
 </pre></div>
 </div>
 <p>You are more likely to run into <em>conflicts</em> here&#8211;places where the changes you
@@ -479,14 +479,14 @@ help if you need it.</p>
 <p>After the rebase you need to push your changes to GitHub; you will need force
 the push because <a class="reference external" href="http://git-scm.com/">git</a> objects to re-writing the history of the repository
 after you have pushed it somewhere:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span>
+<div class="highlight-python"><div class="highlight"><pre>git push -f
 </pre></div>
 </div>
 <p>If you run into any problems, do not hesitate to ask. A more detailed conceptual
-discussing of rebasing is at <a class="reference internal" href="additional_git_topics.html#rebase-on-trunk"><span class="std std-ref">Rebasing on trunk</span></a>.</p>
+discussing of rebasing is at <a class="reference internal" href="additional_git_topics.html#rebase-on-trunk"><span>Rebasing on trunk</span></a>.</p>
 <p>Once your rebase is successfully pushed to GitHub you can delete the backup
 branch you made:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">tmp</span>
+<div class="highlight-python"><div class="highlight"><pre>git branch -D tmp
 </pre></div>
 </div>
 </div>
@@ -545,8 +545,8 @@ branch you made:</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

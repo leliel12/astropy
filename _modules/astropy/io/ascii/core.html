@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.ascii.core &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.ascii.core &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -229,8 +229,8 @@
 
 <span class="sd">    The default behavior of ``BaseReader`` is to throw an instance of</span>
 <span class="sd">    this class if a data row doesn&#39;t match the header.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-
+<span class="sd">    &quot;&quot;&quot;</span>
+</div>
 <span class="k">class</span> <span class="nc">OptionalTableImportError</span><span class="p">(</span><span class="ne">ImportError</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Indicates that a dependency for table reading is not present.</span>
@@ -247,8 +247,8 @@
 <span class="sd">    The C-based fast readers in ``io.ascii`` raise an instance of</span>
 <span class="sd">    this error class upon encountering a parameter that the</span>
 <span class="sd">    C engine cannot handle.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-
+<span class="sd">    &quot;&quot;&quot;</span>
+</div>
 <span class="k">class</span> <span class="nc">FastOptionsError</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Indicates that one of the specified options for fast</span>
@@ -261,27 +261,27 @@
 
 <span class="sd">    This class is the default type of ``Column`` and provides a base</span>
 <span class="sd">    class for other data types.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="StrType"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.StrType.html#astropy.io.ascii.StrType">[docs]</a><span class="k">class</span> <span class="nc">StrType</span><span class="p">(</span><span class="n">NoType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Indicates that a column consists of text data.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="NumType"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.NumType.html#astropy.io.ascii.NumType">[docs]</a><span class="k">class</span> <span class="nc">NumType</span><span class="p">(</span><span class="n">NoType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Indicates that a column consists of numerical data.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="FloatType"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FloatType.html#astropy.io.ascii.FloatType">[docs]</a><span class="k">class</span> <span class="nc">FloatType</span><span class="p">(</span><span class="n">NumType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Describes floating-point data.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">BoolType</span><span class="p">(</span><span class="n">NoType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Describes boolean data.</span>
@@ -291,18 +291,18 @@
 <div class="viewcode-block" id="IntType"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.IntType.html#astropy.io.ascii.IntType">[docs]</a><span class="k">class</span> <span class="nc">IntType</span><span class="p">(</span><span class="n">NumType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Describes integer data.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="AllType"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.AllType.html#astropy.io.ascii.AllType">[docs]</a><span class="k">class</span> <span class="nc">AllType</span><span class="p">(</span><span class="n">StrType</span><span class="p">,</span> <span class="n">FloatType</span><span class="p">,</span> <span class="n">IntType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Subclass of all other data types.</span>
 
 <span class="sd">    This type is returned by ``convert_numpy`` if the given numpy</span>
 <span class="sd">    type does not match ``StrType``, ``FloatType``, or ``IntType``.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="Column"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.Column.html#astropy.io.ascii.Column">[docs]</a><span class="k">class</span> <span class="nc">Column</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Table column.</span>
 
@@ -319,9 +319,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">NoType</span>  <span class="c"># Generic type (Int, Float, Str etc)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># Numpy dtype if available</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">str_vals</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fill_values</span> <span class="o">=</span> <span class="p">{}</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fill_values</span> <span class="o">=</span> <span class="p">{}</span>
 
-
+</div>
 <div class="viewcode-block" id="BaseInputter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseInputter.html#astropy.io.ascii.BaseInputter">[docs]</a><span class="k">class</span> <span class="nc">BaseInputter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get the lines from the table input and return a list of lines.</span>
@@ -365,8 +365,8 @@
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                     <span class="s">&#39;Input &quot;table&quot; must be a string (filename or data) or an iterable&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseInputter.process_lines"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseInputter.html#astropy.io.ascii.BaseInputter.process_lines">[docs]</a>    <span class="k">def</span> <span class="nf">process_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Process lines for subsequent use.  In the default case do nothing.</span>
 <span class="sd">        This routine is not generally intended for removing comment lines or</span>
@@ -377,9 +377,9 @@
 <span class="sd">        input lines to the table rows.  For example the</span>
 <span class="sd">        ContinuationLinesInputter derived class accounts for continuation</span>
 <span class="sd">        characters if a row is split into lines.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">lines</span></div></div>
+        <span class="k">return</span> <span class="n">lines</span>
 
-
+</div></div>
 <div class="viewcode-block" id="BaseSplitter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseSplitter.html#astropy.io.ascii.BaseSplitter">[docs]</a><span class="k">class</span> <span class="nc">BaseSplitter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base splitter that uses python&#39;s split method to do the work.</span>
@@ -406,12 +406,12 @@
 <div class="viewcode-block" id="BaseSplitter.process_line"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseSplitter.html#astropy.io.ascii.BaseSplitter.process_line">[docs]</a>    <span class="k">def</span> <span class="nf">process_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Remove whitespace at the beginning or end of line.  This is especially useful for</span>
 <span class="sd">        whitespace-delimited files to prevent spurious columns at the beginning or end.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
-
+        <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="BaseSplitter.process_val"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseSplitter.html#astropy.io.ascii.BaseSplitter.process_val">[docs]</a>    <span class="k">def</span> <span class="nf">process_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Remove whitespace at the beginning or end of value.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
-
+        <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="BaseSplitter.__call__"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseSplitter.html#astropy.io.ascii.BaseSplitter.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_line</span><span class="p">:</span>
             <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_line</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">)</span>
@@ -420,16 +420,16 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">vals</span></div>
-
+                <span class="k">yield</span> <span class="n">vals</span>
+</div>
 <div class="viewcode-block" id="BaseSplitter.join"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseSplitter.html#astropy.io.ascii.BaseSplitter.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">delimiter</span> <span class="o">=</span> <span class="s">&#39; &#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">delimiter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span>
-        <span class="k">return</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="DefaultSplitter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.DefaultSplitter.html#astropy.io.ascii.DefaultSplitter">[docs]</a><span class="k">class</span> <span class="nc">DefaultSplitter</span><span class="p">(</span><span class="n">BaseSplitter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Default class to split strings into columns using python csv.  The class</span>
 <span class="sd">    attributes are taken from the csv Dialect class.</span>
@@ -465,9 +465,9 @@
 <span class="sd">        If splitting on whitespace then replace unquoted tabs with space first&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span> <span class="o">==</span> <span class="s">&#39;\s&#39;</span><span class="p">:</span>
             <span class="n">line</span> <span class="o">=</span> <span class="n">_replace_tab_with_space</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">escapechar</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quotechar</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-
+</div>
 <div class="viewcode-block" id="DefaultSplitter.__call__"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.DefaultSplitter.html#astropy.io.ascii.DefaultSplitter.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return an iterator over the table ``lines``, where each iterator output</span>
 <span class="sd">        is a list of the split line values.</span>
@@ -506,8 +506,8 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">vals</span></div>
-
+                <span class="k">yield</span> <span class="n">vals</span>
+</div>
 <div class="viewcode-block" id="DefaultSplitter.join"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.DefaultSplitter.html#astropy.io.ascii.DefaultSplitter.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
 
         <span class="c"># In Python 2.x the inputs to csv cannot be unicode</span>
@@ -526,9 +526,9 @@
             <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_val</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">out</span></div></div>
+        <span class="k">return</span> <span class="n">out</span>
 
-
+</div></div>
 <span class="k">def</span> <span class="nf">_replace_tab_with_space</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">escapechar</span><span class="p">,</span> <span class="n">quotechar</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Replace tabs with spaces in given string, preserving quoted substrings</span>
 
@@ -613,8 +613,8 @@
         <span class="n">comment_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;^&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
                          <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">comment_lines</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">comment_lines</span><span class="p">:</span>
-            <span class="n">meta</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="p">{})[</span><span class="s">&#39;comments&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comment_lines</span></div>
-
+            <span class="n">meta</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="p">{})[</span><span class="s">&#39;comments&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comment_lines</span>
+</div>
 <div class="viewcode-block" id="BaseHeader.get_cols"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.get_cols">[docs]</a>    <span class="k">def</span> <span class="nf">get_cols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize the header Column objects from the table ``lines``.</span>
 
@@ -649,8 +649,8 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="p">([</span><span class="n">line</span><span class="p">]))</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_cols_from_names</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_cols_from_names</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="BaseHeader.process_lines"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.process_lines">[docs]</a>    <span class="k">def</span> <span class="nf">process_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generator to yield non-blank and non-comment lines&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">:</span>
@@ -658,20 +658,20 @@
         <span class="c"># Yield non-comment lines</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">re_comment</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)):</span>
-                <span class="k">yield</span> <span class="n">line</span></div>
-
+                <span class="k">yield</span> <span class="n">line</span>
+</div>
 <div class="viewcode-block" id="BaseHeader.write_comments"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.write_comments">[docs]</a>    <span class="k">def</span> <span class="nf">write_comments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_comment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">False</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">comment</span> <span class="ow">in</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;comments&#39;</span><span class="p">,</span> <span class="p">[]):</span>
-                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write_comment</span> <span class="o">+</span> <span class="n">comment</span><span class="p">)</span></div>
-
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write_comment</span> <span class="o">+</span> <span class="n">comment</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseHeader.write"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">spacer_line</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_line</span><span class="p">),</span>
                                       <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write_spacer_lines</span><span class="p">)):</span>
                 <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spacer_line</span><span class="p">)</span>
-            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">]))</span></div>
-
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">]))</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">colnames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the column names of the table&quot;&quot;&quot;</span>
@@ -679,16 +679,16 @@
                      <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)</span>
 
 <div class="viewcode-block" id="BaseHeader.get_type_map_key"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.get_type_map_key">[docs]</a>    <span class="k">def</span> <span class="nf">get_type_map_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">col</span><span class="o">.</span><span class="n">raw_type</span></div>
-
+        <span class="k">return</span> <span class="n">col</span><span class="o">.</span><span class="n">raw_type</span>
+</div>
 <div class="viewcode-block" id="BaseHeader.get_col_type"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.get_col_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_col_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">type_map_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_type_map_key</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_type_map</span><span class="p">[</span><span class="n">type_map_key</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unknown data type &quot;&quot;</span><span class="si">%s</span><span class="s">&quot;&quot; for column &quot;</span><span class="si">%s</span><span class="s">&quot;&#39;</span> <span class="o">%</span> <span class="p">(</span>
-                <span class="n">col</span><span class="o">.</span><span class="n">raw_type</span><span class="p">,</span> <span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">))</span></div>
-
+                <span class="n">col</span><span class="o">.</span><span class="n">raw_type</span><span class="p">,</span> <span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="BaseHeader.check_column_names"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseHeader.html#astropy.io.ascii.BaseHeader.check_column_names">[docs]</a>    <span class="k">def</span> <span class="nf">check_column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">strict_names</span><span class="p">,</span> <span class="n">guessing</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check column names.</span>
@@ -723,9 +723,9 @@
 
         <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Length of names argument ({0}) does not match number&#39;</span>
-                             <span class="s">&#39; of table columns ({1})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">)))</span></div></div>
+                             <span class="s">&#39; of table columns ({1})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">)))</span>
 
-
+</div></div>
 <div class="viewcode-block" id="BaseData"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseData.html#astropy.io.ascii.BaseData">[docs]</a><span class="k">class</span> <span class="nc">BaseData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base table data reader.</span>
@@ -774,8 +774,8 @@
             <span class="n">re_comment</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">re_comment</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span><span class="p">]</span></div>
-
+            <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="BaseData.get_data_lines"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseData.html#astropy.io.ascii.BaseData.get_data_lines">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the ``data_lines`` attribute to the lines slice comprising the</span>
 <span class="sd">        table data values.&quot;&quot;&quot;</span>
@@ -786,13 +786,13 @@
         <span class="k">if</span> <span class="n">start_line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">end_line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_lines</span> <span class="o">=</span> <span class="n">data_lines</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">start_line</span><span class="p">,</span> <span class="n">end_line</span><span class="p">)]</span>
         <span class="k">else</span><span class="p">:</span>  <span class="c"># Don&#39;t copy entire data lines unless necessary</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">data_lines</span> <span class="o">=</span> <span class="n">data_lines</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">data_lines</span> <span class="o">=</span> <span class="n">data_lines</span>
+</div>
 <div class="viewcode-block" id="BaseData.get_str_vals"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseData.html#astropy.io.ascii.BaseData.get_str_vals">[docs]</a>    <span class="k">def</span> <span class="nf">get_str_vals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a generator that returns a list of column values (as strings)</span>
 <span class="sd">        for each data line.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_lines</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_lines</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseData.masks"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseData.html#astropy.io.ascii.BaseData.masks">[docs]</a>    <span class="k">def</span> <span class="nf">masks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set fill value for each column and then apply that fill value</span>
 
@@ -802,8 +802,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_values</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_set_fill_values</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_set_masks</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_masks</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_set_fill_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the fill values of the individual cols based on fill_values of BaseData</span>
 
@@ -877,8 +877,8 @@
         <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">:</span>
             <span class="n">col</span><span class="o">.</span><span class="n">str_vals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">iter_str_vals</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_replace_vals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">col</span><span class="o">.</span><span class="n">str_vals</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="p">[</span><span class="n">col</span><span class="o">.</span><span class="n">str_vals</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="BaseData.write"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseData.html#astropy.io.ascii.BaseData.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_line</span><span class="p">,</span> <span class="s">&#39;__call__&#39;</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Start_line attribute cannot be callable for write()&#39;</span><span class="p">)</span>
@@ -890,16 +890,16 @@
 
         <span class="n">col_str_iters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">str_vals</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">vals</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">col_str_iters</span><span class="p">):</span>
-            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span></div>
-
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span>
+</div>
     <span class="k">def</span> <span class="nf">_set_col_formats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">formats</span><span class="p">:</span>
-                <span class="n">col</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formats</span><span class="p">[</span><span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">]</span></div>
+                <span class="n">col</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formats</span><span class="p">[</span><span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
 
-
+</div>
 <div class="viewcode-block" id="convert_numpy"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.convert_numpy.html#astropy.io.ascii.convert_numpy">[docs]</a><span class="k">def</span> <span class="nf">convert_numpy</span><span class="p">(</span><span class="n">numpy_type</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a tuple containing a function which converts a list into a numpy</span>
 <span class="sd">    array and the type produced by the converter function.</span>
@@ -962,9 +962,9 @@
 
     <span class="n">converter</span> <span class="o">=</span> <span class="n">bool_converter</span> <span class="k">if</span> <span class="n">converter_type</span> <span class="ow">is</span> <span class="n">BoolType</span> <span class="k">else</span> <span class="n">generic_converter</span>
 
-    <span class="k">return</span> <span class="n">converter</span><span class="p">,</span> <span class="n">converter_type</span></div>
+    <span class="k">return</span> <span class="n">converter</span><span class="p">,</span> <span class="n">converter_type</span>
 
-
+</div>
 <div class="viewcode-block" id="BaseOutputter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseOutputter.html#astropy.io.ascii.BaseOutputter">[docs]</a><span class="k">class</span> <span class="nc">BaseOutputter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Output table as a dict of column objects keyed on column name.  The</span>
 <span class="sd">    table data are stored as plain python lists within the column objects.</span>
@@ -1027,9 +1027,9 @@
                     <span class="n">col</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">convert_numpy</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">str</span><span class="p">))</span>
                     <span class="n">last_err</span> <span class="o">=</span> <span class="n">err</span>
                 <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Column {} failed to convert: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">last_err</span><span class="p">))</span></div>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Column {} failed to convert: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">last_err</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="TableOutputter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.TableOutputter.html#astropy.io.ascii.TableOutputter">[docs]</a><span class="k">class</span> <span class="nc">TableOutputter</span><span class="p">(</span><span class="n">BaseOutputter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Output the table as an astropy.table.Table object.</span>
@@ -1057,9 +1057,9 @@
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="s">&#39;meta&#39;</span><span class="p">):</span>
                 <span class="n">out_col</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">out</span></div></div>
+        <span class="k">return</span> <span class="n">out</span>
 
-
+</div></div>
 <span class="k">class</span> <span class="nc">MetaBaseReader</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MetaBaseReader</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">)</span>
@@ -1255,8 +1255,8 @@
 
         <span class="n">_apply_include_exclude_names</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude_names</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">table</span></div>
-
+        <span class="k">return</span> <span class="n">table</span>
+</div>
 <div class="viewcode-block" id="BaseReader.inconsistent_handler"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseReader.html#astropy.io.ascii.BaseReader.inconsistent_handler">[docs]</a>    <span class="k">def</span> <span class="nf">inconsistent_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_vals</span><span class="p">,</span> <span class="n">ncols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adjust or skip data entries if a row is inconsistent with the header.</span>
@@ -1283,8 +1283,8 @@
 <span class="sd">            skipped.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># an empty list will always trigger an InconsistentTableError in read()</span>
-        <span class="k">return</span> <span class="n">str_vals</span></div>
-
+        <span class="k">return</span> <span class="n">str_vals</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">comment_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return lines in the table that match header.comment regexp&quot;&quot;&quot;</span>
@@ -1299,8 +1299,8 @@
 
 <div class="viewcode-block" id="BaseReader.write_header"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseReader.html#astropy.io.ascii.BaseReader.write_header">[docs]</a>    <span class="k">def</span> <span class="nf">write_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">write_comments</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseReader.write"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BaseReader.html#astropy.io.ascii.BaseReader.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write ``table`` as list of strings.</span>
@@ -1335,9 +1335,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">write_header</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">lines</span></div></div>
+        <span class="k">return</span> <span class="n">lines</span>
 
-
+</div></div>
 <div class="viewcode-block" id="ContinuationLinesInputter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.ContinuationLinesInputter.html#astropy.io.ascii.ContinuationLinesInputter">[docs]</a><span class="k">class</span> <span class="nc">ContinuationLinesInputter</span><span class="p">(</span><span class="n">BaseInputter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Inputter where lines ending in ``continuation_char`` are joined</span>
 <span class="sd">    with the subsequent line.  Example::</span>
@@ -1371,9 +1371,9 @@
                 <span class="n">outlines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">))</span>
                 <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="k">return</span> <span class="n">outlines</span></div></div>
+        <span class="k">return</span> <span class="n">outlines</span>
 
-
+</div></div>
 <div class="viewcode-block" id="WhitespaceSplitter"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.WhitespaceSplitter.html#astropy.io.ascii.WhitespaceSplitter">[docs]</a><span class="k">class</span> <span class="nc">WhitespaceSplitter</span><span class="p">(</span><span class="n">DefaultSplitter</span><span class="p">):</span>
 <div class="viewcode-block" id="WhitespaceSplitter.process_line"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.WhitespaceSplitter.html#astropy.io.ascii.WhitespaceSplitter.process_line">[docs]</a>    <span class="k">def</span> <span class="nf">process_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Replace tab with space within ``line`` while respecting quoted substrings&quot;&quot;&quot;</span>
@@ -1389,8 +1389,8 @@
             <span class="n">lastchar</span> <span class="o">=</span> <span class="n">char</span>
             <span class="n">newline</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newline</span><span class="p">)</span></div></div>
-
+        <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newline</span><span class="p">)</span>
+</div></div>
 <span class="n">extra_reader_pars</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Reader&#39;</span><span class="p">,</span> <span class="s">&#39;Inputter&#39;</span><span class="p">,</span> <span class="s">&#39;Outputter&#39;</span><span class="p">,</span>
                      <span class="s">&#39;delimiter&#39;</span><span class="p">,</span> <span class="s">&#39;comment&#39;</span><span class="p">,</span> <span class="s">&#39;quotechar&#39;</span><span class="p">,</span> <span class="s">&#39;header_start&#39;</span><span class="p">,</span>
                      <span class="s">&#39;data_start&#39;</span><span class="p">,</span> <span class="s">&#39;data_end&#39;</span><span class="p">,</span> <span class="s">&#39;converters&#39;</span><span class="p">,</span>
@@ -1555,8 +1555,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

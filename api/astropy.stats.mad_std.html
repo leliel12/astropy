@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>mad_std &mdash; Astropy v1.2.dev14980</title>
+    <title>mad_std &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="median_absolute_deviation" href="astropy.stats.median_absolute_deviation.html" />
     <link rel="prev" title="knuth_bin_width" href="astropy.stats.knuth_bin_width.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -93,7 +93,7 @@
 deviation (MAD)</a>.</p>
 <p>The standard deviation estimator is given by:</p>
 <div class="math">
-<p><img src="../_images/math/8f8258441f3fd0e729480457b57ca651ad1d1b21.png" alt="\sigma \approx \frac{\textrm{MAD}}{\Phi^{-1}(3/4)} \approx 1.4826 \ \textrm{MAD}"/></p>
+<p><img src="../_images/math/012dd6a6b4d7de45c425cd977765bbaabd035adf.png" alt="\sigma \approx \frac{\textrm{MAD}}{\Phi^{-1}(3/4)} \approx 1.4826 \ \textrm{MAD}"/></p>
 </div><p>where <img class="math" src="../_images/math/d32efe32787551e83757c254680938409912cef6.png" alt="\Phi^{-1}(P)"/> is the normal inverse cumulative
 distribution function evaluated at probability <img class="math" src="../_images/math/4b326cb4b02890ddae00245fd51f804412a9e62f.png" alt="P = 3/4"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -120,9 +120,9 @@ is to compute the median along a flattened version of the array.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="k">import</span> <span class="n">mad_std</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils</span> <span class="k">import</span> <span class="n">NumpyRNGContext</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="k">import</span> <span class="n">normal</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">mad_std</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils</span> <span class="kn">import</span> <span class="n">NumpyRNGContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">normal</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">NumpyRNGContext</span><span class="p">(</span><span class="mi">12345</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 <span class="gp">... </span>    <span class="n">mad_std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>    
@@ -155,8 +155,8 @@ is to compute the median along a flattened version of the array.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

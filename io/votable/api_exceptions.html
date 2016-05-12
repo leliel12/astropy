@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.votable.exceptions &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.votable.exceptions &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../index.html" />
     <link rel="up" title="VOTable XML handling (astropy.io.votable)" href="index.html" />
-    <link rel="next" title="Miscellaneous Input/Output (astropy.io.misc)" href="../misc.html" />
+    <link rel="next" title="parse" href="../../api/astropy.io.votable.parse.html" />
     <link rel="prev" title="validate_schema" href="../../api/astropy.io.votable.xmlutil.validate_schema.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../_static/copybutton.js"></script>
@@ -58,7 +58,7 @@
     <h3>Navigation</h3>
     <ul>
       <li class="right">
-	<a href="../misc.html" title="Miscellaneous Input/Output (astropy.io.misc)">
+	<a href="../../api/astropy.io.votable.parse.html" title="parse">
 	  next &raquo;
 	</a>
       </li>
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">VOTable XML handling (<code class="docutils literal"><span class="pre">astropy.io.votable</span></code>)</a> &raquo;</li>
@@ -191,7 +191,7 @@ tools that produced the VOTable file.</p>
 encoded as multiple numbers separated by whitespace.</div></blockquote>
 <p>Many VOTable files in the wild use commas as a separator instead,
 and <code class="docutils literal"><span class="pre">vo.table</span></code> supports this convention when not in
-<a class="reference internal" href="index.html#pedantic-mode"><span class="std std-ref">Pedantic mode</span></a>.</p>
+<a class="reference internal" href="index.html#pedantic-mode"><span>Pedantic mode</span></a>.</p>
 <p><code class="docutils literal"><span class="pre">vo.table</span></code> always outputs files using only spaces, regardless of
 how they were input.</p>
 <p><strong>References</strong>: <a class="reference external" href="http://www.ivoa.net/Documents/VOTable/20040811/REC-VOTable-1.1-20040811.html#toc-header-35">1.1</a>,
@@ -200,7 +200,7 @@ how they were input.</p>
 <div class="section" id="w02-x-attribute-y-is-invalid-must-be-a-standard-xml-id">
 <span id="w02"></span><h3><a class="toc-backref" href="#id7">W02: x attribute &#8216;y&#8217; is invalid.  Must be a standard XML id</a><a class="headerlink" href="#w02-x-attribute-y-is-invalid-must-be-a-standard-xml-id" title="Permalink to this headline">¶</a></h3>
 <p>XML ids must match the following regular expression:</p>
-<div class="highlight-default"><div class="highlight"><pre>^[A-Za-z_][A-Za-z0-9_\.\-]*$
+<div class="highlight-python"><div class="highlight"><pre>^[A-Za-z_][A-Za-z0-9_\.\-]*$
 </pre></div>
 </div>
 <p>The VOTable 1.1 says the following:</p>
@@ -287,15 +287,15 @@ by UCD1+.</p>
 <span id="w07"></span><h3><a class="toc-backref" href="#id12">W07: Invalid astroYear in x: &#8216;y&#8217;</a><a class="headerlink" href="#w07-invalid-astroyear-in-x-y" title="Permalink to this headline">¶</a></h3>
 <p>As astro year field is a Besselian or Julian year matching the
 regular expression:</p>
-<div class="highlight-default"><div class="highlight"><pre>^[JB]?[0-9]+([.][0-9]*)?$
+<div class="highlight-python"><div class="highlight"><pre>^[JB]?[0-9]+([.][0-9]*)?$
 </pre></div>
 </div>
 <p>Defined in this XML Schema snippet:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">simpleType</span>  <span class="n">name</span><span class="o">=</span><span class="s">&quot;astroYear&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">restriction</span> <span class="n">base</span><span class="o">=</span><span class="s">&quot;xs:token&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">pattern</span>  <span class="n">value</span><span class="o">=</span><span class="s">&quot;[JB]?[0-9]+([.][0-9]*)?&quot;</span><span class="o">/&gt;</span>
-  <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">restriction</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">simpleType</span><span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre>&lt;xs:simpleType  name=&quot;astroYear&quot;&gt;
+  &lt;xs:restriction base=&quot;xs:token&quot;&gt;
+    &lt;xs:pattern  value=&quot;[JB]?[0-9]+([.][0-9]*)?&quot;/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
 </pre></div>
 </div>
 </div>
@@ -351,15 +351,15 @@ VOTable schema, the <code class="docutils literal"><span class="pre">name</span>
 <span id="w13"></span><h3><a class="toc-backref" href="#id18">W13: &#8216;x&#8217; is not a valid VOTable datatype, should be &#8216;y&#8217;</a><a class="headerlink" href="#w13-x-is-not-a-valid-votable-datatype-should-be-y" title="Permalink to this headline">¶</a></h3>
 <p>Some VOTable files in the wild use non-standard datatype names.  These
 are mapped to standard ones using the following mapping:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">string</span>        <span class="o">-&gt;</span> <span class="n">char</span>
-<span class="n">unicodeString</span> <span class="o">-&gt;</span> <span class="n">unicodeChar</span>
-<span class="n">int16</span>         <span class="o">-&gt;</span> <span class="n">short</span>
-<span class="n">int32</span>         <span class="o">-&gt;</span> <span class="nb">int</span>
-<span class="n">int64</span>         <span class="o">-&gt;</span> <span class="n">long</span>
-<span class="n">float32</span>       <span class="o">-&gt;</span> <span class="nb">float</span>
-<span class="n">float64</span>       <span class="o">-&gt;</span> <span class="n">double</span>
-<span class="n">unsignedInt</span>   <span class="o">-&gt;</span> <span class="n">long</span>
-<span class="n">unsignedShort</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+<div class="highlight-python"><div class="highlight"><pre>string        -&gt; char
+unicodeString -&gt; unicodeChar
+int16         -&gt; short
+int32         -&gt; int
+int64         -&gt; long
+float32       -&gt; float
+float64       -&gt; double
+unsignedInt   -&gt; long
+unsignedShort -&gt; int
 </pre></div>
 </div>
 <p>To add more datatype mappings during parsing, use the
@@ -560,7 +560,7 @@ raised when this happens.</p>
 <p>An XML namespace was specified on the <code class="docutils literal"><span class="pre">VOTABLE</span></code> element, but the
 namespace does not match what is expected for a <code class="docutils literal"><span class="pre">VOTABLE</span></code> file.</p>
 <p>The <code class="docutils literal"><span class="pre">VOTABLE</span></code> namespace is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ivoa</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">VOTable</span><span class="o">/</span><span class="n">vX</span><span class="o">.</span><span class="n">X</span>
+<div class="highlight-python"><div class="highlight"><pre>http://www.ivoa.net/xml/VOTable/vX.X
 </pre></div>
 </div>
 <p>where &#8220;X.X&#8221; is the version number.</p>
@@ -572,7 +572,7 @@ validating parsers.</p>
 <span id="w42"></span><h3><a class="toc-backref" href="#id45">W42: No XML namespace specified</a><a class="headerlink" href="#w42-no-xml-namespace-specified" title="Permalink to this headline">¶</a></h3>
 <p>The root element should specify a namespace.</p>
 <p>The <code class="docutils literal"><span class="pre">VOTABLE</span></code> namespace is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ivoa</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">VOTable</span><span class="o">/</span><span class="n">vX</span><span class="o">.</span><span class="n">X</span>
+<div class="highlight-python"><div class="highlight"><pre>http://www.ivoa.net/xml/VOTable/vX.X
 </pre></div>
 </div>
 <p>where &#8220;X.X&#8221; is the version number.</p>
@@ -602,11 +602,11 @@ attribute, as e.g. <code class="docutils literal"><span class="pre">&lt;VALUES</
 <span id="w45"></span><h3><a class="toc-backref" href="#id48">W45: content-role attribute &#8216;x&#8217; invalid</a><a class="headerlink" href="#w45-content-role-attribute-x-invalid" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">content-role</span></code> attribute on the <code class="docutils literal"><span class="pre">LINK</span></code> element must be one of
 the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">query</span><span class="p">,</span> <span class="n">hints</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">location</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">query</span><span class="p">,</span> <span class="n">hints</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">location</span>
 </pre></div>
 </div>
 <p>And in VOTable 1.3, additionally:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="nb">type</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">type</span>
 </pre></div>
 </div>
 <p><strong>References</strong>: <a class="reference external" href="http://www.ivoa.net/Documents/VOTable/20040811/REC-VOTable-1.1-20040811.html#ToC54">1.1</a>,
@@ -672,7 +672,7 @@ datatypes.</p>
 <p>Strings, which are defined as a set of characters, can be
 represented in VOTable as a fixed- or variable-length array of
 characters:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">FIELD</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;unboundedString&quot;</span> <span class="n">datatype</span><span class="o">=</span><span class="s">&quot;char&quot;</span> <span class="n">arraysize</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="o">/&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre>&lt;FIELD name=&quot;unboundedString&quot; datatype=&quot;char&quot; arraysize=&quot;*&quot;/&gt;
 </pre></div>
 </div>
 <p>A 1D array of strings can be represented as a 2D array of
@@ -701,11 +701,11 @@ in the FIELD specifier.</p>
 <span id="e05"></span><h3><a class="toc-backref" href="#id62">E05: Invalid boolean value &#8216;x&#8217;</a><a class="headerlink" href="#e05-invalid-boolean-value-x" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal"><span class="pre">boolean</span></code> value should be one of the following strings (case
 insensitive) in the <code class="docutils literal"><span class="pre">TABLEDATA</span></code> format:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="s">&#39;TRUE&#39;</span><span class="p">,</span> <span class="s">&#39;FALSE&#39;</span><span class="p">,</span> <span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">,</span> <span class="s">&#39;T&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\0</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;?&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;TRUE&#39;</span><span class="p">,</span> <span class="s">&#39;FALSE&#39;</span><span class="p">,</span> <span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">,</span> <span class="s">&#39;T&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\0</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;?&#39;</span>
 </pre></div>
 </div>
 <p>and in <code class="docutils literal"><span class="pre">BINARY</span></code> format:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="s">&#39;T&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\0</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;?&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;T&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\0</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;?&#39;</span>
 </pre></div>
 </div>
 <p><strong>References</strong>: <a class="reference external" href="http://www.ivoa.net/Documents/VOTable/20040811/REC-VOTable-1.1-20040811.html#sec:datatypes">1.1</a>,
@@ -714,21 +714,21 @@ insensitive) in the <code class="docutils literal"><span class="pre">TABLEDATA</
 <div class="section" id="e06-unknown-datatype-x-on-field-y">
 <span id="e06"></span><h3><a class="toc-backref" href="#id63">E06: Unknown datatype &#8216;x&#8217; on field &#8216;y&#8217;</a><a class="headerlink" href="#e06-unknown-datatype-x-on-field-y" title="Permalink to this headline">¶</a></h3>
 <p>The supported datatypes are:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">double</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">bit</span><span class="p">,</span> <span class="n">boolean</span><span class="p">,</span> <span class="n">unsignedByte</span><span class="p">,</span> <span class="n">short</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">double</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">bit</span><span class="p">,</span> <span class="n">boolean</span><span class="p">,</span> <span class="n">unsignedByte</span><span class="p">,</span> <span class="n">short</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">long</span><span class="p">,</span>
 <span class="n">floatComplex</span><span class="p">,</span> <span class="n">doubleComplex</span><span class="p">,</span> <span class="n">char</span><span class="p">,</span> <span class="n">unicodeChar</span>
 </pre></div>
 </div>
 <p>The following non-standard aliases are also supported, but in
-these case <a class="reference internal" href="#w13"><span class="std std-ref">W13</span></a> will be raised:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">string</span>        <span class="o">-&gt;</span> <span class="n">char</span>
-<span class="n">unicodeString</span> <span class="o">-&gt;</span> <span class="n">unicodeChar</span>
-<span class="n">int16</span>         <span class="o">-&gt;</span> <span class="n">short</span>
-<span class="n">int32</span>         <span class="o">-&gt;</span> <span class="nb">int</span>
-<span class="n">int64</span>         <span class="o">-&gt;</span> <span class="n">long</span>
-<span class="n">float32</span>       <span class="o">-&gt;</span> <span class="nb">float</span>
-<span class="n">float64</span>       <span class="o">-&gt;</span> <span class="n">double</span>
-<span class="n">unsignedInt</span>   <span class="o">-&gt;</span> <span class="n">long</span>
-<span class="n">unsignedShort</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+these case <a class="reference internal" href="#w13"><span>W13</span></a> will be raised:</p>
+<div class="highlight-python"><div class="highlight"><pre>string        -&gt; char
+unicodeString -&gt; unicodeChar
+int16         -&gt; short
+int32         -&gt; int
+int64         -&gt; long
+float32       -&gt; float
+float64       -&gt; double
+unsignedInt   -&gt; long
+unsignedShort -&gt; int
 </pre></div>
 </div>
 <p>To add more datatype mappings during parsing, use the
@@ -765,7 +765,7 @@ equivalently <code class="docutils literal"><span class="pre">precision=&quot;2&
 after the decimal point), or as a number of significant figures
 (e.g. <code class="docutils literal"><span class="pre">precision=&quot;E5&quot;</span></code> indicates a relative precision of 10-5).</p>
 <p>It is validated using the following regular expression:</p>
-<div class="highlight-default"><div class="highlight"><pre>[EF]?[1-9][0-9]*
+<div class="highlight-python"><div class="highlight"><pre>[EF]?[1-9][0-9]*
 </pre></div>
 </div>
 <p><strong>References</strong>: <a class="reference external" href="http://www.ivoa.net/Documents/VOTable/20040811/REC-VOTable-1.1-20040811.html#sec:form">1.1</a>,
@@ -787,13 +787,13 @@ quantity.</p>
 with a fixed or variable number of elements; the array may
 even be multidimensional. For instance, the position of a
 point in a 3D space can be defined by the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">FIELD</span> <span class="n">ID</span><span class="o">=</span><span class="s">&quot;point_3D&quot;</span> <span class="n">datatype</span><span class="o">=</span><span class="s">&quot;double&quot;</span> <span class="n">arraysize</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="o">/&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre>&lt;FIELD ID=&quot;point_3D&quot; datatype=&quot;double&quot; arraysize=&quot;3&quot;/&gt;
 </pre></div>
 </div>
 <p>and each cell corresponding to that definition must contain
 exactly 3 numbers. An asterisk (*) may be appended to
 indicate a variable number of elements in the array, as in:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">FIELD</span> <span class="n">ID</span><span class="o">=</span><span class="s">&quot;values&quot;</span> <span class="n">datatype</span><span class="o">=</span><span class="s">&quot;int&quot;</span> <span class="n">arraysize</span><span class="o">=</span><span class="s">&quot;100*&quot;</span><span class="o">/&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre>&lt;FIELD ID=&quot;values&quot; datatype=&quot;int&quot; arraysize=&quot;100*&quot;/&gt;
 </pre></div>
 </div>
 <p>where it is specified that each cell corresponding to that
@@ -807,7 +807,7 @@ dimension changing fastest; as in the case of a simple array,
 the last dimension may be variable in length. As an example,
 the following definition declares a table cell which may
 contain a set of up to 10 images, each of 64×64 bytes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">FIELD</span> <span class="n">ID</span><span class="o">=</span><span class="s">&quot;thumbs&quot;</span> <span class="n">datatype</span><span class="o">=</span><span class="s">&quot;unsignedByte&quot;</span> <span class="n">arraysize</span><span class="o">=</span><span class="s">&quot;64×64×10*&quot;</span><span class="o">/&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre>&lt;FIELD ID=&quot;thumbs&quot; datatype=&quot;unsignedByte&quot; arraysize=&quot;64×64×10*&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -831,7 +831,7 @@ optional, but its corresponding schema indicates it is required.</p>
 <span id="e16"></span><h3><a class="toc-backref" href="#id72">E16: Invalid system attribute &#8216;x&#8217;</a><a class="headerlink" href="#e16-invalid-system-attribute-x" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">system</span></code> attribute on the <code class="docutils literal"><span class="pre">COOSYS</span></code> element must be one of the
 following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="s">&#39;eq_FK4&#39;</span><span class="p">,</span> <span class="s">&#39;eq_FK5&#39;</span><span class="p">,</span> <span class="s">&#39;ICRS&#39;</span><span class="p">,</span> <span class="s">&#39;ecl_FK4&#39;</span><span class="p">,</span> <span class="s">&#39;ecl_FK5&#39;</span><span class="p">,</span> <span class="s">&#39;galactic&#39;</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;eq_FK4&#39;</span><span class="p">,</span> <span class="s">&#39;eq_FK5&#39;</span><span class="p">,</span> <span class="s">&#39;ICRS&#39;</span><span class="p">,</span> <span class="s">&#39;ecl_FK4&#39;</span><span class="p">,</span> <span class="s">&#39;ecl_FK5&#39;</span><span class="p">,</span> <span class="s">&#39;galactic&#39;</span><span class="p">,</span>
 <span class="s">&#39;supergalactic&#39;</span><span class="p">,</span> <span class="s">&#39;xy&#39;</span><span class="p">,</span> <span class="s">&#39;barycentric&#39;</span><span class="p">,</span> <span class="s">&#39;geo_app&#39;</span>
 </pre></div>
 </div>
@@ -1050,8 +1050,8 @@ code, filename, line and column number.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

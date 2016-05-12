@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.wcs.wcs &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.wcs.wcs &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="astropy.wcs" href="../wcs.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" >Module code</a> &raquo;</li>
@@ -280,9 +280,9 @@
 <span class="sd">    The warning raised when the contents of the FITS header have been</span>
 <span class="sd">    modified to be standards compliant.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span></div>
+    <span class="k">pass</span>
 
-
+</div>
 <div class="viewcode-block" id="WCS"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS">[docs]</a><span class="k">class</span> <span class="nc">WCS</span><span class="p">(</span><span class="n">WCSBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;WCS objects perform standard WCS transformations, and correct for</span>
 <span class="sd">    `SIP`_ and `distortion paper`_ table-lookup transformations, based</span>
@@ -607,8 +607,8 @@
 <span class="sd">        Convenience method so user doesn&#39;t have to import the</span>
 <span class="sd">        :mod:`copy` stdlib module.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="WCS.deepcopy"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.deepcopy">[docs]</a>    <span class="k">def</span> <span class="nf">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a deep copy of the object.</span>
@@ -616,8 +616,8 @@
 <span class="sd">        Convenience method so user doesn&#39;t have to import the</span>
 <span class="sd">        :mod:`copy` stdlib module.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="WCS.sub"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.sub">[docs]</a>    <span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
         <span class="n">copy</span><span class="o">.</span><span class="n">wcs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
@@ -715,8 +715,8 @@
                     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
                         <span class="p">(</span><span class="s">&quot;&#39;{0}&#39; made the change &#39;{1}&#39;.&quot;</span><span class="p">)</span><span class="o">.</span>
                         <span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">),</span>
-                        <span class="n">FITSFixedWarning</span><span class="p">)</span></div>
-
+                        <span class="n">FITSFixedWarning</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="WCS.calc_footprint"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.calc_footprint">[docs]</a>    <span class="k">def</span> <span class="nf">calc_footprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">undistort</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the footprint of the image on the sky.</span>
@@ -784,8 +784,8 @@
         <span class="k">if</span> <span class="n">undistort</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_pix2world</span><span class="p">(</span><span class="n">corners</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs_pix2world</span><span class="p">(</span><span class="n">corners</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
-
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs_pix2world</span><span class="p">(</span><span class="n">corners</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_read_det2im_kw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">fobj</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `distortion paper`_ type lookup table for detector to</span>
@@ -1881,8 +1881,8 @@
                 <span class="n">adaptive</span><span class="o">=</span><span class="n">adaptive</span><span class="p">,</span> <span class="n">detect_divergence</span><span class="o">=</span><span class="n">detect_div</span><span class="p">,</span>
                 <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">),</span>
             <span class="s">&#39;input&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-        <span class="p">)</span></div>
-
+        <span class="p">)</span>
+</div>
     <span class="n">all_world2pix</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="s">        all_world2pix(*arg, accuracy=1.0e-4, maxiter=20,</span>
 <span class="s">        adaptive=False, detect_divergence=True, quiet=False)</span>
@@ -2480,8 +2480,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_det2im</span><span class="p">(</span><span class="n">hdulist</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_distortion_kw</span><span class="p">(</span><span class="n">hdulist</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">hdulist</span></div>
-
+        <span class="k">return</span> <span class="n">hdulist</span>
+</div>
 <div class="viewcode-block" id="WCS.to_header"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.to_header">[docs]</a>    <span class="k">def</span> <span class="nf">to_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate an `astropy.io.fits.Header` object with the basic WCS</span>
 <span class="sd">        and SIP information stored in this object.  This should be</span>
@@ -2605,15 +2605,15 @@
                         <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_keys</span><span class="p">)),</span>
                     <span class="n">AstropyWarning</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">header</span></div>
-
+        <span class="k">return</span> <span class="n">header</span>
+</div>
 <div class="viewcode-block" id="WCS.to_header_string"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.to_header_string">[docs]</a>    <span class="k">def</span> <span class="nf">to_header_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relax</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Identical to `to_header`, but returns a string containing the</span>
 <span class="sd">        header cards.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_header</span><span class="p">(</span><span class="n">relax</span><span class="p">))</span></div>
-
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_header</span><span class="p">(</span><span class="n">relax</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="WCS.footprint_to_file"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.footprint_to_file">[docs]</a>    <span class="k">def</span> <span class="nf">footprint_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;green&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes out a `ds9`_ style regions file. It can be loaded</span>
@@ -2643,8 +2643,8 @@
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;polygon(&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">calc_footprint</span><span class="p">()</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;) # color={0}, width={1:d} </span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">width</span><span class="p">))</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
-
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</div>
     <span class="k">def</span> <span class="nf">_get_naxis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_naxis1</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_naxis2</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2659,11 +2659,11 @@
         <span class="n">_mrot</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">_theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">_theta</span><span class="p">))</span>
         <span class="n">_mrot</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">_theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">_theta</span><span class="p">))</span>
         <span class="n">new_cd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cd</span><span class="p">,</span> <span class="n">_mrot</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cd</span> <span class="o">=</span> <span class="n">new_cd</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cd</span> <span class="o">=</span> <span class="n">new_cd</span>
+</div>
 <div class="viewcode-block" id="WCS.printwcs"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.printwcs">[docs]</a>    <span class="k">def</span> <span class="nf">printwcs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
-
+        <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Return a short description. Simply porting the behavior from</span>
@@ -2794,8 +2794,8 @@
 
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subresult</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">result</span></div>
-
+        <span class="k">return</span> <span class="n">result</span>
+</div>
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Support pickling of WCS objects.  This is done by serializing</span>
@@ -2832,8 +2832,8 @@
         <span class="c"># axis 0 has special meaning to sub</span>
         <span class="c"># if wcs.wcs.ctype == [&#39;RA&#39;,&#39;DEC&#39;,&#39;VLSR&#39;], you want</span>
         <span class="c"># wcs.sub([1,2]) to get &#39;RA&#39;,&#39;DEC&#39; back</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">])</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">])</span>
+</div>
 <div class="viewcode-block" id="WCS.swapaxes"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.swapaxes">[docs]</a>    <span class="k">def</span> <span class="nf">swapaxes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Swap axes in a WCS.</span>
@@ -2855,16 +2855,16 @@
         <span class="n">inds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">naxis</span><span class="p">))</span>
         <span class="n">inds</span><span class="p">[</span><span class="n">ax0</span><span class="p">],</span><span class="n">inds</span><span class="p">[</span><span class="n">ax1</span><span class="p">]</span> <span class="o">=</span> <span class="n">inds</span><span class="p">[</span><span class="n">ax1</span><span class="p">],</span><span class="n">inds</span><span class="p">[</span><span class="n">ax0</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">])</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">])</span>
+</div>
 <div class="viewcode-block" id="WCS.reorient_celestial_first"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.reorient_celestial_first">[docs]</a>    <span class="k">def</span> <span class="nf">reorient_celestial_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reorient the WCS such that the celestial axes are first, followed by</span>
 <span class="sd">        the spectral axis, followed by any others.</span>
 <span class="sd">        Assumes at least celestial axes are present.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">WCSSUB_CELESTIAL</span><span class="p">,</span> <span class="n">WCSSUB_SPECTRAL</span><span class="p">,</span> <span class="n">WCSSUB_STOKES</span><span class="p">])</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub</span><span class="p">([</span><span class="n">WCSSUB_CELESTIAL</span><span class="p">,</span> <span class="n">WCSSUB_SPECTRAL</span><span class="p">,</span> <span class="n">WCSSUB_STOKES</span><span class="p">])</span>
+</div>
 <div class="viewcode-block" id="WCS.slice"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.slice">[docs]</a>    <span class="k">def</span> <span class="nf">slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">numpy_order</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Slice a WCS instance using a Numpy slice. The order of the slice should</span>
@@ -2924,8 +2924,8 @@
                     <span class="n">wcs_new</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cdelt</span><span class="p">[</span><span class="n">wcs_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">cdelt</span> <span class="o">*</span> <span class="n">iview</span><span class="o">.</span><span class="n">step</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">wcs_new</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">crpix</span><span class="p">[</span><span class="n">wcs_index</span><span class="p">]</span> <span class="o">-=</span> <span class="n">iview</span><span class="o">.</span><span class="n">start</span>
-        <span class="k">return</span> <span class="n">wcs_new</span></div>
-
+        <span class="k">return</span> <span class="n">wcs_new</span>
+</div>
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="c"># &quot;getitem&quot; is a shortcut for self.slice; it is very limited</span>
         <span class="c"># there is no obvious and unambiguous interpretation of wcs[1,2,3]</span>
@@ -3027,9 +3027,9 @@
                               <span class="s">&quot;See http://wcsaxes.readthedocs.org for more &quot;</span>
                               <span class="s">&quot;details.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">WCSAxes</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;wcs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span></div>
+            <span class="k">return</span> <span class="n">WCSAxes</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;wcs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">__WCS_unpickle__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">dct</span><span class="p">,</span> <span class="n">fits_data</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Unpickles a WCS object from a serialized FITS string.</span>
@@ -3134,9 +3134,9 @@
         <span class="k">if</span> <span class="n">_do_set</span><span class="p">:</span>
             <span class="n">subresult</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
 
-    <span class="k">return</span> <span class="n">result</span></div>
+    <span class="k">return</span> <span class="n">result</span>
 
-
+</div>
 <div class="viewcode-block" id="validate"><a class="viewcode-back" href="../../../api/astropy.wcs.validate.html#astropy.wcs.validate">[docs]</a><span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Prints a WCS validation report for the given FITS file.</span>
@@ -3265,8 +3265,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Try the development version &mdash; Astropy v1.2.dev14980</title>
+    <title>Try the development version &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../index.html" />
     <link rel="next" title="How to make a code contribution" href="development_workflow.html" />
     <link rel="prev" title="Licenses" href="../../license.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -95,7 +95,7 @@ this. You will not need to do this every time you want to contribute;
 most of it is one-time setup. You can count on one hand the number of
 <a class="reference external" href="http://git-scm.com/">git</a> commands you will need to regularly use to keep your local copy
 of <a class="reference external" href="http://astropy.org">Astropy</a> up to date. If you find this taking more than an hour email
-the <a class="reference internal" href="../../index.html#getting-help"><span class="std std-ref">astropy developers list for help</span></a></p>
+the <a class="reference internal" href="../../index.html#getting-help"><span>astropy developers list for help</span></a></p>
 </div>
 <p>Trying out the development version of Astropy is useful in three ways:</p>
 <ul class="simple">
@@ -113,16 +113,16 @@ contribute.</li>
 <p>Conceptually, there are several steps to getting a working copy of the latest
 version of Astropy on your computer:</p>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#fork-a-copy"><span class="std std-ref">Make your own copy of Astropy on GitHub</span></a>; this copy is called a <em>fork</em> (if you don&#8217;t have an
+<li><a class="reference internal" href="#fork-a-copy"><span>Make your own copy of Astropy on GitHub</span></a>; this copy is called a <em>fork</em> (if you don&#8217;t have an
 account on <a class="reference external" href="http://github.com">github</a> yet, go there now and make one).</li>
-<li><a class="reference internal" href="#check-git-install"><span class="std std-ref">Make sure git is installed and configured on your computer</span></a></li>
-<li><a class="reference internal" href="#clone-your-fork"><span class="std std-ref">Copy your fork of Astropy from GitHub to your computer</span></a>; this is called making a <em>clone</em> of the repository.</li>
-<li><a class="reference internal" href="#set-upstream-master"><span class="std std-ref">Tell git where to look for changes in the development version of Astropy</span></a></li>
-<li><a class="reference internal" href="#make-a-branch"><span class="std std-ref">Create your own private workspace</span></a>; this is called making a <em>branch</em>.</li>
-<li><a class="reference internal" href="#activate-development-astropy"><span class="std std-ref">&#8220;Activate&#8221; the development version of astropy</span></a></li>
-<li><a class="reference internal" href="#test-installation"><span class="std std-ref">Test your development copy</span></a></li>
-<li><a class="reference internal" href="#try-devel"><span class="std std-ref">Try out the development version</span></a></li>
-<li><a class="reference internal" href="#deactivate-development"><span class="std std-ref">&#8220;Deactivate&#8221; the development version</span></a></li>
+<li><a class="reference internal" href="#check-git-install"><span>Make sure git is installed and configured on your computer</span></a></li>
+<li><a class="reference internal" href="#clone-your-fork"><span>Copy your fork of Astropy from GitHub to your computer</span></a>; this is called making a <em>clone</em> of the repository.</li>
+<li><a class="reference internal" href="#set-upstream-master"><span>Tell git where to look for changes in the development version of Astropy</span></a></li>
+<li><a class="reference internal" href="#make-a-branch"><span>Create your own private workspace</span></a>; this is called making a <em>branch</em>.</li>
+<li><a class="reference internal" href="#activate-development-astropy"><span>&#8220;Activate&#8221; the development version of astropy</span></a></li>
+<li><a class="reference internal" href="#test-installation"><span>Test your development copy</span></a></li>
+<li><a class="reference internal" href="#try-devel"><span>Try out the development version</span></a></li>
+<li><a class="reference internal" href="#deactivate-development"><span>&#8220;Deactivate&#8221; the development version</span></a></li>
 </ol>
 </div>
 <div class="section" id="step-by-step-instructions">
@@ -149,7 +149,7 @@ forked copy of <a class="reference external" href="http://astropy.org">Astropy</
 <span id="check-git-install"></span><h3>Make sure git is installed and configured on your computer<a class="headerlink" href="#make-sure-git-is-installed-and-configured-on-your-computer" title="Permalink to this headline">¶</a></h3>
 <p><strong>Check that git is installed:</strong></p>
 <p>Check by typing, in a terminal:</p>
-<div class="highlight-default"><div class="highlight"><pre>$ git --version
+<div class="highlight-python"><div class="highlight"><pre>$ git --version
 # if git is installed, will get something like: git version 1.8.4
 </pre></div>
 </div>
@@ -169,7 +169,7 @@ problem, set up authentication
 computer to <a class="reference external" href="http://github.com">GitHub</a> only the copy (called a <em>branch</em>) of Astropy that you are
 working on gets pushed up to GitHub.  <em>If</em> your version of git is 1.7.11 or,
 greater, you can do that with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">push</span><span class="o">.</span><span class="n">default</span> <span class="n">simple</span>
+<div class="highlight-python"><div class="highlight"><pre>git config --global push.default simple
 </pre></div>
 </div>
 <p>If you skip this step now it is not a problem; <a class="reference external" href="http://git-scm.com/">git</a> will remind you to do it in
@@ -192,7 +192,7 @@ something like <code class="docutils literal"><span class="pre">git&#64;github.c
 <p>One of the commands below will make a complete copy of your <a class="reference external" href="http://github.com">GitHub</a> fork
 of <a class="reference external" href="http://astropy.org">Astropy</a> in a directory called <code class="docutils literal"><span class="pre">astropy</span></code>; which form you use depends
 on what kind of authentication you set up in the previous step:</p>
-<div class="highlight-default"><div class="highlight"><pre># Use this form if you setup SSH keys...
+<div class="highlight-python"><div class="highlight"><pre># Use this form if you setup SSH keys...
 $ git clone git@github.com:your-user-name/astropy.git
 # ...otherwise use this form:
 $ git clone https://github.com/your-user-name/astropy.git
@@ -211,24 +211,24 @@ version is traditionally called the <em>upstream</em> remote, but here we use a
 more meaningful name for the remote: <em>astropy</em>.</p>
 <p>Change into the <code class="docutils literal"><span class="pre">astropy</span></code> directory you created in the previous step and
 let <a class="reference external" href="http://git-scm.com/">git</a> know about about the astropy remote:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">cd</span> <span class="n">astropy</span>
-<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">astropy</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">astropy</span><span class="o">/</span><span class="n">astropy</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-python"><div class="highlight"><pre>cd astropy
+git remote add astropy git://github.com/astropy/astropy.git
 </pre></div>
 </div>
 <p>You can check that everything is set up properly so far by asking <a class="reference external" href="http://git-scm.com/">git</a> to
 show you all of the remotes it knows about for your local repository of
 <a class="reference external" href="http://astropy.org">Astropy</a> with <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code>, which should display something like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span>   <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">astropy</span><span class="o">/</span><span class="n">astropy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-<span class="n">astropy</span>   <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">astropy</span><span class="o">/</span><span class="n">astropy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-<span class="n">origin</span>     <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">astropy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-<span class="n">origin</span>     <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">astropy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>astropy   git://github.com/astropy/astropy.git (fetch)
+astropy   git://github.com/astropy/astropy.git (push)
+origin     git@github.com:your-user-name/astropy.git (fetch)
+origin     git@github.com:your-user-name/astropy.git (push)
 </pre></div>
 </div>
 <p>Note that <a class="reference external" href="http://git-scm.com/">git</a> already knew about one remote, called <em>origin</em>; that is your
 fork of Astropy on <a class="reference external" href="http://github.com">GitHub</a>.</p>
 <p>To make more explicit that origin is really <em>your</em> fork of Astropy, rename that
 remote to your <a class="reference external" href="http://github.com">GitHub</a> user name:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">remote</span> <span class="n">rename</span> <span class="n">origin</span> <span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span>
+<div class="highlight-python"><div class="highlight"><pre>git remote rename origin your-user-name
 </pre></div>
 </div>
 </div>
@@ -247,22 +247,22 @@ branches: <code class="docutils literal"><span class="pre">*</span> <span class=
 <p>To avoid potential confusion down the road, make your own branch now; this
 one you can call anything you like (when making contributions you should use
 a meaningful more name):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">branch</span> <span class="n">my</span><span class="o">-</span><span class="n">own</span><span class="o">-</span><span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre>git branch my-own-astropy
 </pre></div>
 </div>
 <p>You are <em>not quite</em> done yet. Git knows about this new branch; run
 <code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code> and you get:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">*</span> <span class="n">master</span>
-  <span class="n">my</span><span class="o">-</span><span class="n">own</span><span class="o">-</span><span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre>* master
+  my-own-astropy
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">*</span></code> indicates you are still working on master. To work on your branch
 instead you need to <em>check out</em> the branch <code class="docutils literal"><span class="pre">my-own-astropy</span></code>. Do that with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">git</span> <span class="n">checkout</span> <span class="n">my</span><span class="o">-</span><span class="n">own</span><span class="o">-</span><span class="n">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre>git checkout my-own-astropy
 </pre></div>
 </div>
 <p>and you should be rewarded with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s">&#39;my-own-astropy&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre>Switched to branch &#39;my-own-astropy&#39;
 </pre></div>
 </div>
 </div>
@@ -271,7 +271,7 @@ instead you need to <em>check out</em> the branch <code class="docutils literal"
 <p>Right now you have the development version of <a class="reference external" href="http://astropy.org">Astropy</a>, but python will not
 see it. Though there are more sophisticated ways of managing multiple versions
 of <a class="reference external" href="http://astropy.org">Astropy</a>, for now this straightforward way will work (if you want to jump
-ahead to the more sophisticated method look at <a class="reference internal" href="virtual_pythons.html#virtual-envs"><span class="std std-ref">Python virtual environments</span></a>).</p>
+ahead to the more sophisticated method look at <a class="reference internal" href="virtual_pythons.html#virtual-envs"><span>Python virtual environments</span></a>).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>There are a couple of circumstances in which this quick method of
@@ -283,7 +283,7 @@ straight to using a virtual python environment:</p>
 </ul>
 </div>
 <p>In the directory where your copy of <a class="reference external" href="http://astropy.org">Astropy</a> is type:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">develop</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py develop
 </pre></div>
 </div>
 <p>Several pages of output will follow the first time you do this; this wouldn&#8217;t
@@ -291,7 +291,7 @@ be a bad time to get a fresh cup of coffee. At the end of it you should see
 something like  <code class="docutils literal"><span class="pre">Finished</span> <span class="pre">processing</span> <span class="pre">dependencies</span> <span class="pre">for</span> <span class="pre">astropy==0.3.dev6272</span></code>.</p>
 <p>To make sure it has been activated <strong>change to a different directory outside of
 the astropy distribution</strong> and try this in python:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>  
 <span class="go">&#39;0.3.dev6272&#39;</span>
 </pre></div>
@@ -305,7 +305,7 @@ will be used. That is fine for testing but you should make sure you change
 back to the stable version unless you are developing astropy. If you want
 to develop astropy, there is a better way of separating the development
 version from the version you do science with. That method, using a
-<a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, is discussed at <a class="reference internal" href="virtual_pythons.html#virtual-envs"><span class="std std-ref">Python virtual environments</span></a>.</p>
+<a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, is discussed at <a class="reference internal" href="virtual_pythons.html#virtual-envs"><span>Python virtual environments</span></a>.</p>
 <p class="last">For now <strong>remember to change back to your usual version</strong> when you are
 done with this.</p>
 </div>
@@ -319,13 +319,13 @@ a bug make sure the tests run properly on your system.</p>
 <a class="reference external" href="http://github.com/astropy/astropy/issues">report it</a>.</p>
 <p>To run the tests, navigate back to the directory your copy of astropy is in on
 your computer, then, at the shell prompt, type:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py test
 </pre></div>
 </div>
 <p>This is another good time to get some coffee or tea. The number of test is
 large. When the test are done running you will see a message something like
 this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="mi">4741</span> <span class="n">passed</span><span class="p">,</span> <span class="mi">85</span> <span class="n">skipped</span><span class="p">,</span> <span class="mi">11</span> <span class="n">xfailed</span>
+<div class="highlight-python"><div class="highlight"><pre>4741 passed, 85 skipped, 11 xfailed
 </pre></div>
 </div>
 <p>Skips and xfails are fine, but if there are errors or failures please
@@ -348,12 +348,12 @@ the development version.</p>
 science work with Astropy.</p>
 <p>Navigate to the directory where your local copy of the development version is,
 then run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">develop</span> <span class="o">-</span><span class="n">u</span>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py develop -u
 </pre></div>
 </div>
 <p>You should really confirm it is deactivated by <strong>changing to a different
 directory outside of the astropy distribution</strong> and running this in python:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>  
 <span class="go">&#39;0.2.5&#39;</span>
 </pre></div>
@@ -402,8 +402,8 @@ but it should not have <code class="docutils literal"><span class="pre">'dev'</s
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

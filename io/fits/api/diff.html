@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Differs &mdash; Astropy v1.2.dev14980</title>
+    <title>Differs &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Verification options" href="verification.html" />
     <link rel="prev" title="Images" href="images.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -170,7 +170,7 @@ whitespace (default: True).</p>
 object, passing on the values for any arguments they share in common
 (such as ignore_keywords).</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">headera</span><span class="p">,</span> <span class="n">headerb</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">FITSDiff</span><span class="p">(</span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span><span class="p">,</span> <span class="n">ignore_keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">])</span>
@@ -263,7 +263,7 @@ HDUs containing non-empty data of an indeterminate type).</li>
 object, passing on the values for any arguments they share in common
 (such as ignore_keywords).</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">headera</span><span class="p">,</span> <span class="n">headerb</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">FITSDiff</span><span class="p">(</span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span><span class="p">,</span> <span class="n">ignore_keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">])</span>
@@ -344,7 +344,7 @@ least once, but contains a different number of duplicates (for example, a
 different number of HISTORY cards in each header), an item is added to
 this dict with the keyword as the key, and a 2-tuple of the different
 counts of that keyword as the value.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;HISTORY&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">)}</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;HISTORY&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">)}</span>
 </pre></div>
 </div>
 <p>means that header a contains 20 HISTORY cards, while header b contains
@@ -354,7 +354,7 @@ only 19 HISTORY cards.</p>
 headers have different values, they appear in this dict.  It has a
 structure similar to <code class="docutils literal"><span class="pre">diff_duplicate_keywords</span></code>, with the keyword as the
 key, and a 2-tuple of the different values as the value.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;NAXIS&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;NAXIS&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
 </pre></div>
 </div>
 <p>means that the NAXIS keyword has a value of 2 in header a, and a value of
@@ -375,7 +375,7 @@ all keywords that appear in both headers.</p>
 object, passing on the values for any arguments they share in common
 (such as ignore_keywords).</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">headera</span><span class="p">,</span> <span class="n">headerb</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">FITSDiff</span><span class="p">(</span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span><span class="p">,</span> <span class="n">ignore_keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">])</span>
@@ -453,7 +453,7 @@ performed on images that don&#8217;t have the exact same dimensions.</p>
 contains a list of 2-tuples of the array index where the difference was
 found, and another 2-tuple containing the different values.  For example,
 if the pixel at (0, 0) contains different values this would look like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">)]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>where 1.1 and 2.2 are the values of that pixel in each array.  This
@@ -477,7 +477,7 @@ of pixels in the arrays.</p>
 object, passing on the values for any arguments they share in common
 (such as ignore_keywords).</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">headera</span><span class="p">,</span> <span class="n">headerb</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">FITSDiff</span><span class="p">(</span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span><span class="p">,</span> <span class="n">ignore_keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">])</span>
@@ -566,7 +566,7 @@ instead of tuples.</li>
 object, passing on the values for any arguments they share in common
 (such as ignore_keywords).</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">headera</span><span class="p">,</span> <span class="n">headerb</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">FITSDiff</span><span class="p">(</span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span><span class="p">,</span> <span class="n">ignore_keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">])</span>
@@ -662,7 +662,7 @@ column-by-column basis.  If any different data is found, it is added to
 this list.  The format of this list is similar to the <code class="docutils literal"><span class="pre">diff_pixels</span></code>
 attribute on <a class="reference internal" href="#astropy.io.fits.ImageDataDiff" title="astropy.io.fits.ImageDataDiff"><code class="xref py py-obj docutils literal"><span class="pre">ImageDataDiff</span></code></a> objects, though the &#8220;index&#8221; consists of a
 (column_name, row) tuple.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="p">[(</span><span class="s">&#39;TARGET&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;NGC1001&#39;</span><span class="p">,</span> <span class="s">&#39;NGC1002&#39;</span><span class="p">)]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[(</span><span class="s">&#39;TARGET&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;NGC1001&#39;</span><span class="p">,</span> <span class="s">&#39;NGC1002&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>shows that the tables contain different values in the 0-th row of the
@@ -683,7 +683,7 @@ those columns.</p>
 object, passing on the values for any arguments they share in common
 (such as ignore_keywords).</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">fits</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">headera</span><span class="p">,</span> <span class="n">headerb</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">(),</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">FITSDiff</span><span class="p">(</span><span class="n">hdul1</span><span class="p">,</span> <span class="n">hdul2</span><span class="p">,</span> <span class="n">ignore_keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">])</span>
@@ -775,8 +775,8 @@ fileobj is specified as a path.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

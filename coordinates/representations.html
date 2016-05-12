@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Using and Designing Coordinate Representations &mdash; Astropy v1.2.dev14980</title>
+    <title>Using and Designing Coordinate Representations &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="index.html" />
     <link rel="next" title="Using and Designing Coordinate Frames" href="frames.html" />
     <link rel="prev" title="Separations, Catalog Matching, and Related Functionality" href="matchsep.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -86,7 +86,7 @@
             
   <div class="section" id="using-and-designing-coordinate-representations">
 <span id="astropy-coordinates-representations"></span><h1>Using and Designing Coordinate Representations<a class="headerlink" href="#using-and-designing-coordinate-representations" title="Permalink to this headline">¶</a></h1>
-<p>As described in the <a class="reference internal" href="index.html#astropy-coordinates-overview"><span class="std std-ref">Overview of astropy.coordinates concepts</span></a>, the actual coordinate
+<p>As described in the <a class="reference internal" href="index.html#astropy-coordinates-overview"><span>Overview of astropy.coordinates concepts</span></a>, the actual coordinate
 data in <a class="reference internal" href="index.html#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">astropy.coordinates</span></code></a> frames is represented via
 &#8220;Representation classes&#8221;. These can be used to store 3-d coordinates in
 various representations, such as cartesian, spherical polar, cylindrical, and
@@ -115,14 +115,14 @@ cylindrical polar coordinates, represented by a cylindrical radius
 <p class="first admonition-title">Note</p>
 <p class="last">For information about using and changing the representation of
 <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> objects, see the
-<a class="reference internal" href="skycoord.html#astropy-skycoord-representations"><span class="std std-ref">Representations</span></a> section.</p>
+<a class="reference internal" href="skycoord.html#astropy-skycoord-representations"><span>Representations</span></a> section.</p>
 </div>
 <div class="section" id="instantiating-and-converting">
 <h2>Instantiating and converting<a class="headerlink" href="#instantiating-and-converting" title="Permalink to this headline">¶</a></h2>
 <p>Representation classes should be instantiated with <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>
 objects:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates.representation</span> <span class="k">import</span> <span class="n">CartesianRepresentation</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates.representation</span> <span class="kn">import</span> <span class="n">CartesianRepresentation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">car</span> <span class="o">=</span> <span class="n">CartesianRepresentation</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">kpc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">car</span>
 <span class="go">&lt;CartesianRepresentation (x, y, z) in kpc</span>
@@ -131,7 +131,7 @@ objects:</p>
 </div>
 <p>Representations can be converted to other representations using the
 <code class="docutils literal"><span class="pre">represent_as</span></code> method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates.representation</span> <span class="k">import</span> <span class="n">SphericalRepresentation</span><span class="p">,</span> <span class="n">CylindricalRepresentation</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates.representation</span> <span class="kn">import</span> <span class="n">SphericalRepresentation</span><span class="p">,</span> <span class="n">CylindricalRepresentation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sph</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">SphericalRepresentation</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sph</span>  
 <span class="go">&lt;SphericalRepresentation (lon, lat, distance) in (rad, rad, kpc)</span>
@@ -148,7 +148,7 @@ information, with the exception of
 is used to store the longitude and latitude of points but does not contain
 any distance to the points, and assumes that they are located on a unit and
 dimensionless sphere:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates.representation</span> <span class="k">import</span> <span class="n">UnitSphericalRepresentation</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates.representation</span> <span class="kn">import</span> <span class="n">UnitSphericalRepresentation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sph_unit</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">UnitSphericalRepresentation</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sph_unit</span>  
 <span class="go">&lt;UnitSphericalRepresentation (lon, lat) in rad</span>
@@ -157,7 +157,7 @@ dimensionless sphere:</p>
 </div>
 <p>Converting back to cartesian, the absolute scaling information has been
 removed, and the points are still located on a unit sphere:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sph_unit</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">UnitSphericalRepresentation</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sph_unit</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">UnitSphericalRepresentation</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sph_unit</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">CartesianRepresentation</span><span class="p">)</span> 
 <span class="go">&lt;CartesianRepresentation (x, y, z) [dimensionless]</span>
 <span class="go">    (0.424264068712, 0.707106781187, 0.565685424949)&gt;</span>
@@ -168,7 +168,7 @@ removed, and the points are still located on a unit sphere:</p>
 <h2>Array values<a class="headerlink" href="#array-values" title="Permalink to this headline">¶</a></h2>
 <p>Array <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> objects can also be passed to
 representations:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -221,7 +221,7 @@ of components to particular units will occur.</p>
 </li>
 </ul>
 <p>In pseudo-code, this means that your class will look like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyRepresentation</span><span class="p">(</span><span class="n">BaseRepresentation</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyRepresentation</span><span class="p">(</span><span class="n">BaseRepresentation</span><span class="p">):</span>
 
     <span class="n">attr_classes</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s">&#39;comp1&#39;</span><span class="p">,</span> <span class="n">ComponentClass1</span><span class="p">),</span>
                                  <span class="p">(</span><span class="s">&#39;comp2&#39;</span><span class="p">,</span> <span class="n">ComponentClass2</span><span class="p">),</span>
@@ -288,8 +288,8 @@ will be a subclass of <a class="reference internal" href="../api/astropy.coordin
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.config.configuration &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.config.configuration &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -110,18 +110,18 @@
     <span class="sd">&quot;&quot;&quot; A Warning that is issued when the configuration value specified in the</span>
 <span class="sd">    astropy configuration file does not match the type expected for that</span>
 <span class="sd">    configuration value.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="ConfigurationMissingWarning"><a class="viewcode-back" href="../../../api/astropy.config.ConfigurationMissingWarning.html#astropy.config.ConfigurationMissingWarning">[docs]</a><span class="k">class</span> <span class="nc">ConfigurationMissingWarning</span><span class="p">(</span><span class="n">AstropyWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; A Warning that is issued when the configuration directory cannot be</span>
 <span class="sd">    accessed (usually due to a permissions problem). If this warning appears,</span>
 <span class="sd">    configuration items will be set to their defaults rather than read from the</span>
 <span class="sd">    configuration file, and no configuration will persist across sessions.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    &quot;&quot;&quot;</span>
 
 
-<span class="c"># these are not in __all__ because it&#39;s not intended that a user ever see them</span>
+<span class="c"># these are not in __all__ because it&#39;s not intended that a user ever see them</span></div>
 <span class="k">class</span> <span class="nc">ConfigurationDefaultMissingError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; An exception that is raised when the configuration defaults (which</span>
 <span class="sd">    should be generated at build-time) are missing.</span>
@@ -192,8 +192,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="o">.</span><span class="n">set_temp</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;No configuration parameter &#39;{0}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span></div>
-
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;No configuration parameter &#39;{0}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
+</div>
 <div class="viewcode-block" id="ConfigNamespace.reload"><a class="viewcode-back" href="../../../api/astropy.config.ConfigNamespace.html#astropy.config.ConfigNamespace.reload">[docs]</a>    <span class="k">def</span> <span class="nf">reload</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reload a configuration item from the configuration file.</span>
@@ -211,8 +211,8 @@
 
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">itervalues</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__dict__</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ConfigItem</span><span class="p">):</span>
-                <span class="n">item</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span></div>
-
+                <span class="n">item</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="ConfigNamespace.reset"><a class="viewcode-back" href="../../../api/astropy.config.ConfigNamespace.html#astropy.config.ConfigNamespace.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reset a configuration item to its default.</span>
@@ -232,9 +232,9 @@
 
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">itervalues</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__dict__</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ConfigItem</span><span class="p">):</span>
-                <span class="n">item</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">defaultvalue</span><span class="p">)</span></div></div>
+                <span class="n">item</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">defaultvalue</span><span class="p">)</span>
 
-
+</div></div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">InheritDocstrings</span><span class="p">)</span>
 <div class="viewcode-block" id="ConfigItem"><a class="viewcode-back" href="../../../api/astropy.config.ConfigItem.html#astropy.config.ConfigItem">[docs]</a><span class="k">class</span> <span class="nc">ConfigItem</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -376,8 +376,8 @@
 
         <span class="n">sec</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">)</span>
 
-        <span class="n">sec</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
-
+        <span class="n">sec</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</div>
     <span class="nd">@contextmanager</span>
 <div class="viewcode-block" id="ConfigItem.set_temp"><a class="viewcode-back" href="../../../api/astropy.config.ConfigItem.html#astropy.config.ConfigItem.set_temp">[docs]</a>    <span class="k">def</span> <span class="nf">set_temp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -404,8 +404,8 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="k">yield</span>
         <span class="k">finally</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">initval</span><span class="p">)</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">initval</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="ConfigItem.reload"><a class="viewcode-back" href="../../../api/astropy.config.ConfigItem.html#astropy.config.ConfigItem.reload">[docs]</a>    <span class="k">def</span> <span class="nf">reload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Reloads the value of this ``ConfigItem`` from the relevant</span>
 <span class="sd">        configuration file.</span>
@@ -432,8 +432,8 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">newobj</span><span class="p">:</span>
             <span class="n">baseobj</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">newobj</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">baseobj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">baseobj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="s">&#39;&lt;{0}: name={1!r} value={2!r} at 0x{3:x}&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="p">(),</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -516,8 +516,8 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_val</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">validate</span><span class="o">.</span><span class="n">ValidateError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Configuration value not valid:&#39;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
-
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Configuration value not valid:&#39;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</div>
     <span class="k">def</span> <span class="nf">_validate_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Validates the provided value based on cfgtype and returns the</span>
 <span class="sd">        type-cast value</span>
@@ -527,11 +527,11 @@
         <span class="c"># note that this will normally use the *class* attribute `_validator`,</span>
         <span class="c"># but if some arcane reason is needed for making a special one for an</span>
         <span class="c"># instance or sub-class, it will be used</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validator</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cfgtype</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validator</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cfgtype</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
 
 
 <span class="c"># this dictionary stores the master copy of the ConfigObj&#39;s for each</span>
-<span class="c"># root package</span>
+<span class="c"># root package</span></div>
 <span class="n">_cfgobjs</span> <span class="o">=</span> <span class="p">{}</span>
 
 
@@ -625,9 +625,9 @@
             <span class="n">cobj</span><span class="p">[</span><span class="n">secname</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">return</span> <span class="n">cobj</span><span class="p">[</span><span class="n">secname</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">cobj</span></div>
+        <span class="k">return</span> <span class="n">cobj</span>
 
-
+</div>
 <div class="viewcode-block" id="reload_config"><a class="viewcode-back" href="../../../api/astropy.config.reload_config.html#astropy.config.reload_config">[docs]</a><span class="k">def</span> <span class="nf">reload_config</span><span class="p">(</span><span class="n">packageormod</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Reloads configuration settings from a configuration file for the root</span>
 <span class="sd">    package of the requested package/module.</span>
@@ -647,9 +647,9 @@
     <span class="c"># look for the section that is its own parent - that&#39;s the base object</span>
     <span class="k">while</span> <span class="n">sec</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">sec</span><span class="p">:</span>
         <span class="n">sec</span> <span class="o">=</span> <span class="n">sec</span><span class="o">.</span><span class="n">parent</span>
-    <span class="n">sec</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span></div>
+    <span class="n">sec</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">is_unedited_config_file</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">template_content</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Determines if a config file can be safely replaced because it doesn&#39;t</span>
@@ -814,8 +814,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

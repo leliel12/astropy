@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.hdu.table &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits.hdu.table &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../../index.html" />
     <link rel="up" title="Module code" href="../../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -852,9 +852,9 @@
         <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tfields</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">req_cards</span><span class="p">(</span><span class="s">&#39;TBCOL&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="n">_is_int</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span>
                            <span class="n">errs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">errs</span></div>
+        <span class="k">return</span> <span class="n">errs</span>
 
-
+</div>
 <div class="viewcode-block" id="BinTableHDU"><a class="viewcode-back" href="../../../../../io/fits/api/tables.html#astropy.io.fits.BinTableHDU">[docs]</a><span class="k">class</span> <span class="nc">BinTableHDU</span><span class="p">(</span><span class="n">_TableBaseHDU</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Binary table HDU class.</span>
@@ -1100,15 +1100,15 @@
 
         <span class="c"># Process the header parameters</span>
         <span class="k">if</span> <span class="n">hfile</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">hfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">endcard</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">hfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">endcard</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</div>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dump</span><span class="o">.</span><span class="n">__doc__</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
         <span class="n">dump</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">+=</span> <span class="n">_tdump_file_format</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">        &#39;</span><span class="p">)</span>
 
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`dump`&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="BinTableHDU.tdump"><a class="viewcode-back" href="../../../../../io/fits/api/tables.html#astropy.io.fits.BinTableHDU.tdump">[docs]</a>    <span class="k">def</span> <span class="nf">tdump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datafile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cdfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">cdfile</span><span class="p">,</span> <span class="n">hfile</span><span class="p">,</span> <span class="n">clobber</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">cdfile</span><span class="p">,</span> <span class="n">hfile</span><span class="p">,</span> <span class="n">clobber</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BinTableHDU.load"><a class="viewcode-back" href="../../../../../io/fits/api/tables.html#astropy.io.fits.BinTableHDU.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">datafile</span><span class="p">,</span> <span class="n">cdfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
              <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1185,8 +1185,8 @@
         <span class="c"># Create a new HDU using the supplied header and data</span>
         <span class="n">hdu</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
         <span class="n">hdu</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">coldefs</span>
-        <span class="k">return</span> <span class="n">hdu</span></div>
-
+        <span class="k">return</span> <span class="n">hdu</span>
+</div>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">load</span><span class="o">.</span><span class="n">__doc__</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
         <span class="n">load</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">+=</span> <span class="n">_tdump_file_format</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">        &#39;</span><span class="p">)</span>
 
@@ -1198,8 +1198,8 @@
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="BinTableHDU.tcreate"><a class="viewcode-back" href="../../../../../io/fits/api/tables.html#astropy.io.fits.BinTableHDU.tcreate">[docs]</a>    <span class="k">def</span> <span class="nf">tcreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">datafile</span><span class="p">,</span> <span class="n">cdfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                 <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">cdfile</span><span class="p">,</span> <span class="n">hfile</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">cdfile</span><span class="p">,</span> <span class="n">hfile</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_dump_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write the table data in the ASCII format read by BinTableHDU.load()</span>
@@ -1473,9 +1473,9 @@
         <span class="k">if</span> <span class="n">close_file</span><span class="p">:</span>
             <span class="n">fileobj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">ColDefs</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ColDefs</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
 
-
+</div>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.4&#39;</span><span class="p">,</span>
             <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;:meth:`BinTableHDU.from_columns` for new BINARY &#39;</span>
                         <span class="s">&#39;tables or :meth:`TableHDU.from_columns` for new &#39;</span>
@@ -1534,9 +1534,9 @@
                              <span class="s">&quot;&#39;BinTableHDU&#39;&quot;</span><span class="p">)</span>
 
     <span class="c"># construct a table HDU of the requested type</span>
-    <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">from_columns</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">from_columns</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">)</span>
 
-
+</div>
 <span class="nd">@contextlib.contextmanager</span>
 <span class="k">def</span> <span class="nf">_binary_table_byte_swap</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1623,8 +1623,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

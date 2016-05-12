@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.visualization.interval &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.visualization.interval &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -100,8 +100,8 @@
 <div class="viewcode-block" id="BaseInterval.get_limits"><a class="viewcode-back" href="../../../api/astropy.visualization.BaseInterval.html#astropy.visualization.BaseInterval.get_limits">[docs]</a>    <span class="k">def</span> <span class="nf">get_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the minimum and maximum value in the interval based on the values provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
-
+<span class="sd">        &quot;&quot;&quot;</span>
+</div>
 <div class="viewcode-block" id="BaseInterval.__call__"><a class="viewcode-back" href="../../../api/astropy.visualization.BaseInterval.html#astropy.visualization.BaseInterval.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
 
         <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_limits</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
@@ -119,9 +119,9 @@
         <span class="k">if</span> <span class="n">clip</span><span class="p">:</span>
             <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div></div>
+        <span class="k">return</span> <span class="n">values</span>
 
-
+</div></div>
 <div class="viewcode-block" id="ManualInterval"><a class="viewcode-back" href="../../../api/astropy.visualization.ManualInterval.html#astropy.visualization.ManualInterval">[docs]</a><span class="k">class</span> <span class="nc">ManualInterval</span><span class="p">(</span><span class="n">BaseInterval</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Interval based on user-specified values.</span>
@@ -139,18 +139,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span> <span class="o">=</span> <span class="n">vmax</span>
 
 <div class="viewcode-block" id="ManualInterval.get_limits"><a class="viewcode-back" href="../../../api/astropy.visualization.ManualInterval.html#astropy.visualization.ManualInterval.get_limits">[docs]</a>    <span class="k">def</span> <span class="nf">get_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span>
 
-
+</div></div>
 <div class="viewcode-block" id="MinMaxInterval"><a class="viewcode-back" href="../../../api/astropy.visualization.MinMaxInterval.html#astropy.visualization.MinMaxInterval">[docs]</a><span class="k">class</span> <span class="nc">MinMaxInterval</span><span class="p">(</span><span class="n">BaseInterval</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Interval based on the minimum and maximum values in the data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="MinMaxInterval.get_limits"><a class="viewcode-back" href="../../../api/astropy.visualization.MinMaxInterval.html#astropy.visualization.MinMaxInterval.get_limits">[docs]</a>    <span class="k">def</span> <span class="nf">get_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="AsymmetricPercentileInterval"><a class="viewcode-back" href="../../../api/astropy.visualization.AsymmetricPercentileInterval.html#astropy.visualization.AsymmetricPercentileInterval">[docs]</a><span class="k">class</span> <span class="nc">AsymmetricPercentileInterval</span><span class="p">(</span><span class="n">BaseInterval</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Interval based on a keeping a specified fraction of pixels (can be asymmetric).</span>
@@ -192,9 +192,9 @@
         <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lower_percentile</span><span class="p">,</span>
                                             <span class="bp">self</span><span class="o">.</span><span class="n">upper_percentile</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span></div></div>
+        <span class="k">return</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span>
 
-
+</div></div>
 <div class="viewcode-block" id="PercentileInterval"><a class="viewcode-back" href="../../../api/astropy.visualization.PercentileInterval.html#astropy.visualization.PercentileInterval">[docs]</a><span class="k">class</span> <span class="nc">PercentileInterval</span><span class="p">(</span><span class="n">AsymmetricPercentileInterval</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Interval based on a keeping a specified fraction of pixels.</span>
@@ -232,8 +232,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

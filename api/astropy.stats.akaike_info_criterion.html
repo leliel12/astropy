@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>akaike_info_criterion &mdash; Astropy v1.2.dev14980</title>
+    <title>akaike_info_criterion &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="akaike_info_criterion_lsq" href="astropy.stats.akaike_info_criterion_lsq.html" />
-    <link rel="prev" title="Lomb-Scargle Periodograms" href="../stats/lombscargle.html" />
+    <link rel="prev" title="RegularEvents" href="astropy.stats.RegularEvents.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -63,13 +63,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="../stats/lombscargle.html" title="Lomb-Scargle Periodograms">
+	<a href="astropy.stats.RegularEvents.html" title="RegularEvents">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -95,7 +95,7 @@ relative fitting quality which is used for fitting evaluation and model
 selection. The decision is in favor of the model with the lowest AIC.</p>
 <p>AIC is given as</p>
 <div class="math">
-<p><img src="../_images/math/5a7bafc962f3be862230a3f911136a9d4babab2d.png" alt="\mathrm{AIC} = 2(k - L)"/></p>
+<p><img src="../_images/math/c823ebddfbf76aaba572768251341b64b5c54e3f.png" alt="\mathrm{AIC} = 2(k - L)"/></p>
 </div><p>in which <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> is the sample size, <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> is the number of free
 parameters, and <img class="math" src="../_images/math/0a5711c7a37994043b2bc3bb374adca232491762.png" alt="L"/> is the log likelihood function of the model
 evaluated at the maximum likelihood estimate (i. e., the parameters for
@@ -103,7 +103,7 @@ which L is maximized).</p>
 <p>In case that the sample size is not &#8220;large enough&#8221; a correction is
 applied, i.e.</p>
 <div class="math">
-<p><img src="../_images/math/44de5498ee61e004efa20fb3c012a5319e6fa9bd.png" alt="\mathrm{AIC} = 2(k - L) + \dfrac{2k(k+1)}{n - k - 1}"/></p>
+<p><img src="../_images/math/ce2982215d9763b814f0a84a382e181c929edbe7.png" alt="\mathrm{AIC} = 2(k - L) + \dfrac{2k(k+1)}{n - k - 1}"/></p>
 </div><p>Rule of thumb <a class="reference internal" href="#r12" id="id1">[R12]</a>:</p>
 <p><img class="math" src="../_images/math/9b7d49f9b900775c7699bd69a531d0bdb4f292e9.png" alt="\Delta\mathrm{AIC}_i = \mathrm{AIC}_i - \mathrm{AIC}_{min}"/></p>
 <p><img class="math" src="../_images/math/98290c1f125109eeb620d005c39f1f8b8fcdec2a.png" alt="\Delta\mathrm{AIC}_i &lt; 2"/>: substantial support for model i</p>
@@ -192,7 +192,7 @@ models are being compared. One with six parameters (model 1) and another
 with five parameters (model 2). Despite of the fact that model 2 has a
 lower AIC, we could decide in favor of model 1 since the difference (in
 AIC)  between them is only about 1.0.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">121</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">121</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lnL1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.54</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n1_params</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lnL2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.17</span>
@@ -231,8 +231,8 @@ it has more free parameters.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

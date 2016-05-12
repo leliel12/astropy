@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.vo.samp.client &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.vo.samp.client &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="astropy.vo.samp" href="../samp.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" >Module code</a> &raquo;</li>
@@ -262,8 +262,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callable</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_is_running</span> <span class="o">=</span> <span class="bp">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_run_client</span><span class="p">()</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_client</span><span class="p">()</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.stop"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">10.</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stop the client.</span>
@@ -282,8 +282,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_thread</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client was not shut down successfully &quot;</span>
-                                  <span class="s">&quot;(timeout={0}s)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timeout</span><span class="p">))</span></div>
-
+                                  <span class="s">&quot;(timeout={0}s)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timeout</span><span class="p">))</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">is_running</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -388,8 +388,8 @@
 <span class="sd">        confirmation : str</span>
 <span class="sd">            Any confirmation string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_notification</span><span class="p">(</span><span class="n">private_key</span><span class="p">,</span> <span class="n">sender_id</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_notification</span><span class="p">(</span><span class="n">private_key</span><span class="p">,</span> <span class="n">sender_id</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_handle_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">private_key</span><span class="p">,</span> <span class="n">sender_id</span><span class="p">,</span> <span class="n">msg_id</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="n">private_key</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_private_key</span><span class="p">()</span> <span class="ow">and</span> <span class="s">&quot;samp.mtype&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
@@ -442,8 +442,8 @@
 <span class="sd">        confirmation : str</span>
 <span class="sd">            Any confirmation string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_call</span><span class="p">(</span><span class="n">private_key</span><span class="p">,</span> <span class="n">sender_id</span><span class="p">,</span> <span class="n">msg_id</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_call</span><span class="p">(</span><span class="n">private_key</span><span class="p">,</span> <span class="n">sender_id</span><span class="p">,</span> <span class="n">msg_id</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_handle_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">private_key</span><span class="p">,</span> <span class="n">responder_id</span><span class="p">,</span> <span class="n">msg_tag</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">private_key</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_private_key</span><span class="p">()</span> <span class="ow">and</span>
             <span class="n">msg_tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_response_bindings</span><span class="p">):</span>
@@ -485,8 +485,8 @@
 <span class="sd">            Any confirmation string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_response</span><span class="p">(</span><span class="n">private_key</span><span class="p">,</span> <span class="n">responder_id</span><span class="p">,</span> <span class="n">msg_tag</span><span class="p">,</span>
-                                     <span class="n">response</span><span class="p">)</span></div>
-
+                                     <span class="n">response</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.bind_receive_message"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.bind_receive_message">[docs]</a>    <span class="k">def</span> <span class="nf">bind_receive_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">declare</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                              <span class="n">metadata</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -528,8 +528,8 @@
                                <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">bind_receive_notification</span><span class="p">(</span><span class="n">mtype</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">declare</span><span class="o">=</span><span class="n">declare</span><span class="p">,</span>
-                                       <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span></div>
-
+                                       <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.bind_receive_notification"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.bind_receive_notification">[docs]</a>    <span class="k">def</span> <span class="nf">bind_receive_notification</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">declare</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Bind a specific MType notification to a function or class method.</span>
@@ -570,8 +570,8 @@
             <span class="k">if</span> <span class="n">declare</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_declare_subscriptions</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.bind_receive_call"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.bind_receive_call">[docs]</a>    <span class="k">def</span> <span class="nf">bind_receive_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">declare</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Bind a specific MType call to a function or class method.</span>
@@ -613,8 +613,8 @@
             <span class="k">if</span> <span class="n">declare</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_declare_subscriptions</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.bind_receive_response"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.bind_receive_response">[docs]</a>    <span class="k">def</span> <span class="nf">bind_receive_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg_tag</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Bind a specific msg-tag response to a function or class method.</span>
@@ -639,8 +639,8 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callable</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_response_bindings</span><span class="p">[</span><span class="n">msg_tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">function</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.unbind_receive_notification"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.unbind_receive_notification">[docs]</a>    <span class="k">def</span> <span class="nf">unbind_receive_notification</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">declare</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove from the notifications binding table the specified MType and</span>
@@ -661,8 +661,8 @@
             <span class="k">if</span> <span class="n">declare</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_declare_subscriptions</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.unbind_receive_call"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.unbind_receive_call">[docs]</a>    <span class="k">def</span> <span class="nf">unbind_receive_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">declare</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove from the calls binding table the specified MType and unsubscribe</span>
@@ -683,8 +683,8 @@
             <span class="k">if</span> <span class="n">declare</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_declare_subscriptions</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.unbind_receive_response"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.unbind_receive_response">[docs]</a>    <span class="k">def</span> <span class="nf">unbind_receive_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg_tag</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove from the responses binding table the specified message-tag.</span>
@@ -697,8 +697,8 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callable</span><span class="p">:</span>
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_response_bindings</span><span class="p">[</span><span class="n">msg_tag</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.declare_subscriptions"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.declare_subscriptions">[docs]</a>    <span class="k">def</span> <span class="nf">declare_subscriptions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subscriptions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Declares the MTypes the client wishes to subscribe to, implicitly</span>
@@ -721,8 +721,8 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callable</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_declare_subscriptions</span><span class="p">(</span><span class="n">subscriptions</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Client not callable.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.register"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.register">[docs]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Register the client to the SAMP Hub.</span>
@@ -757,8 +757,8 @@
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Unable to register to the SAMP Hub. &quot;</span>
-                                  <span class="s">&quot;Hub proxy not connected.&quot;</span><span class="p">)</span></div>
-
+                                  <span class="s">&quot;Hub proxy not connected.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.unregister"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.unregister">[docs]</a>    <span class="k">def</span> <span class="nf">unregister</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unregister the client from the SAMP Hub.</span>
@@ -771,8 +771,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_private_key</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Unable to unregister from the SAMP Hub. &quot;</span>
-                                  <span class="s">&quot;Hub proxy not connected.&quot;</span><span class="p">)</span></div>
-
+                                  <span class="s">&quot;Hub proxy not connected.&quot;</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_set_xmlrpc_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">is_connected</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_private_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">set_xmlrpc_callback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_private_key</span><span class="p">,</span>
@@ -819,8 +819,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">SAMPClientError</span><span class="p">(</span><span class="s">&quot;Unable to declare metadata. Hub &quot;</span>
                                   <span class="s">&quot;unreachable or not connected or client &quot;</span>
-                                  <span class="s">&quot;not registered.&quot;</span><span class="p">)</span></div>
-
+                                  <span class="s">&quot;not registered.&quot;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.get_private_key"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.get_private_key">[docs]</a>    <span class="k">def</span> <span class="nf">get_private_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the client private key used for the Standard Profile</span>
@@ -831,8 +831,8 @@
 <span class="sd">        key : str</span>
 <span class="sd">            Client private key.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_private_key</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_private_key</span>
+</div>
 <div class="viewcode-block" id="SAMPClient.get_public_id"><a class="viewcode-back" href="../../../../api/astropy.vo.samp.SAMPClient.html#astropy.vo.samp.SAMPClient.get_public_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_public_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return public client ID obtained at registration time</span>
@@ -862,8 +862,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

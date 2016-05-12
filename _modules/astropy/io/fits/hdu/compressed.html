@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.hdu.compressed &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.fits.hdu.compressed &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../../index.html" />
     <link rel="up" title="Module code" href="../../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -1447,8 +1447,8 @@
                                  <span class="n">tile_size</span><span class="o">=</span><span class="n">tileSize</span><span class="p">,</span>
                                  <span class="n">hcomp_scale</span><span class="o">=</span><span class="n">hcompScale</span><span class="p">,</span>
                                  <span class="n">hcomp_smooth</span><span class="o">=</span><span class="n">hcompSmooth</span><span class="p">,</span>
-                                 <span class="n">quantize_level</span><span class="o">=</span><span class="n">quantizeLevel</span><span class="p">)</span></div>
-
+                                 <span class="n">quantize_level</span><span class="o">=</span><span class="n">quantizeLevel</span><span class="p">)</span>
+</div>
     <span class="nd">@lazyproperty</span>
     <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c"># The data attribute is the image data (not the table data).</span>
@@ -1769,14 +1769,14 @@
 
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.3&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;(refactor your code)&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CompImageHDU.updateCompressedData"><a class="viewcode-back" href="../../../../../io/fits/api/images.html#astropy.io.fits.CompImageHDU.updateCompressedData">[docs]</a>    <span class="k">def</span> <span class="nf">updateCompressedData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_update_compressed_data</span><span class="p">()</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_compressed_data</span><span class="p">()</span>
+</div>
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.3&#39;</span><span class="p">,</span>
                 <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;(refactor your code; this function no &#39;</span>
                             <span class="s">&#39;longer does anything)&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="CompImageHDU.updateHeader"><a class="viewcode-back" href="../../../../../io/fits/api/images.html#astropy.io.fits.CompImageHDU.updateHeader">[docs]</a>    <span class="k">def</span> <span class="nf">updateHeader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span></div>
-
+        <span class="k">pass</span>
+</div>
 <div class="viewcode-block" id="CompImageHDU.scale"><a class="viewcode-back" href="../../../../../io/fits/api/images.html#astropy.io.fits.CompImageHDU.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s">&#39;old&#39;</span><span class="p">,</span> <span class="n">bscale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bzero</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Scale image data by using ``BSCALE`` and ``BZERO``.</span>
@@ -1879,8 +1879,8 @@
         <span class="c"># as though the original image has been completely replaced</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_orig_bitpix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bitpix</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_orig_bzero</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bzero</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_orig_bscale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bscale</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_orig_bscale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bscale</span>
+</div>
     <span class="k">def</span> <span class="nf">_prewriteto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checksum</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale_back</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">BITPIX2DTYPE</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_orig_bitpix</span><span class="p">])</span>
@@ -2060,8 +2060,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

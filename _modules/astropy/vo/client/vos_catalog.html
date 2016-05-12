@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.vo.client.vos_catalog &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.vo.client.vos_catalog &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="astropy.vo" href="../../vo.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" >Module code</a> &raquo;</li>
@@ -149,9 +149,9 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tree</span><span class="p">,</span> <span class="n">cls</span><span class="o">=</span><span class="n">JsonCustomEncoder</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                          <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div></div>
+                          <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="VOSCatalog"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSCatalog.html#astropy.vo.client.vos_catalog.VOSCatalog">[docs]</a><span class="k">class</span> <span class="nc">VOSCatalog</span><span class="p">(</span><span class="n">VOSBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A class to represent VO Service Catalog.</span>
 
@@ -201,8 +201,8 @@
         <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compulsory_keys</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">VOSError</span><span class="p">(</span><span class="s">&#39;{0} must exist in catalog, therefore cannot be &#39;</span>
                            <span class="s">&#39;deleted.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
-
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VOSCatalog.create"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSCatalog.html#astropy.vo.client.vos_catalog.VOSCatalog.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a new VO Service Catalog with user parameters.</span>
@@ -232,9 +232,9 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">tree</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="n">url</span><span class="p">}</span>
         <span class="n">tree</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="VOSDatabase"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase">[docs]</a><span class="k">class</span> <span class="nc">VOSDatabase</span><span class="p">(</span><span class="n">VOSBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A class to represent a collection of `VOSCatalog`.</span>
 
@@ -282,14 +282,14 @@
 <div class="viewcode-block" id="VOSDatabase.get_catalogs"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.get_catalogs">[docs]</a>    <span class="k">def</span> <span class="nf">get_catalogs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Iterator to get all catalogs.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">yield</span> <span class="n">key</span><span class="p">,</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></div>
-
+            <span class="k">yield</span> <span class="n">key</span><span class="p">,</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.get_catalogs_by_url"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.get_catalogs_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_catalogs_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Like :func:`get_catalogs` but using access URL look-up.&quot;&quot;&quot;</span>
         <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">[</span><span class="n">url</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">key</span><span class="p">,</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span></div>
-
+            <span class="k">yield</span> <span class="n">key</span><span class="p">,</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.get_catalog"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.get_catalog">[docs]</a>    <span class="k">def</span> <span class="nf">get_catalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get one catalog of given name.</span>
 
@@ -311,8 +311,8 @@
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MissingCatalog</span><span class="p">(</span><span class="s">&quot;No catalog &#39;{0}&#39; found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span></div>
-
+        <span class="k">return</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.get_catalog_by_url"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.get_catalog_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_catalog_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Like :func:`get_catalog` but using access URL look-up.</span>
 <span class="sd">        On multiple matches, only first match is returned.</span>
@@ -323,8 +323,8 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MissingCatalog</span><span class="p">(</span><span class="s">&quot;No catalog with URL &#39;{0}&#39; found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span></div>
-
+        <span class="k">return</span> <span class="n">VOSCatalog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</div>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_match_pattern</span><span class="p">(</span><span class="n">all_keys</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">sort</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Used by :func:`list_catalogs` and :func:`list_catalogs_by_url`.&quot;&quot;&quot;</span>
@@ -361,15 +361,15 @@
 <span class="sd">            List of catalog names.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match_pattern</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">),</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">sort</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match_pattern</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">),</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">sort</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.list_catalogs_by_url"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.list_catalogs_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">list_catalogs_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Like :func:`list_catalogs` but using access URL.&quot;&quot;&quot;</span>
         <span class="n">out_arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match_pattern</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">),</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">sort</span><span class="p">)</span>
 
         <span class="c"># Discard URL that maps to nothing</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">out_arr</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">out_arr</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.add_catalog"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.add_catalog">[docs]</a>    <span class="k">def</span> <span class="nf">add_catalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cat</span><span class="p">,</span> <span class="n">allow_duplicate_url</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add a catalog to database.</span>
 
@@ -409,8 +409,8 @@
                 <span class="s">&#39;{0} already exists: {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">names</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">_tree</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">[</span><span class="n">url</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">[</span><span class="n">url</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.add_catalog_by_url"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.add_catalog_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">add_catalog_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Like :func:`add_catalog` but the catalog is created with</span>
 <span class="sd">        only the given name and access URL.</span>
@@ -427,8 +427,8 @@
 <span class="sd">            Keywords accepted by :func:`add_catalog`.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_catalog</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VOSCatalog</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">url</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_catalog</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VOSCatalog</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">url</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.delete_catalog"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.delete_catalog">[docs]</a>    <span class="k">def</span> <span class="nf">delete_catalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Delete a catalog from database with given name.</span>
 
@@ -447,8 +447,8 @@
             <span class="k">raise</span> <span class="n">MissingCatalog</span><span class="p">(</span><span class="s">&#39;{0} not found.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_url_keys</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;url&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
-
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_catalogs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.delete_catalog_by_url"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.delete_catalog_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">delete_catalog_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Like :func:`delete_catalog` but using access URL.</span>
 <span class="sd">        On multiple matches, all matches are deleted.</span>
@@ -460,8 +460,8 @@
             <span class="k">raise</span> <span class="n">MissingCatalog</span><span class="p">(</span><span class="s">&#39;{0} not found.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
 
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">delete_catalog</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></div>
-
+            <span class="bp">self</span><span class="o">.</span><span class="n">delete_catalog</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.merge"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.merge">[docs]</a>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Merge two database together.</span>
 
@@ -496,8 +496,8 @@
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">old_db</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">():</span>
                 <span class="n">db</span><span class="o">.</span><span class="n">add_catalog</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">cat</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">db</span></div>
-
+        <span class="k">return</span> <span class="n">db</span>
+</div>
 <div class="viewcode-block" id="VOSDatabase.to_json"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.to_json">[docs]</a>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">clobber</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Write database content to a JSON file.</span>
 
@@ -519,8 +519,8 @@
             <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s">&#39;{0} exists.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
 
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
-            <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dumps</span><span class="p">())</span></div>
-
+            <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dumps</span><span class="p">())</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VOSDatabase.create_empty"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.create_empty">[docs]</a>    <span class="k">def</span> <span class="nf">create_empty</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create an empty database of VO services.</span>
@@ -539,8 +539,8 @@
 <span class="sd">            Empty database.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="p">({</span><span class="s">&#39;__version__&#39;</span><span class="p">:</span> <span class="n">__dbversion__</span><span class="p">,</span> <span class="s">&#39;catalogs&#39;</span><span class="p">:</span> <span class="p">{}})</span></div>
-
+        <span class="k">return</span> <span class="n">cls</span><span class="p">({</span><span class="s">&#39;__version__&#39;</span><span class="p">:</span> <span class="n">__dbversion__</span><span class="p">,</span> <span class="s">&#39;catalogs&#39;</span><span class="p">:</span> <span class="p">{}})</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VOSDatabase.from_json"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.from_json">[docs]</a>    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a database of VO services from a JSON file.</span>
@@ -580,8 +580,8 @@
         <span class="k">with</span> <span class="n">get_readable_fileobj</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
             <span class="n">tree</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VOSDatabase.from_registry"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.VOSDatabase.html#astropy.vo.client.vos_catalog.VOSDatabase.from_registry">[docs]</a>    <span class="k">def</span> <span class="nf">from_registry</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">registry_url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a database of VO services from VO registry URL.</span>
@@ -680,9 +680,9 @@
                     <span class="s">&#39;{0} is thrown out because it has same access URL as &#39;</span>
                     <span class="s">&#39;{1}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cur_key</span><span class="p">,</span> <span class="n">dup_keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">AstropyUserWarning</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">db</span></div></div>
+        <span class="k">return</span> <span class="n">db</span>
 
-
+</div></div>
 <div class="viewcode-block" id="get_remote_catalog_db"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.get_remote_catalog_db.html#astropy.vo.client.vos_catalog.get_remote_catalog_db">[docs]</a><span class="k">def</span> <span class="nf">get_remote_catalog_db</span><span class="p">(</span><span class="n">dbname</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get a database of VO services (which is a JSON file) from a remote</span>
 <span class="sd">    location.</span>
@@ -710,9 +710,9 @@
     <span class="k">return</span> <span class="n">VOSDatabase</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span>
         <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">vo_conf</span><span class="o">.</span><span class="n">vos_baseurl</span><span class="p">,</span> <span class="n">dbname</span> <span class="o">+</span> <span class="s">&#39;.json&#39;</span><span class="p">),</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;utf8&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-        <span class="n">show_progress</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span></div>
+        <span class="n">show_progress</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_get_catalogs</span><span class="p">(</span><span class="n">service_type</span><span class="p">,</span> <span class="n">catalog_db</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Expand ``catalog_db`` to a list of catalogs.</span>
 
@@ -948,9 +948,9 @@
     <span class="n">err_msg</span> <span class="o">=</span> <span class="s">&#39;None of the available catalogs returned valid results.&#39;</span>
     <span class="k">if</span> <span class="n">n_timed_out</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">err_msg</span> <span class="o">+=</span> <span class="s">&#39; ({0} URL(s) timed out.)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_timed_out</span><span class="p">)</span>
-    <span class="k">raise</span> <span class="n">VOSError</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span></div>
+    <span class="k">raise</span> <span class="n">VOSError</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="list_catalogs"><a class="viewcode-back" href="../../../../api/astropy.vo.client.vos_catalog.list_catalogs.html#astropy.vo.client.vos_catalog.list_catalogs">[docs]</a><span class="k">def</span> <span class="nf">list_catalogs</span><span class="p">(</span><span class="n">service_type</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;List the catalogs available for the given service type.</span>
 
@@ -1003,8 +1003,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

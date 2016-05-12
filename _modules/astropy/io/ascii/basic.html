@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.ascii.basic &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.ascii.basic &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -98,9 +98,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start_line</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">comment</span> <span class="o">=</span> <span class="s">r&#39;\s*#&#39;</span>
-    <span class="n">write_comment</span> <span class="o">=</span> <span class="s">&#39;# &#39;</span></div>
+    <span class="n">write_comment</span> <span class="o">=</span> <span class="s">&#39;# &#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="BasicData"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.BasicData.html#astropy.io.ascii.BasicData">[docs]</a><span class="k">class</span> <span class="nc">BasicData</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BaseData</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Basic table Data Reader</span>
@@ -110,9 +110,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start_line</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">comment</span> <span class="o">=</span> <span class="s">r&#39;\s*#&#39;</span>
-    <span class="n">write_comment</span> <span class="o">=</span> <span class="s">&#39;# &#39;</span></div>
+    <span class="n">write_comment</span> <span class="o">=</span> <span class="s">&#39;# &#39;</span>
 
-
+</div>
 <div class="viewcode-block" id="Basic"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.Basic.html#astropy.io.ascii.Basic">[docs]</a><span class="k">class</span> <span class="nc">Basic</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BaseReader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Read a character-delimited table with a single header line at the top</span>
@@ -144,9 +144,9 @@
     <span class="n">_description</span> <span class="o">=</span> <span class="s">&#39;Basic table with custom delimiters&#39;</span>
 
     <span class="n">header_class</span> <span class="o">=</span> <span class="n">BasicHeader</span>
-    <span class="n">data_class</span> <span class="o">=</span> <span class="n">BasicData</span></div>
+    <span class="n">data_class</span> <span class="o">=</span> <span class="n">BasicData</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">NoHeaderHeader</span><span class="p">(</span><span class="n">BasicHeader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reader for table header without a header</span>
@@ -177,9 +177,9 @@
     <span class="n">_format_name</span> <span class="o">=</span> <span class="s">&#39;no_header&#39;</span>
     <span class="n">_description</span> <span class="o">=</span> <span class="s">&#39;Basic table with no headers&#39;</span>
     <span class="n">header_class</span> <span class="o">=</span> <span class="n">NoHeaderHeader</span>
-    <span class="n">data_class</span> <span class="o">=</span> <span class="n">NoHeaderData</span></div>
+    <span class="n">data_class</span> <span class="o">=</span> <span class="n">NoHeaderData</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">CommentedHeaderHeader</span><span class="p">(</span><span class="n">BasicHeader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Header class for which the column definition line starts with the</span>
@@ -234,16 +234,16 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="n">out</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;comments&#39;</span><span class="p">]:</span>
                 <span class="k">del</span> <span class="n">out</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;comments&#39;</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="n">out</span></div>
-
+        <span class="k">return</span> <span class="n">out</span>
+</div>
 <div class="viewcode-block" id="CommentedHeader.write_header"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.CommentedHeader.html#astropy.io.ascii.CommentedHeader.write_header">[docs]</a>    <span class="k">def</span> <span class="nf">write_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write comment lines after, rather than before, the header.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">write_comments</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">write_comments</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
 
-
+</div></div>
 <span class="k">class</span> <span class="nc">TabHeaderSplitter</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">DefaultSplitter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Split lines on tab and do not remove whitespace&quot;&quot;&quot;</span>
     <span class="n">delimiter</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span>
@@ -286,9 +286,9 @@
     <span class="n">_format_name</span> <span class="o">=</span> <span class="s">&#39;tab&#39;</span>
     <span class="n">_description</span> <span class="o">=</span> <span class="s">&#39;Basic table with tab-separated values&#39;</span>
     <span class="n">header_class</span> <span class="o">=</span> <span class="n">TabHeader</span>
-    <span class="n">data_class</span> <span class="o">=</span> <span class="n">TabData</span></div>
+    <span class="n">data_class</span> <span class="o">=</span> <span class="n">TabData</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">CsvSplitter</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">DefaultSplitter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Split on comma for CSV (comma-separated-value) tables</span>
@@ -371,9 +371,9 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">str_vals</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ncols</span><span class="p">:</span>
             <span class="n">str_vals</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">ncols</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">str_vals</span><span class="p">))</span> <span class="o">*</span> <span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">])</span>
 
-        <span class="k">return</span> <span class="n">str_vals</span></div></div>
+        <span class="k">return</span> <span class="n">str_vals</span>
 
-
+</div></div>
 <span class="k">class</span> <span class="nc">RdbHeader</span><span class="p">(</span><span class="n">TabHeader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Header for RDB tables</span>
@@ -478,8 +478,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

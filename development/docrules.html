@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Astropy Docstring Rules &mdash; Astropy v1.2.dev14980</title>
+    <title>Astropy Docstring Rules &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Writing Documentation" href="docguide.html" />
     <link rel="next" title="Testing Guidelines" href="testguide.html" />
     <link rel="prev" title="Writing Documentation" href="docguide.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="docguide.html" accesskey="U">Writing Documentation</a> &raquo;</li>
@@ -117,9 +117,9 @@ guidelines below have been adapted to the Astropy package.</p>
 </div></blockquote>
 <p>The following import conventions are used throughout the Astropy source
 and documentation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 <p>Do not abbreviate <code class="docutils literal"><span class="pre">scipy</span></code>. There is no motivating use case to abbreviate
@@ -128,11 +128,11 @@ confusion.</p>
 <p>It is not necessary to do <code class="docutils literal"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> at the beginning of
 an example.  However, some sub-modules, such as <code class="docutils literal"><span class="pre">fft</span></code>, are not
 imported by default, and you have to include them explicitly:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy.fft</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy.fft</span>
 </pre></div>
 </div>
 <p>after which you may use it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -142,7 +142,7 @@ imported by default, and you have to include them explicitly:</p>
 function, class, or method definition. The docstring is a special attribute
 of the object (<code class="docutils literal"><span class="pre">object.__doc__</span></code>) and, for consistency, is surrounded by
 triple double quotes, i.e.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;This is the form of a docstring.</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;This is the form of a docstring.</span>
 
 <span class="sd">It can be spread over several lines.</span>
 
@@ -172,7 +172,7 @@ facilitate reading the docstrings in text terminals.</p>
 <li><p class="first"><strong>Short summary</strong></p>
 <p>A one-line summary that does not use variable names or the function
 name, e.g.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;The sum of two numbers.</span>
 
 <span class="sd">   &quot;&quot;&quot;</span>
@@ -182,7 +182,7 @@ name, e.g.</p>
 displayed by the help function. For some functions (notably those
 written in C) the signature is not available, so we have to specify
 it as the first line of the docstring:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">add(a, b)</span>
 
 <span class="sd">The sum of two numbers.</span>
@@ -203,7 +203,7 @@ is superseded, duplicates functionality found elsewhere, etc.).</li>
 </ul>
 <p>This section should use the note Sphinx directive instead of an
 underlined section header.</p>
-<div class="highlight-default"><div class="highlight"><pre>.. note:: Deprecated in Astropy 1.2
+<div class="highlight-python"><div class="highlight"><pre>.. note:: Deprecated in Astropy 1.2
           `ndobj_old` will be removed in Astropy 2.0, it is replaced by
           `ndobj_new` because the latter works also with array subclasses.
 </pre></div>
@@ -218,7 +218,7 @@ descriptions still belong in the <strong>parameters</strong> section.</p>
 </li>
 <li><p class="first"><strong>Parameters</strong></p>
 <p>Description of the function arguments, keywords and their respective types.</p>
-<div class="highlight-default"><div class="highlight"><pre>Parameters
+<div class="highlight-python"><div class="highlight"><pre>Parameters
 ----------
 x : type
    Description of parameter `x`.
@@ -227,36 +227,36 @@ x : type
 <p>Enclose variables in single backticks.</p>
 <p>For the parameter types, be as precise as possible. Below are a few
 examples of parameters and their types.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Parameters</span>
-<span class="o">----------</span>
-<span class="n">filename</span> <span class="p">:</span> <span class="nb">str</span>
-<span class="n">copy</span> <span class="p">:</span> <span class="nb">bool</span>
-<span class="n">dtype</span> <span class="p">:</span> <span class="n">data</span><span class="o">-</span><span class="nb">type</span>
-<span class="n">iterable</span> <span class="p">:</span> <span class="n">iterable</span> <span class="nb">object</span>
-<span class="n">shape</span> <span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">tuple</span> <span class="n">of</span> <span class="nb">int</span>
-<span class="n">files</span> <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">str</span>
+<div class="highlight-python"><div class="highlight"><pre>Parameters
+----------
+filename : str
+copy : bool
+dtype : data-type
+iterable : iterable object
+shape : int or tuple of int
+files : list of str
 </pre></div>
 </div>
 <p>If it is not necessary to specify a keyword argument, use <code class="docutils literal"><span class="pre">optional</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optional</span>
+<div class="highlight-python"><div class="highlight"><pre>x : int, optional
 </pre></div>
 </div>
 <p>Optional keyword parameters have default values, which are displayed as
 part of the function signature. They can also be detailed in the
 description:</p>
-<div class="highlight-default"><div class="highlight"><pre>Description of parameter `x` (the default is -1, which implies summation
+<div class="highlight-python"><div class="highlight"><pre>Description of parameter `x` (the default is -1, which implies summation
 over all axes).
 </pre></div>
 </div>
 <p>When a parameter can only assume one of a fixed set of values, those values
 can be listed in braces:</p>
-<div class="highlight-default"><div class="highlight"><pre>order : {&#39;C&#39;, &#39;F&#39;, &#39;A&#39;}
+<div class="highlight-python"><div class="highlight"><pre>order : {&#39;C&#39;, &#39;F&#39;, &#39;A&#39;}
     Description of `order`.
 </pre></div>
 </div>
 <p>When two or more input parameters have exactly the same type, shape and
 description, they can be combined:</p>
-<div class="highlight-default"><div class="highlight"><pre>x1, x2 : array-like
+<div class="highlight-python"><div class="highlight"><pre>x1, x2 : array-like
     Input arrays, description of `x1`, `x2`.
 </pre></div>
 </div>
@@ -273,10 +273,10 @@ to prevent cluttering the <strong>parameters</strong> section.</p>
 <li><p class="first"><strong>Raises</strong></p>
 <p>An optional section detailing which errors get raised and under what
 conditions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Raises</span>
-<span class="o">------</span>
-<span class="n">InvalidWCSException</span>
-    <span class="n">If</span> <span class="n">the</span> <span class="n">WCS</span> <span class="n">information</span> <span class="ow">is</span> <span class="n">invalid</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>Raises
+------
+InvalidWCSException
+    If the WCS information is invalid.
 </pre></div>
 </div>
 <p>This section should be used judiciously, i.e only for errors that are
@@ -291,9 +291,9 @@ docstrings further explain parameters used by this function are good
 candidates.</p>
 <p>As an example, for a hypothetical function <code class="docutils literal"><span class="pre">astropy.wcs.world2pix</span></code>
 converting sky to pixel coordinates, we would have:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">See</span> <span class="n">Also</span>
-<span class="o">--------</span>
-<span class="n">pix2world</span> <span class="p">:</span> <span class="n">Convert</span> <span class="n">pixel</span> <span class="n">to</span> <span class="n">sky</span> <span class="n">coordinates</span>
+<div class="highlight-python"><div class="highlight"><pre>See Also
+--------
+pix2world : Convert pixel to sky coordinates
 </pre></div>
 </div>
 <p>When referring to functions in the same sub-module, no prefix is needed,
@@ -301,20 +301,20 @@ and the tree is searched upwards for a match.</p>
 <p>Prefix functions from other sub-modules appropriately. E.g., whilst
 documenting a hypothetical <code class="docutils literal"><span class="pre">astropy.vo</span></code> module, refer to a function in
 <code class="docutils literal"><span class="pre">table</span></code> by</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">table</span><span class="o">.</span><span class="n">read</span> <span class="p">:</span> <span class="n">Read</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">VO</span> <span class="n">table</span>
+<div class="highlight-python"><div class="highlight"><pre>table.read : Read in a VO table
 </pre></div>
 </div>
 <p>When referring to an entirely different module:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">astropy</span><span class="o">.</span><span class="n">coords</span> <span class="p">:</span> <span class="n">Coordinate</span> <span class="n">handling</span> <span class="n">routines</span>
+<div class="highlight-python"><div class="highlight"><pre>astropy.coords : Coordinate handling routines
 </pre></div>
 </div>
 <p>Functions may be listed without descriptions, and this is preferable if the
 functionality is clear from the function name:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">See</span> <span class="n">Also</span>
-<span class="o">--------</span>
-<span class="n">func_a</span> <span class="p">:</span> <span class="n">Function</span> <span class="n">a</span> <span class="k">with</span> <span class="n">its</span> <span class="n">description</span><span class="o">.</span>
-<span class="n">func_b</span><span class="p">,</span> <span class="n">func_c_</span><span class="p">,</span> <span class="n">func_d</span>
-<span class="n">func_e</span>
+<div class="highlight-python"><div class="highlight"><pre>See Also
+--------
+func_a : Function a with its description.
+func_b, func_c_, func_d
+func_e
 </pre></div>
 </div>
 </li>
@@ -323,27 +323,27 @@ functionality is clear from the function name:</p>
 possibly including a discussion of the algorithm. This section may include
 mathematical equations, written in <a class="reference external" href="http://www.latex-project.org/">LaTeX</a>
 format:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">The</span> <span class="n">FFT</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">fast</span> <span class="n">implementation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">discrete</span> <span class="n">Fourier</span> <span class="n">transform</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre>The FFT is a fast implementation of the discrete Fourier transform:
 
-<span class="o">..</span> <span class="n">math</span><span class="p">::</span> <span class="n">X</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">{</span><span class="n">j</span>\<span class="n">omega</span> <span class="p">}</span> <span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="n">e</span><span class="o">^</span><span class="p">{</span> <span class="o">-</span> <span class="n">j</span>\<span class="n">omega</span> <span class="n">n</span><span class="p">}</span>
+.. math:: X(e^{j\omega } ) = x(n)e^{ - j\omega n}
 </pre></div>
 </div>
 <p>Equations can also be typeset underneath the math directive:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">The</span> <span class="n">discrete</span><span class="o">-</span><span class="n">time</span> <span class="n">Fourier</span> <span class="n">time</span><span class="o">-</span><span class="n">convolution</span> <span class="nb">property</span> <span class="n">states</span> <span class="n">that</span>
+<div class="highlight-python"><div class="highlight"><pre>The discrete-time Fourier time-convolution property states that
 
-<span class="o">..</span> <span class="n">math</span><span class="p">::</span>
+.. math::
 
-     <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> \<span class="n">Leftrightarrow</span> <span class="n">X</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">{</span><span class="n">j</span>\<span class="n">omega</span> <span class="p">}</span> <span class="p">)</span><span class="n">Y</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">{</span><span class="n">j</span>\<span class="n">omega</span> <span class="p">}</span> <span class="p">)</span>\\
-     <span class="n">another</span> <span class="n">equation</span> <span class="n">here</span>
+     x(n) * y(n) \Leftrightarrow X(e^{j\omega } )Y(e^{j\omega } )\\
+     another equation here
 </pre></div>
 </div>
 <p>Math can furthermore be used inline, i.e.</p>
-<div class="highlight-default"><div class="highlight"><pre>The value of :math:`\omega` is larger than 5.
+<div class="highlight-python"><div class="highlight"><pre>The value of :math:`\omega` is larger than 5.
 </pre></div>
 </div>
 <p>Variable names are displayed in typewriter font, obtained by using
 <code class="docutils literal"><span class="pre">\mathtt{var}</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre>We square the input parameter `alpha` to obtain
+<div class="highlight-python"><div class="highlight"><pre>We square the input parameter `alpha` to obtain
 :math:`\mathtt{alpha}^2`.
 </pre></div>
 </div>
@@ -353,7 +353,7 @@ sparingly.</p>
 viewing the docstring as text must be able to comprehend its meaning
 without resorting to an image viewer. These additional illustrations are
 included using:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">filename</span>
+<div class="highlight-python"><div class="highlight"><pre>.. image:: filename
 </pre></div>
 </div>
 <p>where filename is a path relative to the reference guide source directory.</p>
@@ -365,11 +365,11 @@ included using:</p>
 <div><p>References cited in the <strong>notes</strong> section may be listed here,
 e.g. if you cited the article below using the text <code class="docutils literal"><span class="pre">[1]_</span></code>,
 include it as in the list as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">O</span><span class="o">.</span> <span class="n">McNoleg</span><span class="p">,</span> <span class="s">&quot;The integration of GIS, remote sensing,</span>
-   <span class="n">expert</span> <span class="n">systems</span> <span class="ow">and</span> <span class="n">adaptive</span> <span class="n">co</span><span class="o">-</span><span class="n">kriging</span> <span class="k">for</span> <span class="n">environmental</span> <span class="n">habitat</span>
-   <span class="n">modelling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Highland</span> <span class="n">Haggis</span> <span class="n">using</span> <span class="nb">object</span><span class="o">-</span><span class="n">oriented</span><span class="p">,</span> <span class="n">fuzzy</span><span class="o">-</span><span class="n">logic</span>
-   <span class="ow">and</span> <span class="n">neural</span><span class="o">-</span><span class="n">network</span> <span class="n">techniques</span><span class="p">,</span><span class="s">&quot; Computers &amp; Geosciences, vol. 22,</span>
-   <span class="n">pp</span><span class="o">.</span> <span class="mi">585</span><span class="o">-</span><span class="mi">588</span><span class="p">,</span> <span class="mf">1996.</span>
+<div class="highlight-python"><div class="highlight"><pre>.. [1] O. McNoleg, &quot;The integration of GIS, remote sensing,
+   expert systems and adaptive co-kriging for environmental habitat
+   modelling of the Highland Haggis using object-oriented, fuzzy-logic
+   and neural-network techniques,&quot; Computers &amp; Geosciences, vol. 22,
+   pp. 585-588, 1996.
 </pre></div>
 </div>
 <p>which renders as</p>
@@ -399,7 +399,7 @@ strongly encouraged.</p>
 <p>When multiple examples are provided, they should be separated by blank
 lines. Comments explaining the examples should have blank lines both above
 and below them:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">world2pix</span><span class="p">(</span><span class="mf">233.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.3</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">world2pix</span><span class="p">(</span><span class="mf">233.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.3</span><span class="p">)</span>
 <span class="go">(134.5, 233.1)</span>
 
 <span class="go">Comment explaining the second example</span>
@@ -410,7 +410,7 @@ and below them:</p>
 </div>
 <p>For tests with a result that is random or platform-dependent, mark the
 output as such:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">randomize_position</span><span class="p">(</span><span class="mf">244.9</span><span class="p">,</span> <span class="mf">44.2</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">astropy</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">randomize_position</span><span class="p">(</span><span class="mf">244.9</span><span class="p">,</span> <span class="mf">44.2</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="go">(244.855, 44.13)  # random</span>
 </pre></div>
 </div>
@@ -429,24 +429,24 @@ the <code class="docutils literal"><span class="pre">Parameters</span></code> se
 parameters.</p>
 <p>An <code class="docutils literal"><span class="pre">Attributes</span></code> section, located below the <code class="docutils literal"><span class="pre">Parameters</span></code> section, may be
 used to describe class variables:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Attributes</span>
-<span class="o">----------</span>
-<span class="n">x</span> <span class="p">:</span> <span class="nb">float</span>
-    <span class="n">The</span> <span class="n">X</span> <span class="n">coordinate</span><span class="o">.</span>
-<span class="n">y</span> <span class="p">:</span> <span class="nb">float</span>
-    <span class="n">The</span> <span class="n">Y</span> <span class="n">coordinate</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>Attributes
+----------
+x : float
+    The X coordinate.
+y : float
+    The Y coordinate.
 </pre></div>
 </div>
 <p>Attributes that are properties and have their own docstrings can be simply
 listed by name:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Attributes</span>
-<span class="o">----------</span>
-<span class="n">real</span>
-<span class="n">imag</span>
-<span class="n">x</span> <span class="p">:</span> <span class="nb">float</span>
-    <span class="n">The</span> <span class="n">X</span> <span class="n">coordinate</span>
-<span class="n">y</span> <span class="p">:</span> <span class="nb">float</span>
-    <span class="n">The</span> <span class="n">Y</span> <span class="n">coordinate</span>
+<div class="highlight-python"><div class="highlight"><pre>Attributes
+----------
+real
+imag
+x : float
+    The X coordinate
+y : float
+    The Y coordinate
 </pre></div>
 </div>
 <p>In general, it is not necessary to list class methods. Those that are not part
@@ -454,7 +454,7 @@ of the public API have names that start with an underscore. In some cases,
 however, a class may have a great many methods, of which only a few are
 relevant (e.g., subclasses of ndarray). Then, it becomes useful to have an
 additional <code class="docutils literal"><span class="pre">Methods</span></code> section:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Table</span><span class="p">(</span><span class="n">ndarray</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Table</span><span class="p">(</span><span class="n">ndarray</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class to represent tables of data</span>
 
@@ -504,11 +504,11 @@ be mentioned in the Notes and See Also sections.</li>
 <div class="section" id="documenting-constants">
 <h2>Documenting constants<a class="headerlink" href="#documenting-constants" title="Permalink to this headline">¶</a></h2>
 <p>Use the same sections as outlined for functions where applicable:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="mf">1.</span> <span class="n">summary</span>
-<span class="mf">2.</span> <span class="n">extended</span> <span class="n">summary</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
-<span class="mf">3.</span> <span class="n">see</span> <span class="n">also</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
-<span class="mf">4.</span> <span class="n">references</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
-<span class="mf">5.</span> <span class="n">examples</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>1. summary
+2. extended summary (optional)
+3. see also (optional)
+4. references (optional)
+5. examples (optional)
 </pre></div>
 </div>
 <p>Docstrings for constants will not be visible in text terminals
@@ -521,13 +521,13 @@ documentation built with Sphinx.</p>
 <p>Each module should have a docstring with at least a summary line. Other
 sections are optional, and should be used in the same order as for documenting
 functions when they are appropriate:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="mf">1.</span> <span class="n">summary</span>
-<span class="mf">2.</span> <span class="n">extended</span> <span class="n">summary</span>
-<span class="mf">3.</span> <span class="n">routine</span> <span class="n">listings</span>
-<span class="mf">4.</span> <span class="n">see</span> <span class="n">also</span>
-<span class="mf">5.</span> <span class="n">notes</span>
-<span class="mf">6.</span> <span class="n">references</span>
-<span class="mf">7.</span> <span class="n">examples</span>
+<div class="highlight-python"><div class="highlight"><pre>1. summary
+2. extended summary
+3. routine listings
+4. see also
+5. notes
+6. references
+7. examples
 </pre></div>
 </div>
 <p>Routine listings are encouraged, especially for large modules, for which it is
@@ -542,9 +542,9 @@ belong in docstrings.</p>
 <li><p class="first">Notes and Warnings : If there are points in the docstring that deserve
 special emphasis, the reST directives for a note or warning can be used
 in the vicinity of the context of the warning (inside a section). Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="n">warning</span><span class="p">::</span> <span class="ne">Warning</span> <span class="n">text</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>.. warning:: Warning text.
 
-<span class="o">..</span> <span class="n">note</span><span class="p">::</span> <span class="n">Note</span> <span class="n">text</span><span class="o">.</span>
+.. note:: Note text.
 </pre></div>
 </div>
 <p>Use these sparingly, as they do not look very good in text terminals
@@ -622,8 +622,8 @@ on how to use <a class="reference external" href="http://sphinx.pocoo.org">Sphin
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.votable.tree &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.votable.tree &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="astropy.io.votable" href="../votable.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" >Module code</a> &raquo;</li>
@@ -708,13 +708,13 @@
                 <span class="n">meta</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
 
         <span class="n">column</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">&#39;links&#39;</span><span class="p">,</span> <span class="p">[])</span>
-        <span class="n">column</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;links&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
-
+        <span class="n">column</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;links&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Link.from_table_column"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Link.html#astropy.io.votable.tree.Link.from_table_column">[docs]</a>    <span class="k">def</span> <span class="nf">from_table_column</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Info"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Info.html#astropy.io.votable.tree.Info">[docs]</a><span class="k">class</span> <span class="nc">Info</span><span class="p">(</span><span class="n">SimpleElementWithContent</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">,</span> <span class="n">_XtypeProperty</span><span class="p">,</span>
            <span class="n">_UtypeProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -883,9 +883,9 @@
         <span class="k">if</span> <span class="s">&#39;unit&#39;</span> <span class="ow">in</span> <span class="n">attrib</span><span class="p">:</span>
             <span class="n">attrib</span><span class="p">[</span><span class="s">&#39;unit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s">&#39;cds&#39;</span><span class="p">)</span>
         <span class="n">w</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">,</span>
-                  <span class="n">attrib</span><span class="o">=</span><span class="n">attrib</span><span class="p">)</span></div></div>
+                  <span class="n">attrib</span><span class="o">=</span><span class="n">attrib</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Values"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Values.html#astropy.io.votable.tree.Values">[docs]</a><span class="k">class</span> <span class="nc">Values</span><span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    VALUES_ element: used within FIELD_ and PARAM_ elements to define the domain of values.</span>
@@ -1123,8 +1123,8 @@
                 <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s">&#39;VALUES&#39;</span><span class="p">:</span>
                     <span class="k">break</span>
 
-        <span class="k">return</span> <span class="bp">self</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
 <div class="viewcode-block" id="Values.is_defaults"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Values.html#astropy.io.votable.tree.Values.is_defaults">[docs]</a>    <span class="k">def</span> <span class="nf">is_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Are the settings on this ``VALUE`` element all the same as the</span>
@@ -1133,8 +1133,8 @@
         <span class="c"># If there&#39;s nothing meaningful or non-default to write,</span>
         <span class="c"># don&#39;t write anything.</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ref</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">null</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">==</span> <span class="p">[])</span></div>
-
+                <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">==</span> <span class="p">[])</span>
+</div>
 <div class="viewcode-block" id="Values.to_xml"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Values.html#astropy.io.votable.tree.Values.to_xml">[docs]</a>    <span class="k">def</span> <span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">yes_no</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
@@ -1164,8 +1164,8 @@
                     <span class="n">w</span><span class="o">.</span><span class="n">element</span><span class="p">(</span>
                         <span class="s">&#39;OPTION&#39;</span><span class="p">,</span>
                         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-                        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
-
+                        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Values.to_table_column"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Values.html#astropy.io.votable.tree.Values.to_table_column">[docs]</a>    <span class="k">def</span> <span class="nf">to_table_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
         <span class="c"># Have the ref filled in here</span>
         <span class="n">meta</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1184,8 +1184,8 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">):</span>
             <span class="n">meta</span><span class="p">[</span><span class="s">&#39;options&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
 
-        <span class="n">column</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span></div>
-
+        <span class="n">column</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span>
+</div>
 <div class="viewcode-block" id="Values.from_table_column"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Values.html#astropy.io.votable.tree.Values.from_table_column">[docs]</a>    <span class="k">def</span> <span class="nf">from_table_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="s">&#39;values&#39;</span> <span class="ow">in</span> <span class="n">column</span><span class="o">.</span><span class="n">meta</span><span class="p">:</span>
             <span class="k">return</span>
@@ -1202,9 +1202,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;max&#39;</span><span class="p">][</span><span class="s">&#39;value&#39;</span><span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">max_inclusive</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;max&#39;</span><span class="p">][</span><span class="s">&#39;inclusive&#39;</span><span class="p">]</span>
         <span class="k">if</span> <span class="s">&#39;options&#39;</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_options</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;options&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_options</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;options&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Field"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Field.html#astropy.io.votable.tree.Field">[docs]</a><span class="k">class</span> <span class="nc">Field</span><span class="p">(</span><span class="n">SimpleElement</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">,</span> <span class="n">_NameProperty</span><span class="p">,</span> <span class="n">_XtypeProperty</span><span class="p">,</span>
             <span class="n">_UtypeProperty</span><span class="p">,</span> <span class="n">_UcdProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1347,8 +1347,8 @@
                 <span class="n">new_name</span> <span class="o">!=</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
                 <span class="n">vo_warn</span><span class="p">(</span><span class="n">W33</span><span class="p">,</span> <span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">),</span> <span class="n">field</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">_pos</span><span class="p">)</span>
             <span class="n">field</span><span class="o">.</span><span class="n">_unique_name</span> <span class="o">=</span> <span class="n">new_name</span>
-            <span class="n">unique</span><span class="p">[</span><span class="n">new_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span></div>
-
+            <span class="n">unique</span><span class="p">[</span><span class="n">new_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span>
+</div>
     <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">_ref</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">_ref</span>
@@ -1577,8 +1577,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
 <div class="viewcode-block" id="Field.to_xml"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Field.html#astropy.io.votable.tree.Field.to_xml">[docs]</a>    <span class="k">def</span> <span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">attrib</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">object_attrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attr_list</span><span class="p">)</span>
         <span class="k">if</span> <span class="s">&#39;unit&#39;</span> <span class="ow">in</span> <span class="n">attrib</span><span class="p">:</span>
@@ -1589,8 +1589,8 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">is_defaults</span><span class="p">():</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">links</span><span class="p">:</span>
-                <span class="n">link</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+                <span class="n">link</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Field.to_table_column"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Field.html#astropy.io.votable.tree.Field.to_table_column">[docs]</a>    <span class="k">def</span> <span class="nf">to_table_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the attributes of a given `astropy.table.Column` instance</span>
@@ -1610,8 +1610,8 @@
             <span class="c"># TODO: Use units framework when it&#39;s available</span>
             <span class="n">column</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">converter</span><span class="p">,</span> <span class="n">converters</span><span class="o">.</span><span class="n">FloatingPoint</span><span class="p">):</span>
-            <span class="n">column</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">converter</span><span class="o">.</span><span class="n">output_format</span></div>
-
+            <span class="n">column</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">converter</span><span class="o">.</span><span class="n">output_format</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Field.from_table_column"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Field.html#astropy.io.votable.tree.Field.from_table_column">[docs]</a>    <span class="k">def</span> <span class="nf">from_table_column</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">votable</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1640,9 +1640,9 @@
                 <span class="n">field</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Link</span><span class="o">.</span><span class="n">from_table_column</span><span class="p">(</span><span class="n">link</span><span class="p">))</span>
 
         <span class="c"># TODO: Parse format into precision and width</span>
-        <span class="k">return</span> <span class="n">field</span></div></div>
+        <span class="k">return</span> <span class="n">field</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Param"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Param.html#astropy.io.votable.tree.Param">[docs]</a><span class="k">class</span> <span class="nc">Param</span><span class="p">(</span><span class="n">Field</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    PARAM_ element: constant-valued columns in the data.</span>
@@ -1694,9 +1694,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
         <span class="n">Field</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">tmp_value</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">tmp_value</span>
 
-
+</div></div>
 <div class="viewcode-block" id="CooSys"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.CooSys.html#astropy.io.votable.tree.CooSys">[docs]</a><span class="k">class</span> <span class="nc">CooSys</span><span class="p">(</span><span class="n">SimpleElement</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    COOSYS_ element: defines a coordinate system.</span>
@@ -1798,9 +1798,9 @@
 
     <span class="nd">@epoch.deleter</span>
     <span class="k">def</span> <span class="nf">epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_epoch</span> <span class="o">=</span> <span class="bp">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_epoch</span> <span class="o">=</span> <span class="bp">None</span>
 
-
+</div>
 <div class="viewcode-block" id="FieldRef"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.FieldRef.html#astropy.io.votable.tree.FieldRef">[docs]</a><span class="k">class</span> <span class="nc">FieldRef</span><span class="p">(</span><span class="n">SimpleElement</span><span class="p">,</span> <span class="n">_UtypeProperty</span><span class="p">,</span> <span class="n">_UcdProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    FIELDref_ element: used inside of GROUP_ elements to refer to remote FIELD_ elements.</span>
@@ -1864,9 +1864,9 @@
                 <span class="k">return</span> <span class="n">field</span>
         <span class="n">vo_raise</span><span class="p">(</span>
             <span class="s">&quot;No field named &#39;</span><span class="si">%s</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pos</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pos</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="ParamRef"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.ParamRef.html#astropy.io.votable.tree.ParamRef">[docs]</a><span class="k">class</span> <span class="nc">ParamRef</span><span class="p">(</span><span class="n">SimpleElement</span><span class="p">,</span> <span class="n">_UtypeProperty</span><span class="p">,</span> <span class="n">_UcdProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    PARAMref_ element: used inside of GROUP_ elements to refer to remote PARAM_ elements.</span>
@@ -1930,9 +1930,9 @@
                 <span class="k">return</span> <span class="n">param</span>
         <span class="n">vo_raise</span><span class="p">(</span>
             <span class="s">&quot;No params named &#39;</span><span class="si">%s</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pos</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pos</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Group"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Group.html#astropy.io.votable.tree.Group">[docs]</a><span class="k">class</span> <span class="nc">Group</span><span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">,</span> <span class="n">_NameProperty</span><span class="p">,</span> <span class="n">_UtypeProperty</span><span class="p">,</span>
             <span class="n">_UcdProperty</span><span class="p">,</span> <span class="n">_DescriptionProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -2040,8 +2040,8 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">data</span> <span class="ow">or</span> <span class="bp">None</span>
                 <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s">&#39;GROUP&#39;</span><span class="p">:</span>
                     <span class="k">break</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
 <div class="viewcode-block" id="Group.to_xml"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Group.html#astropy.io.votable.tree.Group.to_xml">[docs]</a>    <span class="k">def</span> <span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">w</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span>
             <span class="s">&#39;GROUP&#39;</span><span class="p">,</span>
@@ -2050,8 +2050,8 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="n">w</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s">&quot;DESCRIPTION&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">entries</span><span class="p">:</span>
-                <span class="n">entry</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+                <span class="n">entry</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Group.iter_fields_and_params"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Group.html#astropy.io.votable.tree.Group.iter_fields_and_params">[docs]</a>    <span class="k">def</span> <span class="nf">iter_fields_and_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterate over all :class:`Param` elements in this</span>
@@ -2062,8 +2062,8 @@
                 <span class="k">yield</span> <span class="n">entry</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">Group</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">iter_fields_and_params</span><span class="p">():</span>
-                    <span class="k">yield</span> <span class="n">field</span></div>
-
+                    <span class="k">yield</span> <span class="n">field</span>
+</div>
 <div class="viewcode-block" id="Group.iter_groups"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Group.html#astropy.io.votable.tree.Group.iter_groups">[docs]</a>    <span class="k">def</span> <span class="nf">iter_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterate over all sub-:class:`Group` instances in</span>
@@ -2073,9 +2073,9 @@
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">Group</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">entry</span>
                 <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">iter_groups</span><span class="p">():</span>
-                    <span class="k">yield</span> <span class="n">group</span></div></div>
+                    <span class="k">yield</span> <span class="n">group</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Table"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Table.html#astropy.io.votable.tree.Table">[docs]</a><span class="k">class</span> <span class="nc">Table</span><span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">,</span> <span class="n">_NameProperty</span><span class="p">,</span> <span class="n">_UcdProperty</span><span class="p">,</span>
             <span class="n">_DescriptionProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -2274,8 +2274,8 @@
 <span class="sd">        because it was skipped over by the parser (through use of the</span>
 <span class="sd">        ``table_number`` kwarg).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_empty</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_empty</span>
+</div>
 <div class="viewcode-block" id="Table.create_arrays"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Table.html#astropy.io.votable.tree.Table.create_arrays">[docs]</a>    <span class="k">def</span> <span class="nf">create_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new array to hold the data based on the current set</span>
@@ -2321,8 +2321,8 @@
                     <span class="n">descr_mask</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_type</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
             <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nrows</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">descr_mask</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_resize_strategy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new (larger) size based on size, used for</span>
@@ -2512,8 +2512,8 @@
             <span class="k">elif</span> <span class="ow">not</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">tag</span> <span class="o">==</span> <span class="s">&#39;TABLE&#39;</span><span class="p">:</span>
                 <span class="k">break</span>
 
-        <span class="k">return</span> <span class="bp">self</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
     <span class="k">def</span> <span class="nf">_parse_tabledata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">colnumbers</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
         <span class="c"># Since we don&#39;t know the number of rows up front, we&#39;ll</span>
         <span class="c"># reallocate the record array to make room as we go.  This</span>
@@ -2828,8 +2828,8 @@
 
             <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;version_1_2_or_later&#39;</span><span class="p">]:</span>
                 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_infos</span><span class="p">:</span>
-                    <span class="n">element</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+                    <span class="n">element</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">_write_tabledata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span>
         <span class="n">array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span>
@@ -2966,8 +2966,8 @@
             <span class="n">column</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
             <span class="n">field</span><span class="o">.</span><span class="n">to_table_column</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">table</span></div>
-
+        <span class="k">return</span> <span class="n">table</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Table.from_table"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Table.html#astropy.io.votable.tree.Table.from_table">[docs]</a>    <span class="k">def</span> <span class="nf">from_table</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">votable</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2993,8 +2993,8 @@
             <span class="n">new_table</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">table</span><span class="p">),</span>
                                        <span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">mask</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">new_table</span></div>
-
+        <span class="k">return</span> <span class="n">new_table</span>
+</div>
 <div class="viewcode-block" id="Table.iter_fields_and_params"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Table.html#astropy.io.votable.tree.Table.iter_fields_and_params">[docs]</a>    <span class="k">def</span> <span class="nf">iter_fields_and_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterate over all FIELD and PARAM elements in the</span>
@@ -3006,8 +3006,8 @@
             <span class="k">yield</span> <span class="n">field</span>
         <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">iter_fields_and_params</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">field</span></div>
-
+                <span class="k">yield</span> <span class="n">field</span>
+</div>
     <span class="n">get_field_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_fields_and_params&#39;</span><span class="p">,</span> <span class="s">&#39;FIELD or PARAM&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3034,8 +3034,8 @@
         <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">:</span>
             <span class="k">yield</span> <span class="n">group</span>
             <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">iter_groups</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">g</span></div>
-
+                <span class="k">yield</span> <span class="n">g</span>
+</div>
     <span class="n">get_group_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_groups&#39;</span><span class="p">,</span> <span class="s">&#39;GROUP&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3052,9 +3052,9 @@
 
 <div class="viewcode-block" id="Table.iter_info"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Table.html#astropy.io.votable.tree.Table.iter_info">[docs]</a>    <span class="k">def</span> <span class="nf">iter_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">infos</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">info</span></div></div>
+            <span class="k">yield</span> <span class="n">info</span>
 
-
+</div></div>
 <div class="viewcode-block" id="Resource"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Resource.html#astropy.io.votable.tree.Resource">[docs]</a><span class="k">class</span> <span class="nc">Resource</span><span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">,</span> <span class="n">_NameProperty</span><span class="p">,</span> <span class="n">_UtypeProperty</span><span class="p">,</span>
                <span class="n">_DescriptionProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -3228,8 +3228,8 @@
 
         <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_votable</span>
 
-        <span class="k">return</span> <span class="bp">self</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
 <div class="viewcode-block" id="Resource.to_xml"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Resource.html#astropy.io.votable.tree.Resource.to_xml">[docs]</a>    <span class="k">def</span> <span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">attrs</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">object_attrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="s">&#39;utype&#39;</span><span class="p">))</span>
         <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extra_attributes</span><span class="p">)</span>
@@ -3240,8 +3240,8 @@
                                 <span class="bp">self</span><span class="o">.</span><span class="n">infos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">links</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">,</span>
                                 <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">element_set</span><span class="p">:</span>
-                    <span class="n">element</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+                    <span class="n">element</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="Resource.iter_tables"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Resource.html#astropy.io.votable.tree.Resource.iter_tables">[docs]</a>    <span class="k">def</span> <span class="nf">iter_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterates over all tables in the resource and</span>
@@ -3251,8 +3251,8 @@
             <span class="k">yield</span> <span class="n">table</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_tables</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">table</span></div>
-
+                <span class="k">yield</span> <span class="n">table</span>
+</div>
 <div class="viewcode-block" id="Resource.iter_fields_and_params"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Resource.html#astropy.io.votable.tree.Resource.iter_fields_and_params">[docs]</a>    <span class="k">def</span> <span class="nf">iter_fields_and_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterates over all FIELD_ and PARAM_ elements in</span>
@@ -3265,8 +3265,8 @@
                 <span class="k">yield</span> <span class="n">param</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_fields_and_params</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">param</span></div>
-
+                <span class="k">yield</span> <span class="n">param</span>
+</div>
 <div class="viewcode-block" id="Resource.iter_coosys"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Resource.html#astropy.io.votable.tree.Resource.iter_coosys">[docs]</a>    <span class="k">def</span> <span class="nf">iter_coosys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterates over all the COOSYS_ elements in the</span>
@@ -3276,8 +3276,8 @@
             <span class="k">yield</span> <span class="n">coosys</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">coosys</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_coosys</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">coosys</span></div>
-
+                <span class="k">yield</span> <span class="n">coosys</span>
+</div>
 <div class="viewcode-block" id="Resource.iter_info"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.Resource.html#astropy.io.votable.tree.Resource.iter_info">[docs]</a>    <span class="k">def</span> <span class="nf">iter_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterates over all the INFO_ elements in the</span>
@@ -3290,9 +3290,9 @@
                 <span class="k">yield</span> <span class="n">info</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_info</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">info</span></div></div>
+                <span class="k">yield</span> <span class="n">info</span>
 
-
+</div></div>
 <div class="viewcode-block" id="VOTableFile"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile">[docs]</a><span class="k">class</span> <span class="nc">VOTableFile</span><span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">_IDProperty</span><span class="p">,</span> <span class="n">_DescriptionProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    VOTABLE_ element: represents an entire file.</span>
@@ -3473,8 +3473,8 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">)</span> <span class="ow">and</span> <span class="n">config</span><span class="p">[</span><span class="s">&#39;version_1_2_or_later&#39;</span><span class="p">]:</span>
             <span class="n">warn_or_raise</span><span class="p">(</span><span class="n">W53</span><span class="p">,</span> <span class="n">W53</span><span class="p">,</span> <span class="p">(),</span> <span class="n">config</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span>
+</div>
 <div class="viewcode-block" id="VOTableFile.to_xml"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile.to_xml">[docs]</a>    <span class="k">def</span> <span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">write_null_values</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                <span class="n">compressed</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">tabledata_format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                <span class="n">_debug_python_based_parser</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
@@ -3558,8 +3558,8 @@
                     <span class="n">element_sets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span>
                 <span class="k">for</span> <span class="n">element_set</span> <span class="ow">in</span> <span class="n">element_sets</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">element_set</span><span class="p">:</span>
-                        <span class="n">element</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
+                        <span class="n">element</span><span class="o">.</span><span class="n">to_xml</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOTableFile.iter_tables"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile.iter_tables">[docs]</a>    <span class="k">def</span> <span class="nf">iter_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iterates over all tables in the VOTable file in a &quot;flat&quot; way,</span>
@@ -3567,8 +3567,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_tables</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">table</span></div>
-
+                <span class="k">yield</span> <span class="n">table</span>
+</div>
 <div class="viewcode-block" id="VOTableFile.get_first_table"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile.get_first_table">[docs]</a>    <span class="k">def</span> <span class="nf">get_first_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Often, you know there is only one table in the file, and</span>
@@ -3577,8 +3577,8 @@
         <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_tables</span><span class="p">():</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">table</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
                 <span class="k">return</span> <span class="n">table</span>
-        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;No table found in VOTABLE file.&quot;</span><span class="p">)</span></div>
-
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;No table found in VOTABLE file.&quot;</span><span class="p">)</span>
+</div>
     <span class="n">get_table_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_tables&#39;</span><span class="p">,</span> <span class="s">&#39;TABLE&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3600,8 +3600,8 @@
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">table</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_tables</span><span class="p">()):</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">idx</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">table</span>
-        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;No table at index </span><span class="si">%d</span><span class="s"> found in VOTABLE file.&quot;</span> <span class="o">%</span> <span class="n">idx</span><span class="p">)</span></div>
-
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;No table at index </span><span class="si">%d</span><span class="s"> found in VOTABLE file.&quot;</span> <span class="o">%</span> <span class="n">idx</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="VOTableFile.iter_fields_and_params"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile.iter_fields_and_params">[docs]</a>    <span class="k">def</span> <span class="nf">iter_fields_and_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recursively iterate over all FIELD_ and PARAM_ elements in the</span>
@@ -3609,8 +3609,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_fields_and_params</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">field</span></div>
-
+                <span class="k">yield</span> <span class="n">field</span>
+</div>
     <span class="n">get_field_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_fields_and_params&#39;</span><span class="p">,</span> <span class="s">&#39;FIELD&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3637,8 +3637,8 @@
 <span class="sd">        file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_fields_and_params</span><span class="p">():</span>
-            <span class="k">yield</span> <span class="n">field</span><span class="o">.</span><span class="n">values</span></div>
-
+            <span class="k">yield</span> <span class="n">field</span><span class="o">.</span><span class="n">values</span>
+</div>
     <span class="n">get_values_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_values&#39;</span><span class="p">,</span> <span class="s">&#39;VALUES&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3653,8 +3653,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_tables</span><span class="p">():</span>
             <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">iter_groups</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">group</span></div>
-
+                <span class="k">yield</span> <span class="n">group</span>
+</div>
     <span class="n">get_group_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_groups&#39;</span><span class="p">,</span> <span class="s">&#39;GROUP&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3678,8 +3678,8 @@
             <span class="k">yield</span> <span class="n">coosys</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">coosys</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_coosys</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">coosys</span></div>
-
+                <span class="k">yield</span> <span class="n">coosys</span>
+</div>
     <span class="n">get_coosys_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_coosys&#39;</span><span class="p">,</span> <span class="s">&#39;COOSYS&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;Looks up a COOSYS_ element by the given ID.&quot;&quot;&quot;</span><span class="p">)</span>
@@ -3693,8 +3693,8 @@
             <span class="k">yield</span> <span class="n">info</span>
         <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">resource</span><span class="o">.</span><span class="n">iter_info</span><span class="p">():</span>
-                <span class="k">yield</span> <span class="n">info</span></div>
-
+                <span class="k">yield</span> <span class="n">info</span>
+</div>
     <span class="n">get_info_by_id</span> <span class="o">=</span> <span class="n">_lookup_by_attr_factory</span><span class="p">(</span>
         <span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;iter_info&#39;</span><span class="p">,</span> <span class="s">&#39;INFO&#39;</span><span class="p">,</span>
         <span class="sd">&quot;&quot;&quot;Looks up a INFO element by the given ID.&quot;&quot;&quot;</span><span class="p">)</span>
@@ -3704,8 +3704,8 @@
 <span class="sd">        Set the output storage format of all tables in the file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_tables</span><span class="p">():</span>
-            <span class="n">table</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="n">format</span></div>
-
+            <span class="n">table</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="n">format</span>
+</div>
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VOTableFile.from_table"><a class="viewcode-back" href="../../../../api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile.from_table">[docs]</a>    <span class="k">def</span> <span class="nf">from_table</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">table_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3743,8 +3743,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

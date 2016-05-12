@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.angles &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.coordinates.angles &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -459,8 +459,8 @@
 
         <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[()]</span>
-        <span class="k">return</span> <span class="n">result</span></div>
-
+        <span class="k">return</span> <span class="n">result</span>
+</div>
 <div class="viewcode-block" id="Angle.wrap_at"><a class="viewcode-back" href="../../../api/astropy.coordinates.Angle.html#astropy.coordinates.Angle.wrap_at">[docs]</a>    <span class="k">def</span> <span class="nf">wrap_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wrap_angle</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Wrap the `Angle` object at the given ``wrap_angle``.</span>
@@ -508,8 +508,8 @@
         <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
             <span class="bp">self</span><span class="p">[()]</span> <span class="o">=</span> <span class="n">wrapped</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">wrapped</span></div>
-
+            <span class="k">return</span> <span class="n">wrapped</span>
+</div>
 <div class="viewcode-block" id="Angle.is_within_bounds"><a class="viewcode-back" href="../../../api/astropy.coordinates.Angle.html#astropy.coordinates.Angle.is_within_bounds">[docs]</a>    <span class="k">def</span> <span class="nf">is_within_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if all angle(s) satisfy ``lower &lt;= angle &lt; upper``</span>
@@ -548,8 +548,8 @@
             <span class="n">ok</span> <span class="o">&amp;=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">Angle</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ok</span> <span class="ow">and</span> <span class="n">upper</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">ok</span> <span class="o">&amp;=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span> <span class="o">&lt;</span> <span class="n">Angle</span><span class="p">(</span><span class="n">upper</span><span class="p">))</span>
-        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">ok</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">ok</span><span class="p">)</span>
+</div>
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
 
@@ -565,9 +565,9 @@
                 <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;latex&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\\\\</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;latex&#39;</span><span class="p">),</span>
-                                       <span class="n">formatter</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;str_kind&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">})</span></div>
+                                       <span class="n">formatter</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;str_kind&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">})</span>
 
-
+</div>
 <div class="viewcode-block" id="Latitude"><a class="viewcode-back" href="../../../api/astropy.coordinates.Latitude.html#astropy.coordinates.Latitude">[docs]</a><span class="k">class</span> <span class="nc">Latitude</span><span class="p">(</span><span class="n">Angle</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Latitude-like angle(s) which must be in the range -90 to +90 deg.</span>
@@ -653,9 +653,9 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Angle</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">Angle</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">obj</span></div>
+        <span class="k">return</span> <span class="n">obj</span>
 
-
+</div>
 <div class="viewcode-block" id="Longitude"><a class="viewcode-back" href="../../../api/astropy.coordinates.Longitude.html#astropy.coordinates.Longitude">[docs]</a><span class="k">class</span> <span class="nc">Longitude</span><span class="p">(</span><span class="n">Angle</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Longitude-like angle(s) which are wrapped within a contiguous 360 degree range.</span>
@@ -768,11 +768,11 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Angle</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">Angle</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">obj</span></div>
+        <span class="k">return</span> <span class="n">obj</span>
 
 <span class="c">#&lt;----------------------------------Rotations---------------------------------&gt;</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">rotation_matrix</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s">&#39;z&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate a 3x3 cartesian rotation matrix in for rotation about</span>
@@ -877,8 +877,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

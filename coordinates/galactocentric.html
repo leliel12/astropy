@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Description of Galactocentric coordinates transformation &mdash; Astropy v1.2.dev14980</title>
+    <title>Description of Galactocentric coordinates transformation &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="index.html" />
     <link rel="next" title="Usage tips/suggestions for methods that access remote resources" href="remote_methods.html" />
     <link rel="prev" title="Example: Defining A Coordinate Frame for the Sgr Dwarf" href="sgr-example.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -99,7 +99,7 @@ a Right Ascension, Declination, and heliocentric distance,
 Cartesian position using the standard transformation from Cartesian to
 spherical coordinates:</p>
 <div class="math">
-<p><img src="../_images/math/c00c7bd7cfdfdd945bbe7444e8f782839eb928a1.png" alt="\begin{aligned}
+<p><img src="../_images/math/9a7b2046e46018351467b79869b582e45cd9b2f6.png" alt="\begin{aligned}
     x_{\rm icrs} &amp;= d\cos{\alpha}\cos{\delta}\\
     y_{\rm icrs} &amp;= d\sin{\alpha}\cos{\delta}\\
     z_{\rm icrs} &amp;= d\sin{\delta}\\
@@ -113,7 +113,7 @@ that the new <img class="math" src="../_images/math/1ba6dff92a6534953b79b494fd04
 specified by the ICRS position
 <img class="math" src="../_images/math/84ea85070fcb11e0c88bb2cec38c3f2311aed57c.png" alt="(\alpha_{\rm GC}, \delta_{\rm GC})"/>:</p>
 <div class="math">
-<p><img src="../_images/math/963b5587b965f38abf6b0fa7dcd524b5428ecb24.png" alt="\begin{aligned}
+<p><img src="../_images/math/5df00196e79c577bfae1bb68ad77b58e102712e8.png" alt="\begin{aligned}
     \boldsymbol{R}_1 &amp;= \begin{bmatrix}
       \cos\delta_{\rm GC}&amp; 0 &amp; -\sin\delta_{\rm GC}\\
       0 &amp; 1 &amp; 0 \\
@@ -134,7 +134,7 @@ This extra “roll” angle, <img class="math" src="../_images/math/9172efc523d7
 of points along <img class="math" src="../_images/math/0da666abd8314ca395496380bf4b5e78b9bd191d.png" alt="l=0"/> to this interim frame and minimizing the square
 of their <img class="math" src="../_images/math/6b041f00f638c0ac3474feb8ee3db93a1fd6df57.png" alt="y'"/> positions. We find:</p>
 <div class="math">
-<p><img src="../_images/math/e1f41456cf50abaab7de5c5bbdad155f1e35cf29.png" alt="\begin{aligned}
+<p><img src="../_images/math/1f9f84d2ff9b358f8c88ddcd1c01726fad4e93a2.png" alt="\begin{aligned}
     \eta &amp;= 148.5986320^\circ\\
     \boldsymbol{R}_3 &amp;=
     \begin{bmatrix}
@@ -144,7 +144,7 @@ of their <img class="math" src="../_images/math/6b041f00f638c0ac3474feb8ee3db93a
     \end{bmatrix}\end{aligned}"/></p>
 </div><p>The full rotation matrix thus far is:</p>
 <div class="math">
-<p><img src="../_images/math/f7495b2450ae78c5f44e0d20377589328cc5ac98.png" alt="\begin{gathered}
+<p><img src="../_images/math/d771647106f529e68e4b21942b8d3856630724d5.png" alt="\begin{gathered}
     \boldsymbol{R} = \boldsymbol{R}_3 \boldsymbol{R}_1 \boldsymbol{R}_2 = \\
     \begin{bmatrix}
       \cos\alpha_{\rm GC}\cos\delta_{\rm GC}&amp; \cos\delta_{\rm GC}\sin\alpha_{\rm GC}&amp; -\sin\delta_{\rm GC}\\
@@ -156,14 +156,14 @@ of their <img class="math" src="../_images/math/6b041f00f638c0ac3474feb8ee3db93a
 distance to the GC, <img class="math" src="../_images/math/e67657f0b35e48b608f4f67ad44ac80680af6f27.png" alt="d_{\rm GC}"/>, which is purely along the
 <img class="math" src="../_images/math/1ba6dff92a6534953b79b494fd0418c4ea6e7be3.png" alt="x'"/> axis:</p>
 <div class="math">
-<p><img src="../_images/math/af175d2be2e022e71afaf40a2a8edbe6ef335f2a.png" alt="\begin{aligned}
+<p><img src="../_images/math/bcf5565cd8786d535c9d49b106632564697bb9e8.png" alt="\begin{aligned}
     \boldsymbol{r}' &amp;= \boldsymbol{R}\boldsymbol{r}_{\rm icrs} - d_{\rm GC}\hat{\boldsymbol{x}}_{\rm GC}.\end{aligned}"/></p>
 </div><p>where <img class="math" src="../_images/math/1cede8ca1d94379d9bb5d2fe9360fba960a61c1a.png" alt="\hat{\boldsymbol{x}}_{\rm GC} = (1,0,0)^{\mathsf{T}}"/>.</p>
 <p>The final transformation is to account for the height of the Sun above
 the Galactic midplane by rotating about the final <img class="math" src="../_images/math/28ae58dc989fc02112c4398a5690b8b2751ffb25.png" alt="y''"/> axis by
 the angle <img class="math" src="../_images/math/f1d2d89778066044099215ce88c3aa54b7fda2a9.png" alt="\theta= \sin^{-1}(z_\odot / d_{\rm GC})"/>:</p>
 <div class="math">
-<p><img src="../_images/math/68cb4bffed7b9ce3e5a7343d7c4c79918510c665.png" alt="\begin{aligned}
+<p><img src="../_images/math/b30eb9a26db1d88e1df8ccd7d78f66f10fcd80c1.png" alt="\begin{aligned}
     \boldsymbol{H} &amp;=
     \begin{bmatrix}
       \cos\theta &amp; 0 &amp; \sin\theta\\
@@ -174,7 +174,7 @@ the angle <img class="math" src="../_images/math/f1d2d89778066044099215ce88c3aa5
 midplane.</p>
 <p>The full transformation is then:</p>
 <div class="math">
-<p><img src="../_images/math/d19015495c2100bc1a7ffec18bc5de14898363c4.png" alt="\boldsymbol{r}_{\rm GC} = \boldsymbol{H} \left( \boldsymbol{R}\boldsymbol{r}_{\rm icrs} - d_{\rm GC}\hat{\boldsymbol{x}}_{\rm GC}\right)."/></p>
+<p><img src="../_images/math/b53451d84a8af25de366f8ca60807a0b6a8d75e7.png" alt="\boldsymbol{r}_{\rm GC} = \boldsymbol{H} \left( \boldsymbol{R}\boldsymbol{r}_{\rm icrs} - d_{\rm GC}\hat{\boldsymbol{x}}_{\rm GC}\right)."/></p>
 </div></div>
 
 
@@ -200,8 +200,8 @@ midplane.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

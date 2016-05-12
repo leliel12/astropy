@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SkyCoord &mdash; Astropy v1.2.dev14980</title>
+    <title>SkyCoord &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="../coordinates/index.html" />
     <link rel="next" title="SphericalRepresentation" href="astropy.coordinates.SphericalRepresentation.html" />
     <link rel="prev" title="RepresentationMapping" href="astropy.coordinates.RepresentationMapping.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../coordinates/index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -98,10 +98,10 @@ unambiguous units.  Inputs may be scalars or lists/tuples/arrays, yielding
 scalar or array coordinates (can be checked via <code class="docutils literal"><span class="pre">SkyCoord.isscalar</span></code>).
 Typically one also specifies the coordinate frame, though this is not
 required. The general pattern for spherical representations is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">SkyCoord</span><span class="p">(</span><span class="n">COORD</span><span class="p">,</span> <span class="p">[</span><span class="n">FRAME</span><span class="p">],</span> <span class="n">keyword_args</span> <span class="o">...</span><span class="p">)</span>
-<span class="n">SkyCoord</span><span class="p">(</span><span class="n">LON</span><span class="p">,</span> <span class="n">LAT</span><span class="p">,</span> <span class="p">[</span><span class="n">FRAME</span><span class="p">],</span> <span class="n">keyword_args</span> <span class="o">...</span><span class="p">)</span>
-<span class="n">SkyCoord</span><span class="p">(</span><span class="n">LON</span><span class="p">,</span> <span class="n">LAT</span><span class="p">,</span> <span class="p">[</span><span class="n">DISTANCE</span><span class="p">],</span> <span class="n">frame</span><span class="o">=</span><span class="n">FRAME</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">UNIT</span><span class="p">,</span> <span class="n">keyword_args</span> <span class="o">...</span><span class="p">)</span>
-<span class="n">SkyCoord</span><span class="p">([</span><span class="n">FRAME</span><span class="p">],</span> <span class="o">&lt;</span><span class="n">lon_attr</span><span class="o">&gt;=</span><span class="n">LON</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">lat_attr</span><span class="o">&gt;=</span><span class="n">LAT</span><span class="p">,</span> <span class="n">keyword_args</span> <span class="o">...</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>SkyCoord(COORD, [FRAME], keyword_args ...)
+SkyCoord(LON, LAT, [FRAME], keyword_args ...)
+SkyCoord(LON, LAT, [DISTANCE], frame=FRAME, unit=UNIT, keyword_args ...)
+SkyCoord([FRAME], &lt;lon_attr&gt;=LON, &lt;lat_attr&gt;=LAT, keyword_args ...)
 </pre></div>
 </div>
 <p>It is also possible to input coordinate values in other representations
@@ -142,21 +142,21 @@ which must correspond to the given representation.</p>
 <div><p>Other keyword arguments as applicable for user-defined coordinate frames.
 Common options include:</p>
 <dl class="docutils">
-<dt>ra, dec</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">valid <a class="reference internal" href="astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="astropy.coordinates.Angle"><code class="xref py py-obj docutils literal"><span class="pre">Angle</span></code></a> initializer, optional</span><dd><p class="first last">RA and Dec for frames where <code class="docutils literal"><span class="pre">ra</span></code> and <code class="docutils literal"><span class="pre">dec</span></code> are keys in the
+<dt>ra, dec <span class="classifier-delimiter">:</span> <span class="classifier">valid <a class="reference internal" href="astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="astropy.coordinates.Angle"><code class="xref py py-obj docutils literal"><span class="pre">Angle</span></code></a> initializer, optional</span></dt>
+<dd><p class="first last">RA and Dec for frames where <code class="docutils literal"><span class="pre">ra</span></code> and <code class="docutils literal"><span class="pre">dec</span></code> are keys in the
 frame&#8217;s <code class="docutils literal"><span class="pre">representation_component_names</span></code>, including <a class="reference internal" href="astropy.coordinates.ICRS.html#astropy.coordinates.ICRS" title="astropy.coordinates.ICRS"><code class="xref py py-obj docutils literal"><span class="pre">ICRS</span></code></a>,
 <a class="reference internal" href="astropy.coordinates.FK5.html#astropy.coordinates.FK5" title="astropy.coordinates.FK5"><code class="xref py py-obj docutils literal"><span class="pre">FK5</span></code></a>, <a class="reference internal" href="astropy.coordinates.FK4.html#astropy.coordinates.FK4" title="astropy.coordinates.FK4"><code class="xref py py-obj docutils literal"><span class="pre">FK4</span></code></a>, and <a class="reference internal" href="astropy.coordinates.FK4NoETerms.html#astropy.coordinates.FK4NoETerms" title="astropy.coordinates.FK4NoETerms"><code class="xref py py-obj docutils literal"><span class="pre">FK4NoETerms</span></code></a>.</p>
 </dd>
-<dt>l, b</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">valid <a class="reference internal" href="astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="astropy.coordinates.Angle"><code class="xref py py-obj docutils literal"><span class="pre">Angle</span></code></a> initializer, optional</span><dd><p class="first last">Galactic <code class="docutils literal"><span class="pre">l</span></code> and <code class="docutils literal"><span class="pre">b</span></code> for for frames where <code class="docutils literal"><span class="pre">l</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are
+<dt>l, b <span class="classifier-delimiter">:</span> <span class="classifier">valid <a class="reference internal" href="astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="astropy.coordinates.Angle"><code class="xref py py-obj docutils literal"><span class="pre">Angle</span></code></a> initializer, optional</span></dt>
+<dd><p class="first last">Galactic <code class="docutils literal"><span class="pre">l</span></code> and <code class="docutils literal"><span class="pre">b</span></code> for for frames where <code class="docutils literal"><span class="pre">l</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are
 keys in the frame&#8217;s <code class="docutils literal"><span class="pre">representation_component_names</span></code>, including
 the <a class="reference internal" href="astropy.coordinates.Galactic.html#astropy.coordinates.Galactic" title="astropy.coordinates.Galactic"><code class="xref py py-obj docutils literal"><span class="pre">Galactic</span></code></a> frame.</p>
 </dd>
-<dt>x, y, z</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float or <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>, optional</span><dd><p class="first last">Cartesian coordinates values</p>
+<dt>x, y, z <span class="classifier-delimiter">:</span> <span class="classifier">float or <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>, optional</span></dt>
+<dd><p class="first last">Cartesian coordinates values</p>
 </dd>
-<dt>w, u, v</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float or <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>, optional</span><dd><p class="first last">Cartesian coordinates values for the Galactic frame.</p>
+<dt>w, u, v <span class="classifier-delimiter">:</span> <span class="classifier">float or <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>, optional</span></dt>
+<dd><p class="first last">Cartesian coordinates values for the Galactic frame.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -168,15 +168,15 @@ the <a class="reference internal" href="astropy.coordinates.Galactic.html#astrop
 <p>The examples below illustrate common ways of initializing a <a class="reference internal" href="#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>
 object.  For a complete description of the allowed syntax see the
 full coordinates documentation.  First some imports:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">SkyCoord</span>  <span class="c"># High-level coordinates</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">ICRS</span><span class="p">,</span> <span class="n">Galactic</span><span class="p">,</span> <span class="n">FK4</span><span class="p">,</span> <span class="n">FK5</span>  <span class="c"># Low-level frames</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">Latitude</span><span class="p">,</span> <span class="n">Longitude</span>  <span class="c"># Angles</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>  <span class="c"># High-level coordinates</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">ICRS</span><span class="p">,</span> <span class="n">Galactic</span><span class="p">,</span> <span class="n">FK4</span><span class="p">,</span> <span class="n">FK5</span>  <span class="c"># Low-level frames</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">Latitude</span><span class="p">,</span> <span class="n">Longitude</span>  <span class="c"># Angles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
 </pre></div>
 </div>
 <p>The coordinate values and frame specification can now be provided using
 positional and keyword arguments:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&quot;deg&quot;</span><span class="p">)</span>  <span class="c"># defaults to ICRS frame</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&quot;deg&quot;</span><span class="p">)</span>  <span class="c"># defaults to ICRS frame</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s">&quot;icrs&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&quot;deg&quot;</span><span class="p">)</span>  <span class="c"># 3 coords</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;1:12:43.2 +1:12:43&quot;</span><span class="p">,</span> <span class="s">&quot;1 12 43.2 +1 12 43&quot;</span><span class="p">]</span>
@@ -509,7 +509,7 @@ of catalog coordinates.</p>
 from the on-sky distance if <code class="docutils literal"><span class="pre">distance</span></code> is set in this object or the
 <code class="docutils literal"><span class="pre">catalogcoord</span></code> object.</p>
 <p>For more on how to use this (and related) functionality, see the
-examples in <a class="reference internal" href="../coordinates/matchsep.html"><span class="doc">Separations, Catalog Matching, and Related Functionality</span></a>.</p>
+examples in <a class="reference internal" href="../coordinates/matchsep.html"><em>Separations, Catalog Matching, and Related Functionality</em></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -568,7 +568,7 @@ installed or it will fail.</p>
 <dd><p>Finds the nearest on-sky matches of this coordinate in a set of
 catalog coordinates.</p>
 <p>For more on how to use this (and related) functionality, see the
-examples in <a class="reference internal" href="../coordinates/matchsep.html"><span class="doc">Separations, Catalog Matching, and Related Functionality</span></a>.</p>
+examples in <a class="reference internal" href="../coordinates/matchsep.html"><em>Separations, Catalog Matching, and Related Functionality</em></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -649,7 +649,7 @@ rules.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">.</span><span class="n">position_angle</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span><span class="o">.</span><span class="n">degree</span>
 <span class="go">90.0</span>
@@ -670,7 +670,7 @@ with coordinate arrays, rather than a scalar coordinate.  For a scalar
 coordinate, it is better to use
 <a class="reference internal" href="#astropy.coordinates.SkyCoord.separation_3d" title="astropy.coordinates.SkyCoord.separation_3d"><code class="xref py py-obj docutils literal"><span class="pre">separation_3d</span></code></a>.</p>
 <p>For more on how to use this (and related) functionality, see the
-examples in <a class="reference internal" href="../coordinates/matchsep.html"><span class="doc">Separations, Catalog Matching, and Related Functionality</span></a>.</p>
+examples in <a class="reference internal" href="../coordinates/matchsep.html"><em>Separations, Catalog Matching, and Related Functionality</em></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -735,7 +735,7 @@ with coordinate arrays, rather than a scalar coordinate.  For a scalar
 coordinate, it is better to use
 <a class="reference internal" href="#astropy.coordinates.SkyCoord.separation" title="astropy.coordinates.SkyCoord.separation"><code class="xref py py-obj docutils literal"><span class="pre">separation</span></code></a>.</p>
 <p>For more on how to use this (and related) functionality, see the
-examples in <a class="reference internal" href="../coordinates/matchsep.html"><span class="doc">Separations, Catalog Matching, and Related Functionality</span></a>.</p>
+examples in <a class="reference internal" href="../coordinates/matchsep.html"><em>Separations, Catalog Matching, and Related Functionality</em></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -795,7 +795,7 @@ though, so it could change in a future release.</p>
 <code class="descname">separation</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/sky_coordinate.py#L598" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/sky_coordinate.html#SkyCoord.separation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.SkyCoord.separation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes on-sky separation between this coordinate and another.</p>
 <p>For more on how to use this (and related) functionality, see the
-examples in <a class="reference internal" href="../coordinates/matchsep.html"><span class="doc">Separations, Catalog Matching, and Related Functionality</span></a>.</p>
+examples in <a class="reference internal" href="../coordinates/matchsep.html"><em>Separations, Catalog Matching, and Related Functionality</em></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -831,7 +831,7 @@ is stable at all locations, including poles and antipodes <a class="reference in
 <dd><p>Computes three dimensional separation between this coordinate
 and another.</p>
 <p>For more on how to use this (and related) functionality, see the
-examples in <a class="reference internal" href="../coordinates/matchsep.html"><span class="doc">Separations, Catalog Matching, and Related Functionality</span></a>.</p>
+examples in <a class="reference internal" href="../coordinates/matchsep.html"><em>Separations, Catalog Matching, and Related Functionality</em></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -904,12 +904,12 @@ only including only the core WCS transformation (<code class="docutils literal">
 <code class="descname">to_string</code><span class="sig-paren">(</span><em>style='decimal'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/sky_coordinate.py#L492" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/sky_coordinate.html#SkyCoord.to_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.SkyCoord.to_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string representation of the coordinates.</p>
 <p>The default styles definitions are:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="s">&#39;decimal&#39;</span><span class="p">:</span> <span class="s">&#39;lat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;decimal&#39;</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#39;unit&#39;</span><span class="p">:</span> <span class="s">&quot;deg&quot;</span><span class="p">}</span>
-           <span class="s">&#39;lon&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;decimal&#39;</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#39;unit&#39;</span><span class="p">:</span> <span class="s">&quot;deg&quot;</span><span class="p">}</span>
-<span class="s">&#39;dms&#39;</span><span class="p">:</span> <span class="s">&#39;lat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;unit&#39;</span><span class="p">:</span> <span class="s">&quot;deg&quot;</span><span class="p">}</span>
-       <span class="s">&#39;lon&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;unit&#39;</span><span class="p">:</span> <span class="s">&quot;deg&quot;</span><span class="p">}</span>
-<span class="s">&#39;hmsdms&#39;</span><span class="p">:</span> <span class="s">&#39;lat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;alwayssign&#39;</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#39;pad&#39;</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#39;unit&#39;</span><span class="p">:</span> <span class="s">&quot;deg&quot;</span><span class="p">}</span>
-          <span class="s">&#39;lon&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;pad&#39;</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#39;unit&#39;</span><span class="p">:</span> <span class="s">&quot;hour&quot;</span><span class="p">}</span>
+<div class="highlight-python"><div class="highlight"><pre>&#39;decimal&#39;: &#39;lat&#39;: {&#39;decimal&#39;: True, &#39;unit&#39;: &quot;deg&quot;}
+           &#39;lon&#39;: {&#39;decimal&#39;: True, &#39;unit&#39;: &quot;deg&quot;}
+&#39;dms&#39;: &#39;lat&#39;: {&#39;unit&#39;: &quot;deg&quot;}
+       &#39;lon&#39;: {&#39;unit&#39;: &quot;deg&quot;}
+&#39;hmsdms&#39;: &#39;lat&#39;: {&#39;alwayssign&#39;: True, &#39;pad&#39;: True, &#39;unit&#39;: &quot;deg&quot;}
+          &#39;lon&#39;: {&#39;pad&#39;: True, &#39;unit&#39;: &quot;hour&quot;}
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="astropy.coordinates.Angle.html#astropy.coordinates.Angle.to_string" title="astropy.coordinates.Angle.to_string"><code class="xref py py-meth docutils literal"><span class="pre">to_string()</span></code></a> for details and
@@ -1000,8 +1000,8 @@ supplied <code class="docutils literal"><span class="pre">frame</span></code>, w
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Known Issues &mdash; Astropy v1.2.dev14980</title>
+    <title>Known Issues &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
     <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="index.html" />
     <link rel="next" title="Authors and Credits" href="credits.html" />
     <link rel="prev" title="What’s New in Astropy 0.1" href="whatsnew/0.1.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="index.html">Astropy v1.2.dev14980</a>
+	<a href="index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -133,8 +133,8 @@ platform on which it was run.</p>
 (and in scipy operations using numpy internally) the subclass is ignored, which
 means that either a plain array is returned, or a <a class="reference internal" href="api/astropy.units.quantity.Quantity.html#astropy.units.quantity.Quantity" title="astropy.units.quantity.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> without units.
 E.g.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">10.</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
 <span class="go">285.0</span>
@@ -145,14 +145,14 @@ E.g.:</p>
 </div>
 <p>Also in-place operations where the output is a normal <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>
 will drop the unit silently (at least in numpy &lt;= 1.9):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">*=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">kg</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
 <span class="go">array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])</span>
 </pre></div>
 </div>
 <p>Work-arounds are available for some cases.  For the above:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 <span class="go">&lt;Quantity 285.0 m2&gt;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">([</span><span class="n">q</span><span class="p">,</span> <span class="n">q</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
@@ -176,17 +176,17 @@ will drop the unit silently (at least in numpy &lt;= 1.9):</p>
 <p>Comparing Quantities floats using the numpy function <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">isclose</span></code></a> fails on
 numpy 1.9 as the comparison between <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> is made using the formula</p>
 <div class="math">
-<p><img src="_images/math/2f183b41ce5c1dd5b804243c43532ac2c2fde49d.png" alt="|a - b| \le (a_\textrm{tol} + r_\textrm{tol} \times |b|)"/></p>
+<p><img src="_images/math/e33c399c9eacb29006baec6083328b6e610fb744.png" alt="|a - b| \le (a_\textrm{tol} + r_\textrm{tol} \times |b|)"/></p>
 </div><p>This will result in the following traceback when using this with Quantities:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span><span class="p">,</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span><span class="p">,</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mi">500</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="mi">300</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
 <span class="go">UnitsError: Can only apply &#39;add&#39; function to dimensionless quantities when</span>
 <span class="go">other argument is not a quantity (unless the latter is all zero/infinity/nan)</span>
 </pre></div>
 </div>
 <p>An easy solution is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mi">500</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="mi">300</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">8</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mm</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mi">500</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="mi">300</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-8</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mm</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
 <span class="go">array([False], dtype=bool)</span>
 </pre></div>
 </div>
@@ -220,7 +220,7 @@ not limited to</p>
 </ul>
 <p>are built without support for the <code class="docutils literal"><span class="pre">bsddb</span></code> module, resulting in an error
 such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">_bsddb</span>
+<div class="highlight-python"><div class="highlight"><pre>ImportError: No module named _bsddb
 </pre></div>
 </div>
 <p>One workaround is to install the <code class="docutils literal"><span class="pre">bsddb3</span></code> module.</p>
@@ -243,7 +243,7 @@ will be fixed in a subsequent bug fix release of Astropy (see <a class="referenc
 <h3><a class="toc-backref" href="#id13">Error <em>&#8216;buffer&#8217; does not have the buffer interface</em> in <code class="docutils literal"><span class="pre">io.fits</span></code></a><a class="headerlink" href="#error-buffer-does-not-have-the-buffer-interface-in-io-fits" title="Permalink to this headline">¶</a></h3>
 <p>For Python 2.7.x versions prior to 2.7.4, the <a class="reference internal" href="io/fits/index.html#module-astropy.io.fits" title="astropy.io.fits"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.fits</span></code></a> may under
 certain circumstances output the following error:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="ne">TypeError</span><span class="p">:</span> <span class="s">&#39;buffer&#39;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">the</span> <span class="n">buffer</span> <span class="n">interface</span>
+<div class="highlight-python"><div class="highlight"><pre>TypeError: &#39;buffer&#39; does not have the buffer interface
 </pre></div>
 </div>
 <p>This can be resolved by upgrading to Python 2.7.4 or later (at the time of
@@ -265,11 +265,11 @@ supported in the basic Python command-line interpreter on Windows.</p>
 </div>
 <div class="section" id="pickling-error-on-compound-models">
 <h3><a class="toc-backref" href="#id16">Pickling error on compound models</a><a class="headerlink" href="#pickling-error-on-compound-models" title="Permalink to this headline">¶</a></h3>
-<p>When calling <a class="reference external" href="http://docs.python.org/library/pickle.html#pickle.dumps" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.dumps</span></code></a> on a <a class="reference internal" href="modeling/compound-models.html#compound-models"><span class="std std-ref">compound model</span></a>, it
+<p>When calling <a class="reference external" href="http://docs.python.org/library/pickle.html#pickle.dumps" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.dumps</span></code></a> on a <a class="reference internal" href="modeling/compound-models.html#compound-models"><span>compound model</span></a>, it
 is possible to get an exception with a <a class="reference external" href="http://docs.python.org/library/pickle.html#pickle.PickleError" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.PickleError</span></code></a> or, depending on
 the Python version or whether the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-cPickle" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">cPickle</span></code></a> module was being used, an
 <code class="xref py py-obj docutils literal"><span class="pre">AttributeError</span></code> like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="ne">AttributeError</span><span class="p">:</span> <span class="s">&#39;module&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s">&#39;CompoundModel0&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre>AttributeError: &#39;module&#39; object has no attribute &#39;CompoundModel0&#39;
 </pre></div>
 </div>
 <p>as originally reported in issue
@@ -297,33 +297,33 @@ versions with <code class="docutils literal"><span class="pre">conda</span> <spa
 <div class="section" id="locale-errors-in-macos-x-and-linux">
 <h3><a class="toc-backref" href="#id19">Locale errors in MacOS X and Linux</a><a class="headerlink" href="#locale-errors-in-macos-x-and-linux" title="Permalink to this headline">¶</a></h3>
 <p>On MacOS X, you may see the following error when running <code class="docutils literal"><span class="pre">setup.py</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre>  <span class="o">...</span>
-<span class="ne">ValueError</span><span class="p">:</span> <span class="n">unknown</span> <span class="n">locale</span><span class="p">:</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<div class="highlight-python"><div class="highlight"><pre>  ...
+ValueError: unknown locale: UTF-8
 </pre></div>
 </div>
 <p>This is due to the <code class="docutils literal"><span class="pre">LC_CTYPE</span></code> environment variable being incorrectly set to
 <code class="docutils literal"><span class="pre">UTF-8</span></code> by default, which is not a valid locale setting.</p>
 <p>On MacOS X or Linux (or other platforms) you may also encounter the following
 error:</p>
-<div class="highlight-default"><div class="highlight"><pre>  <span class="o">...</span>
-  <span class="n">stderr</span> <span class="o">=</span> <span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">stdio_encoding</span><span class="p">)</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">decode</span><span class="p">()</span> <span class="n">argument</span> <span class="mi">1</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">str</span><span class="p">,</span> <span class="ow">not</span> <span class="k">None</span>
+<div class="highlight-python"><div class="highlight"><pre>  ...
+  stderr = stderr.decode(stdio_encoding)
+TypeError: decode() argument 1 must be str, not None
 </pre></div>
 </div>
 <p>This also indicates that your locale is not set correctly.</p>
 <p>To fix either of these issues, set this environment variable, as well as the
 <code class="docutils literal"><span class="pre">LANG</span></code> and <code class="docutils literal"><span class="pre">LC_ALL</span></code> environment variables to e.g. <code class="docutils literal"><span class="pre">en_US.UTF-8</span></code> using, in
 the case of <code class="docutils literal"><span class="pre">bash</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">export</span> <span class="n">LANG</span><span class="o">=</span><span class="s">&quot;en_US.UTF-8&quot;</span>
-<span class="n">export</span> <span class="n">LC_ALL</span><span class="o">=</span><span class="s">&quot;en_US.UTF-8&quot;</span>
-<span class="n">export</span> <span class="n">LC_CTYPE</span><span class="o">=</span><span class="s">&quot;en_US.UTF-8&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre>export LANG=&quot;en_US.UTF-8&quot;
+export LC_ALL=&quot;en_US.UTF-8&quot;
+export LC_CTYPE=&quot;en_US.UTF-8&quot;
 </pre></div>
 </div>
 <p>To avoid any issues in future, you should add this line to your e.g.
 <code class="docutils literal"><span class="pre">~/.bash_profile</span></code> or <code class="docutils literal"><span class="pre">.bashrc</span></code> file.</p>
 <p>To test these changes, open a new terminal and type <code class="docutils literal"><span class="pre">locale</span></code>, and you should
 see something like:</p>
-<div class="highlight-default"><div class="highlight"><pre>$ locale
+<div class="highlight-python"><div class="highlight"><pre>$ locale
 LANG=&quot;en_US.UTF-8&quot;
 LC_COLLATE=&quot;en_US.UTF-8&quot;
 LC_CTYPE=&quot;en_US.UTF-8&quot;
@@ -342,7 +342,7 @@ terminal).</p>
 <p>In some cases, have users have upgraded Astropy from an older version to v1.0
 or greater they have run into the following crash when trying to create a
 <a class="reference internal" href="api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-obj docutils literal"><span class="pre">Time</span></code></a> object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="s">&#39;2012-03-01T13:08:00&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;utc&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="s">&#39;2012-03-01T13:08:00&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;utc&#39;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
 <span class="gr">ValueError</span>: <span class="n">Input values did not match any of the formats where</span>
@@ -382,7 +382,7 @@ not due to a problem with the test itself or the feature being tested.</p>
 <p>Displaying long docstrings that contain Unicode characters may fail on
 some platforms in the IPython console (prior to IPython version
 0.13.2):</p>
-<div class="highlight-default"><div class="highlight"><pre>In [1]: import astropy.units as u
+<div class="highlight-python"><div class="highlight"><pre>In [1]: import astropy.units as u
 
 In [2]: u.Angstrom?
 Out[2]: ERROR: UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\xe5&#39; in
@@ -391,7 +391,7 @@ position 184: ordinal not in range(128) [IPython.core.page]
 </div>
 <p>This can be worked around by changing the default encoding to <code class="docutils literal"><span class="pre">utf-8</span></code>
 by adding the following to your <code class="docutils literal"><span class="pre">sitecustomize.py</span></code> file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">setdefaultencoding</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -405,12 +405,12 @@ acceptable.</p>
 <div class="section" id="installation-fails-on-mageia-2-or-mageia-3-distributions">
 <h3><a class="toc-backref" href="#id23">Installation fails on Mageia-2 or Mageia-3 distributions</a><a class="headerlink" href="#installation-fails-on-mageia-2-or-mageia-3-distributions" title="Permalink to this headline">¶</a></h3>
 <p>Building may fail with warning messages such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">unable</span> <span class="n">to</span> <span class="n">find</span> <span class="s">&#39;pow&#39;</span> <span class="ow">or</span> <span class="s">&#39;sincos&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre>unable to find &#39;pow&#39; or &#39;sincos&#39;
 </pre></div>
 </div>
 <p>at the linking phase. Upgrading the OS packages for Python should
 fix the issue, though an immediate workaround is to edit the file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">Makefile</span>
+<div class="highlight-python"><div class="highlight"><pre>/usr/lib/python2.7/config/Makefile
 </pre></div>
 </div>
 <p>and search for the line that adds the option <code class="docutils literal"><span class="pre">-Wl,--no-undefined</span></code> to the
@@ -488,8 +488,8 @@ this will be fixed in their next Python build.</td></tr>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

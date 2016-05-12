@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.baseframe &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.coordinates.baseframe &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -269,8 +269,8 @@
 <span class="sd">        ValueError</span>
 <span class="sd">            If the input is not valid for this attribute.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">value</span><span class="p">,</span> <span class="bp">False</span></div>
-
+        <span class="k">return</span> <span class="n">value</span><span class="p">,</span> <span class="bp">False</span>
+</div>
     <span class="k">def</span> <span class="nf">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">frame_cls</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="bp">None</span>
 
@@ -289,9 +289,9 @@
         <span class="k">return</span> <span class="n">out</span>
 
     <span class="k">def</span> <span class="nf">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;Cannot set frame attribute&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;Cannot set frame attribute&#39;</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="TimeFrameAttribute"><a class="viewcode-back" href="../../../api/astropy.coordinates.TimeFrameAttribute.html#astropy.coordinates.TimeFrameAttribute">[docs]</a><span class="k">class</span> <span class="nc">TimeFrameAttribute</span><span class="p">(</span><span class="n">FrameAttribute</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Frame attribute descriptor for quantities that are Time objects.</span>
@@ -346,9 +346,9 @@
                                                                <span class="n">value</span><span class="p">,</span> <span class="n">err</span><span class="p">))</span>
             <span class="n">converted</span> <span class="o">=</span> <span class="bp">True</span>
 
-        <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="n">converted</span></div></div>
+        <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="n">converted</span>
 
-
+</div></div>
 <div class="viewcode-block" id="QuantityFrameAttribute"><a class="viewcode-back" href="../../../api/astropy.coordinates.QuantityFrameAttribute.html#astropy.coordinates.QuantityFrameAttribute">[docs]</a><span class="k">class</span> <span class="nc">QuantityFrameAttribute</span><span class="p">(</span><span class="n">FrameAttribute</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A frame attribute that is a quantity with specified units and shape</span>
@@ -409,9 +409,9 @@
             <span class="k">if</span> <span class="p">(</span><span class="n">oldvalue</span><span class="o">.</span><span class="n">unit</span> <span class="o">==</span> <span class="n">value</span><span class="o">.</span><span class="n">unit</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">oldvalue</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">)</span> <span class="ow">and</span>
                 <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">oldvalue</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
                 <span class="n">converted</span> <span class="o">=</span> <span class="bp">False</span>
-            <span class="k">return</span> <span class="n">value</span><span class="p">,</span> <span class="n">converted</span></div></div>
+            <span class="k">return</span> <span class="n">value</span><span class="p">,</span> <span class="n">converted</span>
 
-
+</div></div>
 <div class="viewcode-block" id="EarthLocationAttribute"><a class="viewcode-back" href="../../../api/astropy.coordinates.EarthLocationAttribute.html#astropy.coordinates.EarthLocationAttribute">[docs]</a><span class="k">class</span> <span class="nc">EarthLocationAttribute</span><span class="p">(</span><span class="n">FrameAttribute</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A frame attribute that can act as a `~astropy.coordinates.EarthLocation`.</span>
@@ -462,8 +462,8 @@
                                  <span class="s">&#39;EarthLocationAttribute, but it does not have &#39;</span>
                                  <span class="s">&#39;&quot;transform_to&quot; method&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
             <span class="n">itrsobj</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">ITRS</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">itrsobj</span><span class="o">.</span><span class="n">earth_location</span><span class="p">,</span> <span class="bp">True</span></div></div>
-
+            <span class="k">return</span> <span class="n">itrsobj</span><span class="o">.</span><span class="n">earth_location</span><span class="p">,</span> <span class="bp">True</span>
+</div></div>
 <span class="n">_RepresentationMappingBase</span> <span class="o">=</span> \
     <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;RepresentationMapping&#39;</span><span class="p">,</span>
                <span class="p">(</span><span class="s">&#39;reprname&#39;</span><span class="p">,</span> <span class="s">&#39;framename&#39;</span><span class="p">,</span> <span class="s">&#39;defaultunit&#39;</span><span class="p">))</span>
@@ -484,9 +484,9 @@
         <span class="c"># this trick just provides some defaults</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">RepresentationMapping</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">reprname</span><span class="p">,</span>
                                                          <span class="n">framename</span><span class="p">,</span>
-                                                         <span class="n">defaultunit</span><span class="p">)</span></div>
+                                                         <span class="n">defaultunit</span><span class="p">)</span>
 
-
+</div>
 <span class="nd">@six.add_metaclass</span><span class="p">(</span><span class="n">FrameMeta</span><span class="p">)</span>
 <div class="viewcode-block" id="BaseCoordinateFrame"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame">[docs]</a><span class="k">class</span> <span class="nc">BaseCoordinateFrame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -633,8 +633,8 @@
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="BaseCoordinateFrame.get_frame_attr_names"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.get_frame_attr_names">[docs]</a>    <span class="k">def</span> <span class="nf">get_frame_attr_names</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
-                           <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">frame_attributes</span><span class="p">)</span></div>
-
+                           <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">frame_attributes</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">representation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -741,8 +741,8 @@
         <span class="n">frattrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">attr</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">))</span>
                         <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_frame_attr_names</span><span class="p">()</span>
                         <span class="k">if</span> <span class="n">attr</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attr_names_with_defaults</span><span class="p">])</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">representation</span><span class="p">,</span> <span class="o">**</span><span class="n">frattrs</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">representation</span><span class="p">,</span> <span class="o">**</span><span class="n">frattrs</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseCoordinateFrame.represent_as"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.represent_as">[docs]</a>    <span class="k">def</span> <span class="nf">represent_as</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_representation</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate and return a new representation of this frame&#39;s `data`</span>
@@ -807,8 +807,8 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_rep_cache</span><span class="p">[</span><span class="n">new_representation</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rep_cache</span><span class="p">[</span><span class="n">new_representation</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="p">]</span></div>
-
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rep_cache</span><span class="p">[</span><span class="n">new_representation</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="p">]</span>
+</div>
 <div class="viewcode-block" id="BaseCoordinateFrame.transform_to"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.transform_to">[docs]</a>    <span class="k">def</span> <span class="nf">transform_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_frame</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Transform this object&#39;s coordinate data to a new frame.</span>
@@ -851,8 +851,8 @@
                 <span class="k">return</span> <span class="n">new_frame</span><span class="o">.</span><span class="n">realize_frame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;Cannot transform from {0} to {1}&#39;</span>
             <span class="k">raise</span> <span class="n">ConvertError</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">new_frame</span><span class="o">.</span><span class="n">__class__</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">trans</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_frame</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">trans</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_frame</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseCoordinateFrame.is_transformable_to"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.is_transformable_to">[docs]</a>    <span class="k">def</span> <span class="nf">is_transformable_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_frame</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines if this coordinate frame can be transformed to another</span>
@@ -895,8 +895,8 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">False</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span></div>
-
+            <span class="k">return</span> <span class="bp">True</span>
+</div>
 <div class="viewcode-block" id="BaseCoordinateFrame.is_frame_attr_default"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.is_frame_attr_default">[docs]</a>    <span class="k">def</span> <span class="nf">is_frame_attr_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrnm</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determine whether or not a frame attribute has its value because it&#39;s</span>
@@ -914,8 +914,8 @@
 <span class="sd">            True if the attribute ``attrnm`` has its value by default, False if</span>
 <span class="sd">            it was specified at creation of this frame.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">attrnm</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attr_names_with_defaults</span></div>
-
+        <span class="k">return</span> <span class="n">attrnm</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attr_names_with_defaults</span>
+</div>
 <div class="viewcode-block" id="BaseCoordinateFrame.is_equivalent_frame"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame">[docs]</a>    <span class="k">def</span> <span class="nf">is_equivalent_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if this object is the same frame as the ``other`` object.</span>
@@ -948,8 +948,8 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;Tried to do is_equivalent_frame on something that &quot;</span>
                             <span class="s">&quot;isn&#39;t a frame&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">False</span></div>
-
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">frameattrs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frame_attrs_repr</span><span class="p">()</span>
         <span class="n">data_repr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_repr</span><span class="p">()</span>
@@ -1089,8 +1089,8 @@
         <span class="c"># Get the separation as a Quantity, convert to Angle in degrees</span>
         <span class="n">sep</span> <span class="o">=</span> <span class="n">angular_separation</span><span class="p">(</span><span class="n">self_unit_sph</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">self_unit_sph</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span>
                                  <span class="n">other_unit_sph</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">other_unit_sph</span><span class="o">.</span><span class="n">lat</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Angle</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">Angle</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="BaseCoordinateFrame.separation_3d"><a class="viewcode-back" href="../../../api/astropy.coordinates.BaseCoordinateFrame.html#astropy.coordinates.BaseCoordinateFrame.separation_3d">[docs]</a>    <span class="k">def</span> <span class="nf">separation_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes three dimensional separation between this coordinate</span>
@@ -1130,8 +1130,8 @@
         <span class="n">dz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cartesian</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">other_in_self_system</span><span class="o">.</span><span class="n">cartesian</span><span class="o">.</span><span class="n">z</span>
 
         <span class="n">distval</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dz</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
-        <span class="k">return</span> <span class="n">Distance</span><span class="p">(</span><span class="n">distval</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">Distance</span><span class="p">(</span><span class="n">distval</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">cartesian</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1151,9 +1151,9 @@
 
         <span class="c"># TODO: if representations are updated to use a full transform graph,</span>
         <span class="c">#       the representation aliases should not be hard-coded like this</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">SphericalRepresentation</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">SphericalRepresentation</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="GenericFrame"><a class="viewcode-back" href="../../../api/astropy.coordinates.GenericFrame.html#astropy.coordinates.GenericFrame">[docs]</a><span class="k">class</span> <span class="nc">GenericFrame</span><span class="p">(</span><span class="n">BaseCoordinateFrame</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A frame object that can&#39;t store data but can hold any arbitrary frame</span>
@@ -1187,10 +1187,10 @@
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_frame_attr_names</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;can&#39;t set frame attribute &#39;{0}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">super</span><span class="p">(</span><span class="n">GenericFrame</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+            <span class="nb">super</span><span class="p">(</span><span class="n">GenericFrame</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
 <span class="c"># doing this import at the bottom prevents a circular import issue that is</span>
-<span class="c"># otherwise present due to EarthLocation needing to import ITRS</span>
+<span class="c"># otherwise present due to EarthLocation needing to import ITRS</span></div>
 <span class="kn">from</span> <span class="nn">.earth</span> <span class="kn">import</span> <span class="n">EarthLocation</span>
 </pre></div>
 
@@ -1210,8 +1210,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ConfigItem &mdash; Astropy v1.2.dev14980</title>
+    <title>ConfigItem &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Configuration system (astropy.config)" href="../config/index.html" />
     <link rel="next" title="ConfigNamespace" href="astropy.config.ConfigNamespace.html" />
     <link rel="prev" title="reload_config" href="astropy.config.reload_config.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../config/index.html" accesskey="U">Configuration system (<code class="docutils literal"><span class="pre">astropy.config</span></code>)</a> &raquo;</li>
@@ -93,9 +93,9 @@
 <p>A setting and associated value stored in a configuration file.</p>
 <p>These objects should be created as members of
 <a class="reference internal" href="astropy.config.ConfigNamespace.html#astropy.config.ConfigNamespace" title="astropy.config.ConfigNamespace"><code class="xref py py-obj docutils literal"><span class="pre">ConfigNamespace</span></code></a> subclasses, for example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">class</span> <span class="nc">_Conf</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">ConfigNamespace</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">_Conf</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">ConfigNamespace</span><span class="p">):</span>
     <span class="n">unicode_output</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">ConfigItem</span><span class="p">(</span>
-        <span class="k">False</span><span class="p">,</span>
+        <span class="bp">False</span><span class="p">,</span>
         <span class="s">&#39;Use Unicode characters when outputting values, and writing widgets &#39;</span>
         <span class="s">&#39;to the console.&#39;</span><span class="p">)</span>
 <span class="n">conf</span> <span class="o">=</span> <span class="n">_Conf</span><span class="p">()</span>
@@ -263,14 +263,14 @@ information.</p>
 
 <dl class="method">
 <dt id="astropy.config.ConfigItem.set_temp">
-<code class="descname">set_temp</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/config/configuration.py#L307" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/config/configuration.html#ConfigItem.set_temp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.config.ConfigItem.set_temp" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_temp</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/config/configuration.py#L124" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/config/configuration.html#ConfigItem.set_temp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.config.ConfigItem.set_temp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets this item to a specified value only inside a with block.</p>
 <p>Use as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">ITEM</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="s">&#39;ITEM&#39;</span><span class="p">,</span> <span class="s">&#39;default&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ITEM</span> <span class="o">=</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="s">&#39;ITEM&#39;</span><span class="p">,</span> <span class="s">&#39;default&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">ITEM</span><span class="o">.</span><span class="n">set_temp</span><span class="p">(</span><span class="s">&#39;newval&#39;</span><span class="p">):</span>
     <span class="c">#... do something that wants ITEM&#39;s value to be &#39;newval&#39; ...</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ITEM</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ITEM</span><span class="p">)</span>
 
 <span class="c"># ITEM is now &#39;default&#39; after the with block</span>
 </pre></div>
@@ -315,8 +315,8 @@ information.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

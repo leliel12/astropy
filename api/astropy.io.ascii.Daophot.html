@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Daophot &mdash; Astropy v1.2.dev14980</title>
+    <title>Daophot &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="ASCII Tables (astropy.io.ascii)" href="../io/ascii/index.html" />
     <link rel="next" title="DefaultSplitter" href="astropy.io.ascii.DefaultSplitter.html" />
     <link rel="prev" title="Csv" href="astropy.io.ascii.Csv.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../io/ascii/index.html" accesskey="U">ASCII Tables (<code class="docutils literal"><span class="pre">astropy.io.ascii</span></code>)</a> &raquo;</li>
@@ -92,31 +92,31 @@
 <dd><p>Bases: <a class="reference internal" href="astropy.io.ascii.BaseReader.html#astropy.io.ascii.BaseReader" title="astropy.io.ascii.core.BaseReader"><code class="docutils literal"><span class="pre">astropy.io.ascii.BaseReader</span></code></a></p>
 <p>Read a DAOphot file.
 Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="c">#K MERGERAD   = INDEF                   scaleunit  %-23.7g</span>
-<span class="c">#K IRAF = NOAO/IRAFV2.10EXPORT version %-23s</span>
-<span class="c">#K USER = davis name %-23s</span>
-<span class="c">#K HOST = tucana computer %-23s</span>
-<span class="c">#</span>
-<span class="c">#N ID    XCENTER   YCENTER   MAG         MERR          MSKY           NITER    \</span>
-<span class="c">#U ##    pixels    pixels    magnitudes  magnitudes    counts         ##       \</span>
-<span class="c">#F %-9d  %-10.3f   %-10.3f   %-12.3f     %-14.3f       %-15.7g        %-6d</span>
-<span class="c">#</span>
-<span class="c">#N         SHARPNESS   CHI         PIER  PERROR                                \</span>
-<span class="c">#U         ##          ##          ##    perrors                               \</span>
-<span class="c">#F         %-23.3f     %-12.3f     %-6d  %-13s</span>
-<span class="c">#</span>
-<span class="mi">14</span>       <span class="mf">138.538</span>     <span class="n">INDEF</span>   <span class="mf">15.461</span>      <span class="mf">0.003</span>         <span class="mf">34.85955</span>       <span class="mi">4</span>        \
-            <span class="o">-</span><span class="mf">0.032</span>      <span class="mf">0.802</span>       <span class="mi">0</span>     <span class="n">No_error</span>
+<div class="highlight-python"><div class="highlight"><pre>#K MERGERAD   = INDEF                   scaleunit  %-23.7g
+#K IRAF = NOAO/IRAFV2.10EXPORT version %-23s
+#K USER = davis name %-23s
+#K HOST = tucana computer %-23s
+#
+#N ID    XCENTER   YCENTER   MAG         MERR          MSKY           NITER    \
+#U ##    pixels    pixels    magnitudes  magnitudes    counts         ##       \
+#F %-9d  %-10.3f   %-10.3f   %-12.3f     %-14.3f       %-15.7g        %-6d
+#
+#N         SHARPNESS   CHI         PIER  PERROR                                \
+#U         ##          ##          ##    perrors                               \
+#F         %-23.3f     %-12.3f     %-6d  %-13s
+#
+14       138.538     INDEF   15.461      0.003         34.85955       4        \
+            -0.032      0.802       0     No_error
 </pre></div>
 </div>
 <p>The keywords defined in the #K records are available via the output table
 <code class="docutils literal"><span class="pre">meta</span></code> attribute:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="k">import</span> <span class="n">ascii</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">ascii</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ascii</span><span class="o">.</span><span class="n">__path__</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;tests/t/daophot.dat&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;keywords&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">keyword</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="s">&#39;units&#39;</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="s">&#39;format&#39;</span><span class="p">])</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">keyword</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="s">&#39;units&#39;</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="s">&#39;format&#39;</span><span class="p">])</span>
 <span class="gp">...</span>
 <span class="go">MERGERAD INDEF scaleunit %-23.7g</span>
 <span class="go">IRAF NOAO/IRAFV2.10EXPORT version %-23s</span>
@@ -125,9 +125,9 @@ Example:</p>
 </pre></div>
 </div>
 <p>The unit and formats are available in the output table columns:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">col</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">colname</span><span class="p">,</span> <span class="n">col</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span> <span class="n">col</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">colname</span><span class="p">,</span> <span class="n">col</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span> <span class="n">col</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">ID None %-9d</span>
 <span class="go">XCENTER pixels %-10.3f</span>
@@ -208,8 +208,8 @@ and so on.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

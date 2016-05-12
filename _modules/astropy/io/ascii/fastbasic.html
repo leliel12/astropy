@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.ascii.fastbasic &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.io.ascii.fastbasic &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -187,8 +187,8 @@
         <span class="n">meta</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">comments</span><span class="p">:</span>
             <span class="n">meta</span><span class="p">[</span><span class="s">&#39;comments&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comments</span>
-        <span class="k">return</span> <span class="n">Table</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_names</span><span class="p">()),</span> <span class="n">meta</span><span class="o">=</span><span class="n">meta</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">Table</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_names</span><span class="p">()),</span> <span class="n">meta</span><span class="o">=</span><span class="n">meta</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FastBasic.check_header"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastBasic.html#astropy.io.ascii.FastBasic.check_header">[docs]</a>    <span class="k">def</span> <span class="nf">check_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_header_names</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_names</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">strict_names</span><span class="p">:</span>
@@ -203,15 +203,15 @@
                                      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
         <span class="c"># When guessing require at least two columns</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">guessing</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Strict name guessing requires at least two columns&#39;</span><span class="p">)</span></div>
-
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Strict name guessing requires at least two columns&#39;</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FastBasic.write"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastBasic.html#astropy.io.ascii.FastBasic.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Use a fast Cython method to write table data to output,</span>
 <span class="sd">        where output is a filename or file-like object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{})</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{})</span>
+</div>
     <span class="k">def</span> <span class="nf">_write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">default_kwargs</span><span class="p">,</span>
                <span class="n">header_output</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">output_types</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
 
@@ -224,8 +224,8 @@
         <span class="c"># user kwargs take precedence over default kwargs</span>
         <span class="n">write_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">writer</span> <span class="o">=</span> <span class="n">cparser</span><span class="o">.</span><span class="n">FastWriter</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="o">**</span><span class="n">write_kwargs</span><span class="p">)</span>
-        <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">header_output</span><span class="p">,</span> <span class="n">output_types</span><span class="p">)</span></div>
-
+        <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">header_output</span><span class="p">,</span> <span class="n">output_types</span><span class="p">)</span>
+</div>
 <div class="viewcode-block" id="FastCsv"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastCsv.html#astropy.io.ascii.FastCsv">[docs]</a><span class="k">class</span> <span class="nc">FastCsv</span><span class="p">(</span><span class="n">FastBasic</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A faster version of the ordinary :class:`Csv` writer that uses the</span>
@@ -246,8 +246,8 @@
 <span class="sd">        Override the default write method of `FastBasic` to</span>
 <span class="sd">        output masked values as empty fields.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{</span> <span class="s">&#39;fill_values&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="n">core</span><span class="o">.</span><span class="n">masked</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)]</span> <span class="p">})</span></div></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{</span> <span class="s">&#39;fill_values&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="n">core</span><span class="o">.</span><span class="n">masked</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)]</span> <span class="p">})</span>
+</div></div>
 <div class="viewcode-block" id="FastTab"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastTab.html#astropy.io.ascii.FastTab">[docs]</a><span class="k">class</span> <span class="nc">FastTab</span><span class="p">(</span><span class="n">FastBasic</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A faster version of the ordinary :class:`Tab` reader that uses</span>
@@ -260,8 +260,8 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">FastTab</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">({</span><span class="s">&#39;delimiter&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">strip_whitespace_lines</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strip_whitespace_fields</span> <span class="o">=</span> <span class="bp">False</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">strip_whitespace_fields</span> <span class="o">=</span> <span class="bp">False</span>
+</div>
 <div class="viewcode-block" id="FastNoHeader"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastNoHeader.html#astropy.io.ascii.FastNoHeader">[docs]</a><span class="k">class</span> <span class="nc">FastNoHeader</span><span class="p">(</span><span class="n">FastBasic</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This class uses the fast C engine to read tables with no header line. If</span>
@@ -280,8 +280,8 @@
 <span class="sd">        Override the default writing behavior in `FastBasic` so</span>
 <span class="sd">        that columns names are not included in output.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{},</span> <span class="n">header_output</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></div></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{},</span> <span class="n">header_output</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</div></div>
 <div class="viewcode-block" id="FastCommentedHeader"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastCommentedHeader.html#astropy.io.ascii.FastCommentedHeader">[docs]</a><span class="k">class</span> <span class="nc">FastCommentedHeader</span><span class="p">(</span><span class="n">FastBasic</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A faster version of the :class:`CommentedHeader` reader, which looks for</span>
@@ -313,8 +313,8 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="n">out</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;comments&#39;</span><span class="p">]:</span>
                 <span class="k">del</span> <span class="n">out</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;comments&#39;</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="n">out</span></div>
-
+        <span class="k">return</span> <span class="n">out</span>
+</div>
     <span class="k">def</span> <span class="nf">_read_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">tmp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">source</span>
         <span class="n">commented_lines</span> <span class="o">=</span> <span class="p">[]</span>
@@ -339,8 +339,8 @@
 <span class="sd">        Override the default writing behavior in `FastBasic` so</span>
 <span class="sd">        that column names are commented.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{},</span> <span class="n">header_output</span><span class="o">=</span><span class="s">&#39;comment&#39;</span><span class="p">)</span></div></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="p">{},</span> <span class="n">header_output</span><span class="o">=</span><span class="s">&#39;comment&#39;</span><span class="p">)</span>
+</div></div>
 <div class="viewcode-block" id="FastRdb"><a class="viewcode-back" href="../../../../api/astropy.io.ascii.FastRdb.html#astropy.io.ascii.FastRdb">[docs]</a><span class="k">class</span> <span class="nc">FastRdb</span><span class="p">(</span><span class="n">FastBasic</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A faster version of the :class:`Rdb` reader. This format is similar to</span>
@@ -428,8 +428,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

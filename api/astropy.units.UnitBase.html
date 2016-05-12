@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UnitBase &mdash; Astropy v1.2.dev14980</title>
+    <title>UnitBase &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Units and Quantities (astropy.units)" href="../units/index.html" />
     <link rel="next" title="UnitConversionError" href="astropy.units.UnitConversionError.html" />
     <link rel="prev" title="Unit" href="astropy.units.Unit.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../units/index.html" accesskey="U">Units and Quantities (<code class="docutils literal"><span class="pre">astropy.units</span></code>)</a> &raquo;</li>
@@ -208,8 +208,8 @@ base class.</p>
 <code class="descname">physical_type</code><a class="headerlink" href="#astropy.units.UnitBase.physical_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the physical type on the unit.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">physical_type</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">physical_type</span><span class="p">)</span>
 <span class="go">length</span>
 </pre></div>
 </div>
@@ -247,7 +247,7 @@ compositions of the unit, a list of units is always returned.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>equivalencies</strong> : list of equivalence pairs, optional</p>
 <blockquote>
 <div><p>A list of equivalence pairs to also list.  See
-<a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span class="std std-ref">Equivalencies</span></a>.
+<a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span>Equivalencies</span></a>.
 This list is in addition to possible global defaults set by, e.g.,
 <a class="reference internal" href="astropy.units.set_enabled_equivalencies.html#astropy.units.set_enabled_equivalencies" title="astropy.units.set_enabled_equivalencies"><code class="xref py py-obj docutils literal"><span class="pre">set_enabled_equivalencies</span></code></a>.
 Use <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to turn off all equivalencies.</p>
@@ -322,7 +322,7 @@ to do so.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>equivalencies</strong> : list of equivalence pairs, optional</p>
 <blockquote>
 <div><p>A list of equivalence pairs to also list.  See
-<a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span class="std std-ref">Equivalencies</span></a>.
+<a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span>Equivalencies</span></a>.
 Any list given, including an empty one, supercedes global defaults
 that may be in effect (as set by <a class="reference internal" href="astropy.units.set_enabled_equivalencies.html#astropy.units.set_enabled_equivalencies" title="astropy.units.set_enabled_equivalencies"><code class="xref py py-obj docutils literal"><span class="pre">set_enabled_equivalencies</span></code></a>)</p>
 </div></blockquote>
@@ -353,7 +353,7 @@ pretty-prints the list of units when output.</p>
 
 <dl class="method">
 <dt id="astropy.units.UnitBase.get_converter">
-<code class="descname">get_converter</code><span class="sig-paren">(</span><em>other</em>, <em>equivalencies=[]</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/core.py#L872" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/units/core.html#UnitBase.get_converter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.units.UnitBase.get_converter" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_converter</code><span class="sig-paren">(</span><em>other</em>, <em>equivalencies=[]</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/core.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/units/core.html#UnitBase.get_converter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.units.UnitBase.get_converter" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 1.0: </span>The get_converter function is deprecated and may be removed in a future version.</p>
 </div>
@@ -370,7 +370,7 @@ to the specified unit.</p>
 <p><strong>equivalencies</strong> : list of equivalence pairs, optional</p>
 <blockquote>
 <div><p>A list of equivalence pairs to try if the units are not
-directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span class="std std-ref">Equivalencies</span></a>.
+directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span>Equivalencies</span></a>.
 This list is in addition to possible global defaults set by, e.g.,
 <a class="reference internal" href="astropy.units.set_enabled_equivalencies.html#astropy.units.set_enabled_equivalencies" title="astropy.units.set_enabled_equivalencies"><code class="xref py py-obj docutils literal"><span class="pre">set_enabled_equivalencies</span></code></a>.
 Use <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to turn off all equivalencies.</p>
@@ -417,7 +417,7 @@ method returns true if the unit matches any of those in the tuple.</p>
 <p><strong>equivalencies</strong> : list of equivalence pairs, optional</p>
 <blockquote>
 <div><p>A list of equivalence pairs to try if the units are not
-directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span class="std std-ref">Equivalencies</span></a>.
+directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span>Equivalencies</span></a>.
 This list is in addition to possible global defaults set by, e.g.,
 <a class="reference internal" href="astropy.units.set_enabled_equivalencies.html#astropy.units.set_enabled_equivalencies" title="astropy.units.set_enabled_equivalencies"><code class="xref py py-obj docutils literal"><span class="pre">set_enabled_equivalencies</span></code></a>.
 Use <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to turn off all equivalencies.</p>
@@ -457,7 +457,7 @@ specified unit.  If not provided, defaults to 1.0</p>
 <p><strong>equivalencies</strong> : list of equivalence pairs, optional</p>
 <blockquote>
 <div><p>A list of equivalence pairs to try if the units are not
-directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span class="std std-ref">Equivalencies</span></a>.
+directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span>Equivalencies</span></a>.
 This list is in addition to possible global defaults set by, e.g.,
 <a class="reference internal" href="astropy.units.set_enabled_equivalencies.html#astropy.units.set_enabled_equivalencies" title="astropy.units.set_enabled_equivalencies"><code class="xref py py-obj docutils literal"><span class="pre">set_enabled_equivalencies</span></code></a>.
 Use <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to turn off all equivalencies.</p>
@@ -557,8 +557,8 @@ units of that system will appear first.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

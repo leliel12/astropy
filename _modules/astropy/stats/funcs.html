@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.stats.funcs &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.stats.funcs &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -340,10 +340,10 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unrecognized interval: {0:s}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">interval</span><span class="p">))</span>
 
-    <span class="k">return</span> <span class="n">conf_interval</span></div>
+    <span class="k">return</span> <span class="n">conf_interval</span>
 
 
-<span class="c"># TODO Note scipy dependency (needed in binom_conf_interval)</span>
+<span class="c"># TODO Note scipy dependency (needed in binom_conf_interval)</span></div>
 <div class="viewcode-block" id="binned_binom_proportion"><a class="viewcode-back" href="../../../api/astropy.stats.binned_binom_proportion.html#astropy.stats.binned_binom_proportion">[docs]</a><span class="k">def</span> <span class="nf">binned_binom_proportion</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">success</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="mf">0.68269</span><span class="p">,</span>
                             <span class="n">interval</span><span class="o">=</span><span class="s">&#39;wilson&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Binomial proportion and confidence interval in bins of a continuous</span>
@@ -518,9 +518,9 @@
     <span class="n">bounds</span> <span class="o">=</span> <span class="n">binom_conf_interval</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="n">conf</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">)</span>
     <span class="n">perr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bounds</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">bin_ctr</span><span class="p">,</span> <span class="n">bin_halfwidth</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">perr</span></div>
+    <span class="k">return</span> <span class="n">bin_ctr</span><span class="p">,</span> <span class="n">bin_halfwidth</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">perr</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_check_poisson_conf_inputs</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="n">conflevel</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">sigma</span><span class="o">!=</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Only sigma=1 supported for interval {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
@@ -784,8 +784,8 @@
         <span class="n">conf_interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">conf_interval</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Invalid method for Poisson confidence intervals: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">interval</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">conf_interval</span></div>
-
+    <span class="k">return</span> <span class="n">conf_interval</span>
+</div>
 <div class="viewcode-block" id="median_absolute_deviation"><a class="viewcode-back" href="../../../api/astropy.stats.median_absolute_deviation.html#astropy.stats.median_absolute_deviation">[docs]</a><span class="k">def</span> <span class="nf">median_absolute_deviation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute the median absolute deviation.</span>
 
@@ -843,9 +843,9 @@
         <span class="n">a_median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">a_median</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
 
     <span class="c"># calculated the median average deviation</span>
-    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">a_median</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">a_median</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="biweight_location"><a class="viewcode-back" href="../../../api/astropy.stats.biweight_location.html#astropy.stats.biweight_location">[docs]</a><span class="k">def</span> <span class="nf">biweight_location</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">6.0</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute the biweight location for an array.</span>
 
@@ -917,9 +917,9 @@
     <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span>
 
     <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">M</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+    <span class="k">return</span> <span class="n">M</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-
+</div>
 <div class="viewcode-block" id="biweight_midvariance"><a class="viewcode-back" href="../../../api/astropy.stats.biweight_midvariance.html#astropy.stats.biweight_midvariance">[docs]</a><span class="k">def</span> <span class="nf">biweight_midvariance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">9.0</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute the biweight midvariance for an array.</span>
 
@@ -1003,9 +1003,9 @@
     <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">**</span> <span class="mf">0.5</span>\
-        <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span></div>
+        <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">mask</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
-
+</div>
 <div class="viewcode-block" id="signal_to_noise_oir_ccd"><a class="viewcode-back" href="../../../api/astropy.stats.signal_to_noise_oir_ccd.html#astropy.stats.signal_to_noise_oir_ccd">[docs]</a><span class="k">def</span> <span class="nf">signal_to_noise_oir_ccd</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">source_eps</span><span class="p">,</span> <span class="n">sky_eps</span><span class="p">,</span> <span class="n">dark_eps</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">npix</span><span class="p">,</span>
                             <span class="n">gain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Computes the signal to noise ratio for source being observed in the</span>
@@ -1046,9 +1046,9 @@
     <span class="n">signal</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="n">source_eps</span> <span class="o">*</span> <span class="n">gain</span>
     <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="p">(</span><span class="n">source_eps</span> <span class="o">*</span> <span class="n">gain</span> <span class="o">+</span> <span class="n">npix</span> <span class="o">*</span>
                          <span class="p">(</span><span class="n">sky_eps</span> <span class="o">*</span> <span class="n">gain</span> <span class="o">+</span> <span class="n">dark_eps</span><span class="p">))</span> <span class="o">+</span> <span class="n">npix</span> <span class="o">*</span> <span class="n">rd</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">signal</span> <span class="o">/</span> <span class="n">noise</span></div>
+    <span class="k">return</span> <span class="n">signal</span> <span class="o">/</span> <span class="n">noise</span>
 
-
+</div>
 <div class="viewcode-block" id="bootstrap"><a class="viewcode-back" href="../../../api/astropy.stats.bootstrap.html#astropy.stats.bootstrap">[docs]</a><span class="k">def</span> <span class="nf">bootstrap</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bootnum</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bootfunc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Performs bootstrap resampling on numpy arrays.</span>
 
@@ -1159,8 +1159,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">boot</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bootfunc</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">bootarr</span><span class="p">])</span>
 
-    <span class="k">return</span> <span class="n">boot</span></div>
-
+    <span class="k">return</span> <span class="n">boot</span>
+</div>
 <div class="viewcode-block" id="mad_std"><a class="viewcode-back" href="../../../api/astropy.stats.mad_std.html#astropy.stats.mad_std">[docs]</a><span class="k">def</span> <span class="nf">mad_std</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate a robust standard deviation using the `median absolute</span>
@@ -1201,9 +1201,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c"># NOTE: 1. / scipy.stats.norm.ppf(0.75) = 1.482602218505602</span>
-    <span class="k">return</span> <span class="n">median_absolute_deviation</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.482602218505602</span></div>
+    <span class="k">return</span> <span class="n">median_absolute_deviation</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.482602218505602</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_scipy_kraft_burrows_nousek</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">CL</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Upper limit on a poisson count rate</span>
 
@@ -1407,8 +1407,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.visualization.stretch &mdash; Astropy v1.2.dev14980</title>
+    <title>astropy.visualization.stretch &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -146,15 +146,15 @@
 <span class="sd">        -------</span>
 <span class="sd">        new_values : `~numpy.ndarray`</span>
 <span class="sd">            The transformed values.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
-
+<span class="sd">        &quot;&quot;&quot;</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a stretch that performs the inverse operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-
+</div>
 <div class="viewcode-block" id="LinearStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.LinearStretch.html#astropy.visualization.LinearStretch">[docs]</a><span class="k">class</span> <span class="nc">LinearStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A linear stretch.</span>
@@ -167,13 +167,13 @@
 
 <div class="viewcode-block" id="LinearStretch.__call__"><a class="viewcode-back" href="../../../api/astropy.visualization.LinearStretch.html#astropy.visualization.LinearStretch.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
 
-        <span class="k">return</span> <span class="n">_prepare</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="n">clip</span><span class="p">)</span></div>
-
+        <span class="k">return</span> <span class="n">_prepare</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="n">clip</span><span class="p">)</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">LinearStretch</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">LinearStretch</span><span class="p">()</span>
 
-
+</div>
 <div class="viewcode-block" id="SqrtStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.SqrtStretch.html#astropy.visualization.SqrtStretch">[docs]</a><span class="k">class</span> <span class="nc">SqrtStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    A square root stretch.</span>
@@ -190,13 +190,13 @@
 
         <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">PowerStretch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">PowerStretch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="PowerStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.PowerStretch.html#astropy.visualization.PowerStretch">[docs]</a><span class="k">class</span> <span class="nc">PowerStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    A power stretch.</span>
@@ -217,13 +217,13 @@
 
         <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">PowerStretch</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">PowerStretch</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="PowerDistStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.PowerDistStretch.html#astropy.visualization.PowerDistStretch">[docs]</a><span class="k">class</span> <span class="nc">PowerDistStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    An alternative power stretch.</span>
@@ -248,13 +248,13 @@
         <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
         <span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exp</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">InvertedPowerDistStretch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">InvertedPowerDistStretch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">InvertedPowerDistStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Inverse transformation for `~astropy.image.scaling.PowerDistStretch`.</span>
@@ -296,9 +296,9 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">SqrtStretch</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">SqrtStretch</span><span class="p">()</span>
 
-
+</div>
 <div class="viewcode-block" id="LogStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.LogStretch.html#astropy.visualization.LogStretch">[docs]</a><span class="k">class</span> <span class="nc">LogStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    A log stretch.</span>
@@ -322,13 +322,13 @@
         <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
         <span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exp</span> <span class="o">+</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">InvertedLogStretch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">InvertedLogStretch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">InvertedLogStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Inverse transformation for `~astropy.image.scaling.LogStretch`.</span>
@@ -376,13 +376,13 @@
         <span class="n">np</span><span class="o">.</span><span class="n">arcsinh</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
         <span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsinh</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">),</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">SinhStretch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsinh</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="n">SinhStretch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsinh</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="SinhStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.SinhStretch.html#astropy.visualization.SinhStretch">[docs]</a><span class="k">class</span> <span class="nc">SinhStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;</span>
 <span class="sd">    A sinh stretch.</span>
@@ -405,13 +405,13 @@
         <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
         <span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">),</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">AsinhStretch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="n">AsinhStretch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">))</span>
 
-
+</div>
 <div class="viewcode-block" id="HistEqStretch"><a class="viewcode-back" href="../../../api/astropy.visualization.HistEqStretch.html#astropy.visualization.HistEqStretch">[docs]</a><span class="k">class</span> <span class="nc">HistEqStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A histogram equalization stretch.</span>
@@ -442,13 +442,13 @@
 
         <span class="n">values</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">InvertedHistEqStretch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">InvertedHistEqStretch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">InvertedHistEqStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Inverse transformation for `~astropy.image.scaling.HistEqStretch`.</span>
@@ -504,13 +504,13 @@
         <span class="k">if</span> <span class="n">clip</span><span class="p">:</span>
             <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span></div>
-
+        <span class="k">return</span> <span class="n">values</span>
+</div>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">InvertedContrastBiasStretch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contrast</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">InvertedContrastBiasStretch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contrast</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
 
-
+</div>
 <span class="k">class</span> <span class="nc">InvertedContrastBiasStretch</span><span class="p">(</span><span class="n">BaseStretch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Inverse transformation for ContrastBiasStretch.</span>
@@ -558,8 +558,8 @@
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

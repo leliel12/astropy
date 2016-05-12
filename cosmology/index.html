@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Cosmological Calculations (astropy.cosmology) &mdash; Astropy v1.2.dev14980</title>
+    <title>Cosmological Calculations (astropy.cosmology) &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="next" title="z_at_value" href="../api/astropy.cosmology.z_at_value.html" />
     <link rel="prev" title="ImageNormalize" href="../api/astropy.visualization.mpl_normalize.ImageNormalize.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -99,12 +99,12 @@ angular separation.</p>
 <code class="xref py py-class docutils literal"><span class="pre">Cosmology</span></code> object. For example, to calculate the
 Hubble constant at z=0 (i.e., <code class="docutils literal"><span class="pre">H0</span></code>), and the number of transverse proper
 kpc corresponding to an arcminute at z=3:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP9</span> <span class="k">as</span> <span class="n">cosmo</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP9</span> <span class="k">as</span> <span class="n">cosmo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">H</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  
 <span class="go">&lt;Quantity 69.32 km / (Mpc s)&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">kpc_proper_per_arcmin</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">kpc_proper_per_arcmin</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  
 <span class="go">&lt;Quantity 472.97709620405266 kpc / arcmin&gt;</span>
 </pre></div>
 </div>
@@ -119,14 +119,14 @@ above example, type <code class="docutils literal"><span class="pre">cosmo.</spa
 the tab key.</p>
 <p>All of these methods also accept an arbitrarily shaped array of
 redshifts as input:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP9</span> <span class="k">as</span> <span class="n">cosmo</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP9</span> <span class="k">as</span> <span class="n">cosmo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">comoving_distance</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>  
 <span class="go">&lt;Quantity [ 1916.0694236 , 3363.07064333, 4451.74756242] Mpc&gt;</span>
 </pre></div>
 </div>
 <p>You can create your own FLRW-like cosmology using one of the Cosmology
 classes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span>
 <span class="go">FlatLambdaCDM(H0=70 km / (Mpc s), Om0=0.3, Tcmb0=2.725 K,</span>
@@ -140,7 +140,7 @@ can also be specified explicitly in the call to the constructor.</p>
 cases returns values with units attached.  Consult the documentation
 for that subpackage for more details, but briefly, to access the
 floating point or array values:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP9</span> <span class="k">as</span> <span class="n">cosmo</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP9</span> <span class="k">as</span> <span class="n">cosmo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H0</span> <span class="o">=</span> <span class="n">cosmo</span><span class="o">.</span><span class="n">H</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">H0</span><span class="o">.</span><span class="n">unit</span>  
 <span class="go">(69.32, Unit(&quot;km / (Mpc s)&quot;))</span>
@@ -158,7 +158,7 @@ you must specify a dark energy model by using one of its subclasses
 instead, such as <a class="reference internal" href="../api/astropy.cosmology.FlatLambdaCDM.html#astropy.cosmology.FlatLambdaCDM" title="astropy.cosmology.FlatLambdaCDM"><code class="xref py py-obj docutils literal"><span class="pre">FlatLambdaCDM</span></code></a>.</p>
 <p>You can create a new <a class="reference internal" href="../api/astropy.cosmology.FlatLambdaCDM.html#astropy.cosmology.FlatLambdaCDM" title="astropy.cosmology.FlatLambdaCDM"><code class="xref py py-obj docutils literal"><span class="pre">FlatLambdaCDM</span></code></a> object with
 arguments giving the Hubble parameter and Omega matter (both at z=0):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span>
 <span class="go">FlatLambdaCDM(H0=70 km / (Mpc s), Om0=0.3, Tcmb0=2.725 K,</span>
@@ -166,8 +166,8 @@ arguments giving the Hubble parameter and Omega matter (both at z=0):</p>
 </pre></div>
 </div>
 <p>This can also be done more explicitly using units, which is recommended:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">70</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -179,17 +179,17 @@ units if you want massive neutrinos.</p>
 section are instances of <a class="reference internal" href="../api/astropy.cosmology.FlatLambdaCDM.html#astropy.cosmology.FlatLambdaCDM" title="astropy.cosmology.FlatLambdaCDM"><code class="xref py py-obj docutils literal"><span class="pre">FlatLambdaCDM</span></code></a>, and have
 the same methods. So we can find the luminosity distance to
 redshift 4 by:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">luminosity_distance</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">luminosity_distance</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  
 <span class="go">&lt;Quantity 35842.353618623194 Mpc&gt;</span>
 </pre></div>
 </div>
 <p>or the age of the universe at z = 0:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">age</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">age</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  
 <span class="go">&lt;Quantity 13.461701658024014 Gyr&gt;</span>
 </pre></div>
 </div>
 <p>They also accept arrays of redshifts:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">age</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span><span class="o">.</span><span class="n">value</span>  
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">age</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span><span class="o">.</span><span class="n">value</span>  
 <span class="go">array([ 8.42128047,  5.74698053,  4.19645402])</span>
 </pre></div>
 </div>
@@ -200,13 +200,13 @@ non-flat varieties are supported such as
 <a class="reference internal" href="../api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM" title="astropy.cosmology.LambdaCDM"><code class="xref py py-obj docutils literal"><span class="pre">LambdaCDM</span></code></a>.  There are also a variety of standard
 cosmologies with the parameters already defined (see <a class="reference internal" href="#built-in-cosmologies">Built-in
 Cosmologies</a>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP7</span>   <span class="c"># WMAP 7-year cosmology</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP7</span>   <span class="c"># WMAP 7-year cosmology</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">WMAP7</span><span class="o">.</span><span class="n">critical_density</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c"># critical density at z = 0  </span>
 <span class="go">&lt;Quantity 9.31000324385361e-30 g / cm3&gt;</span>
 </pre></div>
 </div>
 <p>You can see how the density parameters evolve with redshift as well:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP7</span>   <span class="c"># WMAP 7-year cosmology</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP7</span>   <span class="c"># WMAP 7-year cosmology</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">WMAP7</span><span class="o">.</span><span class="n">Om</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]),</span> <span class="n">WMAP7</span><span class="o">.</span><span class="n">Ode</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>  
 <span class="go">(array([ 0.272     ,  0.74898524,  0.90905239]),</span>
 <span class="go"> array([ 0.72791572,  0.25055061,  0.0901026 ]))</span>
@@ -218,7 +218,7 @@ that they are unitless and so are not <a class="reference internal" href="../api
 objects.</p>
 <p>It is possible to specify the baryonic matter density at redshift zero
 at class instantiation by passing the keyword argument <code class="docutils literal"><span class="pre">Ob0</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">Ob0</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span>
 <span class="go">FlatLambdaCDM(H0=70 km / (Mpc s), Om0=0.3, Tcmb0=2.725 K,</span>
@@ -231,7 +231,7 @@ dark and baryonic matter densities can be computed using the methods
 <code class="docutils literal"><span class="pre">Odm</span></code> and <code class="docutils literal"><span class="pre">Ob</span></code>, respectively. If <code class="docutils literal"><span class="pre">Ob0</span></code> is not specified at class
 instantiation it defaults to <code class="docutils literal"><span class="pre">None</span></code> and any method relying on it
 being specified will raise a <code class="docutils literal"><span class="pre">ValueError</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span><span class="o">.</span><span class="n">Odm</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
@@ -242,7 +242,7 @@ being specified will raise a <code class="docutils literal"><span class="pre">Va
 </div>
 <p>Cosmological instances have an optional <code class="docutils literal"><span class="pre">name</span></code> attribute which can be
 used to describe the cosmology:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatwCDM</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatwCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatwCDM</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;SNLS3+WMAP7&#39;</span><span class="p">,</span> <span class="n">H0</span><span class="o">=</span><span class="mf">71.58</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.262</span><span class="p">,</span> <span class="n">w0</span><span class="o">=-</span><span class="mf">1.016</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span>
 <span class="go">FlatwCDM(name=&quot;SNLS3+WMAP7&quot;, H0=71.6 km / (Mpc s), Om0=0.262,</span>
@@ -262,7 +262,7 @@ this more convenient, a <code class="docutils literal"><span class="pre">clone</
 allows you to make a copy with specified values changed.
 Note that you can&#8217;t change the type of cosmology with this operation
 (e.g., flat to non-flat). For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP9</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP9</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">newcosmo</span> <span class="o">=</span> <span class="n">WMAP9</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;WMAP9 modified&#39;</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.3141</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">WMAP9</span><span class="o">.</span><span class="n">H0</span><span class="p">,</span> <span class="n">newcosmo</span><span class="o">.</span><span class="n">H0</span>  <span class="c"># some values unchanged</span>
 <span class="go">(&lt;Quantity 69.3... km / (Mpc s)&gt;, &lt;Quantity 69.3... km / (Mpc s)&gt;)</span>
@@ -276,8 +276,8 @@ Note that you can&#8217;t change the type of cosmology with this operation
 <h3>Finding the Redshift at a Given Value of a Cosmological Quantity<a class="headerlink" href="#finding-the-redshift-at-a-given-value-of-a-cosmological-quantity" title="Permalink to this headline">¶</a></h3>
 <p>If you know a cosmological quantity and you want to know the
 redshift which it corresponds to, you can use <code class="docutils literal"><span class="pre">z_at_value</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">Planck13</span><span class="p">,</span> <span class="n">z_at_value</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">Planck13</span><span class="p">,</span> <span class="n">z_at_value</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z_at_value</span><span class="p">(</span><span class="n">Planck13</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Gyr</span><span class="p">)</span>  
 <span class="go">3.1981226843560968</span>
 </pre></div>
@@ -291,7 +291,7 @@ detailed usage examples.</p>
 <h3>Built-in Cosmologies<a class="headerlink" href="#built-in-cosmologies" title="Permalink to this headline">¶</a></h3>
 <p>A number of pre-loaded cosmologies are available from analyses using
 the WMAP and Planck satellite data. For example,</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">Planck13</span>  <span class="c"># Planck 2013</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">Planck13</span>  <span class="c"># Planck 2013</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Planck13</span><span class="o">.</span><span class="n">lookback_time</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># lookback time in Gyr at z=2  </span>
 <span class="go">&lt;Quantity 10.511841788576083 Gyr&gt;</span>
 </pre></div>
@@ -350,8 +350,8 @@ the WMAP and Planck satellite data. For example,</p>
 <p>Currently, all are instances of <a class="reference internal" href="../api/astropy.cosmology.FlatLambdaCDM.html#astropy.cosmology.FlatLambdaCDM" title="astropy.cosmology.FlatLambdaCDM"><code class="xref py py-obj docutils literal"><span class="pre">FlatLambdaCDM</span></code></a>.
 More details about exactly where each set of parameters come from
 are available in the docstring for each object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP7</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">WMAP7</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">WMAP7</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
 <span class="go">WMAP7 instance of FlatLambdaCDM cosmology</span>
 <span class="go">(from Komatsu et al. 2011, ApJS, 192, 18, doi: 10.1088/0067-0049/192/2/18.</span>
 <span class="go">Table 1 (WMAP + BAO + H0 ML).)</span>
@@ -418,7 +418,7 @@ performance is critical, it is particularly useful to calculate them on
 a grid and use interpolation.</p>
 <p>The contribution of photons and neutrinos to the total mass-energy density
 can be found as a function of redshift:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">WMAP7</span>   <span class="c"># WMAP 7-year cosmology</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">WMAP7</span>   <span class="c"># WMAP 7-year cosmology</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">WMAP7</span><span class="o">.</span><span class="n">Ogamma0</span><span class="p">,</span> <span class="n">WMAP7</span><span class="o">.</span><span class="n">Onu0</span>  <span class="c"># Current epoch values  </span>
 <span class="go">(4.985694972799396e-05, 3.442154948307989e-05)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
@@ -429,15 +429,15 @@ can be found as a function of redshift:</p>
 </div>
 <p>If you want to exclude photons and neutrinos from your calculations,
 simply set <code class="docutils literal"><span class="pre">Tcmb0</span></code> to 0:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cos</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="mf">70.4</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">,</span> <span class="mf">0.272</span><span class="p">,</span> <span class="n">Tcmb0</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cos</span><span class="o">.</span><span class="n">Ogamma0</span><span class="p">,</span> <span class="n">cos</span><span class="o">.</span><span class="n">Onu0</span>
 <span class="go">(0.0, 0.0)</span>
 </pre></div>
 </div>
 <p>Neutrinos can be removed (while leaving photons) by setting <code class="docutils literal"><span class="pre">Neff</span></code> to 0:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cos</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="mf">70.4</span><span class="p">,</span> <span class="mf">0.272</span><span class="p">,</span> <span class="n">Neff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cos</span><span class="o">.</span><span class="n">Ogamma</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c"># Photons are still present  </span>
 <span class="go">array([  4.98569497e-05,   2.74623215e-04,   5.00051839e-04])</span>
@@ -450,8 +450,8 @@ which in the default case is 3.  Therefore, if non-zero neutrino masses
 are desired, then 3 masses should be provided.  However, if only one
 value is provided, all the species are assumed to have the same mass.
 <code class="docutils literal"><span class="pre">Neff</span></code> is assumed to be shared equally between each species.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">FlatLambdaCDM</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="kn">as</span> <span class="nn">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H0</span> <span class="o">=</span> <span class="mf">70.4</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">Mpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_nu</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">eV</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cosmo</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="p">,</span> <span class="mf">0.272</span><span class="p">,</span> <span class="n">m_nu</span><span class="o">=</span><span class="n">m_nu</span><span class="p">)</span>
@@ -484,7 +484,7 @@ is called. In this case it&#8217;s possible to specify a &#8220;default&#8221;
 cosmology.</p>
 <p>You can set the default cosmology to a pre-defined value by using the
 &#8220;default_cosmology&#8221; option in the <code class="docutils literal"><span class="pre">[cosmology.core]</span></code> section of the
-configuration file (see <a class="reference internal" href="../config/index.html#astropy-config"><span class="std std-ref">Configuration system (astropy.config)</span></a>). Alternatively, you can
+configuration file (see <a class="reference internal" href="../config/index.html#astropy-config"><span>Configuration system (astropy.config)</span></a>). Alternatively, you can
 use the <code class="docutils literal"><span class="pre">set</span></code> function of <a class="reference internal" href="../api/astropy.cosmology.default_cosmology.html#astropy.cosmology.default_cosmology" title="astropy.cosmology.default_cosmology"><code class="xref py py-obj docutils literal"><span class="pre">default_cosmology</span></code></a> to
 set a cosmology for the current Python session. If you haven&#8217;t set a
 default cosmology using one of the methods described above, then the
@@ -493,10 +493,10 @@ cosmology module will default to using the 9-year WMAP parameters.</p>
 the <a class="reference internal" href="../api/astropy.cosmology.default_cosmology.html#astropy.cosmology.default_cosmology" title="astropy.cosmology.default_cosmology"><code class="xref py py-obj docutils literal"><span class="pre">default_cosmology</span></code></a> science state object. An
 override option can then be provided using something like the
 following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">cosmo</span><span class="o">=</span><span class="k">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="k">import</span> <span class="n">default_cosmology</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">cosmo</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">default_cosmology</span>
 
-    <span class="k">if</span> <span class="n">cosmo</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">cosmo</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">cosmo</span> <span class="o">=</span> <span class="n">default_cosmology</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 
     <span class="o">...</span> <span class="n">your</span> <span class="n">code</span> <span class="n">here</span> <span class="o">...</span>
@@ -604,8 +604,9 @@ detailed usage examples and references.</p>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
-<object data="../_images/inheritance-50c34e433ab39059c9b85ee11468f8a3f4f29ba7.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.cosmology.core.FLRW, astropy.cosmology.core.FlatLambdaCDM, astropy.cosmology.core.Flatw0waCDM, astropy.cosmology.core.FlatwCDM, astropy.cosmology.core.LambdaCDM, astropy.cosmology.core.default_cosmology, astropy.cosmology.core.w0waCDM, astropy.cosmology.core.w0wzCDM, astropy.cosmology.core.wCDM, astropy.cosmology.core.wpwaCDM</p></object>
+<p class="graphviz">
+<img src="../_images/inheritance-45ddae828632f0e1a73a0cf22f7e9f2e35884980.svg" alt="Inheritance diagram of astropy.cosmology.core.FLRW, astropy.cosmology.core.FlatLambdaCDM, astropy.cosmology.core.Flatw0waCDM, astropy.cosmology.core.FlatwCDM, astropy.cosmology.core.LambdaCDM, astropy.cosmology.core.default_cosmology, astropy.cosmology.core.w0waCDM, astropy.cosmology.core.w0wzCDM, astropy.cosmology.core.wCDM, astropy.cosmology.core.wpwaCDM" class="inheritance"/>
+</p>
 </div>
 </div>
 </div>
@@ -657,8 +658,8 @@ detailed usage examples and references.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

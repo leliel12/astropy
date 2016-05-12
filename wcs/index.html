@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>World Coordinate System (astropy.wcs) &mdash; Astropy v1.2.dev14980</title>
+    <title>World Coordinate System (astropy.wcs) &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="next" title="Relax constants" href="relax.html" />
     <link rel="prev" title="UnknownSiteException" href="../api/astropy.coordinates.UnknownSiteException.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       
@@ -157,10 +157,10 @@ column correction.</li>
 </ol>
 </div></blockquote>
 <p>For example, to convert pixel coordinates to world coordinates:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="k">import</span> <span class="n">WCS</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="s">&#39;image.fits&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">all_pix2world</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -281,23 +281,23 @@ directly and specifically, use <a class="reference internal" href="../io/fits/ap
 <span id="wcslint"></span><h3>Validating the WCS keywords in a FITS file<a class="headerlink" href="#validating-the-wcs-keywords-in-a-fits-file" title="Permalink to this headline">¶</a></h3>
 <p>Astropy includes a commandline tool, <code class="docutils literal"><span class="pre">wcslint</span></code> to check the WCS
 keywords in a FITS file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="o">&gt;</span> <span class="n">wcslint</span> <span class="n">invalid</span><span class="o">.</span><span class="n">fits</span>
-<span class="n">HDU</span> <span class="mi">1</span><span class="p">:</span>
-  <span class="n">WCS</span> <span class="n">key</span> <span class="s">&#39; &#39;</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">RADECSYS</span><span class="o">=</span> <span class="s">&#39;ICRS &#39;</span> <span class="o">/</span> <span class="n">Astrometric</span> <span class="n">system</span>
-      <span class="n">RADECSYS</span> <span class="ow">is</span> <span class="n">non</span><span class="o">-</span><span class="n">standard</span><span class="p">,</span> <span class="n">use</span> <span class="n">RADESYSa</span><span class="o">.</span>
-    <span class="o">-</span> <span class="n">The</span> <span class="n">WCS</span> <span class="n">transformation</span> <span class="n">has</span> <span class="n">more</span> <span class="n">axes</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">than</span> <span class="n">the</span> <span class="n">image</span> <span class="n">it</span> <span class="ow">is</span>
-      <span class="n">associated</span> <span class="k">with</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="o">-</span> <span class="s">&#39;celfix&#39;</span> <span class="n">made</span> <span class="n">the</span> <span class="n">change</span> <span class="s">&#39;PV1_5 : Unrecognized coordinate</span>
-      <span class="n">transformation</span> <span class="n">parameter</span><span class="s">&#39;.</span>
+<div class="highlight-python"><div class="highlight"><pre>&gt; wcslint invalid.fits
+HDU 1:
+  WCS key &#39; &#39;:
+    - RADECSYS= &#39;ICRS &#39; / Astrometric system
+      RADECSYS is non-standard, use RADESYSa.
+    - The WCS transformation has more axes (2) than the image it is
+      associated with (0)
+    - &#39;celfix&#39; made the change &#39;PV1_5 : Unrecognized coordinate
+      transformation parameter&#39;.
 
-<span class="n">HDU</span> <span class="mi">2</span><span class="p">:</span>
-  <span class="n">WCS</span> <span class="n">key</span> <span class="s">&#39; &#39;</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">The</span> <span class="n">WCS</span> <span class="n">transformation</span> <span class="n">has</span> <span class="n">more</span> <span class="n">axes</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">than</span> <span class="n">the</span> <span class="n">image</span> <span class="n">it</span> <span class="ow">is</span>
-      <span class="n">associated</span> <span class="k">with</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="o">-</span> <span class="s">&#39;celfix&#39;</span> <span class="n">made</span> <span class="n">the</span> <span class="n">change</span> <span class="s">&#39;In CUNIT2 : Mismatched units type</span>
-      <span class="s">&#39;length&#39;</span><span class="p">:</span> <span class="n">have</span> <span class="s">&#39;Hz&#39;</span><span class="p">,</span> <span class="n">want</span> <span class="s">&#39;m&#39;&#39;.</span>
-    <span class="o">-</span> <span class="s">&#39;unitfix&#39;</span> <span class="n">made</span> <span class="n">the</span> <span class="n">change</span> <span class="s">&#39;Changed units: &#39;</span><span class="n">HZ</span>      <span class="s">&#39; -&gt; &#39;</span><span class="n">Hz</span><span class="s">&#39;&#39;</span><span class="o">.</span>
+HDU 2:
+  WCS key &#39; &#39;:
+    - The WCS transformation has more axes (3) than the image it is
+      associated with (0)
+    - &#39;celfix&#39; made the change &#39;In CUNIT2 : Mismatched units type
+      &#39;length&#39;: have &#39;Hz&#39;, want &#39;m&#39;&#39;.
+    - &#39;unitfix&#39; made the change &#39;Changed units: &#39;HZ      &#39; -&gt; &#39;Hz&#39;&#39;.
 </pre></div>
 </div>
 </div>
@@ -515,8 +515,9 @@ a standard pipeline.</p>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
-<object data="../_images/inheritance-2515c7ddecf13a8dc3503e098f76d36d09676551.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.wcs.DistortionLookupTable, astropy.wcs.wcs.FITSFixedWarning, astropy.wcs._wcs.InconsistentAxisTypesError, astropy.wcs._wcs.InvalidCoordinateError, astropy.wcs._wcs.InvalidSubimageSpecificationError, astropy.wcs._wcs.InvalidTabularParametersError, astropy.wcs._wcs.InvalidTransformError, astropy.wcs._wcs.NoSolutionError, astropy.wcs._wcs.NoWcsKeywordsFoundError, astropy.wcs._wcs.NonseparableSubimageCoordinateSystemError, astropy.wcs._wcs.SingularMatrixError, astropy.wcs.Sip, astropy.wcs.Tabprm, astropy.wcs.wcs.WCS, astropy.wcs.WCSBase, astropy.wcs._wcs.WcsError, astropy.wcs.Wcsprm</p></object>
+<p class="graphviz">
+<img src="../_images/inheritance-d248c47c05b38c393a76e1ed4b8bb0cfd10989dd.svg" alt="Inheritance diagram of astropy.wcs.DistortionLookupTable, astropy.wcs.wcs.FITSFixedWarning, astropy.wcs._wcs.InconsistentAxisTypesError, astropy.wcs._wcs.InvalidCoordinateError, astropy.wcs._wcs.InvalidSubimageSpecificationError, astropy.wcs._wcs.InvalidTabularParametersError, astropy.wcs._wcs.InvalidTransformError, astropy.wcs._wcs.NoSolutionError, astropy.wcs._wcs.NoWcsKeywordsFoundError, astropy.wcs._wcs.NonseparableSubimageCoordinateSystemError, astropy.wcs._wcs.SingularMatrixError, astropy.wcs.Sip, astropy.wcs.Tabprm, astropy.wcs.wcs.WCS, astropy.wcs.WCSBase, astropy.wcs._wcs.WcsError, astropy.wcs.Wcsprm" class="inheritance"/>
+</p>
 </div>
 </div>
 <div class="section" id="module-astropy.wcs.utils">
@@ -572,8 +573,9 @@ a standard pipeline.</p>
 </div>
 <div class="section" id="id8">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<object data="../_images/inheritance-c4abd5bd932e15b590ba90353500de59f1abd472.svg" type="image/svg+xml">
-            <p class="warning">Inheritance diagram of astropy.wcs.utils.custom_frame_mappings</p></object>
+<p class="graphviz">
+<img src="../_images/inheritance-23a1d06b9efc81b3d6d4581bae263b6a78f97f6a.svg" alt="Inheritance diagram of astropy.wcs.utils.custom_frame_mappings" class="inheritance"/>
+</p>
 </div>
 </div>
 </div>
@@ -638,8 +640,8 @@ a standard pipeline.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

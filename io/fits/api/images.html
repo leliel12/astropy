@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Images &mdash; Astropy v1.2.dev14980</title>
+    <title>Images &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Differs" href="diff.html" />
     <link rel="prev" title="Tables" href="tables.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev14980</a>
+	<a href="../../../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -444,7 +444,7 @@ keyword is unfixable.</p>
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;warn&quot;</span></code>, or
 <code class="docutils literal"><span class="pre">&quot;exception&quot;</span></code>.  May also be any combination of <code class="docutils literal"><span class="pre">&quot;fix&quot;</span></code> or
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code> with <code class="docutils literal"><span class="pre">&quot;+ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">+warn</span></code>, or <code class="docutils literal"><span class="pre">+exception&quot;</span>
-<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span class="std std-ref">Verification options</span></a> for more info.</p>
+<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span>Verification options</span></a> for more info.</p>
 </div></blockquote>
 <p><strong>errlist</strong> : list</p>
 <blockquote class="last">
@@ -515,7 +515,7 @@ return the appropriate slice of the data, and loads <em>only</em> that section
 into memory.</p>
 <p>Sections are mostly obsoleted by memmap support, but should still be
 used to deal with very large scaled images.  See the
-<a class="reference internal" href="../usage/image.html#data-sections"><span class="std std-ref">Data Sections</span></a> section of the PyFITS documentation for more
+<a class="reference internal" href="../usage/image.html#data-sections"><span>Data Sections</span></a> section of the PyFITS documentation for more
 details.</p>
 </dd></dl>
 
@@ -533,7 +533,7 @@ details.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.ImageHDU.update_ext_name">
-<code class="descname">update_ext_name</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L1055" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ImageHDU.update_ext_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_ext_name</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ImageHDU.update_ext_name" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The update_ext_name function will be deprecated in a future version.
     Use the <code class="docutils literal"><span class="pre">.name</span></code> attribute or <a class="reference internal" href="headers.html#astropy.io.fits.Header.set" title="astropy.io.fits.Header.set"><code class="xref py py-obj docutils literal"><span class="pre">Header.set</span></code></a> instead.</p>
@@ -583,7 +583,7 @@ preserved.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.ImageHDU.update_ext_version">
-<code class="descname">update_ext_version</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L1104" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ImageHDU.update_ext_version" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_ext_version</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ImageHDU.update_ext_version" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The update_ext_version function will be deprecated in a future version.
     Use the <code class="docutils literal"><span class="pre">.ver</span></code> attribute or <a class="reference internal" href="headers.html#astropy.io.fits.Header.set" title="astropy.io.fits.Header.set"><code class="xref py py-obj docutils literal"><span class="pre">Header.set</span></code></a> instead.</p>
@@ -651,7 +651,7 @@ preserved.</p>
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;warn&quot;</span></code>, or
 <code class="docutils literal"><span class="pre">&quot;exception&quot;</span></code>.  May also be any combination of <code class="docutils literal"><span class="pre">&quot;fix&quot;</span></code> or
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code> with <code class="docutils literal"><span class="pre">&quot;+ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">+warn</span></code>, or <code class="docutils literal"><span class="pre">+exception&quot;</span>
-<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span class="std std-ref">Verification options</span></a> for more info.</p>
+<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span>Verification options</span></a> for more info.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -665,8 +665,8 @@ preserved.</p>
 <dd><p>Verify that the value in the <code class="docutils literal"><span class="pre">CHECKSUM</span></code> keyword matches the
 value calculated for the current HDU CHECKSUM.</p>
 <dl class="docutils">
-<dt>blocking</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span><dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
+<dt>blocking <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
 not</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -693,8 +693,8 @@ not</dd>
 <dd><p>Verify that the value in the <code class="docutils literal"><span class="pre">DATASUM</span></code> keyword matches the value
 calculated for the <code class="docutils literal"><span class="pre">DATASUM</span></code> of the current HDU data.</p>
 <dl class="docutils">
-<dt>blocking</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span><dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
+<dt>blocking <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
 not</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1482,7 +1482,7 @@ keyword is unfixable.</p>
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;warn&quot;</span></code>, or
 <code class="docutils literal"><span class="pre">&quot;exception&quot;</span></code>.  May also be any combination of <code class="docutils literal"><span class="pre">&quot;fix&quot;</span></code> or
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code> with <code class="docutils literal"><span class="pre">&quot;+ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">+warn</span></code>, or <code class="docutils literal"><span class="pre">+exception&quot;</span>
-<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span class="std std-ref">Verification options</span></a> for more info.</p>
+<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span>Verification options</span></a> for more info.</p>
 </div></blockquote>
 <p><strong>errlist</strong> : list</p>
 <blockquote class="last">
@@ -1558,7 +1558,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.tcreate">
-<code class="descname">tcreate</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>replace=False</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L1123" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.tcreate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tcreate</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>replace=False</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.tcreate" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.1: </span>The tcreate method is deprecated and may be removed in a future version.
     Use <a class="reference internal" href="#astropy.io.fits.CompImageHDU.load" title="astropy.io.fits.CompImageHDU.load"><code class="xref py py-meth docutils literal"><span class="pre">load()</span></code></a> instead.</p>
@@ -1568,7 +1568,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.tdump">
-<code class="descname">tdump</code><span class="sig-paren">(</span><em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L1034" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.tdump" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tdump</code><span class="sig-paren">(</span><em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.tdump" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.1: </span>The tdump function is deprecated and may be removed in a future version.
     Use <a class="reference internal" href="#astropy.io.fits.CompImageHDU.dump" title="astropy.io.fits.CompImageHDU.dump"><code class="xref py py-meth docutils literal"><span class="pre">dump()</span></code></a> instead.</p>
@@ -1584,7 +1584,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.updateCompressedData">
-<code class="descname">updateCompressedData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L1696" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateCompressedData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateCompressedData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">updateCompressedData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateCompressedData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateCompressedData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The updateCompressedData function is deprecated and may be removed in a future version.
     Use (refactor your code) instead.</p>
@@ -1594,7 +1594,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.updateHeader">
-<code class="descname">updateHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L1700" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">updateHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeader" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The updateHeader function is deprecated and may be removed in a future version.
     Use (refactor your code; this function no longer does anything) instead.</p>
@@ -1604,7 +1604,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.updateHeaderData">
-<code class="descname">updateHeaderData</code><span class="sig-paren">(</span><em>image_header</em>, <em>name=None</em>, <em>compressionType=None</em>, <em>tileSize=None</em>, <em>hcompScale=None</em>, <em>hcompSmooth=None</em>, <em>quantizeLevel=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L1363" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeaderData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeaderData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">updateHeaderData</code><span class="sig-paren">(</span><em>image_header</em>, <em>name=None</em>, <em>compressionType=None</em>, <em>tileSize=None</em>, <em>hcompScale=None</em>, <em>hcompSmooth=None</em>, <em>quantizeLevel=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeaderData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeaderData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The updateHeaderData function will be deprecated in a future version.
     Use (refactor your code) instead.</p>
@@ -1614,7 +1614,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.update_ext_name">
-<code class="descname">update_ext_name</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L1055" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.update_ext_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_ext_name</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.update_ext_name" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The update_ext_name function will be deprecated in a future version.
     Use the <code class="docutils literal"><span class="pre">.name</span></code> attribute or <a class="reference internal" href="headers.html#astropy.io.fits.Header.set" title="astropy.io.fits.Header.set"><code class="xref py py-obj docutils literal"><span class="pre">Header.set</span></code></a> instead.</p>
@@ -1664,7 +1664,7 @@ preserved.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.update_ext_version">
-<code class="descname">update_ext_version</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L1104" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.update_ext_version" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_ext_version</code><span class="sig-paren">(</span><em>value</em>, <em>comment=None</em>, <em>before=None</em>, <em>after=None</em>, <em>savecomment=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/base.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.update_ext_version" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The update_ext_version function will be deprecated in a future version.
     Use the <code class="docutils literal"><span class="pre">.ver</span></code> attribute or <a class="reference internal" href="headers.html#astropy.io.fits.Header.set" title="astropy.io.fits.Header.set"><code class="xref py py-obj docutils literal"><span class="pre">Header.set</span></code></a> instead.</p>
@@ -1726,7 +1726,7 @@ preserved.</p>
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;warn&quot;</span></code>, or
 <code class="docutils literal"><span class="pre">&quot;exception&quot;</span></code>.  May also be any combination of <code class="docutils literal"><span class="pre">&quot;fix&quot;</span></code> or
 <code class="docutils literal"><span class="pre">&quot;silentfix&quot;</span></code> with <code class="docutils literal"><span class="pre">&quot;+ignore&quot;</span></code>, <code class="docutils literal"><span class="pre">+warn</span></code>, or <code class="docutils literal"><span class="pre">+exception&quot;</span>
-<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span class="std std-ref">Verification options</span></a> for more info.</p>
+<span class="pre">(e.g.</span> <span class="pre">``&quot;fix+warn&quot;</span></code>).  See <a class="reference internal" href="verification.html#verify"><span>Verification options</span></a> for more info.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1740,8 +1740,8 @@ preserved.</p>
 <dd><p>Verify that the value in the <code class="docutils literal"><span class="pre">CHECKSUM</span></code> keyword matches the
 value calculated for the current HDU CHECKSUM.</p>
 <dl class="docutils">
-<dt>blocking</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span><dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
+<dt>blocking <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
 not</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1768,8 +1768,8 @@ not</dd>
 <dd><p>Verify that the value in the <code class="docutils literal"><span class="pre">DATASUM</span></code> keyword matches the value
 calculated for the <code class="docutils literal"><span class="pre">DATASUM</span></code> of the current HDU data.</p>
 <dl class="docutils">
-<dt>blocking</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span><dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
+<dt>blocking <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>&#8220;standard&#8221; or &#8220;nonstandard&#8221;, compute sum 2880 bytes at a time, or
 not</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1811,7 +1811,7 @@ their own).</p>
 the underlying FITS file on disk, and applies any BSCALE/BZERO factors.</p>
 <p>Section slices cannot be assigned to, and modifications to a section are
 not saved back to the underlying file.</p>
-<p>See the <a class="reference internal" href="../usage/image.html#data-sections"><span class="std std-ref">Data Sections</span></a> section of the PyFITS documentation for more
+<p>See the <a class="reference internal" href="../usage/image.html#data-sections"><span>Data Sections</span></a> section of the PyFITS documentation for more
 details.</p>
 </dd></dl>
 
@@ -1849,8 +1849,8 @@ details.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Time &mdash; Astropy v1.2.dev14980</title>
+    <title>Time &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Time and Dates (astropy.time)" href="../time/index.html" />
     <link rel="next" title="TimeBesselianEpoch" href="astropy.time.TimeBesselianEpoch.html" />
     <link rel="prev" title="ScaleValueError" href="astropy.time.ScaleValueError.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../time/index.html" accesskey="U">Time and Dates (<code class="docutils literal"><span class="pre">astropy.time</span></code>)</a> &raquo;</li>
@@ -98,7 +98,7 @@ optional <code class="docutils literal"><span class="pre">val2</span></code> tim
 formats (e.g. JD) where very high precision (better than 64-bit precision)
 is required.</p>
 <p>The allowed values for <code class="docutils literal"><span class="pre">format</span></code> can be listed with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Time</span><span class="o">.</span><span class="n">FORMATS</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Time</span><span class="o">.</span><span class="n">FORMATS</span><span class="p">)</span>
 <span class="go">[&#39;jd&#39;, &#39;mjd&#39;, &#39;decimalyear&#39;, &#39;unix&#39;, &#39;cxcsec&#39;, &#39;gps&#39;, &#39;plot_date&#39;,</span>
 <span class="go"> &#39;datetime&#39;, &#39;iso&#39;, &#39;isot&#39;, &#39;yday&#39;, &#39;fits&#39;, &#39;byear&#39;, &#39;jyear&#39;, &#39;byear_str&#39;,</span>
 <span class="go"> &#39;jyear_str&#39;]</span>
@@ -341,7 +341,7 @@ data are views of the data of the original.</p>
 <code class="docutils literal"><span class="pre">.value</span></code> attribute.  By default it is the same as the format used for
 initializing the <a class="reference internal" href="#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-obj docutils literal"><span class="pre">Time</span></code></a> instance, but it can be set to any other value
 that could be used for initialization.  These can be listed with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Time</span><span class="o">.</span><span class="n">FORMATS</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Time</span><span class="o">.</span><span class="n">FORMATS</span><span class="p">)</span>
 <span class="go">[&#39;jd&#39;, &#39;mjd&#39;, &#39;decimalyear&#39;, &#39;unix&#39;, &#39;cxcsec&#39;, &#39;gps&#39;, &#39;plot_date&#39;,</span>
 <span class="go"> &#39;datetime&#39;, &#39;iso&#39;, &#39;isot&#39;, &#39;yday&#39;, &#39;fits&#39;, &#39;byear&#39;, &#39;jyear&#39;, &#39;byear_str&#39;,</span>
 <span class="go"> &#39;jyear_str&#39;]</span>
@@ -555,20 +555,20 @@ covered by the IERS table.</p>
 on the first instance ut1 is needed.</p>
 <p class="rubric">Examples</p>
 <p>To check in code whether any times are before the IERS table range:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.iers</span> <span class="k">import</span> <span class="n">TIME_BEFORE_IERS_RANGE</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.iers</span> <span class="kn">import</span> <span class="n">TIME_BEFORE_IERS_RANGE</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Time</span><span class="p">([</span><span class="s">&#39;1961-01-01&#39;</span><span class="p">,</span> <span class="s">&#39;2000-01-01&#39;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;utc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">delta</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_delta_ut1_utc</span><span class="p">(</span><span class="n">return_status</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">delta</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_delta_ut1_utc</span><span class="p">(</span><span class="n">return_status</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">status</span> <span class="o">==</span> <span class="n">TIME_BEFORE_IERS_RANGE</span>
 <span class="go">array([ True, False], dtype=bool)</span>
 </pre></div>
 </div>
 <p>To use an updated IERS A bulletin to calculate UT1-UTC
 (see also <code class="docutils literal"><span class="pre">astropy.utils.iers</span></code>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.iers</span> <span class="k">import</span> <span class="n">IERS_A</span><span class="p">,</span> <span class="n">IERS_A_URL</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="k">import</span> <span class="n">download_file</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.iers</span> <span class="kn">import</span> <span class="n">IERS_A</span><span class="p">,</span> <span class="n">IERS_A_URL</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Time</span><span class="p">([</span><span class="s">&#39;1974-01-01&#39;</span><span class="p">,</span> <span class="s">&#39;2000-01-01&#39;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#39;utc&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">iers_a_file</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">IERS_A_URL</span><span class="p">,</span>
-<span class="gp">... </span>                            <span class="n">cache</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>        
+<span class="gp">... </span>                            <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>        
 <span class="go">Downloading ... [Done]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">iers_a</span> <span class="o">=</span> <span class="n">IERS_A</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">iers_a_file</span><span class="p">)</span>              
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">delta_ut1_utc</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_delta_ut1_utc</span><span class="p">(</span><span class="n">iers_a</span><span class="p">)</span>  
@@ -891,8 +891,8 @@ data are views of the data of the original.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Model &mdash; Astropy v1.2.dev14980</title>
+    <title>Model &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="../modeling/index.html" />
     <link rel="next" title="ModelDefinitionError" href="astropy.modeling.ModelDefinitionError.html" />
     <link rel="prev" title="LabeledInput" href="astropy.modeling.LabeledInput.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../modeling/index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -179,7 +179,7 @@ in a successfully optimized problem.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="k">import</span> <span class="n">models</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">tie_center</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="n">mean</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">model</span><span class="o">.</span><span class="n">stddev</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="n">mean</span>
@@ -187,12 +187,12 @@ in a successfully optimized problem.</p>
 </pre></div>
 </div>
 <p>Specify that <code class="docutils literal"><span class="pre">'mean'</span></code> is a tied parameter in one of two ways:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span>
 <span class="gp">... </span>                       <span class="n">tied</span><span class="o">=</span><span class="n">tied_parameters</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">tied</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">tied</span> <span class="o">=</span> <span class="n">tie_center</span>
@@ -201,17 +201,17 @@ in a successfully optimized problem.</p>
 </pre></div>
 </div>
 <p>Fixed parameters:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="n">fixed</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;stddev&#39;</span><span class="p">:</span> <span class="k">True</span><span class="p">})</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">fixed</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;stddev&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">stddev</span><span class="o">.</span><span class="n">fixed</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">stddev</span><span class="o">.</span><span class="n">fixed</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">stddev</span><span class="o">.</span><span class="n">fixed</span> <span class="o">=</span> <span class="k">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">stddev</span><span class="o">.</span><span class="n">fixed</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">stddev</span><span class="o">.</span><span class="n">fixed</span>
 <span class="go">True</span>
 </pre></div>
@@ -347,7 +347,7 @@ defined in the class body of a specific model.  If not defined then
 this property just raises <code class="xref py py-obj docutils literal"><span class="pre">NotImplementedError</span></code> by default (but may be
 assigned a custom value by a user).  <code class="docutils literal"><span class="pre">bounding_box</span></code> can be set
 manually to an array-like object of shape <code class="docutils literal"><span class="pre">(model.n_inputs,</span> <span class="pre">2)</span></code>. For
-further usage, see <a class="reference internal" href="../modeling/bounding-boxes.html#bounding-boxes"><span class="std std-ref">Efficient Model Rendering with Bounding Boxes</span></a></p>
+further usage, see <a class="reference internal" href="../modeling/bounding-boxes.html#bounding-boxes"><span>Efficient Model Rendering with Bounding Boxes</span></a></p>
 <p>The limits are ordered according to the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> indexing
 convention, and are the reverse of the model input order,
 e.g. for inputs <code class="docutils literal"><span class="pre">('x',</span> <span class="pre">'y',</span> <span class="pre">'z')</span></code>, <code class="docutils literal"><span class="pre">bounding_box</span></code> is defined:</p>
@@ -358,7 +358,7 @@ e.g. for inputs <code class="docutils literal"><span class="pre">('x',</span> <s
 </ul>
 <p class="rubric">Examples</p>
 <p>Setting the <code class="docutils literal"><span class="pre">bounding_box</span></code> limits for a 1D and 2D model:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Gaussian1D</span><span class="p">,</span> <span class="n">Gaussian2D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Gaussian1D</span><span class="p">,</span> <span class="n">Gaussian2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model_1d</span> <span class="o">=</span> <span class="n">Gaussian1D</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model_2d</span> <span class="o">=</span> <span class="n">Gaussian2D</span><span class="p">(</span><span class="n">x_stddev</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_stddev</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model_1d</span><span class="o">.</span><span class="n">bounding_box</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -366,7 +366,7 @@ e.g. for inputs <code class="docutils literal"><span class="pre">('x',</span> <s
 </pre></div>
 </div>
 <p>Setting the bounding_box limits for a user-defined 3D <a class="reference internal" href="astropy.modeling.custom_model.html#astropy.modeling.custom_model" title="astropy.modeling.custom_model"><code class="xref py py-obj docutils literal"><span class="pre">custom_model</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">custom_model</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">custom_model</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">const3d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="k">return</span> <span class="n">amp</span>
 <span class="gp">...</span>
@@ -378,12 +378,12 @@ e.g. for inputs <code class="docutils literal"><span class="pre">('x',</span> <s
 <p>To reset <code class="docutils literal"><span class="pre">bounding_box</span></code> to its default limits just delete the
 user-defined value&#8211;this will reset it back to the default defined
 on the class:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">model_1d</span><span class="o">.</span><span class="n">bounding_box</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">model_1d</span><span class="o">.</span><span class="n">bounding_box</span>
 </pre></div>
 </div>
 <p>To disable the bounding box entirely (including the default),
 set <code class="docutils literal"><span class="pre">bounding_box</span></code> to <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">model_1d</span><span class="o">.</span><span class="n">bounding_box</span> <span class="o">=</span> <span class="k">None</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">model_1d</span><span class="o">.</span><span class="n">bounding_box</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model_1d</span><span class="o">.</span><span class="n">bounding_box</span>  
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
@@ -583,7 +583,7 @@ that were specified when the model was instantiated.</p>
 
 <dl class="method">
 <dt id="astropy.modeling.Model.add_model">
-<code class="descname">add_model</code><span class="sig-paren">(</span><em>model</em>, <em>mode</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/core.py#L1228" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/core.html#Model.add_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.Model.add_model" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_model</code><span class="sig-paren">(</span><em>model</em>, <em>mode</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/core.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/core.html#Model.add_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.Model.add_model" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 1.0: </span>The add_model function is deprecated and may be removed in a future version.
     Use Use Model operators (TODO: link to compound model docs instead.</p>
@@ -647,7 +647,7 @@ there are more than one parameter sets.</p>
 <dd><p>Creates a copy of this model class with a new name.</p>
 <p>The new class is technically a subclass of the original class, so that
 instance and type checks will still work.  For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="k">import</span> <span class="n">Rotation2D</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling.models</span> <span class="kn">import</span> <span class="n">Rotation2D</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">SkyRotation</span> <span class="o">=</span> <span class="n">Rotation2D</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;SkyRotation&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">SkyRotation</span>
 <span class="go">&lt;class &#39;__main__.SkyRotation&#39;&gt;</span>
@@ -711,7 +711,7 @@ model is not set.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<p><a class="reference internal" href="../modeling/bounding-boxes.html#bounding-boxes"><span class="std std-ref">Efficient Model Rendering with Bounding Boxes</span></a></p>
+<p><a class="reference internal" href="../modeling/bounding-boxes.html#bounding-boxes"><span>Efficient Model Rendering with Bounding Boxes</span></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -740,8 +740,8 @@ model is not set.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>poisson_conf_interval &mdash; Astropy v1.2.dev14980</title>
+    <title>poisson_conf_interval &mdash; Astropy v1.2.dev14994</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14980',
+        VERSION:     '1.2.dev14994',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14980" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="rayleightest" href="astropy.stats.rayleightest.html" />
     <link rel="prev" title="median_absolute_deviation" href="astropy.stats.median_absolute_deviation.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14980</a>
+	<a href="../index.html">Astropy v1.2.dev14994</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -148,7 +148,7 @@ process. While it produces questionable results for small n and
 outright wrong results for n=0, it is standard enough that people are
 (supposedly) used to interpreting these wonky values. The interval is</p>
 <div class="math">
-<p><img src="../_images/math/2acc42b081f0a3f8dd166a65050156919f8b2b46.png" alt="CI = (n-\sqrt{n}, n+\sqrt{n})"/></p>
+<p><img src="../_images/math/99beaacb3c9b6a9527beb342f2f1d880e9cc4952.png" alt="CI = (n-\sqrt{n}, n+\sqrt{n})"/></p>
 </div><p><strong>2. &#8216;root-n-0&#8217;</strong> This is identical to the above except that where
 n is zero the interval returned is (0,1).</p>
 <p><strong>3. &#8216;pearson&#8217;</strong> This is an only-slightly-more-complicated rule
@@ -157,7 +157,7 @@ the CDF working group). It also has the nice feature that
 if your theory curve touches an endpoint of the interval, then your
 data point is indeed one sigma away. The interval is</p>
 <div class="math">
-<p><img src="../_images/math/2f69aa14955108ba91b2c28027641a027d5330f5.png" alt="CI = (n+0.5-\sqrt{n+0.25}, n+0.5+\sqrt{n+0.25})"/></p>
+<p><img src="../_images/math/753ee0f51e461f6c1f655e1e370a354c2aff1d29.png" alt="CI = (n+0.5-\sqrt{n+0.25}, n+0.5+\sqrt{n+0.25})"/></p>
 </div><p><strong>4. &#8216;sherpagehrels&#8217;</strong> This rule is used by default in the fitting
 package &#8216;sherpa&#8217;. The [documentation][sherpa_gehrels] claims it is
 based on a numerical approximation published in
@@ -166,11 +166,11 @@ It is symmetrical, and while the upper limits
 are within about 1% of those given by &#8216;frequentist-confidence&#8217;, the
 lower limits can be badly wrong. The interval is</p>
 <div class="math">
-<p><img src="../_images/math/bf02f52282fc190ee9d85be533b6a0ffe40f75f2.png" alt="CI = (n-1-\sqrt{n+0.75}, n+1+\sqrt{n+0.75})"/></p>
+<p><img src="../_images/math/b7405a9fc74b77f771ff46a027a083c37e6d5dd6.png" alt="CI = (n-1-\sqrt{n+0.75}, n+1+\sqrt{n+0.75})"/></p>
 </div><p><strong>5. &#8216;frequentist-confidence&#8217;</strong> These are frequentist central
 confidence intervals:</p>
 <div class="math">
-<p><img src="../_images/math/514abeb9336f4514b188724c127e9111634248b5.png" alt="CI = (0.5 F_{\chi^2}^{-1}(\alpha;2n),
+<p><img src="../_images/math/6c61bccf909287f9a88ea4f2e795488040bd825e.png" alt="CI = (0.5 F_{\chi^2}^{-1}(\alpha;2n),
       0.5 F_{\chi^2}^{-1}(1-\alpha;2(n+1)))"/></p>
 </div><p>where <img class="math" src="../_images/math/dc8bbcf5ce9ef41886aa58acd07ed1386c626c86.png" alt="F_{\chi^2}^{-1}"/> is the quantile of the chi-square
 distribution with the indicated number of degrees of freedom and
@@ -183,13 +183,13 @@ for the presence of a known background <img class="math" src="../_images/math/83
 For a given confidence level <img class="math" src="../_images/math/a8e450db2c0dbd54c86acb78a560920842751479.png" alt="CL"/> the confidence interval
 <img class="math" src="../_images/math/a234d4b8ebdab3df2a0b0f77f1bf504b45aa3b34.png" alt="[S_\mathrm{min}, S_\mathrm{max}]"/> is given by:</p>
 <div class="math">
-<p><img src="../_images/math/5625a83c0b92f3361cc207cc8c6221ab4d44d0d1.png" alt="CL = \int^{S_\mathrm{max}}_{S_\mathrm{min}} f_{N,B}(S)dS"/></p>
+<p><img src="../_images/math/2a16374034b3551cf7b058321f5e462e70d99bc5.png" alt="CL = \int^{S_\mathrm{max}}_{S_\mathrm{min}} f_{N,B}(S)dS"/></p>
 </div><p>where the function <img class="math" src="../_images/math/caaf63456188ce74ab52927982e07a6214461ba1.png" alt="f_{N,B}"/> is:</p>
 <div class="math">
-<p><img src="../_images/math/2a9eb936262cc03197e129b02be330aebd6d76c7.png" alt="f_{N,B}(S) = C \frac{e^{-(S+B)}(S+B)^N}{N!}"/></p>
+<p><img src="../_images/math/b3e7187d8e420aa6beeada3357a13b2f12472be2.png" alt="f_{N,B}(S) = C \frac{e^{-(S+B)}(S+B)^N}{N!}"/></p>
 </div><p>and the normalization constant <img class="math" src="../_images/math/2bcc65482aa8e15cd4c9e9f2542451fb4e971a91.png" alt="C"/>:</p>
 <div class="math">
-<p><img src="../_images/math/143291d7c1858dc8189571cc178af055f8e24402.png" alt="C = \left[ \int_0^\infty \frac{e^{-(S+B)}(S+B)^N}{N!} dS \right] ^{-1}
+<p><img src="../_images/math/146c41a0ec46e5e2502d0f77883bef9646dc3763.png" alt="C = \left[ \int_0^\infty \frac{e^{-(S+B)}(S+B)^N}{N!} dS \right] ^{-1}
 = \left( \sum^N_{n=0} \frac{e^{-B}B^n}{n!}  \right)^{-1}"/></p>
 </div><p>See [KraftBurrowsNousek][kbn1991] for further details.</p>
 <p>These formulas implement a positive, uniform prior.
@@ -199,7 +199,7 @@ that the problem is relatively insensitive to the choice of prior.</p>
 <a class="reference external" href="http://mpmath.org/">mpmath</a>  need to be available. (Scipy only works for
 N &lt; 100).</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&#39;root-n&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&#39;root-n&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[  0.        ,   0.        ],</span>
 <span class="go">       [  0.        ,   2.        ],</span>
 <span class="go">       [  0.58578644,   3.41421356],</span>
@@ -212,7 +212,7 @@ N &lt; 100).</p>
 <span class="go">       [  6.        ,  12.        ]])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&#39;root-n-0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&#39;root-n-0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[  0.        ,   1.        ],</span>
 <span class="go">       [  0.        ,   2.        ],</span>
 <span class="go">       [  0.58578644,   3.41421356],</span>
@@ -225,7 +225,7 @@ N &lt; 100).</p>
 <span class="go">       [  6.        ,  12.        ]])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&#39;pearson&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&#39;pearson&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[  0.        ,   1.        ],</span>
 <span class="go">       [  0.38196601,   2.61803399],</span>
 <span class="go">       [  1.        ,   4.        ],</span>
@@ -238,7 +238,7 @@ N &lt; 100).</p>
 <span class="go">       [  6.45861873,  12.54138127]])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
 <span class="gp">... </span>                      <span class="n">interval</span><span class="o">=</span><span class="s">&#39;frequentist-confidence&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[  0.        ,   1.84102165],</span>
 <span class="go">       [  0.17275378,   3.29952656],</span>
@@ -252,12 +252,12 @@ N &lt; 100).</p>
 <span class="go">       [  6.05653896,  13.11020414]])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>
 <span class="gp">... </span>                      <span class="n">interval</span><span class="o">=</span><span class="s">&#39;frequentist-confidence&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([  4.41852954,  10.77028072])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">conflevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">poisson_conf_interval</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">conflevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
 <span class="gp">... </span>                      <span class="n">interval</span><span class="o">=</span><span class="s">&#39;kraft-burrows-nousek&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([  3.47894005, 16.113329533])   </span>
 </pre></div>
@@ -295,8 +295,8 @@ N &lt; 100).</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1. &nbsp;
-    Last built 29 Apr 2016. <br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 11 May 2016. <br/>
   </p>
 </footer>
   </body>
