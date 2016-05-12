@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14999</title>
+    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev15003</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14999',
+        VERSION:     '1.2.dev15003',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14999" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
     <link rel="next" title="akaike_info_criterion" href="../api/astropy.stats.akaike_info_criterion.html" />
     <link rel="prev" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14999</a>
+	<a href="../index.html">Astropy v1.2.dev15003</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -270,6 +270,34 @@ over the phased data.</p>
 <img alt="../_images/lombscargle-4.png" src="../_images/lombscargle-4.png" />
 </div>
 </div>
+<div class="section" id="additional-arguments">
+<h3>Additional Arguments<a class="headerlink" href="#additional-arguments" title="Permalink to this headline">¶</a></h3>
+<p>On initialization, <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> takes a few additional
+arguments which control the model for the data:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">center_data</span></code> (<code class="docutils literal"><span class="pre">True</span></code> by default) controls whether the <code class="docutils literal"><span class="pre">y</span></code> values are
+pre-centered before the algorithm fits the data.
+The only time it is really warranted to change the default
+is if you are computing the periodogram of a sequence
+of constant values to, e.g. estimate the window power spectrum for a series of
+observations.</li>
+<li><code class="docutils literal"><span class="pre">fit_mean</span></code> (<code class="docutils literal"><span class="pre">True</span></code> by default) controls whether the model fits for the
+mean of the data, rather than assuming the mean is zero. When <code class="docutils literal"><span class="pre">fit_mean=True</span></code>,
+the periodogram is more robust than the original Lomb-Scargle formalism,
+particularly in the case of smaller sample sizes and/or
+data with nontrivial selection bias. In the literature, this model has
+variously been called the <em>date-compensated discrete Fourier transform</em>,
+the <em>floating-mean periodogram</em>, the  <em>generalized Lomb-Scargle method</em>,
+and likely other names as well.</li>
+<li><code class="docutils literal"><span class="pre">nterms</span></code> (<code class="docutils literal"><span class="pre">1</span></code> by default) controls how many Fourier terms are used in the
+model. As seen above, the standard Lomb-Scargle periodogram is equivalent to
+a single-term sinusoidal fit to the data at each frequency; the obvious
+generalization is to expand this to a truncated Fourier series with multiple
+frequencies. While this can be very useful in some cases, in others the
+additional model complexity can lead to spurious periodogram peaks that
+outweigh the benefit of the more flexible model.</li>
+</ul>
+</div>
 </div>
 <div class="section" id="periodogram-normalizations">
 <span id="lomb-scargle-normalization"></span><h2>Periodogram Normalizations<a class="headerlink" href="#periodogram-normalizations" title="Permalink to this headline">¶</a></h2>
@@ -377,7 +405,7 @@ which can be selected using the <code class="docutils literal"><span class="pre"
 By design all methods will return the same results (some approximate),
 and each has its advandages and disadganvages.</p>
 <p>For example, to compute a periodogram using the fast chi-square method
-of Palmer (2009) <a class="footnote-reference" href="#id26" id="id9">[9]</a>, you can specify <code class="docutils literal"><span class="pre">method='fastchi2'</span></code>:</p>
+of Palmer (2009) <a class="footnote-reference" href="#id24" id="id9">[9]</a>, you can specify <code class="docutils literal"><span class="pre">method='fastchi2'</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;fastchi2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -392,7 +420,7 @@ from the following methods using heuristics driven by the input data.</p>
 <p>The <code class="docutils literal"><span class="pre">slow</span></code> method is a pure-Python implementation of the original Lomb-Scargle
 periodogram (<a class="footnote-reference" href="#id16" id="id10">[1]</a>, <a class="footnote-reference" href="#id17" id="id11">[2]</a>), enhanced to account for observational noise,
 and to allow a floating mean (sometimes called the <em>generalized periodogram</em>;
-see e.g. <a class="footnote-reference" href="#id27" id="id12">[10]</a>). The method is not particularly fast, scaling approximately
+see e.g. <a class="footnote-reference" href="#id25" id="id12">[10]</a>). The method is not particularly fast, scaling approximately
 as <img class="math" src="../_images/math/eab00b2b434f64ee3ac09a64d73da0e3eabde270.png" alt="O[NM]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> data points and <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies.</p>
 </div>
 <div class="section" id="method-cython">
@@ -433,7 +461,7 @@ parameter. For the standard problem, it is slightly slower than
 </div>
 <div class="section" id="method-fastchi2">
 <h3><code class="docutils literal"><span class="pre">method='fastchi2'</span></code><a class="headerlink" href="#method-fastchi2" title="Permalink to this headline">¶</a></h3>
-<p>The fast chi-squared method of Palmer (2009) <a class="footnote-reference" href="#id26" id="id15">[9]</a> is equivalent to the <code class="docutils literal"><span class="pre">chi2</span></code> method,
+<p>The fast chi-squared method of Palmer (2009) <a class="footnote-reference" href="#id24" id="id15">[9]</a> is equivalent to the <code class="docutils literal"><span class="pre">chi2</span></code> method,
 but the matrices are constructed using an FFT-based approach similar to that
 of the <code class="docutils literal"><span class="pre">fast</span></code> method. The result is a relatively efficient periodogram
 (though not nearly as efficient as the <code class="docutils literal"><span class="pre">fast</span></code> method) which can be extended
@@ -596,18 +624,18 @@ Time Series</em>. ApJ 812.1:18 (2015)</td></tr>
 <table class="docutils footnote" frame="void" id="id23" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td>Baluev, R.V. <a href="#id24"><span class="problematic" id="id25">*</span></a>Assessing Statistical Significance of Periodogram Peaks&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td>Baluev, R.V. <em>Assessing Statistical Significance of Periodogram Peaks</em>
 MNRAS 385, 1279 (2008)</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id26" rules="none">
+<table class="docutils footnote" frame="void" id="id24" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[9]</td><td><em>(<a class="fn-backref" href="#id9">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> Palmer, D. <em>A Fast Chi-squared Technique for Period Search of
 Irregularly Sampled Data</em>. ApJ 695.1:496 (2009)</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id27" rules="none">
+<table class="docutils footnote" frame="void" id="id25" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id12">[10]</a></td><td>Zechmeister, M. and Kurster, M. <em>The generalised Lomb-Scargle
@@ -634,6 +662,7 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-lomb-scargle-model">The Lomb-Scargle Model</a></li>
+<li><a class="reference internal" href="#additional-arguments">Additional Arguments</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#periodogram-normalizations">Periodogram Normalizations</a><ul>
