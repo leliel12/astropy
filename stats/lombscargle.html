@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14994</title>
+    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14996</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14994',
+        VERSION:     '1.2.dev14996',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14994" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14996" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
     <link rel="next" title="akaike_info_criterion" href="../api/astropy.stats.akaike_info_criterion.html" />
     <link rel="prev" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14994</a>
+	<a href="../index.html">Astropy v1.2.dev14996</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -148,8 +148,8 @@ an array:</p>
 <p>Gaussian uncertainties are assumed, and <code class="docutils literal"><span class="pre">dy</span></code> here specifies the standard
 deviation (not the variance).</p>
 </div>
-<div class="section" id="data-and-periodogram-units">
-<h3>Data and Periodogram Units<a class="headerlink" href="#data-and-periodogram-units" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="units-and-normalization">
+<h3>Units and Normalization<a class="headerlink" href="#units-and-normalization" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> interface properly handles
 <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> objects with units attached,
 and will validate the inputs to make sure units are appropriate. For example:</p>
@@ -164,25 +164,59 @@ and will validate the inputs to make sure units are appropriate. For example:</p
 <span class="go">Unit(dimensionless)</span>
 </pre></div>
 </div>
-<p>In the standard normalization, regardless of the units of the input,
-the Lomb-Scargle power <em>P</em> is a dimensionless quantity satisfying <em>0 ≤ P ≤ 1</em>.
-For the unnormalized periodogram, (i.e. <code class="docutils literal"><span class="pre">normalization='unnormalized'</span></code>),
-the Lomb-Scargle power is unitless in the presence of uncertainties,
-and has units of <code class="docutils literal"><span class="pre">y.unit</span> <span class="pre">**</span> <span class="pre">2</span></code> otherwise:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># with uncertainties: power is unitless</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">,</span> <span class="n">dy_mags</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="s">&#39;unnormalized&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">power</span><span class="o">.</span><span class="n">unit</span>
-<span class="go">Unit(dimensionless)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># without uncertainties: power has units</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="s">&#39;unnormalized&#39;</span><span class="p">)</span>
+<p>We see that the output is dimensionless, which is always the case for the
+normalized periodogram (<code class="docutils literal"><span class="pre">normalization='normalized'</span></code>, which is the default).
+Regardless of the input units in this case, the Lomb-Scargle power <em>P</em> is a
+dimensionless quantity satisfying <em>0 ≤ P ≤ 1</em>.</p>
+<p>Alternatively, you can choose <code class="docutils literal"><span class="pre">normalization='psd'</span></code>, which will output the
+periodogram with units <code class="docutils literal"><span class="pre">y.unit</span> <span class="pre">**</span> <span class="pre">2</span></code>, similar to the Fourier power spectral
+density (PSD):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="s">&#39;psd&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">power</span><span class="o">.</span><span class="n">unit</span>
 <span class="go">Unit(&quot;mag2&quot;)</span>
 </pre></div>
 </div>
+<p>Note, however, that the <code class="docutils literal"><span class="pre">psd</span></code> result only has these units <em>if uncertainties
+are not specified</em>. In the presence of uncertainties, even the unnormalized
+periodogram is dimensionless; this is due to the scaling of data by uncertainty
+within the Lomb-Scargle computation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># with uncertainties, PSD power is unitless</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">,</span> <span class="n">dy_mags</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="s">&#39;psd&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">power</span><span class="o">.</span><span class="n">unit</span>
+<span class="go">Unit(dimensionless)</span>
+</pre></div>
+</div>
+<p>The equivalence of the periodogram and the Fourier PSD in the unnormalized,
+no-uncertainty case can be confirmed by comparing results directly for
+uniformly-sampled inputs.
+We will first define a convenience function to compute the basic
+Fourier periodogram for uniformly-sampled data:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">fourier_periodogram</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">frequency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">... </span>    <span class="n">y_fft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="o">.</span><span class="n">unit</span>
+<span class="gp">... </span>    <span class="n">positive</span> <span class="o">=</span> <span class="p">(</span><span class="n">frequency</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">frequency</span><span class="p">[</span><span class="n">positive</span><span class="p">],</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y_fft</span><span class="p">[</span><span class="n">positive</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Next we compute the two versions of the PSD from uniformly-sampled data:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">periodogram</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t_days</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">day</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_mags</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">PSD_fourier</span> <span class="o">=</span> <span class="n">fourier_periodogram</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PSD_LS</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">normalization</span><span class="o">=</span><span class="s">&#39;psd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Examining the results, we see that the results match:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.tests.helper</span> <span class="kn">import</span> <span class="n">quantity_allclose</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quantity_allclose</span><span class="p">(</span><span class="n">PSD_fourier</span><span class="p">,</span> <span class="n">PSD_LS</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>This equivalence is one reason the Lomb-Scargle periodogram is considered
+to be an extension of the Fourier PSD.</p>
 </div>
 <div class="section" id="specifying-the-frequency">
 <h3>Specifying the Frequency<a class="headerlink" href="#specifying-the-frequency" title="Permalink to this headline">¶</a></h3>
@@ -539,7 +573,7 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 <li><a class="reference internal" href="#">Lomb-Scargle Periodograms</a><ul>
 <li><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
 <li><a class="reference internal" href="#measurement-uncertainties">Measurement Uncertainties</a></li>
-<li><a class="reference internal" href="#data-and-periodogram-units">Data and Periodogram Units</a></li>
+<li><a class="reference internal" href="#units-and-normalization">Units and Normalization</a></li>
 <li><a class="reference internal" href="#specifying-the-frequency">Specifying the Frequency</a><ul>
 <li><a class="reference internal" href="#frequency-grid-spacing">Frequency Grid Spacing</a></li>
 </ul>
@@ -578,7 +612,7 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 11 May 2016. <br/>
+    Last built 12 May 2016. <br/>
   </p>
 </footer>
   </body>
