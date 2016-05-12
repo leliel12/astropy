@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LombScargle &mdash; Astropy v1.2.dev14997</title>
+    <title>LombScargle &mdash; Astropy v1.2.dev14999</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14997',
+        VERSION:     '1.2.dev14999',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14997" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14999" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="PointMeasures" href="astropy.stats.PointMeasures.html" />
     <link rel="prev" title="FitnessFunc" href="astropy.stats.FitnessFunc.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14997</a>
+	<a href="../index.html">Astropy v1.2.dev14999</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -91,6 +91,9 @@
 <em class="property">class </em><code class="descclassname">astropy.stats.</code><code class="descname">LombScargle</code><span class="sig-paren">(</span><em>t</em>, <em>y</em>, <em>dy=None</em>, <em>fit_bias=True</em>, <em>center_data=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L28" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>Compute the Lomb-Scargle Periodogram</p>
+<p>This implementations here are based on code presented in <a class="reference internal" href="#r12" id="id1">[R12]</a> and <a class="reference internal" href="#r13" id="id2">[R13]</a>;
+if you use this functionality in an academic application, citation of
+those works would be appreciated.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -120,6 +123,22 @@ of the input data. This is especially important if fit_bias = False</p>
 </div></blockquote>
 </td>
 </tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R12]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Vanderplas, J., Connolly, A. Ivezic, Z. &amp; Gray, A. <em>Introduction to
+astroML: Machine learning for astrophysics</em>. Proceedings of the
+Conference on Intelligent Data Understanding (2012)</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R13]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> VanderPlas, J. &amp; Ivezic, Z. <em>Periodograms for Multiband Astronomical
+Time Series</em>. ApJ 812.1:18 (2015)</td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -199,7 +218,7 @@ model at each frequency.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="astropy.stats.LombScargle.autofrequency">
-<code class="descname">autofrequency</code><span class="sig-paren">(</span><em>samples_per_peak=5</em>, <em>nyquist_factor=5</em>, <em>minimum_frequency=None</em>, <em>maximum_frequency=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L147" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.autofrequency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.autofrequency" title="Permalink to this definition">¶</a></dt>
+<code class="descname">autofrequency</code><span class="sig-paren">(</span><em>samples_per_peak=5</em>, <em>nyquist_factor=5</em>, <em>minimum_frequency=None</em>, <em>maximum_frequency=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L159" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.autofrequency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.autofrequency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine a suitable frequency grid for data.</p>
 <p>Note that this assumes the peak width is driven by the observational
 baseline, which is generally a good assumption when the baseline is
@@ -248,7 +267,7 @@ chosen based on the average nyquist frequency.</p>
 
 <dl class="method">
 <dt id="astropy.stats.LombScargle.autopower">
-<code class="descname">autopower</code><span class="sig-paren">(</span><em>method='auto'</em>, <em>method_kwds=None</em>, <em>normalization='standard'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L200" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.autopower"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.autopower" title="Permalink to this definition">¶</a></dt>
+<code class="descname">autopower</code><span class="sig-paren">(</span><em>method='auto'</em>, <em>method_kwds=None</em>, <em>normalization='standard'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L212" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.autopower"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.autopower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Lomb-Scargle power at automatically-determined frequencies</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -281,7 +300,7 @@ heteroskedastic errors.</li>
 <p><strong>normalization</strong> : string (optional, default=&#8217;standard&#8217;)</p>
 <blockquote>
 <div><p>Normalization to use for the periodogram.
-Options are &#8216;standard&#8217; or &#8216;psd&#8217;.</p>
+Options are &#8216;standard&#8217;, &#8216;model&#8217;, or &#8216;psd&#8217;.</p>
 </div></blockquote>
 <p><strong>**kwargs :</strong></p>
 <blockquote>
@@ -301,7 +320,7 @@ Options are &#8216;standard&#8217; or &#8216;psd&#8217;.</p>
 
 <dl class="method">
 <dt id="astropy.stats.LombScargle.model">
-<code class="descname">model</code><span class="sig-paren">(</span><em>t</em>, <em>frequency</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L304" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.model" title="Permalink to this definition">¶</a></dt>
+<code class="descname">model</code><span class="sig-paren">(</span><em>t</em>, <em>frequency</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L316" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Lomb-Scargle model at the given frequency</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -329,7 +348,7 @@ Options are &#8216;standard&#8217; or &#8216;psd&#8217;.</p>
 
 <dl class="method">
 <dt id="astropy.stats.LombScargle.power">
-<code class="descname">power</code><span class="sig-paren">(</span><em>frequency</em>, <em>normalization='standard'</em>, <em>method='auto'</em>, <em>assume_regular_frequency=False</em>, <em>method_kwds=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L244" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.power" title="Permalink to this definition">¶</a></dt>
+<code class="descname">power</code><span class="sig-paren">(</span><em>frequency</em>, <em>normalization='standard'</em>, <em>method='auto'</em>, <em>assume_regular_frequency=False</em>, <em>method_kwds=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/lombscargle/core.py#L256" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/lombscargle/core.html#LombScargle.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.LombScargle.power" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Lomb-Scargle power at the given frequencies</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -370,7 +389,7 @@ or &#8216;fast&#8217;.</p>
 <p><strong>normalization</strong> : string (optional, default=&#8217;standard&#8217;)</p>
 <blockquote>
 <div><p>Normalization to use for the periodogram.
-Options are &#8216;standard&#8217; or &#8216;psd&#8217;.</p>
+Options are &#8216;standard&#8217;, &#8216;model&#8217;, &#8216;log&#8217;, or &#8216;psd&#8217;.</p>
 </div></blockquote>
 <p><strong>fit_bias</strong> : bool (optional, default=True)</p>
 <blockquote>

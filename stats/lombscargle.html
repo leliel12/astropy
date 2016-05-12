@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14997</title>
+    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev14999</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev14997',
+        VERSION:     '1.2.dev14999',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev14997" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev14999" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
     <link rel="next" title="akaike_info_criterion" href="../api/astropy.stats.akaike_info_criterion.html" />
     <link rel="prev" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev14997</a>
+	<a href="../index.html">Astropy v1.2.dev14999</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -86,13 +86,13 @@
             
   <div class="section" id="lomb-scargle-periodograms">
 <span id="stats-lombscargle"></span><h1>Lomb-Scargle Periodograms<a class="headerlink" href="#lomb-scargle-periodograms" title="Permalink to this headline">¶</a></h1>
-<p>The Lomb-Scargle Periodogram (after Lomb <a class="footnote-reference" href="#id17" id="id1">[1]</a>, and Scargle <a class="footnote-reference" href="#id18" id="id2">[2]</a>)
+<p>The Lomb-Scargle Periodogram (after Lomb <a class="footnote-reference" href="#id16" id="id1">[1]</a>, and Scargle <a class="footnote-reference" href="#id17" id="id2">[2]</a>)
 is a commonly-used statistical tool designed to detect periodic signals
 in unevenly-spaced observations.
 The <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> class is a unified interface to several
 implementations of the Lomb-Scargle periodogram, including a fast <em>O[NlogN]</em>
-implementation following the algorithm presented by Press &amp; Rybicki <a class="footnote-reference" href="#id19" id="id3">[3]</a>.</p>
-<p>The code here is adapted from the <a class="reference external" href="http://astroml.org/">astroml</a> package (<a class="footnote-reference" href="#id20" id="id4">[4]</a>, <a class="footnote-reference" href="#id21" id="id5">[5]</a>) and the <a class="reference external" href="http://astroml.org/gatspy">gatspy</a> package (<a class="footnote-reference" href="#id22" id="id6">[6]</a>, <a class="footnote-reference" href="#id23" id="id7">[7]</a>).</p>
+implementation following the algorithm presented by Press &amp; Rybicki <a class="footnote-reference" href="#id18" id="id3">[3]</a>.</p>
+<p>The code here is adapted from the <a class="reference external" href="http://astroml.org/">astroml</a> package (<a class="footnote-reference" href="#id19" id="id4">[4]</a>, <a class="footnote-reference" href="#id20" id="id5">[5]</a>) and the <a class="reference external" href="http://astroml.org/gatspy">gatspy</a> package (<a class="footnote-reference" href="#id21" id="id6">[6]</a>, <a class="footnote-reference" href="#id22" id="id7">[7]</a>).</p>
 <div class="section" id="basic-usage">
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
@@ -148,8 +148,8 @@ an array:</p>
 <p>Gaussian uncertainties are assumed, and <code class="docutils literal"><span class="pre">dy</span></code> here specifies the standard
 deviation (not the variance).</p>
 </div>
-<div class="section" id="units-and-normalization">
-<h3>Units and Normalization<a class="headerlink" href="#units-and-normalization" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="periodograms-and-units">
+<h3>Periodograms and Units<a class="headerlink" href="#periodograms-and-units" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> interface properly handles
 <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> objects with units attached,
 and will validate the inputs to make sure units are appropriate. For example:</p>
@@ -166,7 +166,7 @@ and will validate the inputs to make sure units are appropriate. For example:</p
 </div>
 <p>We see that the output is dimensionless, which is always the case for the
 standard normalized periodogram (for more on normalizations,
-see <a class="reference internal" href="#lomb-scargle-normalization"><span>Periodogram Normalization</span></a> below).</p>
+see <a class="reference internal" href="#lomb-scargle-normalization"><span>Periodogram Normalizations</span></a> below).</p>
 </div>
 <div class="section" id="specifying-the-frequency">
 <h3>Specifying the Frequency<a class="headerlink" href="#specifying-the-frequency" title="Permalink to this headline">¶</a></h3>
@@ -271,26 +271,65 @@ over the phased data.</p>
 </div>
 </div>
 </div>
-<div class="section" id="periodogram-normalization">
-<span id="lomb-scargle-normalization"></span><h2>Periodogram Normalization<a class="headerlink" href="#periodogram-normalization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="periodogram-normalizations">
+<span id="lomb-scargle-normalization"></span><h2>Periodogram Normalizations<a class="headerlink" href="#periodogram-normalizations" title="Permalink to this headline">¶</a></h2>
 <p>There are several normalizations of the Lomb-Scargle periodogram found in the
-literature. The standard normalized periodogram has Lomb-Scargle power <em>P</em>
-which is a dimensionless quantity that lies in the range <em>0 ≤ P ≤ 1</em>.
-This normalization is used by default, and corresponds to the argument
-<a href="#id8"><span class="problematic" id="id9">``</span></a>normalization=&#8217;standard&#8217;.</p>
-<p>Alternatively, you can choose <code class="docutils literal"><span class="pre">normalization='psd'</span></code>, which will output the
-periodogram with units <code class="docutils literal"><span class="pre">y.unit</span> <span class="pre">**</span> <span class="pre">2</span></code>, similar to the Fourier power spectral
-density (PSD):</p>
+literature. <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> makes four options available,
+via the <code class="docutils literal"><span class="pre">normalization</span></code> argument: <code class="docutils literal"><span class="pre">normalization='standard'</span></code>
+(the default), <code class="docutils literal"><span class="pre">normalization='model'</span></code>, <code class="docutils literal"><span class="pre">normalization='log'</span></code>,
+and <code class="docutils literal"><span class="pre">normalization='psd'</span></code>.
+These normalizations are easiest to discuss in terms of least-squares fits around
+a constant reference model <img class="math" src="../_images/math/fa759b44db9c7e35e673f79310978fe903ea5d34.png" alt="M_{ref}"/> and a periodic model <img class="math" src="../_images/math/5df2a8d63fa4a36e42ebf96a0b5d381c3ef9e661.png" alt="M(f)"/> at
+each frequency, with best-fit sum-of-residuals that we&#8217;ll denote by
+<img class="math" src="../_images/math/ac5d945ae3b667952271bf0cafcc563def9a0004.png" alt="\chi^2_{ref}"/> and <img class="math" src="../_images/math/e7d5d14e40c6977dab3abff72a97a5f11cec03d2.png" alt="\chi^2(f)"/> respectively.</p>
+<div class="section" id="standard-normalization">
+<h3>Standard Normalization<a class="headerlink" href="#standard-normalization" title="Permalink to this headline">¶</a></h3>
+<p>The default, the standard normalized periodogram, is normalized by the residuals
+of the data around the constant reference model:</p>
+<div class="math">
+<p><img src="../_images/math/ed263ee3561daf43ff8c9b9cb346a6bb1428a857.png" alt="P_{standard}(f) = \frac{\chi^2_{ref} - \chi^2(f)}{\chi^2_{ref}}"/></p>
+</div><p>This form of the normalization (<code class="docutils literal"><span class="pre">normalization='standard'</span></code>) is the default
+choice used in <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a>.
+The resulting power <em>P</em> is a dimensionless quantity that lies in the
+range <em>0 ≤ P ≤ 1</em>.</p>
+</div>
+<div class="section" id="model-normalization">
+<h3>Model Normalization<a class="headerlink" href="#model-normalization" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively, the periodogram is sometimes normalized instead by the residuals
+around the periodic model:</p>
+<div class="math">
+<p><img src="../_images/math/72b41f64487ec142683b75213f162afb957b3d05.png" alt="P_{model}(f) = \frac{\chi^2_{ref} - \chi^2(f)}{\chi^2(f)}"/></p>
+</div><p>This form of the normalization can be specified with <code class="docutils literal"><span class="pre">normalization='model'</span></code>.
+As above, the resulting power is a dimensionless
+quantity that lies in the range <em>0 ≤ P ≤ 1</em>.</p>
+</div>
+<div class="section" id="logarithmic-normalization">
+<h3>Logarithmic Normalization<a class="headerlink" href="#logarithmic-normalization" title="Permalink to this headline">¶</a></h3>
+<p>Another form of normalization is to scale the periodogram logarithmically:</p>
+<div class="math">
+<p><img src="../_images/math/cf34607b6528d97137ffe6f36df811d14f16da84.png" alt="P_{log}(f) = \log \frac{\chi^2_{ref}}{\chi^2(f)}"/></p>
+</div><p>This normalization can be specified with <code class="docutils literal"><span class="pre">normalization='log'</span></code>, and the
+resulting power is a dimensionless quantity in the range <em>0 ≤ P ≤ ∞</em>.</p>
+</div>
+<div class="section" id="psd-normalization-unnormalized">
+<h3>PSD Normalization (Unnormalized)<a class="headerlink" href="#psd-normalization-unnormalized" title="Permalink to this headline">¶</a></h3>
+<p>Finally, it is sometimes useful to compute an unnormalized periodogram
+(<code class="docutils literal"><span class="pre">normalization='psd'</span></code>):</p>
+<div class="math">
+<p><img src="../_images/math/ba2c5b51cf0ec1400725dd354e89aae2edc989fa.png" alt="P_{psd}(f) = \frac{N}{2}\left(\chi^2_{ref} - \chi^2(f)\right)"/></p>
+</div><p>where <em>N</em> is the number of data points, which in the no-uncertainty case
+will have units <code class="docutils literal"><span class="pre">y.unit</span> <span class="pre">**</span> <span class="pre">2</span></code>. This normalization is constructed to be
+comparable to the standard Fourier power spectral density (PSD):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="s">&#39;psd&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">power</span><span class="o">.</span><span class="n">unit</span>
 <span class="go">Unit(&quot;mag2&quot;)</span>
 </pre></div>
 </div>
-<p>Note, however, that the <code class="docutils literal"><span class="pre">psd</span></code> result only has these units <em>if uncertainties
-are not specified</em>. In the presence of uncertainties, even the PSD-normalized
-periodogram is dimensionless; this is due to the scaling of data by uncertainty
-within the Lomb-Scargle computation:</p>
+<p>Note, however, that the <code class="docutils literal"><span class="pre">normalization='psd'</span></code> result only has these units
+<em>if uncertainties are not specified</em>. In the presence of uncertainties,
+even the unnormalized PSD periodogram will be dimensionless; this is due to
+the scaling of data by uncertainty within the Lomb-Scargle computation:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># with uncertainties, PSD power is unitless</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">,</span> <span class="n">dy_mags</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="s">&#39;psd&#39;</span><span class="p">)</span>
@@ -298,9 +337,9 @@ within the Lomb-Scargle computation:</p>
 <span class="go">Unit(dimensionless)</span>
 </pre></div>
 </div>
-<p>The equivalence of the periodogram and the Fourier PSD in the unnormalized,
-no-uncertainty case can be confirmed by comparing results directly for
-uniformly-sampled inputs.
+<p>The equivalence of the PSD-normalized periodogram and the Fourier PSD
+in the unnormalized, no-uncertainty case can be confirmed by comparing
+results directly for uniformly-sampled inputs.
 We will first define a convenience function to compute the basic
 Fourier periodogram for uniformly-sampled quantities:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">fourier_periodogram</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -312,8 +351,7 @@ Fourier periodogram for uniformly-sampled quantities:</p>
 </pre></div>
 </div>
 <p>Next we compute the two versions of the PSD from uniformly-sampled data:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">periodogram</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t_days</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">day</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t_days</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">day</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_mags</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">mag</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">PSD_fourier</span> <span class="o">=</span> <span class="n">fourier_periodogram</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PSD_LS</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t_days</span><span class="p">,</span> <span class="n">y_mags</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">normalization</span><span class="o">=</span><span class="s">&#39;psd&#39;</span><span class="p">)</span>
@@ -327,6 +365,9 @@ Fourier periodogram for uniformly-sampled quantities:</p>
 </div>
 <p>This equivalence is one reason the Lomb-Scargle periodogram is considered
 to be an extension of the Fourier PSD.</p>
+<p>For more information on the statistical properties of these normalizations,
+see e.g. Baluev 2008 <a class="footnote-reference" href="#id23" id="id8">[8]</a>.</p>
+</div>
 </div>
 <div class="section" id="periodogram-algorithms">
 <h2>Periodogram Algorithms<a class="headerlink" href="#periodogram-algorithms" title="Permalink to this headline">¶</a></h2>
@@ -336,7 +377,7 @@ which can be selected using the <code class="docutils literal"><span class="pre"
 By design all methods will return the same results (some approximate),
 and each has its advandages and disadganvages.</p>
 <p>For example, to compute a periodogram using the fast chi-square method
-of Palmer (2009) <a class="footnote-reference" href="#id24" id="id10">[8]</a>, you can specify <code class="docutils literal"><span class="pre">method='fastchi2'</span></code>:</p>
+of Palmer (2009) <a class="footnote-reference" href="#id26" id="id9">[9]</a>, you can specify <code class="docutils literal"><span class="pre">method='fastchi2'</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">autopower</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;fastchi2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -349,9 +390,9 @@ from the following methods using heuristics driven by the input data.</p>
 <div class="section" id="method-slow">
 <h3><code class="docutils literal"><span class="pre">method='slow'</span></code><a class="headerlink" href="#method-slow" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">slow</span></code> method is a pure-Python implementation of the original Lomb-Scargle
-periodogram (<a class="footnote-reference" href="#id17" id="id11">[1]</a>, <a class="footnote-reference" href="#id18" id="id12">[2]</a>), enhanced to account for observational noise,
+periodogram (<a class="footnote-reference" href="#id16" id="id10">[1]</a>, <a class="footnote-reference" href="#id17" id="id11">[2]</a>), enhanced to account for observational noise,
 and to allow a floating mean (sometimes called the <em>generalized periodogram</em>;
-see e.g. <a class="footnote-reference" href="#id25" id="id13">[9]</a>). The method is not particularly fast, scaling approximately
+see e.g. <a class="footnote-reference" href="#id27" id="id12">[10]</a>). The method is not particularly fast, scaling approximately
 as <img class="math" src="../_images/math/eab00b2b434f64ee3ac09a64d73da0e3eabde270.png" alt="O[NM]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> data points and <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies.</p>
 </div>
 <div class="section" id="method-cython">
@@ -373,7 +414,7 @@ data or extensions such as the floating mean. The scaling is approximately
 <div class="section" id="method-fast">
 <h3><code class="docutils literal"><span class="pre">method='fast'</span></code><a class="headerlink" href="#method-fast" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">fast</span></code> method is a pure-Python implementation of the fast periodogram of
-Press &amp; Rybicki <a class="footnote-reference" href="#id19" id="id14">[3]</a>. It uses an <em>extirpolation</em> approach to approximate
+Press &amp; Rybicki <a class="footnote-reference" href="#id18" id="id13">[3]</a>. It uses an <em>extirpolation</em> approach to approximate
 the periodogram frequencies using a fast Fourier transform. As with the
 <code class="docutils literal"><span class="pre">slow</span></code> method, it can handle data errors and floating mean.
 The scaling is approximately <img class="math" src="../_images/math/859157910165b4275b02a03f279d0ab5fcb9b2d7.png" alt="O[N\log M]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/>
@@ -382,7 +423,7 @@ data points and <img class="math" src="../_images/math/2de38926392ba23abeac75eff
 <div class="section" id="method-chi2">
 <h3><code class="docutils literal"><span class="pre">method='chi2'</span></code><a class="headerlink" href="#method-chi2" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">chi2</span></code> method is a pure-Python implementation based on matrix algebra
-(see, e.g. <a class="footnote-reference" href="#id23" id="id15">[7]</a>). It utilizes the fact that the Lomb-Scargle periodogram at
+(see, e.g. <a class="footnote-reference" href="#id22" id="id14">[7]</a>). It utilizes the fact that the Lomb-Scargle periodogram at
 each frequency is equivalent to the least-squares fit of a sinusoid to the
 data. The advantage of the <code class="docutils literal"><span class="pre">chi2</span></code> method is that it allows extensions of
 the periodogram to multiple Fourier terms, specified by the <code class="docutils literal"><span class="pre">nterms</span></code>
@@ -392,12 +433,12 @@ parameter. For the standard problem, it is slightly slower than
 </div>
 <div class="section" id="method-fastchi2">
 <h3><code class="docutils literal"><span class="pre">method='fastchi2'</span></code><a class="headerlink" href="#method-fastchi2" title="Permalink to this headline">¶</a></h3>
-<p>The fast chi-squared method of Palmer (2009) <a class="footnote-reference" href="#id24" id="id16">[8]</a> is equivalent to the <code class="docutils literal"><span class="pre">chi2</span></code> method,
-but the matrices are constructed using the FFT-based approach of the <code class="docutils literal"><span class="pre">fast</span></code>
-method. The result is a relatively efficient periodogram (though not nearly
-as efficient as the <code class="docutils literal"><span class="pre">fast</span></code> method) which can be extended to multiple terms.
-The scaling is approximately <img class="math" src="../_images/math/2b587cc8f49d4185c4ef2222b53989614c93043f.png" alt="O[n_f(M + N\log M)]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/>
-data points, <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies, and <img class="math" src="../_images/math/48876f4ed56aad77eb484a9b3b053e1d58a67916.png" alt="n_f"/> Fourier terms.</p>
+<p>The fast chi-squared method of Palmer (2009) <a class="footnote-reference" href="#id26" id="id15">[9]</a> is equivalent to the <code class="docutils literal"><span class="pre">chi2</span></code> method,
+but the matrices are constructed using an FFT-based approach similar to that
+of the <code class="docutils literal"><span class="pre">fast</span></code> method. The result is a relatively efficient periodogram
+(though not nearly as efficient as the <code class="docutils literal"><span class="pre">fast</span></code> method) which can be extended
+to multiple terms. The scaling is approximately <img class="math" src="../_images/math/2b587cc8f49d4185c4ef2222b53989614c93043f.png" alt="O[n_f(M + N\log M)]"/>
+for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> data points, <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies, and <img class="math" src="../_images/math/48876f4ed56aad77eb484a9b3b053e1d58a67916.png" alt="n_f"/> Fourier terms.</p>
 </div>
 <div class="section" id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
@@ -469,7 +510,7 @@ Fourier terms for a multi-term fit.</p>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>An example of computing the periodogram for a more realistic dataset is
-shown in the following figure. The data shown here consist of
+shown in the following figure. The data here consist of
 50 nightly observations of a simulated RR Lyrae-like variable star,
 with lightcurve shape that is more complicated than a simple sine wave:</p>
 <p>(<a class="reference external" href="../stats/lombscargle-5.py">Source code</a>, <a class="reference external" href="../stats/lombscargle-5.png">png</a>, <a class="reference external" href="../stats/lombscargle-5.hires.png">hires.png</a>, <a class="reference external" href="../stats/lombscargle-5.pdf">pdf</a>)</p>
@@ -501,29 +542,29 @@ and results must be interpreted carefully.</p>
 </div>
 <div class="section" id="literature-references">
 <h2>Literature References<a class="headerlink" href="#literature-references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id10">2</a>)</em> Lomb, N.R. <em>Least-squares frequency analysis of unequally spaced data</em>.
+Ap&amp;SS 39 pp. 447-462 (1976)</td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id11">2</a>)</em> Lomb, N.R. <em>Least-squares frequency analysis of unequally spaced data</em>.
-Ap&amp;SS 39 pp. 447-462 (1976)</td></tr>
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id11">2</a>)</em> Scargle, J. D. <em>Studies in astronomical time series analysis. II -
+Statistical aspects of spectral analysis of unevenly spaced data</em>.
+ApJ 1:263 pp. 835-853 (1982)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id12">2</a>)</em> Scargle, J. D. <em>Studies in astronomical time series analysis. II -
-Statistical aspects of spectral analysis of unevenly spaced data</em>.
-ApJ 1:263 pp. 835-853 (1982)</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id19" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id14">2</a>)</em> Press W.H. and Rybicki, G.B, <em>Fast algorithm for spectral analysis
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id13">2</a>)</em> Press W.H. and Rybicki, G.B, <em>Fast algorithm for spectral analysis
 of unevenly sampled data</em>. ApJ 1:338, p. 277 (1989)</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id20" rules="none">
+<table class="docutils footnote" frame="void" id="id19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>Vanderplas, J., Connolly, A. Ivezic, Z. &amp; Gray, A. <em>Introduction to
@@ -531,38 +572,45 @@ astroML: Machine learning for astrophysics</em>. Proceedings of the
 Conference on Intelligent Data Understanding (2012)</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id21" rules="none">
+<table class="docutils footnote" frame="void" id="id20" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Vanderplas, J., Connolly, A. Ivezic, Z. &amp; Gray, A. <em>Statistics,
 Data Mining and Machine Learning in Astronomy</em>. Princeton Press (2014)}</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id22" rules="none">
+<table class="docutils footnote" frame="void" id="id21" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td>VanderPlas, J. <em>Gatspy: General Tools for Astronomical Time Series
 in Python</em> (2015) <a class="reference external" href="http://dx.doi.org/10.5281/zenodo.14833">http://dx.doi.org/10.5281/zenodo.14833</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id23" rules="none">
+<table class="docutils footnote" frame="void" id="id22" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[7]</td><td><em>(<a class="fn-backref" href="#id7">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> VanderPlas, J. &amp; Ivezic, Z. <em>Periodograms for Multiband Astronomical
+<tr><td class="label">[7]</td><td><em>(<a class="fn-backref" href="#id7">1</a>, <a class="fn-backref" href="#id14">2</a>)</em> VanderPlas, J. &amp; Ivezic, Z. <em>Periodograms for Multiband Astronomical
 Time Series</em>. ApJ 812.1:18 (2015)</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id24" rules="none">
+<table class="docutils footnote" frame="void" id="id23" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[8]</td><td><em>(<a class="fn-backref" href="#id10">1</a>, <a class="fn-backref" href="#id16">2</a>)</em> Palmer, D. <em>A Fast Chi-squared Technique for Period Search of
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td>Baluev, R.V. <a href="#id24"><span class="problematic" id="id25">*</span></a>Assessing Statistical Significance of Periodogram Peaks&#8221;
+MNRAS 385, 1279 (2008)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id26" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[9]</td><td><em>(<a class="fn-backref" href="#id9">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> Palmer, D. <em>A Fast Chi-squared Technique for Period Search of
 Irregularly Sampled Data</em>. ApJ 695.1:496 (2009)</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id25" rules="none">
+<table class="docutils footnote" frame="void" id="id27" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[9]</a></td><td>Zechmeister, M. and Kurster, M. <em>The generalised Lomb-Scargle
+<tr><td class="label"><a class="fn-backref" href="#id12">[10]</a></td><td>Zechmeister, M. and Kurster, M. <em>The generalised Lomb-Scargle
 periodogram. A new formalism for the floating-mean and Keplerian
 periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 </tbody>
@@ -580,7 +628,7 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 <li><a class="reference internal" href="#">Lomb-Scargle Periodograms</a><ul>
 <li><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
 <li><a class="reference internal" href="#measurement-uncertainties">Measurement Uncertainties</a></li>
-<li><a class="reference internal" href="#units-and-normalization">Units and Normalization</a></li>
+<li><a class="reference internal" href="#periodograms-and-units">Periodograms and Units</a></li>
 <li><a class="reference internal" href="#specifying-the-frequency">Specifying the Frequency</a><ul>
 <li><a class="reference internal" href="#frequency-grid-spacing">Frequency Grid Spacing</a></li>
 </ul>
@@ -588,7 +636,13 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 <li><a class="reference internal" href="#the-lomb-scargle-model">The Lomb-Scargle Model</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#periodogram-normalization">Periodogram Normalization</a></li>
+<li><a class="reference internal" href="#periodogram-normalizations">Periodogram Normalizations</a><ul>
+<li><a class="reference internal" href="#standard-normalization">Standard Normalization</a></li>
+<li><a class="reference internal" href="#model-normalization">Model Normalization</a></li>
+<li><a class="reference internal" href="#logarithmic-normalization">Logarithmic Normalization</a></li>
+<li><a class="reference internal" href="#psd-normalization-unnormalized">PSD Normalization (Unnormalized)</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#periodogram-algorithms">Periodogram Algorithms</a><ul>
 <li><a class="reference internal" href="#method-auto"><code class="docutils literal"><span class="pre">method='auto'</span></code></a></li>
 <li><a class="reference internal" href="#method-slow"><code class="docutils literal"><span class="pre">method='slow'</span></code></a></li>
