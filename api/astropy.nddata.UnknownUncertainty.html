@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UnknownUncertainty &mdash; Astropy v1.2.dev15003</title>
+    <title>UnknownUncertainty &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
     <link rel="next" title="extract_array" href="astropy.nddata.utils.extract_array.html" />
     <link rel="prev" title="StdDevUncertainty" href="astropy.nddata.StdDevUncertainty.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -88,17 +88,20 @@
 <h1>UnknownUncertainty<a class="headerlink" href="#unknownuncertainty" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.nddata.UnknownUncertainty">
-<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">UnknownUncertainty</code><span class="sig-paren">(</span><em>array=None</em>, <em>unit=None</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nduncertainty.py#L402" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/nduncertainty.html#UnknownUncertainty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.UnknownUncertainty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">UnknownUncertainty</code><span class="sig-paren">(</span><em>array=None</em>, <em>copy=True</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/nduncertainty.html#UnknownUncertainty"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nduncertainty.py#L323" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.UnknownUncertainty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.nduncertainty.NDUncertainty"><code class="docutils literal"><span class="pre">astropy.nddata.NDUncertainty</span></code></a></p>
-<p>This implements any kind of unknown uncertainty type.</p>
+<p>This class implements any unknown uncertainty type.</p>
 <p>The main purpose of having an unknown uncertainty class is to prevent
-uncertainty propagation since this is not clearly defined without
-giving a type.</p>
+uncertainty propagation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>see `NDUncertainty`</strong></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>args, kwargs :</strong></p>
+<blockquote class="last">
+<div><p>see <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a></p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -110,10 +113,10 @@ giving a type.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.UnknownUncertainty.supports_correlated" title="astropy.nddata.UnknownUncertainty.supports_correlated"><code class="xref py py-obj docutils literal"><span class="pre">supports_correlated</span></code></a></td>
-<td><a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: No uncertainty propagation is not possible for this class.</td>
+<td><a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> : Uncertainty propagation is <em>not</em> possible for this class.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.UnknownUncertainty.uncertainty_type" title="astropy.nddata.UnknownUncertainty.uncertainty_type"><code class="xref py py-obj docutils literal"><span class="pre">uncertainty_type</span></code></a></td>
-<td><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a>: <code class="docutils literal"><span class="pre">'unknown'</span></code></td>
+<td><code class="docutils literal"><span class="pre">&quot;unknown&quot;</span></code> : <a class="reference internal" href="#astropy.nddata.UnknownUncertainty" title="astropy.nddata.UnknownUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">UnknownUncertainty</span></code></a> implements any unknown                            uncertainty type.</td>
 </tr>
 </tbody>
 </table>
@@ -121,17 +124,13 @@ giving a type.</p>
 <dl class="attribute">
 <dt id="astropy.nddata.UnknownUncertainty.supports_correlated">
 <code class="descname">supports_correlated</code><a class="headerlink" href="#astropy.nddata.UnknownUncertainty.supports_correlated" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: No uncertainty propagation is not possible for this class.</p>
+<dd><p><a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> : Uncertainty propagation is <em>not</em> possible for this class.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="astropy.nddata.UnknownUncertainty.uncertainty_type">
 <code class="descname">uncertainty_type</code><a class="headerlink" href="#astropy.nddata.UnknownUncertainty.uncertainty_type" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a>: <code class="docutils literal"><span class="pre">'unknown'</span></code></dt>
-<dd><a class="reference internal" href="#astropy.nddata.UnknownUncertainty" title="astropy.nddata.UnknownUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">UnknownUncertainty</span></code></a> implements any kind of unknown uncertainty
-type.</dd>
-</dl>
+<dd><p><code class="docutils literal"><span class="pre">&quot;unknown&quot;</span></code> : <a class="reference internal" href="#astropy.nddata.UnknownUncertainty" title="astropy.nddata.UnknownUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">UnknownUncertainty</span></code></a> implements any unknown                            uncertainty type.</p>
 </dd></dl>
 
 </dd></dl>
@@ -161,7 +160,7 @@ type.</dd>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

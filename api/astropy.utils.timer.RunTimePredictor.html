@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RunTimePredictor &mdash; Astropy v1.2.dev15003</title>
+    <title>RunTimePredictor &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astropy Core Package Utilities (astropy.utils)" href="../utils/index.html" />
     <link rel="next" title="get_readable_fileobj" href="astropy.utils.data.get_readable_fileobj.html" />
     <link rel="prev" title="timefunc" href="astropy.utils.timer.timefunc.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../utils/index.html" accesskey="U">Astropy Core Package Utilities (<code class="docutils literal"><span class="pre">astropy.utils</span></code>)</a> &raquo;</li>
@@ -88,8 +88,8 @@
 <h1>RunTimePredictor<a class="headerlink" href="#runtimepredictor" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.utils.timer.RunTimePredictor">
-<em class="property">class </em><code class="descclassname">astropy.utils.timer.</code><code class="descname">RunTimePredictor</code><span class="sig-paren">(</span><em>func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L87" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.utils.timer.</code><code class="descname">RunTimePredictor</code><span class="sig-paren">(</span><em>func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L87" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>Class to predict run time.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -209,7 +209,7 @@ are not included) to their respective output values.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="astropy.utils.timer.RunTimePredictor.do_fit">
-<code class="descname">do_fit</code><span class="sig-paren">(</span><em>model=None</em>, <em>fitter=None</em>, <em>power=1</em>, <em>min_datapoints=3</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L214" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.do_fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.do_fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">do_fit</code><span class="sig-paren">(</span><em>model=None</em>, <em>fitter=None</em>, <em>power=1</em>, <em>min_datapoints=3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.do_fit"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L214" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.do_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit a function to the lists of arguments and
 their respective run time in the cache.</p>
 <p>By default, this does a linear least-square fitting
@@ -224,13 +224,13 @@ intercept and slope.</p>
 <blockquote>
 <div><p>Model for the expected trend of run time (Y-axis)
 w.r.t. <img class="math" src="../_images/math/60b402edc5c9524a8c0e6df3334af80b00070936.png" alt="\textnormal{arg}^{\textnormal{power}}"/> (X-axis).
-If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, will use <a class="reference internal" href="astropy.modeling.polynomial.Polynomial1D.html#astropy.modeling.polynomial.Polynomial1D" title="astropy.modeling.polynomial.Polynomial1D"><code class="xref py py-obj docutils literal"><span class="pre">Polynomial1D</span></code></a>
+If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, will use <a class="reference internal" href="astropy.modeling.polynomial.Polynomial1D.html#astropy.modeling.polynomial.Polynomial1D" title="astropy.modeling.polynomial.Polynomial1D"><code class="xref py py-obj docutils literal"><span class="pre">Polynomial1D</span></code></a>
 with <code class="docutils literal"><span class="pre">degree=1</span></code>.</p>
 </div></blockquote>
 <p><strong>fitter</strong> : <a class="reference internal" href="astropy.modeling.fitting.Fitter.html#astropy.modeling.fitting.Fitter" title="astropy.modeling.fitting.Fitter"><code class="xref py py-obj docutils literal"><span class="pre">astropy.modeling.fitting.Fitter</span></code></a></p>
 <blockquote>
 <div><p>Fitter for the given model to extract optimal coefficient values.
-If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, will use <a class="reference internal" href="astropy.modeling.fitting.LinearLSQFitter.html#astropy.modeling.fitting.LinearLSQFitter" title="astropy.modeling.fitting.LinearLSQFitter"><code class="xref py py-obj docutils literal"><span class="pre">LinearLSQFitter</span></code></a>.</p>
+If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, will use <a class="reference internal" href="astropy.modeling.fitting.LinearLSQFitter.html#astropy.modeling.fitting.LinearLSQFitter" title="astropy.modeling.fitting.LinearLSQFitter"><code class="xref py py-obj docutils literal"><span class="pre">LinearLSQFitter</span></code></a>.</p>
 </div></blockquote>
 <p><strong>power</strong> : int, optional</p>
 <blockquote>
@@ -265,7 +265,7 @@ They can be built up with <a class="reference internal" href="#astropy.utils.tim
 
 <dl class="method">
 <dt id="astropy.utils.timer.RunTimePredictor.plot">
-<code class="descname">plot</code><span class="sig-paren">(</span><em>xscale='linear'</em>, <em>yscale='linear'</em>, <em>xlabeltext='args'</em>, <em>save_as=''</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L310" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>xscale='linear'</em>, <em>yscale='linear'</em>, <em>xlabeltext='args'</em>, <em>save_as=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.plot"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L310" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot prediction.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -301,7 +301,7 @@ They can be built up with <a class="reference internal" href="#astropy.utils.tim
 
 <dl class="method">
 <dt id="astropy.utils.timer.RunTimePredictor.predict_time">
-<code class="descname">predict_time</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L282" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.predict_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.predict_time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">predict_time</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.predict_time"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L282" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.predict_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict run time for given argument.
 If prediction is already cached, cached value is returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -332,7 +332,7 @@ If prediction is already cached, cached value is returned.</p>
 
 <dl class="method">
 <dt id="astropy.utils.timer.RunTimePredictor.time_func">
-<code class="descname">time_func</code><span class="sig-paren">(</span><em>arglist</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L193" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.time_func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.time_func" title="Permalink to this definition">¶</a></dt>
+<code class="descname">time_func</code><span class="sig-paren">(</span><em>arglist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/utils/timer.html#RunTimePredictor.time_func"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/timer.py#L193" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.utils.timer.RunTimePredictor.time_func" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time the partial function for a list of single args
 and store run time in a cache. This forms a baseline for
 the prediction.</p>
@@ -378,7 +378,7 @@ the prediction.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>BaseCoordinateFrame &mdash; Astropy v1.2.dev15003</title>
+    <title>BaseCoordinateFrame &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="../coordinates/index.html" />
     <link rel="next" title="BaseRepresentation" href="astropy.coordinates.BaseRepresentation.html" />
     <link rel="prev" title="BarycentricTrueEcliptic" href="astropy.coordinates.BarycentricTrueEcliptic.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../coordinates/index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -88,8 +88,8 @@
 <h1>BaseCoordinateFrame<a class="headerlink" href="#basecoordinateframe" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.coordinates.BaseCoordinateFrame">
-<em class="property">class </em><code class="descclassname">astropy.coordinates.</code><code class="descname">BaseCoordinateFrame</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L417" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.coordinates.</code><code class="descname">BaseCoordinateFrame</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L475" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>The base class for coordinate frames.</p>
 <p>This class is intended to be subclassed to create instances of specific
 systems.  Subclasses can implement the following attributes:</p>
@@ -120,6 +120,28 @@ of that representation.</p>
 </dl>
 </li>
 </ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>representation</strong> : <a class="reference internal" href="astropy.coordinates.BaseRepresentation.html#astropy.coordinates.BaseRepresentation" title="astropy.coordinates.BaseRepresentation"><code class="xref py py-obj docutils literal"><span class="pre">BaseRepresentation</span></code></a> or None</p>
+<blockquote>
+<div><p>A representation object or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to have no data (or use the other
+arguments)</p>
+</div></blockquote>
+<p><strong>*args, **kwargs</strong></p>
+<blockquote>
+<div><p>Coordinates, with names that depend on the subclass.</p>
+</div></blockquote>
+<p><strong>copy</strong> : bool, optional</p>
+<blockquote class="last">
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> (default), make copies of the input coordinate arrays.
+Can only be passed in as a keyword argument.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Attributes Summary</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -219,7 +241,7 @@ object.</p>
 <dt id="astropy.coordinates.BaseCoordinateFrame.data">
 <code class="descname">data</code><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>The coordinate data for this object.  If this frame has no data, an
-<a class="reference external" href="http://docs.python.org/library/exceptions.html#exceptions.ValueError" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">ValueError</span></code></a> will be raised.  Use <a class="reference internal" href="#astropy.coordinates.BaseCoordinateFrame.has_data" title="astropy.coordinates.BaseCoordinateFrame.has_data"><code class="xref py py-obj docutils literal"><span class="pre">has_data</span></code></a> to
+<a class="reference external" href="http://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">ValueError</span></code></a> will be raised.  Use <a class="reference internal" href="#astropy.coordinates.BaseCoordinateFrame.has_data" title="astropy.coordinates.BaseCoordinateFrame.has_data"><code class="xref py py-obj docutils literal"><span class="pre">has_data</span></code></a> to
 check if data is present on this frame object.</p>
 </dd></dl>
 
@@ -293,12 +315,12 @@ apply to particular representations.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="classmethod">
 <dt id="astropy.coordinates.BaseCoordinateFrame.get_frame_attr_names">
-<em class="property">classmethod </em><code class="descname">get_frame_attr_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L559" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.get_frame_attr_names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.get_frame_attr_names" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_frame_attr_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.get_frame_attr_names"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L628" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.get_frame_attr_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame">
-<code class="descname">is_equivalent_frame</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L845" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.is_equivalent_frame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_equivalent_frame</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.is_equivalent_frame"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L914" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.is_equivalent_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if this object is the same frame as the <code class="docutils literal"><span class="pre">other</span></code> object.</p>
 <p>To be the same frame, two objects must be the same frame class and have
 the same frame attributes.  Note that it does <em>not</em> matter what, if any,
@@ -331,7 +353,7 @@ data either object has.</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.is_frame_attr_default">
-<code class="descname">is_frame_attr_default</code><span class="sig-paren">(</span><em>attrnm</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L826" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.is_frame_attr_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.is_frame_attr_default" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_frame_attr_default</code><span class="sig-paren">(</span><em>attrnm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.is_frame_attr_default"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L895" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.is_frame_attr_default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine whether or not a frame attribute has its value because it&#8217;s
 the default value, or because this frame was created with that value
 explicitly requested.</p>
@@ -358,7 +380,7 @@ it was specified at creation of this frame.</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.is_transformable_to">
-<code class="descname">is_transformable_to</code><span class="sig-paren">(</span><em>new_frame</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L782" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.is_transformable_to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.is_transformable_to" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_transformable_to</code><span class="sig-paren">(</span><em>new_frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.is_transformable_to"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L851" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.is_transformable_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines if this coordinate frame can be transformed to another
 given frame.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -373,7 +395,7 @@ given frame.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>transformable</strong> : bool or str</p>
 <blockquote class="last">
-<div><p><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if this can be transformed to <code class="docutils literal"><span class="pre">new_frame</span></code>, <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> if
+<div><p><a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if this can be transformed to <code class="docutils literal"><span class="pre">new_frame</span></code>, <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> if
 not, or the string &#8216;same&#8217; if <code class="docutils literal"><span class="pre">new_frame</span></code> is the same system as
 this object but no transformation is defined.</p>
 </div></blockquote>
@@ -398,7 +420,7 @@ different attributes.</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.realize_frame">
-<code class="descname">realize_frame</code><span class="sig-paren">(</span><em>representation</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L651" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.realize_frame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.realize_frame" title="Permalink to this definition">¶</a></dt>
+<code class="descname">realize_frame</code><span class="sig-paren">(</span><em>representation</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.realize_frame"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L720" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.realize_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a new frame <em>with new data</em> from another frame (which may or
 may not have data).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -424,7 +446,7 @@ with the <code class="docutils literal"><span class="pre">representation</span><
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.represent_as">
-<code class="descname">represent_as</code><span class="sig-paren">(</span><em>new_representation</em>, <em>in_frame_units=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L672" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.represent_as"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.represent_as" title="Permalink to this definition">¶</a></dt>
+<code class="descname">represent_as</code><span class="sig-paren">(</span><em>new_representation</em>, <em>in_frame_units=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.represent_as"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L741" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.represent_as" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate and return a new representation of this frame&#8217;s <a class="reference internal" href="#astropy.coordinates.BaseCoordinateFrame.data" title="astropy.coordinates.BaseCoordinateFrame.data"><code class="xref py py-obj docutils literal"><span class="pre">data</span></code></a>
 as a Representation object.</p>
 <p>Note: In order to make an in-place change of the representation
@@ -480,7 +502,7 @@ particular to this frame</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.separation">
-<code class="descname">separation</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L986" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.separation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.separation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">separation</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.separation"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L1065" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.separation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes on-sky separation between this coordinate and another.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -513,7 +535,7 @@ is stable at all locations, including poles and antipodes <a class="reference in
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.separation_3d">
-<code class="descname">separation_3d</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L1020" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.separation_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.separation_3d" title="Permalink to this definition">¶</a></dt>
+<code class="descname">separation_3d</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.separation_3d"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L1099" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.separation_3d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes three dimensional separation between this coordinate
 and another.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -544,7 +566,7 @@ and another.</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.BaseCoordinateFrame.transform_to">
-<code class="descname">transform_to</code><span class="sig-paren">(</span><em>new_frame</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L738" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.transform_to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.transform_to" title="Permalink to this definition">¶</a></dt>
+<code class="descname">transform_to</code><span class="sig-paren">(</span><em>new_frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/baseframe.html#BaseCoordinateFrame.transform_to"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/baseframe.py#L807" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.BaseCoordinateFrame.transform_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform this object&#8217;s coordinate data to a new frame.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -600,7 +622,7 @@ and another.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

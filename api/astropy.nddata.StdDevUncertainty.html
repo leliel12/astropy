@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>StdDevUncertainty &mdash; Astropy v1.2.dev15003</title>
+    <title>StdDevUncertainty &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
     <link rel="next" title="UnknownUncertainty" href="astropy.nddata.UnknownUncertainty.html" />
     <link rel="prev" title="PartialOverlapError" href="astropy.nddata.PartialOverlapError.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -88,25 +88,55 @@
 <h1>StdDevUncertainty<a class="headerlink" href="#stddevuncertainty" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.nddata.StdDevUncertainty">
-<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">StdDevUncertainty</code><span class="sig-paren">(</span><em>array=None</em>, <em>unit=None</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nduncertainty.py#L469" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/nduncertainty.html#StdDevUncertainty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.StdDevUncertainty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">StdDevUncertainty</code><span class="sig-paren">(</span><em>array=None</em>, <em>copy=True</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/nduncertainty.html#StdDevUncertainty"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nduncertainty.py#L370" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.StdDevUncertainty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.nduncertainty.NDUncertainty"><code class="docutils literal"><span class="pre">astropy.nddata.NDUncertainty</span></code></a></p>
-<p>A class for standard deviation uncertainty.</p>
+<p>Standard deviation uncertainty assuming first order gaussian error
+propagation.</p>
 <p>This class implements uncertainty propagation for <code class="docutils literal"><span class="pre">addition</span></code>,
-<code class="docutils literal"><span class="pre">subtraction</span></code>, <code class="docutils literal"><span class="pre">multiplication</span></code> and <code class="docutils literal"><span class="pre">division</span></code> but only with other
-instances of <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a>. The class can fully handle if the
-uncertainty has a unit that differs from (but is convertable to) the
-parents <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> unit but converts the unit of the propagated uncertainty
-to the unit of the resulting data. Also support for correlation is possible
-but that requires that the correlation is an input. It cannot handle
-correlation determination itself.</p>
+<code class="docutils literal"><span class="pre">subtraction</span></code>, <code class="docutils literal"><span class="pre">multiplication</span></code> and <code class="docutils literal"><span class="pre">division</span></code> with other instances
+of <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a>. The class can handle if the uncertainty has a
+unit that differs from (but is convertible to) the parents <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> unit.
+The unit of the resulting uncertainty will have the same unit as the
+resulting data. Also support for correlation is possible but requires the
+correlation as input. It cannot handle correlation determination itself.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>see `NDUncertainty`</strong></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>args, kwargs :</strong></p>
+<blockquote class="last">
+<div><p>see <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a></p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<p><a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> should always be associated with an <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like
+instance, either by creating it during initialization:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">NDData</span><span class="p">,</span> <span class="n">StdDevUncertainty</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span> <span class="o">=</span> <span class="n">NDData</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>             <span class="n">uncertainty</span><span class="o">=</span><span class="n">StdDevUncertainty</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">uncertainty</span>
+<span class="go">StdDevUncertainty([ 0.1,  0.1,  0.1])</span>
+</pre></div>
+</div>
+<p>or by setting it manually on the <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">uncertainty</span> <span class="o">=</span> <span class="n">StdDevUncertainty</span><span class="p">([</span><span class="mf">0.2</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">uncertainty</span>
+<span class="go">StdDevUncertainty([ 0.2])</span>
+</pre></div>
+</div>
+<p>the uncertainty <code class="docutils literal"><span class="pre">array</span></code> can also be set directly:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">uncertainty</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">uncertainty</span>
+<span class="go">StdDevUncertainty(2)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The unit will not be displayed.</p>
+</div>
 <p class="rubric">Attributes Summary</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -115,10 +145,10 @@ correlation determination itself.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.StdDevUncertainty.supports_correlated" title="astropy.nddata.StdDevUncertainty.supports_correlated"><code class="xref py py-obj docutils literal"><span class="pre">supports_correlated</span></code></a></td>
-<td><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> allows to propagate correlated</td>
+<td><a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> : <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> allows to propagate correlated                     uncertainties.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.StdDevUncertainty.uncertainty_type" title="astropy.nddata.StdDevUncertainty.uncertainty_type"><code class="xref py py-obj docutils literal"><span class="pre">uncertainty_type</span></code></a></td>
-<td><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a>: <code class="docutils literal"><span class="pre">'std'</span></code></td>
+<td><code class="docutils literal"><span class="pre">&quot;std&quot;</span></code> : <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> implements standard deviation.</td>
 </tr>
 </tbody>
 </table>
@@ -126,19 +156,15 @@ correlation determination itself.</p>
 <dl class="attribute">
 <dt id="astropy.nddata.StdDevUncertainty.supports_correlated">
 <code class="descname">supports_correlated</code><a class="headerlink" href="#astropy.nddata.StdDevUncertainty.supports_correlated" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> allows to propagate correlated
-uncertainties.</p>
-<p>But only if the <code class="docutils literal"><span class="pre">correlation</span></code> is given, this class does not implement
-computing it by itself.</p>
+<dd><p><a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> : <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> allows to propagate correlated                     uncertainties.</p>
+<p><code class="docutils literal"><span class="pre">correlation</span></code> must be given, this class does not implement computing
+it by itself.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="astropy.nddata.StdDevUncertainty.uncertainty_type">
 <code class="descname">uncertainty_type</code><a class="headerlink" href="#astropy.nddata.StdDevUncertainty.uncertainty_type" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt><a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a>: <code class="docutils literal"><span class="pre">'std'</span></code></dt>
-<dd><a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> implements standard deviation.</dd>
-</dl>
+<dd><p><code class="docutils literal"><span class="pre">&quot;std&quot;</span></code> : <a class="reference internal" href="#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">StdDevUncertainty</span></code></a> implements standard deviation.</p>
 </dd></dl>
 
 </dd></dl>
@@ -168,7 +194,7 @@ computing it by itself.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

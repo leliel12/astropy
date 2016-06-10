@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Units and Quantities (astropy.units) &mdash; Astropy v1.2.dev15003</title>
+    <title>Units and Quantities (astropy.units) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Quantity" href="quantity.html" />
     <link rel="prev" title="EMConstant" href="../api/astropy.constants.EMConstant.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -310,7 +310,7 @@ but will deal with unit conversions internally.</p>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-48575d82514c68c355a23daeb91992f2754c092d.svg" alt="Inheritance diagram of astropy.units.quantity.Quantity" class="inheritance"/>
+<img src="../_images/inheritance-facc7da91950e295027cfb6a3f64cd416920d926.svg" alt="Inheritance diagram of astropy.units.quantity.Quantity" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -370,6 +370,12 @@ code under a BSD license.</p>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.units.parallax.html#astropy.units.parallax" title="astropy.units.parallax"><code class="xref py py-obj docutils literal"><span class="pre">parallax</span></code></a>()</td>
 <td>Returns a list of equivalence pairs that handle the conversion between parallax angle and distance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.units.pixel_scale.html#astropy.units.pixel_scale" title="astropy.units.pixel_scale"><code class="xref py py-obj docutils literal"><span class="pre">pixel_scale</span></code></a>(pixscale)</td>
+<td>Convert between pixel distances (in units of <code class="docutils literal"><span class="pre">pix</span></code>) and angular units, given a particular <code class="docutils literal"><span class="pre">pixscale</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.units.plate_scale.html#astropy.units.plate_scale" title="astropy.units.plate_scale"><code class="xref py py-obj docutils literal"><span class="pre">plate_scale</span></code></a>(platescale)</td>
+<td>Convert between lengths (to be interpreted as lengths in the focal plane) and angular units with a specified <code class="docutils literal"><span class="pre">platescale</span></code>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.units.quantity_input.html#astropy.units.quantity_input" title="astropy.units.quantity_input"><code class="xref py py-obj docutils literal"><span class="pre">quantity_input</span></code></a></td>
 <td>A decorator for validating the units of arguments to functions.</td>
@@ -472,7 +478,7 @@ code under a BSD license.</p>
 <div class="section" id="id2">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-c41ec5c7e3b7c73971a56a0c339e8b0c981653e9.svg" alt="Inheritance diagram of astropy.units.core.CompositeUnit, astropy.units.function.logarithmic.Decibel, astropy.units.function.logarithmic.DecibelUnit, astropy.units.function.logarithmic.Dex, astropy.units.function.logarithmic.DexUnit, astropy.units.function.core.FunctionQuantity, astropy.units.function.core.FunctionUnitBase, astropy.units.core.IrreducibleUnit, astropy.units.function.logarithmic.LogQuantity, astropy.units.function.logarithmic.LogUnit, astropy.units.function.logarithmic.MagUnit, astropy.units.function.logarithmic.Magnitude, astropy.units.core.NamedUnit, astropy.units.core.PrefixUnit, astropy.units.quantity.Quantity, astropy.units.core.Unit, astropy.units.core.UnitBase, astropy.units.core.UnitConversionError, astropy.units.core.UnitsError, astropy.units.core.UnitsWarning, astropy.units.core.UnrecognizedUnit" class="inheritance"/>
+<img src="../_images/inheritance-ac762c5e1a2422c0d8e1b86c13eaae9d93bbf80e.svg" alt="Inheritance diagram of astropy.units.core.CompositeUnit, astropy.units.function.logarithmic.Decibel, astropy.units.function.logarithmic.DecibelUnit, astropy.units.function.logarithmic.Dex, astropy.units.function.logarithmic.DexUnit, astropy.units.function.core.FunctionQuantity, astropy.units.function.core.FunctionUnitBase, astropy.units.core.IrreducibleUnit, astropy.units.function.logarithmic.LogQuantity, astropy.units.function.logarithmic.LogUnit, astropy.units.function.logarithmic.MagUnit, astropy.units.function.logarithmic.Magnitude, astropy.units.core.NamedUnit, astropy.units.core.PrefixUnit, astropy.units.quantity.Quantity, astropy.units.core.Unit, astropy.units.core.UnitBase, astropy.units.core.UnitConversionError, astropy.units.core.UnitsError, astropy.units.core.UnitsWarning, astropy.units.core.UnrecognizedUnit" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -540,7 +546,7 @@ code under a BSD license.</p>
 <div class="section" id="id5">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-03b161a1dd7ed928dd86d45a5f4dc9c61fb63e80.svg" alt="Inheritance diagram of astropy.units.format.base.Base, astropy.units.format.generic.Generic, astropy.units.format.cds.CDS, astropy.units.format.console.Console, astropy.units.format.fits.Fits, astropy.units.format.latex.Latex, astropy.units.format.latex.LatexInline, astropy.units.format.ogip.OGIP, astropy.units.format.unicode_format.Unicode, astropy.units.format.generic.Unscaled, astropy.units.format.vounit.VOUnit" class="inheritance"/>
+<img src="../_images/inheritance-15d5e7a721cfb5367a86ebc831e3dfee33207fed.svg" alt="Inheritance diagram of astropy.units.format.base.Base, astropy.units.format.generic.Generic, astropy.units.format.cds.CDS, astropy.units.format.console.Console, astropy.units.format.fits.Fits, astropy.units.format.latex.Latex, astropy.units.format.latex.LatexInline, astropy.units.format.ogip.OGIP, astropy.units.format.unicode_format.Unicode, astropy.units.format.generic.Unscaled, astropy.units.format.vounit.VOUnit" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -767,7 +773,7 @@ code under a BSD license.</p>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">Ohm</span></code></td>
 <td>Ohm: electrical resistance</td>
 <td><img class="math" src="../_images/math/1ab8ed0b36c7a4d916ae6868637a232c091bd75a.png" alt="\mathrm{\frac{V}{A}}"/></td>
-<td><code class="docutils literal"><span class="pre">ohm</span></code>, <code class="docutils literal"><span class="pre">Ohm</span></code></td>
+<td><code class="docutils literal"><span class="pre">ohm</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">Pa</span></code></td>
@@ -788,16 +794,16 @@ code under a BSD license.</p>
 <td><code class="docutils literal"><span class="pre">radian</span></code></td>
 <td>T</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">s</span></code></td>
-<td>second: base unit of time in SI.</td>
-<td>&nbsp;</td>
-<td><code class="docutils literal"><span class="pre">second</span></code></td>
-<td>T</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">S</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">S</span></code></td>
 <td>Siemens: electrical conductance</td>
 <td><img class="math" src="../_images/math/5f83b6270622bb683370ff440d5ba967d298d431.png" alt="\mathrm{\frac{A}{V}}"/></td>
 <td><code class="docutils literal"><span class="pre">Siemens</span></code>, <code class="docutils literal"><span class="pre">siemens</span></code></td>
+<td>T</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">s</span></code></td>
+<td>second: base unit of time in SI.</td>
+<td>&nbsp;</td>
+<td><code class="docutils literal"><span class="pre">second</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">sday</span></code></td>
@@ -951,17 +957,17 @@ top-level <a class="reference internal" href="#module-astropy.units" title="astr
 <td><code class="docutils literal"><span class="pre">Franklin</span></code>, <code class="docutils literal"><span class="pre">statcoulomb</span></code>, <code class="docutils literal"><span class="pre">statC</span></code>, <code class="docutils literal"><span class="pre">esu</span></code></td>
 <td>F</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">g</span></code></td>
-<td>gram (g)</td>
-<td><img class="math" src="../_images/math/33bea16d5d7f4de0f4309a33415caad6b101368a.png" alt="\mathrm{0.001\,kg}"/></td>
-<td><code class="docutils literal"><span class="pre">gram</span></code></td>
-<td>F</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">G</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">G</span></code></td>
 <td>Gauss: CGS unit for magnetic field</td>
 <td><img class="math" src="../_images/math/d0118c27a5f6134fd5dd6252c0629b943905d007.png" alt="\mathrm{0.0001\,T}"/></td>
 <td><code class="docutils literal"><span class="pre">Gauss</span></code>, <code class="docutils literal"><span class="pre">gauss</span></code></td>
 <td>T</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">g</span></code></td>
+<td>gram (g)</td>
+<td><img class="math" src="../_images/math/33bea16d5d7f4de0f4309a33415caad6b101368a.png" alt="\mathrm{0.001\,kg}"/></td>
+<td><code class="docutils literal"><span class="pre">gram</span></code></td>
+<td>F</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">Gal</span></code></td>
 <td>Gal: CGS unit of acceleration</td>
@@ -1081,13 +1087,13 @@ available in the <a class="reference internal" href="#module-astropy.units" titl
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">bit</span></code></td>
 <td>b (bit)</td>
 <td>&nbsp;</td>
-<td><code class="docutils literal"><span class="pre">b</span></code>, <code class="docutils literal"><span class="pre">bit</span></code></td>
+<td><code class="docutils literal"><span class="pre">b</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">byte</span></code></td>
 <td>B (byte)</td>
 <td><img class="math" src="../_images/math/3e8ad719728650e059b3c6bdae16b219f0dbbf47.png" alt="\mathrm{8\,bit}"/></td>
-<td><code class="docutils literal"><span class="pre">B</span></code>, <code class="docutils literal"><span class="pre">byte</span></code></td>
+<td><code class="docutils literal"><span class="pre">B</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">chan</span></code></td>
@@ -1099,7 +1105,7 @@ available in the <a class="reference internal" href="#module-astropy.units" titl
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">ct</span></code></td>
 <td>count (ct)</td>
 <td>&nbsp;</td>
-<td><code class="docutils literal"><span class="pre">count</span></code>, <code class="docutils literal"><span class="pre">count</span></code></td>
+<td><code class="docutils literal"><span class="pre">count</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">cycle</span></code></td>
@@ -1114,16 +1120,28 @@ available in the <a class="reference internal" href="#module-astropy.units" titl
 <td><code class="docutils literal"><span class="pre">M_earth</span></code>, <code class="docutils literal"><span class="pre">Mearth</span></code></td>
 <td>T</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">electron</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">earthRad</span></code></td>
+<td>Earth radius</td>
+<td><img class="math" src="../_images/math/16c725c2b34bea68eeb0a9fe7392a8291062e752.png" alt="\mathrm{6378136\,m}"/></td>
+<td><code class="docutils literal"><span class="pre">R_earth</span></code>, <code class="docutils literal"><span class="pre">Rearth</span></code></td>
+<td>T</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">electron</span></code></td>
 <td>Number of electrons</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>F</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">jupiterMass</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">jupiterMass</span></code></td>
 <td>Jupiter mass</td>
 <td><img class="math" src="../_images/math/b402ba44dd503517944f877fa03cbc97c5f3c695.png" alt="\mathrm{1.8987 \times 10^{27}\,kg}"/></td>
 <td><code class="docutils literal"><span class="pre">M_jup</span></code>, <code class="docutils literal"><span class="pre">Mjup</span></code>, <code class="docutils literal"><span class="pre">M_jupiter</span></code>, <code class="docutils literal"><span class="pre">Mjupiter</span></code></td>
+<td>T</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">jupiterRad</span></code></td>
+<td>Jupiter radius</td>
+<td><img class="math" src="../_images/math/6cb4814143e93054d2403255e678b41e87f87c1c.png" alt="\mathrm{71492000\,m}"/></td>
+<td><code class="docutils literal"><span class="pre">R_jup</span></code>, <code class="docutils literal"><span class="pre">Rjup</span></code>, <code class="docutils literal"><span class="pre">R_jupiter</span></code>, <code class="docutils literal"><span class="pre">Rjupiter</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">Jy</span></code></td>
@@ -1159,13 +1177,13 @@ available in the <a class="reference internal" href="#module-astropy.units" titl
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">ph</span></code></td>
 <td>photon (ph)</td>
 <td>&nbsp;</td>
-<td><code class="docutils literal"><span class="pre">photon</span></code>, <code class="docutils literal"><span class="pre">photon</span></code></td>
+<td><code class="docutils literal"><span class="pre">photon</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">pix</span></code></td>
 <td>pixel (pix)</td>
 <td>&nbsp;</td>
-<td><code class="docutils literal"><span class="pre">pixel</span></code>, <code class="docutils literal"><span class="pre">pixel</span></code></td>
+<td><code class="docutils literal"><span class="pre">pixel</span></code></td>
 <td>T</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">R</span></code></td>
@@ -1213,7 +1231,7 @@ available in the <a class="reference internal" href="#module-astropy.units" titl
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">vox</span></code></td>
 <td>voxel (vox)</td>
 <td>&nbsp;</td>
-<td><code class="docutils literal"><span class="pre">voxel</span></code>, <code class="docutils literal"><span class="pre">voxel</span></code></td>
+<td><code class="docutils literal"><span class="pre">voxel</span></code></td>
 <td>T</td>
 </tr>
 </tbody>
@@ -1531,15 +1549,15 @@ of <a class="reference internal" href="../api/astropy.units.UnitBase.html#astrop
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">a</span></code></td>
-<td>year</td>
-<td><img class="math" src="../_images/math/be52b46722577475b3a2d254fd4610ae825eecd6.png" alt="\mathrm{a}"/></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">A</span></code></td>
+<td>Ampere</td>
+<td><img class="math" src="../_images/math/8ada065803b9820fccf12da08171ae49788ca42f.png" alt="\mathrm{A}"/></td>
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">A</span></code></td>
-<td>Ampere</td>
-<td><img class="math" src="../_images/math/8ada065803b9820fccf12da08171ae49788ca42f.png" alt="\mathrm{A}"/></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">a</span></code></td>
+<td>year</td>
+<td><img class="math" src="../_images/math/be52b46722577475b3a2d254fd4610ae825eecd6.png" alt="\mathrm{a}"/></td>
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
@@ -1651,15 +1669,15 @@ of <a class="reference internal" href="../api/astropy.units.UnitBase.html#astrop
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">d</span></code></td>
-<td>Julian day</td>
-<td><img class="math" src="../_images/math/3d7b6454e90738d77732f08e3b23e22219522d95.png" alt="\mathrm{d}"/></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">D</span></code></td>
+<td>Debye (dipole)</td>
+<td><img class="math" src="../_images/math/7ab4f6c5b72b54a7ef17d498ae16dfc7cf10bcce.png" alt="\mathrm{D}"/></td>
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">D</span></code></td>
-<td>Debye (dipole)</td>
-<td><img class="math" src="../_images/math/7ab4f6c5b72b54a7ef17d498ae16dfc7cf10bcce.png" alt="\mathrm{D}"/></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">d</span></code></td>
+<td>Julian day</td>
+<td><img class="math" src="../_images/math/3d7b6454e90738d77732f08e3b23e22219522d95.png" alt="\mathrm{d}"/></td>
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
@@ -1783,15 +1801,15 @@ of <a class="reference internal" href="../api/astropy.units.UnitBase.html#astrop
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">k</span></code></td>
-<td>Boltzmann</td>
-<td><img class="math" src="../_images/math/e5d22f34393824b648a82969924e2be4b338aed2.png" alt="\mathrm{1.3806488 \times 10^{-23}\,\frac{J}{K}}"/></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">K</span></code></td>
+<td>Kelvin</td>
+<td><img class="math" src="../_images/math/9f88e30a53d2a4e5b17ca45bc836c308f77d0a8d.png" alt="\mathrm{K}"/></td>
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">K</span></code></td>
-<td>Kelvin</td>
-<td><img class="math" src="../_images/math/9f88e30a53d2a4e5b17ca45bc836c308f77d0a8d.png" alt="\mathrm{K}"/></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">k</span></code></td>
+<td>Boltzmann</td>
+<td><img class="math" src="../_images/math/e5d22f34393824b648a82969924e2be4b338aed2.png" alt="\mathrm{1.3806488 \times 10^{-23}\,\frac{J}{K}}"/></td>
 <td>&nbsp;</td>
 <td>T</td>
 </tr>
@@ -2117,6 +2135,12 @@ of <a class="reference internal" href="../api/astropy.units.UnitBase.html#astrop
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.units.equivalencies.temperature_energy.html#astropy.units.equivalencies.temperature_energy" title="astropy.units.equivalencies.temperature_energy"><code class="xref py py-obj docutils literal"><span class="pre">temperature_energy</span></code></a>()</td>
 <td>Convert between Kelvin and keV(eV) to an equivalent amount.</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.units.equivalencies.pixel_scale.html#astropy.units.equivalencies.pixel_scale" title="astropy.units.equivalencies.pixel_scale"><code class="xref py py-obj docutils literal"><span class="pre">pixel_scale</span></code></a>(pixscale)</td>
+<td>Convert between pixel distances (in units of <code class="docutils literal"><span class="pre">pix</span></code>) and angular units, given a particular <code class="docutils literal"><span class="pre">pixscale</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.units.equivalencies.plate_scale.html#astropy.units.equivalencies.plate_scale" title="astropy.units.equivalencies.plate_scale"><code class="xref py py-obj docutils literal"><span class="pre">plate_scale</span></code></a>(platescale)</td>
+<td>Convert between lengths (to be interpreted as lengths in the focal plane) and angular units with a specified <code class="docutils literal"><span class="pre">platescale</span></code>.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2170,7 +2194,7 @@ are some function of a physical unit, such as magnitudes and decibels.</p>
 <div class="section" id="id13">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-24c6172763f6b16e3e7060a6c1af281c5b3909f8.svg" alt="Inheritance diagram of astropy.units.function.logarithmic.Decibel, astropy.units.function.logarithmic.DecibelUnit, astropy.units.function.logarithmic.Dex, astropy.units.function.logarithmic.DexUnit, astropy.units.function.core.FunctionQuantity, astropy.units.function.core.FunctionUnitBase, astropy.units.function.logarithmic.LogQuantity, astropy.units.function.logarithmic.LogUnit, astropy.units.function.logarithmic.MagUnit, astropy.units.function.logarithmic.Magnitude" class="inheritance"/>
+<img src="../_images/inheritance-be62fac8a1373d50e2b46e234445ed1706b2306d.svg" alt="Inheritance diagram of astropy.units.function.logarithmic.Decibel, astropy.units.function.logarithmic.DecibelUnit, astropy.units.function.logarithmic.Dex, astropy.units.function.logarithmic.DexUnit, astropy.units.function.core.FunctionQuantity, astropy.units.function.core.FunctionUnitBase, astropy.units.function.logarithmic.LogQuantity, astropy.units.function.logarithmic.LogUnit, astropy.units.function.logarithmic.MagUnit, astropy.units.function.logarithmic.Magnitude" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -2255,7 +2279,7 @@ under a BSD license.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

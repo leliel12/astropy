@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.nddata.mixins.ndarithmetic &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.nddata.mixins.ndarithmetic &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="astropy.nddata" href="../../nddata.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" >Module code</a> &raquo;</li>
@@ -82,10 +82,12 @@
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="kn">from</span> <span class="nn">..nduncertainty</span> <span class="kn">import</span> <span class="n">NDUncertainty</span>
 <span class="kn">from</span> <span class="nn">...units</span> <span class="kn">import</span> <span class="n">dimensionless_unscaled</span>
-<span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">format_doc</span>
+<span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">format_doc</span><span class="p">,</span> <span class="n">sharedmethod</span>
+<span class="kn">from</span> <span class="nn">...utils.exceptions</span> <span class="kn">import</span> <span class="n">AstropyDeprecationWarning</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;NDArithmeticMixin&#39;</span><span class="p">]</span>
 
@@ -95,14 +97,14 @@
 <span class="n">_arit_doc</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="s">    Performs {name} by evaluating ``self`` {op} ``operand``.</span>
 
-<span class="s">    For the inverse operation or operations between different subclasses take a</span>
-<span class="s">    look at</span>
-<span class="s">    :meth:`~astropy.nddata.NDArithmeticMixin.ic_{name}` .</span>
-
 <span class="s">    Parameters</span>
 <span class="s">    ----------</span>
-<span class="s">    operand : `NDData`-like instance or convertible to one.</span>
-<span class="s">        The second operand in the operation.</span>
+<span class="s">    operand, operand2 : `NDData`-like instance or convertible to one.</span>
+<span class="s">        If ``operand2`` is ``None`` or not given it will perform the operation</span>
+<span class="s">        ``self`` {op} ``operand``.</span>
+<span class="s">        If ``operand2`` is given it will perform ``operand`` {op} ``operand2``.</span>
+<span class="s">        If the method was called on a class rather than on the instance</span>
+<span class="s">        ``operand2`` must be given.</span>
 
 <span class="s">    propagate_uncertainties : `bool` or ``None``, optional</span>
 <span class="s">        If ``None`` the result will have no uncertainty. If ``False`` the</span>
@@ -111,6 +113,11 @@
 <span class="s">        uncertainty from the uncertainties of the operands but this assumes</span>
 <span class="s">        that the uncertainties are `NDUncertainty`-like. Default is ``True``.</span>
 
+<span class="s">        .. versionchanged:: 1.2</span>
+<span class="s">            This parameter must be given as keyword-parameter. Using it as</span>
+<span class="s">            positional parameter is deprecated.</span>
+<span class="s">            ``None`` was added as valid parameter value.</span>
+
 <span class="s">    handle_mask : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
 <span class="s">        If ``None`` the result will have no mask. If ``&#39;first_found&#39;`` the</span>
 <span class="s">        result will have a copied version of the first operand that has a</span>
@@ -118,12 +125,16 @@
 <span class="s">        create the results ``mask`` and if necessary provide a copy.</span>
 <span class="s">        Default is `numpy.logical_or`.</span>
 
+<span class="s">        .. versionadded:: 1.2</span>
+
 <span class="s">    handle_meta : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
 <span class="s">        If ``None`` the result will have no meta. If ``&#39;first_found&#39;`` the</span>
 <span class="s">        result will have a copied version of the first operand that has a</span>
 <span class="s">        (not empty) meta. If it is a callable then the specified callable must</span>
 <span class="s">        create the results ``meta`` and if necessary provide a copy.</span>
 <span class="s">        Default is ``None``.</span>
+
+<span class="s">        .. versionadded:: 1.2</span>
 
 <span class="s">    compare_wcs : callable, ``&#39;first_found&#39;`` or ``None``, optional</span>
 <span class="s">        If ``None`` the result will have no wcs and no comparison between</span>
@@ -134,11 +145,15 @@
 <span class="s">        was given otherwise it raises a ``ValueError`` if the comparison was</span>
 <span class="s">        not successful. Default is ``&#39;first_found&#39;``.</span>
 
+<span class="s">        .. versionadded:: 1.2</span>
+
 <span class="s">    uncertainty_correlation : number or `~numpy.ndarray`, optional</span>
 <span class="s">        The correlation between the two operands is used for correct error</span>
 <span class="s">        propagation for correlated data as given in:</span>
 <span class="s">        https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas</span>
 <span class="s">        Default is 0.</span>
+
+<span class="s">        .. versionadded:: 1.2</span>
 
 
 <span class="s">    kwargs :</span>
@@ -157,32 +172,8 @@
 <span class="s">    defined as ``kwargs`` and must start with ``&quot;wcs_&quot;`` (for wcs callable) or</span>
 <span class="s">    ``&quot;meta_&quot;`` (for meta callable). This startstring is removed before the</span>
 <span class="s">    callable is called.</span>
-<span class="s">    &quot;&quot;&quot;</span>
 
-<span class="n">_arit_cls_doc</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
-<span class="s">    Like :meth:`NDArithmeticMixin.{0}` you can {0} two operands.</span>
-
-<span class="s">    This method is avaiable as classmethod in order to allow arithmetic</span>
-<span class="s">    operations between arbitary objects as long as they are convertable to</span>
-<span class="s">    the class that called the method. Therefore the name prefix ``ic_`` which</span>
-<span class="s">    stands for ``interclass`` operations.</span>
-
-<span class="s">    Parameters</span>
-<span class="s">    ----------</span>
-<span class="s">    operand1 : `NDData`-like or convertable to `NDData`</span>
-<span class="s">        the first operand in the operation.</span>
-
-<span class="s">    operand2 : `NDData`-like or convertable to `NDData`</span>
-<span class="s">        the second operand in the operation.</span>
-
-<span class="s">    kwargs :</span>
-<span class="s">        see :meth:`NDArithmeticMixin.{0}`</span>
-
-<span class="s">    Returns</span>
-<span class="s">    -------</span>
-<span class="s">    result : `NDData`-like</span>
-<span class="s">        The result of the operation. The class of the result is the class from</span>
-<span class="s">        where the method was invoked.</span>
+<span class="s">    ``&quot;first_found&quot;`` can also be abbreviated with ``&quot;ff&quot;``.</span>
 <span class="s">    &quot;&quot;&quot;</span>
 
 
@@ -226,51 +217,29 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    Using this Mixin with `~astropy.nddata.NDData`:</span>
 
-<span class="sd">    TODO: Just here because the examples fit more into the main documentation</span>
-<span class="sd">    than in here.</span>
+<span class="sd">        &gt;&gt;&gt; from astropy.nddata import NDData, NDArithmeticMixin</span>
+<span class="sd">        &gt;&gt;&gt; class NDDataWithMath(NDArithmeticMixin, NDData):</span>
+<span class="sd">        ...     pass</span>
 
-<span class="sd">    For example::</span>
+<span class="sd">    Using it with one operand on an instance::</span>
 
-<span class="sd">        &gt;&gt;&gt; from astropy.nddata import *</span>
-<span class="sd">        &gt;&gt;&gt; class NDDataWithMath(NDArithmeticMixin, NDData): pass</span>
-<span class="sd">        &gt;&gt;&gt; nd = NDDataWithMath([1,2,3], unit=&#39;meter&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; nd_inv = nd.ic_division(1, nd)</span>
-<span class="sd">        &gt;&gt;&gt; nd_inv.__class__.__name__</span>
-<span class="sd">        &#39;NDDataWithMath&#39;</span>
-<span class="sd">        &gt;&gt;&gt; nd_inv.data</span>
-<span class="sd">        array([ 1.        ,  0.5       ,  0.33333333])</span>
-<span class="sd">        &gt;&gt;&gt; nd_inv.unit</span>
-<span class="sd">        Unit(&quot;1 / m&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; ndd = NDDataWithMath(100)</span>
+<span class="sd">        &gt;&gt;&gt; ndd.add(20)</span>
+<span class="sd">        NDDataWithMath(120)</span>
 
-<span class="sd">    This method also allows that the result of unrelated objects is tried</span>
-<span class="sd">    with what this class implements as arithmetics and give a result that</span>
-<span class="sd">    is the same class as the class that called the method.</span>
+<span class="sd">    Using it with two operand on an instance::</span>
 
-<span class="sd">        &gt;&gt;&gt; nd2 = nd.ic_multiplication([1,2],3)</span>
-<span class="sd">        &gt;&gt;&gt; nd2.__class__.__name__</span>
-<span class="sd">        &#39;NDDataWithMath&#39;</span>
-<span class="sd">        &gt;&gt;&gt; nd2.data</span>
-<span class="sd">        array([3, 6])</span>
+<span class="sd">        &gt;&gt;&gt; ndd = NDDataWithMath(5)</span>
+<span class="sd">        &gt;&gt;&gt; ndd.divide(1, ndd)</span>
+<span class="sd">        NDDataWithMath(0.2)</span>
 
-<span class="sd">    Since this is a classmethod we don&#39;t need an instance to use them:</span>
+<span class="sd">    Using it as classmethod requires two operands::</span>
 
-<span class="sd">        &gt;&gt;&gt; nd3 = NDDataWithMath.ic_subtraction(5, NDData([1,2,3]))</span>
-<span class="sd">        &gt;&gt;&gt; nd3.__class__.__name__</span>
-<span class="sd">        &#39;NDDataWithMath&#39;</span>
-<span class="sd">        &gt;&gt;&gt; nd3.data</span>
-<span class="sd">        array([4, 3, 2])</span>
+<span class="sd">        &gt;&gt;&gt; NDDataWithMath.subtract(5, 4)</span>
+<span class="sd">        NDDataWithMath(1)</span>
 
-<span class="sd">    And it allows to handle arithmetics with different subclasses.</span>
-
-<span class="sd">        &gt;&gt;&gt; class NDDataWithMathAndSlicing(NDSlicingMixin,NDArithmeticMixin, NDData): pass</span>
-<span class="sd">        &gt;&gt;&gt; nd = NDDataWithMath([5,5,5])</span>
-<span class="sd">        &gt;&gt;&gt; nd2 = NDDataWithMathAndSlicing([3,2,5])</span>
-<span class="sd">        &gt;&gt;&gt; nd3 = nd2.ic_addition(nd, nd2)</span>
-<span class="sd">        &gt;&gt;&gt; nd3.__class__.__name__</span>
-<span class="sd">        &#39;NDDataWithMathAndSlicing&#39;</span>
-<span class="sd">        &gt;&gt;&gt; nd3.data</span>
-<span class="sd">        array([ 8,  7, 10])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">_arithmetic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
@@ -291,7 +260,7 @@
 <span class="sd">            `numpy.add`, `numpy.subtract`, `numpy.multiply` and</span>
 <span class="sd">            `numpy.true_divide`.</span>
 
-<span class="sd">        operand : `NDData` instance or something that can be converted to one.</span>
+<span class="sd">        operand : same type (class) as self</span>
 <span class="sd">            see :meth:`NDArithmeticMixin.add`</span>
 
 <span class="sd">        propagate_uncertainties : `bool` or ``None``, optional</span>
@@ -327,12 +296,6 @@
 <span class="sd">            :meth:`NDArithmeticMixin.add`.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c"># Convert the operand to the same class this allows for arithmetic</span>
-        <span class="c"># operations with numbers, lists, numpy arrays, numpy masked arrays</span>
-        <span class="c"># astropy quantities, masked quantities and of other subclasses of</span>
-        <span class="c"># NDData</span>
-        <span class="n">operand</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">operand</span><span class="p">)</span>
-
         <span class="c"># Find the appropriate keywords for the appropriate method (not sure</span>
         <span class="c"># if data and uncertainty are ever used ...)</span>
         <span class="n">kwds2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;mask&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&#39;meta&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&#39;wcs&#39;</span><span class="p">:</span> <span class="p">{},</span>
@@ -350,7 +313,7 @@
         <span class="c"># First check that the WCS allows the arithmetic operation</span>
         <span class="k">if</span> <span class="n">compare_wcs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="k">elif</span> <span class="n">compare_wcs</span> <span class="o">==</span> <span class="s">&#39;first_found&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">compare_wcs</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;ff&#39;</span><span class="p">,</span> <span class="s">&#39;first_found&#39;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">wcs</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -378,7 +341,7 @@
 
         <span class="k">if</span> <span class="n">handle_mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="k">elif</span> <span class="n">handle_mask</span> <span class="o">==</span> <span class="s">&#39;first_found&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">handle_mask</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;ff&#39;</span><span class="p">,</span> <span class="s">&#39;first_found&#39;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -390,7 +353,7 @@
 
         <span class="k">if</span> <span class="n">handle_meta</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="k">elif</span> <span class="n">handle_meta</span> <span class="o">==</span> <span class="s">&#39;first_found&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">handle_meta</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;ff&#39;</span><span class="p">,</span> <span class="s">&#39;first_found&#39;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">:</span>
                 <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">operand</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -631,62 +594,129 @@
         <span class="c"># Just return what handle_meta does with both of the metas.</span>
         <span class="k">return</span> <span class="n">handle_meta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="n">operand</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 
+    <span class="nd">@sharedmethod</span>
     <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;addition&#39;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.add"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.add"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_then_do_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span>
+                                                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </div>
-    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;subtraction&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.subtract"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="nd">@sharedmethod</span>
+    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;subtraction&#39;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&#39;-&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.subtract"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_then_do_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span>
+                                                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </div>
+    <span class="nd">@sharedmethod</span>
     <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;multiplication&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.multiply"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.multiply">[docs]</a>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.multiply"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.multiply">[docs]</a>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_then_do_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span>
+                                                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </div>
+    <span class="nd">@sharedmethod</span>
     <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_doc</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;division&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.divide"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.divide">[docs]</a>    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">result</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="viewcode-block" id="NDArithmeticMixin.divide"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.divide">[docs]</a>    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_then_do_arithmetic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span>
+                                                <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@sharedmethod</span>
+    <span class="k">def</span> <span class="nf">_prepare_then_do_arithmetic</span><span class="p">(</span><span class="n">self_or_cls</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Intermediate method called by public arithmetics (i.e. ``add``)</span>
+<span class="sd">        before the processing method (``_arithmetic``) is invoked.</span>
 
-    <span class="c"># TODO: Sharedmethod instead of classmethod? (embray)</span>
-    <span class="c"># http://docs.astropy.org/en/v1.0.5/api/astropy.utils.decorators.sharedmethod.html#astropy.utils.decorators.sharedmethod</span>
-    <span class="c"># But that only allows for one documentation and we need the first operand.</span>
-    <span class="c"># Also it doesn&#39;t allow sphinx to build two documentations one for the</span>
-    <span class="c"># classmethod and one of the instance method and since creating one</span>
-    <span class="c"># doc that applies to both is not-trivial I set this option back for now.</span>
-    <span class="c"># So I decided to temporarly alter the name that there are not too obvious</span>
-    <span class="c"># name clashes by adding a &#39;ic_&#39; prefix that stands for &#39;interclass&#39;</span>
-    <span class="c"># arithmetic operations</span>
-</div>
-    <span class="nd">@classmethod</span>
-    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;add&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.ic_addition"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_addition">[docs]</a>    <span class="k">def</span> <span class="nf">ic_addition</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="c"># Convert the first operand to the implicit passed class (cls)</span>
-        <span class="c"># this allows for reverse operations.</span>
-        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
-        <span class="c"># Call the instance function for addition to proceed</span>
-        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</div>
-    <span class="nd">@classmethod</span>
-    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;subtract&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.ic_subtraction"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_subtraction">[docs]</a>    <span class="k">def</span> <span class="nf">ic_subtraction</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</div>
-    <span class="nd">@classmethod</span>
-    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;multiply&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.ic_multiplication"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_multiplication">[docs]</a>    <span class="k">def</span> <span class="nf">ic_multiplication</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</div>
-    <span class="nd">@classmethod</span>
-    <span class="nd">@format_doc</span><span class="p">(</span><span class="n">_arit_cls_doc</span><span class="p">,</span> <span class="s">&#39;divide&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="NDArithmeticMixin.ic_division"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDArithmeticMixin.html#astropy.nddata.NDArithmeticMixin.ic_division">[docs]</a>    <span class="k">def</span> <span class="nf">ic_division</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">operand1</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">operand1</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">operand1</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+<span class="sd">        .. warning::</span>
+<span class="sd">            Do not override this method in subclasses.</span>
+
+<span class="sd">        This method checks if it was called as instance or as class method and</span>
+<span class="sd">        then wraps the operands and the result from ``_arithmetics`` in the</span>
+<span class="sd">        appropriate subclass.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self_or_cls : instance or class</span>
+<span class="sd">            ``sharedmethod`` behaves like a normal method if called on the</span>
+<span class="sd">            instance (then this parameter is ``self``) but like a classmethod</span>
+<span class="sd">            when called on the class (then this parameter is ``cls``).</span>
+
+<span class="sd">        operations : callable</span>
+<span class="sd">            The operation (normally a numpy-ufunc) that represents the</span>
+<span class="sd">            appropriate action.</span>
+
+<span class="sd">        operand, operand2, kwargs :</span>
+<span class="sd">            See for example ``add``.</span>
+
+<span class="sd">        Result</span>
+<span class="sd">        ------</span>
+<span class="sd">        result : `~astropy.nddata.NDData`-like</span>
+<span class="sd">            Depending how this method was called either ``self_or_cls``</span>
+<span class="sd">            (called on class) or ``self_or_cls.__class__`` (called on instance)</span>
+<span class="sd">            is the NDData-subclass that is used as wrapper for the result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># DO NOT OVERRIDE THIS METHOD IN SUBCLASSES.</span>
+
+        <span class="c"># TODO: Remove this in astropy 1.3 or 1.4:</span>
+
+        <span class="c"># Before 1.2 propagate_uncertainties could be given as positional</span>
+        <span class="c"># keyword, this is now deprecated:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">operand2</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="s">&#39;propagate_uncertainties&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">):</span>
+            <span class="c"># No explicit propagate_uncertainties was given but the second</span>
+            <span class="c"># operand was given as boolean. I&#39;ll assume that most don&#39;t want</span>
+            <span class="c"># to do arithmetics with a boolean operand, print a deprecation</span>
+            <span class="c"># warning. If someone really wanted to do arithmetics with a</span>
+            <span class="c"># boolean he should have set propagate_uncertainties. :-/</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;propagate_uncertainties should be given as keyword &#39;</span>
+                          <span class="s">&#39;parameter, i.e. &quot;propagate_uncertainties={0}&quot;.&#39;</span>
+                          <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">operand2</span><span class="p">),</span> <span class="n">AstropyDeprecationWarning</span><span class="p">)</span>
+            <span class="c"># Set the kwarg and reset operand2.</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;propagate_uncertainties&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">operand2</span>
+            <span class="n">operand2</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c"># TODO: The following parts must remain here if the above part is</span>
+        <span class="c"># removed.</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">self_or_cls</span><span class="p">,</span> <span class="n">NDArithmeticMixin</span><span class="p">):</span>
+            <span class="c"># True means it was called on the instance, so self_or_cls is</span>
+            <span class="c"># a reference to self</span>
+            <span class="n">cls</span> <span class="o">=</span> <span class="n">self_or_cls</span><span class="o">.</span><span class="n">__class__</span>
+
+            <span class="k">if</span> <span class="n">operand2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="c"># Only one operand was given. Set operand2 to operand and</span>
+                <span class="c"># operand to self so that we call the appropriate method of the</span>
+                <span class="c"># operand.</span>
+                <span class="n">operand2</span> <span class="o">=</span> <span class="n">operand</span>
+                <span class="n">operand</span> <span class="o">=</span> <span class="n">self_or_cls</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># Convert the first operand to the class of this method.</span>
+                <span class="c"># This is important so that always the correct _arithmetics is</span>
+                <span class="c"># called later that method.</span>
+                <span class="n">operand</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># It was used as classmethod so self_or_cls represents the cls</span>
+            <span class="n">cls</span> <span class="o">=</span> <span class="n">self_or_cls</span>
+
+            <span class="c"># It was called on the class so we expect two operands!</span>
+            <span class="k">if</span> <span class="n">operand2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;operand2 must be given when the method isn&#39;t &quot;</span>
+                                <span class="s">&quot;called on an instance.&quot;</span><span class="p">)</span>
+
+            <span class="c"># Convert to this class. See above comment why.</span>
+            <span class="n">operand</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand</span><span class="p">)</span>
+
+        <span class="c"># At this point operand, operand2, kwargs and cls are determined.</span>
+
+        <span class="c"># Let&#39;s try to convert operand2 to the class of operand to allows for</span>
+        <span class="c"># arithmetic operations with numbers, lists, numpy arrays, numpy masked</span>
+        <span class="c"># arrays, astropy quantities, masked quantities and of other subclasses</span>
+        <span class="c"># of NDData.</span>
+        <span class="n">operand2</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">operand2</span><span class="p">)</span>
+
+        <span class="c"># Now call the _arithmetics method to do the arithmetics.</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">init_kwds</span> <span class="o">=</span> <span class="n">operand</span><span class="o">.</span><span class="n">_arithmetic</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">operand2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c"># Return a new class based on the result</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">init_kwds</span><span class="p">)</span></div>
 </pre></div>
 
           </div>
@@ -706,7 +736,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

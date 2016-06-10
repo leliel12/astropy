@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Image stretching and normalization &mdash; Astropy v1.2.dev15003</title>
+    <title>Image stretching and normalization &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Data Visualization (astropy.visualization)" href="index.html" />
     <link rel="next" title="Choosing Histogram Bins" href="histogram.html" />
     <link rel="prev" title="Data Visualization (astropy.visualization)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Data Visualization (<code class="docutils literal"><span class="pre">astropy.visualization</span></code>)</a> &raquo;</li>
@@ -131,11 +131,12 @@ normalize values to the range:</p>
 </pre></div>
 </div>
 <p>Other interval classes include <a class="reference internal" href="../api/astropy.visualization.ManualInterval.html#astropy.visualization.ManualInterval" title="astropy.visualization.ManualInterval"><code class="xref py py-class docutils literal"><span class="pre">ManualInterval</span></code></a>,
-<a class="reference internal" href="../api/astropy.visualization.PercentileInterval.html#astropy.visualization.PercentileInterval" title="astropy.visualization.PercentileInterval"><code class="xref py py-class docutils literal"><span class="pre">PercentileInterval</span></code></a>, and
-<a class="reference internal" href="../api/astropy.visualization.AsymmetricPercentileInterval.html#astropy.visualization.AsymmetricPercentileInterval" title="astropy.visualization.AsymmetricPercentileInterval"><code class="xref py py-class docutils literal"><span class="pre">AsymmetricPercentileInterval</span></code></a>. For these three,
-values in the array can fall outside of the limits given by the interval. A
-<code class="docutils literal"><span class="pre">clip</span></code> argument is provided to control the behavior of the normalization when
-values fall outside the limits:</p>
+<a class="reference internal" href="../api/astropy.visualization.PercentileInterval.html#astropy.visualization.PercentileInterval" title="astropy.visualization.PercentileInterval"><code class="xref py py-class docutils literal"><span class="pre">PercentileInterval</span></code></a>,
+<a class="reference internal" href="../api/astropy.visualization.AsymmetricPercentileInterval.html#astropy.visualization.AsymmetricPercentileInterval" title="astropy.visualization.AsymmetricPercentileInterval"><code class="xref py py-class docutils literal"><span class="pre">AsymmetricPercentileInterval</span></code></a>, and
+<a class="reference internal" href="../api/astropy.visualization.ZScaleInterval.html#astropy.visualization.ZScaleInterval" title="astropy.visualization.ZScaleInterval"><code class="xref py py-class docutils literal"><span class="pre">ZScaleInterval</span></code></a>. For these, values in the array
+can fall outside of the limits given by the interval.  A <code class="docutils literal"><span class="pre">clip</span></code> argument is
+provided to control the behavior of the normalization when values fall outside
+the limits:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.visualization</span> <span class="kn">import</span> <span class="n">PercentileInterval</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">PercentileInterval</span><span class="p">(</span><span class="mf">50.</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">get_limits</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
@@ -194,7 +195,7 @@ percentile value, followed by a square root stretch, you can do:</p>
 </pre></div>
 </div>
 <p>As before, the combined transformation can also accept a <code class="docutils literal"><span class="pre">clip</span></code> argument
-(which is <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> by default).</p>
+(which is <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> by default).</p>
 </div>
 <div class="section" id="matplotlib-normalization">
 <h2>Matplotlib normalization<a class="headerlink" href="#matplotlib-normalization" title="Permalink to this headline">¶</a></h2>
@@ -263,7 +264,7 @@ instance:</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

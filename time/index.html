@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Time and Dates (astropy.time) &mdash; Astropy v1.2.dev15003</title>
+    <title>Time and Dates (astropy.time) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="OperandTypeError" href="../api/astropy.time.OperandTypeError.html" />
     <link rel="prev" title="TableMergeError" href="../api/astropy.table.TableMergeError.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -109,7 +109,7 @@ the age of the universe.</p>
 <p>The basic way to use <a class="reference internal" href="#module-astropy.time" title="astropy.time"><code class="xref py py-obj docutils literal"><span class="pre">astropy.time</span></code></a> is to create a <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a>
 object by supplying one or more input time values as well as the <a class="reference internal" href="#id3">time format</a> and
 <a class="reference internal" href="#id6">time scale</a> of those values.  The input time(s) can either be a single scalar like
-<code class="docutils literal"><span class="pre">&quot;2010-01-01</span> <span class="pre">00:00:00&quot;</span></code> or a list or a <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array of values as shown below.
+<code class="docutils literal"><span class="pre">&quot;2010-01-01</span> <span class="pre">00:00:00&quot;</span></code> or a list or a <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array of values as shown below.
 In general any output values have the same shape (scalar or array) as the input.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;1999-01-01T00:00:00.123456789&#39;</span><span class="p">,</span> <span class="s">&#39;2010-01-01T00:00:00&#39;</span><span class="p">]</span>
@@ -141,7 +141,7 @@ formats by requesting the corresponding <a class="reference internal" href="../a
 <span class="go">array([ 51179.00000143,  55197.        ])</span>
 </pre></div>
 </div>
-<p>The default representation can be changed by setting the <a class="reference external" href="http://docs.python.org/library/functions.html#format" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a> attribute:</p>
+<p>The default representation can be changed by setting the <a class="reference external" href="http://docs.python.org/3/library/functions.html#format" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a> attribute:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s">&#39;fits&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
 <span class="go">&lt;Time object: scale=&#39;utc&#39; format=&#39;fits&#39; value=[&#39;1999-01-01T00:00:00.123(UTC)&#39;</span>
@@ -534,7 +534,7 @@ appropriate:</p>
 <div class="section" id="numpy-method-analogs">
 <h4>Numpy method analogs<a class="headerlink" href="#numpy-method-analogs" title="Permalink to this headline">¶</a></h4>
 <p>For <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> instances holding arrays, many of the same methods and attributes
-that work on <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> instances can be used.  E.g., one can reshape
+that work on <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> instances can be used.  E.g., one can reshape
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> instances and take specific parts using
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.reshape" title="astropy.time.Time.reshape"><code class="xref py py-meth docutils literal"><span class="pre">reshape()</span></code></a>,
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.ravel" title="astropy.time.Time.ravel"><code class="xref py py-meth docutils literal"><span class="pre">ravel()</span></code></a>, <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.flatten" title="astropy.time.Time.flatten"><code class="xref py py-meth docutils literal"><span class="pre">flatten()</span></code></a>,
@@ -549,10 +549,10 @@ that work on <a class="reference external" href="http://docs.scipy.org/doc/numpy
 <span class="go"> [ 50000.5  50001.5  50002.5]]&gt;</span>
 </pre></div>
 </div>
-<p>Note that similarly to the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> methods, all but
+<p>Note that similarly to the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> methods, all but
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.flatten" title="astropy.time.Time.flatten"><code class="xref py py-meth docutils literal"><span class="pre">flatten()</span></code></a> try to use new views of the data,
 with the data copied only if that it is impossible (as discussed, e.g., in
-the documentation for numpy <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html#numpy.reshape" title="(in NumPy v1.10)"><code class="xref py py-func docutils literal"><span class="pre">reshape()</span></code></a>).</p>
+the documentation for numpy <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html#numpy.reshape" title="(in NumPy v1.11)"><code class="xref py py-func docutils literal"><span class="pre">reshape()</span></code></a>).</p>
 <p>Some arithmetic methods are supported as well: <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.min" title="astropy.time.Time.min"><code class="xref py py-meth docutils literal"><span class="pre">min()</span></code></a>,
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.max" title="astropy.time.Time.max"><code class="xref py py-meth docutils literal"><span class="pre">max()</span></code></a>, <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.ptp" title="astropy.time.Time.ptp"><code class="xref py py-meth docutils literal"><span class="pre">ptp()</span></code></a>,
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.sort" title="astropy.time.Time.sort"><code class="xref py py-meth docutils literal"><span class="pre">sort()</span></code></a>, <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.argmin" title="astropy.time.Time.argmin"><code class="xref py py-meth docutils literal"><span class="pre">argmin()</span></code></a>,
@@ -569,7 +569,7 @@ E.g.:</p>
 <span id="astropy-time-inferring-input"></span><h4>Inferring input format<a class="headerlink" href="#inferring-input-format" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> class initializer will not accept ambiguous inputs,
 but it will make automatic inferences in cases where the inputs are
-unambiguous.  This can apply when the times are supplied as <a class="reference external" href="http://docs.python.org/library/datetime.html#datetime.datetime" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code></a>
+unambiguous.  This can apply when the times are supplied as <a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code></a>
 objects or strings.  In the latter case
 it is not required to specify the format because the available
 string formats have no overlap.  However, if the format is known in advance
@@ -634,9 +634,9 @@ Can be a single location, or one for each input time.</dd>
 <div class="section" id="val">
 <h4>val<a class="headerlink" href="#val" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal"><span class="pre">val</span></code> argument  specifies the input time or times and
-can be a single string or number, or it can be a Python list or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array
+can be a single string or number, or it can be a Python list or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array
 of strings or numbers. To initialize a <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> object based on a specified time,
-it <em>must</em> be present.  If <code class="docutils literal"><span class="pre">val</span></code> is absent (or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>), the <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> object will
+it <em>must</em> be present.  If <code class="docutils literal"><span class="pre">val</span></code> is absent (or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>), the <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> object will
 be created for the time corresponding to the instant the object is created.</p>
 <p>In most situations one also needs to specify the <a class="reference internal" href="#id6">time scale</a> via the
 <code class="docutils literal"><span class="pre">scale</span></code> argument.  The <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> class will never guess the <a class="reference internal" href="#id6">time scale</a>,
@@ -671,7 +671,7 @@ the two values in a way that maintains the highest precision.  Example:</p>
 </div>
 <div class="section" id="format">
 <h4>format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h4>
-<p>The <a class="reference external" href="http://docs.python.org/library/functions.html#format" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a> argument sets the time <a class="reference internal" href="#id3">time format</a>, and as mentioned it is
+<p>The <a class="reference external" href="http://docs.python.org/3/library/functions.html#format" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a> argument sets the time <a class="reference internal" href="#id3">time format</a>, and as mentioned it is
 required unless the format can be unambiguously determined from the input times.</p>
 </div>
 <div class="section" id="scale">
@@ -879,18 +879,35 @@ UT1 - UTC and TDB - TT, respectively.  As an example:</p>
 <span class="go">&#39;2010-01-01 00:00:00.334&#39;</span>
 </pre></div>
 </div>
-<p>For the UT1 to UTC offset, one has to interpolate in observed values provided
-by the <a class="reference external" href="http://www.iers.org">International Earth Rotation and Reference Systems Service</a>.  By default, Astropy is shipped with the final
+<p>For the UT1 to UTC offset, one has to interpolate the observed values provided
+by the <a class="reference external" href="http://www.iers.org">International Earth Rotation and Reference Systems (IERS) Service</a>.  Astropy will automatically download and use values
+from the IERS which cover times spanning from 1973-Jan-01 through one year into
+the future.  In addition the astropy package is bundled with a data table of
 values provided in Bulletin B, which cover the period from 1962 to shortly
-before an astropy release, and these will be used to compute the offset if the
-<a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.delta_ut1_utc" title="astropy.time.Time.delta_ut1_utc"><code class="xref py py-attr docutils literal"><span class="pre">delta_ut1_utc</span></code></a> attribute is not set explicitly.  For
-more recent times, one can download an updated version of <a class="reference external" href="http://hpiers.obspm.fr/iers/eop/eopc04/eopc04_IAU2000.62-now">IERS B</a> or <a class="reference external" href="http://maia.usno.navy.mil/ser7/finals2000A.all">IERS A</a> (which also has
-predictions), and set <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.delta_ut1_utc" title="astropy.time.Time.delta_ut1_utc"><code class="xref py py-attr docutils literal"><span class="pre">delta_ut1_utc</span></code></a> as described in
-<a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.get_delta_ut1_utc" title="astropy.time.Time.get_delta_ut1_utc"><code class="xref py py-obj docutils literal"><span class="pre">get_delta_ut1_utc</span></code></a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.utils.iers</span> <span class="kn">import</span> <span class="n">IERS_A</span><span class="p">,</span> <span class="n">IERS_A_URL</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iers_a</span> <span class="o">=</span> <span class="n">IERS_A</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">IERS_A_URL</span><span class="p">)</span>                     
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">delta_ut1_utc</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_delta_ut1_utc</span><span class="p">(</span><span class="n">iers_a</span><span class="p">)</span>        
+before an astropy release.</p>
+<p>When the <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.delta_ut1_utc" title="astropy.time.Time.delta_ut1_utc"><code class="xref py py-attr docutils literal"><span class="pre">delta_ut1_utc</span></code></a> attribute is not set
+explicitly then IERS values will be used (initiating a download of a few Mb
+file the first time).  For details about how IERS values are used in astropy
+time and coordinates, and to understand how to control automatic downloads see
+<a class="reference internal" href="../utils/iers.html#utils-iers"><span>IERS data access (astropy.utils.iers)</span></a>.  The example below illustrates converting to the <code class="docutils literal"><span class="pre">UT1</span></code>
+scale along with the auto-download feature:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="s">&#39;2016:001&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">ut1</span>  
+<span class="go">Downloading http://maia.usno.navy.mil/ser7/finals2000A.all</span>
+<span class="go">|==================================================================| 3.0M/3.0M (100.00%)         6s</span>
+<span class="go">&lt;Time object: scale=&#39;ut1&#39; format=&#39;yday&#39; value=2016:001:00:00:00.082&gt;</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference internal" href="../api/astropy.utils.iers.IERS_Auto.html#astropy.utils.iers.IERS_Auto" title="astropy.utils.iers.IERS_Auto"><code class="xref py py-class docutils literal"><span class="pre">IERS_Auto</span></code></a> class contains machinery
+to ensure that the IERS table is kept up to date by auto-downloading the
+latest version as needed.  This means that the IERS table is assured of
+having the state-of-the-art definitive and predictive values for Earth
+rotation.  As a user it is <strong>your responsibility</strong> to understand the
+accuracy of IERS predictions if your science depends on that.  If you
+request <code class="docutils literal"><span class="pre">UT1-UTC</span></code> for times beyond the range of IERS table data then the
+nearest available values will be provided.</p>
 </div>
 <p>In the case of the TDB to TT offset, most users need only provide the <code class="docutils literal"><span class="pre">lon</span></code>
 and <code class="docutils literal"><span class="pre">lat</span></code> values when creating the <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> object.  If the
@@ -1061,7 +1078,7 @@ object (or is TAI in case of a UTC time):</p>
 </div>
 </div>
 <div class="section" id="barycentric-and-heliocentric-light-travel-time-corrections">
-<h3>Barycentric and Heliocentric Light Travel Time Corrections<a class="headerlink" href="#barycentric-and-heliocentric-light-travel-time-corrections" title="Permalink to this headline">¶</a></h3>
+<span id="time-light-travel-time"></span><h3>Barycentric and Heliocentric Light Travel Time Corrections<a class="headerlink" href="#barycentric-and-heliocentric-light-travel-time-corrections" title="Permalink to this headline">¶</a></h3>
 <p>The arrival times of photons at an observatory are not particularly useful for
 accurate timing work, such as eclipse/transit timing of binaries or exoplanets.
 This is because the changing location of the observatory causes photons to
@@ -1087,8 +1104,7 @@ calculate light travel times to the barycentre as follows:</p>
 <p>The method returns an <a class="reference internal" href="../api/astropy.time.TimeDelta.html#astropy.time.TimeDelta" title="astropy.time.TimeDelta"><code class="xref py py-class docutils literal"><span class="pre">TimeDelta</span></code></a> object, which can be added to
 your times to give the arrival time of the photons at the barycentre or
 heliocentre.  Here, one should be careful with the timescales used; for more
-detailed information about timescales, see
-<a class="reference external" href="http://astropy.readthedocs.org/en/stable/time/index.html#time-scale">http://astropy.readthedocs.org/en/stable/time/index.html#time-scale</a>.</p>
+detailed information about timescales, see <a class="reference internal" href="#time-scale"><span>Time Scale</span></a>.</p>
 <p>The heliocentre is not a fixed point, and therefore the gravity
 continually changes at the heliocentre. Thus, the use of a relativistic
 timescale like TDB is not particularly appropriate, and, historically,
@@ -1187,7 +1203,43 @@ method may need to be overridden to validate the inputs as conforming to the
 format specification.  By default this checks for valid float, float array, or
 <a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-class docutils literal"><span class="pre">Quantity</span></code></a> inputs.  In contrast the <code class="docutils literal"><span class="pre">iso</span></code> format class ensures the inputs
 meet the ISO format spec for strings.</p>
-<p>One special case that is relatively common and easier to implement is a
+<p>One special case that is relatively common and easier to implement is a format
+that makes a small change to the date format. For instance one could insert <code class="docutils literal"><span class="pre">T</span></code>
+in the <code class="docutils literal"><span class="pre">yday</span></code> format with the following <code class="docutils literal"><span class="pre">TimeYearDayTimeCustom</span></code> class. Notice how
+the <code class="docutils literal"><span class="pre">subfmts</span></code> definition is modified slightly from the standard
+<a class="reference internal" href="../api/astropy.time.TimeISO.html#astropy.time.TimeISO" title="astropy.time.TimeISO"><code class="xref py py-obj docutils literal"><span class="pre">TimeISO</span></code></a> class from which it inherits:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">TimeISO</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TimeYearDayTimeCustom</span><span class="p">(</span><span class="n">TimeISO</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="sd">&quot;&quot;&quot;</span>
+<span class="gp">... </span><span class="sd">   Year, day-of-year and time as &quot;&lt;YYYY&gt;-&lt;DOY&gt;T&lt;HH&gt;:&lt;MM&gt;:&lt;SS.sss...&gt;&quot;.</span>
+<span class="gp">... </span><span class="sd">   The day-of-year (DOY) goes from 001 to 365 (366 in leap years).</span>
+<span class="gp">... </span><span class="sd">   For example, 2000-001T00:00:00.000 is midnight on January 1, 2000.</span>
+<span class="gp">... </span><span class="sd">   The allowed subformats are:</span>
+<span class="gp">... </span><span class="sd">   - &#39;date_hms&#39;: date + hours, mins, secs (and optional fractional secs)</span>
+<span class="gp">... </span><span class="sd">   - &#39;date_hm&#39;: date + hours, mins</span>
+<span class="gp">... </span><span class="sd">   - &#39;date&#39;: date</span>
+<span class="gp">... </span><span class="sd">   &quot;&quot;&quot;</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;yday_custom&#39;</span>  <span class="c"># Unique format name</span>
+<span class="gp">... </span>   <span class="n">subfmts</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;date_hms&#39;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s">&#39;%Y-%jT%H:%M:%S&#39;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s">&#39;{year:d}-{yday:03d}T{hour:02d}:{min:02d}:{sec:02d}&#39;</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="s">&#39;date_hm&#39;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s">&#39;%Y-%jT%H:%M&#39;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s">&#39;{year:d}-{yday:03d}T{hour:02d}:{min:02d}&#39;</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="s">&#39;date&#39;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s">&#39;%Y-%j&#39;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s">&#39;{year:d}-{yday:03d}&#39;</span><span class="p">))</span>
+
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="s">&#39;2000-01-01&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">yday_custom</span>
+<span class="go">&#39;2000-001T00:00:00.000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="s">&#39;2016-001T00:00:00&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span><span class="o">.</span><span class="n">iso</span>
+<span class="go">&#39;2016-01-01 00:00:00.000&#39;</span>
+</pre></div>
+</div>
+<p>Another special case that is relatively common is a
 format that represents the time since a particular epoch.  The classic example
 is Unix time which is the number of seconds since 1970-01-01 00:00:00 UTC,
 not counting leap seconds.  What if we wanted that value but <strong>do</strong> want
@@ -1222,7 +1274,7 @@ include it in the core!</p>
 <div class="section" id="timezones">
 <h3>Timezones<a class="headerlink" href="#timezones" title="Permalink to this headline">¶</a></h3>
 <p>When a <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-obj docutils literal"><span class="pre">Time</span></code></a> object is constructed from a timezone-aware
-<a class="reference external" href="http://docs.python.org/library/datetime.html#datetime.datetime" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code></a>, no timezone information is saved in the
+<a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code></a>, no timezone information is saved in the
 <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-obj docutils literal"><span class="pre">Time</span></code></a> object. However, <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-obj docutils literal"><span class="pre">Time</span></code></a> objects can be
 converted to timezone-aware datetime objects:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
@@ -1238,7 +1290,7 @@ converted to timezone-aware datetime objects:</p>
 </pre></div>
 </div>
 <p>Timezone database packages, like <a class="reference external" href="http://pythonhosted.org/pytz/">pytz</a>
-for example, may be more convenient to use to create <a class="reference external" href="http://docs.python.org/library/datetime.html#datetime.tzinfo" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">tzinfo</span></code></a>
+for example, may be more convenient to use to create <a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.tzinfo" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">tzinfo</span></code></a>
 objects used to specify timezones rather than the <a class="reference internal" href="../api/astropy.time.TimezoneInfo.html#astropy.time.TimezoneInfo" title="astropy.time.TimezoneInfo"><code class="xref py py-obj docutils literal"><span class="pre">TimezoneInfo</span></code></a>
 object.</p>
 </div>
@@ -1274,7 +1326,7 @@ object.</p>
 <td>Chandra X-ray Center seconds from 1998-01-01 00:00:00 TT.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.time.TimeDatetime.html#astropy.time.TimeDatetime" title="astropy.time.TimeDatetime"><code class="xref py py-obj docutils literal"><span class="pre">TimeDatetime</span></code></a>(val1,&nbsp;val2,&nbsp;scale,&nbsp;precision,&nbsp;...)</td>
-<td>Represent date as Python standard library <a class="reference external" href="http://docs.python.org/library/datetime.html#datetime.datetime" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code></a> object</td>
+<td>Represent date as Python standard library <a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code></a> object</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.time.TimeDecimalYear.html#astropy.time.TimeDecimalYear" title="astropy.time.TimeDecimalYear"><code class="xref py py-obj docutils literal"><span class="pre">TimeDecimalYear</span></code></a>(val1,&nbsp;val2,&nbsp;scale,&nbsp;...[,&nbsp;...])</td>
 <td>Time as a decimal year, with integer values corresponding to midnight of the first day of each year.</td>
@@ -1343,7 +1395,7 @@ object.</p>
 <td>Year, day-of-year and time as &#8220;YYYY:DOY:HH:MM:SS.sss...&#8221;.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.time.TimezoneInfo.html#astropy.time.TimezoneInfo" title="astropy.time.TimezoneInfo"><code class="xref py py-obj docutils literal"><span class="pre">TimezoneInfo</span></code></a>([utc_offset,&nbsp;dst,&nbsp;tzname])</td>
-<td>Subclass of the <a class="reference external" href="http://docs.python.org/library/datetime.html#datetime.tzinfo" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">tzinfo</span></code></a> object, used in the to_datetime method to specify timezones.</td>
+<td>Subclass of the <a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.tzinfo" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">tzinfo</span></code></a> object, used in the to_datetime method to specify timezones.</td>
 </tr>
 </tbody>
 </table>
@@ -1351,7 +1403,7 @@ object.</p>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-e5a0e738108ace1760b755dda0b1ffeced2af11e.svg" alt="Inheritance diagram of astropy.time.core.OperandTypeError, astropy.time.core.ScaleValueError, astropy.time.core.Time, astropy.time.formats.TimeBesselianEpoch, astropy.time.formats.TimeBesselianEpochString, astropy.time.formats.TimeCxcSec, astropy.time.formats.TimeDatetime, astropy.time.formats.TimeDecimalYear, astropy.time.core.TimeDelta, astropy.time.formats.TimeDeltaFormat, astropy.time.formats.TimeDeltaJD, astropy.time.formats.TimeDeltaSec, astropy.time.formats.TimeEpochDate, astropy.time.formats.TimeEpochDateString, astropy.time.formats.TimeFITS, astropy.time.formats.TimeFormat, astropy.time.formats.TimeFromEpoch, astropy.time.formats.TimeGPS, astropy.time.formats.TimeISO, astropy.time.formats.TimeISOT, astropy.time.formats.TimeJD, astropy.time.formats.TimeJulianEpoch, astropy.time.formats.TimeJulianEpochString, astropy.time.formats.TimeMJD, astropy.time.formats.TimePlotDate, astropy.time.formats.TimeString, astropy.time.formats.TimeUnique, astropy.time.formats.TimeUnix, astropy.time.formats.TimeYearDayTime, astropy.time.formats.TimezoneInfo" class="inheritance"/>
+<img src="../_images/inheritance-497d40e15fbaeddf3128f2b11e160ecdd19654da.svg" alt="Inheritance diagram of astropy.time.core.OperandTypeError, astropy.time.core.ScaleValueError, astropy.time.core.Time, astropy.time.formats.TimeBesselianEpoch, astropy.time.formats.TimeBesselianEpochString, astropy.time.formats.TimeCxcSec, astropy.time.formats.TimeDatetime, astropy.time.formats.TimeDecimalYear, astropy.time.core.TimeDelta, astropy.time.formats.TimeDeltaFormat, astropy.time.formats.TimeDeltaJD, astropy.time.formats.TimeDeltaSec, astropy.time.formats.TimeEpochDate, astropy.time.formats.TimeEpochDateString, astropy.time.formats.TimeFITS, astropy.time.formats.TimeFormat, astropy.time.formats.TimeFromEpoch, astropy.time.formats.TimeGPS, astropy.time.formats.TimeISO, astropy.time.formats.TimeISOT, astropy.time.formats.TimeJD, astropy.time.formats.TimeJulianEpoch, astropy.time.formats.TimeJulianEpochString, astropy.time.formats.TimeMJD, astropy.time.formats.TimePlotDate, astropy.time.formats.TimeString, astropy.time.formats.TimeUnique, astropy.time.formats.TimeUnix, astropy.time.formats.TimeYearDayTime, astropy.time.formats.TimezoneInfo" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -1452,7 +1504,7 @@ available from <a class="reference external" href="http://www.iausofa.org">http:
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

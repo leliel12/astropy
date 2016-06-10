@@ -1,0 +1,8 @@
+
+
+plate_scale
+=======================================
+
+.. currentmodule:: astropy.units.equivalencies
+
+.. autofunction:: plate_scale

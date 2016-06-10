@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>NDArithmeticMixin &mdash; Astropy v1.2.dev15003</title>
+    <title>NDArithmeticMixin &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
     <link rel="next" title="NDData" href="astropy.nddata.NDData.html" />
     <link rel="prev" title="MissingDataAssociationException" href="astropy.nddata.MissingDataAssociationException.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -88,8 +88,8 @@
 <h1>NDArithmeticMixin<a class="headerlink" href="#ndarithmeticmixin" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.nddata.NDArithmeticMixin">
-<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">NDArithmeticMixin</code><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L114" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">NDArithmeticMixin</code><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L105" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>Mixin class to add arithmetic to an NDData object.</p>
 <p>When subclassing, be sure to list the superclasses in the correct order
 so that the subclass sees NDData as the main superclass. See
@@ -102,48 +102,27 @@ units like <code class="docutils literal"><span class="pre">km/m</span></code> i
 Mixin has adopted this behaviour.</li>
 </ol>
 <p class="rubric">Examples</p>
-<p>TODO: Just here because the examples fit more into the main documentation
-than in here.</p>
-<p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">NDDataWithMath</span><span class="p">(</span><span class="n">NDArithmeticMixin</span><span class="p">,</span> <span class="n">NDData</span><span class="p">):</span> <span class="k">pass</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd</span> <span class="o">=</span> <span class="n">NDDataWithMath</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;meter&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd_inv</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">ic_division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nd</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd_inv</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
-<span class="go">&#39;NDDataWithMath&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd_inv</span><span class="o">.</span><span class="n">data</span>
-<span class="go">array([ 1.        ,  0.5       ,  0.33333333])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd_inv</span><span class="o">.</span><span class="n">unit</span>
-<span class="go">Unit(&quot;1 / m&quot;)</span>
+<p>Using this Mixin with <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">NDData</span><span class="p">,</span> <span class="n">NDArithmeticMixin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">NDDataWithMath</span><span class="p">(</span><span class="n">NDArithmeticMixin</span><span class="p">,</span> <span class="n">NDData</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
 </pre></div>
 </div>
-<p>This method also allows that the result of unrelated objects is tried
-with what this class implements as arithmetics and give a result that
-is the same class as the class that called the method.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nd2</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">ic_multiplication</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
-<span class="go">&#39;NDDataWithMath&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd2</span><span class="o">.</span><span class="n">data</span>
-<span class="go">array([3, 6])</span>
+<p>Using it with one operand on an instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span> <span class="o">=</span> <span class="n">NDDataWithMath</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="go">NDDataWithMath(120)</span>
 </pre></div>
 </div>
-<p>Since this is a classmethod we don&#8217;t need an instance to use them:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nd3</span> <span class="o">=</span> <span class="n">NDDataWithMath</span><span class="o">.</span><span class="n">ic_subtraction</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">NDData</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd3</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
-<span class="go">&#39;NDDataWithMath&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd3</span><span class="o">.</span><span class="n">data</span>
-<span class="go">array([4, 3, 2])</span>
+<p>Using it with two operand on an instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span> <span class="o">=</span> <span class="n">NDDataWithMath</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ndd</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ndd</span><span class="p">)</span>
+<span class="go">NDDataWithMath(0.2)</span>
 </pre></div>
 </div>
-<p>And it allows to handle arithmetics with different subclasses.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">NDDataWithMathAndSlicing</span><span class="p">(</span><span class="n">NDSlicingMixin</span><span class="p">,</span><span class="n">NDArithmeticMixin</span><span class="p">,</span> <span class="n">NDData</span><span class="p">):</span> <span class="k">pass</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd</span> <span class="o">=</span> <span class="n">NDDataWithMath</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd2</span> <span class="o">=</span> <span class="n">NDDataWithMathAndSlicing</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd3</span> <span class="o">=</span> <span class="n">nd2</span><span class="o">.</span><span class="n">ic_addition</span><span class="p">(</span><span class="n">nd</span><span class="p">,</span> <span class="n">nd2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd3</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
-<span class="go">&#39;NDDataWithMathAndSlicing&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nd3</span><span class="o">.</span><span class="n">data</span>
-<span class="go">array([ 8,  7, 10])</span>
+<p>Using it as classmethod requires two operands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">NDDataWithMath</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">NDDataWithMath(1)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods Summary</p>
@@ -153,55 +132,61 @@ is the same class as the class that called the method.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.add" title="astropy.nddata.NDArithmeticMixin.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(operand,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.add" title="astropy.nddata.NDArithmeticMixin.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(operand[,&nbsp;operand2])</td>
 <td>Performs addition by evaluating <code class="docutils literal"><span class="pre">self</span></code> + <code class="docutils literal"><span class="pre">operand</span></code>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.divide" title="astropy.nddata.NDArithmeticMixin.divide"><code class="xref py py-obj docutils literal"><span class="pre">divide</span></code></a>(operand,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.divide" title="astropy.nddata.NDArithmeticMixin.divide"><code class="xref py py-obj docutils literal"><span class="pre">divide</span></code></a>(operand[,&nbsp;operand2])</td>
 <td>Performs division by evaluating <code class="docutils literal"><span class="pre">self</span></code> / <code class="docutils literal"><span class="pre">operand</span></code>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_addition" title="astropy.nddata.NDArithmeticMixin.ic_addition"><code class="xref py py-obj docutils literal"><span class="pre">ic_addition</span></code></a>(operand1,&nbsp;operand2,&nbsp;**kwargs)</td>
-<td>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.add" title="astropy.nddata.NDArithmeticMixin.add"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.add()</span></code></a> you can add two operands.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">NDArithmeticMixin.ic_addition</span></code></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_division" title="astropy.nddata.NDArithmeticMixin.ic_division"><code class="xref py py-obj docutils literal"><span class="pre">ic_division</span></code></a>(operand1,&nbsp;operand2,&nbsp;**kwargs)</td>
-<td>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.divide" title="astropy.nddata.NDArithmeticMixin.divide"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.divide()</span></code></a> you can divide two operands.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">NDArithmeticMixin.ic_division</span></code></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_multiplication" title="astropy.nddata.NDArithmeticMixin.ic_multiplication"><code class="xref py py-obj docutils literal"><span class="pre">ic_multiplication</span></code></a>(operand1,&nbsp;operand2,&nbsp;**kwargs)</td>
-<td>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.multiply" title="astropy.nddata.NDArithmeticMixin.multiply"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.multiply()</span></code></a> you can multiply two operands.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">NDArithmeticMixin.ic_multiplication</span></code></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_subtraction" title="astropy.nddata.NDArithmeticMixin.ic_subtraction"><code class="xref py py-obj docutils literal"><span class="pre">ic_subtraction</span></code></a>(operand1,&nbsp;operand2,&nbsp;**kwargs)</td>
-<td>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.subtract" title="astropy.nddata.NDArithmeticMixin.subtract"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.subtract()</span></code></a> you can subtract two operands.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">NDArithmeticMixin.ic_subtraction</span></code></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.multiply" title="astropy.nddata.NDArithmeticMixin.multiply"><code class="xref py py-obj docutils literal"><span class="pre">multiply</span></code></a>(operand,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.multiply" title="astropy.nddata.NDArithmeticMixin.multiply"><code class="xref py py-obj docutils literal"><span class="pre">multiply</span></code></a>(operand[,&nbsp;operand2])</td>
 <td>Performs multiplication by evaluating <code class="docutils literal"><span class="pre">self</span></code> * <code class="docutils literal"><span class="pre">operand</span></code>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.subtract" title="astropy.nddata.NDArithmeticMixin.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(operand,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.subtract" title="astropy.nddata.NDArithmeticMixin.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(operand[,&nbsp;operand2])</td>
 <td>Performs subtraction by evaluating <code class="docutils literal"><span class="pre">self</span></code> - <code class="docutils literal"><span class="pre">operand</span></code>.</td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Methods Documentation</p>
-<dl class="method">
+<dl class="classmethod">
 <dt id="astropy.nddata.NDArithmeticMixin.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>operand</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L559" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.add" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">add</code><span class="sig-paren">(</span><em>operand</em>, <em>operand2=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.add"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L522" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs addition by evaluating <code class="docutils literal"><span class="pre">self</span></code> + <code class="docutils literal"><span class="pre">operand</span></code>.</p>
-<p>For the inverse operation or operations between different subclasses take a
-look at
-<a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_addition" title="astropy.nddata.NDArithmeticMixin.ic_addition"><code class="xref py py-meth docutils literal"><span class="pre">ic_addition()</span></code></a> .</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand, operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
 <blockquote>
-<div><p>The second operand in the operation.</p>
+<div><p>If <code class="docutils literal"><span class="pre">operand2</span></code> is <code class="docutils literal"><span class="pre">None</span></code> or not given it will perform the operation
+<code class="docutils literal"><span class="pre">self</span></code> + <code class="docutils literal"><span class="pre">operand</span></code>.
+If <code class="docutils literal"><span class="pre">operand2</span></code> is given it will perform <code class="docutils literal"><span class="pre">operand</span></code> + <code class="docutils literal"><span class="pre">operand2</span></code>.
+If the method was called on a class rather than on the instance
+<code class="docutils literal"><span class="pre">operand2</span></code> must be given.</p>
 </div></blockquote>
-<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
+<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
 <div><p>If <code class="docutils literal"><span class="pre">None</span></code> the result will have no uncertainty. If <code class="docutils literal"><span class="pre">False</span></code> the
 result will have a copied version of the first operand that has an
 uncertainty. If <code class="docutils literal"><span class="pre">True</span></code> the result will have a correctly propagated
 uncertainty from the uncertainties of the operands but this assumes
 that the uncertainties are <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>-like. Default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.2: </span>This parameter must be given as keyword-parameter. Using it as
+positional parameter is deprecated.
+<code class="docutils literal"><span class="pre">None</span></code> was added as valid parameter value.</p>
+</div>
 </div></blockquote>
 <p><strong>handle_mask</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -209,7 +194,10 @@ that the uncertainties are <a class="reference internal" href="astropy.nddata.ND
 result will have a copied version of the first operand that has a
 mask). If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">mask</span></code> and if necessary provide a copy.
-Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>handle_meta</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -218,6 +206,9 @@ result will have a copied version of the first operand that has a
 (not empty) meta. If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">meta</span></code> and if necessary provide a copy.
 Default is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>compare_wcs</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -228,13 +219,19 @@ wcs. If it is a callable then the specified callable must
 compare the <code class="docutils literal"><span class="pre">wcs</span></code>. The resulting <code class="docutils literal"><span class="pre">wcs</span></code> will be like if <code class="docutils literal"><span class="pre">False</span></code>
 was given otherwise it raises a <code class="docutils literal"><span class="pre">ValueError</span></code> if the comparison was
 not successful. Default is <code class="docutils literal"><span class="pre">'first_found'</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
-<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
+<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
 <blockquote>
 <div><p>The correlation between the two operands is used for correct error
 propagation for correlated data as given in:
 <a class="reference external" href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas">https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas</a>
 Default is 0.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>kwargs :</strong></p>
 <blockquote>
@@ -257,30 +254,37 @@ parameters. If the callable also needs additional parameters these can be
 defined as <code class="docutils literal"><span class="pre">kwargs</span></code> and must start with <code class="docutils literal"><span class="pre">&quot;wcs_&quot;</span></code> (for wcs callable) or
 <code class="docutils literal"><span class="pre">&quot;meta_&quot;</span></code> (for meta callable). This startstring is removed before the
 callable is called.</p>
+<p><code class="docutils literal"><span class="pre">&quot;first_found&quot;</span></code> can also be abbreviated with <code class="docutils literal"><span class="pre">&quot;ff&quot;</span></code>.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="astropy.nddata.NDArithmeticMixin.divide">
-<code class="descname">divide</code><span class="sig-paren">(</span><em>operand</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L574" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.divide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.divide" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">divide</code><span class="sig-paren">(</span><em>operand</em>, <em>operand2=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.divide"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L540" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.divide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs division by evaluating <code class="docutils literal"><span class="pre">self</span></code> / <code class="docutils literal"><span class="pre">operand</span></code>.</p>
-<p>For the inverse operation or operations between different subclasses take a
-look at
-<a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_division" title="astropy.nddata.NDArithmeticMixin.ic_division"><code class="xref py py-meth docutils literal"><span class="pre">ic_division()</span></code></a> .</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand, operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
 <blockquote>
-<div><p>The second operand in the operation.</p>
+<div><p>If <code class="docutils literal"><span class="pre">operand2</span></code> is <code class="docutils literal"><span class="pre">None</span></code> or not given it will perform the operation
+<code class="docutils literal"><span class="pre">self</span></code> / <code class="docutils literal"><span class="pre">operand</span></code>.
+If <code class="docutils literal"><span class="pre">operand2</span></code> is given it will perform <code class="docutils literal"><span class="pre">operand</span></code> / <code class="docutils literal"><span class="pre">operand2</span></code>.
+If the method was called on a class rather than on the instance
+<code class="docutils literal"><span class="pre">operand2</span></code> must be given.</p>
 </div></blockquote>
-<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
+<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
 <div><p>If <code class="docutils literal"><span class="pre">None</span></code> the result will have no uncertainty. If <code class="docutils literal"><span class="pre">False</span></code> the
 result will have a copied version of the first operand that has an
 uncertainty. If <code class="docutils literal"><span class="pre">True</span></code> the result will have a correctly propagated
 uncertainty from the uncertainties of the operands but this assumes
 that the uncertainties are <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>-like. Default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.2: </span>This parameter must be given as keyword-parameter. Using it as
+positional parameter is deprecated.
+<code class="docutils literal"><span class="pre">None</span></code> was added as valid parameter value.</p>
+</div>
 </div></blockquote>
 <p><strong>handle_mask</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -288,7 +292,10 @@ that the uncertainties are <a class="reference internal" href="astropy.nddata.ND
 result will have a copied version of the first operand that has a
 mask). If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">mask</span></code> and if necessary provide a copy.
-Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>handle_meta</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -297,6 +304,9 @@ result will have a copied version of the first operand that has a
 (not empty) meta. If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">meta</span></code> and if necessary provide a copy.
 Default is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>compare_wcs</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -307,13 +317,19 @@ wcs. If it is a callable then the specified callable must
 compare the <code class="docutils literal"><span class="pre">wcs</span></code>. The resulting <code class="docutils literal"><span class="pre">wcs</span></code> will be like if <code class="docutils literal"><span class="pre">False</span></code>
 was given otherwise it raises a <code class="docutils literal"><span class="pre">ValueError</span></code> if the comparison was
 not successful. Default is <code class="docutils literal"><span class="pre">'first_found'</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
-<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
+<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
 <blockquote>
 <div><p>The correlation between the two operands is used for correct error
 propagation for correlated data as given in:
 <a class="reference external" href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas">https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas</a>
 Default is 0.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>kwargs :</strong></p>
 <blockquote>
@@ -336,178 +352,37 @@ parameters. If the callable also needs additional parameters these can be
 defined as <code class="docutils literal"><span class="pre">kwargs</span></code> and must start with <code class="docutils literal"><span class="pre">&quot;wcs_&quot;</span></code> (for wcs callable) or
 <code class="docutils literal"><span class="pre">&quot;meta_&quot;</span></code> (for meta callable). This startstring is removed before the
 callable is called.</p>
+<p><code class="docutils literal"><span class="pre">&quot;first_found&quot;</span></code> can also be abbreviated with <code class="docutils literal"><span class="pre">&quot;ff&quot;</span></code>.</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="astropy.nddata.NDArithmeticMixin.ic_addition">
-<em class="property">classmethod </em><code class="descname">ic_addition</code><span class="sig-paren">(</span><em>operand1</em>, <em>operand2</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L589" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.ic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.ic_addition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.add" title="astropy.nddata.NDArithmeticMixin.add"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.add()</span></code></a> you can add two operands.</p>
-<p>This method is avaiable as classmethod in order to allow arithmetic
-operations between arbitary objects as long as they are convertable to
-the class that called the method. Therefore the name prefix <code class="docutils literal"><span class="pre">ic_</span></code> which
-stands for <code class="docutils literal"><span class="pre">interclass</span></code> operations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand1</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the first operand in the operation.</p>
-</div></blockquote>
-<p><strong>operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the second operand in the operation.</p>
-</div></blockquote>
-<p><strong>kwargs :</strong></p>
-<blockquote>
-<div><p>see <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.add" title="astropy.nddata.NDArithmeticMixin.add"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.add()</span></code></a></p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like</p>
-<blockquote class="last">
-<div><p>The result of the operation. The class of the result is the class from
-where the method was invoked.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="astropy.nddata.NDArithmeticMixin.ic_division">
-<em class="property">classmethod </em><code class="descname">ic_division</code><span class="sig-paren">(</span><em>operand1</em>, <em>operand2</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L610" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.ic_division"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.ic_division" title="Permalink to this definition">¶</a></dt>
-<dd><p>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.divide" title="astropy.nddata.NDArithmeticMixin.divide"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.divide()</span></code></a> you can divide two operands.</p>
-<p>This method is avaiable as classmethod in order to allow arithmetic
-operations between arbitary objects as long as they are convertable to
-the class that called the method. Therefore the name prefix <code class="docutils literal"><span class="pre">ic_</span></code> which
-stands for <code class="docutils literal"><span class="pre">interclass</span></code> operations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand1</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the first operand in the operation.</p>
-</div></blockquote>
-<p><strong>operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the second operand in the operation.</p>
-</div></blockquote>
-<p><strong>kwargs :</strong></p>
-<blockquote>
-<div><p>see <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.divide" title="astropy.nddata.NDArithmeticMixin.divide"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.divide()</span></code></a></p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like</p>
-<blockquote class="last">
-<div><p>The result of the operation. The class of the result is the class from
-where the method was invoked.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="astropy.nddata.NDArithmeticMixin.ic_multiplication">
-<em class="property">classmethod </em><code class="descname">ic_multiplication</code><span class="sig-paren">(</span><em>operand1</em>, <em>operand2</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L604" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.ic_multiplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.ic_multiplication" title="Permalink to this definition">¶</a></dt>
-<dd><p>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.multiply" title="astropy.nddata.NDArithmeticMixin.multiply"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.multiply()</span></code></a> you can multiply two operands.</p>
-<p>This method is avaiable as classmethod in order to allow arithmetic
-operations between arbitary objects as long as they are convertable to
-the class that called the method. Therefore the name prefix <code class="docutils literal"><span class="pre">ic_</span></code> which
-stands for <code class="docutils literal"><span class="pre">interclass</span></code> operations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand1</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the first operand in the operation.</p>
-</div></blockquote>
-<p><strong>operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the second operand in the operation.</p>
-</div></blockquote>
-<p><strong>kwargs :</strong></p>
-<blockquote>
-<div><p>see <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.multiply" title="astropy.nddata.NDArithmeticMixin.multiply"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.multiply()</span></code></a></p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like</p>
-<blockquote class="last">
-<div><p>The result of the operation. The class of the result is the class from
-where the method was invoked.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="astropy.nddata.NDArithmeticMixin.ic_subtraction">
-<em class="property">classmethod </em><code class="descname">ic_subtraction</code><span class="sig-paren">(</span><em>operand1</em>, <em>operand2</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L598" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.ic_subtraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.ic_subtraction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Like <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.subtract" title="astropy.nddata.NDArithmeticMixin.subtract"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.subtract()</span></code></a> you can subtract two operands.</p>
-<p>This method is avaiable as classmethod in order to allow arithmetic
-operations between arbitary objects as long as they are convertable to
-the class that called the method. Therefore the name prefix <code class="docutils literal"><span class="pre">ic_</span></code> which
-stands for <code class="docutils literal"><span class="pre">interclass</span></code> operations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand1</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the first operand in the operation.</p>
-</div></blockquote>
-<p><strong>operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like or convertable to <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a></p>
-<blockquote>
-<div><p>the second operand in the operation.</p>
-</div></blockquote>
-<p><strong>kwargs :</strong></p>
-<blockquote>
-<div><p>see <a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.subtract" title="astropy.nddata.NDArithmeticMixin.subtract"><code class="xref py py-meth docutils literal"><span class="pre">NDArithmeticMixin.subtract()</span></code></a></p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like</p>
-<blockquote class="last">
-<div><p>The result of the operation. The class of the result is the class from
-where the method was invoked.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="astropy.nddata.NDArithmeticMixin.multiply">
-<code class="descname">multiply</code><span class="sig-paren">(</span><em>operand</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L569" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.multiply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.multiply" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">multiply</code><span class="sig-paren">(</span><em>operand</em>, <em>operand2=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.multiply"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L534" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.multiply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs multiplication by evaluating <code class="docutils literal"><span class="pre">self</span></code> * <code class="docutils literal"><span class="pre">operand</span></code>.</p>
-<p>For the inverse operation or operations between different subclasses take a
-look at
-<a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_multiplication" title="astropy.nddata.NDArithmeticMixin.ic_multiplication"><code class="xref py py-meth docutils literal"><span class="pre">ic_multiplication()</span></code></a> .</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand, operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
 <blockquote>
-<div><p>The second operand in the operation.</p>
+<div><p>If <code class="docutils literal"><span class="pre">operand2</span></code> is <code class="docutils literal"><span class="pre">None</span></code> or not given it will perform the operation
+<code class="docutils literal"><span class="pre">self</span></code> * <code class="docutils literal"><span class="pre">operand</span></code>.
+If <code class="docutils literal"><span class="pre">operand2</span></code> is given it will perform <code class="docutils literal"><span class="pre">operand</span></code> * <code class="docutils literal"><span class="pre">operand2</span></code>.
+If the method was called on a class rather than on the instance
+<code class="docutils literal"><span class="pre">operand2</span></code> must be given.</p>
 </div></blockquote>
-<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
+<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
 <div><p>If <code class="docutils literal"><span class="pre">None</span></code> the result will have no uncertainty. If <code class="docutils literal"><span class="pre">False</span></code> the
 result will have a copied version of the first operand that has an
 uncertainty. If <code class="docutils literal"><span class="pre">True</span></code> the result will have a correctly propagated
 uncertainty from the uncertainties of the operands but this assumes
 that the uncertainties are <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>-like. Default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.2: </span>This parameter must be given as keyword-parameter. Using it as
+positional parameter is deprecated.
+<code class="docutils literal"><span class="pre">None</span></code> was added as valid parameter value.</p>
+</div>
 </div></blockquote>
 <p><strong>handle_mask</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -515,7 +390,10 @@ that the uncertainties are <a class="reference internal" href="astropy.nddata.ND
 result will have a copied version of the first operand that has a
 mask). If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">mask</span></code> and if necessary provide a copy.
-Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>handle_meta</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -524,6 +402,9 @@ result will have a copied version of the first operand that has a
 (not empty) meta. If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">meta</span></code> and if necessary provide a copy.
 Default is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>compare_wcs</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -534,13 +415,19 @@ wcs. If it is a callable then the specified callable must
 compare the <code class="docutils literal"><span class="pre">wcs</span></code>. The resulting <code class="docutils literal"><span class="pre">wcs</span></code> will be like if <code class="docutils literal"><span class="pre">False</span></code>
 was given otherwise it raises a <code class="docutils literal"><span class="pre">ValueError</span></code> if the comparison was
 not successful. Default is <code class="docutils literal"><span class="pre">'first_found'</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
-<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
+<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
 <blockquote>
 <div><p>The correlation between the two operands is used for correct error
 propagation for correlated data as given in:
 <a class="reference external" href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas">https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas</a>
 Default is 0.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>kwargs :</strong></p>
 <blockquote>
@@ -563,30 +450,37 @@ parameters. If the callable also needs additional parameters these can be
 defined as <code class="docutils literal"><span class="pre">kwargs</span></code> and must start with <code class="docutils literal"><span class="pre">&quot;wcs_&quot;</span></code> (for wcs callable) or
 <code class="docutils literal"><span class="pre">&quot;meta_&quot;</span></code> (for meta callable). This startstring is removed before the
 callable is called.</p>
+<p><code class="docutils literal"><span class="pre">&quot;first_found&quot;</span></code> can also be abbreviated with <code class="docutils literal"><span class="pre">&quot;ff&quot;</span></code>.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="astropy.nddata.NDArithmeticMixin.subtract">
-<code class="descname">subtract</code><span class="sig-paren">(</span><em>operand</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L564" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.subtract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.subtract" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">subtract</code><span class="sig-paren">(</span><em>operand</em>, <em>operand2=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/mixins/ndarithmetic.html#NDArithmeticMixin.subtract"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/mixins/ndarithmetic.py#L528" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.NDArithmeticMixin.subtract" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs subtraction by evaluating <code class="docutils literal"><span class="pre">self</span></code> - <code class="docutils literal"><span class="pre">operand</span></code>.</p>
-<p>For the inverse operation or operations between different subclasses take a
-look at
-<a class="reference internal" href="#astropy.nddata.NDArithmeticMixin.ic_subtraction" title="astropy.nddata.NDArithmeticMixin.ic_subtraction"><code class="xref py py-meth docutils literal"><span class="pre">ic_subtraction()</span></code></a> .</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>operand, operand2</strong> : <a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a>-like instance or convertible to one.</p>
 <blockquote>
-<div><p>The second operand in the operation.</p>
+<div><p>If <code class="docutils literal"><span class="pre">operand2</span></code> is <code class="docutils literal"><span class="pre">None</span></code> or not given it will perform the operation
+<code class="docutils literal"><span class="pre">self</span></code> - <code class="docutils literal"><span class="pre">operand</span></code>.
+If <code class="docutils literal"><span class="pre">operand2</span></code> is given it will perform <code class="docutils literal"><span class="pre">operand</span></code> - <code class="docutils literal"><span class="pre">operand2</span></code>.
+If the method was called on a class rather than on the instance
+<code class="docutils literal"><span class="pre">operand2</span></code> must be given.</p>
 </div></blockquote>
-<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
+<p><strong>propagate_uncertainties</strong> : <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
 <div><p>If <code class="docutils literal"><span class="pre">None</span></code> the result will have no uncertainty. If <code class="docutils literal"><span class="pre">False</span></code> the
 result will have a copied version of the first operand that has an
 uncertainty. If <code class="docutils literal"><span class="pre">True</span></code> the result will have a correctly propagated
 uncertainty from the uncertainties of the operands but this assumes
 that the uncertainties are <a class="reference internal" href="astropy.nddata.NDUncertainty.html#astropy.nddata.NDUncertainty" title="astropy.nddata.NDUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">NDUncertainty</span></code></a>-like. Default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.2: </span>This parameter must be given as keyword-parameter. Using it as
+positional parameter is deprecated.
+<code class="docutils literal"><span class="pre">None</span></code> was added as valid parameter value.</p>
+</div>
 </div></blockquote>
 <p><strong>handle_mask</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -594,7 +488,10 @@ that the uncertainties are <a class="reference internal" href="astropy.nddata.ND
 result will have a copied version of the first operand that has a
 mask). If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">mask</span></code> and if necessary provide a copy.
-Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+Default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_or.html#numpy.logical_or" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.logical_or</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>handle_meta</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -603,6 +500,9 @@ result will have a copied version of the first operand that has a
 (not empty) meta. If it is a callable then the specified callable must
 create the results <code class="docutils literal"><span class="pre">meta</span></code> and if necessary provide a copy.
 Default is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>compare_wcs</strong> : callable, <code class="docutils literal"><span class="pre">'first_found'</span></code> or <code class="docutils literal"><span class="pre">None</span></code>, optional</p>
 <blockquote>
@@ -613,13 +513,19 @@ wcs. If it is a callable then the specified callable must
 compare the <code class="docutils literal"><span class="pre">wcs</span></code>. The resulting <code class="docutils literal"><span class="pre">wcs</span></code> will be like if <code class="docutils literal"><span class="pre">False</span></code>
 was given otherwise it raises a <code class="docutils literal"><span class="pre">ValueError</span></code> if the comparison was
 not successful. Default is <code class="docutils literal"><span class="pre">'first_found'</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
-<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
+<p><strong>uncertainty_correlation</strong> : number or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>, optional</p>
 <blockquote>
 <div><p>The correlation between the two operands is used for correct error
 propagation for correlated data as given in:
 <a class="reference external" href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas">https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas</a>
 Default is 0.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.</span></p>
+</div>
 </div></blockquote>
 <p><strong>kwargs :</strong></p>
 <blockquote>
@@ -642,6 +548,7 @@ parameters. If the callable also needs additional parameters these can be
 defined as <code class="docutils literal"><span class="pre">kwargs</span></code> and must start with <code class="docutils literal"><span class="pre">&quot;wcs_&quot;</span></code> (for wcs callable) or
 <code class="docutils literal"><span class="pre">&quot;meta_&quot;</span></code> (for meta callable). This startstring is removed before the
 callable is called.</p>
+<p><code class="docutils literal"><span class="pre">&quot;first_found&quot;</span></code> can also be abbreviated with <code class="docutils literal"><span class="pre">&quot;ff&quot;</span></code>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -671,7 +578,7 @@ callable is called.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

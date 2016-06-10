@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.header &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.fits.header &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -78,10 +78,8 @@
 
 <span class="kn">import</span> <span class="nn">collections</span>
 <span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="kn">from</span> <span class="nn">.card</span> <span class="kn">import</span> <span class="n">Card</span><span class="p">,</span> <span class="n">CardList</span><span class="p">,</span> <span class="n">_pad</span><span class="p">,</span> <span class="n">KEYWORD_LENGTH</span>
@@ -160,7 +158,8 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        cards : A list of `Card` objects, optional</span>
-<span class="sd">            The cards to initialize the header with.</span>
+<span class="sd">            The cards to initialize the header with. Also allowed are other</span>
+<span class="sd">            `Header` (or `dict`-like) objects.</span>
 
 <span class="sd">        txtfile : file path, file object or file-like object, optional</span>
 <span class="sd">            Input ASCII header parameters file **(Deprecated)**</span>
@@ -181,6 +180,8 @@
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cards</span><span class="p">,</span> <span class="n">Header</span><span class="p">):</span>
             <span class="n">cards</span> <span class="o">=</span> <span class="n">cards</span><span class="o">.</span><span class="n">cards</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cards</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">cards</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">cards</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -295,21 +296,11 @@
                 <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rvkc_indices</span>
 
             <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">_is_astropy_internal</span><span class="p">():</span>
-                    <span class="c"># All internal code is designed to assume that this will</span>
-                    <span class="c"># raise a KeyError, so go ahead and do so</span>
-                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Keyword &#39;</span><span class="si">%s</span><span class="s">&#39; not found.&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
-                <span class="c"># Warn everyone else.</span>
-                <span class="c"># TODO: Remove this warning and make KeyError the default after</span>
-                <span class="c"># a couple versions (by 3.3, say)</span>
-                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                    <span class="s">&#39;Deletion of non-existent keyword </span><span class="si">%r</span><span class="s">: &#39;</span>
-                    <span class="s">&#39;In a future Astropy version Header.__delitem__ may be &#39;</span>
-                    <span class="s">&#39;changed so that this raises a KeyError just like a dict &#39;</span>
-                    <span class="s">&#39;would. Please update your code so that KeyErrors are &#39;</span>
-                    <span class="s">&#39;caught and handled when deleting non-existent keywords.&#39;</span> <span class="o">%</span>
-                    <span class="n">key</span><span class="p">,</span> <span class="n">AstropyDeprecationWarning</span><span class="p">)</span>
-                <span class="k">return</span>
+                <span class="c"># if keyword is not present raise KeyError.</span>
+                <span class="c"># To delete keyword without caring if they were present,</span>
+                <span class="c"># Header.remove(Keyword) can be used with optional argument ignore_missing as True</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Keyword &#39;</span><span class="si">%s</span><span class="s">&#39; not found.&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+
             <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">indices</span><span class="p">[</span><span class="n">key</span><span class="p">]):</span>
                 <span class="c"># Have to copy the indices list since it will be modified below</span>
                 <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
@@ -497,7 +488,7 @@
 <span class="sd">        endcard : bool, optional</span>
 <span class="sd">            If True (the default) the header must end with an END card in order</span>
 <span class="sd">            to be considered valid.  If an END card is not found an</span>
-<span class="sd">            `~.exceptions.IOError` is raised.</span>
+<span class="sd">            `IOError` is raised.</span>
 
 <span class="sd">        padding : bool, optional</span>
 <span class="sd">            If True (the default) the header will be required to be padded out</span>
@@ -1601,7 +1592,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_modified</span> <span class="o">=</span> <span class="bp">True</span>
 </div>
-<div class="viewcode-block" id="Header.remove"><a class="viewcode-back" href="../../../../io/fits/api/headers.html#astropy.io.fits.Header.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">):</span>
+<div class="viewcode-block" id="Header.remove"><a class="viewcode-back" href="../../../../io/fits/api/headers.html#astropy.io.fits.Header.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">,</span> <span class="n">ignore_missing</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">remove_all</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Removes the first instance of the given keyword from the header similar</span>
 <span class="sd">        to `list.remove` if the Header object is treated as a list of keywords.</span>
@@ -1609,11 +1600,26 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        keyword : str</span>
-<span class="sd">            The keyword of which to remove the first instance in the header</span>
+<span class="sd">            The keyword of which to remove the first instance in the header.</span>
+
+<span class="sd">        ignore_missing : bool, optional</span>
+<span class="sd">            When True, ignores missing keywords.  Otherwise, if the keyword</span>
+<span class="sd">            is not present in the header a KeyError is raised.</span>
+
+<span class="sd">        remove_all : bool, optional</span>
+<span class="sd">            When True, all instances of keyword will be removed.</span>
+<span class="sd">            Otherwise only the first instance of the given keyword is removed.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">keyword</span> <span class="o">=</span> <span class="n">Card</span><span class="o">.</span><span class="n">normalize_keyword</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keyword_indices</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_keyword_indices</span><span class="p">[</span><span class="n">keyword</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="k">if</span> <span class="n">remove_all</span><span class="p">:</span>
+                <span class="k">while</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keyword_indices</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_keyword_indices</span><span class="p">[</span><span class="n">keyword</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">ignore_missing</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Keyword &#39;</span><span class="si">%s</span><span class="s">&#39; not found.&quot;</span> <span class="o">%</span> <span class="n">keyword</span><span class="p">)</span>
 
-        <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">keyword</span><span class="p">)]</span>
 </div>
 <div class="viewcode-block" id="Header.rename_keyword"><a class="viewcode-back" href="../../../../io/fits/api/headers.html#astropy.io.fits.Header.rename_keyword">[docs]</a>    <span class="k">def</span> <span class="nf">rename_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oldkeyword</span><span class="p">,</span> <span class="n">newkeyword</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1630,7 +1636,7 @@
 <span class="sd">        force : bool, optional</span>
 <span class="sd">            When `True`, if the new keyword already exists in the header, force</span>
 <span class="sd">            the creation of a duplicate keyword. Otherwise a</span>
-<span class="sd">            `~.exceptions.ValueError` is raised.</span>
+<span class="sd">            `ValueError` is raised.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">oldkeyword</span> <span class="o">=</span> <span class="n">Card</span><span class="o">.</span><span class="n">normalize_keyword</span><span class="p">(</span><span class="n">oldkeyword</span><span class="p">)</span>
@@ -2364,20 +2370,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">_keyword</span><span class="p">,</span> <span class="n">item</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
 
 
-<span class="k">def</span> <span class="nf">_is_astropy_internal</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns True if the stack frame this is called from is in code internal to</span>
-<span class="sd">    the astropy package.</span>
-
-<span class="sd">    This is used in a few places where hacks are employed for backwards</span>
-<span class="sd">    compatibility with the old header API, but where we want to avoid using</span>
-<span class="sd">    those hacks internally.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">calling_mod</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmodule</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">calling_mod</span> <span class="ow">and</span> <span class="n">calling_mod</span><span class="o">.</span><span class="n">__name__</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;astropy.&#39;</span><span class="p">)</span>
-
-
 <span class="k">def</span> <span class="nf">_block_size</span><span class="p">(</span><span class="n">sep</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Determine the size of a FITS header block if a non-blank separator is used</span>
@@ -2410,7 +2402,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

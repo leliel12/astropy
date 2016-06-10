@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Astronomical Coordinate Systems (astropy.coordinates) &mdash; Astropy v1.2.dev15003</title>
+    <title>Astronomical Coordinate Systems (astropy.coordinates) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Working with Angles" href="angles.html" />
     <link rel="prev" title="TimezoneInfo" href="../api/astropy.time.TimezoneInfo.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -198,7 +198,12 @@ method, which accepts a frame name, frame class, or frame instance:</p>
 straightforward to convert from celestial coordinates to
 <a class="reference internal" href="../api/astropy.coordinates.AltAz.html#astropy.coordinates.AltAz" title="astropy.coordinates.AltAz"><code class="xref py py-obj docutils literal"><span class="pre">AltAz</span></code></a> coordinates, allowing the use of <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>
 as a tool for planning observations.  For a more complete example of
-this, see <a class="reference internal" href="observing-example.html"><em>Example: Observation Planning</em></a>.</p>
+this, see <span class="xref std std-ref">sphx_glr_generated_examples_coordinates_plot_obs-planning.py</span>.</p>
+<p>Some coordinate frames such as <a class="reference internal" href="../api/astropy.coordinates.AltAz.html#astropy.coordinates.AltAz" title="astropy.coordinates.AltAz"><code class="xref py py-obj docutils literal"><span class="pre">AltAz</span></code></a> require Earth
+rotation information (UT1-UTC offset and/or polar motion) when transforming
+to/from other frames.  These Earth rotation values are automatically downloaded
+from the International Earth Rotation and Reference Systems (IERS) service when
+required.  See <a class="reference internal" href="../utils/iers.html#utils-iers"><span>IERS data access (astropy.utils.iers)</span></a> for details of this process.</p>
 </div>
 <div class="section" id="representation">
 <h3>Representation<a class="headerlink" href="#representation" title="Permalink to this headline">¶</a></h3>
@@ -286,7 +291,7 @@ are by design rather simple. If you need precise coordinates for an object
 you should find the appropriate reference and input the coordinates
 manually, or use more specialized functionality like that in the
 <a class="reference external" href="http://www.astropy.org/astroquery/">astroquery</a> or
-<a class="reference external" href="http://astroplan.readthedocs.org/">astroplan</a> affiliated packages.</p>
+<a class="reference external" href="http://astroplan.readthedocs.io/">astroplan</a> affiliated packages.</p>
 <p class="last">Also note that these two methods retrieve data from the internet to
 determine the celestial or Earth coordinates. The online data may be
 updated, so if you need to guarantee that your scripts are reproducible
@@ -327,6 +332,12 @@ more string-parsing capabilities.</p>
 transformations to be defined or extended separately, while still
 preserving the high-level capabilities and simplicity of the <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>
 class.</p>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<p>See <span class="xref std std-ref">sphx_glr_generated_examples_coordinates_plot_obs-planning.py</span> for an
+example of using the <a class="reference internal" href="#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">coordinates</span></code></a> functionality to prepare for an
+observing run.</p>
+</div>
 </div>
 <div class="section" id="using-astropy-coordinates">
 <h2>Using <a class="reference internal" href="#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">astropy.coordinates</span></code></a><a class="headerlink" href="#using-astropy-coordinates" title="Permalink to this headline">¶</a></h2>
@@ -337,12 +348,11 @@ listed below.</p>
 <li class="toctree-l1"><a class="reference internal" href="angles.html">Working with Angles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="skycoord.html">Using the SkyCoord High-level Class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transforming.html">Transforming Between Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="observing-example.html">Example: Observation Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solarsystem.html">Solar System Ephemerides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatting.html">Formatting Coordinate Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matchsep.html">Separations, Catalog Matching, and Related Functionality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="representations.html">Using and Designing Coordinate Representations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frames.html">Using and Designing Coordinate Frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sgr-example.html">Example: Defining A Coordinate Frame for the Sgr Dwarf</a></li>
 <li class="toctree-l1"><a class="reference internal" href="galactocentric.html">Description of Galactocentric coordinates transformation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remote_methods.html">Usage tips/suggestions for methods that access remote resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">Important Definitions</a></li>
@@ -415,49 +425,51 @@ preferred order when two transformation paths have the same number
 of steps.  These priorities are defined such that the path with a
 <em>smaller</em> total priority is favored.</p>
 <p class="graphviz">
-<img src="../_images/graphviz-97f688e9d2bc8660ba6c04a608116abeed97b9e9.svg" alt="digraph AstropyCoordinateTransformGraph {
-FK5 [shape=oval label=&quot;FK5\n`fk5`&quot;]; ICRS [shape=oval label=&quot;ICRS\n`icrs`&quot;]; FK4NoETerms [shape=oval label=&quot;FK4NoETerms\n`fk4noeterms`&quot;]; Galactic [shape=oval label=&quot;Galactic\n`galactic`&quot;]; Supergalactic [shape=oval label=&quot;Supergalactic\n`supergalactic`&quot;]; PrecessedGeocentric [shape=oval label=&quot;PrecessedGeocentric\n`precessedgeocentric`&quot;]; GCRS [shape=oval label=&quot;GCRS\n`gcrs`&quot;]; AltAz [shape=oval label=&quot;AltAz\n`altaz`&quot;]; CIRS [shape=oval label=&quot;CIRS\n`cirs`&quot;]; HeliocentricTrueEcliptic [shape=oval label=&quot;HeliocentricTrueEcliptic\n`heliocentrictrueecliptic`&quot;]; HCRS [shape=oval label=&quot;HCRS\n`hcrs`&quot;]; GeocentricTrueEcliptic [shape=oval label=&quot;GeocentricTrueEcliptic\n`geocentrictrueecliptic`&quot;]; BarycentricTrueEcliptic [shape=oval label=&quot;BarycentricTrueEcliptic\n`barycentrictrueecliptic`&quot;]; Galactocentric [shape=oval label=&quot;Galactocentric\n`galactocentric`&quot;]; FK4 [shape=oval label=&quot;FK4\n`fk4`&quot;]; ITRS [shape=oval label=&quot;ITRS\n`itrs`&quot;];
-FK5 -&gt; FK5[ label = &quot;1.0&quot; ];
-FK5 -&gt; ICRS[ label = &quot;1.0&quot; ];
-FK5 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK5 -&gt; Galactic[ label = &quot;1.0&quot; ];
-Supergalactic -&gt; Galactic[ label = &quot;1.0&quot; ];
-PrecessedGeocentric -&gt; GCRS[ label = &quot;1.0&quot; ];
-AltAz -&gt; CIRS[ label = &quot;1.0&quot; ];
-AltAz -&gt; AltAz[ label = &quot;1.0&quot; ];
-HeliocentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; ICRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; PrecessedGeocentric[ label = &quot;1.0&quot; ];
-GCRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-GCRS -&gt; GeocentricTrueEcliptic[ label = &quot;1.0&quot; ];
-GeocentricTrueEcliptic -&gt; GCRS[ label = &quot;1.0&quot; ];
+<img src="../_images/graphviz-321ac3a0df46a51c4e128b3b532241991e5c99d1.svg" alt="digraph AstropyCoordinateTransformGraph {
+BarycentricTrueEcliptic [shape=oval label=&quot;BarycentricTrueEcliptic\n`barycentrictrueecliptic`&quot;]; ICRS [shape=oval label=&quot;ICRS\n`icrs`&quot;]; PrecessedGeocentric [shape=oval label=&quot;PrecessedGeocentric\n`precessedgeocentric`&quot;]; GCRS [shape=oval label=&quot;GCRS\n`gcrs`&quot;]; GeocentricTrueEcliptic [shape=oval label=&quot;GeocentricTrueEcliptic\n`geocentrictrueecliptic`&quot;]; Galactic [shape=oval label=&quot;Galactic\n`galactic`&quot;]; Supergalactic [shape=oval label=&quot;Supergalactic\n`supergalactic`&quot;]; FK4NoETerms [shape=oval label=&quot;FK4NoETerms\n`fk4noeterms`&quot;]; FK5 [shape=oval label=&quot;FK5\n`fk5`&quot;]; FK4 [shape=oval label=&quot;FK4\n`fk4`&quot;]; Galactocentric [shape=oval label=&quot;Galactocentric\n`galactocentric`&quot;]; HCRS [shape=oval label=&quot;HCRS\n`hcrs`&quot;]; CIRS [shape=oval label=&quot;CIRS\n`cirs`&quot;]; AltAz [shape=oval label=&quot;AltAz\n`altaz`&quot;]; HeliocentricTrueEcliptic [shape=oval label=&quot;HeliocentricTrueEcliptic\n`heliocentrictrueecliptic`&quot;]; ITRS [shape=oval label=&quot;ITRS\n`itrs`&quot;]; SkyOffsetFrame[ shape=oval ];
 BarycentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; FK5[ label = &quot;1.0&quot; ];
-ICRS -&gt; Galactocentric[ label = &quot;1.0&quot; ];
-ICRS -&gt; HeliocentricTrueEcliptic[ label = &quot;1.0&quot; ];
-ICRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-ICRS -&gt; BarycentricTrueEcliptic[ label = &quot;1.0&quot; ];
-HCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
-Galactocentric -&gt; ICRS[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK5[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; Galactic[ label = &quot;1.0&quot; ];
-FK4NoETerms -&gt; FK4[ label = &quot;1.0&quot; ];
-Galactic -&gt; FK5[ label = &quot;1.0&quot; ];
+PrecessedGeocentric -&gt; GCRS[ label = &quot;1.0&quot; ];
+GeocentricTrueEcliptic -&gt; GCRS[ label = &quot;1.0&quot; ];
 Galactic -&gt; Supergalactic[ label = &quot;1.0&quot; ];
 Galactic -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-ITRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+Galactic -&gt; FK5[ label = &quot;1.0&quot; ];
+FK4 -&gt; FK4[ label = &quot;1.0&quot; ];
+FK4 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+Supergalactic -&gt; Galactic[ label = &quot;1.0&quot; ];
+Galactocentric -&gt; ICRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; PrecessedGeocentric[ label = &quot;1.0&quot; ];
+GCRS -&gt; GeocentricTrueEcliptic[ label = &quot;1.0&quot; ];
+GCRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; ICRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
+GCRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; Galactic[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK4[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+FK4NoETerms -&gt; FK5[ label = &quot;1.0&quot; ];
+AltAz -&gt; AltAz[ label = &quot;1.0&quot; ];
+AltAz -&gt; CIRS[ label = &quot;1.0&quot; ];
+FK5 -&gt; ICRS[ label = &quot;1.0&quot; ];
+FK5 -&gt; Galactic[ label = &quot;1.0&quot; ];
+FK5 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
+FK5 -&gt; FK5[ label = &quot;1.0&quot; ];
+HeliocentricTrueEcliptic -&gt; ICRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; HeliocentricTrueEcliptic[ label = &quot;1.0&quot; ];
+ICRS -&gt; FK5[ label = &quot;1.0&quot; ];
+ICRS -&gt; GCRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; BarycentricTrueEcliptic[ label = &quot;1.0&quot; ];
+ICRS -&gt; Galactocentric[ label = &quot;1.0&quot; ];
+ICRS -&gt; HCRS[ label = &quot;1.0&quot; ];
+ICRS -&gt; CIRS[ label = &quot;1.0&quot; ];
+HCRS -&gt; ICRS[ label = &quot;1.0&quot; ];
+HCRS -&gt; HCRS[ label = &quot;1.0&quot; ];
 ITRS -&gt; ITRS[ label = &quot;1.0&quot; ];
+ITRS -&gt; CIRS[ label = &quot;1.0&quot; ];
 CIRS -&gt; ICRS[ label = &quot;1.0&quot; ];
 CIRS -&gt; GCRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; CIRS[ label = &quot;1.0&quot; ];
-CIRS -&gt; AltAz[ label = &quot;1.0&quot; ];
 CIRS -&gt; ITRS[ label = &quot;1.0&quot; ];
-FK4 -&gt; FK4NoETerms[ label = &quot;1.0&quot; ];
-FK4 -&gt; FK4[ label = &quot;1.0&quot; ];
+CIRS -&gt; AltAz[ label = &quot;1.0&quot; ];
+CIRS -&gt; CIRS[ label = &quot;1.0&quot; ];
 
 overlap=false
 }" />
@@ -485,28 +497,37 @@ ecliptic coordinates.</p>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.concatenate.html#astropy.coordinates.concatenate" title="astropy.coordinates.concatenate"><code class="xref py py-obj docutils literal"><span class="pre">concatenate</span></code></a>(coords)</td>
 <td>Combine multiple coordinate objects into a single <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>.</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.get_body.html#astropy.coordinates.get_body" title="astropy.coordinates.get_body"><code class="xref py py-obj docutils literal"><span class="pre">get_body</span></code></a>(body,&nbsp;time[,&nbsp;location,&nbsp;ephemeris])</td>
+<td>Get a <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> for a solar system body as observed from a location on Earth.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.get_body_barycentric.html#astropy.coordinates.get_body_barycentric" title="astropy.coordinates.get_body_barycentric"><code class="xref py py-obj docutils literal"><span class="pre">get_body_barycentric</span></code></a>(body,&nbsp;time[,&nbsp;ephemeris])</td>
+<td>Calculate the barycentric position of a solar system body.</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.get_constellation.html#astropy.coordinates.get_constellation" title="astropy.coordinates.get_constellation"><code class="xref py py-obj docutils literal"><span class="pre">get_constellation</span></code></a>(coord[,&nbsp;short_name,&nbsp;...])</td>
 <td>Determines the constellation(s) a given coordinate object contains.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.get_icrs_coordinates.html#astropy.coordinates.get_icrs_coordinates" title="astropy.coordinates.get_icrs_coordinates"><code class="xref py py-obj docutils literal"><span class="pre">get_icrs_coordinates</span></code></a>(name)</td>
 <td>Retrieve an ICRS object by using an online name resolving service to retrieve coordinates for the specified name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.get_sun.html#astropy.coordinates.get_sun" title="astropy.coordinates.get_sun"><code class="xref py py-obj docutils literal"><span class="pre">get_sun</span></code></a>(time)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.get_moon.html#astropy.coordinates.get_moon" title="astropy.coordinates.get_moon"><code class="xref py py-obj docutils literal"><span class="pre">get_moon</span></code></a>(time[,&nbsp;location,&nbsp;ephemeris])</td>
+<td>Get a <a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a> for the Earth&#8217;s Moon as observed from a location on Earth.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.get_sun.html#astropy.coordinates.get_sun" title="astropy.coordinates.get_sun"><code class="xref py py-obj docutils literal"><span class="pre">get_sun</span></code></a>(time)</td>
 <td>Determines the location of the sun at a given time (or times, if the input is an array <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-obj docutils literal"><span class="pre">Time</span></code></a> object), in geocentric coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.match_coordinates_3d.html#astropy.coordinates.match_coordinates_3d" title="astropy.coordinates.match_coordinates_3d"><code class="xref py py-obj docutils literal"><span class="pre">match_coordinates_3d</span></code></a>(matchcoord,&nbsp;catalogcoord)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.match_coordinates_3d.html#astropy.coordinates.match_coordinates_3d" title="astropy.coordinates.match_coordinates_3d"><code class="xref py py-obj docutils literal"><span class="pre">match_coordinates_3d</span></code></a>(matchcoord,&nbsp;catalogcoord)</td>
 <td>Finds the nearest 3-dimensional matches of a coordinate or coordinates in a set of catalog coordinates.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.match_coordinates_sky.html#astropy.coordinates.match_coordinates_sky" title="astropy.coordinates.match_coordinates_sky"><code class="xref py py-obj docutils literal"><span class="pre">match_coordinates_sky</span></code></a>(matchcoord,&nbsp;catalogcoord)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.match_coordinates_sky.html#astropy.coordinates.match_coordinates_sky" title="astropy.coordinates.match_coordinates_sky"><code class="xref py py-obj docutils literal"><span class="pre">match_coordinates_sky</span></code></a>(matchcoord,&nbsp;catalogcoord)</td>
 <td>Finds the nearest on-sky matches of a coordinate or coordinates in a set of catalog coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.search_around_3d.html#astropy.coordinates.search_around_3d" title="astropy.coordinates.search_around_3d"><code class="xref py py-obj docutils literal"><span class="pre">search_around_3d</span></code></a>(coords1,&nbsp;coords2,&nbsp;distlimit)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.search_around_3d.html#astropy.coordinates.search_around_3d" title="astropy.coordinates.search_around_3d"><code class="xref py py-obj docutils literal"><span class="pre">search_around_3d</span></code></a>(coords1,&nbsp;coords2,&nbsp;distlimit)</td>
 <td>Searches for pairs of points that are at least as close as a specified distance in 3D space.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.search_around_sky.html#astropy.coordinates.search_around_sky" title="astropy.coordinates.search_around_sky"><code class="xref py py-obj docutils literal"><span class="pre">search_around_sky</span></code></a>(coords1,&nbsp;coords2,&nbsp;seplimit)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.search_around_sky.html#astropy.coordinates.search_around_sky" title="astropy.coordinates.search_around_sky"><code class="xref py py-obj docutils literal"><span class="pre">search_around_sky</span></code></a>(coords1,&nbsp;coords2,&nbsp;seplimit)</td>
 <td>Searches for pairs of points that have an angular separation at least as close as a specified angle.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.spherical_to_cartesian.html#astropy.coordinates.spherical_to_cartesian" title="astropy.coordinates.spherical_to_cartesian"><code class="xref py py-obj docutils literal"><span class="pre">spherical_to_cartesian</span></code></a>(r,&nbsp;lat,&nbsp;lon)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.spherical_to_cartesian.html#astropy.coordinates.spherical_to_cartesian" title="astropy.coordinates.spherical_to_cartesian"><code class="xref py py-obj docutils literal"><span class="pre">spherical_to_cartesian</span></code></a>(r,&nbsp;lat,&nbsp;lon)</td>
 <td>Converts spherical polar coordinates to rectangular cartesian coordinates.</td>
 </tr>
 </tbody>
@@ -550,107 +571,113 @@ ecliptic coordinates.</p>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.ConvertError.html#astropy.coordinates.ConvertError" title="astropy.coordinates.ConvertError"><code class="xref py py-obj docutils literal"><span class="pre">ConvertError</span></code></a></td>
 <td>Raised if a coordinate system cannot be converted to another</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.CoordinateTransform.html#astropy.coordinates.CoordinateTransform" title="astropy.coordinates.CoordinateTransform"><code class="xref py py-obj docutils literal"><span class="pre">CoordinateTransform</span></code></a>(fromsys,&nbsp;tosys[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.CoordinateAttribute.html#astropy.coordinates.CoordinateAttribute" title="astropy.coordinates.CoordinateAttribute"><code class="xref py py-obj docutils literal"><span class="pre">CoordinateAttribute</span></code></a>(frame[,&nbsp;default,&nbsp;...])</td>
+<td>A frame attribute which is a coordinate object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.CoordinateTransform.html#astropy.coordinates.CoordinateTransform" title="astropy.coordinates.CoordinateTransform"><code class="xref py py-obj docutils literal"><span class="pre">CoordinateTransform</span></code></a>(fromsys,&nbsp;tosys[,&nbsp;...])</td>
 <td>An object that transforms a coordinate from one system to another.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.CylindricalRepresentation.html#astropy.coordinates.CylindricalRepresentation" title="astropy.coordinates.CylindricalRepresentation"><code class="xref py py-obj docutils literal"><span class="pre">CylindricalRepresentation</span></code></a>(rho,&nbsp;phi,&nbsp;z[,&nbsp;copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.CylindricalRepresentation.html#astropy.coordinates.CylindricalRepresentation" title="astropy.coordinates.CylindricalRepresentation"><code class="xref py py-obj docutils literal"><span class="pre">CylindricalRepresentation</span></code></a>(rho,&nbsp;phi,&nbsp;z[,&nbsp;copy])</td>
 <td>Representation of points in 3D cylindrical coordinates.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.Distance.html#astropy.coordinates.Distance" title="astropy.coordinates.Distance"><code class="xref py py-obj docutils literal"><span class="pre">Distance</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.Distance.html#astropy.coordinates.Distance" title="astropy.coordinates.Distance"><code class="xref py py-obj docutils literal"><span class="pre">Distance</span></code></a></td>
 <td>A one-dimensional distance.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.DynamicMatrixTransform.html#astropy.coordinates.DynamicMatrixTransform" title="astropy.coordinates.DynamicMatrixTransform"><code class="xref py py-obj docutils literal"><span class="pre">DynamicMatrixTransform</span></code></a>(matrix_func,&nbsp;fromsys,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.DynamicMatrixTransform.html#astropy.coordinates.DynamicMatrixTransform" title="astropy.coordinates.DynamicMatrixTransform"><code class="xref py py-obj docutils literal"><span class="pre">DynamicMatrixTransform</span></code></a>(matrix_func,&nbsp;fromsys,&nbsp;...)</td>
 <td>A coordinate transformation specified as a function that yields a 3 x 3 cartesian transformation matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation" title="astropy.coordinates.EarthLocation"><code class="xref py py-obj docutils literal"><span class="pre">EarthLocation</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation" title="astropy.coordinates.EarthLocation"><code class="xref py py-obj docutils literal"><span class="pre">EarthLocation</span></code></a></td>
 <td>Location on the Earth.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.EarthLocationAttribute.html#astropy.coordinates.EarthLocationAttribute" title="astropy.coordinates.EarthLocationAttribute"><code class="xref py py-obj docutils literal"><span class="pre">EarthLocationAttribute</span></code></a>([default,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.EarthLocationAttribute.html#astropy.coordinates.EarthLocationAttribute" title="astropy.coordinates.EarthLocationAttribute"><code class="xref py py-obj docutils literal"><span class="pre">EarthLocationAttribute</span></code></a>([default,&nbsp;...])</td>
 <td>A frame attribute that can act as a <a class="reference internal" href="../api/astropy.coordinates.EarthLocation.html#astropy.coordinates.EarthLocation" title="astropy.coordinates.EarthLocation"><code class="xref py py-obj docutils literal"><span class="pre">EarthLocation</span></code></a>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.FK4.html#astropy.coordinates.FK4" title="astropy.coordinates.FK4"><code class="xref py py-obj docutils literal"><span class="pre">FK4</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.FK4.html#astropy.coordinates.FK4" title="astropy.coordinates.FK4"><code class="xref py py-obj docutils literal"><span class="pre">FK4</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the FK4 system.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.FK4NoETerms.html#astropy.coordinates.FK4NoETerms" title="astropy.coordinates.FK4NoETerms"><code class="xref py py-obj docutils literal"><span class="pre">FK4NoETerms</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.FK4NoETerms.html#astropy.coordinates.FK4NoETerms" title="astropy.coordinates.FK4NoETerms"><code class="xref py py-obj docutils literal"><span class="pre">FK4NoETerms</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the FK4 system, but with the E-terms of aberration removed.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.FK5.html#astropy.coordinates.FK5" title="astropy.coordinates.FK5"><code class="xref py py-obj docutils literal"><span class="pre">FK5</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.FK5.html#astropy.coordinates.FK5" title="astropy.coordinates.FK5"><code class="xref py py-obj docutils literal"><span class="pre">FK5</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the FK5 system.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.FrameAttribute.html#astropy.coordinates.FrameAttribute" title="astropy.coordinates.FrameAttribute"><code class="xref py py-obj docutils literal"><span class="pre">FrameAttribute</span></code></a>([default,&nbsp;secondary_attribute])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.FrameAttribute.html#astropy.coordinates.FrameAttribute" title="astropy.coordinates.FrameAttribute"><code class="xref py py-obj docutils literal"><span class="pre">FrameAttribute</span></code></a>([default,&nbsp;secondary_attribute])</td>
 <td>A non-mutable data descriptor to hold a frame attribute.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.FunctionTransform.html#astropy.coordinates.FunctionTransform" title="astropy.coordinates.FunctionTransform"><code class="xref py py-obj docutils literal"><span class="pre">FunctionTransform</span></code></a>(func,&nbsp;fromsys,&nbsp;tosys[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.FunctionTransform.html#astropy.coordinates.FunctionTransform" title="astropy.coordinates.FunctionTransform"><code class="xref py py-obj docutils literal"><span class="pre">FunctionTransform</span></code></a>(func,&nbsp;fromsys,&nbsp;tosys[,&nbsp;...])</td>
 <td>A coordinate transformation defined by a function that accepts a coordinate object and returns the transformed coordinate object.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.GCRS.html#astropy.coordinates.GCRS" title="astropy.coordinates.GCRS"><code class="xref py py-obj docutils literal"><span class="pre">GCRS</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.GCRS.html#astropy.coordinates.GCRS" title="astropy.coordinates.GCRS"><code class="xref py py-obj docutils literal"><span class="pre">GCRS</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the Geocentric Celestial Reference System (GCRS).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.Galactic.html#astropy.coordinates.Galactic" title="astropy.coordinates.Galactic"><code class="xref py py-obj docutils literal"><span class="pre">Galactic</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.Galactic.html#astropy.coordinates.Galactic" title="astropy.coordinates.Galactic"><code class="xref py py-obj docutils literal"><span class="pre">Galactic</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Galactic Coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.Galactocentric.html#astropy.coordinates.Galactocentric" title="astropy.coordinates.Galactocentric"><code class="xref py py-obj docutils literal"><span class="pre">Galactocentric</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.Galactocentric.html#astropy.coordinates.Galactocentric" title="astropy.coordinates.Galactocentric"><code class="xref py py-obj docutils literal"><span class="pre">Galactocentric</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the Galactocentric system.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.GenericFrame.html#astropy.coordinates.GenericFrame" title="astropy.coordinates.GenericFrame"><code class="xref py py-obj docutils literal"><span class="pre">GenericFrame</span></code></a>(frame_attrs)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.GenericFrame.html#astropy.coordinates.GenericFrame" title="astropy.coordinates.GenericFrame"><code class="xref py py-obj docutils literal"><span class="pre">GenericFrame</span></code></a>(frame_attrs)</td>
 <td>A frame object that can&#8217;t store data but can hold any arbitrary frame attributes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.GeocentricTrueEcliptic.html#astropy.coordinates.GeocentricTrueEcliptic" title="astropy.coordinates.GeocentricTrueEcliptic"><code class="xref py py-obj docutils literal"><span class="pre">GeocentricTrueEcliptic</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.GeocentricTrueEcliptic.html#astropy.coordinates.GeocentricTrueEcliptic" title="astropy.coordinates.GeocentricTrueEcliptic"><code class="xref py py-obj docutils literal"><span class="pre">GeocentricTrueEcliptic</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Geocentric ecliptic coordinates.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.HCRS.html#astropy.coordinates.HCRS" title="astropy.coordinates.HCRS"><code class="xref py py-obj docutils literal"><span class="pre">HCRS</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.HCRS.html#astropy.coordinates.HCRS" title="astropy.coordinates.HCRS"><code class="xref py py-obj docutils literal"><span class="pre">HCRS</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in a Heliocentric system, with axes aligned to ICRS.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.HeliocentricTrueEcliptic.html#astropy.coordinates.HeliocentricTrueEcliptic" title="astropy.coordinates.HeliocentricTrueEcliptic"><code class="xref py py-obj docutils literal"><span class="pre">HeliocentricTrueEcliptic</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.HeliocentricTrueEcliptic.html#astropy.coordinates.HeliocentricTrueEcliptic" title="astropy.coordinates.HeliocentricTrueEcliptic"><code class="xref py py-obj docutils literal"><span class="pre">HeliocentricTrueEcliptic</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Heliocentric ecliptic coordinates.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.ICRS.html#astropy.coordinates.ICRS" title="astropy.coordinates.ICRS"><code class="xref py py-obj docutils literal"><span class="pre">ICRS</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.ICRS.html#astropy.coordinates.ICRS" title="astropy.coordinates.ICRS"><code class="xref py py-obj docutils literal"><span class="pre">ICRS</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the ICRS system.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.ITRS.html#astropy.coordinates.ITRS" title="astropy.coordinates.ITRS"><code class="xref py py-obj docutils literal"><span class="pre">ITRS</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.ITRS.html#astropy.coordinates.ITRS" title="astropy.coordinates.ITRS"><code class="xref py py-obj docutils literal"><span class="pre">ITRS</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate or frame in the International Terrestrial Reference System (ITRS).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalHourError.html#astropy.coordinates.IllegalHourError" title="astropy.coordinates.IllegalHourError"><code class="xref py py-obj docutils literal"><span class="pre">IllegalHourError</span></code></a>(hour)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalHourError.html#astropy.coordinates.IllegalHourError" title="astropy.coordinates.IllegalHourError"><code class="xref py py-obj docutils literal"><span class="pre">IllegalHourError</span></code></a>(hour)</td>
 <td>Raised when an hour value is not in the range [0,24).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalHourWarning.html#astropy.coordinates.IllegalHourWarning" title="astropy.coordinates.IllegalHourWarning"><code class="xref py py-obj docutils literal"><span class="pre">IllegalHourWarning</span></code></a>(hour[,&nbsp;alternativeactionstr])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalHourWarning.html#astropy.coordinates.IllegalHourWarning" title="astropy.coordinates.IllegalHourWarning"><code class="xref py py-obj docutils literal"><span class="pre">IllegalHourWarning</span></code></a>(hour[,&nbsp;alternativeactionstr])</td>
 <td>Raised when an hour value is 24.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalMinuteError.html#astropy.coordinates.IllegalMinuteError" title="astropy.coordinates.IllegalMinuteError"><code class="xref py py-obj docutils literal"><span class="pre">IllegalMinuteError</span></code></a>(minute)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalMinuteError.html#astropy.coordinates.IllegalMinuteError" title="astropy.coordinates.IllegalMinuteError"><code class="xref py py-obj docutils literal"><span class="pre">IllegalMinuteError</span></code></a>(minute)</td>
 <td>Raised when an minute value is not in the range [0,60].</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalMinuteWarning.html#astropy.coordinates.IllegalMinuteWarning" title="astropy.coordinates.IllegalMinuteWarning"><code class="xref py py-obj docutils literal"><span class="pre">IllegalMinuteWarning</span></code></a>(minute[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalMinuteWarning.html#astropy.coordinates.IllegalMinuteWarning" title="astropy.coordinates.IllegalMinuteWarning"><code class="xref py py-obj docutils literal"><span class="pre">IllegalMinuteWarning</span></code></a>(minute[,&nbsp;...])</td>
 <td>Raised when a minute value is 60.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalSecondError.html#astropy.coordinates.IllegalSecondError" title="astropy.coordinates.IllegalSecondError"><code class="xref py py-obj docutils literal"><span class="pre">IllegalSecondError</span></code></a>(second)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalSecondError.html#astropy.coordinates.IllegalSecondError" title="astropy.coordinates.IllegalSecondError"><code class="xref py py-obj docutils literal"><span class="pre">IllegalSecondError</span></code></a>(second)</td>
 <td>Raised when an second value (time) is not in the range [0,60].</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalSecondWarning.html#astropy.coordinates.IllegalSecondWarning" title="astropy.coordinates.IllegalSecondWarning"><code class="xref py py-obj docutils literal"><span class="pre">IllegalSecondWarning</span></code></a>(second[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.IllegalSecondWarning.html#astropy.coordinates.IllegalSecondWarning" title="astropy.coordinates.IllegalSecondWarning"><code class="xref py py-obj docutils literal"><span class="pre">IllegalSecondWarning</span></code></a>(second[,&nbsp;...])</td>
 <td>Raised when a second value is 60.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.Latitude.html#astropy.coordinates.Latitude" title="astropy.coordinates.Latitude"><code class="xref py py-obj docutils literal"><span class="pre">Latitude</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.Latitude.html#astropy.coordinates.Latitude" title="astropy.coordinates.Latitude"><code class="xref py py-obj docutils literal"><span class="pre">Latitude</span></code></a></td>
 <td>Latitude-like angle(s) which must be in the range -90 to +90 deg.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.Longitude.html#astropy.coordinates.Longitude" title="astropy.coordinates.Longitude"><code class="xref py py-obj docutils literal"><span class="pre">Longitude</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.Longitude.html#astropy.coordinates.Longitude" title="astropy.coordinates.Longitude"><code class="xref py py-obj docutils literal"><span class="pre">Longitude</span></code></a></td>
 <td>Longitude-like angle(s) which are wrapped within a contiguous 360 degree range.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.PhysicsSphericalRepresentation.html#astropy.coordinates.PhysicsSphericalRepresentation" title="astropy.coordinates.PhysicsSphericalRepresentation"><code class="xref py py-obj docutils literal"><span class="pre">PhysicsSphericalRepresentation</span></code></a>(phi,&nbsp;theta,&nbsp;r)</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.PhysicsSphericalRepresentation.html#astropy.coordinates.PhysicsSphericalRepresentation" title="astropy.coordinates.PhysicsSphericalRepresentation"><code class="xref py py-obj docutils literal"><span class="pre">PhysicsSphericalRepresentation</span></code></a>(phi,&nbsp;theta,&nbsp;r)</td>
 <td>Representation of points in 3D spherical coordinates (using the physics convention of using <code class="docutils literal"><span class="pre">phi</span></code> and <code class="docutils literal"><span class="pre">theta</span></code> for azimuth and inclination from the pole).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.PrecessedGeocentric.html#astropy.coordinates.PrecessedGeocentric" title="astropy.coordinates.PrecessedGeocentric"><code class="xref py py-obj docutils literal"><span class="pre">PrecessedGeocentric</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.PrecessedGeocentric.html#astropy.coordinates.PrecessedGeocentric" title="astropy.coordinates.PrecessedGeocentric"><code class="xref py py-obj docutils literal"><span class="pre">PrecessedGeocentric</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>A coordinate frame defined in a similar manner as GCRS, but precessed to a requested (mean) equinox.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.QuantityFrameAttribute.html#astropy.coordinates.QuantityFrameAttribute" title="astropy.coordinates.QuantityFrameAttribute"><code class="xref py py-obj docutils literal"><span class="pre">QuantityFrameAttribute</span></code></a>([default,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.QuantityFrameAttribute.html#astropy.coordinates.QuantityFrameAttribute" title="astropy.coordinates.QuantityFrameAttribute"><code class="xref py py-obj docutils literal"><span class="pre">QuantityFrameAttribute</span></code></a>([default,&nbsp;...])</td>
 <td>A frame attribute that is a quantity with specified units and shape (optionally).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.RangeError.html#astropy.coordinates.RangeError" title="astropy.coordinates.RangeError"><code class="xref py py-obj docutils literal"><span class="pre">RangeError</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.RangeError.html#astropy.coordinates.RangeError" title="astropy.coordinates.RangeError"><code class="xref py py-obj docutils literal"><span class="pre">RangeError</span></code></a></td>
 <td>Raised when some part of an angle is out of its valid range.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.RepresentationMapping.html#astropy.coordinates.RepresentationMapping" title="astropy.coordinates.RepresentationMapping"><code class="xref py py-obj docutils literal"><span class="pre">RepresentationMapping</span></code></a></td>
-<td>This <a class="reference external" href="http://docs.python.org/library/collections.html#collections.namedtuple" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">namedtuple</span></code></a> is used with the <code class="docutils literal"><span class="pre">frame_specific_representation_info</span></code> attribute to tell frames what attribute names (and default units) to use for a particular representation.</td>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.RepresentationMapping.html#astropy.coordinates.RepresentationMapping" title="astropy.coordinates.RepresentationMapping"><code class="xref py py-obj docutils literal"><span class="pre">RepresentationMapping</span></code></a></td>
+<td>This <a class="reference external" href="http://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">namedtuple</span></code></a> is used with the <code class="docutils literal"><span class="pre">frame_specific_representation_info</span></code> attribute to tell frames what attribute names (and default units) to use for a particular representation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="astropy.coordinates.SkyCoord"><code class="xref py py-obj docutils literal"><span class="pre">SkyCoord</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>High-level object providing a flexible interface for celestial coordinate representation, manipulation, and transformation between systems.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.SkyOffsetFrame.html#astropy.coordinates.SkyOffsetFrame" title="astropy.coordinates.SkyOffsetFrame"><code class="xref py py-obj docutils literal"><span class="pre">SkyOffsetFrame</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A frame which is relative to some specific position and oriented to match its frame.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.SphericalRepresentation.html#astropy.coordinates.SphericalRepresentation" title="astropy.coordinates.SphericalRepresentation"><code class="xref py py-obj docutils literal"><span class="pre">SphericalRepresentation</span></code></a>(lon,&nbsp;lat,&nbsp;distance)</td>
 <td>Representation of points in 3D spherical coordinates.</td>
@@ -673,13 +700,16 @@ ecliptic coordinates.</p>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.coordinates.UnknownSiteException.html#astropy.coordinates.UnknownSiteException" title="astropy.coordinates.UnknownSiteException"><code class="xref py py-obj docutils literal"><span class="pre">UnknownSiteException</span></code></a>(site,&nbsp;attribute[,&nbsp;...])</td>
 <td></td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.coordinates.solar_system_ephemeris.html#astropy.coordinates.solar_system_ephemeris" title="astropy.coordinates.solar_system_ephemeris"><code class="xref py py-obj docutils literal"><span class="pre">solar_system_ephemeris</span></code></a>()</td>
+<td>Default ephemerides for calculating positions of Solar-System bodies.</td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-7ff5f284373a24173e5185e5293fbc9f958e9260.svg" alt="Inheritance diagram of astropy.coordinates.builtin_frames.altaz.AltAz, astropy.coordinates.angles.Angle, astropy.coordinates.builtin_frames.ecliptic.BarycentricTrueEcliptic, astropy.coordinates.baseframe.BaseCoordinateFrame, astropy.coordinates.representation.BaseRepresentation, astropy.coordinates.errors.BoundsError, astropy.coordinates.builtin_frames.cirs.CIRS, astropy.coordinates.representation.CartesianRepresentation, astropy.coordinates.transformations.CompositeTransform, astropy.coordinates.errors.ConvertError, astropy.coordinates.transformations.CoordinateTransform, astropy.coordinates.representation.CylindricalRepresentation, astropy.coordinates.distances.Distance, astropy.coordinates.transformations.DynamicMatrixTransform, astropy.coordinates.earth.EarthLocation, astropy.coordinates.baseframe.EarthLocationAttribute, astropy.coordinates.builtin_frames.fk4.FK4, astropy.coordinates.builtin_frames.fk4.FK4NoETerms, astropy.coordinates.builtin_frames.fk5.FK5, astropy.coordinates.baseframe.FrameAttribute, astropy.coordinates.transformations.FunctionTransform, astropy.coordinates.builtin_frames.gcrs.GCRS, astropy.coordinates.builtin_frames.galactic.Galactic, astropy.coordinates.builtin_frames.galactocentric.Galactocentric, astropy.coordinates.baseframe.GenericFrame, astropy.coordinates.builtin_frames.ecliptic.GeocentricTrueEcliptic, astropy.coordinates.builtin_frames.hcrs.HCRS, astropy.coordinates.builtin_frames.ecliptic.HeliocentricTrueEcliptic, astropy.coordinates.builtin_frames.icrs.ICRS, astropy.coordinates.builtin_frames.itrs.ITRS, astropy.coordinates.errors.IllegalHourError, astropy.coordinates.errors.IllegalHourWarning, astropy.coordinates.errors.IllegalMinuteError, astropy.coordinates.errors.IllegalMinuteWarning, astropy.coordinates.errors.IllegalSecondError, astropy.coordinates.errors.IllegalSecondWarning, astropy.coordinates.angles.Latitude, astropy.coordinates.angles.Longitude, astropy.coordinates.representation.PhysicsSphericalRepresentation, astropy.coordinates.builtin_frames.gcrs.PrecessedGeocentric, astropy.coordinates.baseframe.QuantityFrameAttribute, astropy.coordinates.errors.RangeError, astropy.coordinates.baseframe.RepresentationMapping, astropy.coordinates.sky_coordinate.SkyCoord, astropy.coordinates.representation.SphericalRepresentation, astropy.coordinates.transformations.StaticMatrixTransform, astropy.coordinates.builtin_frames.supergalactic.Supergalactic, astropy.coordinates.baseframe.TimeFrameAttribute, astropy.coordinates.transformations.TransformGraph, astropy.coordinates.representation.UnitSphericalRepresentation, astropy.coordinates.errors.UnknownSiteException" class="inheritance"/>
+<img src="../_images/inheritance-0806deb6499538c1c65f2eaf5bd8958c2f6e9a61.svg" alt="Inheritance diagram of astropy.coordinates.builtin_frames.altaz.AltAz, astropy.coordinates.angles.Angle, astropy.coordinates.builtin_frames.ecliptic.BarycentricTrueEcliptic, astropy.coordinates.baseframe.BaseCoordinateFrame, astropy.coordinates.representation.BaseRepresentation, astropy.coordinates.errors.BoundsError, astropy.coordinates.builtin_frames.cirs.CIRS, astropy.coordinates.representation.CartesianRepresentation, astropy.coordinates.transformations.CompositeTransform, astropy.coordinates.errors.ConvertError, astropy.coordinates.baseframe.CoordinateAttribute, astropy.coordinates.transformations.CoordinateTransform, astropy.coordinates.representation.CylindricalRepresentation, astropy.coordinates.distances.Distance, astropy.coordinates.transformations.DynamicMatrixTransform, astropy.coordinates.earth.EarthLocation, astropy.coordinates.baseframe.EarthLocationAttribute, astropy.coordinates.builtin_frames.fk4.FK4, astropy.coordinates.builtin_frames.fk4.FK4NoETerms, astropy.coordinates.builtin_frames.fk5.FK5, astropy.coordinates.baseframe.FrameAttribute, astropy.coordinates.transformations.FunctionTransform, astropy.coordinates.builtin_frames.gcrs.GCRS, astropy.coordinates.builtin_frames.galactic.Galactic, astropy.coordinates.builtin_frames.galactocentric.Galactocentric, astropy.coordinates.baseframe.GenericFrame, astropy.coordinates.builtin_frames.ecliptic.GeocentricTrueEcliptic, astropy.coordinates.builtin_frames.hcrs.HCRS, astropy.coordinates.builtin_frames.ecliptic.HeliocentricTrueEcliptic, astropy.coordinates.builtin_frames.icrs.ICRS, astropy.coordinates.builtin_frames.itrs.ITRS, astropy.coordinates.errors.IllegalHourError, astropy.coordinates.errors.IllegalHourWarning, astropy.coordinates.errors.IllegalMinuteError, astropy.coordinates.errors.IllegalMinuteWarning, astropy.coordinates.errors.IllegalSecondError, astropy.coordinates.errors.IllegalSecondWarning, astropy.coordinates.angles.Latitude, astropy.coordinates.angles.Longitude, astropy.coordinates.representation.PhysicsSphericalRepresentation, astropy.coordinates.builtin_frames.gcrs.PrecessedGeocentric, astropy.coordinates.baseframe.QuantityFrameAttribute, astropy.coordinates.errors.RangeError, astropy.coordinates.baseframe.RepresentationMapping, astropy.coordinates.sky_coordinate.SkyCoord, astropy.coordinates.builtin_frames.skyoffset.SkyOffsetFrame, astropy.coordinates.representation.SphericalRepresentation, astropy.coordinates.transformations.StaticMatrixTransform, astropy.coordinates.builtin_frames.supergalactic.Supergalactic, astropy.coordinates.baseframe.TimeFrameAttribute, astropy.coordinates.transformations.TransformGraph, astropy.coordinates.representation.UnitSphericalRepresentation, astropy.coordinates.errors.UnknownSiteException, astropy.coordinates.solar_system.solar_system_ephemeris" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -733,7 +763,7 @@ ecliptic coordinates.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

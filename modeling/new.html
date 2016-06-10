@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Defining New Model Classes &mdash; Astropy v1.2.dev15003</title>
+    <title>Defining New Model Classes &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="index.html" />
     <link rel="next" title="Efficient Model Rendering with Bounding Boxes" href="bounding-boxes.html" />
     <link rel="prev" title="Compound Models" href="compound-models.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -153,7 +153,7 @@ from <a class="reference internal" href="../api/astropy.modeling.FittableModel.h
 the model&#8217;s class definition using the <a class="reference internal" href="../api/astropy.modeling.Parameter.html#astropy.modeling.Parameter" title="astropy.modeling.Parameter"><code class="xref py py-obj docutils literal"><span class="pre">Parameter</span></code></a>
 descriptor.  All arguments to the Parameter constructor are optional, and may
 include a default value for that parameter, a text description of the parameter
-(useful for <a class="reference external" href="http://docs.python.org/library/functions.html#help" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">help</span></code></a> and documentation generation), as well default constraints
+(useful for <a class="reference external" href="http://docs.python.org/3/library/functions.html#help" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">help</span></code></a> and documentation generation), as well default constraints
 and custom getters/setters for the parameter value.  It is also possible to
 define a &#8220;validator&#8221; method for each parameter, enabling custom code to check
 whether that parameter&#8217;s value is valid according to the model definition (for
@@ -196,10 +196,10 @@ models should define the <code class="docutils literal"><span class="pre">linear
 model is non-linear we can stick with the default.</p>
 <p>Next, provide methods called <code class="docutils literal"><span class="pre">evaluate</span></code> to evaluate the model and
 <code class="docutils literal"><span class="pre">fit_deriv</span></code>, to compute its derivatives with respect to parameters.  These
-may be normal methods, <a class="reference external" href="http://docs.python.org/library/functions.html#classmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>, or <a class="reference external" href="http://docs.python.org/library/functions.html#staticmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a>, though the convention
-is to use <a class="reference external" href="http://docs.python.org/library/functions.html#staticmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a> when the function does not depend on any of the
+may be normal methods, <a class="reference external" href="http://docs.python.org/3/library/functions.html#classmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>, or <a class="reference external" href="http://docs.python.org/3/library/functions.html#staticmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a>, though the convention
+is to use <a class="reference external" href="http://docs.python.org/3/library/functions.html#staticmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a> when the function does not depend on any of the
 object&#8217;s other attributes (i.e., it does not reference <code class="docutils literal"><span class="pre">self</span></code>) or any of the
-class&#8217;s other attributes as in the case of <a class="reference external" href="http://docs.python.org/library/functions.html#classmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>.  The evaluation
+class&#8217;s other attributes as in the case of <a class="reference external" href="http://docs.python.org/3/library/functions.html#classmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>.  The evaluation
 method takes all input coordinates as separate arguments and all of the model&#8217;s
 parameters in the same order they would be listed by
 <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.param_names" title="astropy.modeling.Model.param_names"><code class="xref py py-obj docutils literal"><span class="pre">param_names</span></code></a>.</p>
@@ -298,7 +298,7 @@ this looks something like:</p>
 <h2>A full example of a LineModel<a class="headerlink" href="#a-full-example-of-a-linemodel" title="Permalink to this headline">¶</a></h2>
 <p>This example demonstrates one other optional feature for model classes, which
 is an <em>inverse</em>.  An <a class="reference internal" href="../api/astropy.modeling.Model.html#astropy.modeling.Model.inverse" title="astropy.modeling.Model.inverse"><code class="xref py py-obj docutils literal"><span class="pre">inverse</span></code></a> implementation should be
-a <a class="reference external" href="http://docs.python.org/library/functions.html#property" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">property</span></code></a> that returns a new model instance (not necessarily of the same
+a <a class="reference external" href="http://docs.python.org/3/library/functions.html#property" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">property</span></code></a> that returns a new model instance (not necessarily of the same
 class as the model being inverted) that computes the inverse of that model, so
 that for some model instance with an inverse, <code class="docutils literal"><span class="pre">model.inverse(model(*input))</span> <span class="pre">==</span>
 <span class="pre">input</span></code>.</p>
@@ -528,7 +528,7 @@ above:</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

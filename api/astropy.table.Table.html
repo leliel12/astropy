@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table &mdash; Astropy v1.2.dev15003</title>
+    <title>Table &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="../table/index.html" />
     <link rel="next" title="TableColumns" href="astropy.table.TableColumns.html" />
     <link rel="prev" title="SortedArray" href="astropy.table.SortedArray.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../table/index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -88,11 +88,11 @@
 <h1>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.table.Table">
-<em class="property">class </em><code class="descclassname">astropy.table.</code><code class="descname">Table</code><span class="sig-paren">(</span><em>data=None</em>, <em>masked=None</em>, <em>names=None</em>, <em>dtype=None</em>, <em>meta=None</em>, <em>copy=True</em>, <em>rows=None</em>, <em>copy_indices=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L141" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.table.</code><code class="descname">Table</code><span class="sig-paren">(</span><em>data=None</em>, <em>masked=None</em>, <em>names=None</em>, <em>dtype=None</em>, <em>meta=None</em>, <em>copy=True</em>, <em>rows=None</em>, <em>copy_indices=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L137" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>A class to represent tables of heterogeneous data.</p>
 <p><a class="reference internal" href="#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> provides a class for heterogeneous tabular data, making use of a
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> structured array internally to store the data values.  A key
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> structured array internally to store the data values.  A key
 enhancement provided by the <a class="reference internal" href="#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> class is the ability to easily modify
 the structure of the table by adding or removing columns, or adding new
 rows of data.  In addition table and column metadata are fully supported.</p>
@@ -104,7 +104,7 @@ data unit, format, and description.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy ndarray, dict, list, or Table, optional</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy ndarray, dict, list, Table, or table-like object, optional</p>
 <blockquote>
 <div><p>Data to initialize table.</p>
 </div></blockquote>
@@ -133,8 +133,12 @@ data unit, format, and description.</p>
 <div><p>Row-oriented data for table instead of <code class="docutils literal"><span class="pre">data</span></code> argument</p>
 </div></blockquote>
 <p><strong>copy_indices</strong> : bool, optional</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Copy any indices in the input data (default=True)</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>Additional keyword args when converting table-like object</p>
 </div></blockquote>
 </td>
 </tr>
@@ -223,7 +227,7 @@ data unit, format, and description.</p>
 <td>Return a copy of self, with masked values filled.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.table.Table.from_pandas" title="astropy.table.Table.from_pandas"><code class="xref py py-obj docutils literal"><span class="pre">from_pandas</span></code></a>(dataframe)</td>
-<td>Create a <a class="reference internal" href="#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> from a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code> instance</td>
+<td>Create a <a class="reference internal" href="#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> from a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a> instance</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.table.Table.group_by" title="astropy.table.Table.group_by"><code class="xref py py-obj docutils literal"><span class="pre">group_by</span></code></a>(keys)</td>
 <td>Group this table by the specified <code class="docutils literal"><span class="pre">keys</span></code></td>
@@ -289,7 +293,7 @@ data unit, format, and description.</p>
 <td>Sort the table according to one or more keys.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.table.Table.to_pandas" title="astropy.table.Table.to_pandas"><code class="xref py py-obj docutils literal"><span class="pre">to_pandas</span></code></a>()</td>
-<td>Return a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code> instance</td>
+<td>Return a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a> instance</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.table.Table.write" title="astropy.table.Table.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Write this Table object out in the specified format.</td>
@@ -364,7 +368,7 @@ and iloc work only with single-column indices.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="astropy.table.Table.add_column">
-<code class="descname">add_column</code><span class="sig-paren">(</span><em>col</em>, <em>index=None</em>, <em>rename_duplicate=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1351" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.add_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_column</code><span class="sig-paren">(</span><em>col</em>, <em>index=None</em>, <em>rename_duplicate=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_column"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1394" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.add_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new Column object <code class="docutils literal"><span class="pre">col</span></code> to the table.  If <code class="docutils literal"><span class="pre">index</span></code>
 is supplied then insert column before <code class="docutils literal"><span class="pre">index</span></code> position
 in the list of columns, otherwise append column to the end
@@ -377,7 +381,7 @@ of the list.</p>
 <blockquote>
 <div><p>Column object to add.</p>
 </div></blockquote>
-<p><strong>index</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>index</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Insert column before this position or at end (default)</p>
 </div></blockquote>
@@ -440,7 +444,7 @@ before the given index:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.add_columns">
-<code class="descname">add_columns</code><span class="sig-paren">(</span><em>cols</em>, <em>indexes=None</em>, <em>copy=True</em>, <em>rename_duplicate=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1420" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.add_columns" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_columns</code><span class="sig-paren">(</span><em>cols</em>, <em>indexes=None</em>, <em>copy=True</em>, <em>rename_duplicate=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_columns"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1463" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.add_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a list of new Column objects <code class="docutils literal"><span class="pre">cols</span></code> to the table.  If a
 corresponding list of <code class="docutils literal"><span class="pre">indexes</span></code> is supplied then insert column
 before each <code class="docutils literal"><span class="pre">index</span></code> position in the <em>original</em> list of columns,
@@ -453,7 +457,7 @@ otherwise append columns to the end of the list.</p>
 <blockquote>
 <div><p>Column objects to add.</p>
 </div></blockquote>
-<p><strong>indexes</strong> : list of ints or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>indexes</strong> : list of ints or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Insert column before this position or at end (default)</p>
 </div></blockquote>
@@ -524,7 +528,7 @@ the columns are inserted before the given position:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.add_index">
-<code class="descname">add_index</code><span class="sig-paren">(</span><em>colnames</em>, <em>engine=None</em>, <em>unique=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L449" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.add_index" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_index</code><span class="sig-paren">(</span><em>colnames</em>, <em>engine=None</em>, <em>unique=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_index"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L460" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.add_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a new index among one or more columns.
 If there are no indices, make this index the
 primary table index.</p>
@@ -554,7 +558,7 @@ default), use SortedArray.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.add_row">
-<code class="descname">add_row</code><span class="sig-paren">(</span><em>vals=None</em>, <em>mask=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1938" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.add_row" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_row</code><span class="sig-paren">(</span><em>vals=None</em>, <em>mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.add_row"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1981" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.add_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new row to the end of the table.</p>
 <p>The <code class="docutils literal"><span class="pre">vals</span></code> argument can be:</p>
 <dl class="docutils">
@@ -563,7 +567,7 @@ default), use SortedArray.</p>
 <dt>mapping (e.g. dict)</dt>
 <dd>Keys corresponding to column names.  Missing values will be
 filled with np.zeros for the column dtype.</dd>
-<dt><a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></dt>
+<dt><a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></dt>
 <dd>All values filled with np.zeros for the column dtype.</dd>
 </dl>
 <p>This method requires that the Table object &#8220;owns&#8221; the underlying array
@@ -578,11 +582,11 @@ should be a dictionary.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vals</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vals</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Use the specified values in the new row</p>
 </div></blockquote>
-<p><strong>mask</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>mask</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote class="last">
 <div><p>Use the specified mask values in the new row</p>
 </div></blockquote>
@@ -614,9 +618,9 @@ should be a dictionary.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.argsort">
-<code class="descname">argsort</code><span class="sig-paren">(</span><em>keys=None</em>, <em>kind=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2140" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.argsort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.argsort" title="Permalink to this definition">¶</a></dt>
+<code class="descname">argsort</code><span class="sig-paren">(</span><em>keys=None</em>, <em>kind=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.argsort"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2183" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.argsort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the indices which would sort the table according to one or
-more key columns.  This simply calls the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html#numpy.argsort" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.argsort</span></code></a> function on
+more key columns.  This simply calls the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html#numpy.argsort" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.argsort</span></code></a> function on
 the table with the <code class="docutils literal"><span class="pre">order</span></code> parameter set to <code class="docutils literal"><span class="pre">keys</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -645,7 +649,7 @@ column(s).</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.as_array">
-<code class="descname">as_array</code><span class="sig-paren">(</span><em>keep_byteorder=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L197" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.as_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.as_array" title="Permalink to this definition">¶</a></dt>
+<code class="descname">as_array</code><span class="sig-paren">(</span><em>keep_byteorder=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.as_array"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L195" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.as_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new copy of the table in the form of a structured np.ndarray or
 np.ma.MaskedArray object (as appropriate).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -655,7 +659,7 @@ np.ma.MaskedArray object (as appropriate).</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>keep_byteorder</strong> : bool, optional</p>
 <blockquote>
 <div><p>By default the returned array has all columns in native byte
-order.  However, if this option is <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> this preserves the
+order.  However, if this option is <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> this preserves the
 byte order of all columns (if any are non-native).</p>
 </div></blockquote>
 </td>
@@ -672,7 +676,7 @@ byte order of all columns (if any are non-native).</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.convert_bytestring_to_unicode">
-<code class="descname">convert_bytestring_to_unicode</code><span class="sig-paren">(</span><em>python3_only=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1789" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.convert_bytestring_to_unicode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.convert_bytestring_to_unicode" title="Permalink to this definition">¶</a></dt>
+<code class="descname">convert_bytestring_to_unicode</code><span class="sig-paren">(</span><em>python3_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.convert_bytestring_to_unicode"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1832" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.convert_bytestring_to_unicode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert bytestring columns (dtype.kind=&#8217;S&#8217;) to unicode (dtype.kind=&#8217;U&#8217;) assuming
 ASCII encoding.</p>
 <p>Internally this changes string columns to represent each character in the string
@@ -700,7 +704,7 @@ be written in a Python 2 / 3 compatible way:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.convert_unicode_to_bytestring">
-<code class="descname">convert_unicode_to_bytestring</code><span class="sig-paren">(</span><em>python3_only=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1811" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.convert_unicode_to_bytestring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.convert_unicode_to_bytestring" title="Permalink to this definition">¶</a></dt>
+<code class="descname">convert_unicode_to_bytestring</code><span class="sig-paren">(</span><em>python3_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.convert_unicode_to_bytestring"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1854" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.convert_unicode_to_bytestring" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert ASCII-only unicode columns (dtype.kind=&#8217;U&#8217;) to bytestring (dtype.kind=&#8217;S&#8217;).</p>
 <p>When exporting a unicode string array to a file in Python 3, it may be desirable
 to encode unicode columns as bytestrings.  This routine takes advantage of numpy
@@ -727,7 +731,7 @@ be written in a Python 2 / 3 compatible way:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><em>copy_data=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2312" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.copy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">copy</code><span class="sig-paren">(</span><em>copy_data=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.copy"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2351" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of the table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -735,7 +739,7 @@ be written in a Python 2 / 3 compatible way:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>copy_data</strong> : bool</p>
 <blockquote class="last">
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> (the default), copy the underlying data array.
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> (the default), copy the underlying data array.
 Otherwise, use the same data array</p>
 </div></blockquote>
 </td>
@@ -746,13 +750,13 @@ Otherwise, use the same data array</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.field">
-<code class="descname">field</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1241" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.field" title="Permalink to this definition">¶</a></dt>
+<code class="descname">field</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.field"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1284" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.field" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return column[item] for recarray compatibility.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.table.Table.filled">
-<code class="descname">filled</code><span class="sig-paren">(</span><em>fill_value=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L395" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.filled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.filled" title="Permalink to this definition">¶</a></dt>
+<code class="descname">filled</code><span class="sig-paren">(</span><em>fill_value=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.filled"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L406" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.filled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of self, with masked values filled.</p>
 <p>If input <code class="docutils literal"><span class="pre">fill_value</span></code> supplied then that value is used for all
 masked entries in the table.  Otherwise the individual
@@ -780,15 +784,15 @@ in the entire table.</p>
 
 <dl class="classmethod">
 <dt id="astropy.table.Table.from_pandas">
-<em class="property">classmethod </em><code class="descname">from_pandas</code><span class="sig-paren">(</span><em>dataframe</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2470" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.from_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.from_pandas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <a class="reference internal" href="#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> from a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code> instance</p>
+<em class="property">classmethod </em><code class="descname">from_pandas</code><span class="sig-paren">(</span><em>dataframe</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.from_pandas"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2509" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.from_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-obj docutils literal"><span class="pre">Table</span></code></a> from a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dataframe</strong> : <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dataframe</strong> : <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a></p>
 <blockquote>
-<div><p>The pandas <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code> instance</p>
+<div><p>The pandas <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 </div></blockquote>
 </td>
 </tr>
@@ -804,7 +808,7 @@ in the entire table.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.group_by">
-<code class="descname">group_by</code><span class="sig-paren">(</span><em>keys</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2398" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.group_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.group_by" title="Permalink to this definition">¶</a></dt>
+<code class="descname">group_by</code><span class="sig-paren">(</span><em>keys</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.group_by"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2437" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.group_by" title="Permalink to this definition">¶</a></dt>
 <dd><p>Group this table by the specified <code class="docutils literal"><span class="pre">keys</span></code></p>
 <p>This effectively splits the table into groups which correspond to
 unique values of the <code class="docutils literal"><span class="pre">keys</span></code> grouping object.  The output is a new
@@ -840,7 +844,7 @@ according to <code class="docutils literal"><span class="pre">keys</span></code>
 
 <dl class="method">
 <dt id="astropy.table.Table.index_column">
-<code class="descname">index_column</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1314" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.index_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.index_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">index_column</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.index_column"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1357" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.index_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the positional index of column <code class="docutils literal"><span class="pre">name</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -881,7 +885,7 @@ according to <code class="docutils literal"><span class="pre">keys</span></code>
 
 <dl class="method">
 <dt id="astropy.table.Table.index_mode">
-<code class="descname">index_mode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L504" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.index_mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.index_mode" title="Permalink to this definition">¶</a></dt>
+<code class="descname">index_mode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.index_mode"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L515" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.index_mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a context manager for an indexing mode.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -909,7 +913,7 @@ indices.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.insert_row">
-<code class="descname">insert_row</code><span class="sig-paren">(</span><em>index</em>, <em>vals=None</em>, <em>mask=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1991" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.insert_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.insert_row" title="Permalink to this definition">¶</a></dt>
+<code class="descname">insert_row</code><span class="sig-paren">(</span><em>index</em>, <em>vals=None</em>, <em>mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.insert_row"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2034" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.insert_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new row before the given <code class="docutils literal"><span class="pre">index</span></code> position in the table.</p>
 <p>The <code class="docutils literal"><span class="pre">vals</span></code> argument can be:</p>
 <dl class="docutils">
@@ -918,7 +922,7 @@ indices.</p>
 <dt>mapping (e.g. dict)</dt>
 <dd>Keys corresponding to column names.  Missing values will be
 filled with np.zeros for the column dtype.</dd>
-<dt><a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></dt>
+<dt><a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></dt>
 <dd>All values filled with np.zeros for the column dtype.</dd>
 </dl>
 <p>The <code class="docutils literal"><span class="pre">mask</span></code> attribute should give (if desired) the mask for the
@@ -930,11 +934,11 @@ should be a dictionary.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vals</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vals</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Use the specified values in the new row</p>
 </div></blockquote>
-<p><strong>mask</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>mask</strong> : tuple, list, dict or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote class="last">
 <div><p>Use the specified mask values in the new row</p>
 </div></blockquote>
@@ -946,7 +950,7 @@ should be a dictionary.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.keep_columns">
-<code class="descname">keep_columns</code><span class="sig-paren">(</span><em>names</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1832" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.keep_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.keep_columns" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keep_columns</code><span class="sig-paren">(</span><em>names</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.keep_columns"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1875" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.keep_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keep only the columns specified (remove the others).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1001,12 +1005,12 @@ Keep columns &#8216;a&#8217; and &#8216;c&#8217; of the table:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.keys">
-<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1300" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.keys" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.keys"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1343" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.keys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="astropy.table.Table.more">
-<code class="descname">more</code><span class="sig-paren">(</span><em>max_lines=None</em>, <em>max_width=None</em>, <em>show_name=True</em>, <em>show_unit=None</em>, <em>show_dtype=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1076" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.more"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.more" title="Permalink to this definition">¶</a></dt>
+<code class="descname">more</code><span class="sig-paren">(</span><em>max_lines=None</em>, <em>max_width=None</em>, <em>show_name=True</em>, <em>show_unit=None</em>, <em>show_dtype=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.more"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1119" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.more" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interactively browse table with a paging interface.</p>
 <p>Supported keys:</p>
 <div class="highlight-python"><div class="highlight"><pre>f, &lt;space&gt; : forward one page
@@ -1028,7 +1032,7 @@ h : print this help
 <blockquote>
 <div><p>Maximum number of lines in table output</p>
 </div></blockquote>
-<p><strong>max_width</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>max_width</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Maximum character width of output</p>
 </div></blockquote>
@@ -1054,7 +1058,7 @@ for the unit.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.pformat">
-<code class="descname">pformat</code><span class="sig-paren">(</span><em>max_lines=None</em>, <em>max_width=None</em>, <em>show_name=True</em>, <em>show_unit=None</em>, <em>show_dtype=False</em>, <em>html=False</em>, <em>tableid=None</em>, <em>align=None</em>, <em>tableclass=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1005" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.pformat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.pformat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pformat</code><span class="sig-paren">(</span><em>max_lines=None</em>, <em>max_width=None</em>, <em>show_name=True</em>, <em>show_unit=None</em>, <em>show_dtype=False</em>, <em>html=False</em>, <em>tableid=None</em>, <em>align=None</em>, <em>tableclass=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.pformat"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1048" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.pformat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of lines for the formatted string representation of
 the table.</p>
 <p>If no value of <code class="docutils literal"><span class="pre">max_lines</span></code> is supplied then the height of the
@@ -1069,11 +1073,11 @@ applied.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>max_lines</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>max_lines</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Maximum number of rows to output</p>
 </div></blockquote>
-<p><strong>max_width</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>max_width</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Maximum character width of output</p>
 </div></blockquote>
@@ -1095,13 +1099,13 @@ for the unit.</p>
 <blockquote>
 <div><p>Format the output as an HTML table (default=False)</p>
 </div></blockquote>
-<p><strong>tableid</strong> : str or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>tableid</strong> : str or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>An ID tag for the table; only used if html is set.  Default is
 &#8220;table{id}&#8221;, where id is the unique integer id of the table object,
 id(self)</p>
 </div></blockquote>
-<p><strong>align</strong> : str or list or tuple or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>align</strong> : str or list or tuple or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Left/right alignment of columns. Default is right (None) for all
 columns. Other allowed values are &#8216;&gt;&#8217;, &#8216;&lt;&#8217;, &#8216;^&#8217;, and &#8216;0=&#8217; for
@@ -1109,7 +1113,7 @@ right, left, centered, and 0-padded, respectively. A list of
 strings can be provided for alignment of tables with multiple
 columns.</p>
 </div></blockquote>
-<p><strong>tableclass</strong> : str or list of str or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>tableclass</strong> : str or list of str or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>CSS classes for the table; only used if html is set.  Default is
 none</p>
@@ -1128,7 +1132,7 @@ none</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.pprint">
-<code class="descname">pprint</code><span class="sig-paren">(</span><em>max_lines=None</em>, <em>max_width=None</em>, <em>show_name=True</em>, <em>show_unit=None</em>, <em>show_dtype=False</em>, <em>align=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L805" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.pprint" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>max_lines=None</em>, <em>max_width=None</em>, <em>show_name=True</em>, <em>show_unit=None</em>, <em>show_dtype=False</em>, <em>align=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.pprint"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L844" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.pprint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a formatted string representation of the table.</p>
 <p>If no value of <code class="docutils literal"><span class="pre">max_lines</span></code> is supplied then the height of the
 screen terminal is used to set <code class="docutils literal"><span class="pre">max_lines</span></code>.  If the terminal
@@ -1146,7 +1150,7 @@ applied.</p>
 <blockquote>
 <div><p>Maximum number of lines in table output</p>
 </div></blockquote>
-<p><strong>max_width</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>max_width</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>Maximum character width of output</p>
 </div></blockquote>
@@ -1164,7 +1168,7 @@ for the unit.</p>
 <blockquote>
 <div><p>Include a header row for column dtypes (default=True)</p>
 </div></blockquote>
-<p><strong>align</strong> : str or list or tuple or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>align</strong> : str or list or tuple or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote class="last">
 <div><p>Left/right alignment of columns. Default is right (None) for all
 columns. Other allowed values are &#8216;&gt;&#8217;, &#8216;&lt;&#8217;, &#8216;^&#8217;, and &#8216;0=&#8217; for
@@ -1180,7 +1184,7 @@ columns.</p>
 
 <dl class="classmethod">
 <dt id="astropy.table.Table.read">
-<em class="property">classmethod </em><code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2277" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.read" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.read"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2316" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read and parse a data table and return as a Table.</p>
 <p>This function provides the Table interface to the astropy unified I/O
 layer.  This allows easily reading a file in many supported data formats
@@ -1342,79 +1346,85 @@ passed through to the underlying data reader (e.g. <a class="reference internal"
 <td>Yes</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>ascii.sextractor</td>
-<td>Yes</td>
-<td>No</td>
-<td>No</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>ascii.tab</td>
+<tr class="row-even"><td>ascii.rst</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>fits</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>hdf5</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>votable</td>
+<tr class="row-odd"><td>ascii.sextractor</td>
 <td>Yes</td>
 <td>No</td>
 <td>No</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>aastex</td>
+<tr class="row-even"><td>ascii.tab</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>fits</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>hdf5</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>votable</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>aastex</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>cds</td>
+<tr class="row-odd"><td>cds</td>
 <td>Yes</td>
 <td>No</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-odd"><td>csv</td>
+<tr class="row-even"><td>csv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>daophot</td>
+<tr class="row-odd"><td>daophot</td>
 <td>Yes</td>
 <td>No</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-odd"><td>html</td>
+<tr class="row-even"><td>html</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>ipac</td>
+<tr class="row-odd"><td>ipac</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-odd"><td>latex</td>
+<tr class="row-even"><td>latex</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>rdb</td>
+<tr class="row-odd"><td>rdb</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
@@ -1428,7 +1438,7 @@ Use the full name (e.g. <code class="docutils literal"><span class="pre">ascii.a
 
 <dl class="method">
 <dt id="astropy.table.Table.remove_column">
-<code class="descname">remove_column</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1659" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.remove_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_column</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_column"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1702" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.remove_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a column from the table.</p>
 <p>This can also be done with:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">del</span> <span class="n">table</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
@@ -1473,7 +1483,7 @@ Use the full name (e.g. <code class="docutils literal"><span class="pre">ascii.a
 
 <dl class="method">
 <dt id="astropy.table.Table.remove_columns">
-<code class="descname">remove_columns</code><span class="sig-paren">(</span><em>names</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1700" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.remove_columns" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_columns</code><span class="sig-paren">(</span><em>names</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_columns"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1743" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.remove_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove several columns from the table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1526,7 +1536,7 @@ Use the full name (e.g. <code class="docutils literal"><span class="pre">ascii.a
 
 <dl class="method">
 <dt id="astropy.table.Table.remove_indices">
-<code class="descname">remove_indices</code><span class="sig-paren">(</span><em>colname</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L482" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_indices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.remove_indices" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_indices</code><span class="sig-paren">(</span><em>colname</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_indices"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L493" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.remove_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all indices involving the given column.
 If the primary index is removed, the new primary
 index will be the most recently added remaining
@@ -1547,7 +1557,7 @@ index.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.remove_row">
-<code class="descname">remove_row</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1558" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.remove_row" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_row</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_row"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1601" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.remove_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a row from the table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1587,7 +1597,7 @@ index.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.remove_rows">
-<code class="descname">remove_rows</code><span class="sig-paren">(</span><em>row_specifier</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1596" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_rows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.remove_rows" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_rows</code><span class="sig-paren">(</span><em>row_specifier</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.remove_rows"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1639" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.remove_rows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove rows from the table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1638,7 +1648,7 @@ outside the data:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.rename_column">
-<code class="descname">rename_column</code><span class="sig-paren">(</span><em>name</em>, <em>new_name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1891" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.rename_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.rename_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rename_column</code><span class="sig-paren">(</span><em>name</em>, <em>new_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.rename_column"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1934" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.rename_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename a column.</p>
 <p>This can also be done directly with by setting the <code class="docutils literal"><span class="pre">name</span></code> attribute
 for a column:</p>
@@ -1685,7 +1695,7 @@ for a column:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.replace_column">
-<code class="descname">replace_column</code><span class="sig-paren">(</span><em>name</em>, <em>col</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1528" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.replace_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.replace_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">replace_column</code><span class="sig-paren">(</span><em>name</em>, <em>col</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.replace_column"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L1571" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.replace_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace column <code class="docutils literal"><span class="pre">name</span></code> with the new <code class="docutils literal"><span class="pre">col</span></code> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1714,7 +1724,7 @@ for a column:</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.reverse">
-<code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2244" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.reverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.reverse" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.reverse"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2283" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.reverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverse the row order of table rows.  The table is reversed
 in place and there are no function arguments.</p>
 <p class="rubric">Examples</p>
@@ -1743,7 +1753,7 @@ in place and there are no function arguments.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.show_in_browser">
-<code class="descname">show_in_browser</code><span class="sig-paren">(</span><em>max_lines=5000</em>, <em>jsviewer=False</em>, <em>browser='default'</em>, <em>jskwargs={'use_local_files': True}</em>, <em>tableid=None</em>, <em>table_class='display compact'</em>, <em>css=None</em>, <em>show_row_index=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L925" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.show_in_browser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.show_in_browser" title="Permalink to this definition">¶</a></dt>
+<code class="descname">show_in_browser</code><span class="sig-paren">(</span><em>max_lines=5000</em>, <em>jsviewer=False</em>, <em>browser='default'</em>, <em>jskwargs={'use_local_files': True}</em>, <em>tableid=None</em>, <em>table_class='display compact'</em>, <em>css=None</em>, <em>show_row_index=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.show_in_browser"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L968" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.show_in_browser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render the table in HTML and show it in a web browser.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1758,7 +1768,7 @@ no row limit.</p>
 </div></blockquote>
 <p><strong>jsviewer</strong> : bool</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, prepends some javascript headers so that the table is
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, prepends some javascript headers so that the table is
 rendered as a <a class="reference external" href="https://datatables.net">DataTables</a> data table.
 This allows in-browser searching &amp; sorting.</p>
 </div></blockquote>
@@ -1775,12 +1785,12 @@ This allows in-browser searching &amp; sorting.</p>
 <code class="docutils literal"><span class="pre">{'use_local_files':</span> <span class="pre">True}</span></code> which means that the JavaScript
 libraries will be served from local copies.</p>
 </div></blockquote>
-<p><strong>tableid</strong> : str or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>tableid</strong> : str or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>An html ID tag for the table.  Default is <code class="docutils literal"><span class="pre">table{id}</span></code>, where id
 is the unique integer id of the table object, id(self).</p>
 </div></blockquote>
-<p><strong>table_class</strong> : str or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>table_class</strong> : str or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>A string with a list of HTML classes used to style the table.
 Default is &#8220;display compact&#8221;, and other possible values can be
@@ -1808,24 +1818,28 @@ ignored. Defaults to &#8220;idx&#8221;.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.show_in_notebook">
-<code class="descname">show_in_notebook</code><span class="sig-paren">(</span><em>tableid=None</em>, <em>css=None</em>, <em>display_length=50</em>, <em>table_class='table table-striped table-bordered table-condensed'</em>, <em>show_row_index='idx'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L867" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.show_in_notebook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.show_in_notebook" title="Permalink to this definition">¶</a></dt>
+<code class="descname">show_in_notebook</code><span class="sig-paren">(</span><em>tableid=None</em>, <em>css=None</em>, <em>display_length=50</em>, <em>table_class='astropy-default'</em>, <em>show_row_index='idx'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.show_in_notebook"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L906" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.show_in_notebook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render the table in HTML and show it in the IPython notebook.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>tableid</strong> : str or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>tableid</strong> : str or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>An html ID tag for the table.  Default is <code class="docutils literal"><span class="pre">table{id}-XXX</span></code>, where
 id is the unique integer id of the table object, id(self), and XXX
 is a random number to avoid conflicts when printing the same table
 multiple times.</p>
 </div></blockquote>
-<p><strong>table_class</strong> : str or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
+<p><strong>table_class</strong> : str or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a></p>
 <blockquote>
 <div><p>A string with a list of HTML classes used to style the table.
-Default is &#8220;table table-striped table-bordered table-condensed&#8221;,
-using Bootstrap which is available in the notebook. See <a class="reference external" href="http://getbootstrap.com/css/#tables">this page</a> for the list of classes.</p>
+The special default string (&#8216;from-apy-default&#8217;) means that the string
+will be retreived from the configuration item
+<code class="docutils literal"><span class="pre">astropy.table.default_notebook_table_class</span></code>. Note that these
+table classes may make use of bootstrap, as this is loaded with the
+notebook.  See <a class="reference external" href="http://getbootstrap.com/css/#tables">this page</a>
+for the list of classes.</p>
 </div></blockquote>
 <p><strong>css</strong> : string</p>
 <blockquote>
@@ -1859,7 +1873,7 @@ jquery and jquery.dataTables), you will not get the jsviewer features.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.sort">
-<code class="descname">sort</code><span class="sig-paren">(</span><em>keys=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2185" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.sort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.sort" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sort</code><span class="sig-paren">(</span><em>keys=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.sort"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2224" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.sort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort the table according to one or more keys. This operates
 on the existing table and does not return a new table.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1901,15 +1915,15 @@ primary index of the Table.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.to_pandas">
-<code class="descname">to_pandas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2428" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.to_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.to_pandas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code> instance</p>
+<code class="descname">to_pandas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.to_pandas"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2467" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.to_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataframe</strong> : <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataframe</strong> : <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a></p>
 <blockquote>
-<div><p>A pandas <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code> instance</p>
+<div><p>A pandas <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.18.1)"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1929,7 +1943,7 @@ primary index of the Table.</p>
 
 <dl class="method">
 <dt id="astropy.table.Table.write">
-<code class="descname">write</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2295" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#Table.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.Table.write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#Table.write"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2334" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.Table.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write this Table object out in the specified format.</p>
 <p>This function provides the Table interface to the astropy unified I/O
 layer.  This allows easily writing a file in many supported data formats
@@ -2079,67 +2093,73 @@ passed through to the underlying data reader (e.g. <a class="reference internal"
 <td>Yes</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>ascii.tab</td>
+<tr class="row-even"><td>ascii.rst</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>fits</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>hdf5</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>jsviewer</td>
-<td>No</td>
-<td>Yes</td>
-<td>No</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>votable</td>
+<tr class="row-odd"><td>ascii.tab</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>aastex</td>
+<tr class="row-even"><td>fits</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>hdf5</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>jsviewer</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>votable</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>aastex</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>csv</td>
+<tr class="row-odd"><td>csv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
-<tr class="row-odd"><td>html</td>
+<tr class="row-even"><td>html</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>ipac</td>
+<tr class="row-odd"><td>ipac</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-odd"><td>latex</td>
+<tr class="row-even"><td>latex</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>rdb</td>
+<tr class="row-odd"><td>rdb</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
@@ -2178,7 +2198,7 @@ Use the full name (e.g. <code class="docutils literal"><span class="pre">ascii.a
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

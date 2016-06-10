@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release Procedures &mdash; Astropy v1.2.dev15003</title>
+    <title>Release Procedures &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Workflow for Maintainers" href="workflow/maintainer_workflow.html" />
     <link rel="prev" title="C or Cython Extensions" href="ccython.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -627,31 +627,6 @@ that for you.  You can delete this tag by doing:</p>
 </div>
 </div>
 </div>
-<div class="section" id="creating-a-macos-x-installer-on-a-dmg">
-<h2>Creating a MacOS X Installer on a DMG<a class="headerlink" href="#creating-a-macos-x-installer-on-a-dmg" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">bdist_dmg</span></code> command can be used to create a <code class="docutils literal"><span class="pre">.dmg</span></code> disk image for
-MacOS X with a <code class="docutils literal"><span class="pre">.pkg</span></code> installer. In order to do this, you will need to
-ensure that you have the following dependencies installed:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.numpy.org">Numpy</a></li>
-<li><a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a></li>
-<li><a class="reference external" href="http://pypi.python.org/pypi/bdist_mpkg/">bdist_mpkg</a></li>
-</ul>
-<p>To create a <code class="docutils literal"><span class="pre">.dmg</span></code> file, run:</p>
-<div class="highlight-python"><div class="highlight"><pre>python setup.py bdist_dmg
-</pre></div>
-</div>
-<p>Note that for the actual release version, you should do this with the Python
-distribution from <a class="reference external" href="http://python.org">python.org</a> (not e.g. MacPorts, EPD,
-etc.). The best way to ensure maximum compatibility is to make sure that
-Python and Numpy are installed into <code class="docutils literal"><span class="pre">/Library/Frameworks/Python.framework</span></code>
-using the latest stable <code class="docutils literal"><span class="pre">.dmg</span></code> installers available for those packages. In
-addition, the <code class="docutils literal"><span class="pre">.dmg</span></code> should be build on a MacOS 10.6 system, to ensure
-compatibility with 10.6, 10.7, and 10.8.</p>
-<p>Before distributing, you should test out an installation of Python, Numpy, and
-Astropy from scratch using the <code class="docutils literal"><span class="pre">.dmg</span></code> installers, preferably on a clean
-virtual machine.</p>
-</div>
 </div>
 
 
@@ -678,7 +653,6 @@ virtual machine.</p>
 <li><a class="reference internal" href="#create-a-tag">Create a tag</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#creating-a-macos-x-installer-on-a-dmg">Creating a MacOS X Installer on a DMG</a></li>
 </ul>
 </li>
 </ul>
@@ -697,7 +671,7 @@ virtual machine.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

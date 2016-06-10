@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Astrostatistics Tools (astropy.stats) &mdash; Astropy v1.2.dev15003</title>
+    <title>Astrostatistics Tools (astropy.stats) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Lomb-Scargle Periodograms" href="lombscargle.html" />
-    <link rel="prev" title="wpwaCDM" href="../api/astropy.cosmology.wpwaCDM.html" />
+    <link rel="prev" title="ImageNormalize" href="../api/astropy.visualization.mpl_normalize.ImageNormalize.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -62,13 +62,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="../api/astropy.cosmology.wpwaCDM.html" title="wpwaCDM">
+	<a href="../api/astropy.visualization.mpl_normalize.ImageNormalize.html" title="ImageNormalize">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -104,7 +104,7 @@ listed below.</p>
 <li class="toctree-l2"><a class="reference internal" href="lombscargle.html#basic-usage">Basic Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lombscargle.html#periodogram-normalizations">Periodogram Normalizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lombscargle.html#periodogram-algorithms">Periodogram Algorithms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lombscargle.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lombscargle.html#rr-lyrae-example">RR-Lyrae Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lombscargle.html#literature-references">Literature References</a></li>
 </ul>
 </li>
@@ -115,7 +115,7 @@ listed below.</p>
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><dl class="first docutils">
-<dt><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v0.17.0)"><code class="xref py py-mod docutils literal"><span class="pre">scipy.stats</span></code></a></dt>
+<dt><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v0.17.1)"><code class="xref py py-mod docutils literal"><span class="pre">scipy.stats</span></code></a></dt>
 <dd><p class="first last">This scipy package contains a variety of useful statistical functions and
 classes.  The functionality in <a class="reference internal" href="#module-astropy.stats" title="astropy.stats"><code class="xref py py-obj docutils literal"><span class="pre">astropy.stats</span></code></a> is intended to supplement
 this, <em>not</em> replace it.</p>
@@ -138,11 +138,11 @@ binnings, see <a class="reference internal" href="../visualization/histogram.htm
 <div class="section" id="module-astropy.stats">
 <span id="astropy-stats-package"></span><h3>astropy.stats Package<a class="headerlink" href="#module-astropy.stats" title="Permalink to this headline">¶</a></h3>
 <p>This subpackage contains statistical tools provided for or used by Astropy.</p>
-<p>While the <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v0.17.0)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.stats</span></code></a> package contains a wide range of statistical
+<p>While the <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v0.17.1)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.stats</span></code></a> package contains a wide range of statistical
 tools, it is a general-purpose package, and is missing some that are
 particularly useful to astronomy or are used in an atypical way in
 astronomy. This package is intended to provide such functionality, but
-<em>not</em> to replace <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v0.17.0)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.stats</span></code></a> if its implementation satisfies
+<em>not</em> to replace <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v0.17.1)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.stats</span></code></a> if its implementation satisfies
 astronomers&#8217; needs.</p>
 <div class="section" id="functions">
 <h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
@@ -271,7 +271,7 @@ astronomers&#8217; needs.</p>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-16e6619333ae1ae9d9996e4964b1ac561e70ec46.svg" alt="Inheritance diagram of astropy.stats.bayesian_blocks.Events, astropy.stats.bayesian_blocks.FitnessFunc, astropy.stats.lombscargle.core.LombScargle, astropy.stats.bayesian_blocks.PointMeasures, astropy.stats.bayesian_blocks.RegularEvents" class="inheritance"/>
+<img src="../_images/inheritance-e82313b9a1758cd6113ea0f3ab4c68b455f4055a.svg" alt="Inheritance diagram of astropy.stats.bayesian_blocks.Events, astropy.stats.bayesian_blocks.FitnessFunc, astropy.stats.lombscargle.core.LombScargle, astropy.stats.bayesian_blocks.PointMeasures, astropy.stats.bayesian_blocks.RegularEvents" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -317,7 +317,7 @@ astronomers&#8217; needs.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

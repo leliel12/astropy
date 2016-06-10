@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.fitsrec &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.fits.fitsrec &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -92,7 +92,7 @@
 <span class="kn">from</span> <span class="nn">...extern.six</span> <span class="kn">import</span> <span class="n">string_types</span>
 <span class="kn">from</span> <span class="nn">...extern.six.moves</span> <span class="kn">import</span> <span class="nb">xrange</span>
 <span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">lazyproperty</span>
-<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
+<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
 <span class="kn">from</span> <span class="nn">...utils.exceptions</span> <span class="kn">import</span> <span class="n">AstropyDeprecationWarning</span>
 
 
@@ -291,7 +291,7 @@
         <span class="k">for</span> <span class="n">attrs</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;_converted&#39;</span><span class="p">,</span> <span class="s">&#39;_heapoffset&#39;</span><span class="p">,</span> <span class="s">&#39;_heapsize&#39;</span><span class="p">,</span> <span class="s">&#39;_nfields&#39;</span><span class="p">,</span>
                       <span class="s">&#39;_gap&#39;</span><span class="p">,</span> <span class="s">&#39;_uint&#39;</span><span class="p">,</span> <span class="s">&#39;parnames&#39;</span><span class="p">,</span> <span class="s">&#39;_coldefs&#39;</span><span class="p">]:</span>
 
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
                 <span class="c"># _coldefs can be Delayed, and file objects cannot be</span>
                 <span class="c"># picked, it needs to be deepcopied first</span>
                 <span class="k">if</span> <span class="n">attrs</span> <span class="o">==</span> <span class="s">&#39;_coldefs&#39;</span><span class="p">:</span>
@@ -493,7 +493,7 @@
                 <span class="n">data</span><span class="o">.</span><span class="n">_cache_field</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">converted</span><span class="p">)</span>
                 <span class="c"># TODO: Maybe this step isn&#39;t necessary at all if _scale_back</span>
                 <span class="c"># will handle it?</span>
-                <span class="n">inarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">inarr</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">))</span>
+                <span class="n">inarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">inarr</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">False_</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">))</span>
             <span class="k">elif</span> <span class="p">(</span><span class="n">columns</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_physical_values</span> <span class="ow">and</span>
                     <span class="n">columns</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_pseudo_unsigned_ints</span><span class="p">):</span>
                 <span class="c"># Temporary hack...</span>
@@ -705,11 +705,17 @@
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coldefs</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">fields</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_col_weakrefs</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="n">col</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coldefs</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">fields</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_col_weakrefs</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">col</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="c"># See issues #4690 and #4912</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>  <span class="c"># pragma: no cover</span>
+            <span class="k">pass</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1047,7 +1053,7 @@
         <span class="k">elif</span> <span class="n">_bool</span> <span class="ow">and</span> <span class="n">field</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="nb">bool</span><span class="p">:</span>
             <span class="n">field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">))</span>
         <span class="k">elif</span> <span class="n">_str</span><span class="p">:</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">UnicodeDecodeError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">UnicodeDecodeError</span><span class="p">):</span>
                 <span class="n">field</span> <span class="o">=</span> <span class="n">decode_ascii</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">dim</span><span class="p">:</span>
@@ -1450,7 +1456,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

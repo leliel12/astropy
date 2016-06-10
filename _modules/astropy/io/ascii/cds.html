@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.ascii.cds &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.ascii.cds &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -92,7 +92,7 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">core</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">fixedwidth</span>
 
-<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
+<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
 
 
 <span class="n">__doctest_skip__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">]</span>
@@ -373,7 +373,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">start_line</span> <span class="o">==</span> <span class="s">&#39;guess&#39;</span><span class="p">:</span>
             <span class="c"># Replicate the first part of BaseReader.read up to the point where</span>
             <span class="c"># the table lines are initially read in.</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
                 <span class="c"># For strings only</span>
                 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">linesep</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span> <span class="o">+</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">table_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
@@ -389,7 +389,7 @@
             <span class="c"># could be a file.</span>
             <span class="k">for</span> <span class="n">data_start</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">start_line</span> <span class="o">=</span> <span class="n">data_start</span>
-                <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+                <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
                     <span class="n">table</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Cds</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
                     <span class="k">return</span> <span class="n">table</span>
         <span class="k">else</span><span class="p">:</span>
@@ -413,7 +413,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

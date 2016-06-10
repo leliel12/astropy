@@ -4,7 +4,7 @@ from astropy.wcs import WCS
 from astropy.utils.data import download_file
 
 fits_file = 'http://data.astropy.org/tutorials/FITS-images/HorseHead.fits'
-image_file = download_file(fits_file, cache=True )
+image_file = download_file(fits_file, cache=True)
 hdu = fits.open(image_file)[0]
 wcs = WCS(hdu.header)
 

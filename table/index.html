@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Data Tables (astropy.table) &mdash; Astropy v1.2.dev15003</title>
+    <title>Data Tables (astropy.table) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Constructing a table" href="construct_table.html" />
     <link rel="prev" title="Cutout2D" href="../api/astropy.nddata.utils.Cutout2D.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -87,7 +87,7 @@
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#module-astropy.table" title="astropy.table"><code class="xref py py-obj docutils literal"><span class="pre">astropy.table</span></code></a> provides functionality for storing and manipulating
-heterogeneous tables of data in a way that is familiar to <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> users.  A few
+heterogeneous tables of data in a way that is familiar to <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> users.  A few
 notable capabilities of this package are:</p>
 <ul class="simple">
 <li>Initialize a table from a wide variety of input data structures and types.</li>
@@ -108,17 +108,6 @@ or adding new rows of data.</li>
 <p>Currently <a class="reference internal" href="#module-astropy.table" title="astropy.table"><code class="xref py py-obj docutils literal"><span class="pre">astropy.table</span></code></a> is used when reading an ASCII table using
 <a class="reference internal" href="../io/ascii/index.html#module-astropy.io.ascii" title="astropy.io.ascii"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.ascii</span></code></a>.  Future releases of AstroPy are expected to use
 the <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> class for other subpackages such as <a class="reference internal" href="../io/votable/index.html#module-astropy.io.votable" title="astropy.io.votable"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.votable</span></code></a> and <a class="reference internal" href="../io/fits/index.html#module-astropy.io.fits" title="astropy.io.fits"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.fits</span></code></a> .</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>Starting with version 1.0 of astropy the internal implementation of the
-<a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> class changed so that it no longer uses numpy structured arrays as
-the core table data container.  Instead the table is stored as a collection
-of individual column objects.  <em>For most users there is NO CHANGE to the
-interface and behavior of |Table| objects.</em></p>
-<p class="last">The page on <a class="reference internal" href="implementation_change_1.0.html#table-implementation-change"><span>Table implementation change in 1.0</span></a> provides details about the
-change.  This includes discussion of the table architecture, key differences,
-and benefits of the change.</p>
-</div>
 </div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
@@ -189,8 +178,13 @@ a way to natively use <a class="reference internal" href="../api/astropy.units.Q
 <span class="go">&lt;Quantity [ 0.03333333, 0.08333333, 0.13666667] min&gt;</span>
 </pre></div>
 </div>
-<p>From within the IPython notebook, the table is displayed as a formatted HTML table:</p>
+<p>From within the IPython notebook, the table is displayed as a formatted HTML
+table (details of how it appears can be changed by altering the
+<code class="docutils literal"><span class="pre">astropy.table.default_notebook_table_class</span></code> configuration item):</p>
 <img alt="../_images/table_repr_html.png" src="../_images/table_repr_html.png" />
+<p>Or you can get a fancier notebook interface with in-browser search and sort
+using <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.show_in_notebook" title="astropy.table.Table.show_in_notebook"><code class="xref py py-obj docutils literal"><span class="pre">show_in_notebook</span></code></a>:</p>
+<img alt="../_images/table_show_in_nb.png" src="../_images/table_show_in_nb.png" />
 <p>If you print the table (either from the notebook or in a text console session)
 then a formatted version appears:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -235,7 +229,7 @@ time:</p>
 <span class="go">{&#39;name&#39;: &#39;first table&#39;}</span>
 </pre></div>
 </div>
-<p>Access the data by column or row using familiar <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> structured array syntax:</p>
+<p>Access the data by column or row using familiar <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> structured array syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span>       <span class="c"># Column &#39;a&#39;</span>
 <span class="go">&lt;Column name=&#39;a&#39; dtype=&#39;int32&#39; length=3&gt;</span>
 <span class="go">1</span>
@@ -370,6 +364,7 @@ for details):</p>
 <li class="toctree-l2"><a class="reference internal" href="construct_table.html#copy-versus-reference">Copy versus Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="construct_table.html#column-and-tablecolumns-classes">Column and TableColumns classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="construct_table.html#subclassing-table">Subclassing Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="construct_table.html#table-like-objects">Table-like objects</a></li>
 </ul>
 </li>
 </ul>
@@ -579,7 +574,7 @@ for details):</p>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-37eab12e548040a0e8d5333ef99e23f63e8b902e.svg" alt="Inheritance diagram of astropy.table.bst.BST, astropy.table.column.Column, astropy.table.groups.ColumnGroups, astropy.table.Conf, astropy.table.bst.BST, astropy.table.bst.BST, astropy.table.jsviewer.JSViewer, astropy.table.column.MaskedColumn, astropy.table.table.NdarrayMixin, astropy.table.table.QTable, astropy.table.row.Row, astropy.table.sorted_array.SortedArray, astropy.table.table.Table, astropy.table.table.TableColumns, astropy.table.pprint.TableFormatter, astropy.table.groups.TableGroups, astropy.table.np_utils.TableMergeError" class="inheritance"/>
+<img src="../_images/inheritance-7ad7c361f4aa85e83428fa807c7ad3ee67516c70.svg" alt="Inheritance diagram of astropy.table.bst.BST, astropy.table.column.Column, astropy.table.groups.ColumnGroups, astropy.table.Conf, astropy.table.bst.BST, astropy.table.bst.BST, astropy.table.jsviewer.JSViewer, astropy.table.column.MaskedColumn, astropy.table.table.NdarrayMixin, astropy.table.table.QTable, astropy.table.row.Row, astropy.table.sorted_array.SortedArray, astropy.table.table.Table, astropy.table.table.TableColumns, astropy.table.pprint.TableFormatter, astropy.table.groups.TableGroups, astropy.table.np_utils.TableMergeError" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -635,7 +630,7 @@ for details):</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

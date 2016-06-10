@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Astropy v1.2.dev15003</title>
+    <title>Installation &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
     <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="index.html" />
     <link rel="next" title="Getting Started with Astropy" href="getting_started.html" />
     <link rel="prev" title="Overview" href="overview.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="index.html">Astropy v1.2.dev15003</a>
+	<a href="index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -93,7 +93,7 @@
 <li>Prior to Astropy v1.2, Python 2.6 was supported</li>
 </ul>
 </li>
-<li><a class="reference external" href="http://numpy.scipy.org">Numpy</a> 1.6.0 or later</li>
+<li><a class="reference external" href="http://numpy.scipy.org">Numpy</a> 1.7.0 or later</li>
 </ul>
 <p>Astropy also depends on other packages for optional features:</p>
 <ul class="simple">
@@ -107,7 +107,7 @@
 mainly cosmology-related functionality).</li>
 <li><a class="reference external" href="http://www.xmlsoft.org/">xmllint</a>: To validate VOTABLE XML files.</li>
 <li><a class="reference external" href="http://matplotlib.org/">matplotlib</a>: To provide plotting functionality that <a class="reference internal" href="visualization/index.html#module-astropy.visualization" title="astropy.visualization"><code class="xref py py-obj docutils literal"><span class="pre">astropy.visualization</span></code></a> enhances.</li>
-<li><a class="reference external" href="http://wcsaxes.readthedocs.org/en/latest/">WCSAxes</a>: To use <a class="reference internal" href="wcs/index.html#module-astropy.wcs" title="astropy.wcs"><code class="xref py py-obj docutils literal"><span class="pre">astropy.wcs</span></code></a> to define projections in Matplotlib.</li>
+<li><a class="reference external" href="http://wcsaxes.readthedocs.io/en/latest/">WCSAxes</a>: To use <a class="reference internal" href="wcs/index.html#module-astropy.wcs" title="astropy.wcs"><code class="xref py py-obj docutils literal"><span class="pre">astropy.wcs</span></code></a> to define projections in Matplotlib.</li>
 <li><a class="reference external" href="http://pythonhosted.org/pytz/">pytz</a>: To specify and convert between timezones.</li>
 <li><a class="reference external" href="http://scikit-image.org/">scikit-image</a>: To downsample a data array in <a class="reference internal" href="nddata/utils.html#module-astropy.nddata.utils" title="astropy.nddata.utils"><code class="xref py py-obj docutils literal"><span class="pre">astropy.nddata.utils</span></code></a>.</li>
 <li><a class="reference external" href="http://pandas.pydata.org/">pandas</a>: To read/write
@@ -388,6 +388,38 @@ into.  For example to add the missing registry entries to your Python 2.7:</p>
 </div>
 </div>
 </div>
+<div class="section" id="installing-astropy-into-casa">
+<h3>Installing Astropy into CASA<a class="headerlink" href="#installing-astropy-into-casa" title="Permalink to this headline">¶</a></h3>
+<p>If you want to be able to use Astropy inside <a class="reference external" href="https://casa.nrao.edu/">CASA</a>, the easiest way is to do so from inside CASA.</p>
+<p>First, we need to make sure <a class="reference external" href="https://pypi.python.org/pypi/pip">pip</a> is
+installed. Start up CASA as normal, and type:</p>
+<div class="highlight-python"><div class="highlight"><pre>CASA &lt;2&gt;: from setuptools.command import easy_install
+
+CASA &lt;3&gt;: easy_install.main([&#39;--user&#39;, &#39;pip&#39;])
+</pre></div>
+</div>
+<p>Now, quit CASA and re-open it, then type the following to install Astropy:</p>
+<div class="highlight-python"><div class="highlight"><pre>CASA &lt;2&gt;: import pip
+
+CASA &lt;3&gt;: pip.main([&#39;install&#39;, &#39;astropy&#39;, &#39;--user&#39;])
+</pre></div>
+</div>
+<p>Then close CASA again and open it, and you should be able to import Astropy:</p>
+<div class="highlight-python"><div class="highlight"><pre>CASA &lt;2&gt;: import astropy
+</pre></div>
+</div>
+<p>Any astropy affiliated package can be installed the same way (e.g. the
+<a class="reference external" href="http://spectral-cube.readthedocs.io/en/latest/">spectral-cube</a> or other
+packages that may be useful for radioastronomy).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above instructions have been tested and are known to work on
+MacOS X with CASA 4.3.1 and Linux with CASA 4.3.1, 4.4.0, 4.5.3, and
+pre-releases of CASA 4.7. However, due to missing header files in
+CASA, they are known to <strong>not</strong> work on Linux with CASA 4.2.1 and
+CASA 4.6.0.</p>
+</div>
+</div>
 <div class="section" id="building-documentation">
 <span id="builddocs"></span><h3>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
@@ -406,7 +438,8 @@ packages:</p>
 <li><a class="reference external" href="https://github.com/astropy/astropy-helpers">Astropy-helpers</a> (Astropy
 and most affiliated packages include this as a submodule in the source
 repository, so it does not need to be installed separately.)</li>
-<li><a class="reference external" href="http://wcsaxes.readthedocs.org/en/latest/">WCSAxes</a></li>
+<li><a class="reference external" href="http://wcsaxes.readthedocs.io/en/latest/">WCSAxes</a></li>
+<li><a class="reference external" href="http://python-pillow.org/">Pillow</a></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
@@ -490,6 +523,7 @@ installing astropy) is to run this from the root of the source tree:</p>
 <li><a class="reference internal" href="#the-windows-installer-can-t-find-python-in-the-registry">The Windows installer can&#8217;t find Python in the registry</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#installing-astropy-into-casa">Installing Astropy into CASA</a></li>
 <li><a class="reference internal" href="#building-documentation">Building documentation</a></li>
 <li><a class="reference internal" href="#testing-a-source-code-build-of-astropy">Testing a source code build of Astropy</a></li>
 </ul>
@@ -512,7 +546,7 @@ installing astropy) is to run this from the root of the source tree:</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>proj_plane_pixel_scales &mdash; Astropy v1.2.dev15003</title>
+    <title>proj_plane_pixel_scales &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="World Coordinate System (astropy.wcs)" href="../wcs/index.html" />
     <link rel="next" title="proj_plane_pixel_area" href="astropy.wcs.utils.proj_plane_pixel_area.html" />
     <link rel="prev" title="wcs_to_celestial_frame" href="astropy.wcs.utils.wcs_to_celestial_frame.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../wcs/index.html" accesskey="U">World Coordinate System (<code class="docutils literal"><span class="pre">astropy.wcs</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>proj_plane_pixel_scales<a class="headerlink" href="#proj-plane-pixel-scales" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.wcs.utils.proj_plane_pixel_scales">
-<code class="descclassname">astropy.wcs.utils.</code><code class="descname">proj_plane_pixel_scales</code><span class="sig-paren">(</span><em>wcs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/wcs/utils.py#L151" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/wcs/utils.html#proj_plane_pixel_scales"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.wcs.utils.proj_plane_pixel_scales" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.wcs.utils.</code><code class="descname">proj_plane_pixel_scales</code><span class="sig-paren">(</span><em>wcs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/wcs/utils.html#proj_plane_pixel_scales"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/wcs/utils.py#L151" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.wcs.utils.proj_plane_pixel_scales" title="Permalink to this definition">¶</a></dt>
 <dd><p>For a WCS returns pixel scales along each axis of the image pixel at
 the <code class="docutils literal"><span class="pre">CRPIX</span></code> location once it is projected onto the
 &#8220;plane of intermediate world coordinates&#8221; as defined in
@@ -118,9 +118,9 @@ celestial axes only, e.g., by passing in the
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a></p>
 <blockquote class="last">
-<div><p>A vector (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>) of projection plane increments
+<div><p>A vector (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>) of projection plane increments
 corresponding to each pixel side (axis). The units of the returned
 results are the same as the units of <a class="reference internal" href="astropy.wcs.Wcsprm.html#astropy.wcs.Wcsprm.cdelt" title="astropy.wcs.Wcsprm.cdelt"><code class="xref py py-obj docutils literal"><span class="pre">cdelt</span></code></a>,
 <a class="reference internal" href="astropy.wcs.Wcsprm.html#astropy.wcs.Wcsprm.crval" title="astropy.wcs.Wcsprm.crval"><code class="xref py py-obj docutils literal"><span class="pre">crval</span></code></a>, and <a class="reference internal" href="astropy.wcs.Wcsprm.html#astropy.wcs.Wcsprm.cd" title="astropy.wcs.Wcsprm.cd"><code class="xref py py-obj docutils literal"><span class="pre">cd</span></code></a> for
@@ -163,7 +163,7 @@ of <a class="reference internal" href="astropy.wcs.Wcsprm.html#astropy.wcs.Wcspr
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>FunctionQuantity &mdash; Astropy v1.2.dev15003</title>
+    <title>FunctionQuantity &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Units and Quantities (astropy.units)" href="../units/index.html" />
     <link rel="next" title="FunctionUnitBase" href="astropy.units.function.FunctionUnitBase.html" />
     <link rel="prev" title="DexUnit" href="astropy.units.function.DexUnit.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../units/index.html" accesskey="U">Units and Quantities (<code class="docutils literal"><span class="pre">astropy.units</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>FunctionQuantity<a class="headerlink" href="#functionquantity" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.units.function.FunctionQuantity">
-<em class="property">class </em><code class="descclassname">astropy.units.function.</code><code class="descname">FunctionQuantity</code><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/function/core.py#L420" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/units/function/core.html#FunctionQuantity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.units.function.FunctionQuantity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.units.function.</code><code class="descname">FunctionQuantity</code><a class="reference internal" href="../_modules/astropy/units/function/core.html#FunctionQuantity"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/function/core.py#L420" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.units.function.FunctionQuantity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.units.quantity.Quantity.html#astropy.units.quantity.Quantity" title="astropy.units.quantity.Quantity"><code class="xref py py-class docutils literal"><span class="pre">astropy.units.quantity.Quantity</span></code></a></p>
 <p>A representation of a (scaled) function of a number with a unit.</p>
 <p>Function quantities are quantities whose units are functions containing a
@@ -116,7 +116,7 @@ the physical unit inferred from <code class="docutils literal"><span class="pre"
 physical unit will be taken from it; for other input, it will be
 inferred from <code class="docutils literal"><span class="pre">value</span></code>. By default, <code class="docutils literal"><span class="pre">unit</span></code> is set by the subclass.</p>
 </div></blockquote>
-<p><strong>dtype</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">dtype</span></code></a>, optional</p>
+<p><strong>dtype</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">dtype</span></code></a>, optional</p>
 <blockquote>
 <div><p>The dtype of the resulting Numpy array or scalar that will
 hold the value.  If not provided, it is determined from the input,
@@ -125,21 +125,21 @@ is converted to float.</p>
 </div></blockquote>
 <p><strong>copy</strong> : bool, optional</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> (default), then the value is copied.  Otherwise, a copy will
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> (default), then the value is copied.  Otherwise, a copy will
 only be made if <code class="docutils literal"><span class="pre">__array__</span></code> returns a copy, if value is a nested
 sequence, or if a copy is needed to satisfy an explicitly given
-<code class="docutils literal"><span class="pre">dtype</span></code>.  (The <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> option is intended mostly for internal use,
+<code class="docutils literal"><span class="pre">dtype</span></code>.  (The <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> option is intended mostly for internal use,
 to speed up initialization where a copy is known to have been made.
 Use with care.)</p>
 </div></blockquote>
 <p><strong>order</strong> : {&#8216;C&#8217;, &#8216;F&#8217;, &#8216;A&#8217;}, optional</p>
 <blockquote>
-<div><p>Specify the order of the array.  As in <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>.  Ignored
+<div><p>Specify the order of the array.  As in <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>.  Ignored
 if the input does not need to be converted and <code class="docutils literal"><span class="pre">copy=False</span></code>.</p>
 </div></blockquote>
 <p><strong>subok</strong> : bool, optional</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> (default), the returned array will be forced to be of the
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> (default), the returned array will be forced to be of the
 class used.  Otherwise, subclasses will be passed through.</p>
 </div></blockquote>
 <p><strong>ndmin</strong> : int, optional</p>
@@ -240,14 +240,14 @@ as set by the <a class="reference internal" href="astropy.units.function.Functio
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="astropy.units.function.FunctionQuantity.decompose">
-<code class="descname">decompose</code><span class="sig-paren">(</span><em>bases=[]</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/function/core.py#L582" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/units/function/core.html#FunctionQuantity.decompose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.units.function.FunctionQuantity.decompose" title="Permalink to this definition">¶</a></dt>
+<code class="descname">decompose</code><span class="sig-paren">(</span><em>bases=[]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/units/function/core.html#FunctionQuantity.decompose"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/function/core.py#L582" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.units.function.FunctionQuantity.decompose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a new <a class="reference internal" href="#astropy.units.function.FunctionQuantity" title="astropy.units.function.FunctionQuantity"><code class="xref py py-obj docutils literal"><span class="pre">FunctionQuantity</span></code></a> with the physical unit decomposed.</p>
 <p>For details, see <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity.decompose" title="astropy.units.Quantity.decompose"><code class="xref py py-obj docutils literal"><span class="pre">decompose</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.units.function.FunctionQuantity.to">
-<code class="descname">to</code><span class="sig-paren">(</span><em>unit</em>, <em>equivalencies=[]</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/function/core.py#L590" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/units/function/core.html#FunctionQuantity.to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.units.function.FunctionQuantity.to" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to</code><span class="sig-paren">(</span><em>unit</em>, <em>equivalencies=[]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/units/function/core.html#FunctionQuantity.to"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/units/function/core.py#L590" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.units.function.FunctionQuantity.to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new quantity with the specified units.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -300,7 +300,7 @@ unit and the physical one is automatically taken into account.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

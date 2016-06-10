@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.stats.funcs &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.stats.funcs &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -87,7 +87,6 @@
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">..utils.compat</span> <span class="kn">import</span> <span class="n">NUMPY_LT_1_7</span>
 <span class="kn">from</span> <span class="nn">..extern.six.moves</span> <span class="kn">import</span> <span class="nb">xrange</span>
 
 
@@ -540,14 +539,14 @@
 <span class="sd">    interval : {&#39;root-n&#39;,&#39;root-n-0&#39;,&#39;pearson&#39;,&#39;sherpagehrels&#39;,&#39;frequentist-confidence&#39;, &#39;kraft-burrows-nousek&#39;}, optional</span>
 <span class="sd">        Formula used for confidence interval. See notes for details.</span>
 <span class="sd">        Default is ``&#39;root-n&#39;``.</span>
-<span class="sd">    sigma : float</span>
+<span class="sd">    sigma : float, optional</span>
 <span class="sd">        Number of sigma for confidence interval; only supported for</span>
 <span class="sd">        the &#39;frequentist-confidence&#39; mode.</span>
-<span class="sd">    background : float</span>
+<span class="sd">    background : float, optional</span>
 <span class="sd">        Number of counts expected from the background; only supported for</span>
 <span class="sd">        the &#39;kraft-burrows-nousek&#39; mode. This number is assumed to be determined</span>
 <span class="sd">        from a large region so that the uncertainty on its value is negligible.</span>
-<span class="sd">    conflevel : float</span>
+<span class="sd">    conflevel : float, optional</span>
 <span class="sd">        Confidence level between 0 and 1; only supported for the</span>
 <span class="sd">        &#39;kraft-burrows-nousek&#39; mode.</span>
 
@@ -777,10 +776,7 @@
         <span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">background</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Background must be &gt;= 0.&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">NUMPY_LT_1_7</span><span class="p">:</span>
-            <span class="n">conf_interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">_kraft_burrows_nousek</span><span class="p">)(</span><span class="n">n</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="n">conflevel</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">conf_interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">_kraft_burrows_nousek</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">)(</span><span class="n">n</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="n">conflevel</span><span class="p">)</span>
+        <span class="n">conf_interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">_kraft_burrows_nousek</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">)(</span><span class="n">n</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="n">conflevel</span><span class="p">)</span>
         <span class="n">conf_interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">conf_interval</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Invalid method for Poisson confidence intervals: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">interval</span><span class="p">)</span>
@@ -875,7 +871,7 @@
 <span class="sd">    ----------</span>
 <span class="sd">    a : array-like</span>
 <span class="sd">        Input array or object that can be converted to an array.</span>
-<span class="sd">    c : float</span>
+<span class="sd">    c : float, optional</span>
 <span class="sd">        Tuning constant for the biweight estimator.  Default value is 6.0.</span>
 <span class="sd">    M : float, optional</span>
 <span class="sd">        Initial guess for the biweight location.</span>
@@ -960,7 +956,7 @@
 <span class="sd">    ----------</span>
 <span class="sd">    a : array-like</span>
 <span class="sd">        Input array or object that can be converted to an array.</span>
-<span class="sd">    c : float</span>
+<span class="sd">    c : float, optional</span>
 <span class="sd">        Tuning constant for the biweight estimator.  Default value is 9.0.</span>
 <span class="sd">    M : float, optional</span>
 <span class="sd">        Initial guess for the biweight location.</span>
@@ -1035,7 +1031,7 @@
 <span class="sd">        DN or ADU, then multiply by the gain to get the value in electrons.</span>
 <span class="sd">    npix : float</span>
 <span class="sd">        Size of the aperture in pixels</span>
-<span class="sd">    gain : float</span>
+<span class="sd">    gain : float, optional</span>
 <span class="sd">        Gain of the CCD. In units of electrons per DN.</span>
 
 <span class="sd">    Returns</span>
@@ -1064,12 +1060,12 @@
 <span class="sd">        N-D array. The bootstrap resampling will be performed on the first</span>
 <span class="sd">        index, so the first index should access the relevant information</span>
 <span class="sd">        to be bootstrapped.</span>
-<span class="sd">    bootnum : int</span>
+<span class="sd">    bootnum : int, optional</span>
 <span class="sd">        Number of bootstrap resamples</span>
-<span class="sd">    samples : int</span>
+<span class="sd">    samples : int, optional</span>
 <span class="sd">        Number of samples in each resample. The default `None` sets samples to</span>
 <span class="sd">        the number of datapoints</span>
-<span class="sd">    bootfunc : function</span>
+<span class="sd">    bootfunc : function, optional</span>
 <span class="sd">        Function to reduce the resampled data. Each bootstrap resample will</span>
 <span class="sd">        be put through this function and the results returned. If `None`, the</span>
 <span class="sd">        bootstrapped data will be returned</span>
@@ -1408,7 +1404,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

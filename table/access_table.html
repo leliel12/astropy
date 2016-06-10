@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Accessing a table &mdash; Astropy v1.2.dev15003</title>
+    <title>Accessing a table &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="index.html" />
     <link rel="next" title="Modifying a table" href="modify_table.html" />
     <link rel="prev" title="Constructing a table" href="construct_table.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -87,7 +87,7 @@
   <span class="target" id="access-table"></span><div class="section" id="accessing-a-table">
 <h1>Accessing a table<a class="headerlink" href="#accessing-a-table" title="Permalink to this headline">¶</a></h1>
 <p>Accessing the table properties and data is straightforward and is generally consistent with
-the basic interface for <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> structured arrays.</p>
+the basic interface for <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> structured arrays.</p>
 <div class="section" id="quick-overview">
 <h2>Quick overview<a class="headerlink" href="#quick-overview" title="Permalink to this headline">¶</a></h2>
 <p>For the impatient, the code below shows the basics of accessing table data.
@@ -350,7 +350,7 @@ selected rows or columns.</p>
 <span class="go">    12.000  14</span>
 </pre></div>
 </div>
-<p>Finally, you can access the underlying table data as a native <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a>
+<p>Finally, you can access the underlying table data as a native <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a>
 structured array by creating a copy or reference with <code class="docutils literal"><span class="pre">np.array</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  <span class="c"># copy of data in t as a structured array</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>  <span class="c"># reference to data in t</span>
@@ -362,7 +362,7 @@ structured array by creating a copy or reference with <code class="docutils lite
 <p>The values in a table or column can be printed or retrieved as a formatted
 table using one of several methods:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docs.python.org/library/functions.html#print" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">print</span></code></a> statement (Python 2) or <a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">print()</span></code></a> function (Python 3).</li>
+<li><a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">print</span></code></a> statement (Python 2) or <a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">print()</span></code></a> function (Python 3).</li>
 <li>Table <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table.more" title="astropy.table.Table.more"><code class="xref py py-meth docutils literal"><span class="pre">more()</span></code></a> or Column
 <a class="reference internal" href="../api/astropy.table.Column.html#astropy.table.Column.more" title="astropy.table.Column.more"><code class="xref py py-meth docutils literal"><span class="pre">more()</span></code></a> methods to interactively scroll
 through table values.</li>
@@ -620,7 +620,7 @@ column name header:</p>
 </pre></div>
 </div>
 <p>In order to see all the data values for a multidimensional column use the
-column representation.  This uses the standard <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> mechanism for printing
+column representation.  This uses the standard <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> mechanism for printing
 any array:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="go">array([[[ 1,  2],</span>
@@ -754,7 +754,7 @@ get the right result, the safest choice is to either use
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

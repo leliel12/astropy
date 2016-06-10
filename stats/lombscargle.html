@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev15003</title>
+    <title>Lomb-Scargle Periodograms &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
     <link rel="next" title="akaike_info_criterion" href="../api/astropy.stats.akaike_info_criterion.html" />
     <link rel="prev" title="Astrostatistics Tools (astropy.stats)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -434,7 +434,7 @@ scaling is approximately <img class="math" src="../_images/math/eab00b2b434f64ee
 <div class="section" id="method-scipy">
 <h3><code class="docutils literal"><span class="pre">method='scipy'</span></code><a class="headerlink" href="#method-scipy" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">scipy</span></code> method wraps the C implementation of the original Lomb-Scargle
-periodogram which is available in <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lombscargle.html#scipy.signal.lombscargle" title="(in SciPy v0.17.0)"><code class="xref py py-func docutils literal"><span class="pre">scipy.signal.lombscargle()</span></code></a>. This is
+periodogram which is available in <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lombscargle.html#scipy.signal.lombscargle" title="(in SciPy v0.17.1)"><code class="xref py py-func docutils literal"><span class="pre">scipy.signal.lombscargle()</span></code></a>. This is
 slightly faster than the <code class="docutils literal"><span class="pre">slow</span></code> method, but does not allow for errors in
 data or extensions such as the floating mean. The scaling is approximately
 <img class="math" src="../_images/math/eab00b2b434f64ee3ac09a64d73da0e3eabde270.png" alt="O[NM]"/> for <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> data points and <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> frequencies.</p>
@@ -535,8 +535,8 @@ Terms</th>
 Fourier terms for a multi-term fit.</p>
 </div>
 </div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rr-lyrae-example">
+<span id="lomb-scargle-example"></span><h2>RR-Lyrae Example<a class="headerlink" href="#rr-lyrae-example" title="Permalink to this headline">¶</a></h2>
 <p>An example of computing the periodogram for a more realistic dataset is
 shown in the following figure. The data here consist of
 50 nightly observations of a simulated RR Lyrae-like variable star,
@@ -683,7 +683,7 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
 <li><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#rr-lyrae-example">RR-Lyrae Example</a></li>
 <li><a class="reference internal" href="#literature-references">Literature References</a></li>
 </ul>
 </li>
@@ -703,7 +703,7 @@ periodograms</em>, A&amp;A 496, 577-584 (2009)</td></tr>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

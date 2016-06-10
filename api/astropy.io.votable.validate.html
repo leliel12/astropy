@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>validate &mdash; Astropy v1.2.dev15003</title>
+    <title>validate &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="VOTable XML handling (astropy.io.votable)" href="../io/votable/index.html" />
     <link rel="next" title="from_table" href="astropy.io.votable.from_table.html" />
     <link rel="prev" title="parse_single_table" href="astropy.io.votable.parse_single_table.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../io/votable/index.html" accesskey="U">VOTable XML handling (<code class="docutils literal"><span class="pre">astropy.io.votable</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>validate<a class="headerlink" href="#validate" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.io.votable.validate">
-<code class="descclassname">astropy.io.votable.</code><code class="descname">validate</code><span class="sig-paren">(</span><em>source</em>, <em>output=None</em>, <em>xmllint=False</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/table.py#L192" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/io/votable/table.html#validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.validate" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.</code><code class="descname">validate</code><span class="sig-paren">(</span><em>source</em>, <em>output=None</em>, <em>xmllint=False</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/io/votable/table.html#validate"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/table.py#L192" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints a validation report for the given file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -102,13 +102,13 @@ object having Path to a <a class="reference external" href="http://www.ivoa.net/
 <p><strong>output</strong> : writable file-like object, optional</p>
 <blockquote>
 <div><p>Where to output the report.  Defaults to <code class="docutils literal"><span class="pre">sys.stdout</span></code>.
-If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the output will be returned as a string.</p>
+If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the output will be returned as a string.</p>
 </div></blockquote>
 <p><strong>xmllint</strong> : bool, optional</p>
 <blockquote>
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, also send the file to <code class="docutils literal"><span class="pre">xmllint</span></code> for schema and
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, also send the file to <code class="docutils literal"><span class="pre">xmllint</span></code> for schema and
 DTD validation.  Requires that <code class="docutils literal"><span class="pre">xmllint</span></code> is installed.  The
-default is <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  <code class="docutils literal"><span class="pre">source</span></code> must be a file on the local
+default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  <code class="docutils literal"><span class="pre">source</span></code> must be a file on the local
 filesystem in order for <code class="docutils literal"><span class="pre">xmllint</span></code> to work.</p>
 </div></blockquote>
 <p><strong>filename</strong> : str, optional</p>
@@ -120,8 +120,8 @@ will be automatically determined from <code class="docutils literal"><span class
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>is_valid</strong> : bool or str</p>
 <blockquote class="last">
-<div><p>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if no warnings were found.  If <code class="docutils literal"><span class="pre">output</span></code> is
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the return value will be a string.</p>
+<div><p>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if no warnings were found.  If <code class="docutils literal"><span class="pre">output</span></code> is
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the return value will be a string.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -154,7 +154,7 @@ will be automatically determined from <code class="docutils literal"><span class
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

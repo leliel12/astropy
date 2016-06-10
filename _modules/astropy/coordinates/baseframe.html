@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.baseframe &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.coordinates.baseframe &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -104,7 +104,8 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;BaseCoordinateFrame&#39;</span><span class="p">,</span> <span class="s">&#39;frame_transform_graph&#39;</span><span class="p">,</span> <span class="s">&#39;GenericFrame&#39;</span><span class="p">,</span>
            <span class="s">&#39;FrameAttribute&#39;</span><span class="p">,</span> <span class="s">&#39;TimeFrameAttribute&#39;</span><span class="p">,</span> <span class="s">&#39;QuantityFrameAttribute&#39;</span><span class="p">,</span>
-           <span class="s">&#39;EarthLocationAttribute&#39;</span><span class="p">,</span> <span class="s">&#39;RepresentationMapping&#39;</span><span class="p">]</span>
+           <span class="s">&#39;EarthLocationAttribute&#39;</span><span class="p">,</span> <span class="s">&#39;RepresentationMapping&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CoordinateAttribute&#39;</span><span class="p">]</span>
 
 
 <span class="c"># the graph used for all transformations between frames</span>
@@ -463,6 +464,63 @@
                                  <span class="s">&#39;&quot;transform_to&quot; method&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
             <span class="n">itrsobj</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">ITRS</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">itrsobj</span><span class="o">.</span><span class="n">earth_location</span><span class="p">,</span> <span class="bp">True</span>
+
+</div></div>
+<div class="viewcode-block" id="CoordinateAttribute"><a class="viewcode-back" href="../../../api/astropy.coordinates.CoordinateAttribute.html#astropy.coordinates.CoordinateAttribute">[docs]</a><span class="k">class</span> <span class="nc">CoordinateAttribute</span><span class="p">(</span><span class="n">FrameAttribute</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A frame attribute which is a coordinate object. It can be given as a</span>
+<span class="sd">    low-level frame class *or* a `~astropy.coordinates.SkyCoord`, but will</span>
+<span class="sd">    always be converted to the low-level frame class when accessed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    frame : a coordinate frame class</span>
+<span class="sd">        The type of frame this attribute can be</span>
+<span class="sd">    default : object</span>
+<span class="sd">        Default value for the attribute if not provided</span>
+<span class="sd">    secondary_attribute : str</span>
+<span class="sd">        Name of a secondary instance attribute which supplies the value if</span>
+<span class="sd">        ``default is None`` and no value was supplied during initialization.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">secondary_attribute</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_frame</span> <span class="o">=</span> <span class="n">frame</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CoordinateAttribute</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">secondary_attribute</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CoordinateAttribute.convert_input"><a class="viewcode-back" href="../../../api/astropy.coordinates.CoordinateAttribute.html#astropy.coordinates.CoordinateAttribute.convert_input">[docs]</a>    <span class="k">def</span> <span class="nf">convert_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks that the input is a SkyCoord with the necessary units (or the</span>
+<span class="sd">        special value ``None``).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Input value to be converted.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        out, converted : correctly-typed object, boolean</span>
+<span class="sd">            Tuple consisting of the correctly-typed object and a boolean which</span>
+<span class="sd">            indicates if conversion was actually performed.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the input is not valid for this attribute.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">False</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frame</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">value</span><span class="p">,</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&#39;transform_to&#39;</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; was passed into a &#39;</span>
+                                 <span class="s">&#39;CoordinateAttribute, but it does not have &#39;</span>
+                                 <span class="s">&#39;&quot;transform_to&quot; method&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="n">transformedobj</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">transformedobj</span><span class="p">,</span> <span class="s">&#39;frame&#39;</span><span class="p">):</span>
+                <span class="n">transformedobj</span> <span class="o">=</span> <span class="n">transformedobj</span><span class="o">.</span><span class="n">frame</span>
+            <span class="k">return</span> <span class="n">transformedobj</span><span class="p">,</span> <span class="bp">True</span>
+
 </div></div>
 <span class="n">_RepresentationMappingBase</span> <span class="o">=</span> \
     <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;RepresentationMapping&#39;</span><span class="p">,</span>
@@ -510,6 +568,17 @@
 <span class="sd">        `~astropy.coordinates.RepresentationMapping` objects that tell what</span>
 <span class="sd">        names and default units should be used on this frame for the components</span>
 <span class="sd">        of that representation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    representation : `BaseRepresentation` or None</span>
+<span class="sd">        A representation object or `None` to have no data (or use the other</span>
+<span class="sd">        arguments)</span>
+<span class="sd">    *args, **kwargs</span>
+<span class="sd">        Coordinates, with names that depend on the subclass.</span>
+<span class="sd">    copy : bool, optional</span>
+<span class="sd">        If `True` (default), make copies of the input coordinate arrays.</span>
+<span class="sd">        Can only be passed in as a keyword argument.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">default_representation</span> <span class="o">=</span> <span class="bp">None</span>
@@ -522,6 +591,7 @@
     <span class="c"># Default empty frame_attributes dict</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">copy</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;copy&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_attr_names_with_defaults</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">if</span> <span class="s">&#39;representation&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
@@ -544,8 +614,6 @@
 
             <span class="c"># Validate input by getting the attribute here.</span>
             <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fnm</span><span class="p">)</span>
-
-        <span class="n">pref_rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation</span>
 
         <span class="n">args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>  <span class="c"># need to be able to pop them</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">BaseRepresentation</span><span class="p">)</span> <span class="ow">or</span>
@@ -573,9 +641,10 @@
                     <span class="k">del</span> <span class="n">repr_kwargs</span><span class="p">[</span><span class="s">&#39;distance&#39;</span><span class="p">]</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">representation</span><span class="p">,</span> <span class="n">SphericalRepresentation</span><span class="p">)</span> <span class="ow">and</span>
                         <span class="s">&#39;distance&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">repr_kwargs</span><span class="p">):</span>
-                    <span class="n">representation_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation</span><span class="o">.</span><span class="n">_unit_representation</span><span class="p">(</span><span class="o">**</span><span class="n">repr_kwargs</span><span class="p">)</span>
+                    <span class="n">representation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation</span><span class="o">.</span><span class="n">_unit_representation</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">representation_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="o">**</span><span class="n">repr_kwargs</span><span class="p">)</span>
+                    <span class="n">representation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation</span>
+                <span class="n">representation_data</span> <span class="o">=</span> <span class="n">representation</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="o">**</span><span class="n">repr_kwargs</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -598,7 +667,7 @@
     <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The coordinate data for this object.  If this frame has no data, an</span>
-<span class="sd">        `~.exceptions.ValueError` will be raised.  Use `has_data` to</span>
+<span class="sd">        `ValueError` will be raised.  Use `has_data` to</span>
 <span class="sd">        check if data is present on this frame object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
@@ -803,7 +872,7 @@
                 <span class="k">for</span> <span class="n">comp</span><span class="p">,</span> <span class="n">new_attr_unit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">components</span><span class="p">,</span> <span class="n">new_attrs</span><span class="p">[</span><span class="s">&#39;units&#39;</span><span class="p">]):</span>
                     <span class="k">if</span> <span class="n">new_attr_unit</span><span class="p">:</span>
                         <span class="n">datakwargs</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span> <span class="o">=</span> <span class="n">datakwargs</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">new_attr_unit</span><span class="p">)</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">datakwargs</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">datakwargs</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_rep_cache</span><span class="p">[</span><span class="n">new_representation</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
 
@@ -1041,10 +1110,20 @@
                 <span class="n">attr</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation_component_names</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;&#39;{0}&#39; object has no attribute &#39;{1}&#39;&quot;</span>
                                  <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">attr</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># The second clause of the ``or`` above means that</span>
+            <span class="c"># ``attr in self.representation_component_names``, otherwise we</span>
+            <span class="c"># would repeat that check here, because we only want to hit this</span>
+            <span class="c"># clause when the user tried to access one of the representation&#39;s</span>
+            <span class="c"># components</span>
 
-        <span class="n">rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">representation</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation_component_names</span><span class="p">[</span><span class="n">attr</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">val</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span>  <span class="c"># this raises the &quot;no data&quot; error by design - doing it</span>
+            <span class="c"># this way means we don&#39;t have to replicate the error message here</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">representation</span><span class="p">,</span> <span class="n">in_frame_units</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation_component_names</span><span class="p">[</span><span class="n">attr</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">val</span>
 
     <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="n">repr_attr_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -1211,7 +1290,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

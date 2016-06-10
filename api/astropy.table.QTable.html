@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>QTable &mdash; Astropy v1.2.dev15003</title>
+    <title>QTable &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="../table/index.html" />
     <link rel="next" title="Row" href="astropy.table.Row.html" />
     <link rel="prev" title="NdarrayMixin" href="astropy.table.NdarrayMixin.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../table/index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>QTable<a class="headerlink" href="#qtable" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.table.QTable">
-<em class="property">class </em><code class="descclassname">astropy.table.</code><code class="descname">QTable</code><span class="sig-paren">(</span><em>data=None</em>, <em>masked=None</em>, <em>names=None</em>, <em>dtype=None</em>, <em>meta=None</em>, <em>copy=True</em>, <em>rows=None</em>, <em>copy_indices=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2519" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/table/table.html#QTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.table.QTable" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.table.</code><code class="descname">QTable</code><span class="sig-paren">(</span><em>data=None</em>, <em>masked=None</em>, <em>names=None</em>, <em>dtype=None</em>, <em>meta=None</em>, <em>copy=True</em>, <em>rows=None</em>, <em>copy_indices=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/table/table.html#QTable"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/table/table.py#L2558" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.table.QTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.table.Table.html#astropy.table.Table" title="astropy.table.table.Table"><code class="docutils literal"><span class="pre">astropy.table.Table</span></code></a></p>
 <p>A class to represent tables of heterogeneous data.</p>
 <p><a class="reference internal" href="#astropy.table.QTable" title="astropy.table.QTable"><code class="xref py py-obj docutils literal"><span class="pre">QTable</span></code></a> provides a class for heterogeneous tabular data which can be
@@ -100,7 +100,7 @@ objects.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy ndarray, dict, list, or Table, optional</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : numpy ndarray, dict, list, Table, or table-like object, optional</p>
 <blockquote>
 <div><p>Data to initialize table.</p>
 </div></blockquote>
@@ -125,8 +125,16 @@ objects.</p>
 <div><p>Copy the input data (default=True).</p>
 </div></blockquote>
 <p><strong>rows</strong> : numpy ndarray, list of lists, optional</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Row-oriented data for table instead of <code class="docutils literal"><span class="pre">data</span></code> argument</p>
+</div></blockquote>
+<p><strong>copy_indices</strong> : bool, optional</p>
+<blockquote>
+<div><p>Copy any indices in the input data (default=True)</p>
+</div></blockquote>
+<p><strong>**kwargs</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>Additional keyword args when converting table-like object</p>
 </div></blockquote>
 </td>
 </tr>
@@ -159,7 +167,7 @@ objects.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

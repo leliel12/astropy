@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.hdu.compressed &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.fits.hdu.compressed &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../../index.html" />
     <link rel="up" title="Module code" href="../../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -96,7 +96,7 @@
 
 <span class="kn">from</span> <span class="nn">....extern.six</span> <span class="kn">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">iteritems</span>
 <span class="kn">from</span> <span class="nn">....utils</span> <span class="kn">import</span> <span class="n">lazyproperty</span><span class="p">,</span> <span class="n">deprecated</span>
-<span class="kn">from</span> <span class="nn">....utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
+<span class="kn">from</span> <span class="nn">....utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
 <span class="kn">from</span> <span class="nn">....utils.exceptions</span> <span class="kn">import</span> <span class="p">(</span><span class="n">AstropyPendingDeprecationWarning</span><span class="p">,</span>
                                   <span class="n">AstropyUserWarning</span><span class="p">)</span>
 
@@ -405,7 +405,7 @@
 
         <span class="n">is_naxisn</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">if</span> <span class="n">keyword</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;NAXIS&#39;</span><span class="p">:</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
                 <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">keyword</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
                 <span class="n">is_naxisn</span> <span class="o">=</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
@@ -429,7 +429,7 @@
         <span class="n">keyword</span><span class="p">,</span> <span class="n">repeat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keyword_from_index</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
         <span class="n">remapped_insert_keyword</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remap_keyword</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
 
-        <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
             <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table_header</span><span class="o">.</span><span class="n">_cardindex</span><span class="p">((</span><span class="n">remapped_insert_keyword</span><span class="p">,</span>
                                                  <span class="n">repeat</span><span class="p">))</span>
 
@@ -750,7 +750,7 @@
         <span class="k">if</span> <span class="n">xtension</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;BINTABLE&#39;</span><span class="p">,</span> <span class="s">&#39;A3DTABLE&#39;</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">False</span>
 
-        <span class="k">if</span> <span class="s">&#39;ZIMAGE&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header</span> <span class="ow">or</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;ZIMAGE&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">&#39;ZIMAGE&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;ZIMAGE&#39;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="bp">False</span>
 
         <span class="k">if</span> <span class="n">COMPRESSION_SUPPORTED</span> <span class="ow">and</span> <span class="n">COMPRESSION_ENABLED</span><span class="p">:</span>
@@ -855,7 +855,7 @@
             <span class="n">huge_hdu</span> <span class="o">=</span> <span class="bp">False</span>
 
         <span class="c"># Update the extension name in the table header</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s">&#39;EXTNAME&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">and</span> <span class="s">&#39;EXTNAME&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;COMPRESSED_IMAGE&#39;</span>
 
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
@@ -1157,7 +1157,7 @@
             <span class="k">if</span> <span class="n">tile_size</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">tile_size</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">ts</span> <span class="o">=</span> <span class="n">tile_size</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">ztile</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">ztile</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">:</span>
                     <span class="c"># Default tile size</span>
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">idx</span><span class="p">:</span>
                         <span class="n">ts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_header</span><span class="p">[</span><span class="s">&#39;NAXIS1&#39;</span><span class="p">]</span>
@@ -1847,7 +1847,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="c"># Delete from both headers</span>
             <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">):</span>
-                <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+                <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
                     <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;BZERO&#39;</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">_scale</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
@@ -1855,7 +1855,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;BSCALE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_scale</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">):</span>
-                <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+                <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
                     <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;BSCALE&#39;</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">_type</span><span class="p">:</span>
@@ -1984,7 +1984,7 @@
                 <span class="c"># Make sure to delete from both the image header and the table</span>
                 <span class="c"># header; later this will be streamlined</span>
                 <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">):</span>
-                    <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+                    <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
                         <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span>
                         <span class="c"># Since _update_header_scale_info can, currently, be</span>
                         <span class="c"># called *after* _prewriteto(), replace these with</span>
@@ -2061,7 +2061,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

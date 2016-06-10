@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.coordinates.angles &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.coordinates.angles &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -91,7 +91,6 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">angle_utilities</span> <span class="k">as</span> <span class="n">util</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">isiterable</span>
-<span class="kn">from</span> <span class="nn">..utils.compat</span> <span class="kn">import</span> <span class="n">NUMPY_LT_1_7</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Angle&#39;</span><span class="p">,</span> <span class="s">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s">&#39;Longitude&#39;</span><span class="p">]</span>
@@ -125,6 +124,7 @@
 <span class="sd">      Angle(&#39;-1h2m3s&#39;)</span>
 <span class="sd">      Angle(&#39;-1h2.5m&#39;)</span>
 <span class="sd">      Angle(&#39;-1:2.5&#39;, unit=u.deg)</span>
+<span class="sd">      Angle((10, 11, 12), unit=&#39;hourangle&#39;)  # (h, m, s)</span>
 <span class="sd">      Angle((-1, 2, 3), unit=u.deg)  # (d, m, s)</span>
 <span class="sd">      Angle(10.2345 * u.deg)</span>
 <span class="sd">      Angle(Angle(10.2345 * u.deg))</span>
@@ -160,54 +160,43 @@
     <span class="n">_include_easy_conversion_members</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-        <span class="n">unit</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;Requested unit {0} is not convertible to an &quot;</span>
-                               <span class="s">&quot;angle&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">):</span>
-            <span class="c"># This includes Angle subclasses as well</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">unit</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="n">unit</span>
-                <span class="n">unit</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">):</span>
-                    <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span>
-                        <span class="s">&quot;Given quantity {0} is not convertible to an &quot;</span>
-                        <span class="s">&quot;angle&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">angle</span><span class="p">))</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
 
-                <span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="n">value</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c"># this does nothing if it&#39;s not a tuple</span>
-            <span class="n">angle</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_tuple_to_float</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
-                <span class="n">angle</span><span class="p">,</span> <span class="n">new_unit</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">parse_angle</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">new_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="n">unit</span> <span class="o">=</span> <span class="n">new_unit</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
                 <span class="n">angle</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_tuple_to_float</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">new_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">new_unit</span> <span class="o">!=</span> <span class="n">unit</span><span class="p">:</span>
-                    <span class="n">angle</span> <span class="o">=</span> <span class="n">new_unit</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+                <span class="n">angle</span><span class="p">,</span> <span class="n">angle_unit</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">parse_angle</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">angle_unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">angle_unit</span> <span class="o">=</span> <span class="n">unit</span>
+
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                    <span class="n">angle</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_tuple_to_float</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">angle_unit</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">angle_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">unit</span><span class="p">:</span>
+                    <span class="c"># Possible conversion to `unit` will be done below.</span>
+                    <span class="n">angle</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">angle_unit</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
             <span class="k">elif</span> <span class="p">(</span><span class="n">isiterable</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="ow">and</span>
                   <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span>
                        <span class="n">angle</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s">&#39;SUVO&#39;</span><span class="p">)):</span>
-                <span class="n">angle</span> <span class="o">=</span> <span class="p">[</span><span class="n">Angle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">angle</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="n">unit</span> <span class="o">=</span> <span class="n">angle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span>
-                <span class="n">angle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">angle</span><span class="p">]</span>
+                <span class="n">angle</span> <span class="o">=</span> <span class="p">[</span><span class="n">Angle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">angle</span><span class="p">]</span>
 
         <span class="bp">self</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Angle</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
                                          <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="n">u</span><span class="o">.</span><span class="n">dimensionless_unscaled</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;No unit was given - must be some kind of angle&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;Unit {0} is not an angle&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">))</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s">&#39;iuf&#39;</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;Unsupported dtype for &quot;</span>
-                            <span class="s">&quot;Angle:&#39;{0}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">Angle</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="n">u</span><span class="o">.</span><span class="n">dimensionless_unscaled</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;No unit was given - &quot;</span>
+                                       <span class="s">&quot;must be some kind of angle&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;Unit {0} is not an angle&quot;</span>
+                                       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="bp">self</span>
 
@@ -217,29 +206,20 @@
 <span class="sd">        Converts an angle represented as a 3-tuple or 2-tuple into a floating</span>
 <span class="sd">        point number in the given unit.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-            <span class="c"># TODO: Numpy array of tuples?</span>
-            <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">:</span>
-                <span class="n">angle</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">hms_to_hours</span><span class="p">(</span><span class="o">*</span><span class="n">angle</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">unit</span> <span class="ow">is</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">:</span>
-                <span class="n">angle</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">dms_to_degrees</span><span class="p">(</span><span class="o">*</span><span class="n">angle</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span>
-                    <span class="s">&quot;Can not parse &#39;{0}&#39; as unit &#39;{1}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">angle</span>
+        <span class="c"># TODO: Numpy array of tuples?</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">util</span><span class="o">.</span><span class="n">hms_to_hours</span><span class="p">(</span><span class="o">*</span><span class="n">angle</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">util</span><span class="o">.</span><span class="n">dms_to_degrees</span><span class="p">(</span><span class="o">*</span><span class="n">angle</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">u</span><span class="o">.</span><span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;Can not parse &#39;{0}&#39; as unit &#39;{1}&#39;&quot;</span>
+                               <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="p">))</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="n">u</span><span class="o">.</span><span class="n">hour</span><span class="p">:</span>
-                <span class="n">unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span>
-        <span class="k">return</span> <span class="n">unit</span>
+        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span> <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="n">u</span><span class="o">.</span><span class="n">hour</span> <span class="k">else</span> <span class="n">unit</span>
 
     <span class="k">def</span> <span class="nf">__quantity_subclass__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
-        <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">radian</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">Angle</span><span class="p">,</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
@@ -351,6 +331,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
         <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_unit_to_angle_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
 
         <span class="n">separators</span> <span class="o">=</span> <span class="p">{</span>
@@ -444,18 +426,8 @@
                 <span class="n">s</span> <span class="o">=</span> <span class="s">&#39;${0}$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">s</span>
 
-        <span class="k">if</span> <span class="n">NUMPY_LT_1_7</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>  <span class="c"># pragma: no cover</span>
-            <span class="n">format_ufunc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">do_format</span><span class="p">,</span> <span class="n">otypes</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">object</span><span class="p">])</span>
-            <span class="c"># In Numpy 1.6, unicode output is broken.  vectorize always seems to</span>
-            <span class="c"># yield U2 even if you tell it something else.  So we convert in</span>
-            <span class="c"># a second step with 60 chars, on the theory that you&#39;ll never want</span>
-            <span class="c"># better than what double-precision decimals give, which end up</span>
-            <span class="c"># around that many characters.</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">format_ufunc</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;U60&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c">#for newer Numpy versions, this just works as you would expect</span>
-            <span class="n">format_ufunc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">do_format</span><span class="p">,</span> <span class="n">otypes</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">])</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">format_ufunc</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+        <span class="n">format_ufunc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">do_format</span><span class="p">,</span> <span class="n">otypes</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">])</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">format_ufunc</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[()]</span>
@@ -559,13 +531,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="c"># Need to do a magic incantation to convert to str.  Regular str</span>
             <span class="c"># or array2string causes all backslashes to get doubled.</span>
-            <span class="k">if</span> <span class="n">NUMPY_LT_1_7</span><span class="p">:</span>
-                <span class="c"># Except that numpy 1.6 doesn&#39;t do formatter... so instead we</span>
-                <span class="c"># just replace all double-backslashes with one.</span>
-                <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;latex&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\\\\</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;latex&#39;</span><span class="p">),</span>
-                                       <span class="n">formatter</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;str_kind&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">})</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;latex&#39;</span><span class="p">),</span>
+                                   <span class="n">formatter</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;str_kind&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">})</span>
 
 </div>
 <div class="viewcode-block" id="Latitude"><a class="viewcode-back" href="../../../api/astropy.coordinates.Latitude.html#astropy.coordinates.Latitude">[docs]</a><span class="k">class</span> <span class="nc">Latitude</span><span class="p">(</span><span class="n">Angle</span><span class="p">):</span>
@@ -579,7 +546,7 @@
 <span class="sd">      -90.0 * u.deg &lt;= angle(s) &lt;= +90.0 * u.deg</span>
 
 <span class="sd">    Any attempt to set a value outside that range will result in a</span>
-<span class="sd">    `~.exceptions.ValueError`.</span>
+<span class="sd">    `ValueError`.</span>
 
 <span class="sd">    The input angle(s) can be specified either as an array, list,</span>
 <span class="sd">    scalar, tuple (see below), string,</span>
@@ -712,14 +679,17 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_wrap_angle</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_default_wrap_angle</span> <span class="o">=</span> <span class="n">Angle</span><span class="p">(</span><span class="mi">360</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">wrap_angle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="c"># Forbid creating a Long from a Lat.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">Latitude</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;A Longitude angle cannot be created from a Latitude angle&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;A Longitude angle cannot be created from &quot;</span>
+                            <span class="s">&quot;a Latitude angle.&quot;</span><span class="p">)</span>
         <span class="bp">self</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Longitude</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wrap_angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">wrap_angle</span> <span class="k">if</span> <span class="n">wrap_angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
-                           <span class="k">else</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="s">&#39;wrap_angle&#39;</span><span class="p">,</span> <span class="mi">360</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">wrap_angle</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">wrap_angle</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="s">&#39;wrap_angle&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_wrap_angle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wrap_angle</span> <span class="o">=</span> <span class="n">wrap_angle</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
@@ -759,7 +729,8 @@
 
     <span class="k">def</span> <span class="nf">__array_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Longitude</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__array_finalize__</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_angle</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;_wrap_angle&#39;</span><span class="p">,</span> <span class="mi">360</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_angle</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;_wrap_angle&#39;</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">_default_wrap_angle</span><span class="p">)</span>
 
     <span class="c"># Any calculation should drop to Angle</span>
     <span class="k">def</span> <span class="nf">__array_wrap__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -878,7 +849,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

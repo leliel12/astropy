@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.hdu.streaming &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.fits.hdu.streaming &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../../index.html" />
     <link rel="up" title="Module code" href="../../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -229,14 +229,14 @@
 <span class="sd">        -----</span>
 <span class="sd">        Only the amount of data specified in the header provided to the class</span>
 <span class="sd">        constructor may be written to the stream.  If the provided data would</span>
-<span class="sd">        cause the stream to overflow, an `~.exceptions.IOError` exception is</span>
+<span class="sd">        cause the stream to overflow, an `IOError` exception is</span>
 <span class="sd">        raised and the data is not written. Once sufficient data has been</span>
 <span class="sd">        written to the stream to satisfy the amount specified in the header,</span>
 <span class="sd">        the stream is padded to fill a complete FITS block and no more data</span>
 <span class="sd">        will be accepted. An attempt to write more data after the stream has</span>
-<span class="sd">        been filled will raise an `~.exceptions.IOError` exception. If the</span>
+<span class="sd">        been filled will raise an `IOError` exception. If the</span>
 <span class="sd">        dtype of the input data does not match what is expected by the header,</span>
-<span class="sd">        a `.exceptions.TypeError` exception is raised.</span>
+<span class="sd">        a `TypeError` exception is raised.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ffo</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_offset</span>
@@ -319,7 +319,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

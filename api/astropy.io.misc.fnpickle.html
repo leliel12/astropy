@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>fnpickle &mdash; Astropy v1.2.dev15003</title>
+    <title>fnpickle &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Miscellaneous Input/Output (astropy.io.misc)" href="../io/misc.html" />
     <link rel="next" title="fnunpickle" href="astropy.io.misc.fnunpickle.html" />
     <link rel="prev" title="write_table_hdf5" href="astropy.io.misc.hdf5.write_table_hdf5.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../io/misc.html" accesskey="U">Miscellaneous Input/Output (<code class="docutils literal"><span class="pre">astropy.io.misc</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>fnpickle<a class="headerlink" href="#fnpickle" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.io.misc.fnpickle">
-<code class="descclassname">astropy.io.misc.</code><code class="descname">fnpickle</code><span class="sig-paren">(</span><em>object</em>, <em>fileorname</em>, <em>usecPickle=True</em>, <em>protocol=None</em>, <em>append=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/misc/pickle_helpers.py#L83" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/io/misc/pickle_helpers.html#fnpickle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.misc.fnpickle" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.misc.</code><code class="descname">fnpickle</code><span class="sig-paren">(</span><em>object</em>, <em>fileorname</em>, <em>usecPickle=True</em>, <em>protocol=None</em>, <em>append=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/io/misc/pickle_helpers.html#fnpickle"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/misc/pickle_helpers.py#L83" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.misc.fnpickle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pickle an object to a specified file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -98,19 +98,19 @@
 <blockquote>
 <div><p>The python object to pickle.</p>
 </div></blockquote>
-<p><strong>fileorname</strong> : str or <a class="reference external" href="http://docs.python.org/library/functions.html#file" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">file</span></code></a>-like</p>
+<p><strong>fileorname</strong> : str or file-like</p>
 <blockquote>
-<div><p>The filename or file into which the <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">object</span></code></a> should be pickled. If a
+<div><p>The filename or file into which the <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">object</span></code></a> should be pickled. If a
 file object, it should have been opened in binary mode.</p>
 </div></blockquote>
 <p><strong>usecPickle</strong> : bool</p>
 <blockquote>
-<div><p>If True (default), the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-cPickle" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">cPickle</span></code></a> module is to be used in place of
-<a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">pickle</span></code></a> (cPickle is faster). This only applies for python 2.x.</p>
+<div><p>If True (default), the <a class="reference external" href="http://docs.python.org/2/library/pickle.html#module-cPickle" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">cPickle</span></code></a> module is to be used in place of
+<a class="reference external" href="http://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">pickle</span></code></a> (cPickle is faster). This only applies for python 2.x.</p>
 </div></blockquote>
 <p><strong>protocol</strong> : int or None</p>
 <blockquote>
-<div><p>Pickle protocol to use - see the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">pickle</span></code></a> module for details on
+<div><p>Pickle protocol to use - see the <a class="reference external" href="http://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">pickle</span></code></a> module for details on
 these options. If None, the most recent protocol will be used.</p>
 </div></blockquote>
 <p><strong>append</strong> : bool</p>
@@ -150,7 +150,7 @@ file name, this has no effect).</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

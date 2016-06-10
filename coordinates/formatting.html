@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Formatting Coordinate Strings &mdash; Astropy v1.2.dev15003</title>
+    <title>Formatting Coordinate Strings &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="index.html" />
     <link rel="next" title="Separations, Catalog Matching, and Related Functionality" href="matchsep.html" />
-    <link rel="prev" title="Example: Observation Planning" href="observing-example.html" />
+    <link rel="prev" title="Solar System Ephemerides" href="solarsystem.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -63,13 +63,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="observing-example.html" title="Example: Observation Planning">
+	<a href="solarsystem.html" title="Solar System Ephemerides">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -109,7 +109,7 @@ more).  For example:</p>
 <span class="go">u&#39;12h30m49.4208s +12d23m28.032s&#39;</span>
 </pre></div>
 </div>
-<p>You can also use python&#8217;s <a class="reference external" href="http://docs.python.org/library/functions.html#format" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a> string method to create more complex
+<p>You can also use python&#8217;s <a class="reference external" href="http://docs.python.org/3/library/functions.html#format" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a> string method to create more complex
 string expressions, such as IAU-style coordinates or even full sentences:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;SDSS J{0}{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">c</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alwayssign</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
 <span class="go">&#39;SDSS J1874221.31+122328.03&#39;</span>
@@ -143,7 +143,7 @@ string expressions, such as IAU-style coordinates or even full sentences:</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

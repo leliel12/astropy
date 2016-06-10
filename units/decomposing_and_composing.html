@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Decomposing and composing units &mdash; Astropy v1.2.dev15003</title>
+    <title>Decomposing and composing units &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Units and Quantities (astropy.units)" href="index.html" />
     <link rel="next" title="Magnitudes and other Logarithmic Units" href="logarithmic_units.html" />
     <link rel="prev" title="Combining and defining units" href="combining_and_defining.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Units and Quantities (<code class="docutils literal"><span class="pre">astropy.units</span></code>)</a> &raquo;</li>
@@ -87,7 +87,7 @@
   <div class="section" id="decomposing-and-composing-units">
 <h1>Decomposing and composing units<a class="headerlink" href="#decomposing-and-composing-units" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="reducing-a-unit-to-its-irreducible-parts">
-<h2>Reducing a unit to its irreducible parts<a class="headerlink" href="#reducing-a-unit-to-its-irreducible-parts" title="Permalink to this headline">¶</a></h2>
+<span id="decomposing"></span><h2>Reducing a unit to its irreducible parts<a class="headerlink" href="#reducing-a-unit-to-its-irreducible-parts" title="Permalink to this headline">¶</a></h2>
 <p>A unit or quantity can be decomposed into its irreducible parts using
 the <a class="reference internal" href="../api/astropy.units.UnitBase.html#astropy.units.UnitBase.decompose" title="astropy.units.core.UnitBase"><code class="xref py py-obj docutils literal"><span class="pre">Unit.decompose</span></code></a> or
 <a class="reference internal" href="../api/astropy.units.quantity.Quantity.html#astropy.units.quantity.Quantity.decompose" title="astropy.units.quantity.Quantity.decompose"><code class="xref py py-obj docutils literal"><span class="pre">Quantity.decompose</span></code></a>
@@ -109,6 +109,11 @@ using the <code class="docutils literal"><span class="pre">bases</span></code> k
 to decompose the Rydberg unit in terms of CGS units:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Ry</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">bases</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">bases</span><span class="p">)</span>
 <span class="go">Unit(&quot;2.17987e-11 cm2 g / s2&quot;)</span>
+</pre></div>
+</div>
+<p>Finally, if you just want to know how a unit was defined:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">Ry</span><span class="o">.</span><span class="n">represents</span>
+<span class="go">Unit(&quot;13.6057 eV&quot;)</span>
 </pre></div>
 </div>
 </div>
@@ -214,7 +219,7 @@ return the results sorted in the most useful order:</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

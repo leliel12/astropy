@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.wcs.wcs &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.wcs.wcs &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="astropy.wcs" href="../wcs.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" >Module code</a> &raquo;</li>
@@ -118,6 +118,7 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="c"># LOCAL</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
 <span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
 <span class="kn">from</span> <span class="nn">..io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_docutil</span> <span class="k">as</span> <span class="n">__</span>
@@ -151,7 +152,7 @@
            <span class="s">&#39;WCSBase&#39;</span><span class="p">,</span> <span class="s">&#39;validate&#39;</span><span class="p">,</span> <span class="s">&#39;WcsError&#39;</span><span class="p">,</span> <span class="s">&#39;SingularMatrixError&#39;</span><span class="p">,</span>
            <span class="s">&#39;InconsistentAxisTypesError&#39;</span><span class="p">,</span> <span class="s">&#39;InvalidTransformError&#39;</span><span class="p">,</span>
            <span class="s">&#39;InvalidCoordinateError&#39;</span><span class="p">,</span> <span class="s">&#39;NoSolutionError&#39;</span><span class="p">,</span>
-           <span class="s">&#39;InvalidSubimageSpecificationError&#39;</span><span class="p">,</span>
+           <span class="s">&#39;InvalidSubimageSpecificationError&#39;</span><span class="p">,</span> <span class="s">&#39;NoConvergence&#39;</span><span class="p">,</span>
            <span class="s">&#39;NonseparableSubimageCoordinateSystemError&#39;</span><span class="p">,</span>
            <span class="s">&#39;NoWcsKeywordsFoundError&#39;</span><span class="p">,</span> <span class="s">&#39;InvalidTabularParametersError&#39;</span><span class="p">]</span>
 
@@ -231,7 +232,7 @@
     <span class="k">return</span> <span class="n">keysel_flags</span>
 
 
-<span class="k">class</span> <span class="nc">NoConvergence</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="NoConvergence"><a class="viewcode-back" href="../../../api/astropy.wcs.NoConvergence.html#astropy.wcs.NoConvergence">[docs]</a><span class="k">class</span> <span class="nc">NoConvergence</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An error class used to report non-convergence and/or divergence</span>
 <span class="sd">    of numerical methods. It is used to report errors in the</span>
@@ -241,28 +242,28 @@
 <span class="sd">    Attributes</span>
 <span class="sd">    ----------</span>
 
-<span class="sd">    best_solution : numpy.ndarray</span>
+<span class="sd">    best_solution : `numpy.ndarray`</span>
 <span class="sd">        Best solution achieved by the numerical method.</span>
 
-<span class="sd">    accuracy : numpy.ndarray</span>
-<span class="sd">        Accuracy of the :py:attr:`best_solution`.</span>
+<span class="sd">    accuracy : `numpy.ndarray`</span>
+<span class="sd">        Accuracy of the ``best_solution``.</span>
 
-<span class="sd">    niter : int</span>
+<span class="sd">    niter : `int`</span>
 <span class="sd">        Number of iterations performed by the numerical method</span>
-<span class="sd">        to compute :py:attr:`best_solution`.</span>
+<span class="sd">        to compute ``best_solution``.</span>
 
-<span class="sd">    divergent : None, numpy.ndarray</span>
-<span class="sd">        Indices of the points in :py:attr:`best_solution` array</span>
+<span class="sd">    divergent : None, `numpy.ndarray`</span>
+<span class="sd">        Indices of the points in ``best_solution`` array</span>
 <span class="sd">        for which the solution appears to be divergent. If the</span>
-<span class="sd">        solution does not diverge, `divergent` will be set to `None`.</span>
+<span class="sd">        solution does not diverge, ``divergent`` will be set to `None`.</span>
 
-<span class="sd">    slow_conv : None, numpy.ndarray</span>
-<span class="sd">        Indices of the solutions in :py:attr:`best_solution` array</span>
+<span class="sd">    slow_conv : None, `numpy.ndarray`</span>
+<span class="sd">        Indices of the solutions in ``best_solution`` array</span>
 <span class="sd">        for which the solution failed to converge within the</span>
 <span class="sd">        specified maximum number of iterations. If there are no</span>
 <span class="sd">        non-converging solutions (i.e., if the required accuracy</span>
 <span class="sd">        has been achieved for all input data points)</span>
-<span class="sd">        then `slow_conv` will be set to `None`.</span>
+<span class="sd">        then ``slow_conv`` will be set to `None`.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -274,7 +275,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">divergent</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;divergent&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">slow_conv</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;slow_conv&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
 
-
+</div>
 <div class="viewcode-block" id="FITSFixedWarning"><a class="viewcode-back" href="../../../api/astropy.wcs.FITSFixedWarning.html#astropy.wcs.FITSFixedWarning">[docs]</a><span class="k">class</span> <span class="nc">FITSFixedWarning</span><span class="p">(</span><span class="n">AstropyWarning</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The warning raised when the contents of the FITS header have been</span>
@@ -290,7 +291,7 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    header : astropy.io.fits header object, string, dict-like, or None, optional</span>
+<span class="sd">    header : astropy.io.fits header object, Primary HDU, Image HDU, string, dict-like, or None, optional</span>
 <span class="sd">        If *header* is not provided or None, the object will be</span>
 <span class="sd">        initialized to default values.</span>
 
@@ -391,7 +392,7 @@
 <span class="sd">       two dimensional.  Therefore, if you try to create a WCS object</span>
 <span class="sd">       where the core WCS has a different number of dimensions than 2</span>
 <span class="sd">       and that object also contains a `distortion paper`_ lookup</span>
-<span class="sd">       table or `SIP`_ distortion, a `~.exceptions.ValueError`</span>
+<span class="sd">       table or `SIP`_ distortion, a `ValueError`</span>
 <span class="sd">       exception will be raised.  To avoid this, consider using the</span>
 <span class="sd">       *naxis* kwarg to select two dimensions from the core WCS.</span>
 
@@ -459,22 +460,24 @@
                     <span class="n">fobj</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
                     <span class="n">close_fds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fobj</span><span class="p">)</span>
                     <span class="n">header</span> <span class="o">=</span> <span class="n">fobj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
-                    <span class="n">header_string</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">header_string</span> <span class="o">=</span> <span class="n">header</span>
-            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">):</span>
-                <span class="n">header_string</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
-            <span class="k">else</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">fits</span><span class="o">.</span><span class="n">hdu</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">_ImageBaseHDU</span><span class="p">):</span>
+                <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">header</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">):</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="c"># Accept any dict-like object</span>
-                    <span class="n">new_header</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
-                    <span class="k">for</span> <span class="n">dict_key</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                        <span class="n">new_header</span><span class="p">[</span><span class="n">dict_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="n">dict_key</span><span class="p">]</span>
-                    <span class="n">header_string</span> <span class="o">=</span> <span class="n">new_header</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+                    <span class="n">orig_header</span> <span class="o">=</span> <span class="n">header</span>
+                    <span class="n">header</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">dict_key</span> <span class="ow">in</span> <span class="n">orig_header</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="n">header</span><span class="p">[</span><span class="n">dict_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">orig_header</span><span class="p">[</span><span class="n">dict_key</span><span class="p">]</span>
                 <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                         <span class="s">&quot;header must be a string, an astropy.io.fits.Header &quot;</span>
                         <span class="s">&quot;object, or a dict-like object&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">):</span>
+                <span class="n">header_string</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">header_string</span> <span class="o">=</span> <span class="n">header</span>
 
             <span class="c"># Importantly, header is a *copy* of the passed-in header</span>
             <span class="c"># because we will be modifying it</span>
@@ -770,7 +773,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                     <span class="s">&quot;Image size could not be determined.&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">center</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">center</span><span class="p">:</span>
             <span class="n">corners</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                                 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">naxis2</span><span class="p">],</span>
                                 <span class="p">[</span><span class="n">naxis1</span><span class="p">,</span> <span class="n">naxis2</span><span class="p">],</span>
@@ -1106,6 +1109,21 @@
 
             <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="s">&#39;A_ORDER&#39;</span><span class="p">)]</span>
             <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="s">&#39;B_ORDER&#39;</span><span class="p">)]</span>
+            <span class="n">ctype</span><span class="o">=</span><span class="p">[</span><span class="n">header</span><span class="p">[</span><span class="s">&#39;CTYPE{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nax</span><span class="p">)]</span> <span class="k">for</span> <span class="n">nax</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">naxis</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">ctyp</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">:]</span> <span class="o">!=</span> <span class="s">&#39;-SIP&#39;</span> <span class="k">for</span> <span class="n">ctyp</span> <span class="ow">in</span> <span class="n">ctype</span><span class="p">]):</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">                Inconsistent SIP distortion information is present in header:</span>
+<span class="s">                SIP coefficients were detected, but CTYPE is missing &quot;-SIP&quot; suffix,</span>
+<span class="s">                therefore the coordinates calculated here might be incorrect.</span>
+
+<span class="s">                If image is already distortion-corrected (eg, drizzled) then</span>
+<span class="s">                distortion components should not apply. For such distortion-corrected</span>
+<span class="s">                images, please use ``wcs_pix2world`` or ``wcs_world2pix`` instead.</span>
+
+<span class="s">                If image is not yet distortion-corrected (eg, not yet drizzled), then</span>
+<span class="s">                please inspect the header and make appropriate changes before rerunning.</span>
+<span class="s">                &quot;&quot;&quot;</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="s">&quot;B_ORDER&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">header</span> <span class="ow">and</span> <span class="n">header</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="s">&#39;B_ORDER&#39;</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s">&quot;B_ORDER provided without corresponding A_ORDER &quot;</span> <span class="o">+</span>
@@ -1914,7 +1932,7 @@
 <span class="s">            Maximum number of iterations allowed to reach a solution.</span>
 
 <span class="s">        quiet : bool, optional (Default = False)</span>
-<span class="s">            Do not throw :py:class:``NoConvergence`` exceptions when</span>
+<span class="s">            Do not throw :py:class:`NoConvergence` exceptions when</span>
 <span class="s">            the method does not converge to a solution with the</span>
 <span class="s">            required accuracy within a specified number of maximum</span>
 <span class="s">            iterations set by ``maxiter`` parameter. Instead,</span>
@@ -1986,7 +2004,7 @@
 <span class="s">            is `False`, :py:meth:`all_world2pix`, at the end of the</span>
 <span class="s">            iterative process, will identify invalid results</span>
 <span class="s">            (``NaN`` or ``Inf``) as &quot;diverging&quot; solutions and will</span>
-<span class="s">            raise :py:class:``NoConvergence`` unless the ``quiet``</span>
+<span class="s">            raise :py:class:`NoConvergence` unless the ``quiet``</span>
 <span class="s">            parameter is set to `True`.</span>
 
 <span class="s">            When ``detect_divergence`` is `True`,</span>
@@ -2025,7 +2043,7 @@
 <span class="s">            .. note::</span>
 <span class="s">               Indices of the diverging inverse solutions will be</span>
 <span class="s">               reported in the ``divergent`` attribute of the</span>
-<span class="s">               raised :py:class:``NoConvergence`` exception object.</span>
+<span class="s">               raised :py:class:`NoConvergence` exception object.</span>
 
 <span class="s">        Returns</span>
 <span class="s">        -------</span>
@@ -2067,9 +2085,9 @@
 <span class="s">            `True`. Indices of the points for which the requested</span>
 <span class="s">            accuracy was not achieved (if any) will be listed in the</span>
 <span class="s">            ``slow_conv`` attribute of the</span>
-<span class="s">            raised :py:class:``NoConvergence`` exception object.</span>
+<span class="s">            raised :py:class:`NoConvergence` exception object.</span>
 
-<span class="s">            See :py:class:``NoConvergence`` documentation for</span>
+<span class="s">            See :py:class:`NoConvergence` documentation for</span>
 <span class="s">            more details.</span>
 
 <span class="s">        MemoryError</span>
@@ -2556,6 +2574,7 @@
 <span class="sd">          8. Keyword order may be changed.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># default precision for numerical WCS keywords</span>
         <span class="n">precision</span> <span class="o">=</span> <span class="n">WCSHDO_P14</span>
         <span class="n">display_warning</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">if</span> <span class="n">relax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
@@ -2574,11 +2593,7 @@
             <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="n">orig_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">alt</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">alt</span> <span class="o">=</span> <span class="n">key</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">header_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">to_header</span><span class="p">(</span><span class="n">relax</span><span class="p">)</span>
-            <span class="k">finally</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">alt</span> <span class="o">=</span> <span class="n">orig_key</span>
+            <span class="n">header_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">to_header</span><span class="p">(</span><span class="n">relax</span><span class="p">)</span>
             <span class="n">header</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">header_string</span><span class="p">)</span>
             <span class="n">keys_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="s">&quot;COMMENT&quot;</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">keys_to_remove</span><span class="p">:</span>
@@ -2588,8 +2603,17 @@
             <span class="n">header</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">do_sip</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sip</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">([</span><span class="n">ctyp</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">:]</span> <span class="o">!=</span> <span class="s">&#39;-SIP&#39;</span> <span class="k">for</span> <span class="n">ctyp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">ctype</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_fix_ctype</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">add_sip</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
             <span class="k">for</span> <span class="n">kw</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_sip_kw</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">header</span><span class="p">[</span><span class="n">kw</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">do_sip</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">ctype</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sip</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># This is called when relax is not False or WCSHDO_SIP</span>
+            <span class="c"># The default case of ``relax=None`` is handled further in the code.</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fix_ctype</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">add_sip</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">display_warning</span><span class="p">:</span>
             <span class="n">full_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_header</span><span class="p">(</span><span class="n">relax</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
@@ -2604,9 +2628,79 @@
                     <span class="s">&quot;Use the ``relax`` kwarg to control this.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                         <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_keys</span><span class="p">)),</span>
                     <span class="n">AstropyWarning</span><span class="p">)</span>
-
+            <span class="c"># called when ``relax=None``</span>
+            <span class="c"># This is different from the case of ``relax=False``.</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">ctype</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sip</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fix_ctype</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">add_sip</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">log_message</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="c"># Finally reset the key. This must be called after ``_fix_ctype``.</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">alt</span> <span class="o">=</span> <span class="n">orig_key</span>
         <span class="k">return</span> <span class="n">header</span>
 </div>
+    <span class="k">def</span> <span class="nf">_fix_ctype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">add_sip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">log_message</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        header : `~astropy.io.fits.Header`</span>
+<span class="sd">            FITS header.</span>
+<span class="sd">        add_sip : bool</span>
+<span class="sd">            Flag indicating whether &quot;-SIP&quot; should be added or removed from CTYPE keywords.</span>
+
+<span class="sd">            Remove &quot;-SIP&quot; from CTYPE when writing out a header with relax=False.</span>
+<span class="sd">            This needs to be done outside ``to_header`` because ``to_header`` runs</span>
+<span class="sd">            twice when ``relax=False`` and the second time ``relax`` is set to ``True``</span>
+<span class="sd">            to display the missing keywords.</span>
+
+<span class="sd">            If the user requested SIP distortion to be written out add &quot;-SIP&quot; to</span>
+<span class="sd">            CTYPE if it is missing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">_strip_sip_from_ctype</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">        Warning: to_header() was invoked without ``relax=True``: stripping all SIP</span>
+<span class="s">        coefficients from output header, and stripping &quot;-SIP&quot; from output CTYPE</span>
+<span class="s">        if it was originally present.</span>
+
+<span class="s">        Therefore astrometry obtained for output image may be different from</span>
+<span class="s">        original image because SIP is no longer present.</span>
+
+<span class="s">        Please inspect the headers of input and output images to verify, and</span>
+<span class="s">        modify the headers if necessary.</span>
+<span class="s">        &quot;&quot;&quot;</span>
+
+        <span class="n">_add_sip_to_ctype</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">        Inconsistent SIP distortion information is present in the current WCS:</span>
+<span class="s">        SIP coefficients were detected, but CTYPE is missing &quot;-SIP&quot; suffix,</span>
+<span class="s">        therefore the current WCS is internally inconsistent.</span>
+
+<span class="s">        Because relax has been set to True, the resulting output WCS will have</span>
+<span class="s">        &quot;-SIP&quot; appended to CTYPE in order to make the header internally consistent.</span>
+
+<span class="s">        However, this may produce incorrect astrometry in the output WCS, if</span>
+<span class="s">        in fact the current WCS is already distortion-corrected.</span>
+
+<span class="s">        Therefore, if current WCS is already distortion-corrected (eg, drizzled)</span>
+<span class="s">        then SIP distortion components should not apply. In that case, for a WCS</span>
+<span class="s">        that is already distortion-corrected, please do not set relax=True.</span>
+
+<span class="s">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">log_message</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">add_sip</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">_add_sip_to_ctype</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">_strip_sip_from_ctype</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">naxis</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="c"># strip() must be called here to cover the case of alt key= &quot; &quot;</span>
+            <span class="n">kw</span> <span class="o">=</span> <span class="s">&#39;CTYPE{0}{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">alt</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">add_sip</span><span class="p">:</span>
+                    <span class="n">val</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="n">kw</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&quot;-SIP&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;-SIP&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">val</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="n">kw</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&quot;-SIP&quot;</span><span class="p">)</span>
+                    <span class="n">header</span><span class="p">[</span><span class="n">kw</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">continue</span>
+        <span class="k">return</span> <span class="n">header</span>
+
 <div class="viewcode-block" id="WCS.to_header_string"><a class="viewcode-back" href="../../../api/astropy.wcs.WCS.html#astropy.wcs.WCS.to_header_string">[docs]</a>    <span class="k">def</span> <span class="nf">to_header_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relax</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Identical to `to_header`, but returns a string containing the</span>
@@ -2900,6 +2994,9 @@
 
         <span class="n">wcs_new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">iview</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">iview</span><span class="o">.</span><span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">iview</span><span class="o">.</span><span class="n">step</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;Reversing an axis is not &quot;</span>
+                                          <span class="s">&quot;implemented.&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">iview</span><span class="o">.</span><span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">iview</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="c"># Slice from &quot;None&quot; is equivalent to slice from 0 (but one</span>
                 <span class="c"># might want to downsample, so allow slices with</span>
@@ -3016,7 +3113,7 @@
 <span class="sd">            ...</span>
 
 <span class="sd">        and this will generate a plot with the correct WCS coordinates on the</span>
-<span class="sd">        axes. See http://wcsaxes.readthedocs.org for more information.</span>
+<span class="sd">        axes. See http://wcsaxes.readthedocs.io for more information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">try</span><span class="p">:</span>
@@ -3024,7 +3121,7 @@
         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s">&quot;Using WCS instances as Matplotlib projections &quot;</span>
                               <span class="s">&quot;requires the WCSAxes package to be installed. &quot;</span>
-                              <span class="s">&quot;See http://wcsaxes.readthedocs.org for more &quot;</span>
+                              <span class="s">&quot;See http://wcsaxes.readthedocs.io for more &quot;</span>
                               <span class="s">&quot;details.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">WCSAxes</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;wcs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span>
@@ -3266,7 +3363,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

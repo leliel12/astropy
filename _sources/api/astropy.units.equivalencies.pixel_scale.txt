@@ -1,0 +1,8 @@
+
+
+pixel_scale
+=======================================
+
+.. currentmodule:: astropy.units.equivalencies
+
+.. autofunction:: pixel_scale

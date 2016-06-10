@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>block_reduce &mdash; Astropy v1.2.dev15003</title>
+    <title>block_reduce &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
     <link rel="next" title="block_replicate" href="astropy.nddata.block_replicate.html" />
     <link rel="prev" title="add_array" href="astropy.nddata.add_array.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>block_reduce<a class="headerlink" href="#block-reduce" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.nddata.block_reduce">
-<code class="descclassname">astropy.nddata.</code><code class="descname">block_reduce</code><span class="sig-paren">(</span><em>data</em>, <em>block_size</em>, <em>func=&lt;function sum&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/utils.py#L630" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/utils.html#block_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.block_reduce" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.nddata.</code><code class="descname">block_reduce</code><span class="sig-paren">(</span><em>data</em>, <em>block_size</em>, <em>func=&lt;function sum&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/nddata/utils.html#block_reduce"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/utils.py#L630" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.block_reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downsample a data array by applying a function to local blocks.</p>
 <p>If <code class="docutils literal"><span class="pre">data</span></code> is not perfectly divisible by <code class="docutils literal"><span class="pre">block_size</span></code> along a
 given axis then the data will be trimmed (from the end) along that
@@ -110,9 +110,9 @@ scalar and <code class="docutils literal"><span class="pre">data</span></code> h
 <p><strong>func</strong> : callable, optional</p>
 <blockquote>
 <div><p>The method to use to downsample the data.  Must be a callable
-that takes in a <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> along with an <code class="docutils literal"><span class="pre">axis</span></code> keyword,
+that takes in a <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> along with an <code class="docutils literal"><span class="pre">axis</span></code> keyword,
 which defines the axis along which the function is applied.  The
-default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html#numpy.sum" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>, which provides block summation (and
+default is <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html#numpy.sum" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>, which provides block summation (and
 conserves the data sum).</p>
 </div></blockquote>
 </td>
@@ -166,7 +166,7 @@ conserves the data sum).</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

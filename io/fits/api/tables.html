@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tables &mdash; Astropy v1.2.dev15003</title>
+    <title>Tables &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Images" href="images.html" />
     <link rel="prev" title="Cards" href="cards.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -90,7 +90,7 @@
 <h2><a class="reference internal" href="#astropy.io.fits.BinTableHDU" title="astropy.io.fits.BinTableHDU"><code class="xref py py-class docutils literal"><span class="pre">BinTableHDU</span></code></a><a class="headerlink" href="#bintablehdu" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.BinTableHDU">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">BinTableHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em>, <em>uint=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L784" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">BinTableHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em>, <em>uint=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L784" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.io.fits.hdu.table._TableBaseHDU</span></code></p>
 <p>Binary table HDU class.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -111,7 +111,7 @@
 </div></blockquote>
 <p><strong>uint</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>set to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the table contains unsigned integer columns.</p>
+<div><p>set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the table contains unsigned integer columns.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -159,7 +159,7 @@ in which a different keyword should be used</p>
 <p class="rubric">Notes</p>
 <p>For testing purposes, first call <a class="reference internal" href="#astropy.io.fits.BinTableHDU.add_datasum" title="astropy.io.fits.BinTableHDU.add_datasum"><code class="xref py py-obj docutils literal"><span class="pre">add_datasum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code>
 argument, then call <a class="reference internal" href="#astropy.io.fits.BinTableHDU.add_checksum" title="astropy.io.fits.BinTableHDU.add_checksum"><code class="xref py py-obj docutils literal"><span class="pre">add_checksum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code> argument and
-<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
+<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
 comments for both cards and enable the generation of a <code class="docutils literal"><span class="pre">CHECKSUM</span></code>
 card with a consistent value.</p>
 </dd></dl>
@@ -219,7 +219,7 @@ generation of a <code class="docutils literal"><span class="pre">CHECKSUM</span>
 
 <dl class="method">
 <dt id="astropy.io.fits.BinTableHDU.dump">
-<code class="descname">dump</code><span class="sig-paren">(</span><em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L970" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.dump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.dump" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dump</code><span class="sig-paren">(</span><em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.dump"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L970" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.dump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the table HDU to a file in ASCII format.  The table may be dumped
 in three separate files, one containing column definitions, one
 containing header parameters, and one for table data.</p>
@@ -235,12 +235,12 @@ extension <code class="docutils literal"><span class="pre">.txt</span></code>.</
 </div></blockquote>
 <p><strong>cdfile</strong> : file path, file object or file-like object, optional</p>
 <blockquote>
-<div><p>Output column definitions file.  The default is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, no
+<div><p>Output column definitions file.  The default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, no
 column definitions output is produced.</p>
 </div></blockquote>
 <p><strong>hfile</strong> : file path, file object or file-like object, optional</p>
 <blockquote>
-<div><p>Output header parameters file.  The default is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
+<div><p>Output header parameters file.  The default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
 no header parameters output is produced.</p>
 </div></blockquote>
 <p><strong>clobber</strong> : bool</p>
@@ -328,7 +328,7 @@ intervening changes to the <a class="reference internal" href="hdulists.html#ast
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict or None</p>
 <blockquote class="last">
 <div><p>The dictionary details information about the locations of
-this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
+this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
 the HDU is not associated with a file.</p>
 <p>Dictionary contents:</p>
 <table border="1" class="docutils">
@@ -372,7 +372,7 @@ update, append, ostream)</td>
 <code class="descname">from_columns</code><span class="sig-paren">(</span><em>columns</em>, <em>header=None</em>, <em>nrows=0</em>, <em>fill=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L74" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.from_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given either a <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> object, a sequence of <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a> objects,
 or another table HDU or table data (a <a class="reference internal" href="#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-obj docutils literal"><span class="pre">FITS_rec</span></code></a> or multi-field
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> object, return a new table HDU of
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> object, return a new table HDU of
 the class this method was called on using the column definition from
 the input.</p>
 <p>This is an alternative to the now deprecated <a class="reference internal" href="#astropy.io.fits.new_table" title="astropy.io.fits.new_table"><code class="xref py py-obj docutils literal"><span class="pre">new_table</span></code></a> function,
@@ -387,7 +387,7 @@ and otherwise accepts the same arguments.  See also
 <div><p>The columns from which to create the table data, or an object with
 a column-like structure from which a <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> can be instantiated.
 This includes an existing <a class="reference internal" href="#astropy.io.fits.BinTableHDU" title="astropy.io.fits.BinTableHDU"><code class="xref py py-obj docutils literal"><span class="pre">BinTableHDU</span></code></a> or <a class="reference internal" href="#astropy.io.fits.TableHDU" title="astropy.io.fits.TableHDU"><code class="xref py py-obj docutils literal"><span class="pre">TableHDU</span></code></a>, or a
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> to give some examples.</p>
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> to give some examples.</p>
 <p>If these columns have data arrays attached that data may be used in
 initializing the new table.  Otherwise the input columns will be
 used as a template for a new table with the requested number of
@@ -409,7 +409,7 @@ Otherwise the default is 0.</p>
 </div></blockquote>
 <p><strong>fill</strong> : bool</p>
 <blockquote class="last">
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>,
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>,
 copy the data from input, undefined cells will still be filled with
 zeros/blanks.</p>
 </div></blockquote>
@@ -430,7 +430,7 @@ containing the HDU&#8217;s entire header and, optionally, its data.</p>
 <p>Note: When creating a new HDU from a string without a backing file
 object, the data of that HDU may be read-only.  It depends on whether
 the underlying string was an immutable Python str/bytes object, or some
-kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/library/stdtypes.html#memoryview" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
+kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#memoryview" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -467,7 +467,7 @@ ignored.</p>
 
 <dl class="classmethod">
 <dt id="astropy.io.fits.BinTableHDU.load">
-<em class="property">classmethod </em><code class="descname">load</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>replace=False</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L1038" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">load</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>replace=False</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.load"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L1038" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a table from the input ASCII files.  The input is from up to
 three separate files, one containing column definitions, one containing
 header parameters, and one containing column data.</p>
@@ -489,19 +489,19 @@ defaults are inferred (though this mode is not recommended).</p>
 formats, display formats, physical units, multidimensional
 array dimensions, undefined values, scale factors, and
 offsets associated with the columns in the table.  If
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the column definitions are taken from the current
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the column definitions are taken from the current
 values in this object.</p>
 </div></blockquote>
 <p><strong>hfile</strong> : file path, file object, file-like object, optional</p>
 <blockquote>
 <div><p>Input parameter definition file containing the header
 parameter definitions to be associated with the table.  If
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the header parameter definitions are taken from
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the header parameter definitions are taken from
 the current values in this objects header.</p>
 </div></blockquote>
 <p><strong>replace</strong> : bool</p>
 <blockquote>
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, indicates that the entire header should be
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, indicates that the entire header should be
 replaced with the contents of the ASCII file instead of
 just updating the current header.</p>
 </div></blockquote>
@@ -591,7 +591,7 @@ beginning of the HDU.</p>
 </div></blockquote>
 <p><strong>checksum</strong> : bool</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
 values (when present in the HDU header) match the header and data
 of all HDU&#8217;s in the file.</p>
 </div></blockquote>
@@ -624,7 +624,7 @@ of all HDU&#8217;s in the file.</p>
 have in the header.  Remember that Python is zero-indexed, so this
 means <code class="docutils literal"><span class="pre">pos=0</span></code> requires the card to be the first card in the
 header.  If given a callable, it should take one argument&#8211;the
-actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
+actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
 can be used for custom evaluation.  For example if
 <code class="docutils literal"><span class="pre">pos=lambda</span> <span class="pre">idx:</span> <span class="pre">idx</span> <span class="pre">&gt;</span> <span class="pre">10</span></code> this will check that the keyword&#8217;s
 index is greater than 10.</p>
@@ -632,7 +632,7 @@ index is greater than 10.</p>
 <p><strong>test</strong> : callable</p>
 <blockquote>
 <div><p>This should be a callable (generally a function) that is passed the
-value of the given keyword and returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
+value of the given keyword and returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
 be used to validate the value associated with the given keyword.</p>
 </div></blockquote>
 <p><strong>fix_value</strong> : str, int, float, complex, bool, None</p>
@@ -640,7 +640,7 @@ be used to validate the value associated with the given keyword.</p>
 <div><p>A valid value for a FITS keyword to to use if the given <code class="docutils literal"><span class="pre">test</span></code>
 fails to replace an invalid value.  In other words, this provides
 a default value to use as a replacement if the keyword&#8217;s current
-value is invalid.  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
+value is invalid.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
 keyword is unfixable.</p>
 </div></blockquote>
 <p><strong>option</strong> : str</p>
@@ -682,7 +682,7 @@ argument.</p>
 
 <dl class="classmethod">
 <dt id="astropy.io.fits.BinTableHDU.tcreate">
-<em class="property">classmethod </em><code class="descname">tcreate</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>replace=False</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.tcreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.tcreate" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">tcreate</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>replace=False</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.tcreate"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.tcreate" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.1: </span>The tcreate method is deprecated and may be removed in a future version.
     Use <a class="reference internal" href="#astropy.io.fits.BinTableHDU.load" title="astropy.io.fits.BinTableHDU.load"><code class="xref py py-meth docutils literal"><span class="pre">load()</span></code></a> instead.</p>
@@ -692,7 +692,7 @@ argument.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.BinTableHDU.tdump">
-<code class="descname">tdump</code><span class="sig-paren">(</span><em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.tdump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.tdump" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tdump</code><span class="sig-paren">(</span><em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#BinTableHDU.tdump"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.BinTableHDU.tdump" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.1: </span>The tdump function is deprecated and may be removed in a future version.
     Use <a class="reference internal" href="#astropy.io.fits.BinTableHDU.dump" title="astropy.io.fits.BinTableHDU.dump"><code class="xref py py-meth docutils literal"><span class="pre">dump()</span></code></a> instead.</p>
@@ -744,7 +744,7 @@ the new card will be placed in the Header</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -794,7 +794,7 @@ the new card will be placed in the Header.</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -899,7 +899,7 @@ their own).</p>
 <h2><a class="reference internal" href="#astropy.io.fits.TableHDU" title="astropy.io.fits.TableHDU"><code class="xref py py-class docutils literal"><span class="pre">TableHDU</span></code></a><a class="headerlink" href="#tablehdu" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.TableHDU">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">TableHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L689" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#TableHDU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.TableHDU" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">TableHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#TableHDU"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L689" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.TableHDU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.io.fits.hdu.table._TableBaseHDU</span></code></p>
 <p>FITS ASCII table extension HDU class.</p>
 <dl class="method">
@@ -944,7 +944,7 @@ in which a different keyword should be used</p>
 <p class="rubric">Notes</p>
 <p>For testing purposes, first call <a class="reference internal" href="#astropy.io.fits.TableHDU.add_datasum" title="astropy.io.fits.TableHDU.add_datasum"><code class="xref py py-obj docutils literal"><span class="pre">add_datasum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code>
 argument, then call <a class="reference internal" href="#astropy.io.fits.TableHDU.add_checksum" title="astropy.io.fits.TableHDU.add_checksum"><code class="xref py py-obj docutils literal"><span class="pre">add_checksum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code> argument and
-<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
+<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
 comments for both cards and enable the generation of a <code class="docutils literal"><span class="pre">CHECKSUM</span></code>
 card with a consistent value.</p>
 </dd></dl>
@@ -1023,7 +1023,7 @@ intervening changes to the <a class="reference internal" href="hdulists.html#ast
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict or None</p>
 <blockquote class="last">
 <div><p>The dictionary details information about the locations of
-this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
+this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
 the HDU is not associated with a file.</p>
 <p>Dictionary contents:</p>
 <table border="1" class="docutils">
@@ -1067,7 +1067,7 @@ update, append, ostream)</td>
 <code class="descname">from_columns</code><span class="sig-paren">(</span><em>columns</em>, <em>header=None</em>, <em>nrows=0</em>, <em>fill=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L74" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.TableHDU.from_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given either a <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> object, a sequence of <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a> objects,
 or another table HDU or table data (a <a class="reference internal" href="#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-obj docutils literal"><span class="pre">FITS_rec</span></code></a> or multi-field
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> object, return a new table HDU of
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> object, return a new table HDU of
 the class this method was called on using the column definition from
 the input.</p>
 <p>This is an alternative to the now deprecated <a class="reference internal" href="#astropy.io.fits.new_table" title="astropy.io.fits.new_table"><code class="xref py py-obj docutils literal"><span class="pre">new_table</span></code></a> function,
@@ -1082,7 +1082,7 @@ and otherwise accepts the same arguments.  See also
 <div><p>The columns from which to create the table data, or an object with
 a column-like structure from which a <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> can be instantiated.
 This includes an existing <a class="reference internal" href="#astropy.io.fits.BinTableHDU" title="astropy.io.fits.BinTableHDU"><code class="xref py py-obj docutils literal"><span class="pre">BinTableHDU</span></code></a> or <a class="reference internal" href="#astropy.io.fits.TableHDU" title="astropy.io.fits.TableHDU"><code class="xref py py-obj docutils literal"><span class="pre">TableHDU</span></code></a>, or a
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> to give some examples.</p>
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> to give some examples.</p>
 <p>If these columns have data arrays attached that data may be used in
 initializing the new table.  Otherwise the input columns will be
 used as a template for a new table with the requested number of
@@ -1104,7 +1104,7 @@ Otherwise the default is 0.</p>
 </div></blockquote>
 <p><strong>fill</strong> : bool</p>
 <blockquote class="last">
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>,
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>,
 copy the data from input, undefined cells will still be filled with
 zeros/blanks.</p>
 </div></blockquote>
@@ -1125,7 +1125,7 @@ containing the HDU&#8217;s entire header and, optionally, its data.</p>
 <p>Note: When creating a new HDU from a string without a backing file
 object, the data of that HDU may be read-only.  It depends on whether
 the underlying string was an immutable Python str/bytes object, or some
-kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/library/stdtypes.html#memoryview" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
+kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#memoryview" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1177,7 +1177,7 @@ beginning of the HDU.</p>
 </div></blockquote>
 <p><strong>checksum</strong> : bool</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
 values (when present in the HDU header) match the header and data
 of all HDU&#8217;s in the file.</p>
 </div></blockquote>
@@ -1210,7 +1210,7 @@ of all HDU&#8217;s in the file.</p>
 have in the header.  Remember that Python is zero-indexed, so this
 means <code class="docutils literal"><span class="pre">pos=0</span></code> requires the card to be the first card in the
 header.  If given a callable, it should take one argument&#8211;the
-actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
+actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
 can be used for custom evaluation.  For example if
 <code class="docutils literal"><span class="pre">pos=lambda</span> <span class="pre">idx:</span> <span class="pre">idx</span> <span class="pre">&gt;</span> <span class="pre">10</span></code> this will check that the keyword&#8217;s
 index is greater than 10.</p>
@@ -1218,7 +1218,7 @@ index is greater than 10.</p>
 <p><strong>test</strong> : callable</p>
 <blockquote>
 <div><p>This should be a callable (generally a function) that is passed the
-value of the given keyword and returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
+value of the given keyword and returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
 be used to validate the value associated with the given keyword.</p>
 </div></blockquote>
 <p><strong>fix_value</strong> : str, int, float, complex, bool, None</p>
@@ -1226,7 +1226,7 @@ be used to validate the value associated with the given keyword.</p>
 <div><p>A valid value for a FITS keyword to to use if the given <code class="docutils literal"><span class="pre">test</span></code>
 fails to replace an invalid value.  In other words, this provides
 a default value to use as a replacement if the keyword&#8217;s current
-value is invalid.  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
+value is invalid.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
 keyword is unfixable.</p>
 </div></blockquote>
 <p><strong>option</strong> : str</p>
@@ -1310,7 +1310,7 @@ the new card will be placed in the Header</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -1360,7 +1360,7 @@ the new card will be placed in the Header.</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -1465,7 +1465,7 @@ their own).</p>
 <h2><a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a><a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.Column">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">Column</code><span class="sig-paren">(</span><em>name=None</em>, <em>format=None</em>, <em>unit=None</em>, <em>null=None</em>, <em>bscale=None</em>, <em>bzero=None</em>, <em>disp=None</em>, <em>start=None</em>, <em>dim=None</em>, <em>array=None</em>, <em>ascii=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L460" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#Column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.Column" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">Column</code><span class="sig-paren">(</span><em>name=None</em>, <em>format=None</em>, <em>unit=None</em>, <em>null=None</em>, <em>bscale=None</em>, <em>bzero=None</em>, <em>disp=None</em>, <em>start=None</em>, <em>dim=None</em>, <em>array=None</em>, <em>ascii=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#Column"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L466" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.Column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.io.fits.util.NotifierMixin</span></code></p>
 <p>Class which contains the definition of one column, e.g.  <code class="docutils literal"><span class="pre">ttype</span></code>,
 <code class="docutils literal"><span class="pre">tform</span></code>, etc. and the array containing values for the column.</p>
@@ -1516,7 +1516,7 @@ to <code class="docutils literal"><span class="pre">TBCOL</span></code> keyword<
 </div></blockquote>
 <p><strong>array</strong> : iterable, optional</p>
 <blockquote>
-<div><p>a <a class="reference external" href="http://docs.python.org/library/functions.html#list" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">list</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> (or other iterable that can be used to
+<div><p>a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">list</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> (or other iterable that can be used to
 initialize an ndarray) providing initial data for this column.
 The array will be automatically converted, if possible, to the data
 format of the column.  In the case were non-trivial <code class="docutils literal"><span class="pre">bscale</span></code>
@@ -1527,7 +1527,7 @@ object will then be converted back to its storage values).</p>
 </div></blockquote>
 <p><strong>ascii</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>set <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if this describes a column for an ASCII table; this
+<div><p>set <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if this describes a column for an ASCII table; this
 may be required to disambiguate the column format</p>
 </div></blockquote>
 </td>
@@ -1537,7 +1537,7 @@ may be required to disambiguate the column format</p>
 <dl class="attribute">
 <dt id="astropy.io.fits.Column.array">
 <code class="descname">array</code><a class="headerlink" href="#astropy.io.fits.Column.array" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Numpy <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> associated with this <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>.</p>
+<dd><p>The Numpy <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> associated with this <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>.</p>
 <p>If the column was instantiated with an array passed to the <code class="docutils literal"><span class="pre">array</span></code>
 argument, this will return that array.  However, if the column is
 later added to a table, such as via <a class="reference internal" href="#astropy.io.fits.BinTableHDU.from_columns" title="astropy.io.fits.BinTableHDU.from_columns"><code class="xref py py-obj docutils literal"><span class="pre">BinTableHDU.from_columns</span></code></a> as
@@ -1554,7 +1554,7 @@ array.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.Column.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L786" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#Column.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.Column.copy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#Column.copy"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L792" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.Column.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of this <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>.</p>
 </dd></dl>
 
@@ -1565,7 +1565,7 @@ array.</p>
 <h2><a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-class docutils literal"><span class="pre">ColDefs</span></code></a><a class="headerlink" href="#coldefs" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.ColDefs">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">ColDefs</code><span class="sig-paren">(</span><em>input</em>, <em>tbtype=None</em>, <em>ascii=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1132" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">ColDefs</code><span class="sig-paren">(</span><em>input</em>, <em>tbtype=None</em>, <em>ascii=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1138" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.io.fits.util.NotifierMixin</span></code></p>
 <p>Column definitions class.</p>
 <p>It has attributes corresponding to the <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a> attributes
@@ -1579,7 +1579,7 @@ corresponding attribute values from all <a class="reference internal" href="#ast
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>input</strong> : sequence of <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>, <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a>, other</p>
 <blockquote>
 <div><p>An existing table HDU, an existing <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a>, or any multi-field
-Numpy array or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a>.</p>
+Numpy array or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a>.</p>
 </div></blockquote>
 <p><strong>**(Deprecated)</strong> tbtype** : str, optional</p>
 <blockquote>
@@ -1596,13 +1596,13 @@ automatically to ASCII table ColDefs in the appropriate contexts
 </table>
 <dl class="method">
 <dt id="astropy.io.fits.ColDefs.add_col">
-<code class="descname">add_col</code><span class="sig-paren">(</span><em>column</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1514" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.add_col"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.add_col" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_col</code><span class="sig-paren">(</span><em>column</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.add_col"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1520" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.add_col" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append one <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a> to the column definition.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.io.fits.ColDefs.change_attrib">
-<code class="descname">change_attrib</code><span class="sig-paren">(</span><em>col_name</em>, <em>attrib</em>, <em>new_value</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1565" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.change_attrib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.change_attrib" title="Permalink to this definition">¶</a></dt>
+<code class="descname">change_attrib</code><span class="sig-paren">(</span><em>col_name</em>, <em>attrib</em>, <em>new_value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.change_attrib"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1571" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.change_attrib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change an attribute (in the <code class="docutils literal"><span class="pre">KEYWORD_ATTRIBUTES</span></code> list) of a <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1628,7 +1628,7 @@ automatically to ASCII table ColDefs in the appropriate contexts
 
 <dl class="method">
 <dt id="astropy.io.fits.ColDefs.change_name">
-<code class="descname">change_name</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1583" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.change_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.change_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">change_name</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.change_name"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1589" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.change_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change a <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>&#8216;s name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1650,7 +1650,7 @@ automatically to ASCII table ColDefs in the appropriate contexts
 
 <dl class="method">
 <dt id="astropy.io.fits.ColDefs.change_unit">
-<code class="descname">change_unit</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_unit</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1601" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.change_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.change_unit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">change_unit</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.change_unit"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1607" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.change_unit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change a <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>&#8216;s unit.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1672,7 +1672,7 @@ automatically to ASCII table ColDefs in the appropriate contexts
 
 <dl class="method">
 <dt id="astropy.io.fits.ColDefs.del_col">
-<code class="descname">del_col</code><span class="sig-paren">(</span><em>col_name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1537" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.del_col"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.del_col" title="Permalink to this definition">¶</a></dt>
+<code class="descname">del_col</code><span class="sig-paren">(</span><em>col_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.del_col"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1543" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.del_col" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete (the definition of) one <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>.</p>
 <dl class="docutils">
 <dt>col_name <span class="classifier-delimiter">:</span> <span class="classifier">str or int</span></dt>
@@ -1682,7 +1682,7 @@ automatically to ASCII table ColDefs in the appropriate contexts
 
 <dl class="method">
 <dt id="astropy.io.fits.ColDefs.info">
-<code class="descname">info</code><span class="sig-paren">(</span><em>attrib='all'</em>, <em>output=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1616" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.info" title="Permalink to this definition">¶</a></dt>
+<code class="descname">info</code><span class="sig-paren">(</span><em>attrib='all'</em>, <em>output=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/column.html#ColDefs.info"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/column.py#L1622" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ColDefs.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get attribute(s) information of the column definition.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1699,7 +1699,7 @@ separated by comma(s).</p>
 <p><strong>output</strong> : file, optional</p>
 <blockquote class="last">
 <div><p>File-like object to output to.  Outputs to stdout by default.
-If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, returns the attributes as a <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code></a> instead.</p>
+If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, returns the attributes as a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code></a> instead.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1717,12 +1717,12 @@ stdout.</p>
 <h2><a class="reference internal" href="#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-class docutils literal"><span class="pre">FITS_rec</span></code></a><a class="headerlink" href="#fits-rec" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.FITS_rec">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">FITS_rec</code><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L160" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-class docutils literal"><span class="pre">numpy.recarray</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">FITS_rec</code><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L160" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-class docutils literal"><span class="pre">numpy.recarray</span></code></a></p>
 <p>FITS record array class.</p>
 <p><a class="reference internal" href="#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-obj docutils literal"><span class="pre">FITS_rec</span></code></a> is the data part of a table HDU&#8217;s data part.  This is a layer
-over the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">recarray</span></code></a>, so we can deal with scaled columns.</p>
-<p>It inherits all of the standard methods from <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>.</p>
+over the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">recarray</span></code></a>, so we can deal with scaled columns.</p>
+<p>It inherits all of the standard methods from <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>.</p>
 <dl class="attribute">
 <dt id="astropy.io.fits.FITS_rec.columns">
 <code class="descname">columns</code><a class="headerlink" href="#astropy.io.fits.FITS_rec.columns" title="Permalink to this definition">¶</a></dt>
@@ -1732,9 +1732,9 @@ over the <a class="reference external" href="http://docs.scipy.org/doc/numpy/ref
 
 <dl class="method">
 <dt id="astropy.io.fits.FITS_rec.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><em>order='C'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L573" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Numpy documentation lies; <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.copy.html#numpy.ndarray.copy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray.copy</span></code></a> is not equivalent to
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.copy.html#numpy.copy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.copy</span></code></a>.  Differences include that it re-views the copied array as
+<code class="descname">copy</code><span class="sig-paren">(</span><em>order='C'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec.copy"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L573" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Numpy documentation lies; <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.copy.html#numpy.ndarray.copy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray.copy</span></code></a> is not equivalent to
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.copy.html#numpy.copy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.copy</span></code></a>.  Differences include that it re-views the copied array as
 self&#8217;s ndarray subclass, as though it were taking a slice; this means
 <code class="docutils literal"><span class="pre">__array_finalize__</span></code> is called and the copy shares all the array
 attributes (including <code class="docutils literal"><span class="pre">._converted</span></code>!).  So we need to make a deep
@@ -1744,7 +1744,7 @@ any data.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.FITS_rec.field">
-<code class="descname">field</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L682" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec.field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec.field" title="Permalink to this definition">¶</a></dt>
+<code class="descname">field</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec.field"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L688" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec.field" title="Permalink to this definition">¶</a></dt>
 <dd><p>A view of a <a class="reference internal" href="#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>&#8216;s data as an array.</p>
 </dd></dl>
 
@@ -1756,7 +1756,7 @@ any data.</p>
 
 <dl class="classmethod">
 <dt id="astropy.io.fits.FITS_rec.from_columns">
-<em class="property">classmethod </em><code class="descname">from_columns</code><span class="sig-paren">(</span><em>columns</em>, <em>nrows=0</em>, <em>fill=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L282" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec.from_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec.from_columns" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_columns</code><span class="sig-paren">(</span><em>columns</em>, <em>nrows=0</em>, <em>fill=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_rec.from_columns"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L282" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_rec.from_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a <a class="reference internal" href="#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> object of unknown origin, initialize a new <a class="reference internal" href="#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-obj docutils literal"><span class="pre">FITS_rec</span></code></a>
 object.</p>
 <div class="admonition note">
@@ -1787,8 +1787,8 @@ Otherwise the default is 0.</p>
 </div></blockquote>
 <p><strong>fill</strong> : bool</p>
 <blockquote class="last">
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If
-<a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, copy the data from input, undefined cells will still
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, copy the data from input, undefined cells will still
 be filled with zeros/blanks.</p>
 </div></blockquote>
 </td>
@@ -1810,8 +1810,8 @@ be filled with zeros/blanks.</p>
 <h2><a class="reference internal" href="#astropy.io.fits.FITS_record" title="astropy.io.fits.FITS_record"><code class="xref py py-class docutils literal"><span class="pre">FITS_record</span></code></a><a class="headerlink" href="#fits-record" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.FITS_record">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">FITS_record</code><span class="sig-paren">(</span><em>input</em>, <em>row=0</em>, <em>start=None</em>, <em>end=None</em>, <em>step=None</em>, <em>base=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L25" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_record" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">FITS_record</code><span class="sig-paren">(</span><em>input</em>, <em>row=0</em>, <em>start=None</em>, <em>end=None</em>, <em>step=None</em>, <em>base=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_record"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L25" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>FITS record class.</p>
 <p><a class="reference internal" href="#astropy.io.fits.FITS_record" title="astropy.io.fits.FITS_record"><code class="xref py py-obj docutils literal"><span class="pre">FITS_record</span></code></a> is used to access records of the <a class="reference internal" href="#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-obj docutils literal"><span class="pre">FITS_rec</span></code></a> object.
 This will allow us to deal with scaled columns.  It also handles
@@ -1845,13 +1845,13 @@ Used for subsetting the columns of the <a class="reference internal" href="#astr
 </table>
 <dl class="method">
 <dt id="astropy.io.fits.FITS_record.field">
-<code class="descname">field</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L126" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_record.field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_record.field" title="Permalink to this definition">¶</a></dt>
+<code class="descname">field</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_record.field"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L126" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_record.field" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the field data of the record.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.io.fits.FITS_record.setfield">
-<code class="descname">setfield</code><span class="sig-paren">(</span><em>field</em>, <em>value</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L133" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_record.setfield"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_record.setfield" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setfield</code><span class="sig-paren">(</span><em>field</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/fitsrec.html#FITS_record.setfield"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/fitsrec.py#L133" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.FITS_record.setfield" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the field data of the record.</p>
 </dd></dl>
 
@@ -1864,7 +1864,7 @@ Used for subsetting the columns of the <a class="reference internal" href="#astr
 <h3><a class="reference internal" href="#astropy.io.fits.new_table" title="astropy.io.fits.new_table"><code class="xref py py-func docutils literal"><span class="pre">new_table()</span></code></a><a class="headerlink" href="#new-table" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="astropy.io.fits.new_table">
-<code class="descclassname">astropy.io.fits.</code><code class="descname">new_table</code><span class="sig-paren">(</span><em>input</em>, <em>header=None</em>, <em>nrows=0</em>, <em>fill=False</em>, <em>tbtype=&lt;class 'astropy.io.fits.hdu.table.BinTableHDU'&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#new_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.new_table" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.fits.</code><code class="descname">new_table</code><span class="sig-paren">(</span><em>input</em>, <em>header=None</em>, <em>nrows=0</em>, <em>fill=False</em>, <em>tbtype=&lt;class 'astropy.io.fits.hdu.table.BinTableHDU'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/table.html#new_table"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.new_table" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.4: </span>The new_table function is deprecated and may be removed in a future version.
     Use <a class="reference internal" href="#astropy.io.fits.BinTableHDU.from_columns" title="astropy.io.fits.BinTableHDU.from_columns"><code class="xref py py-meth docutils literal"><span class="pre">BinTableHDU.from_columns()</span></code></a> for new BINARY tables or <a class="reference internal" href="#astropy.io.fits.TableHDU.from_columns" title="astropy.io.fits.TableHDU.from_columns"><code class="xref py py-meth docutils literal"><span class="pre">TableHDU.from_columns()</span></code></a> for new ASCII tables instead.</p>
@@ -1894,8 +1894,8 @@ directly.  See the Astropy documentation for more details.</p>
 </div></blockquote>
 <p><strong>fill</strong> : bool</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If
-<a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, copy the data from input, undefined cells will still
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, copy the data from input, undefined cells will still
 be filled with zeros/blanks.</p>
 </div></blockquote>
 <p><strong>tbtype</strong> : str or type</p>
@@ -1915,7 +1915,7 @@ tables) are supported.</p>
 <h3><a class="reference internal" href="#astropy.io.fits.tabledump" title="astropy.io.fits.tabledump"><code class="xref py py-func docutils literal"><span class="pre">tabledump()</span></code></a><a class="headerlink" href="#tabledump" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="astropy.io.fits.tabledump">
-<code class="descclassname">astropy.io.fits.</code><code class="descname">tabledump</code><span class="sig-paren">(</span><em>filename</em>, <em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>ext=1</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/convenience.py#L573" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/convenience.html#tabledump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.tabledump" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.fits.</code><code class="descname">tabledump</code><span class="sig-paren">(</span><em>filename</em>, <em>datafile=None</em>, <em>cdfile=None</em>, <em>hfile=None</em>, <em>ext=1</em>, <em>clobber=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/convenience.html#tabledump"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/convenience.py#L675" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.tabledump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump a table HDU to a file in ASCII format.  The table may be
 dumped in three separate files, one containing column definitions,
 one containing header parameters, and one for table data.</p>
@@ -1935,12 +1935,12 @@ extension number (ext), followed by the extension <code class="docutils literal"
 </div></blockquote>
 <p><strong>cdfile</strong> : file path, file object or file-like object, optional</p>
 <blockquote>
-<div><p>Output column definitions file.  The default is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
+<div><p>Output column definitions file.  The default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
 no column definitions output is produced.</p>
 </div></blockquote>
 <p><strong>hfile</strong> : file path, file object or file-like object, optional</p>
 <blockquote>
-<div><p>Output header parameters file.  The default is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
+<div><p>Output header parameters file.  The default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
 no header parameters output is produced.</p>
 </div></blockquote>
 <p><strong>ext</strong> : int</p>
@@ -2017,7 +2017,7 @@ image.</p>
 <h3><a class="reference internal" href="#astropy.io.fits.tableload" title="astropy.io.fits.tableload"><code class="xref py py-func docutils literal"><span class="pre">tableload()</span></code></a><a class="headerlink" href="#tableload" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="astropy.io.fits.tableload">
-<code class="descclassname">astropy.io.fits.</code><code class="descname">tableload</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile</em>, <em>hfile=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/convenience.py#L644" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/convenience.html#tableload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.tableload" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.fits.</code><code class="descname">tableload</code><span class="sig-paren">(</span><em>datafile</em>, <em>cdfile</em>, <em>hfile=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/convenience.html#tableload"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/convenience.py#L746" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.tableload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a table from the input ASCII files.  The input is from up
 to three separate files, one containing column definitions, one
 containing header parameters, and one containing column data.  The
@@ -2042,7 +2042,7 @@ associated with the columns in the table.</p>
 <blockquote class="last">
 <div><p>Input parameter definition file containing the header
 parameter definitions to be associated with the table.
-If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, a minimal header is constructed.</p>
+If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, a minimal header is constructed.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -2105,6 +2105,33 @@ image.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="table-to-hdu">
+<h3><a class="reference internal" href="#astropy.io.fits.table_to_hdu" title="astropy.io.fits.table_to_hdu"><code class="xref py py-func docutils literal"><span class="pre">table_to_hdu()</span></code></a><a class="headerlink" href="#table-to-hdu" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="astropy.io.fits.table_to_hdu">
+<code class="descclassname">astropy.io.fits.</code><code class="descname">table_to_hdu</code><span class="sig-paren">(</span><em>table</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/convenience.html#table_to_hdu"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/convenience.py#L417" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.table_to_hdu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an astropy.table.Table object to a FITS BinTableHDU</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>table</strong> : astropy.table.Table</p>
+<blockquote>
+<div><p>The table to convert.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>table_hdu</strong> : astropy.io.fits.BinTableHDU</p>
+<blockquote class="last">
+<div><p>The FITS binary table HDU</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 </div>
 
@@ -2126,6 +2153,7 @@ image.</p>
 <li><a class="reference internal" href="#new-table"><code class="docutils literal"><span class="pre">new_table()</span></code></a></li>
 <li><a class="reference internal" href="#tabledump"><code class="docutils literal"><span class="pre">tabledump()</span></code></a></li>
 <li><a class="reference internal" href="#tableload"><code class="docutils literal"><span class="pre">tableload()</span></code></a></li>
+<li><a class="reference internal" href="#table-to-hdu"><code class="docutils literal"><span class="pre">table_to_hdu()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -2146,7 +2174,7 @@ image.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

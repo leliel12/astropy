@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Full Changelog &mdash; Astropy v1.2.dev15003</title>
+    <title>Full Changelog &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
     <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="index.html" />
     <link rel="prev" title="How to create and maintain an Astropy affiliated package" href="development/affiliated-packages.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="_static/copybutton.js"></script>
@@ -62,7 +62,7 @@
 	
       </li>
       <li>
-	<a href="index.html">Astropy v1.2.dev15003</a>
+	<a href="index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -79,16 +79,166 @@
   <div class="section" id="full-changelog">
 <span id="changelog"></span><h1>Full Changelog<a class="headerlink" href="#full-changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="unreleased">
-<h2>1.2 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
+<h2>1.3 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="new-features">
 <h3>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.registry</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.modeling</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.sphinx</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.units</span></code><ul>
+<li>Added <code class="docutils literal"><span class="pre">pixel_scale</span></code> and <code class="docutils literal"><span class="pre">plate_scale</span></code> equivalencies. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4987">#4987</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
+</ul>
+</div>
+<div class="section" id="api-changes">
+<h3>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.config</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.constants</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.convolution</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></p>
+<ul>
+<li><dl class="first docutils">
+<dt>ASCII writers now accept an &#8216;overwrite&#8217; argument.</dt>
+<dd><p class="first last">The default behavior is changed so that a warning will be
+issued when overwriting an existing file unless <code class="docutils literal"><span class="pre">overwrite=True</span></code>.
+In a future version this will be changed from a warning to an
+exception to prevent accidentally overwriting a file. [<a class="reference external" href="https://github.com/astropy/astropy/issues/5007">#5007</a>]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.registry</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.modeling</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.nddata</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.stats</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.table</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.time</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.units</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.utils</span></code></p>
+<ul class="simple">
+<li>Renamed <code class="docutils literal"><span class="pre">ignored</span></code> context manager in <code class="docutils literal"><span class="pre">compat.misc</span></code> to <code class="docutils literal"><span class="pre">suppress</span></code>
+to be consistent with <a class="reference external" href="https://bugs.python.org/issue19266">https://bugs.python.org/issue19266</a> . [<a class="reference external" href="https://github.com/astropy/astropy/issues/5003">#5003</a>]</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.vo</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">astropy.wcs</span></code></p>
+</li>
+</ul>
+</div>
+<div class="section" id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
+<li>Made TFORMx keyword check more flexible in test of compressed images to
+enable copatibility of the test with cfitsio 3.380. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4646">#4646</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.registry</span></code><ul>
+<li><code class="docutils literal"><span class="pre">read</span></code> now correctly raises an IOError if a file with an unknown
+extension can&#8217;t be found, instead of raising IORegistryError:
+&#8220;Format could not be identified.&#8221; [<a class="reference external" href="https://github.com/astropy/astropy/issues/4779">#4779</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.modeling</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.units</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
+</ul>
+</div>
+<div class="section" id="other-changes-and-additions">
+<h3>Other Changes and Additions<a class="headerlink" href="#other-changes-and-additions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Initialisation of <code class="docutils literal"><span class="pre">Angle</span></code> has been sped up for <code class="docutils literal"><span class="pre">Quantity</span></code> and <code class="docutils literal"><span class="pre">Angle</span></code>
+input. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4970">#4970</a>]</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>1.2 (unreleased)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<p>Astropy now requires Numpy 1.7.0 or later. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4784">#4784</a>]</p>
+</div>
+<div class="section" id="id2">
+<h3>New Features<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.analytic_functions</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.conftest.py</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.constants</span></code><ul>
+<li>Add <code class="docutils literal"><span class="pre">L_bol0</span></code>, the luminosity corresponding to absolute bolometric
+magnitude zero. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4262">#4262</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
+<li><code class="docutils literal"><span class="pre">CartesianRepresentation</span></code> now includes a transform() method that can take
+a 3x3 matrix to transform coordinates. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4860">#4860</a>]</li>
+<li>Solar system and lunar ephemerides accessible via <code class="docutils literal"><span class="pre">get_body</span></code>,
+<code class="docutils literal"><span class="pre">get_body_barycentric</span></code> and <code class="docutils literal"><span class="pre">get_moon</span></code> functions. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4890">#4890</a>]</li>
+<li>Added astrometric frames (i.e., a frame centered on a particular
+point/object specified in another frame). [<a class="reference external" href="https://github.com/astropy/astropy/issues/4909">#4909</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4941">#4941</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">SkyCoord.spherical_offsets_to</span></code> method. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4338">#4338</a>]</li>
+<li>Recent Earth rotation (IERS) data are now auto-downloaded so that AltAz
+transformations for future dates now use the most accurate available
+rotation values. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4436">#4436</a>]</li>
+<li>Add support for heliocentric coordinate frames. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4314">#4314</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code><ul>
 <li><code class="docutils literal"><span class="pre">angular_diameter_distance_z1z2</span></code> now supports the computation of
 the angular diameter distance between a scalar and an array like
@@ -99,17 +249,28 @@ Omega_k0 (positive curvature universes) [<a class="reference external" href="htt
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>File name could be passed as <code class="docutils literal"><span class="pre">Path</span></code> object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4606">#4606</a>]</li>
 <li>Check that columns in <code class="docutils literal"><span class="pre">formats</span></code> specifier exist in the output table
-when writing. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4508">#4508</a>]</li>
+when writing. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4508">#4508</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4511">#4511</a>]</li>
 <li>Allow trailing whitespace in the IPAC header lines. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4758">#4758</a>]</li>
 <li>Updated to filter out the default parser warning of BeautifulSoup.
 [<a class="reference external" href="https://github.com/astropy/astropy/issues/4551">#4551</a>]</li>
+<li>Added support for reading and writing reStructuredText simple tables
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/4812">#4812</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
 <li>File name could be passed as <code class="docutils literal"><span class="pre">Path</span></code> object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4606">#4606</a>]</li>
+<li>Header allows a dictionary-like cards argument during creation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4663">#4663</a>]</li>
+<li>New function <code class="docutils literal"><span class="pre">convenience.table_to_hdu</span></code> to allow creating a FITS
+HDU object directly from an astropy <code class="docutils literal"><span class="pre">Table</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4778">#4778</a>]</li>
+<li>A new optional arguments <code class="docutils literal"><span class="pre">ignore_missing</span></code> and <code class="docutils literal"><span class="pre">remove_all</span></code> are added
+to <code class="docutils literal"><span class="pre">astropy.io.fits.header.remove()</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/5020">#5020</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.registry</span></code><ul>
+<li>Added custom <code class="docutils literal"><span class="pre">IORegistryError</span></code> [<a class="reference external" href="https://github.com/astropy/astropy/issues/4833">#4833</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code><ul>
 <li>File name could be passed as <code class="docutils literal"><span class="pre">Path</span></code> object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4606">#4606</a>]</li>
 </ul>
@@ -121,23 +282,26 @@ when writing. [<a class="reference external" href="https://github.com/astropy/as
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.nddata</span></code><ul>
-<li>Added <code class="docutils literal"><span class="pre">UnknownUncertainty</span></code> as <code class="docutils literal"><span class="pre">NDUncertainty</span></code> subclass which cannot
-be used for error propagation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code> implements error propagation using it&#8217;s <code class="docutils literal"><span class="pre">unit</span></code> and
-a given <code class="docutils literal"><span class="pre">correlation</span></code> between the datasets. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code> allows for arithmetic operations with anything that
-can be wrapped by the class. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code> provides methods for arithmetic operations where the
-first operand is not an <code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code> subclass via classmethods
-called <code class="docutils literal"><span class="pre">ic_add</span></code>, <code class="docutils literal"><span class="pre">ic_subtract</span></code>, etc. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">UnknownUncertainty</span></code> new subclass of <code class="docutils literal"><span class="pre">NDUncertainty</span></code> that can be used to
+save uncertainties that cannot be used for error propagation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: <code class="docutils literal"><span class="pre">add</span></code>, <code class="docutils literal"><span class="pre">subtract</span></code>, <code class="docutils literal"><span class="pre">multiply</span></code> and <code class="docutils literal"><span class="pre">divide</span></code>
+can be used as classmethods but require that two operands are given. These
+operands don&#8217;t need to be NDData instances but they must be convertible to
+NDData. This conversion is done internally. Using it on the instance does
+not require (but also allows) two operands. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4851">#4851</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDDataRef</span></code> new subclass that implements <code class="docutils literal"><span class="pre">NDData</span></code> together with all
+currently avaiable mixins. This class does not implement additional
+attributes, methods or a numpy.ndarray-like interface like <code class="docutils literal"><span class="pre">NDDataArray</span></code>.
+attributes, methods or a numpy.ndarray-like interface like <code class="docutils literal"><span class="pre">NDDataArray</span></code>.
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/4797">#4797</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.stats</span></code><ul>
-<li>Added <code class="docutils literal"><span class="pre">axis</span></code> keyword for <code class="docutils literal"><span class="pre">mad_std</span></code> function. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4688">#4688</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">axis</span></code> keyword for <code class="docutils literal"><span class="pre">mad_std</span></code> function. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4688">#4688</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4689">#4689</a>]</li>
 <li>Added Bayesian and Akaike Information Criteria. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4716">#4716</a>]</li>
 <li>Added Bayesian upper limits for Poisson count rates. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4622">#4622</a>]</li>
-<li>Added <code class="docutils literal"><span class="pre">circstats</span></code>; a module for computing circular statistics. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3705">#3705</a>]</li>
-<li>Added <code class="docutils literal"><span class="pre">jackknife</span></code> resampling method. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3708">#3708</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">circstats</span></code>; a module for computing circular statistics. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3705">#3705</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4472">#4472</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">jackknife</span></code> resampling method. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3708">#3708</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4439">#4439</a>]</li>
 <li>Updated <code class="docutils literal"><span class="pre">bootstrap</span></code> to allow bootstrapping statistics with multiple
 outputs. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3601">#3601</a>]</li>
 <li>Added <code class="docutils literal"><span class="pre">LombScargle</span></code> class to compute Lomb-Scargle periodograms [<a class="reference external" href="https://github.com/astropy/astropy/issues/4811">#4811</a>]</li>
@@ -147,20 +311,41 @@ outputs. [<a class="reference external" href="https://github.com/astropy/astropy
 <li><code class="docutils literal"><span class="pre">Table.show_in_notebook</span></code> and <code class="docutils literal"><span class="pre">Table.show_in_browser(jsviewer=True)</span></code> now
 yield tables with an &#8220;idx&#8221; column, allowing easy identification of the index
 of a row even when the table is re-sorted in the browser. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4404">#4404</a>]</li>
-<li>Added <code class="docutils literal"><span class="pre">AttributeError</span></code> when trying to set mask on non-masked table. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3505">#3505</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">AttributeError</span></code> when trying to set mask on non-masked table. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4637">#4637</a>]</li>
 <li>Allow to use a tuple of keys in <code class="docutils literal"><span class="pre">Table.sort</span></code>.  [<a class="reference external" href="https://github.com/astropy/astropy/issues/4671">#4671</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">itercols</span></code>; a way to iterate through columns of a table. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3805">#3805</a>,
+<a class="reference external" href="https://github.com/astropy/astropy/issues/4888">#4888</a>]</li>
+<li><code class="docutils literal"><span class="pre">Table.show_in_notebook</span></code> and the default notebook display (i.e.,
+<code class="docutils literal"><span class="pre">Table._repr_html_</span></code>) now use consistent table styles which can be set
+using the <code class="docutils literal"><span class="pre">astropy.table.default_notebook_table_class</span></code> configuration
+item. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4886">#4886</a>]</li>
+<li>Added interface to create <code class="docutils literal"><span class="pre">Table</span></code> directly from any table-like object
+that has an <code class="docutils literal"><span class="pre">__astropy_table__</span></code> method.  [<a class="reference external" href="https://github.com/astropy/astropy/issues/4885">#4885</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.tests</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.tests</span></code><ul>
+<li>Enable test runner to obtain documentation source files from directory
+other than &#8220;docs&#8221;. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4748">#4748</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.time</span></code><ul>
 <li>Added caching of scale and format transformations for improved performance.
 [<a class="reference external" href="https://github.com/astropy/astropy/issues/4422">#4422</a>]</li>
+<li>Recent Earth rotation (IERS) data are now auto-downloaded so that UT1
+transformations for future times now work out of the box. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4436">#4436</a>]</li>
+<li>Add support for barycentric/heliocentric time corrections. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4314">#4314</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.units</span></code><ul>
 <li>The option to use tuples to indicate fractional powers of units,
 deprecated in 0.3.1, has been removed. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4449">#4449</a>]</li>
 <li>Added slug to imperial units. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4670">#4670</a>]</li>
+<li>Added Earth radius (<code class="docutils literal"><span class="pre">R_earth</span></code>) and Jupiter radius (<code class="docutils literal"><span class="pre">R_jup</span></code>) to units.
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/4818">#4818</a>]</li>
+<li>Added a <code class="docutils literal"><span class="pre">represents</span></code> property to allow access to the definition of a
+named unit (e.g., <code class="docutils literal"><span class="pre">u.kpc.represents</span></code> yields <code class="docutils literal"><span class="pre">1000</span> <span class="pre">pc</span></code>). [<a class="reference external" href="https://github.com/astropy/astropy/issues/4806">#4806</a>]</li>
+<li>Add bolometric absolute and apparent magnitudes, <code class="docutils literal"><span class="pre">M_bol</span></code> and <code class="docutils literal"><span class="pre">m_bol</span></code>.
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/4262">#4262</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.utils</span></code><ul>
@@ -170,18 +355,20 @@ deprecated in 0.3.1, has been removed. [<a class="reference external" href="http
 current docstring of an object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4242">#4242</a>]</li>
 <li>Added a new context manager <code class="docutils literal"><span class="pre">set_locale</span></code> to temporarily set the
 current locale. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4363">#4363</a>]</li>
+<li>Added new IERS_Auto class to auto-download recent IERS (Earth rotation)
+data when required by coordinate or time transformations. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4436">#4436</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.visualization</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.visualization</span></code><ul>
+<li>Add zscale interval based on Numdisplay&#8217;s implementation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4776">#4776</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code><ul>
-<li>wcslib was updated to v5.14 [<a class="reference external" href="https://github.com/astropy/astropy/issues/4579">#4579</a>]</li>
-</ul>
-</li>
+<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
 </ul>
 </div>
-<div class="section" id="api-changes">
-<h3>API changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>API changes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.analytic_functions</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.config</span></code><ul>
@@ -195,41 +382,127 @@ functions have now been removed. [<a class="reference external" href="https://gi
 <li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>Removed compatibility layer for pre-v0.4 API. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4447">#4447</a>]</li>
+<li>Added <code class="docutils literal"><span class="pre">copy</span></code> keyword-only argument to allow initialisation without
+copying the (possibly large) input coordinate arrays. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4883">#4883</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code><ul>
+<li>Improve documentation of z validity range of cosmology objects [<a class="reference external" href="https://github.com/astropy/astropy/issues/4882">#4882</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>Add a way to control HTML escaping when writing a table as an HTML file. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4423">#4423</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
+<li>Two optional boolean arguments <code class="docutils literal"><span class="pre">ignore_missing</span></code> and <code class="docutils literal"><span class="pre">remove_all</span></code> are
+added to <code class="docutils literal"><span class="pre">Header.remove</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/5020">#5020</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.logger.py</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.modeling</span></code><ul>
 <li>Renamed <code class="docutils literal"><span class="pre">Redshift</span></code> model to <code class="docutils literal"><span class="pre">RedshiftScaleFactor</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3672">#3672</a>]</li>
+<li>Inputs (<code class="docutils literal"><span class="pre">coords</span></code> and <code class="docutils literal"><span class="pre">out</span></code>) to <code class="docutils literal"><span class="pre">render</span></code> function in <code class="docutils literal"><span class="pre">Model</span></code> are
+converted to float. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4697">#4697</a>]</li>
+<li><code class="docutils literal"><span class="pre">RotateNative2Celestial</span></code> and <code class="docutils literal"><span class="pre">RotateCelestial2Native</span></code> are now
+implemented as subclasses of <code class="docutils literal"><span class="pre">EulerAngleRotation</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4881">#4881</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4940">#4940</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.nddata</span></code><ul>
-<li><code class="docutils literal"><span class="pre">NDData</span></code>: added an optional parameter <code class="docutils literal"><span class="pre">copy</span></code>
-which is False by default. If it is True all other parameters are copied
-before saving them as attributes. If False the parameters are only copied
-if there is no way of saving them as reference. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDData</span></code>: <code class="docutils literal"><span class="pre">Masked_Quantity</span></code> objects are allowed as <code class="docutils literal"><span class="pre">data</span></code>
-parameter. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: Added <code class="docutils literal"><span class="pre">array</span></code>, <code class="docutils literal"><span class="pre">unit</span></code> and <code class="docutils literal"><span class="pre">copy</span></code> as optional
-parameters. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: Public methods <code class="docutils literal"><span class="pre">propagate_add</span></code>, etc. are replaced by
-a general <code class="docutils literal"><span class="pre">propagate</span></code> method. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: added an optional parameter <code class="docutils literal"><span class="pre">copy</span></code> which is False
-by default. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: Added <code class="docutils literal"><span class="pre">handle_mask</span></code>, <code class="docutils literal"><span class="pre">handle_meta</span></code> and
-<code class="docutils literal"><span class="pre">compare_wcs</span></code> and <code class="docutils literal"><span class="pre">uncertainty_correlation</span></code> as optional parameters.
-[<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: The optional <code class="docutils literal"><span class="pre">propagate_uncertainties</span></code> parameter
-can also be <code class="docutils literal"><span class="pre">None</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: Does not compare the wcs for equality except if
-<code class="docutils literal"><span class="pre">compare_wcs</span></code> is given as function that compares it. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDDataBase</span></code> does not set the private uncertainty property anymore. This
+only affects you if you subclass <code class="docutils literal"><span class="pre">NDDataBase</span></code> directly. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDDataBase</span></code>: the <code class="docutils literal"><span class="pre">uncertainty</span></code>-setter is removed. A similar one is
+added in <code class="docutils literal"><span class="pre">NDData</span></code> so this also only affects you if you subclassed
+<code class="docutils literal"><span class="pre">NDDataBase</span></code> directly. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDDataBase</span></code>: <code class="docutils literal"><span class="pre">uncertainty</span></code>-getter returns <code class="docutils literal"><span class="pre">None</span></code> instead of the
+private uncertainty and is now abstract. This getter is moved to
+<code class="docutils literal"><span class="pre">NDData</span></code> so it only affects direct subclasses of <code class="docutils literal"><span class="pre">NDDataBase</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code> accepts a Quantity-like data and an explictly given unit.
+Before a ValueError was raised in this case. The final instance will use the
+explicitly given unit-attribute but doesn&#8217;t check if the units are
+convertible and the data will not be scaled. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code> : the given mask, explicit or implicit if the data was masked,
+will be saved by the setter. It will not be saved directly as the private
+attribute. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4879">#4879</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code> accepts an additional argument <code class="docutils literal"><span class="pre">copy</span></code> which will copy every
+parameter before it is saved as attribute of the instance. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code>: added an <code class="docutils literal"><span class="pre">uncertainty.getter</span></code> that returns the private
+attibute. It is equivalent to the old <code class="docutils literal"><span class="pre">NDDataBase.uncertainty</span></code>-getter.
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code>: added an <code class="docutils literal"><span class="pre">uncertainty.setter</span></code>. It is slightly modified with
+respect to the old <code class="docutils literal"><span class="pre">NDDataBase.uncertainty</span></code>-setter. The changes include:<ul>
+<li>if the uncertainty has no uncertainty_type an info message is printed
+instead of a TypeError and the uncertainty is saved as
+<code class="docutils literal"><span class="pre">UnknownUncertainty</span></code> except the uncertainty is None. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li>the requirement that the uncertainty_type of the uncertainty needs to be a
+string was removed. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li>if the uncertainty is a subclass of NDUncertainty the parent_nddata
+attribute will be set so the uncertainty knows to which data it belongs.
+This is also a Bugfix. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4152">#4152</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code>: added a <code class="docutils literal"><span class="pre">meta</span></code>-getter, which will set and return an empty
+OrderedDict if no meta was previously set. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4509">#4509</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4469">#4469</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code>: added an <code class="docutils literal"><span class="pre">meta</span></code>-setter. It requires that the meta is
+dictionary-like (it also accepts Headers or ordered dictionaries and others)
+or None. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4509">#4509</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4469">#4469</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4921">#4921</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: The operand in arithmetic methods (<code class="docutils literal"><span class="pre">add</span></code>, ...)
+doesn&#8217;t need to be a subclass of <code class="docutils literal"><span class="pre">NDData</span></code>. It is sufficient if it can be
+converted to one. This conversion is done internally. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: The arithmetic methods allow several new arguments to
+control how or if different attributes of the class will be processed during
+the operation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: Giving the parameter <code class="docutils literal"><span class="pre">propagate_uncertainties</span></code> as
+positional keyword is deprecated and will be removed in the future. You now
+need to specify it as keyword-parameter. Besides <code class="docutils literal"><span class="pre">True</span></code> and <code class="docutils literal"><span class="pre">False</span></code> also
+<code class="docutils literal"><span class="pre">None</span></code> is now a valid value for this parameter. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4851">#4851</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: The wcs attribute of the operands is not compared and
+thus raises no ValueError if they differ, except if a <code class="docutils literal"><span class="pre">compare_wcs</span></code>
+parameter is specified. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: The arithmetic operation was split from a general
+<code class="docutils literal"><span class="pre">_arithmetic</span></code> method to different specialized private methods to allow
+subclasses more control on how the attributes are processed without
+overriding <code class="docutils literal"><span class="pre">_arithmetic</span></code>. The <code class="docutils literal"><span class="pre">_arithmetic</span></code> method is now used to call
+these other methods. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDSlicingMixin</span></code>: If the attempt at slicing the mask, wcs or uncertainty
+fails with a <code class="docutils literal"><span class="pre">TypeError</span></code> a Warning is issued instead of the TypeError. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4271">#4271</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: <code class="docutils literal"><span class="pre">support_correlated</span></code> attribute is deprecated in favor of
+<code class="docutils literal"><span class="pre">supports_correlated</span></code> which is a property. Also affects
+<code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: added the <code class="docutils literal"><span class="pre">__init__</span></code> that was previously implemented in
+<code class="docutils literal"><span class="pre">StdDevUncertainty</span></code> and takes an additional <code class="docutils literal"><span class="pre">unit</span></code> parameter. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: added a <code class="docutils literal"><span class="pre">unit</span></code> property without setter that returns the
+set unit or if not set the unit of the parent. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: included a <code class="docutils literal"><span class="pre">parent_nddata</span></code> property similar to the one
+previously implemented in StdDevUncertainty. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: added an <code class="docutils literal"><span class="pre">array</span></code> property with setter. The setter will
+convert the value to a plain numpy array if it is a list or a subclass of a
+numpy array. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code>: <code class="docutils literal"><span class="pre">propagate_multiply</span></code> and similar were removed. Before
+they were abstract properties and replaced by methods with the same name but
+with a leading underscore. The entry point for propagation is a method
+called <code class="docutils literal"><span class="pre">propagate</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDUncertainty</span></code> and subclasses: implement a representation (<code class="docutils literal"><span class="pre">__repr__</span></code>).
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/4787">#4787</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: error propagation allows an explicitly given
+correlation factor, which may be a scalar or an array which will be taken
+into account during propagation.
+This correlation must be determined manually and is not done by the
+uncertainty! [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: the <code class="docutils literal"><span class="pre">array</span></code> is converted to a plain numpy array
+only if it&#8217;s a list or a subclass of numpy.ndarray. Previously it was always
+cast to a numpy array but also allowed subclasses. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: setting the <code class="docutils literal"><span class="pre">parent_nddata</span></code> does not compare if the
+shape of it&#8217;s array is identical to the parents data shape. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: the <code class="docutils literal"><span class="pre">array.setter</span></code> doesn&#8217;t compare if the array has
+the same shape as the parents data. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: deprecated <code class="docutils literal"><span class="pre">support_correlated</span></code> in favor of
+<code class="docutils literal"><span class="pre">supports_correlated</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4828">#4828</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: deprecated <code class="docutils literal"><span class="pre">propagate_add</span></code> and similar methods in
+favor of <code class="docutils literal"><span class="pre">propagate</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4828">#4828</a>]</li>
+<li>Allow <code class="docutils literal"><span class="pre">data</span></code> to be a named argument in <code class="docutils literal"><span class="pre">NDDataArray</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4626">#4626</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
@@ -237,6 +510,9 @@ can also be <code class="docutils literal"><span class="pre">None</span></code>.
 <li><code class="docutils literal"><span class="pre">operations.unique</span></code> now has a <code class="docutils literal"><span class="pre">keep</span></code> parameter, which allows
 one to select whether to keep the first or last row in a set of
 duplicate rows, or to remove all rows that are duplicates. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4632">#4632</a>]</li>
+<li><code class="docutils literal"><span class="pre">QTable</span></code> now behaves more consistently by making columns act as a
+<code class="docutils literal"><span class="pre">Quantity</span></code> even if they are assigned a unit after the table is
+created. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4497">#4497</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4884">#4884</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.tests</span></code></li>
@@ -257,6 +533,12 @@ Python &#8216;gzip&#8217; module directly instead. [<a class="reference external
 Python &#8216;subprocess&#8217; module instead. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4483">#4483</a>]</li>
 <li>The astropy.utils.xml.unescaper module now also unescapes <code class="docutils literal"><span class="pre">'%2F'</span></code> to
 <code class="docutils literal"><span class="pre">'/'</span></code> and <code class="docutils literal"><span class="pre">'&amp;&amp;'</span></code> to <code class="docutils literal"><span class="pre">'&amp;'</span></code> in a given URL. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4699">#4699</a>]</li>
+<li>The astropy.utils.metadata.MetaData descriptor has now two optional
+parameters: doc and copy. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4921">#4921</a>]</li>
+<li>The default IERS (Earth rotation) data now is now auto-downloaded via a
+new class IERS_Auto.  When extrapolating UT1-UTC or polar motion values
+outside the available time range, the values are now clipped at the last
+available value instead of being linearly extrapolated. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4436">#4436</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.visualization</span></code></li>
@@ -265,11 +547,17 @@ Python &#8216;subprocess&#8217; module instead. [<a class="reference external" h
 external changes to some VizieR Cone Search services. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4699">#4699</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code><ul>
+<li>WCS objects can now be initialized with an ImageHDU or
+PrimaryHDU object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4493">#4493</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4505">#4505</a>]</li>
+<li>astropy.wcs now issues an INFO message when the header has SIP coefficients but
+&#8220;-SIP&#8221; is missing from CTYPE. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4814">#4814</a>]</li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="section" id="bug-fixes">
-<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Bug fixes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.analytic_functions</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
@@ -277,53 +565,83 @@ external changes to some VizieR Cone Search services. [<a class="reference exter
 <li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
+<li>Ameliorate a problem with <code class="docutils literal"><span class="pre">get_sun</span></code> not round-tripping due to
+approximations in the light deflection calculation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4952">#4952</a>]</li>
 <li>Ensure that <code class="docutils literal"><span class="pre">angle_utilities.position_angle</span></code> accepts floats, as stated
 in the docstring. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3800">#3800</a>]</li>
+<li>Ensured that transformations for <code class="docutils literal"><span class="pre">GCRS</span></code> frames are correct for
+non-geocentric observers. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4986">#4986</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>Fix a problem where the fast reader (with use_fast_converter=False) can
 fail on non-US locales. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4363">#4363</a>]</li>
+<li>Fix astropy.io.ascii.read handling of units for IPAC formatted files.
+Columns with no unit are treated as unitless not dimensionless. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4867">#4867</a>,
+<a class="reference external" href="https://github.com/astropy/astropy/issues/4947">#4947</a>]</li>
+<li>Fix problems the header parsing in the sextractor reader. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4603">#4603</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4910">#4910</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
+<li>Removed raising of AssertionError that could occur after closing or
+deleting compressed image data. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4690">#4690</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4694">#4694</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4948">#4948</a>]</li>
+<li><code class="docutils literal"><span class="pre">GroupsHDU.is_image</span></code> property is now set to <code class="docutils literal"><span class="pre">False</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4742">#4742</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code><ul>
 <li>The astropy.io.votable.validator.html module is updated to handle division
 by zero when generating validation report. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4699">#4699</a>]</li>
+<li>KeyError when converting Table v1.2 numeric arrays fixed. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4782">#4782</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.logger.py</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.modeling</span></code><ul>
 <li>Refactored <code class="docutils literal"><span class="pre">AiryDisk2D</span></code>, <code class="docutils literal"><span class="pre">Sersic1D</span></code>, and <code class="docutils literal"><span class="pre">Sersic2D</span></code> models
 to be able to combine them as classes as well as instances. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4720">#4720</a>]</li>
+<li>Modified the &#8220;LevMarLSQFitter&#8221; class to use the weights in the
+calculation of the Jacobian. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4751">#4751</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.nddata</span></code><ul>
-<li><code class="docutils literal"><span class="pre">NDDataBase</span></code> does not implement a setter or getter for <code class="docutils literal"><span class="pre">uncertainty</span></code>,
-which is now an abstractproperty. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDData</span></code> wraps the <code class="docutils literal"><span class="pre">uncertainty</span></code> inside an <code class="docutils literal"><span class="pre">UnknownUncertainty</span></code>
-if no <code class="docutils literal"><span class="pre">uncertainty_type</span></code> attribute is present in the uncertainty instead
-of raising an Exception. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDData</span></code> The <code class="docutils literal"><span class="pre">uncertainty_type</span></code> of the <code class="docutils literal"><span class="pre">uncertainty</span></code> is no longer
-required to be a string, but it is still recommended. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDData</span></code> now sets the <code class="docutils literal"><span class="pre">parent_nddata</span></code> of the <code class="docutils literal"><span class="pre">uncertainty</span></code> if the
-uncertainty is <code class="docutils literal"><span class="pre">NDUncertainty</span></code>-like. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4152">#4152</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
-<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code> does provide correct resulting uncertainties for
-<code class="docutils literal"><span class="pre">divide</span></code> and <code class="docutils literal"><span class="pre">multiply</span></code> if only one uncertainty was set. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4152">#4152</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code> giving masked_Quantities as data-argument will use the
+implicitly passed mask, unit and value. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDData</span></code> using a subclass implementing <code class="docutils literal"><span class="pre">NDData</span></code> with
+<code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code> now allows error propagation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4270">#4270</a>]</li>
+<li>Fixed memory leak that happened when uncertainty of <code class="docutils literal"><span class="pre">NDDataArray</span></code> was
+set. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4825">#4825</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4862">#4862</a>]</li>
+<li><code class="docutils literal"><span class="pre">StdDevUncertainty</span></code>: During error propagation the unit of the uncertainty
+is taken into account. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
+<li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code>: <code class="docutils literal"><span class="pre">divide</span></code> and <code class="docutils literal"><span class="pre">multiply</span></code> yield correct
+uncertainties if only one uncertainty is set. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4152">#4152</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4272">#4272</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.stats</span></code><ul>
+<li>Fix <code class="docutils literal"><span class="pre">sigma_clipped_stats</span></code> to use the <code class="docutils literal"><span class="pre">axis</span></code> argument. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4726">#4726</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4808">#4808</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">astropy.table</span></code><ul>
+<li>Fixed bug where Tables created from existing Table objects were not
+inheriting the <code class="docutils literal"><span class="pre">primary_key</span></code> attribute. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4672">#4672</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4930">#4930</a>]</li>
+<li>Provide more detail in the error message when reading a table fails due to a
+problem converting column string values. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4759">#4759</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.tests</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.units</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.units</span></code><ul>
+<li>Exponentation using a <code class="docutils literal"><span class="pre">Quantity</span></code> with a unit equivalent to dimensionless
+as base and an <code class="docutils literal"><span class="pre">array</span></code>-like exponent yields the correct result. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4770">#4770</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.utils</span></code><ul>
 <li>The astropy.utils.compat.fractions module has now been deprecated. Use the
 Python &#8216;fractions&#8217; module directly instead. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4463">#4463</a>]</li>
 <li>Added <code class="docutils literal"><span class="pre">format_doc</span></code> decorator which allows to replace and/or format the
 current docstring of an object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4242">#4242</a>]</li>
+<li>Attributes using the astropy.utils.metadata.MetaData descriptor are now
+included in the sphinx documentation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4921">#4921</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.visualization</span></code></li>
@@ -337,109 +655,32 @@ UnicodeDecodeError for some rare cases. Fixed a Cone Search test that is
 failing as a side-effect of #4699. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4757">#4757</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
-</ul>
-</div>
-<div class="section" id="other-changes-and-additions">
-<h3>Other Changes and Additions<a class="headerlink" href="#other-changes-and-additions" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Python 2.6 is no longer supported. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4486">#4486</a>]</li>
-<li>Reduce Astropy&#8217;s import time (<code class="docutils literal"><span class="pre">import</span> <span class="pre">astropy</span></code>) by almost a factor 2. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4649">#4649</a>]</li>
-<li>Cython prerequisite for building changed to v0.19 in install.rst [<a class="reference external" href="https://github.com/astropy/astropy/issues/4705">#4705</a>]</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>1.1.3 (unreleased)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>New Features<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.registry</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.modeling</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.sphinx</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.units</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h3>API Changes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.registry</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.modeling</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.units</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>Bug Fixes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
-<li><code class="docutils literal"><span class="pre">GroupsHDU.is_image</span></code> property is now set to <code class="docutils literal"><span class="pre">False</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4742">#4742</a>]</li>
-<li>Fix convenience functions (<code class="docutils literal"><span class="pre">getdata</span></code>, <code class="docutils literal"><span class="pre">getheader</span></code>, <code class="docutils literal"><span class="pre">append</span></code>,
-<code class="docutils literal"><span class="pre">update</span></code>) to close files. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4786">#4786</a>]</li>
+<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code><ul>
+<li>astropy.wcs.to_header removes &#8220;-SIP&#8221; from CTYPE when SIP coefficients
+are not written out, i.e. <code class="docutils literal"><span class="pre">relax</span></code> is either <code class="docutils literal"><span class="pre">False</span></code> or <code class="docutils literal"><span class="pre">None</span></code>.
+astropy.wcs.to_header appends &#8220;-SIP&#8221; to CTYPE when SIP coefficients
+are written out, i.e. <code class="docutils literal"><span class="pre">relax=True</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4814">#4814</a>]</li>
+<li>Made <code class="docutils literal"><span class="pre">wcs.bounds_check</span></code> call <code class="docutils literal"><span class="pre">wcsprm_python2c</span></code>, which means it
+works even if <code class="docutils literal"><span class="pre">wcs.set</span></code> has not been called yet. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4957">#4957</a>].</li>
+<li>WCS objects can no longer be reverse-indexed, which was technically
+permitted but incorrectly implemented previously [<a class="reference external" href="https://github.com/astropy/astropy/issues/4962">#4962</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.registry</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.modeling</span></code><ul>
-<li>Refactored <code class="docutils literal"><span class="pre">AiryDisk2D</span></code>, <code class="docutils literal"><span class="pre">Sersic1D</span></code>, and <code class="docutils literal"><span class="pre">Sersic2D</span></code> models
-to be able to combine them as classes as well as instances. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4720">#4720</a>]</li>
-</ul>
-</li>
-<li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.stats</span></code><ul>
-<li>Fix <code class="docutils literal"><span class="pre">sigma_clipped_stats</span></code> to use the <code class="docutils literal"><span class="pre">axis</span></code> argument. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4726">#4726</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4808">#4808</a>]</li>
-</ul>
-</li>
-<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.units</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
 </ul>
 </div>
 <div class="section" id="id5">
 <h3>Other Changes and Additions<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Nothing changed yet.</li>
+<li>Python 2.6 is no longer supported. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4486">#4486</a>]</li>
+<li>The bundled version of py.test has been updated to 2.8.3. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4349">#4349</a>]</li>
+<li>Reduce Astropy&#8217;s import time (<code class="docutils literal"><span class="pre">import</span> <span class="pre">astropy</span></code>) by almost a factor 2. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4649">#4649</a>]</li>
+<li>Cython prerequisite for building changed to v0.19 in install.rst [<a class="reference external" href="https://github.com/astropy/astropy/issues/4705">#4705</a>,
+<a class="reference external" href="https://github.com/astropy/astropy/issues/4710">#4710</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4719">#4719</a>]</li>
+<li>All astropy.modeling functionality that was deprecated in Astropy 1.0 has
+been removed. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4857">#4857</a>]</li>
+<li>Added instructions for installing Astropy into CASA. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4840">#4840</a>]</li>
+<li>Added an example gallery to the docs demonstrating short
+snippets/examples. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4734">#4734</a>]</li>
 </ul>
 </div>
 </div>
@@ -461,7 +702,7 @@ keyword argument. [<a class="reference external" href="https://github.com/astrop
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>Fixed handling of CDS data file when no description is given and also
-included stripping out of markup for missing value from description. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4437">#4437</a>]</li>
+included stripping out of markup for missing value from description. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4437">#4437</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4474">#4474</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
@@ -526,7 +767,7 @@ default. [<a class="reference external" href="https://github.com/astropy/astropy
 <h3>Other Changes and Additions<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Updated bundled astropy-helpers to v1.1.2. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4678">#4678</a>]</li>
-<li>Updated bundled copy of WCSLIB to 5.14.</li>
+<li>Updated bundled copy of WCSLIB to 5.14. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4579">#4579</a>]</li>
 </ul>
 </div>
 </div>
@@ -736,7 +977,7 @@ row displays nicely in IPython notebook.</li>
 indices on one or more columns of a table using <code class="docutils literal"><span class="pre">add_index</span></code>. These
 indices enable new functionality such as searching for rows by value
 using <code class="docutils literal"><span class="pre">loc</span></code> and <code class="docutils literal"><span class="pre">iloc</span></code>, as well as increased performance for
-certain operations. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3915">#3915</a>]</li>
+certain operations. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3915">#3915</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4202">#4202</a>]</li>
 <li>Added capability to include a structured array or recarray in a table
 as a mixin column.  This allows for an approximation of nested tables.
 [<a class="reference external" href="https://github.com/astropy/astropy/issues/3925">#3925</a>]</li>
@@ -750,6 +991,8 @@ a list of CSS classes added to the HTML table. [<a class="reference external" hr
 <li>Added a new <code class="docutils literal"><span class="pre">Table.show_in_notebook</span></code> method that shows an interactive view
 of a Table (similar to <code class="docutils literal"><span class="pre">Table.show_in_browser(jsviewer=True)</span></code>) in an
 Python/Jupyter notebook. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4197">#4197</a>]</li>
+<li>Added column alignment formatting for better pprint viewing
+experience. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3644">#3644</a>]</li>
 </ul>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.tests</span></code></p>
@@ -767,9 +1010,9 @@ features added in <code class="docutils literal"><span class="pre">astropy.confi
 <li>Allow the <code class="docutils literal"><span class="pre">format</span></code> attribute to be updated in place to change the
 default representation of a <code class="docutils literal"><span class="pre">Time</span></code> object. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3673">#3673</a>]</li>
 <li>Add support for shape manipulation (reshape, ravel, etc.). [<a class="reference external" href="https://github.com/astropy/astropy/issues/3224">#3224</a>]</li>
-<li>Add argmin, argmax, argsort, min, max, ptp, sort methods. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3581">#3581</a>]</li>
+<li>Add argmin, argmax, argsort, min, max, ptp, sort methods. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3681">#3681</a>]</li>
 <li>Add <code class="docutils literal"><span class="pre">Time.to_datetime</span></code> method for converting <code class="docutils literal"><span class="pre">Time</span></code> objects to
-timezone-aware datetimes. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4119">#4119</a>]</li>
+timezone-aware datetimes. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4119">#4119</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4124">#4124</a>]</li>
 </ul>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.units</span></code></p>
@@ -782,6 +1025,8 @@ timezone-aware datetimes. [<a class="reference external" href="https://github.co
 <code class="docutils literal"><span class="pre">Magnitude</span></code>, <code class="docutils literal"><span class="pre">Decibel</span></code>, and <code class="docutils literal"><span class="pre">Dex</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1894">#1894</a>]</li>
 <li>Quantities now work with the unit support in matplotlib.  See
 <a class="reference internal" href="units/quantity.html#plotting-quantities"><span>Plotting quantities</span></a>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3981">#3981</a>]</li>
+<li>Clarified imperial mass measurements and added pound force (lbf),
+kilopound (kip), and pound per square inch (psi). [<a class="reference external" href="https://github.com/astropy/astropy/issues/3409">#3409</a>]</li>
 </ul>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.utils</span></code></p>
@@ -834,7 +1079,7 @@ histogram bins. This functionality was ported from the <a class="reference exter
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.wcs</span></code></p>
 <ul>
-<li><p class="first">The included version of wcslib has been upgraded to 5.10. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4239">#4239</a>]</p>
+<li><p class="first">The included version of wcslib has been upgraded to 5.10. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3992">#3992</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4239">#4239</a>]</p>
 <p>The minimum required version of wcslib in the 4.x series remains 4.24.</p>
 <p>The minimum required version of wcslib in the 5.x series is
 5.8.  Building astropy against a wcslib 5.x prior to 5.8
@@ -973,7 +1218,7 @@ classes themselves are assumed to be singletons that are not
 instantiated).  As unit formatters are mostly an internal implementation
 detail this is not likely to affect any users. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4001">#4001</a>]</li>
 <li>CGS E&amp;M units are now defined separately from SI E&amp;M units, and have
-distinct physical types. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4255">#4255</a>]</li>
+distinct physical types. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4255">#4255</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4355">#4355</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.utils</span></code><ul>
@@ -1057,8 +1302,6 @@ as a result of this change). [<a class="reference external" href="https://github
 are not masked by default anyway. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3869">#3869</a>]</li>
 <li>The version of <code class="docutils literal"><span class="pre">PLY</span></code> that ships with astropy has been updated to 3.6.</li>
 <li>WCSAxes is now required for doc builds. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4074">#4074</a>]</li>
-<li>Updated <code class="docutils literal"><span class="pre">astropy.tests</span></code> test runner code to work with Coverage v4.0 when
-generating test coverage reports. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4176">#4176</a>]</li>
 <li>The migration guide from pre-v0.4 coordinates has been removed to avoid
 cluttering the <code class="docutils literal"><span class="pre">astropy.coordinates</span></code> documentation with increasingly
 irrelevant material.  To see the migration guide, we recommend you simply look
@@ -1097,7 +1340,11 @@ filtering mechanisms). [<a class="reference external" href="https://github.com/a
 <li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.sphinx</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.table</span></code><ul>
+<li>Fixed bug where Tables created from existing Table objects were not
+inheriting the <code class="docutils literal"><span class="pre">primary_key</span></code> attribute. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4672">#4672</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.units</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
@@ -1135,9 +1382,18 @@ filtering mechanisms). [<a class="reference external" href="https://github.com/a
 <li><code class="docutils literal"><span class="pre">astropy.config</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.constants</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.convolution</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
+<li><code class="docutils literal"><span class="pre">SkyCoord</span></code> objects created before a new frame which has frame attributes
+is created no longer raise <code class="docutils literal"><span class="pre">AttributeError</span></code> when the new attributes are
+accessed [<a class="reference external" href="https://github.com/astropy/astropy/issues/5021">#5021</a>]</li>
+<li>Fix some errors in the implementation of aberration  for <code class="docutils literal"><span class="pre">get_sun</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4979">#4979</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
+<li>Fix problem reading a zero-length ECSV table with a bool type column. [<a class="reference external" href="https://github.com/astropy/astropy/issues/5010">#5010</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
 <li>Fix convenience functions (<code class="docutils literal"><span class="pre">getdata</span></code>, <code class="docutils literal"><span class="pre">getheader</span></code>, <code class="docutils literal"><span class="pre">append</span></code>,
 <code class="docutils literal"><span class="pre">update</span></code>) to close files. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4786">#4786</a>]</li>
@@ -1149,14 +1405,28 @@ filtering mechanisms). [<a class="reference external" href="https://github.com/a
 <li><code class="docutils literal"><span class="pre">astropy.modeling</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.nddata</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.stats</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.table</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
-<li><code class="docutils literal"><span class="pre">astropy.units</span></code><ul>
-<li>Exponentation using a <code class="docutils literal"><span class="pre">Quantity</span></code> with a unit equivalent to dimensionless
-as base and an <code class="docutils literal"><span class="pre">array</span></code>-like exponent yields the correct result. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4770">#4770</a>]</li>
+<li><code class="docutils literal"><span class="pre">astropy.table</span></code><ul>
+<li>Fixed a bug where <code class="docutils literal"><span class="pre">pprint()</span></code> sometimes raises <code class="docutils literal"><span class="pre">UnicodeDecodeError</span></code>
+in Python 2. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4946">#4946</a>]</li>
+<li>Fix bug when doing outer join on multi-dimensional columns. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4060">#4060</a>]</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">astropy.utils</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.tests</span></code><ul>
+<li>Fix coverage reporting in Python 3. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4822">#4822</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">astropy.time</span></code></li>
+<li><code class="docutils literal"><span class="pre">astropy.units</span></code><ul>
+<li>Duplicates between long and short names are now removed in the <code class="docutils literal"><span class="pre">names</span></code>
+and <code class="docutils literal"><span class="pre">aliases</span></code> properties of units. [<a class="reference external" href="https://github.com/astropy/astropy/issues/5036">#5036</a>]</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">astropy.utils</span></code><ul>
+<li>Fix two problems related to the download cache: clear_download_cache() does
+not work in Python 2.7 and downloading in Python 2.7 and then Python 3
+can result in an exception. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4810">#4810</a>]</li>
+</ul>
+</li>
 <li><code class="docutils literal"><span class="pre">astropy.vo</span></code></li>
 <li><code class="docutils literal"><span class="pre">astropy.wcs</span></code></li>
 </ul>
@@ -1164,7 +1434,8 @@ as base and an <code class="docutils literal"><span class="pre">array</span></co
 <div class="section" id="id23">
 <h3>Other Changes and Additions<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Nothing changed yet.</li>
+<li>Updated <code class="docutils literal"><span class="pre">astropy.tests</span></code> test runner code to work with Coverage v4.0 when
+generating test coverage reports. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4176">#4176</a>]</li>
 </ul>
 </div>
 </div>
@@ -1175,7 +1446,7 @@ as base and an <code class="docutils literal"><span class="pre">array</span></co
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.nddata</span></code><ul>
 <li><code class="docutils literal"><span class="pre">NDArithmeticMixin</span></code> check for matching WCS now works with
-<code class="docutils literal"><span class="pre">astropy.wcs.WCS</span></code> objects [<a class="reference external" href="https://github.com/astropy/astropy/issues/4499">#4499</a>]</li>
+<code class="docutils literal"><span class="pre">astropy.wcs.WCS</span></code> objects [<a class="reference external" href="https://github.com/astropy/astropy/issues/4499">#4499</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4503">#4503</a>]</li>
 </ul>
 </li>
 </ul>
@@ -1189,7 +1460,7 @@ as base and an <code class="docutils literal"><span class="pre">array</span></co
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>Fixed addition of new line characters after last row of data in
-ascii.latex.AASTex. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3888">#3888</a>]</li>
+ascii.latex.AASTex. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4561">#4561</a>]</li>
 <li>Fixed reading of Latex tables where the <code class="docutils literal"><span class="pre">\tabular</span></code> tag is in the first
 line. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4595">#4595</a>]</li>
 <li>Fix use of plain format strings with the fast writer. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4517">#4517</a>]</li>
@@ -1210,7 +1481,7 @@ other cases as well. [<a class="reference external" href="https://github.com/ast
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.modeling</span></code><ul>
 <li>Fixed display of compound model expressions and components when printing
-compound model instances. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4414">#4414</a>]</li>
+compound model instances. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4414">#4414</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4482">#4482</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.stats</span></code><ul>
@@ -1251,7 +1522,7 @@ on Python 3. [<a class="reference external" href="https://github.com/astropy/ast
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.utils</span></code><ul>
-<li>Fixed <code class="docutils literal"><span class="pre">find_api_page</span></code> to work correctly on python 3.x [<a class="reference external" href="https://github.com/astropy/astropy/issues/4378">#4378</a>]</li>
+<li>Fixed <code class="docutils literal"><span class="pre">find_api_page</span></code> to work correctly on python 3.x [<a class="reference external" href="https://github.com/astropy/astropy/issues/4378">#4378</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4379">#4379</a>]</li>
 </ul>
 </li>
 </ul>
@@ -1381,9 +1652,9 @@ of constants to match attribute names. [<a class="reference external" href="http
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>Fix string representation of <code class="docutils literal"><span class="pre">SkyCoord</span></code> objects transformed into
-the <code class="docutils literal"><span class="pre">AltAz</span></code> frame [<a class="reference external" href="https://github.com/astropy/astropy/issues/4055">#4055</a>]</li>
+the <code class="docutils literal"><span class="pre">AltAz</span></code> frame [<a class="reference external" href="https://github.com/astropy/astropy/issues/4055">#4055</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4057">#4057</a>]</li>
 <li>Fix the <code class="docutils literal"><span class="pre">search_around_sky</span></code> function to allow <code class="docutils literal"><span class="pre">storekdtree</span></code> to be
-<code class="docutils literal"><span class="pre">False</span></code> as was intended. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4082">#4082</a>]</li>
+<code class="docutils literal"><span class="pre">False</span></code> as was intended. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4082">#4082</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4212">#4212</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.io.fits</span></code><ul>
@@ -1411,11 +1682,10 @@ unrelated / unhelpful exception. [<a class="reference external" href="https://gi
 expected and no longer fails when <code class="docutils literal"><span class="pre">uncertainty</span></code> is set [<a class="reference external" href="https://github.com/astropy/astropy/issues/4129">#4129</a>].
 Initializing an <code class="docutils literal"><span class="pre">NDData</span></code> subclass from a parent instance
 (eg. <code class="docutils literal"><span class="pre">NDDataArray</span></code> from <code class="docutils literal"><span class="pre">NDData</span></code>) now sets the attributes other than
-<code class="docutils literal"><span class="pre">data</span></code> as it should [<a class="reference external" href="https://github.com/astropy/astropy/issues/4137">#4137</a>].</li>
+<code class="docutils literal"><span class="pre">data</span></code> as it should [<a class="reference external" href="https://github.com/astropy/astropy/issues/4130">#4130</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4137">#4137</a>].</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.table</span></code><ul>
-<li>Fix bug when doing outer join on multi-dimensional columns. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4060">#4060</a>]</li>
 <li>Fix an issue with setting fill value when column dtype is changed. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4088">#4088</a>]</li>
 <li>Fix bug when unpickling a bare Column where the _parent_table
 attribute was not set.  This impacted the Column representation. [<a class="reference external" href="https://github.com/astropy/astropy/issues/4099">#4099</a>]</li>
@@ -1482,7 +1752,7 @@ multithreaded task schedulers such as Dask. [<a class="reference external" href=
 <li>Some transformations for an input coordinate that&#8217;s a scalar now correctly
 return a scalar.  This was always the intended behavior, but it may break
 code that has been written to work-around this bug, so it may be viewed as
-an unplanned API change [<a class="reference external" href="https://github.com/astropy/astropy/issues/3920">#3920</a>]</li>
+an unplanned API change [<a class="reference external" href="https://github.com/astropy/astropy/issues/3920">#3920</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4039">#4039</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.visualization</span></code><ul>
@@ -1503,15 +1773,15 @@ when coordinate array is indexed or sliced. [<a class="reference external" href=
 <li>Fixed confusing warning message shown when using dates outside current IERS
 data. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3844">#3844</a>]</li>
 <li><code class="docutils literal"><span class="pre">get_sun</span></code> now yields a scalar when the input time is a scalar (this was a
-regression in v1.0.3 from v1.0.2) [<a class="reference external" href="https://github.com/astropy/astropy/issues/3998">#3998</a>]</li>
+regression in v1.0.3 from v1.0.2) [<a class="reference external" href="https://github.com/astropy/astropy/issues/3998">#3998</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4039">#4039</a>]</li>
 <li>Fixed bug where some scalar coordinates were incorrectly being changed to
 length-1 array coordinates after transforming through certain frames.
-[<a class="reference external" href="https://github.com/astropy/astropy/issues/3920">#3920</a>]</li>
+[<a class="reference external" href="https://github.com/astropy/astropy/issues/3920">#3920</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4039">#4039</a>]</li>
 <li>Fixed bug causing the <code class="docutils literal"><span class="pre">separation</span></code> methods of <code class="docutils literal"><span class="pre">SkyCoord</span></code> and frame
-classes to fail due to infinite recursion [<a class="reference external" href="https://github.com/astropy/astropy/issues/4033">#4033</a>]</li>
+classes to fail due to infinite recursion [<a class="reference external" href="https://github.com/astropy/astropy/issues/4033">#4033</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4039">#4039</a>]</li>
 <li>Made it so that passing in a list of <code class="docutils literal"><span class="pre">SkyCoord</span></code> objects that are in
 UnitSphericalRepresentation to the <code class="docutils literal"><span class="pre">SkyCoord</span></code> constructor appropriately
-yields a new object in UnitSphericalRepresentation [<a class="reference external" href="https://github.com/astropy/astropy/issues/3938">#3938</a>]</li>
+yields a new object in UnitSphericalRepresentation [<a class="reference external" href="https://github.com/astropy/astropy/issues/3938">#3938</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/4039">#4039</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code><ul>
@@ -1524,7 +1794,7 @@ mode. [<a class="reference external" href="https://github.com/astropy/astropy/is
 <li>Fixed incorrect checksum / datasum being written when re-writing a scaled
 HDU (i.e. non-trivial BSCALE and/or BZERO) with
 <code class="docutils literal"><span class="pre">do_not_scale_image_data=False</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3883">#3883</a>]</li>
-<li>Fixed stray deprecation warning in <code class="docutils literal"><span class="pre">BinTableHDU.copy()</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3789">#3789</a>]</li>
+<li>Fixed stray deprecation warning in <code class="docutils literal"><span class="pre">BinTableHDU.copy()</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3798">#3798</a>]</li>
 <li>Better handling of the <code class="docutils literal"><span class="pre">BLANK</span></code> keyword when auto-scaling scaled image
 data.  The <code class="docutils literal"><span class="pre">BLANK</span></code> keyword is now removed from the header after
 auto-scaling is applied, and it is restored properly (with floating point
@@ -1794,11 +2064,6 @@ emitted. [<a class="reference external" href="https://github.com/astropy/astropy
 <div class="section" id="id52">
 <h3>Other Changes and Additions<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">astropy.units</span></code><ul>
-<li>Clarified imperial mass measurements and added pound force (lbf),
-kilopound (kip), and pound per square inch (psi). [<a class="reference external" href="https://github.com/astropy/astropy/issues/3409">#3409</a>]</li>
-</ul>
-</li>
 <li><code class="docutils literal"><span class="pre">astropy.vo</span></code><ul>
 <li>The number of retries for connections in <code class="docutils literal"><span class="pre">astropy.vo.samp</span></code> can now be
 configured by a <code class="docutils literal"><span class="pre">n_retries</span></code> configuration option. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3612">#3612</a>]</li>
@@ -1875,12 +2140,12 @@ issues with some packages that depend on Astropy. [<a class="reference external"
 </div>
 <div class="section" id="id56">
 <h2>1.0 (2015-02-18)<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general">
-<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id57">
+<h3>General<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
 <p>Astropy now requires a Numpy 1.6.0 or later.</p>
 </div>
-<div class="section" id="id57">
-<h3>New Features<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id58">
+<h3>New Features<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.analytic_functions</span></code><ul>
 <li>The <code class="docutils literal"><span class="pre">astropy.analytic_functions</span></code> was added to contain analytic functions
@@ -2020,8 +2285,6 @@ browsing capabilities. To write out to this format, use
 columns that allow the column values to be easily converted to
 <code class="docutils literal"><span class="pre">astropy.units.Quantity</span></code> objects. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2950">#2950</a>]</li>
 <li>Add <code class="docutils literal"><span class="pre">unique</span></code> convenience method to table. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3185">#3185</a>]</li>
-<li>Added column alignment formatting for better pprint viewing
-experience. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3644">#3644</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.tests</span></code><ul>
@@ -2111,8 +2374,8 @@ subpackages, but the API may be made more public in the future. [<a class="refer
 </li>
 </ul>
 </div>
-<div class="section" id="id58">
-<h3>API Changes<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id59">
+<h3>API Changes<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></p>
 <ul class="simple">
@@ -2285,8 +2548,8 @@ exception [<a class="reference external" href="https://github.com/astropy/astrop
 </li>
 </ul>
 </div>
-<div class="section" id="id59">
-<h3>Bug Fixes<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id60">
+<h3>Bug Fixes<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.convolution</span></code></p>
 <ul class="simple">
@@ -2389,6 +2652,8 @@ example:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">treat_deprecations_as_exceptions</span></code> has been fixed to recognize Astropy
 deprecation warnings. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3015">#3015</a>]</li>
+<li>Converted representation of progress bar units without suffix
+from float to int in console.human_file_size. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2201">#2201</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/2202">#2202</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/2721">#2721</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/3299">#3299</a>]</li>
 </ul>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.wcs</span></code></p>
@@ -2405,8 +2670,8 @@ release of Numpy (e.g. 1.9.0rc1). [<a class="reference external" href="https://g
 </li>
 </ul>
 </div>
-<div class="section" id="id60">
-<h3>Other Changes and Additions<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id61">
+<h3>Other Changes and Additions<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>The bundled copy of astropy-helpers has been updated to v1.0. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3515">#3515</a>]</li>
 <li>Updated <code class="docutils literal"><span class="pre">astropy.extern.configobj</span></code> to Version 5. Version 5 uses <code class="docutils literal"><span class="pre">six</span></code>
@@ -2444,10 +2709,10 @@ be generated. [<a class="reference external" href="https://github.com/astropy/as
 </ul>
 </div>
 </div>
-<div class="section" id="id61">
-<h2>0.4.5 (2015-02-16)<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id62">
-<h3>Bug Fixes<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
+<h2>0.4.5 (2015-02-16)<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id63">
+<h3>Bug Fixes<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Fixed unnecessary attempt to run <code class="docutils literal"><span class="pre">git</span></code> when importing astropy.  In
 particular, fixed a crash in Python 3 that could result from this when
@@ -2455,17 +2720,17 @@ importing Astropy when the the current working directory is an empty git
 repository. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3475">#3475</a>]</li>
 </ul>
 </div>
-<div class="section" id="id63">
-<h3>Other Changes and Additions<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id64">
+<h3>Other Changes and Additions<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Updated bundled copy of astropy-helpers to v0.4.6. [<a class="reference external" href="https://github.com/astropy/astropy/issues/3508">#3508</a>]</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id64">
-<h2>0.4.4 (2015-01-21)<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id65">
-<h3>Bug Fixes<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<h2>0.4.4 (2015-01-21)<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id66">
+<h3>Bug Fixes<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.vo.samp</span></code><ul>
 <li><code class="docutils literal"><span class="pre">astropy.vo.samp</span></code> is now usable on Python builds that do not
@@ -2476,8 +2741,8 @@ against.) [<a class="reference external" href="https://github.com/astropy/astrop
 </li>
 </ul>
 </div>
-<div class="section" id="id66">
-<h3>API Changes<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id67">
+<h3>API Changes<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.vo.samp</span></code><ul>
 <li>The default SSL protocol used is now determined from the default
@@ -2495,10 +2760,10 @@ reported as fixed in v0.4.3) [<a class="reference external" href="https://github
 </ul>
 </div>
 </div>
-<div class="section" id="id67">
-<h2>0.4.3 (2015-01-15)<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id68">
-<h3>Bug Fixes<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+<h2>0.4.3 (2015-01-15)<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id69">
+<h3>Bug Fixes<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></p>
 <ul>
@@ -2626,8 +2891,8 @@ occur sometimes after using Astropy in Python 3.4. [<a class="reference external
 </li>
 </ul>
 </div>
-<div class="section" id="id69">
-<h3>Other Changes and Additions<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id70">
+<h3>Other Changes and Additions<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>Improved the agreement of the FK5 &lt;-&gt; Galactic conversion with other
@@ -2637,10 +2902,10 @@ codes, and with the FK5 &lt;-&gt; FK4 &lt;-&gt; Galactic route. [<a class="refer
 </ul>
 </div>
 </div>
-<div class="section" id="id70">
-<h2>0.4.2 (2014-09-23)<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id71">
-<h3>Bug Fixes<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<h2>0.4.2 (2014-09-23)<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id72">
+<h3>Bug Fixes<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.coordinates</span></code></p>
 <ul>
@@ -2724,8 +2989,8 @@ instances, just like the comparison operators. [<a class="reference external" hr
 </li>
 </ul>
 </div>
-<div class="section" id="id72">
-<h3>Other Changes and Additions<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id73">
+<h3>Other Changes and Additions<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Fixed a couple issues with files being inappropriately included and/or
 excluded from the source archive distributions of Astropy. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2843">#2843</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/2854">#2854</a>]</li>
@@ -2738,10 +3003,10 @@ expanded to allow simple specifiers such as <code class="docutils literal"><span
 </ul>
 </div>
 </div>
-<div class="section" id="id73">
-<h2>0.4.1 (2014-08-08)<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id74">
-<h3>Bug Fixes<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
+<h2>0.4.1 (2014-08-08)<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id75">
+<h3>Bug Fixes<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.config</span></code></p>
 <ul>
@@ -2838,8 +3103,8 @@ decorator. [<a class="reference external" href="https://github.com/astropy/astro
 </li>
 </ul>
 </div>
-<div class="section" id="id75">
-<h3>Other Changes and Additions<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id76">
+<h3>Other Changes and Additions<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bundled copy of astropy-helpers upgraded to v0.4.1. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2825">#2825</a>]</li>
 <li>General improvements to documentation and docstrings [<a class="reference external" href="https://github.com/astropy/astropy/issues/2722">#2722</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/2728">#2728</a>, <a class="reference external" href="https://github.com/astropy/astropy/issues/2742">#2742</a>]</li>
@@ -2850,10 +3115,10 @@ astropy/extern/README file in the source tree.  [<a class="reference external" h
 </ul>
 </div>
 </div>
-<div class="section" id="id76">
-<h2>0.4 (2014-07-16)<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id77">
-<h3>New Features<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
+<h2>0.4 (2014-07-16)<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id78">
+<h3>New Features<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.constants</span></code><ul>
 <li>Added <code class="docutils literal"><span class="pre">b_wien</span></code> to represent Wien wavelength displacement law constant.
@@ -3070,8 +3335,8 @@ astropy-helpers.  [<a class="reference external" href="https://github.com/astrop
 </li>
 </ul>
 </div>
-<div class="section" id="id78">
-<h3>API Changes<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id79">
+<h3>API Changes<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.config</span></code></p>
 <ul class="simple">
@@ -3080,7 +3345,7 @@ no longer possible to save configuration items from Python, but instead
 users must edit the configuration file directly.  The locations of
 configuration items have moved, and some have been changed to science state
 values.  The old locations should continue to work until astropy 0.5, but
-deprecation warnings will be displayed.  See the <a class="reference external" href="http://astropy.readthedocs.org/en/v0.4/config/config_0_4_transition.html">Configuration transition</a>
+deprecation warnings will be displayed.  See the <a class="reference external" href="http://docs.astropy.org/en/v0.4/config/config_0_4_transition.html">Configuration transition</a>
 docs for a detailed description of the changes and how to update existing
 code. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2094">#2094</a>]</li>
 </ul>
@@ -3274,8 +3539,8 @@ pattern as in the Astropy package template.</li>
 </li>
 </ul>
 </div>
-<div class="section" id="id79">
-<h3>Bug Fixes<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id80">
+<h3>Bug Fixes<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.constants</span></code><ul>
 <li><code class="docutils literal"><span class="pre">astropy.constants.Contant</span></code> objects can now be deep
@@ -3415,8 +3680,8 @@ Changed to <code class="docutils literal"><span class="pre">-j</span></code>. [<
 </li>
 </ul>
 </div>
-<div class="section" id="id80">
-<h3>Other Changes and Additions<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id81">
+<h3>Other Changes and Additions<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">test</span> <span class="pre">--coverage</span></code> will now give more accurate
 results, because the coverage analysis will include early imports of
@@ -3453,10 +3718,10 @@ without zero padding. [<a class="reference external" href="https://github.com/as
 </ul>
 </div>
 </div>
-<div class="section" id="id81">
-<h2>0.3.2 (2014-05-13)<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id82">
-<h3>Bug Fixes<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h3>
+<h2>0.3.2 (2014-05-13)<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id83">
+<h3>Bug Fixes<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>if <code class="docutils literal"><span class="pre">sep</span></code> argument is specified to be a single character in
@@ -3545,8 +3810,6 @@ rather than import time. Previously, setting <code class="docutils literal"><spa
 import had no effect on the function&#8217;s behavior. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2302">#2302</a>]</li>
 <li>Progressbar will be limited to 100% so that the bar does not exceed the
 terminal width.  The numerical display can still exceed 100%, however.</li>
-<li>Converted representation of progress bar units without suffix
-from float to int in console.human_file_size. [<a class="reference external" href="https://github.com/astropy/astropy/issues/2201">#2201</a>,<a class="reference external" href="https://github.com/astropy/astropy/issues/2202">#2202</a>,<a class="reference external" href="https://github.com/astropy/astropy/issues/2721">#2721</a>,<a class="reference external" href="https://github.com/astropy/astropy/issues/3299">#3299</a>]</li>
 </ul>
 </li>
 <li><code class="docutils literal"><span class="pre">astropy.vo</span></code><ul>
@@ -3572,10 +3835,10 @@ configuration as <code class="docutils literal"><span class="pre">python</span> 
 </ul>
 </div>
 </div>
-<div class="section" id="id83">
-<h2>0.3.1 (2014-03-04)<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id84">
-<h3>Bug Fixes<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
+<h2>0.3.1 (2014-03-04)<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id85">
+<h3>Bug Fixes<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.config</span></code></p>
 <ul class="simple">
@@ -3619,7 +3882,7 @@ already exist. [<a class="reference external" href="https://github.com/astropy/a
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.fits</span></code></p>
 <ul class="simple">
 <li>Ported all bug fixes from PyFITS 3.2.1.  See the PyFITS changelog at
-<a class="reference external" href="http://pyfits.readthedocs.org/en/v3.2.1/">http://pyfits.readthedocs.org/en/v3.2.1/</a> [<a class="reference external" href="https://github.com/astropy/astropy/issues/2056">#2056</a>]</li>
+<a class="reference external" href="http://pyfits.readthedocs.io/en/v3.2.1/">http://pyfits.readthedocs.io/en/v3.2.1/</a> [<a class="reference external" href="https://github.com/astropy/astropy/issues/2056">#2056</a>]</li>
 </ul>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.misc</span></code></p>
@@ -3630,15 +3893,15 @@ Windows. [<a class="reference external" href="https://github.com/astropy/astropy
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">astropy.io.votable</span></code></p>
 <ul class="simple">
-<li>The <code class="docutils literal"><span class="pre">write_null_values</span></code> kwarg to <code class="docutils literal"><span class="pre">VOTable.to_xml</span></code>, when set to <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>
+<li>The <code class="docutils literal"><span class="pre">write_null_values</span></code> kwarg to <code class="docutils literal"><span class="pre">VOTable.to_xml</span></code>, when set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>
 (the default) would produce non-standard VOTable files.  Therefore, this
 functionality has been replaced by a better understanding that knows which
 fields in a VOTable may be left empty (only <code class="docutils literal"><span class="pre">char</span></code>, <code class="docutils literal"><span class="pre">float</span></code> and
 <code class="docutils literal"><span class="pre">double</span></code> in VOTable 1.1 and 1.2, and all fields in VOTable 1.3).  The
 kwarg is still accepted but it will be ignored, and a warning is emitted.
 [<a class="reference external" href="https://github.com/astropy/astropy/issues/1809">#1809</a>]</li>
-<li>Printing out a <code class="docutils literal"><span class="pre">astropy.io.votable.tree.Table</span></code> object using <a class="reference external" href="http://docs.python.org/library/functions.html#repr" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">repr</span></code></a> or
-<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a> now uses the pretty formatting in <code class="docutils literal"><span class="pre">astropy.table</span></code>, so it&#8217;s possible
+<li>Printing out a <code class="docutils literal"><span class="pre">astropy.io.votable.tree.Table</span></code> object using <a class="reference external" href="http://docs.python.org/3/library/functions.html#repr" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">repr</span></code></a> or
+<a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a> now uses the pretty formatting in <code class="docutils literal"><span class="pre">astropy.table</span></code>, so it&#8217;s possible
 to easily preview the contents of a <code class="docutils literal"><span class="pre">VOTable</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1766">#1766</a>]</li>
 </ul>
 </li>
@@ -3781,8 +4044,8 @@ Python or Numpy is used.  [<a class="reference external" href="https://github.co
 </li>
 </ul>
 </div>
-<div class="section" id="id85">
-<h3>Other Changes and Additions<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id86">
+<h3>Other Changes and Additions<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>A new function, <code class="docutils literal"><span class="pre">astropy.wcs.get_include</span></code>, has been added to get the
 location of the <code class="docutils literal"><span class="pre">astropy.wcs</span></code> C header files. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1755">#1755</a>]</li>
@@ -3795,23 +4058,23 @@ in current directory. [<a class="reference external" href="https://github.com/as
 </ul>
 </div>
 </div>
-<div class="section" id="id86">
-<h2>0.3 (2013-11-20)<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id87">
-<h3>New Features<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h3>
+<h2>0.3 (2013-11-20)<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id88">
+<h3>New Features<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">General</p>
 <ul>
 <li><p class="first">A top-level configuration item, <code class="docutils literal"><span class="pre">unicode_output</span></code> has been added to
 control whether the Unicode string representation of certain
 objects will contain Unicode characters.  For example, when
-<code class="docutils literal"><span class="pre">use_unicode</span></code> is <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> (default):</p>
+<code class="docutils literal"><span class="pre">use_unicode</span></code> is <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> (default):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">unicode</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">))</span>
 <span class="go">deg</span>
 </pre></div>
 </div>
-<p>When <code class="docutils literal"><span class="pre">use_unicode</span></code> is <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>:</p>
+<p>When <code class="docutils literal"><span class="pre">use_unicode</span></code> is <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">unicode</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">))</span>
 <span class="go">°</span>
@@ -4071,15 +4334,15 @@ file. [<a class="reference external" href="https://github.com/astropy/astropy/is
 </li>
 </ul>
 </div>
-<div class="section" id="id88">
-<h3>API Changes<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id89">
+<h3>API Changes<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">General</p>
 <ul class="simple">
 <li>The configuration option <code class="docutils literal"><span class="pre">utils.console.use_unicode</span></code> has been
 moved to the top level and renamed to <code class="docutils literal"><span class="pre">unicode_output</span></code>.  It now
 not only affects console widgets, such as progress bars, but also
-controls whether calling <a class="reference external" href="http://docs.python.org/library/functions.html#unicode" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a> on certain classes will return a
+controls whether calling <a class="reference external" href="http://docs.python.org/2/library/functions.html#unicode" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a> on certain classes will return a
 string containing unicode characters.</li>
 </ul>
 </li>
@@ -4087,10 +4350,10 @@ string containing unicode characters.</li>
 <ul class="simple">
 <li>The <code class="docutils literal"><span class="pre">astropy.coordinates.Angle</span></code> class is now a subclass of
 <code class="docutils literal"><span class="pre">astropy.units.Quantity</span></code>. This means it has all of the methods of a
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1006">#1006</a>]</li>
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1006">#1006</a>]</li>
 <li>The <code class="docutils literal"><span class="pre">astropy.coordinates.Distance</span></code> class is now a subclass of
 <code class="docutils literal"><span class="pre">astropy.units.Quantity</span></code>. This means it has all of the methods of a
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1472">#1472</a>]<ul>
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1472">#1472</a>]<ul>
 <li>All angular units are now supported, not just <code class="docutils literal"><span class="pre">radian</span></code>, <code class="docutils literal"><span class="pre">degree</span></code> and
 <code class="docutils literal"><span class="pre">hour</span></code>, but now <code class="docutils literal"><span class="pre">arcsecond</span></code> and <code class="docutils literal"><span class="pre">arcminute</span></code> as well.  The object
 will retain its native unit, so when printing out a value initially
@@ -4324,8 +4587,8 @@ should now include it as:</p>
 </li>
 </ul>
 </div>
-<div class="section" id="id89">
-<h3>Bug Fixes<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id90">
+<h3>Bug Fixes<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>The <code class="docutils literal"><span class="pre">write()</span></code> function was ignoring the <code class="docutils literal"><span class="pre">fill_values</span></code> argument. [<a class="reference external" href="https://github.com/astropy/astropy/issues/910">#910</a>]</li>
@@ -4394,8 +4657,8 @@ systems with platform names containing non-ASCII characters. [<a class="referenc
 </li>
 </ul>
 </div>
-<div class="section" id="id90">
-<h3>Other Changes and Additions<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id91">
+<h3>Other Changes and Additions<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>General<ul>
 <li>Astropy now follows the PSF Code of Conduct. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1216">#1216</a>]</li>
@@ -4474,10 +4737,10 @@ inverted. [<a class="reference external" href="https://github.com/astropy/astrop
 </ul>
 </div>
 </div>
-<div class="section" id="id91">
-<h2>0.2.5 (2013-10-25)<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id92">
-<h3>Bug Fixes<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
+<h2>0.2.5 (2013-10-25)<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id93">
+<h3>Bug Fixes<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>Fixed incorrect string formatting of Angles using <code class="docutils literal"><span class="pre">precision=0</span></code>. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1319">#1319</a>]</li>
@@ -4581,8 +4844,8 @@ is associated with the exception. [<a class="reference external" href="https://g
 </li>
 </ul>
 </div>
-<div class="section" id="id93">
-<h3>Other Changes and Additions<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id94">
+<h3>Other Changes and Additions<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Astropy installation now requests setuptools &gt;= 0.7 during build/installation
 if neither distribute or setuptools &gt;= 0.7 is already installed.  In other
@@ -4595,10 +4858,10 @@ extension modules first an <code class="docutils literal"><span class="pre">Impo
 </ul>
 </div>
 </div>
-<div class="section" id="id94">
-<h2>0.2.4 (2013-07-24)<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id95">
-<h3>Bug Fixes<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h3>
+<h2>0.2.4 (2013-07-24)<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id96">
+<h3>Bug Fixes<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>Fixed the angle parser to support parsing the string &#8220;1 degree&#8221;. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1168">#1168</a>]</li>
@@ -4665,8 +4928,8 @@ standard logging API. [<a class="reference external" href="https://github.com/as
 </li>
 </ul>
 </div>
-<div class="section" id="id96">
-<h3>Other Changes and Additions<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id97">
+<h3>Other Changes and Additions<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.cosmology</span></code><ul>
 <li>Added a new <code class="docutils literal"><span class="pre">Plank13</span></code> object representing the Plank 2013 results. [<a class="reference external" href="https://github.com/astropy/astropy/issues/895">#895</a>]</li>
@@ -4680,10 +4943,10 @@ a large number of elements. [<a class="reference external" href="https://github.
 </ul>
 </div>
 </div>
-<div class="section" id="id97">
-<h2>0.2.3 (2013-05-30)<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id98">
-<h3>Bug Fixes<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h3>
+<h2>0.2.3 (2013-05-30)<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id99">
+<h3>Bug Fixes<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.time</span></code><ul>
 <li>Fixed inaccurate handling of leap seconds when converting from UTC to UNIX
@@ -4700,10 +4963,10 @@ Astropy&#8217;s setup framework. [<a class="reference external" href="https://gi
 </ul>
 </div>
 </div>
-<div class="section" id="id99">
-<h2>0.2.2 (2013-05-21)<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id100">
-<h3>Bug Fixes<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h3>
+<h2>0.2.2 (2013-05-21)<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id101">
+<h3>Bug Fixes<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.io</span></code><ul>
 <li>Fixed issues in both the <code class="docutils literal"><span class="pre">fits</span></code> and <code class="docutils literal"><span class="pre">votable</span></code> sub-packages where array
@@ -4817,18 +5080,18 @@ command in Python 3. [<a class="reference external" href="https://github.com/ast
 </li>
 </ul>
 </div>
-<div class="section" id="id101">
-<h3>Other Changes and Additions<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id102">
+<h3>Other Changes and Additions<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Some performance improvements to the <code class="docutils literal"><span class="pre">astropy.units</span></code> package, in particular
 improving the time it takes to import the sub-package. [<a class="reference external" href="https://github.com/astropy/astropy/issues/1015">#1015</a>]</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id102">
-<h2>0.2.1 (2013-04-03)<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id103">
-<h3>Bug Fixes<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h3>
+<h2>0.2.1 (2013-04-03)<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id104">
+<h3>Bug Fixes<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.coordinates</span></code><ul>
 <li>Fixed encoding errors that could occur when formatting coordinate objects
@@ -4942,8 +5205,8 @@ cpychecker. [<a class="reference external" href="https://github.com/astropy/astr
 </li>
 </ul>
 </div>
-<div class="section" id="id104">
-<h3>Other Changes and Additions<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id105">
+<h3>Other Changes and Additions<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Added logo and branding for Windows binary installers. [<a class="reference external" href="https://github.com/astropy/astropy/issues/741">#741</a>]</li>
 <li>Upgraded included version libexpat to 2.1.0. [<a class="reference external" href="https://github.com/astropy/astropy/issues/781">#781</a>]</li>
@@ -4960,10 +5223,10 @@ from users. [<a class="reference external" href="https://github.com/astropy/astr
 </ul>
 </div>
 </div>
-<div class="section" id="id105">
-<h2>0.2 (2013-02-19)<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id106">
-<h3>New Features<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h3>
+<h2>0.2 (2013-02-19)<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id107">
+<h3>New Features<a class="headerlink" href="#id107" title="Permalink to this headline">¶</a></h3>
 <p>This is a brief overview of the new features included in Astropy 0.2&#8211;please
 see the &#8220;What&#8217;s New&#8221; section of the documentation for more details.</p>
 <ul>
@@ -5052,8 +5315,8 @@ one coordinate representation&#8221;.</li>
 </li>
 </ul>
 </div>
-<div class="section" id="id107">
-<h3>Other Changes and Additions<a class="headerlink" href="#id107" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id108">
+<h3>Other Changes and Additions<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>A configuration file with all options set to their defaults is now generated
 when astropy is installed.  This file will be pulled in as the users&#8217;
@@ -5098,8 +5361,8 @@ FFT by default instead with the added ability to specify an FFT
 implementation to use. [<a class="reference external" href="https://github.com/astropy/astropy/issues/660">#660</a>]</li>
 </ul>
 </div>
-<div class="section" id="id108">
-<h3>Bug Fixes<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id109">
+<h3>Bug Fixes<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">astropy.io.ascii</span></code><ul>
 <li>Fixed crash when pprinting a row with INDEF values. [<a class="reference external" href="https://github.com/astropy/astropy/issues/511">#511</a>]</li>
@@ -5225,8 +5488,8 @@ the former is deprecated. [<a class="reference external" href="https://github.co
 </ul>
 </div>
 </div>
-<div class="section" id="id109">
-<h2>0.1 (2012-06-19)<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id110">
+<h2>0.1 (2012-06-19)<a class="headerlink" href="#id110" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Initial release.</li>
 </ul>
@@ -5241,17 +5504,18 @@ the former is deprecated. [<a class="reference external" href="https://github.co
         <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
 <ul>
 <li><a class="reference internal" href="#">Full Changelog</a><ul>
-<li><a class="reference internal" href="#unreleased">1.2 (unreleased)</a><ul>
+<li><a class="reference internal" href="#unreleased">1.3 (unreleased)</a><ul>
 <li><a class="reference internal" href="#new-features">New Features</a></li>
-<li><a class="reference internal" href="#api-changes">API changes</a></li>
-<li><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
+<li><a class="reference internal" href="#api-changes">API Changes</a></li>
+<li><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
 <li><a class="reference internal" href="#other-changes-and-additions">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id1">1.1.3 (unreleased)</a><ul>
+<li><a class="reference internal" href="#id1">1.2 (unreleased)</a><ul>
+<li><a class="reference internal" href="#general">General</a></li>
 <li><a class="reference internal" href="#id2">New Features</a></li>
-<li><a class="reference internal" href="#id3">API Changes</a></li>
-<li><a class="reference internal" href="#id4">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id3">API changes</a></li>
+<li><a class="reference internal" href="#id4">Bug fixes</a></li>
 <li><a class="reference internal" href="#id5">Other Changes and Additions</a></li>
 </ul>
 </li>
@@ -5335,92 +5599,92 @@ the former is deprecated. [<a class="reference external" href="https://github.co
 </ul>
 </li>
 <li><a class="reference internal" href="#id56">1.0 (2015-02-18)</a><ul>
-<li><a class="reference internal" href="#general">General</a></li>
-<li><a class="reference internal" href="#id57">New Features</a></li>
-<li><a class="reference internal" href="#id58">API Changes</a></li>
-<li><a class="reference internal" href="#id59">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id60">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id57">General</a></li>
+<li><a class="reference internal" href="#id58">New Features</a></li>
+<li><a class="reference internal" href="#id59">API Changes</a></li>
+<li><a class="reference internal" href="#id60">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id61">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id61">0.4.5 (2015-02-16)</a><ul>
-<li><a class="reference internal" href="#id62">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id63">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id62">0.4.5 (2015-02-16)</a><ul>
+<li><a class="reference internal" href="#id63">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id64">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id64">0.4.4 (2015-01-21)</a><ul>
-<li><a class="reference internal" href="#id65">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id66">API Changes</a></li>
+<li><a class="reference internal" href="#id65">0.4.4 (2015-01-21)</a><ul>
+<li><a class="reference internal" href="#id66">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id67">API Changes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id67">0.4.3 (2015-01-15)</a><ul>
-<li><a class="reference internal" href="#id68">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id69">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id68">0.4.3 (2015-01-15)</a><ul>
+<li><a class="reference internal" href="#id69">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id70">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id70">0.4.2 (2014-09-23)</a><ul>
-<li><a class="reference internal" href="#id71">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id72">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id71">0.4.2 (2014-09-23)</a><ul>
+<li><a class="reference internal" href="#id72">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id73">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id73">0.4.1 (2014-08-08)</a><ul>
-<li><a class="reference internal" href="#id74">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id75">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id74">0.4.1 (2014-08-08)</a><ul>
+<li><a class="reference internal" href="#id75">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id76">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id76">0.4 (2014-07-16)</a><ul>
-<li><a class="reference internal" href="#id77">New Features</a></li>
-<li><a class="reference internal" href="#id78">API Changes</a></li>
-<li><a class="reference internal" href="#id79">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id80">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id77">0.4 (2014-07-16)</a><ul>
+<li><a class="reference internal" href="#id78">New Features</a></li>
+<li><a class="reference internal" href="#id79">API Changes</a></li>
+<li><a class="reference internal" href="#id80">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id81">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id81">0.3.2 (2014-05-13)</a><ul>
-<li><a class="reference internal" href="#id82">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id82">0.3.2 (2014-05-13)</a><ul>
+<li><a class="reference internal" href="#id83">Bug Fixes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id83">0.3.1 (2014-03-04)</a><ul>
-<li><a class="reference internal" href="#id84">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id85">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id84">0.3.1 (2014-03-04)</a><ul>
+<li><a class="reference internal" href="#id85">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id86">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id86">0.3 (2013-11-20)</a><ul>
-<li><a class="reference internal" href="#id87">New Features</a></li>
-<li><a class="reference internal" href="#id88">API Changes</a></li>
-<li><a class="reference internal" href="#id89">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id90">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id87">0.3 (2013-11-20)</a><ul>
+<li><a class="reference internal" href="#id88">New Features</a></li>
+<li><a class="reference internal" href="#id89">API Changes</a></li>
+<li><a class="reference internal" href="#id90">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id91">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id91">0.2.5 (2013-10-25)</a><ul>
-<li><a class="reference internal" href="#id92">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id93">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id92">0.2.5 (2013-10-25)</a><ul>
+<li><a class="reference internal" href="#id93">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id94">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id94">0.2.4 (2013-07-24)</a><ul>
-<li><a class="reference internal" href="#id95">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id96">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id95">0.2.4 (2013-07-24)</a><ul>
+<li><a class="reference internal" href="#id96">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id97">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id97">0.2.3 (2013-05-30)</a><ul>
-<li><a class="reference internal" href="#id98">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id98">0.2.3 (2013-05-30)</a><ul>
+<li><a class="reference internal" href="#id99">Bug Fixes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id99">0.2.2 (2013-05-21)</a><ul>
-<li><a class="reference internal" href="#id100">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id101">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id100">0.2.2 (2013-05-21)</a><ul>
+<li><a class="reference internal" href="#id101">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id102">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id102">0.2.1 (2013-04-03)</a><ul>
-<li><a class="reference internal" href="#id103">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id104">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id103">0.2.1 (2013-04-03)</a><ul>
+<li><a class="reference internal" href="#id104">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id105">Other Changes and Additions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id105">0.2 (2013-02-19)</a><ul>
-<li><a class="reference internal" href="#id106">New Features</a></li>
-<li><a class="reference internal" href="#id107">Other Changes and Additions</a></li>
-<li><a class="reference internal" href="#id108">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id106">0.2 (2013-02-19)</a><ul>
+<li><a class="reference internal" href="#id107">New Features</a></li>
+<li><a class="reference internal" href="#id108">Other Changes and Additions</a></li>
+<li><a class="reference internal" href="#id109">Bug Fixes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id109">0.1 (2012-06-19)</a></li>
+<li><a class="reference internal" href="#id110">0.1 (2012-06-19)</a></li>
 </ul>
 </li>
 </ul>
@@ -5439,7 +5703,7 @@ the former is deprecated. [<a class="reference external" href="https://github.co
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

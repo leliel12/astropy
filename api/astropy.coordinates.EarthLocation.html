@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>EarthLocation &mdash; Astropy v1.2.dev15003</title>
+    <title>EarthLocation &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="../coordinates/index.html" />
     <link rel="next" title="EarthLocationAttribute" href="astropy.coordinates.EarthLocationAttribute.html" />
     <link rel="prev" title="DynamicMatrixTransform" href="astropy.coordinates.DynamicMatrixTransform.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../coordinates/index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>EarthLocation<a class="headerlink" href="#earthlocation" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.coordinates.EarthLocation">
-<em class="property">class </em><code class="descclassname">astropy.coordinates.</code><code class="descname">EarthLocation</code><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L36" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.coordinates.</code><code class="descname">EarthLocation</code><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L44" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.units.quantity.Quantity.html#astropy.units.quantity.Quantity" title="astropy.units.quantity.Quantity"><code class="xref py py-class docutils literal"><span class="pre">astropy.units.quantity.Quantity</span></code></a></p>
 <p>Location on the Earth.</p>
 <p>Initialization is first attempted assuming geocentric (x, y, z) coordinates
@@ -244,7 +244,7 @@ default <code class="docutils literal"><span class="pre">obstime</span></code>.<
 <p class="rubric">Methods Documentation</p>
 <dl class="classmethod">
 <dt id="astropy.coordinates.EarthLocation.from_geocentric">
-<em class="property">classmethod </em><code class="descname">from_geocentric</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L79" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.from_geocentric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.from_geocentric" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_geocentric</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.from_geocentric"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L87" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.from_geocentric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location on Earth, initialized from geocentric coordinates.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -282,7 +282,7 @@ unit is given.</p>
 
 <dl class="classmethod">
 <dt id="astropy.coordinates.EarthLocation.from_geodetic">
-<em class="property">classmethod </em><code class="descname">from_geodetic</code><span class="sig-paren">(</span><em>lon</em>, <em>lat</em>, <em>height=0.0</em>, <em>ellipsoid=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L128" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.from_geodetic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.from_geodetic" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_geodetic</code><span class="sig-paren">(</span><em>lon</em>, <em>lat</em>, <em>height=0.0</em>, <em>ellipsoid=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.from_geodetic"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L136" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.from_geodetic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location on Earth, initialized from geodetic coordinates.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -330,7 +330,7 @@ if <code class="docutils literal"><span class="pre">ellipsoid</span></code> is n
 
 <dl class="method">
 <dt id="astropy.coordinates.EarthLocation.get_itrs">
-<code class="descname">get_itrs</code><span class="sig-paren">(</span><em>obstime=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L376" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.get_itrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.get_itrs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_itrs</code><span class="sig-paren">(</span><em>obstime=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.get_itrs"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L384" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.get_itrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates an <a class="reference internal" href="astropy.coordinates.ITRS.html#astropy.coordinates.ITRS" title="astropy.coordinates.ITRS"><code class="xref py py-obj docutils literal"><span class="pre">ITRS</span></code></a> object with the location of
 this object at the requested <code class="docutils literal"><span class="pre">obstime</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -356,7 +356,7 @@ if None, the default <code class="docutils literal"><span class="pre">obstime</s
 
 <dl class="classmethod">
 <dt id="astropy.coordinates.EarthLocation.get_site_names">
-<em class="property">classmethod </em><code class="descname">get_site_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L229" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.get_site_names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.get_site_names" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_site_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.get_site_names"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L237" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.get_site_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get list of names of observatories for use with
 <a class="reference internal" href="#astropy.coordinates.EarthLocation.of_site" title="astropy.coordinates.EarthLocation.of_site"><code class="xref py py-obj docutils literal"><span class="pre">of_site</span></code></a>.</p>
 <div class="admonition note">
@@ -392,7 +392,7 @@ request to the
 
 <dl class="classmethod">
 <dt id="astropy.coordinates.EarthLocation.of_site">
-<em class="property">classmethod </em><code class="descname">of_site</code><span class="sig-paren">(</span><em>site_name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L180" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.of_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.of_site" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">of_site</code><span class="sig-paren">(</span><em>site_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.of_site"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L188" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.of_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an object of this class for a known observatory/site by name.</p>
 <p>This is intended as a quick convenience function to get basic site
 information, not a fully-featured exhaustive registry of observatories
@@ -439,7 +439,7 @@ example case.</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.EarthLocation.to">
-<code class="descname">to</code><span class="sig-paren">(</span><em>unit</em>, <em>equivalencies=[]</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L431" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.to" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to</code><span class="sig-paren">(</span><em>unit</em>, <em>equivalencies=[]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.to"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L466" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> object with the specified
 units.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -458,7 +458,7 @@ by the <a class="reference internal" href="../units/index.html#module-astropy.un
 directly convertible.  See <a class="reference internal" href="../units/equivalencies.html#unit-equivalencies"><span>Equivalencies</span></a>.
 If not provided or <code class="docutils literal"><span class="pre">[]</span></code>, class default equivalencies will be used
 (none for <a class="reference internal" href="astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a>, but may be set for subclasses)
-If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, no equivalencies will be applied at all, not even any
+If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, no equivalencies will be applied at all, not even any
 set globally or within a context.</p>
 </div></blockquote>
 </td>
@@ -469,13 +469,13 @@ set globally or within a context.</p>
 
 <dl class="method">
 <dt id="astropy.coordinates.EarthLocation.to_geocentric">
-<code class="descname">to_geocentric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L372" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.to_geocentric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.to_geocentric" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_geocentric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.to_geocentric"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L380" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.to_geocentric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to a tuple with X, Y, and Z as quantities</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.coordinates.EarthLocation.to_geodetic">
-<code class="descname">to_geodetic</code><span class="sig-paren">(</span><em>ellipsoid=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L318" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.to_geodetic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.to_geodetic" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_geodetic</code><span class="sig-paren">(</span><em>ellipsoid=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/earth.html#EarthLocation.to_geodetic"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/earth.py#L326" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.EarthLocation.to_geodetic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to geodetic coordinates.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -535,7 +535,7 @@ were initialized with.  Available are: &#8216;WGS84&#8217;, &#8216;GRS80&#8217;,
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Mapping &mdash; Astropy v1.2.dev15003</title>
+    <title>Mapping &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="../modeling/index.html" />
     <link rel="next" title="Identity" href="astropy.modeling.mappings.Identity.html" />
-    <link rel="prev" title="SummedCompositeModel" href="astropy.modeling.SummedCompositeModel.html" />
+    <link rel="prev" title="Parameter" href="astropy.modeling.Parameter.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -63,13 +63,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="astropy.modeling.SummedCompositeModel.html" title="SummedCompositeModel">
+	<a href="astropy.modeling.Parameter.html" title="Parameter">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../modeling/index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.modeling.mappings.Mapping">
-<em class="property">class </em><code class="descclassname">astropy.modeling.mappings.</code><code class="descname">Mapping</code><span class="sig-paren">(</span><em>mapping</em>, <em>n_inputs=None</em>, <em>name=None</em>, <em>meta=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/mappings.py#L12" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/mappings.html#Mapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.mappings.Mapping" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.modeling.mappings.</code><code class="descname">Mapping</code><span class="sig-paren">(</span><em>mapping</em>, <em>n_inputs=None</em>, <em>name=None</em>, <em>meta=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/mappings.html#Mapping"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/mappings.py#L12" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.mappings.Mapping" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.modeling.Model.html#astropy.modeling.Model" title="astropy.modeling.core.Model"><code class="docutils literal"><span class="pre">astropy.modeling.Model</span></code></a></p>
 <p>Allows inputs to be reordered, duplicated or dropped.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -103,7 +103,7 @@ to return and in what order to return them.  See
 </div></blockquote>
 <p><strong>n_inputs</strong> : int</p>
 <blockquote>
-<div><p>Number of inputs; if <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> (default) then <code class="docutils literal"><span class="pre">max(mapping)</span> <span class="pre">+</span> <span class="pre">1</span></code> is
+<div><p>Number of inputs; if <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> (default) then <code class="docutils literal"><span class="pre">max(mapping)</span> <span class="pre">+</span> <span class="pre">1</span></code> is
 used (i.e. the highest input index used in the mapping).</p>
 </div></blockquote>
 <p><strong>name</strong> : str, optional</p>
@@ -160,11 +160,8 @@ compound model).</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#astropy.modeling.mappings.Mapping.eval" title="astropy.modeling.mappings.Mapping.eval"><code class="xref py py-obj docutils literal"><span class="pre">eval</span></code></a>(*args)</td>
-<td><div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 1.0.</span></p>
-</div>
-</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">Mapping.eval</span></code></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.modeling.mappings.Mapping.evaluate" title="astropy.modeling.mappings.Mapping.evaluate"><code class="xref py py-obj docutils literal"><span class="pre">evaluate</span></code></a>(*args)</td>
 <td>Evaluate the model on some input variables.</td>
@@ -192,18 +189,8 @@ compound model).</p>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
-<dt id="astropy.modeling.mappings.Mapping.eval">
-<code class="descname">eval</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/mappings.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.mappings.Mapping.eval" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 1.0: </span>The eval function is deprecated and may be removed in a future version.
-    Use Mapping.evaluate instead.</p>
-</div>
-<p>Evaluate the model on some input variables.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="astropy.modeling.mappings.Mapping.evaluate">
-<code class="descname">evaluate</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/mappings.py#L85" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/mappings.html#Mapping.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.mappings.Mapping.evaluate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/mappings.html#Mapping.evaluate"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/mappings.py#L85" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.mappings.Mapping.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the model on some input variables.</p>
 </dd></dl>
 
@@ -234,7 +221,7 @@ compound model).</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

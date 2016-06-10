@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.votable.exceptions &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.votable.exceptions &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../index.html" />
     <link rel="up" title="VOTable XML handling (astropy.io.votable)" href="index.html" />
     <link rel="next" title="parse" href="../../api/astropy.io.votable.parse.html" />
     <link rel="prev" title="validate_schema" href="../../api/astropy.io.votable.xmlutil.validate_schema.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">VOTable XML handling (<code class="docutils literal"><span class="pre">astropy.io.votable</span></code>)</a> &raquo;</li>
@@ -180,7 +180,7 @@
 specification.  They should be reported to the authors of the
 tools that produced the VOTable file.</p>
 <p class="last">To control the warnings emitted, use the standard Python
-<a class="reference external" href="http://docs.python.org/library/warnings.html#module-warnings" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">warnings</span></code></a> module.  Most of these are of the type
+<a class="reference external" href="http://docs.python.org/3/library/warnings.html#module-warnings" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">warnings</span></code></a> module.  Most of these are of the type
 <a class="reference internal" href="#astropy.io.votable.exceptions.VOTableSpecWarning" title="astropy.io.votable.exceptions.VOTableSpecWarning"><code class="xref py py-obj docutils literal"><span class="pre">VOTableSpecWarning</span></code></a>.</p>
 </div>
 <div class="section" id="w01-array-uses-commas-rather-than-whitespace">
@@ -870,19 +870,19 @@ columns.</p>
 <h2><a class="toc-backref" href="#id78">Exception utilities</a><a class="headerlink" href="#exception-utilities" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="astropy.io.votable.exceptions.warn_or_raise">
-<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">warn_or_raise</code><span class="sig-paren">(</span><em>warning_class</em>, <em>exception_class=None</em>, <em>args=()</em>, <em>config=None</em>, <em>pos=None</em>, <em>stacklevel=1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L80" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#warn_or_raise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.warn_or_raise" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">warn_or_raise</code><span class="sig-paren">(</span><em>warning_class</em>, <em>exception_class=None</em>, <em>args=()</em>, <em>config=None</em>, <em>pos=None</em>, <em>stacklevel=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#warn_or_raise"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L80" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.warn_or_raise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Warn or raise an exception, depending on the pedantic setting.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="astropy.io.votable.exceptions.vo_raise">
-<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">vo_raise</code><span class="sig-paren">(</span><em>exception_class</em>, <em>args=()</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L95" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#vo_raise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.vo_raise" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">vo_raise</code><span class="sig-paren">(</span><em>exception_class</em>, <em>args=()</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#vo_raise"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L95" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.vo_raise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise an exception, with proper position information if available.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="astropy.io.votable.exceptions.vo_reraise">
-<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">vo_reraise</code><span class="sig-paren">(</span><em>exc</em>, <em>config=None</em>, <em>pos=None</em>, <em>additional=''</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L104" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#vo_reraise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.vo_reraise" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">vo_reraise</code><span class="sig-paren">(</span><em>exc</em>, <em>config=None</em>, <em>pos=None</em>, <em>additional=''</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#vo_reraise"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L104" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.vo_reraise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise an exception, with proper position information if available.</p>
 <p>Restores the original traceback of the exception, and should only
 be called within an &#8220;except:&#8221; block of code.</p>
@@ -890,19 +890,19 @@ be called within an &#8220;except:&#8221; block of code.</p>
 
 <dl class="function">
 <dt id="astropy.io.votable.exceptions.vo_warn">
-<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">vo_warn</code><span class="sig-paren">(</span><em>warning_class</em>, <em>args=()</em>, <em>config=None</em>, <em>pos=None</em>, <em>stacklevel=1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L122" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#vo_warn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.vo_warn" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">vo_warn</code><span class="sig-paren">(</span><em>warning_class</em>, <em>args=()</em>, <em>config=None</em>, <em>pos=None</em>, <em>stacklevel=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#vo_warn"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L122" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.vo_warn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Warn, with proper position information if available.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="astropy.io.votable.exceptions.parse_vowarning">
-<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">parse_vowarning</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L143" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#parse_vowarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.parse_vowarning" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">parse_vowarning</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#parse_vowarning"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L143" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.parse_vowarning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses the vo warning string back into its parts.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="astropy.io.votable.exceptions.VOWarning">
-<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L186" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOWarning" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOWarning"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L186" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOWarning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../api/astropy.utils.exceptions.AstropyWarning.html#astropy.utils.exceptions.AstropyWarning" title="astropy.utils.exceptions.AstropyWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.utils.exceptions.AstropyWarning</span></code></a></p>
 <p>The base class of all VO warnings and exceptions.</p>
 <p>Handles the formatting of the message with a warning or exception
@@ -911,36 +911,36 @@ code, filename, line and column number.</p>
 
 <dl class="class">
 <dt id="astropy.io.votable.exceptions.VOTableChangeWarning">
-<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOTableChangeWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L214" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOTableChangeWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOTableChangeWarning" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">SyntaxWarning</span></code></p>
+<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOTableChangeWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOTableChangeWarning"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L214" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOTableChangeWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#SyntaxWarning" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">SyntaxWarning</span></code></a></p>
 <p>A change has been made to the input XML file.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="astropy.io.votable.exceptions.VOTableSpecWarning">
-<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOTableSpecWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L220" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOTableSpecWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOTableSpecWarning" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">SyntaxWarning</span></code></p>
+<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOTableSpecWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOTableSpecWarning"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L220" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOTableSpecWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#SyntaxWarning" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">SyntaxWarning</span></code></a></p>
 <p>The input XML file violates the spec, but there is an obvious workaround.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="astropy.io.votable.exceptions.UnimplementedWarning">
-<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">UnimplementedWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L226" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#UnimplementedWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.UnimplementedWarning" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">SyntaxWarning</span></code></p>
+<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">UnimplementedWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#UnimplementedWarning"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L226" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.UnimplementedWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#SyntaxWarning" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">SyntaxWarning</span></code></a></p>
 <p>A feature of the <a class="reference external" href="http://www.ivoa.net/Documents/PR/VOTable/VOTable-20040322.html#ToC9">VOTABLE</a> spec is not implemented.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="astropy.io.votable.exceptions.IOWarning">
-<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">IOWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L232" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#IOWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.IOWarning" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">RuntimeWarning</span></code></p>
+<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">IOWarning</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#IOWarning"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L232" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.IOWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#RuntimeWarning" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">RuntimeWarning</span></code></a></p>
 <p>A network or IO error occurred, but was recovered using the cache.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="astropy.io.votable.exceptions.VOTableSpecError">
-<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOTableSpecError</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L238" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOTableSpecError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOTableSpecError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">ValueError</span></code></p>
+<em class="property">class </em><code class="descclassname">astropy.io.votable.exceptions.</code><code class="descname">VOTableSpecError</code><span class="sig-paren">(</span><em>args</em>, <em>config=None</em>, <em>pos=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/astropy/io/votable/exceptions.html#VOTableSpecError"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/exceptions.py#L238" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.exceptions.VOTableSpecError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#astropy.io.votable.exceptions.VOWarning" title="astropy.io.votable.exceptions.VOWarning"><code class="xref py py-class docutils literal"><span class="pre">astropy.io.votable.exceptions.VOWarning</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">ValueError</span></code></a></p>
 <p>The input XML file violates the spec and there is no good workaround.</p>
 </dd></dl>
 
@@ -1051,7 +1051,7 @@ code, filename, line and column number.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

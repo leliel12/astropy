@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>bayesian_info_criterion_lsq &mdash; Astropy v1.2.dev15003</title>
+    <title>bayesian_info_criterion_lsq &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="binned_binom_proportion" href="astropy.stats.binned_binom_proportion.html" />
     <link rel="prev" title="bayesian_info_criterion" href="astropy.stats.bayesian_info_criterion.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>bayesian_info_criterion_lsq<a class="headerlink" href="#bayesian-info-criterion-lsq" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.stats.bayesian_info_criterion_lsq">
-<code class="descclassname">astropy.stats.</code><code class="descname">bayesian_info_criterion_lsq</code><span class="sig-paren">(</span><em>ssr</em>, <em>n_params</em>, <em>n_samples</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/info_theory.py#L117" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/info_theory.html#bayesian_info_criterion_lsq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.bayesian_info_criterion_lsq" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.stats.</code><code class="descname">bayesian_info_criterion_lsq</code><span class="sig-paren">(</span><em>ssr</em>, <em>n_params</em>, <em>n_samples</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/stats/info_theory.html#bayesian_info_criterion_lsq"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/info_theory.py#L117" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.stats.bayesian_info_criterion_lsq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the Bayesian Information Criterion (BIC) assuming that the
 observations come from a Gaussian distribution.</p>
 <p>In this case, BIC is given as</p>
@@ -98,7 +98,7 @@ observations come from a Gaussian distribution.</p>
 parameters and <img class="math" src="../_images/math/1fbf3bf35e92deb78503b3a85b826a2413e251c1.png" alt="\mathrm{SSR}"/> stands for the sum of squared redisuals
 between model and data.</p>
 <p>This is applicable, for instance, when the parameters of a model are
-estimated using the least squares statistic. See <a class="reference internal" href="#r29" id="id1">[R29]</a> and <a class="reference internal" href="#r30" id="id2">[R30]</a>.</p>
+estimated using the least squares statistic. See <a class="reference internal" href="#r32" id="id1">[R32]</a> and <a class="reference internal" href="#r33" id="id2">[R33]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -124,30 +124,30 @@ parameter space.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r29" rules="none">
+<table class="docutils citation" frame="void" id="r32" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R29]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Wikipedia. Bayesian Information Criterion.
+<tr><td class="label">[R32]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Wikipedia. Bayesian Information Criterion.
 &lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">https://en.wikipedia.org/wiki/Bayesian_information_criterion</a>&gt;</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r30" rules="none">
+<table class="docutils citation" frame="void" id="r33" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R30]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> Origin Lab. Comparing Two Fitting Functions.
+<tr><td class="label">[R33]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> Origin Lab. Comparing Two Fitting Functions.
 &lt;<a class="reference external" href="http://www.originlab.com/doc/Origin-Help/PostFit-CompareFitFunc">http://www.originlab.com/doc/Origin-Help/PostFit-CompareFitFunc</a>&gt;</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r31" rules="none">
+<table class="docutils citation" frame="void" id="r34" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R31]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Astropy Models and Fitting
+<tr><td class="label">[R34]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Astropy Models and Fitting
 &lt;<a class="reference external" href="http://docs.astropy.org/en/stable/modeling">http://docs.astropy.org/en/stable/modeling</a>&gt;</td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <p>Consider the simple 1-D fitting example presented in the Astropy
-modeling webpage <a class="reference internal" href="#r31" id="id6">[R31]</a>. There, two models (Box and Gaussian) were fitted to
+modeling webpage <a class="reference internal" href="#r34" id="id6">[R34]</a>. There, two models (Box and Gaussian) were fitted to
 a source flux using the least squares statistic. However, the fittings
 themselves do not tell much about which model better represents this
 hypotetical source. Therefore, we are going to apply to BIC in order to
@@ -208,7 +208,7 @@ is, obviously, expected since the true model is Gaussian.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

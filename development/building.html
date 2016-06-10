@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Building Astropy and its Subpackages &mdash; Astropy v1.2.dev15003</title>
+    <title>Building Astropy and its Subpackages &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="C or Cython Extensions" href="ccython.html" />
     <link rel="prev" title="Writing Command-Line Scripts" href="scripts.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -135,7 +135,7 @@ the subpackage(s) that need package data to a list of data file paths
 code.  e.g. if the source distribution has a needed data file
 <code class="docutils literal"><span class="pre">astropy/wcs/tests/data/3d_cd.hdr</span></code>, this function should return
 <code class="docutils literal"><span class="pre">{'astropy.wcs.tests':['data/3d_cd.hdr']}</span></code>. See the <code class="docutils literal"><span class="pre">package_data</span></code>
-option of the  <a class="reference external" href="http://docs.python.org/distutils/apiref.html#distutils.core.setup" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">distutils.core.setup()</span></code></a> function.</p>
+option of the  <a class="reference external" href="http://docs.python.org/3/distutils/apiref.html#distutils.core.setup" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">distutils.core.setup()</span></code></a> function.</p>
 <p class="last">It is recommended that all such data be in a directory named <code class="docutils literal"><span class="pre">data</span></code> inside
 the package within which it is supposed to be used.  This package data should
 be accessed via the <a class="reference internal" href="../api/astropy.utils.data.get_pkg_data_filename.html#astropy.utils.data.get_pkg_data_filename" title="astropy.utils.data.get_pkg_data_filename"><code class="xref py py-obj docutils literal"><span class="pre">astropy.utils.data.get_pkg_data_filename</span></code></a> and
@@ -146,7 +146,7 @@ be accessed via the <a class="reference internal" href="../api/astropy.utils.dat
 <li><dl class="first docutils">
 <dt><code class="docutils literal"><span class="pre">get_extensions</span></code></dt>
 <dd><p class="first last">This provides information for building C or Cython extensions. If defined,
-it should return a list of <a class="reference external" href="http://docs.python.org/distutils/apiref.html#distutils.core.Extension" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">distutils.core.Extension</span></code></a> objects controlling
+it should return a list of <a class="reference external" href="http://docs.python.org/3/distutils/apiref.html#distutils.core.Extension" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">distutils.core.Extension</span></code></a> objects controlling
 the Cython/C build process (see below for more detail).</p>
 </dd>
 </dl>
@@ -160,7 +160,7 @@ should return a list of tuples, where each element has:</p>
 commandline or in the <code class="docutils literal"><span class="pre">setup.cfg</span></code> file.</li>
 <li><em>doc</em>: A short doc string for the option, displayed by
 <code class="docutils literal"><span class="pre">setup.py</span> <span class="pre">build</span> <span class="pre">--help</span></code>.</li>
-<li><em>is_bool</em> (optional): When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, the option is a boolean
+<li><em>is_bool</em> (optional): When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, the option is a boolean
 option and doesn&#8217;t have an associated value.</li>
 </ul>
 <p class="last">Once an option has been added, its value can be looked up using
@@ -186,7 +186,7 @@ the system library or the included one.</p>
 <dt><code class="docutils literal"><span class="pre">requires_2to3</span></code></dt>
 <dd><p class="first last">This function declares whether the package requires processing
 through the <a class="reference external" href="https://docs.python.org/2/library/2to3.html">2to3</a> tool to run on Python 3.  If not included, it
-defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  The use of <a class="reference external" href="https://docs.python.org/2/library/2to3.html">2to3</a> is phased out in astropy
+defaults to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  The use of <a class="reference external" href="https://docs.python.org/2/library/2to3.html">2to3</a> is phased out in astropy
 and is retained for use in affiliate packages which have not switched
 to using <a class="reference external" href="http://pythonhosted.org/six/">six</a> instead.  See <a class="reference internal" href="codeguide.html#dev-portable"><span>Writing portable code for Python 2 and 3</span></a> for more information.</p>
 </dd>
@@ -229,7 +229,7 @@ in their own <code class="docutils literal"><span class="pre">setup.py</span></c
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.hdu.base &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.fits.hdu.base &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../../index.html" />
     <link rel="up" title="Module code" href="../../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -93,7 +93,7 @@
 
 <span class="kn">from</span> <span class="nn">....extern.six</span> <span class="kn">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">add_metaclass</span>
 <span class="kn">from</span> <span class="nn">....utils</span> <span class="kn">import</span> <span class="n">lazyproperty</span><span class="p">,</span> <span class="n">deprecated</span>
-<span class="kn">from</span> <span class="nn">....utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
+<span class="kn">from</span> <span class="nn">....utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
 <span class="kn">from</span> <span class="nn">....utils.compat.funcsigs</span> <span class="kn">import</span> <span class="n">signature</span><span class="p">,</span> <span class="n">Parameter</span>
 <span class="kn">from</span> <span class="nn">....utils.exceptions</span> <span class="kn">import</span> <span class="n">AstropyUserWarning</span>
 
@@ -304,7 +304,7 @@
             <span class="p">(</span><span class="s">&#39;XTENSION&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="ow">and</span>
              <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s">&#39;XTENSION&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;IMAGE&#39;</span> <span class="ow">or</span>
               <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s">&#39;XTENSION&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;BINTABLE&#39;</span> <span class="ow">and</span>
-               <span class="s">&#39;ZIMAGE&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s">&#39;ZIMAGE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">True</span><span class="p">))))</span>
+               <span class="s">&#39;ZIMAGE&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s">&#39;ZIMAGE&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">))))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">_data_loaded</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -716,13 +716,13 @@
         <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_has_data</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_standard</span> <span class="ow">and</span>
                 <span class="n">_is_pseudo_unsigned</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)):</span>
             <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;BSCALE&#39;</span><span class="p">,</span> <span class="s">&#39;BZERO&#39;</span><span class="p">):</span>
-                <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+                <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
                     <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">_writeheader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">):</span>
         <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">simulateonly</span><span class="p">:</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
                 <span class="n">offset</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">fileobj</span><span class="p">)</span>
@@ -962,7 +962,7 @@
         <span class="c"># The check that &#39;GROUPS&#39; is missing is a bit redundant, since the</span>
         <span class="c"># match_header for GroupsHDU will always be called before this one.</span>
         <span class="k">if</span> <span class="n">card</span><span class="o">.</span><span class="n">keyword</span> <span class="o">==</span> <span class="s">&#39;SIMPLE&#39;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="s">&#39;GROUPS&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header</span> <span class="ow">and</span> <span class="n">card</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s">&#39;GROUPS&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header</span> <span class="ow">and</span> <span class="n">card</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">True</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">InvalidHDUException</span>
@@ -1922,7 +1922,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

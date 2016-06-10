@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Relax constants &mdash; Astropy v1.2.dev15003</title>
+    <title>Relax constants &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="World Coordinate System (astropy.wcs)" href="index.html" />
     <link rel="next" title="astropy.wcs History" href="history.html" />
     <link rel="prev" title="World Coordinate System (astropy.wcs)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">World Coordinate System (<code class="docutils literal"><span class="pre">astropy.wcs</span></code>)</a> &raquo;</li>
@@ -88,8 +88,8 @@
 <span id="relax"></span><h1>Relax constants<a class="headerlink" href="#relax-constants" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal"><span class="pre">relax</span></code> keyword argument controls the handling of non-standard
 FITS WCS keywords.</p>
-<p>Note that the default value of <code class="docutils literal"><span class="pre">relax</span></code> is <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> for reading (to
-accept all non standard keywords), and <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> for writing (to write
+<p>Note that the default value of <code class="docutils literal"><span class="pre">relax</span></code> is <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> for reading (to
+accept all non standard keywords), and <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> for writing (to write
 out only standard keywords), in accordance with <a class="reference external" href="http://catb.org/jargon/html/P/Postels-Prescription.html">Postel&#8217;s prescription</a>:</p>
 <blockquote>
 <div>“Be liberal in what you accept, and conservative in what you send.”</div></blockquote>
@@ -97,17 +97,17 @@ out only standard keywords), in accordance with <a class="reference external" hr
 <span id="relaxread"></span><h2>Header-reading relaxation constants<a class="headerlink" href="#header-reading-relaxation-constants" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../api/astropy.wcs.WCS.html#astropy.wcs.WCS" title="astropy.wcs.WCS"><code class="xref py py-obj docutils literal"><span class="pre">WCS</span></code></a>, <a class="reference internal" href="../api/astropy.wcs.Wcsprm.html#astropy.wcs.Wcsprm" title="astropy.wcs.Wcsprm"><code class="xref py py-obj docutils literal"><span class="pre">Wcsprm</span></code></a> and
 <a class="reference internal" href="../api/astropy.wcs.find_all_wcs.html#astropy.wcs.find_all_wcs" title="astropy.wcs.find_all_wcs"><code class="xref py py-obj docutils literal"><span class="pre">find_all_wcs</span></code></a> have a <em>relax</em> argument, which may be
-either <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> or an <a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>.</p>
+either <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> or an <a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>.</p>
 <ul>
-<li><p class="first">If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, (default), all non-standard WCS extensions recognized by the parser
+<li><p class="first">If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, (default), all non-standard WCS extensions recognized by the parser
 will be handled.</p>
 </li>
-<li><p class="first">If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, none of the extensions (even those in the
+<li><p class="first">If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, none of the extensions (even those in the
 errata) will be handled.  Non-conformant keywords will be handled in
 the same way as non-WCS keywords in the header, i.e. by simply
 ignoring them.</p>
 </li>
-<li><p class="first">If an <a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>, is is a bit field to provide fine-grained control over
+<li><p class="first">If an <a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>, is is a bit field to provide fine-grained control over
 what non-standard WCS keywords to accept.  The flag bits are subject
 to change in future and should be set by using the constants
 beginning with <code class="docutils literal"><span class="pre">WCSHDR_</span></code> in the <a class="reference internal" href="index.html#module-astropy.wcs" title="astropy.wcs"><code class="xref py py-obj docutils literal"><span class="pre">astropy.wcs</span></code></a> module.</p>
@@ -127,10 +127,10 @@ III.</p>
 <li><p class="first"><code class="docutils literal"><span class="pre">WCSHDR_none</span></code>: Don&#8217;t accept any extensions (not even those in the
 errata).  Treat non-conformant keywords in the same way as non-WCS
 keywords in the header, i.e. simply ignore them.  (This is
-equivalent to passing <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>)</p>
+equivalent to passing <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>)</p>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">WCSHDR_all</span></code>: Accept all extensions recognized by the parser.  (This
-is equivalent to the default behavior or passing <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>).</p>
+is equivalent to the default behavior or passing <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>).</p>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">WCSHDR_reject</span></code>: Reject non-standard keyrecords (that are not
 otherwise explicitly accepted by one of the flags below).  A warning
@@ -381,13 +381,13 @@ be &#8220;exhausted&#8221; and do not result in a separate
 <div class="section" id="header-writing-relaxation-constants">
 <span id="relaxwrite"></span><h2>Header-writing relaxation constants<a class="headerlink" href="#header-writing-relaxation-constants" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../api/astropy.wcs.WCS.html#astropy.wcs.WCS.to_header" title="astropy.wcs.wcs.WCS"><code class="xref py py-obj docutils literal"><span class="pre">to_header</span></code></a> and <a class="reference internal" href="../api/astropy.wcs.WCS.html#astropy.wcs.WCS.to_header_string" title="astropy.wcs.wcs.WCS"><code class="xref py py-obj docutils literal"><span class="pre">to_header_string</span></code></a>
-has a <em>relax</em> argument which may be either <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> or an
-<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>.</p>
+has a <em>relax</em> argument which may be either <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> or an
+<a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>.</p>
 <ul class="simple">
-<li>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, write all recognized extensions.</li>
-<li>If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> (default), write all extensions that are considered to be
+<li>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, write all recognized extensions.</li>
+<li>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> (default), write all extensions that are considered to be
 safe and recommended, equivalent to <code class="docutils literal"><span class="pre">WCSHDO_safe</span></code> (described below).</li>
-<li>If an <a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>, is is a bit field to provide fine-grained control over
+<li>If an <a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>, is is a bit field to provide fine-grained control over
 what non-standard WCS keywords to accept.  The flag bits are subject
 to change in future and should be set by using the constants
 beginning with <code class="docutils literal"><span class="pre">WCSHDO_</span></code> in the <a class="reference internal" href="index.html#module-astropy.wcs" title="astropy.wcs"><code class="xref py py-obj docutils literal"><span class="pre">astropy.wcs</span></code></a> module.</li>
@@ -533,7 +533,7 @@ potentially unsafe and is not recommended at this time.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

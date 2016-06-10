@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.modeling.core &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.modeling.core &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -108,10 +108,10 @@
 <span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
 <span class="kn">from</span> <span class="nn">..extern.six.moves</span> <span class="kn">import</span> <span class="n">copyreg</span>
 <span class="kn">from</span> <span class="nn">..table</span> <span class="kn">import</span> <span class="n">Table</span>
-<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="p">(</span><span class="n">deprecated</span><span class="p">,</span> <span class="n">sharedmethod</span><span class="p">,</span> <span class="n">find_current_module</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="p">(</span><span class="n">sharedmethod</span><span class="p">,</span> <span class="n">find_current_module</span><span class="p">,</span>
                      <span class="n">InheritDocstrings</span><span class="p">,</span> <span class="n">OrderedDescriptorContainer</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">..utils.codegen</span> <span class="kn">import</span> <span class="n">make_function_with_signature</span>
-<span class="kn">from</span> <span class="nn">..utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
+<span class="kn">from</span> <span class="nn">..utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
 <span class="kn">from</span> <span class="nn">..utils.compat.funcsigs</span> <span class="kn">import</span> <span class="n">signature</span>
 <span class="kn">from</span> <span class="nn">..utils.exceptions</span> <span class="kn">import</span> <span class="n">AstropyDeprecationWarning</span>
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="p">(</span><span class="n">array_repr_oneline</span><span class="p">,</span> <span class="n">check_broadcast</span><span class="p">,</span> <span class="n">combine_labels</span><span class="p">,</span>
@@ -203,7 +203,6 @@
 
         <span class="n">cls</span><span class="o">.</span><span class="n">_create_inverse_property</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
         <span class="n">cls</span><span class="o">.</span><span class="n">_create_bounding_box_property</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
-        <span class="n">cls</span><span class="o">.</span><span class="n">_handle_backwards_compat</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">members</span><span class="p">)</span>
         <span class="n">cls</span><span class="o">.</span><span class="n">_handle_special_methods</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isabstract</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">):</span>
@@ -430,26 +429,6 @@
 
         <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s">&#39;_{0}BoundingBox&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">name</span><span class="p">)),</span> <span class="p">(</span><span class="n">_BoundingBox</span><span class="p">,),</span>
                     <span class="p">{</span><span class="s">&#39;__call__&#39;</span><span class="p">:</span> <span class="n">__call__</span><span class="p">})</span>
-
-    <span class="k">def</span> <span class="nf">_handle_backwards_compat</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">members</span><span class="p">):</span>
-        <span class="c"># Backwards compatibility check for &#39;eval&#39; -&gt; &#39;evaluate&#39;</span>
-        <span class="c"># TODO: Remove sometime after Astropy 1.0 release.</span>
-        <span class="k">if</span> <span class="s">&#39;eval&#39;</span> <span class="ow">in</span> <span class="n">members</span> <span class="ow">and</span> <span class="s">&#39;evaluate&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">members</span><span class="p">:</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="s">&quot;Use of an &#39;eval&#39; method when defining subclasses of &quot;</span>
-                <span class="s">&quot;FittableModel is deprecated; please rename this method to &quot;</span>
-                <span class="s">&quot;&#39;evaluate&#39;.  Otherwise its semantics remain the same.&quot;</span><span class="p">,</span>
-                <span class="n">AstropyDeprecationWarning</span><span class="p">)</span>
-            <span class="n">cls</span><span class="o">.</span><span class="n">evaluate</span> <span class="o">=</span> <span class="n">members</span><span class="p">[</span><span class="s">&#39;eval&#39;</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s">&#39;evaluate&#39;</span> <span class="ow">in</span> <span class="n">members</span> <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="n">members</span><span class="p">[</span><span class="s">&#39;evaluate&#39;</span><span class="p">])</span> <span class="ow">and</span>
-                <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">members</span><span class="p">[</span><span class="s">&#39;evaluate&#39;</span><span class="p">],</span> <span class="s">&#39;__isabstractmethod__&#39;</span><span class="p">,</span>
-                            <span class="bp">False</span><span class="p">)):</span>
-            <span class="c"># Don&#39;t bother making a deprecated eval() except for concrete</span>
-            <span class="c"># implementations of evaluate, so that we don&#39;t end up with an eval</span>
-            <span class="c"># abstractmethod as well</span>
-            <span class="n">alt</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;evaluate&#39;</span><span class="p">))</span>
-            <span class="n">deprecate</span> <span class="o">=</span> <span class="n">deprecated</span><span class="p">(</span><span class="s">&#39;1.0&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="n">alt</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;eval&#39;</span><span class="p">)</span>
-            <span class="n">cls</span><span class="o">.</span><span class="n">eval</span> <span class="o">=</span> <span class="n">deprecate</span><span class="p">(</span><span class="n">members</span><span class="p">[</span><span class="s">&#39;evaluate&#39;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">_handle_special_methods</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">members</span><span class="p">):</span>
         <span class="c"># Handle init creation from inputs</span>
@@ -805,11 +784,6 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
 
     <span class="nd">@property</span>
-    <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;0.4&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;len(model)&#39;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">param_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_models</span>
-
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">n_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The number of inputs to this model.</span>
@@ -1006,13 +980,6 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_user_inverse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">_custom_inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># Deprecated alias for _user_inverse--included solely for temporary</span>
-        <span class="c"># backwards compatibility for pyasdf--remove after Astropy v1.1</span>
-        <span class="c"># release.</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_user_inverse</span>
-
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A `tuple` of length `n_inputs` defining the bounding box limits, or</span>
@@ -1206,6 +1173,7 @@
                 <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">coords</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
             <span class="c"># Check dimensions match out and model</span>
             <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="n">ndim</span>
             <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
@@ -1214,6 +1182,7 @@
                 <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">assert</span> <span class="n">out</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="n">ndim</span>
             <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
@@ -1298,38 +1267,6 @@
             <span class="k">return</span> <span class="n">_prepare_outputs_single_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">format_info</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">_prepare_outputs_model_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">format_info</span><span class="p">)</span>
-</div>
-    <span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;1.0&#39;</span><span class="p">,</span>
-                <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;Use Model operators (TODO: link to compound &#39;</span>
-                            <span class="s">&#39;model docs&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="Model.add_model"><a class="viewcode-back" href="../../../api/astropy.modeling.Model.html#astropy.modeling.Model.add_model">[docs]</a>    <span class="k">def</span> <span class="nf">add_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create a CompositeModel by chaining the current model with the new one</span>
-<span class="sd">        using the specified mode.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        model : an instance of a subclass of Model</span>
-<span class="sd">        mode :  string</span>
-<span class="sd">               &#39;parallel&#39;, &#39;serial&#39;, &#39;p&#39; or &#39;s&#39;</span>
-<span class="sd">               a flag indicating whether to combine the models</span>
-<span class="sd">               in series or in parallel</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        model : CompositeModel</span>
-<span class="sd">            an instance of CompositeModel</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="kn">from</span> <span class="nn">._compound_deprecated</span> <span class="kn">import</span> <span class="p">(</span><span class="n">SummedCompositeModel</span><span class="p">,</span>
-                                           <span class="n">SerialCompositeModel</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;parallel&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="n">SummedCompositeModel</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;serial&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="n">SerialCompositeModel</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">InputParameterError</span><span class="p">(</span><span class="s">&quot;Unrecognized mode {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Model.copy"><a class="viewcode-back" href="../../../api/astropy.modeling.Model.html#astropy.modeling.Model.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1444,24 +1381,10 @@
             <span class="c"># an alternate initialization</span>
             <span class="k">return</span>
 
-        <span class="n">n_models</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="c"># Pop off param_dim and handle backwards compatibility</span>
-        <span class="k">if</span> <span class="s">&#39;param_dim&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-            <span class="n">n_models</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;param_dim&#39;</span><span class="p">)</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="s">&#39;The param_dim argument to {0}.__init__ is deprecated; &#39;</span>
-                <span class="s">&#39;use n_models instead.  See also the model_set_axis argument &#39;</span>
-                <span class="s">&#39;and related discussion in the docstring for Model.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span> <span class="n">AstropyDeprecationWarning</span><span class="p">)</span>
-            <span class="k">if</span> <span class="s">&#39;n_models&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="s">&quot;param_dim and n_models cannot both be specified; use &quot;</span>
-                    <span class="s">&quot;n_models, as param_dim is deprecated&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">n_models</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;n_models&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">n_models</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;n_models&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">n_models</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span>
-                    <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">n_models</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">n_models</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">)):</span>
+                    <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">n_models</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">))</span> <span class="ow">and</span> <span class="n">n_models</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s">&quot;n_models must be either None (in which case it is &quot;</span>
                 <span class="s">&quot;determined from the model_set_axis of the parameter initial &quot;</span>
@@ -1946,7 +1869,7 @@
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_normalize_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
             <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_get_submodels</span><span class="p">()[</span><span class="n">index</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_get_slice</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">index</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
@@ -2000,7 +1923,7 @@
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
             <span class="c"># Delete _evaluate from the members dict</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
                 <span class="k">del</span> <span class="n">rv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s">&#39;_evaluate&#39;</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">rv</span>
@@ -2125,37 +2048,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">modname</span> <span class="o">=</span> <span class="s">&#39;__main__&#39;</span>
 
-        <span class="c"># TODO: These aren&#39;t the full rules for handling inputs and outputs, but</span>
-        <span class="c"># this will handle most basic cases correctly</span>
-        <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s">&#39;|&#39;</span><span class="p">:</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">inputs</span>
-            <span class="n">outputs</span> <span class="o">=</span> <span class="n">right</span><span class="o">.</span><span class="n">outputs</span>
-
-            <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span> <span class="o">!=</span> <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">ModelDefinitionError</span><span class="p">(</span>
-                    <span class="s">&quot;Unsupported operands for |: {0} (n_inputs={1}, &quot;</span>
-                    <span class="s">&quot;n_outputs={2}) and {3} (n_inputs={4}, n_outputs={5}); &quot;</span>
-                    <span class="s">&quot;n_outputs for the left-hand model must match n_inputs &quot;</span>
-                    <span class="s">&quot;for the right-hand model.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="n">left</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                        <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s">&#39;&amp;&#39;</span><span class="p">:</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">combine_labels</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">inputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">inputs</span><span class="p">)</span>
-            <span class="n">outputs</span> <span class="o">=</span> <span class="n">combine_labels</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">outputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">outputs</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c"># Without loss of generality</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">inputs</span>
-            <span class="n">outputs</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">outputs</span>
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">n_inputs</span> <span class="o">!=</span> <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span> <span class="ow">or</span>
-                    <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span> <span class="o">!=</span> <span class="n">right</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="n">ModelDefinitionError</span><span class="p">(</span>
-                    <span class="s">&quot;Unsupported operands for {0}: {1} (n_inputs={2}, &quot;</span>
-                    <span class="s">&quot;n_outputs={3}) and {4} (n_inputs={5}, n_outputs={6}); &quot;</span>
-                    <span class="s">&quot;models must have the same n_inputs and the same &quot;</span>
-                    <span class="s">&quot;n_outputs for this operator&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="n">operator</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">,</span>
-                        <span class="n">right</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">))</span>
+        <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">mcls</span><span class="o">.</span><span class="n">_check_inputs_and_outputs</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="s">&#39;+&#39;</span><span class="p">,</span> <span class="s">&#39;-&#39;</span><span class="p">):</span>
             <span class="n">linear</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">linear</span> <span class="ow">and</span> <span class="n">right</span><span class="o">.</span><span class="n">linear</span>
@@ -2202,14 +2095,40 @@
         <span class="k">return</span> <span class="n">new_cls</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_handle_backwards_compat</span><span class="p">(</span><span class="n">mcls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">members</span><span class="p">):</span>
-        <span class="c"># Override _handle_backwards_compat from _ModelMeta to be a no-op; it</span>
-        <span class="c"># is not needed since compound models did not exist before version 1.0</span>
-        <span class="c"># anyways.</span>
+    <span class="k">def</span> <span class="nf">_check_inputs_and_outputs</span><span class="p">(</span><span class="n">mcls</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+        <span class="c"># TODO: These aren&#39;t the full rules for handling inputs and outputs, but</span>
+        <span class="c"># this will handle most basic cases correctly</span>
+        <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s">&#39;|&#39;</span><span class="p">:</span>
+            <span class="n">inputs</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">inputs</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">right</span><span class="o">.</span><span class="n">outputs</span>
 
-        <span class="c"># TODO: Remove this at the same time as removing</span>
-        <span class="c"># _ModelMeta._handle_backwards_compat</span>
-        <span class="k">return</span>
+            <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span> <span class="o">!=</span> <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ModelDefinitionError</span><span class="p">(</span>
+                    <span class="s">&quot;Unsupported operands for |: {0} (n_inputs={1}, &quot;</span>
+                    <span class="s">&quot;n_outputs={2}) and {3} (n_inputs={4}, n_outputs={5}); &quot;</span>
+                    <span class="s">&quot;n_outputs for the left-hand model must match n_inputs &quot;</span>
+                    <span class="s">&quot;for the right-hand model.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">left</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s">&#39;&amp;&#39;</span><span class="p">:</span>
+            <span class="n">inputs</span> <span class="o">=</span> <span class="n">combine_labels</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">inputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">combine_labels</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">outputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">outputs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># Without loss of generality</span>
+            <span class="n">inputs</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">inputs</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">outputs</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">n_inputs</span> <span class="o">!=</span> <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span> <span class="ow">or</span>
+                    <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span> <span class="o">!=</span> <span class="n">right</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">ModelDefinitionError</span><span class="p">(</span>
+                    <span class="s">&quot;Unsupported operands for {0}: {1} (n_inputs={2}, &quot;</span>
+                    <span class="s">&quot;n_outputs={3}) and {4} (n_inputs={5}, n_outputs={6}); &quot;</span>
+                    <span class="s">&quot;models must have the same n_inputs and the same &quot;</span>
+                    <span class="s">&quot;n_outputs for this operator&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">operator</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">,</span>
+                        <span class="n">right</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">n_outputs</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_make_user_inverse</span><span class="p">(</span><span class="n">mcls</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
@@ -2294,34 +2213,23 @@
             <span class="n">submodel</span> <span class="o">=</span> <span class="n">cls</span><span class="p">[</span><span class="n">submodel_idx</span><span class="p">]</span>
 
             <span class="n">orig_param</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">submodel</span><span class="p">,</span> <span class="n">submodel_param</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orig_param</span><span class="p">,</span> <span class="n">Parameter</span><span class="p">):</span>
-                <span class="c"># This is just a pathological case that is only really needed</span>
-                <span class="c"># to support the deprecated _CompositeModel--composite models</span>
-                <span class="c"># claim to have some parameters, but don&#39;t actually implement</span>
-                <span class="c"># the parameter descriptors, so we just make one up basically,</span>
-                <span class="c"># with a default value of zero.  This value will just be thrown</span>
-                <span class="c"># away, basically.</span>
-                <span class="c"># TODO: Remove this special case once the legacy interfaces</span>
-                <span class="c"># have been removed (basically this entire if statement--keep</span>
-                <span class="c"># only the parts in the else: clause.</span>
-                <span class="n">new_param</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">param_name</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">submodel</span><span class="p">,</span> <span class="n">Model</span><span class="p">):</span>
+                <span class="c"># Take the parameter&#39;s default from the model&#39;s value for that</span>
+                <span class="c"># parameter</span>
+                <span class="n">default</span> <span class="o">=</span> <span class="n">orig_param</span><span class="o">.</span><span class="n">value</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">submodel</span><span class="p">,</span> <span class="n">Model</span><span class="p">):</span>
-                    <span class="c"># Take the parameter&#39;s default from the model&#39;s value for that</span>
-                    <span class="c"># parameter</span>
-                    <span class="n">default</span> <span class="o">=</span> <span class="n">orig_param</span><span class="o">.</span><span class="n">value</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">default</span> <span class="o">=</span> <span class="n">orig_param</span><span class="o">.</span><span class="n">default</span>
+                <span class="n">default</span> <span class="o">=</span> <span class="n">orig_param</span><span class="o">.</span><span class="n">default</span>
 
-                <span class="c"># Copy constraints</span>
-                <span class="n">constraints</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">orig_param</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-                                   <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">Model</span><span class="o">.</span><span class="n">parameter_constraints</span><span class="p">)</span>
+            <span class="c"># Copy constraints</span>
+            <span class="n">constraints</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">orig_param</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+                               <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">Model</span><span class="o">.</span><span class="n">parameter_constraints</span><span class="p">)</span>
 
-                <span class="c"># Note: Parameter.copy() returns a new unbound Parameter, never</span>
-                <span class="c"># a bound Parameter even if submodel is a Model instance (as</span>
-                <span class="c"># opposed to a Model subclass)</span>
-                <span class="n">new_param</span> <span class="o">=</span> <span class="n">orig_param</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">param_name</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span>
-                                            <span class="o">**</span><span class="n">constraints</span><span class="p">)</span>
+            <span class="c"># Note: Parameter.copy() returns a new unbound Parameter, never</span>
+            <span class="c"># a bound Parameter even if submodel is a Model instance (as</span>
+            <span class="c"># opposed to a Model subclass)</span>
+            <span class="n">new_param</span> <span class="o">=</span> <span class="n">orig_param</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">param_name</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span>
+                                        <span class="o">**</span><span class="n">constraints</span><span class="p">)</span>
 
             <span class="nb">setattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">param_name</span><span class="p">,</span> <span class="n">new_param</span><span class="p">)</span>
 
@@ -2431,9 +2339,9 @@
             <span class="n">start</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">start</span> <span class="k">if</span> <span class="n">index</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="mi">0</span>
             <span class="n">stop</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">stop</span>
                     <span class="k">if</span> <span class="n">index</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">submodel_names</span><span class="p">))</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
                 <span class="n">start</span> <span class="o">=</span> <span class="n">check_for_negative_index</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
                 <span class="n">stop</span> <span class="o">=</span> <span class="n">check_for_negative_index</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
                 <span class="n">start</span> <span class="o">=</span> <span class="n">get_index_from_name</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
@@ -2447,7 +2355,7 @@
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Empty slice of a compound model.&quot;</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
             <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">submodel_names</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span>
                         <span class="s">&quot;Model index {0} out of range.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
@@ -2530,6 +2438,14 @@
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">_CompoundModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_format_str</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="n">keywords</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+        <span class="c"># This __getattr__ is necessary, because _CompoundModelMeta creates</span>
+        <span class="c"># Parameter descriptors *lazily*--they do not exist in the class</span>
+        <span class="c"># __dict__ until one of them has been accessed.</span>
+        <span class="c"># However, this is at odds with how Python looks up descriptors (see</span>
+        <span class="c"># (https://docs.python.org/3/reference/datamodel.html#invoking-descriptors)</span>
+        <span class="c"># which is to look directly in the class __dict__</span>
+        <span class="c"># This workaround allows descriptors to work correctly when they are</span>
+        <span class="c"># not initially found in the class __dict__</span>
         <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&#39;__get__&#39;</span><span class="p">):</span>
             <span class="c"># Object is a descriptor, so we should really return the result of</span>
@@ -3096,7 +3012,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

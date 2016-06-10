@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.table.pprint &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.table.pprint &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="astropy.table" href="../table.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" >Module code</a> &raquo;</li>
@@ -88,37 +88,24 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
-<span class="c"># Note, in numpy &lt;= 1.6, some classes do not properly represent themselves.</span>
-<span class="kn">from</span> <span class="nn">..utils.compat</span> <span class="kn">import</span> <span class="n">NUMPY_LT_1_6_1</span>
 <span class="kn">from</span> <span class="nn">..utils.console</span> <span class="kn">import</span> <span class="n">Getch</span><span class="p">,</span> <span class="n">color_print</span><span class="p">,</span> <span class="n">terminal_size</span><span class="p">,</span> <span class="n">conf</span>
 <span class="kn">from</span> <span class="nn">..utils.data_info</span> <span class="kn">import</span> <span class="n">dtype_info_name</span>
 
-<span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY3</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">default_format_func</span><span class="p">(</span><span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-    <span class="n">_format_funcs</span> <span class="o">=</span> <span class="p">{</span><span class="bp">None</span><span class="p">:</span> <span class="n">default_format_func</span><span class="p">}</span>
-<span class="k">elif</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
-    <span class="n">_format_funcs</span> <span class="o">=</span> <span class="p">{</span><span class="bp">None</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">text_type</span><span class="p">(</span><span class="n">val</span><span class="p">)}</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">def</span> <span class="nf">default_format_func</span><span class="p">(</span><span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">text_type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+
+<span class="n">_format_funcs</span> <span class="o">=</span> <span class="p">{</span><span class="bp">None</span><span class="p">:</span> <span class="n">default_format_func</span><span class="p">}</span>
 
 
 <span class="c">### The first three functions are helpers for _auto_format_func</span>
 
-
-<span class="k">def</span> <span class="nf">_use_val_tolist</span><span class="p">(</span><span class="n">format_func</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Wrap format function to work with values converted to python equivalents.</span>
-
-<span class="sd">    In numpy &lt;= 1.6, classes such as np.float32 do not properly represent</span>
-<span class="sd">    themselves as floats, and hence cannot easily be formatted; see</span>
-<span class="sd">    https://github.com/astropy/astropy/issues/148#issuecomment-3930809</span>
-<span class="sd">    Hence, we force the value to a python type using tolist()</span>
-<span class="sd">    (except for np.ma.masked, since np.ma.masked.tolist() is None).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="k">lambda</span> <span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">format_func</span><span class="p">(</span><span class="n">format_</span><span class="p">,</span>
-                                            <span class="n">val</span> <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked</span>
-                                            <span class="k">else</span> <span class="n">val</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">_use_str_for_masked_values</span><span class="p">(</span><span class="n">format_func</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Wrap format function to trap masked values.</span>
@@ -153,8 +140,6 @@
 
     <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">callable</span><span class="p">(</span><span class="n">format_</span><span class="p">):</span>
         <span class="n">format_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">format_</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">NUMPY_LT_1_6_1</span><span class="p">:</span>
-            <span class="n">format_func</span> <span class="o">=</span> <span class="n">_use_val_tolist</span><span class="p">(</span><span class="n">format_func</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">out</span> <span class="o">=</span> <span class="n">format_func</span><span class="p">(</span><span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
@@ -184,9 +169,6 @@
             <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">format_func</span> <span class="ow">in</span> <span class="n">_possible_string_format_functions</span><span class="p">(</span><span class="n">format_</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">NUMPY_LT_1_6_1</span><span class="p">:</span>
-                <span class="n">format_func</span> <span class="o">=</span> <span class="n">_use_val_tolist</span><span class="p">(</span><span class="n">format_func</span><span class="p">)</span>
-
             <span class="k">try</span><span class="p">:</span>
                 <span class="c"># Does this string format method work?</span>
                 <span class="n">out</span> <span class="o">=</span> <span class="n">format_func</span><span class="p">(</span><span class="n">format_</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
@@ -766,7 +748,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

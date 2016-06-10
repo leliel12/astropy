@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.nddata.mixins.ndslicing &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.nddata.mixins.ndslicing &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="astropy.nddata" href="../../nddata.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" >Module code</a> &raquo;</li>
@@ -79,39 +79,124 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
                         <span class="n">unicode_literals</span><span class="p">)</span>
 
+<span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="n">log</span>
+
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;NDSlicingMixin&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="NDSlicingMixin"><a class="viewcode-back" href="../../../../api/astropy.nddata.NDSlicingMixin.html#astropy.nddata.NDSlicingMixin">[docs]</a><span class="k">class</span> <span class="nc">NDSlicingMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Mixin to provide slicing on objects using the NDData interface.</span>
+    <span class="sd">&quot;&quot;&quot;Mixin to provide slicing on objects using the `NDData`</span>
+<span class="sd">    interface.</span>
 
-<span class="sd">    When subclassing, be sure to list the superclasses in the correct order</span>
-<span class="sd">    so that the subclass sees NDData as the main superclass. See</span>
-<span class="sd">    `~astropy.nddata.NDDataArray` for an example.</span>
+<span class="sd">    The ``data``, ``mask``, ``uncertainty`` and ``wcs`` will be sliced, if</span>
+<span class="sd">    set and sliceable. The ``unit`` and ``meta`` will be untouched. The return</span>
+<span class="sd">    will be a reference and not a copy, if possible.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Using this Mixin with `~astropy.nddata.NDData`:</span>
+
+<span class="sd">        &gt;&gt;&gt; from astropy.nddata import NDData, NDSlicingMixin</span>
+<span class="sd">        &gt;&gt;&gt; class NDDataSliceable(NDSlicingMixin, NDData):</span>
+<span class="sd">        ...     pass</span>
+
+<span class="sd">    Slicing an instance containing data::</span>
+
+<span class="sd">        &gt;&gt;&gt; nd = NDDataSliceable([1,2,3,4,5])</span>
+<span class="sd">        &gt;&gt;&gt; nd[1:3]</span>
+<span class="sd">        NDDataSliceable([2, 3])</span>
+
+<span class="sd">    Also the other attributes are sliced for example the ``mask``::</span>
+
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        &gt;&gt;&gt; mask = np.array([True, False, True, True, False])</span>
+<span class="sd">        &gt;&gt;&gt; nd2 = NDDataSliceable(nd, mask=mask)</span>
+<span class="sd">        &gt;&gt;&gt; nd2[1:3].mask</span>
+<span class="sd">        array([False,  True], dtype=bool)</span>
+
+<span class="sd">    Be aware that changing values of the sliced instance will change the values</span>
+<span class="sd">    of the original::</span>
+
+<span class="sd">        &gt;&gt;&gt; nd3 = nd2[1:3]</span>
+<span class="sd">        &gt;&gt;&gt; nd3.data[0] = 100</span>
+<span class="sd">        &gt;&gt;&gt; nd2</span>
+<span class="sd">        NDDataSliceable([  1, 100,   3,   4,   5])</span>
+
+<span class="sd">    See also</span>
+<span class="sd">    --------</span>
+<span class="sd">    NDDataRef</span>
+<span class="sd">    NDDataArray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="c"># Abort slicing if the data is a single scalar.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;scalars cannot be sliced.&#39;</span><span class="p">)</span>
 
-        <span class="n">new_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="c"># Let the other methods handle slicing.</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">new_uncertainty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">new_uncertainty</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">def</span> <span class="nf">_slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Collects the sliced attributes and passes them back as `dict`.</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">new_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">new_mask</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">        It passes uncertainty, mask and wcs to their appropriate ``_slice_*``</span>
+<span class="sd">        method, while ``meta`` and ``unit`` are simply taken from the original.</span>
+<span class="sd">        The data is assumed to be sliceable and is sliced directly.</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">new_wcs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">new_wcs</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">        When possible the return should *not* be a copy of the data but a</span>
+<span class="sd">        reference.</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="n">new_uncertainty</span><span class="p">,</span>
-                              <span class="n">mask</span><span class="o">=</span><span class="n">new_mask</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">new_wcs</span><span class="p">,</span>
-                              <span class="n">meta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span></div>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        item : slice</span>
+<span class="sd">            The slice passed to ``__getitem__``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict :</span>
+<span class="sd">            Containing all the attributes after slicing - ready to</span>
+<span class="sd">            use them to create ``self.__class__.__init__(**kwargs)`` in</span>
+<span class="sd">            ``__getitem__``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="c"># Try to slice some attributes</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;uncertainty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_uncertainty</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_mask</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;wcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_wcs</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="c"># Attributes which are copied and not intended to be sliced</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;unit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span>
+        <span class="k">return</span> <span class="n">kwargs</span>
+
+    <span class="k">def</span> <span class="nf">_slice_uncertainty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="c"># Catching TypeError in case the object has no __getitem__ method.</span>
+            <span class="c"># But let IndexError raise.</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;uncertainty cannot be sliced.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uncertainty</span>
+
+    <span class="k">def</span> <span class="nf">_slice_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;mask cannot be sliced.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span>
+
+    <span class="k">def</span> <span class="nf">_slice_wcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;wcs cannot be sliced.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wcs</span></div>
 </pre></div>
 
           </div>
@@ -131,7 +216,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

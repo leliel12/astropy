@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.utils.console &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.utils.console &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -193,7 +193,7 @@
 
 <div class="viewcode-block" id="isatty"><a class="viewcode-back" href="../../../api/astropy.utils.console.isatty.html#astropy.utils.console.isatty">[docs]</a><span class="k">def</span> <span class="nf">isatty</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns `True` if `file` is a tty.</span>
+<span class="sd">    Returns `True` if ``file`` is a tty.</span>
 
 <span class="sd">    Most built-in Python file-like objects have an `isatty` member,</span>
 <span class="sd">    but some user-defined types may not, so this assumes those are not</span>
@@ -238,6 +238,8 @@
             <span class="n">lines</span> <span class="o">-=</span> <span class="mi">6</span>
         <span class="k">if</span> <span class="n">width</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
             <span class="n">width</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">lines</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">width</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;unable to get terminal size&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -567,7 +569,7 @@
 
 <span class="sd">        file : writable file-like object, optional</span>
 <span class="sd">            The file to write the progress bar to.  Defaults to</span>
-<span class="sd">            `sys.stdout`.  If `file` is not a tty (as determined by</span>
+<span class="sd">            `sys.stdout`.  If ``file`` is not a tty (as determined by</span>
 <span class="sd">            calling its `isatty` member, if any, or special case hacks</span>
 <span class="sd">            to detect the IPython console), the progress bar will be</span>
 <span class="sd">            completely silent.</span>
@@ -768,7 +770,7 @@
 
 <span class="sd">        file : writeable file-like object, optional</span>
 <span class="sd">            The file to write the progress bar to.  Defaults to</span>
-<span class="sd">            `sys.stdout`.  If `file` is not a tty (as determined by</span>
+<span class="sd">            `sys.stdout`.  If ``file`` is not a tty (as determined by</span>
 <span class="sd">            calling its `isatty` member, if any), the scrollbar will</span>
 <span class="sd">            be completely silent.</span>
 
@@ -834,7 +836,7 @@
 
 <span class="sd">        file : writeable file-like object, optional</span>
 <span class="sd">            The file to write the spinner to.  Defaults to</span>
-<span class="sd">            `sys.stdout`.  If `file` is not a tty (as determined by</span>
+<span class="sd">            `sys.stdout`.  If ``file`` is not a tty (as determined by</span>
 <span class="sd">            calling its `isatty` member, if any, or special case hacks</span>
 <span class="sd">            to detect the IPython console), the spinner will be</span>
 <span class="sd">            completely silent.</span>
@@ -962,7 +964,7 @@
 
 <span class="sd">        file : writable file-like object, optional</span>
 <span class="sd">            The file to write the to.  Defaults to `sys.stdout`.  If</span>
-<span class="sd">            `file` is not a tty (as determined by calling its `isatty`</span>
+<span class="sd">            ``file`` is not a tty (as determined by calling its `isatty`</span>
 <span class="sd">            member, if any), only ``msg`` will be displayed: the</span>
 <span class="sd">            `ProgressBar` or `Spinner` will be silent.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1177,7 +1179,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

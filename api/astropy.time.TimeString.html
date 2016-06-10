@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TimeString &mdash; Astropy v1.2.dev15003</title>
+    <title>TimeString &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Time and Dates (astropy.time)" href="../time/index.html" />
     <link rel="next" title="TimeUnique" href="astropy.time.TimeUnique.html" />
     <link rel="prev" title="TimePlotDate" href="astropy.time.TimePlotDate.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../time/index.html" accesskey="U">Time and Dates (<code class="docutils literal"><span class="pre">astropy.time</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>TimeString<a class="headerlink" href="#timestring" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.time.TimeString">
-<em class="property">class </em><code class="descclassname">astropy.time.</code><code class="descname">TimeString</code><span class="sig-paren">(</span><em>val1</em>, <em>val2</em>, <em>scale</em>, <em>precision</em>, <em>in_subfmt</em>, <em>out_subfmt</em>, <em>from_jd=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L664" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeString" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.time.</code><code class="descname">TimeString</code><span class="sig-paren">(</span><em>val1</em>, <em>val2</em>, <em>scale</em>, <em>precision</em>, <em>in_subfmt</em>, <em>out_subfmt</em>, <em>from_jd=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L664" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.time.TimeString" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.time.TimeUnique.html#astropy.time.TimeUnique" title="astropy.time.formats.TimeUnique"><code class="docutils literal"><span class="pre">astropy.time.TimeUnique</span></code></a></p>
 <p>Base class for string-like time representations.</p>
 <p>This class assumes that anything following the last decimal point to the
@@ -136,7 +136,7 @@ right is a fraction of a second.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="astropy.time.TimeString.format_string">
-<code class="descname">format_string</code><span class="sig-paren">(</span><em>str_fmt</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L768" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.format_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeString.format_string" title="Permalink to this definition">¶</a></dt>
+<code class="descname">format_string</code><span class="sig-paren">(</span><em>str_fmt</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.format_string"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L768" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.time.TimeString.format_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write time to a string using a given format.</p>
 <p>By default, just interprets str_fmt as a format string,
 but subclasses can add to this.</p>
@@ -144,19 +144,19 @@ but subclasses can add to this.</p>
 
 <dl class="method">
 <dt id="astropy.time.TimeString.parse_string">
-<code class="descname">parse_string</code><span class="sig-paren">(</span><em>timestr</em>, <em>subfmts</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L680" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.parse_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeString.parse_string" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parse_string</code><span class="sig-paren">(</span><em>timestr</em>, <em>subfmts</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.parse_string"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L680" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.time.TimeString.parse_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read time from a single string, using a set of possible formats.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.time.TimeString.set_jds">
-<code class="descname">set_jds</code><span class="sig-paren">(</span><em>val1</em>, <em>val2</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L721" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.set_jds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeString.set_jds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_jds</code><span class="sig-paren">(</span><em>val1</em>, <em>val2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.set_jds"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L721" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.time.TimeString.set_jds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the time strings contained in val1 and set jd1, jd2</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.time.TimeString.str_kwargs">
-<code class="descname">str_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L737" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.str_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.time.TimeString.str_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">str_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/time/formats.html#TimeString.str_kwargs"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/time/formats.py#L737" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.time.TimeString.str_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator that yields a dict of values corresponding to the
 calendar date and time for the internal JD values.</p>
 </dd></dl>
@@ -188,7 +188,7 @@ calendar date and time for the internal JD values.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

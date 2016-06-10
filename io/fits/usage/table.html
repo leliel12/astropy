@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table Data &mdash; Astropy v1.2.dev15003</title>
+    <title>Table Data &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Verification" href="verification.html" />
     <link rel="prev" title="Image Data" href="image.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -119,7 +119,7 @@ field is a short integer, second a character string (of length 20), third a
 floating point number, and fourth a character string (of length 10). Each
 record has the same (heterogeneous) data structure.</p>
 <p>The underlying data structure used for FITS tables is a class called
-<a class="reference internal" href="../api/tables.html#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-class docutils literal"><span class="pre">FITS_rec</span></code></a> which is a specialized subclass of <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a>.  A
+<a class="reference internal" href="../api/tables.html#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-class docutils literal"><span class="pre">FITS_rec</span></code></a> which is a specialized subclass of <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a>.  A
 <a class="reference internal" href="../api/tables.html#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-class docutils literal"><span class="pre">FITS_rec</span></code></a> can be instantiated directly using the same initialization
 format presented for plain recarrays as in the example above.  One may also
 instantiate a new <a class="reference internal" href="../api/tables.html#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-class docutils literal"><span class="pre">FITS_rec</span></code></a> from a list of PyFITS <a class="reference internal" href="../api/tables.html#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a> objects
@@ -144,7 +144,8 @@ specifications when constructing a record array.</p>
 <h3>Reading a FITS Table<a class="headerlink" href="#reading-a-fits-table" title="Permalink to this headline">¶</a></h3>
 <p>Like images, the <code class="docutils literal"><span class="pre">.data</span></code> attribute of a table HDU contains the data of the
 table.  To recap, the simple example in the Quick Tutorial:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;bright_stars.fits&#39;</span><span class="p">)</span>  <span class="c"># open a FITS file</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;bright_stars.fits&#39;</span><span class="p">)</span>  <span class="c"># open a FITS file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>  <span class="c"># assume the first extension is a table</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tbdata</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>  <span class="c"># show the first two rows</span>
 <span class="go">[(1, &#39;Sirius&#39;, -1.4500000476837158, &#39;A1V&#39;),</span>
@@ -308,14 +309,14 @@ array                                 the data of the column
 </pre>
 <p>Here are a few Columns using various combination of these arguments:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fits</span> <span class="kn">import</span> <span class="n">Column</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">312</span><span class="p">,</span> <span class="mi">334</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">317</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">&#39;NGC1&#39;</span><span class="p">,</span> <span class="s">&#39;NGC2&#39;</span><span class="p">,</span> <span class="s">&#39;NGC3&#39;</span><span class="p">,</span> <span class="s">&#39;NGC4&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">counts</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;1000E&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;counts&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;J&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">&#39;DN&#39;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">counts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;notes&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;A10&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c4</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;spectrum&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;1000E&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c5</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;flag&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>In this example, formats are specified with the FITS letter codes. When there
@@ -353,25 +354,25 @@ create.</p>
 <p>A look of the newly created HDU&#8217;s header will show that relevant keywords are
 properly populated:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tbhdu</span><span class="o">.</span><span class="n">header</span>
-<span class="go">XTENSION = &#39;BINTABLE&#39;                      / binary table extension</span>
-<span class="go">BITPIX   =                               8 / array data type</span>
-<span class="go">NAXIS    =                               2 / number of array dimensions</span>
-<span class="go">NAXIS1   =                            4025 / length of dimension 1</span>
-<span class="go">NAXIS2   =                               4 / length of dimension 2</span>
-<span class="go">PCOUNT   =                               0 / number of group parameters</span>
-<span class="go">GCOUNT   =                               1 / number of groups</span>
-<span class="go">TFIELDS  =                               5 / number of table fields</span>
-<span class="go">TTYPE1   = &#39;target &#39;</span>
-<span class="go">TFORM1   = &#39;10A &#39;</span>
-<span class="go">TTYPE2   = &#39;counts &#39;</span>
-<span class="go">TFORM2   = &#39;J &#39;</span>
-<span class="go">TUNIT2   = &#39;DN &#39;</span>
-<span class="go">TTYPE3   = &#39;notes &#39;</span>
-<span class="go">TFORM3   = &#39;10A &#39;</span>
-<span class="go">TTYPE4   = &#39;spectrum&#39;</span>
-<span class="go">TFORM4   = &#39;1000E &#39;</span>
-<span class="go">TTYPE5   = &#39;flag &#39;</span>
-<span class="go">TFORM5   = &#39;L &#39;</span>
+<span class="go">XTENSION= &#39;BINTABLE&#39;           / binary table extension</span>
+<span class="go">BITPIX  =                    8 / array data type</span>
+<span class="go">NAXIS   =                    2 / number of array dimensions</span>
+<span class="go">NAXIS1  =                 4025 / length of dimension 1</span>
+<span class="go">NAXIS2  =                    4 / length of dimension 2</span>
+<span class="go">PCOUNT  =                    0 / number of group parameters</span>
+<span class="go">GCOUNT  =                    1 / number of groups</span>
+<span class="go">TFIELDS =                    5 / number of table fields</span>
+<span class="go">TTYPE1  = &#39;target  &#39;</span>
+<span class="go">TFORM1  = &#39;10A     &#39;</span>
+<span class="go">TTYPE2  = &#39;counts  &#39;</span>
+<span class="go">TFORM2  = &#39;J       &#39;</span>
+<span class="go">TUNIT2  = &#39;DN      &#39;</span>
+<span class="go">TTYPE3  = &#39;notes   &#39;</span>
+<span class="go">TFORM3  = &#39;10A     &#39;</span>
+<span class="go">TTYPE4  = &#39;spectrum&#39;</span>
+<span class="go">TFORM4  = &#39;1000E   &#39;</span>
+<span class="go">TTYPE5  = &#39;flag    &#39;</span>
+<span class="go">TFORM5  = &#39;L       &#39;</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -386,7 +387,7 @@ they are most likely not), so they have to be combined into a new array.</p>
 existing record array, a kludge can be used to create a new table HDU without
 any copying.  First, create the Columns as before, but without using the
 <code class="docutils literal"><span class="pre">array=</span></code> argument:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;target&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;10A&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Then call <a class="reference internal" href="../api/tables.html#astropy.io.fits.BinTableHDU.from_columns" title="astropy.io.fits.BinTableHDU.from_columns"><code class="xref py py-meth docutils literal"><span class="pre">BinTableHDU.from_columns()</span></code></a>:</p>
@@ -448,7 +449,7 @@ process won&#8217;t be necessary.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

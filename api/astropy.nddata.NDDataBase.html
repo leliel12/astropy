@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>NDDataBase &mdash; Astropy v1.2.dev15003</title>
+    <title>NDDataBase &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="N-dimensional datasets (astropy.nddata)" href="../nddata/index.html" />
-    <link rel="next" title="NDIOMixin" href="astropy.nddata.NDIOMixin.html" />
+    <link rel="next" title="NDDataRef" href="astropy.nddata.NDDataRef.html" />
     <link rel="prev" title="NDDataArray" href="astropy.nddata.NDDataArray.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
@@ -58,7 +58,7 @@
     <h3>Navigation</h3>
     <ul>
       <li class="right">
-	<a href="astropy.nddata.NDIOMixin.html" title="NDIOMixin">
+	<a href="astropy.nddata.NDDataRef.html" title="NDDataRef">
 	  next &raquo;
 	</a>
       </li>
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../nddata/index.html" accesskey="U">N-dimensional datasets (<code class="docutils literal"><span class="pre">astropy.nddata</span></code>)</a> &raquo;</li>
@@ -88,13 +88,13 @@
 <h1>NDDataBase<a class="headerlink" href="#nddatabase" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.nddata.NDDataBase">
-<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">NDDataBase</code><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nddata_base.py#L15" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/nddata/nddata_base.html#NDDataBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.nddata.NDDataBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
-<p>Base metaclass that defines the interface for N-dimensional datasets with
-associated meta informations used in <code class="docutils literal"><span class="pre">astropy</span></code>.</p>
-<p>All properties and methods have to be overridden in subclasses. See
-<a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> for a subclass that defines this interface on
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>-like based <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<em class="property">class </em><code class="descclassname">astropy.nddata.</code><code class="descname">NDDataBase</code><a class="reference internal" href="../_modules/astropy/nddata/nddata_base.html#NDDataBase"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/nddata/nddata_base.py#L15" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.nddata.NDDataBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base metaclass that defines the interface for N-dimensional datasets
+with associated meta informations used in <code class="docutils literal"><span class="pre">astropy</span></code>.</p>
+<p>All properties and <code class="docutils literal"><span class="pre">__init__</span></code> have to be overridden in subclasses. See
+<a class="reference internal" href="astropy.nddata.NDData.html#astropy.nddata.NDData" title="astropy.nddata.NDData"><code class="xref py py-obj docutils literal"><span class="pre">NDData</span></code></a> for a subclass that defines this interface on <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a>-like
+<code class="docutils literal"><span class="pre">data</span></code>.</p>
 <p class="rubric">Attributes Summary</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -109,7 +109,7 @@ associated meta informations used in <code class="docutils literal"><span class=
 <td>Mask for the dataset.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.meta" title="astropy.nddata.NDDataBase.meta"><code class="xref py py-obj docutils literal"><span class="pre">meta</span></code></a></td>
-<td>Meta information about the dataset.</td>
+<td>Additional meta information about the dataset.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.uncertainty" title="astropy.nddata.NDDataBase.uncertainty"><code class="xref py py-obj docutils literal"><span class="pre">uncertainty</span></code></a></td>
 <td>Uncertainty in the dataset.</td>
@@ -118,7 +118,7 @@ associated meta informations used in <code class="docutils literal"><span class=
 <td>Unit for the dataset.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.nddata.NDDataBase.wcs" title="astropy.nddata.NDDataBase.wcs"><code class="xref py py-obj docutils literal"><span class="pre">wcs</span></code></a></td>
-<td>A world coordinate system (WCS) for the dataset.</td>
+<td>World coordinate system (WCS) for the dataset.</td>
 </tr>
 </tbody>
 </table>
@@ -133,15 +133,15 @@ associated meta informations used in <code class="docutils literal"><span class=
 <dt id="astropy.nddata.NDDataBase.mask">
 <code class="descname">mask</code><a class="headerlink" href="#astropy.nddata.NDDataBase.mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mask for the dataset.</p>
-<p>Masks should follow the <code class="docutils literal"><span class="pre">numpy</span></code> convention that valid data points are
-marked by <code class="docutils literal"><span class="pre">False</span></code> and invalid ones with <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<p>Masks should follow the <code class="docutils literal"><span class="pre">numpy</span></code> convention that <strong>valid</strong> data points
+are marked by <code class="docutils literal"><span class="pre">False</span></code> and <strong>invalid</strong> ones with <code class="docutils literal"><span class="pre">True</span></code>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="astropy.nddata.NDDataBase.meta">
 <code class="descname">meta</code><a class="headerlink" href="#astropy.nddata.NDDataBase.meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Meta information about the dataset.</p>
-<p>Should be <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code></a>-like.</p>
+<dd><p>Additional meta information about the dataset.</p>
+<p>Should be <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code></a>-like.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -149,8 +149,8 @@ marked by <code class="docutils literal"><span class="pre">False</span></code> a
 <code class="descname">uncertainty</code><a class="headerlink" href="#astropy.nddata.NDDataBase.uncertainty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uncertainty in the dataset.</p>
 <p>Should have an attribute <code class="docutils literal"><span class="pre">uncertainty_type</span></code> that defines what kind of
-uncertainty is stored, such as <code class="docutils literal"><span class="pre">'std'</span></code> for standard deviation or
-<code class="docutils literal"><span class="pre">'var'</span></code> for variance.</p>
+uncertainty is stored, such as <code class="docutils literal"><span class="pre">&quot;std&quot;</span></code> for standard deviation or
+<code class="docutils literal"><span class="pre">&quot;var&quot;</span></code> for variance.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -162,7 +162,7 @@ uncertainty is stored, such as <code class="docutils literal"><span class="pre">
 <dl class="attribute">
 <dt id="astropy.nddata.NDDataBase.wcs">
 <code class="descname">wcs</code><a class="headerlink" href="#astropy.nddata.NDDataBase.wcs" title="Permalink to this definition">¶</a></dt>
-<dd><p>A world coordinate system (WCS) for the dataset.</p>
+<dd><p>World coordinate system (WCS) for the dataset.</p>
 </dd></dl>
 
 </dd></dl>
@@ -192,7 +192,7 @@ uncertainty is stored, such as <code class="docutils literal"><span class="pre">
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.visualization.interval &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.visualization.interval &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -85,9 +85,11 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">.transform</span> <span class="kn">import</span> <span class="n">BaseTransform</span>
+<span class="kn">from</span> <span class="nn">.zscale</span> <span class="kn">import</span> <span class="n">zscale</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;BaseInterval&#39;</span><span class="p">,</span> <span class="s">&#39;ManualInterval&#39;</span><span class="p">,</span> <span class="s">&#39;MinMaxInterval&#39;</span><span class="p">,</span>
-           <span class="s">&#39;PercentileInterval&#39;</span><span class="p">,</span> <span class="s">&#39;AsymmetricPercentileInterval&#39;</span><span class="p">]</span>
+           <span class="s">&#39;PercentileInterval&#39;</span><span class="p">,</span> <span class="s">&#39;AsymmetricPercentileInterval&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ZScaleInterval&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="BaseInterval"><a class="viewcode-back" href="../../../api/astropy.visualization.BaseInterval.html#astropy.visualization.BaseInterval">[docs]</a><span class="k">class</span> <span class="nc">BaseInterval</span><span class="p">(</span><span class="n">BaseTransform</span><span class="p">):</span>
@@ -180,10 +182,7 @@
         <span class="c"># If needed, limit the number of samples. We sample with replacement</span>
         <span class="c"># since this is much faster.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">values</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples</span><span class="p">)</span>
-            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>  <span class="c"># Numpy 1.6.x</span>
-                <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">values</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples</span><span class="p">)]</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples</span><span class="p">)</span>
 
         <span class="c"># Filter out invalid values (inf, nan)</span>
         <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">values</span><span class="p">)]</span>
@@ -213,7 +212,52 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percentile</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">lower_percentile</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="n">percentile</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
         <span class="n">upper_percentile</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">lower_percentile</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">PercentileInterval</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">lower_percentile</span><span class="p">,</span> <span class="n">upper_percentile</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PercentileInterval</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">lower_percentile</span><span class="p">,</span> <span class="n">upper_percentile</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="ZScaleInterval"><a class="viewcode-back" href="../../../api/astropy.visualization.ZScaleInterval.html#astropy.visualization.ZScaleInterval">[docs]</a><span class="k">class</span> <span class="nc">ZScaleInterval</span><span class="p">(</span><span class="n">BaseInterval</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Interval based on IRAF&#39;s zscale.</span>
+
+<span class="sd">    http://iraf.net/forum/viewtopic.php?showtopic=134139</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : array_like</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    nsamples : int, optional</span>
+<span class="sd">        Number of points in array to sample for determining scaling factors.</span>
+<span class="sd">        Default to 1000.</span>
+<span class="sd">    contrast : float, optional</span>
+<span class="sd">        Scaling factor (between 0 and 1) for determining min and max. Larger</span>
+<span class="sd">        values increase the difference between min and max values used for</span>
+<span class="sd">        display. Default to 0.25.</span>
+<span class="sd">    max_reject : float, optional</span>
+<span class="sd">        If more than ``max_reject * npixels`` pixels are rejected, then the</span>
+<span class="sd">        returned values are the min and max of the data. Default to 0.5.</span>
+<span class="sd">    min_npixels : int, optional</span>
+<span class="sd">        If less than ``min_npixels`` pixels are rejected, then the</span>
+<span class="sd">        returned values are the min and max of the data. Default to 5.</span>
+<span class="sd">    krej : float, optional</span>
+<span class="sd">        Number of sigma used for the rejection. Default to 2.5.</span>
+<span class="sd">    max_iterations : int, optional</span>
+<span class="sd">        Maximum number of iterations for the rejection. Default to 5.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">max_reject</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                 <span class="n">min_npixels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">krej</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span> <span class="o">=</span> <span class="n">nsamples</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="n">contrast</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_reject</span> <span class="o">=</span> <span class="n">max_reject</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_npixels</span> <span class="o">=</span> <span class="n">min_npixels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">krej</span> <span class="o">=</span> <span class="n">krej</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_iterations</span> <span class="o">=</span> <span class="n">max_iterations</span>
+
+<div class="viewcode-block" id="ZScaleInterval.get_limits"><a class="viewcode-back" href="../../../api/astropy.visualization.ZScaleInterval.html#astropy.visualization.ZScaleInterval.get_limits">[docs]</a>    <span class="k">def</span> <span class="nf">get_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">zscale</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">contrast</span><span class="p">,</span>
+                      <span class="n">max_reject</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_reject</span><span class="p">,</span> <span class="n">min_npixels</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">min_npixels</span><span class="p">,</span>
+                      <span class="n">krej</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">krej</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_iterations</span><span class="p">)</span></div></div>
 </pre></div>
 
           </div>
@@ -233,7 +277,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

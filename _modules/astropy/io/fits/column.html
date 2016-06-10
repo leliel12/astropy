@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.fits.column &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.fits.column &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -95,8 +95,8 @@
 
 <span class="kn">from</span> <span class="nn">...extern.six</span> <span class="kn">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">iteritems</span>
 <span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">lazyproperty</span><span class="p">,</span> <span class="n">isiterable</span><span class="p">,</span> <span class="n">indent</span>
-<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
-
+<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
+<span class="kn">from</span> <span class="nn">...utils.exceptions</span> <span class="kn">import</span> <span class="n">AstropyDeprecationWarning</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Column&#39;</span><span class="p">,</span> <span class="s">&#39;ColDefs&#39;</span><span class="p">,</span> <span class="s">&#39;Delayed&#39;</span><span class="p">]</span>
 
@@ -124,10 +124,16 @@
 <span class="n">NUMPY2FITS</span><span class="p">[</span><span class="s">&#39;u2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;I&#39;</span>
 <span class="n">NUMPY2FITS</span><span class="p">[</span><span class="s">&#39;u4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;J&#39;</span>
 <span class="n">NUMPY2FITS</span><span class="p">[</span><span class="s">&#39;u8&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;K&#39;</span>
+<span class="c"># Add half precision floating point numbers which will be up-converted to</span>
+<span class="c"># single precision.</span>
+<span class="n">NUMPY2FITS</span><span class="p">[</span><span class="s">&#39;f2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;E&#39;</span>
 
 <span class="c"># This is the order in which values are converted to FITS types</span>
 <span class="c"># Note that only double precision floating point/complex are supported</span>
 <span class="n">FORMATORDER</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;L&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">,</span> <span class="s">&#39;J&#39;</span><span class="p">,</span> <span class="s">&#39;K&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">]</span>
+
+<span class="c"># Convert single precision floating point/complex to double precision.</span>
+<span class="n">FITSUPCONVERTERS</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;E&#39;</span> <span class="p">:</span> <span class="s">&#39;D&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span> <span class="p">:</span> <span class="s">&#39;M&#39;</span><span class="p">}</span>
 
 <span class="c"># mapping from ASCII table TFORM data type to numpy data type</span>
 <span class="c"># A: Character</span>
@@ -336,7 +342,7 @@
 <span class="sd">    Conversions between the two column formats can be performed using the</span>
 <span class="sd">    ``to/from_binary`` methods on this class, or the ``to/from_ascii``</span>
 <span class="sd">    methods on the `_ColumnFormat` class.  But again, not all conversions are</span>
-<span class="sd">    possible and may result in a `~.exceptions.ValueError`.</span>
+<span class="sd">    possible and may result in a `ValueError`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">format</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
@@ -880,7 +886,7 @@
             <span class="k">return</span> <span class="n">format</span><span class="p">,</span> <span class="n">format</span><span class="o">.</span><span class="n">recformat</span>
 
         <span class="k">if</span> <span class="n">format</span> <span class="ow">in</span> <span class="n">NUMPY2FITS</span><span class="p">:</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="n">VerifyError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="n">VerifyError</span><span class="p">):</span>
                 <span class="c"># legit recarray format?</span>
                 <span class="n">recformat</span> <span class="o">=</span> <span class="n">format</span>
                 <span class="n">format</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">from_recformat</span><span class="p">(</span><span class="n">format</span><span class="p">)</span>
@@ -1115,7 +1121,7 @@
             <span class="c"># &quot;optional&quot; codes), but it is also strictly a valid ASCII</span>
             <span class="c"># table format, then assume an ASCII table column was being</span>
             <span class="c"># requested (the more likely case, after all).</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="n">VerifyError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="n">VerifyError</span><span class="p">):</span>
                 <span class="n">format</span> <span class="o">=</span> <span class="n">_AsciiColumnFormat</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
             <span class="c"># A safe guess which reflects the existing behavior of previous</span>
@@ -1169,7 +1175,7 @@
             <span class="k">elif</span> <span class="s">&#39;L&#39;</span> <span class="ow">in</span> <span class="n">format</span><span class="p">:</span>
                 <span class="c"># boolean needs to be scaled back to storage values (&#39;T&#39;, &#39;F&#39;)</span>
                 <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">&#39;bool&#39;</span><span class="p">):</span>
-                    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">))</span>
+                    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">False_</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">))</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">))</span>
             <span class="k">elif</span> <span class="s">&#39;X&#39;</span> <span class="ow">in</span> <span class="n">format</span><span class="p">:</span>
@@ -2149,10 +2155,6 @@
 <span class="sd">    FORMATORDER.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c"># TODO: Numpy 1.6 and up has a min_scalar_type() function that can handle</span>
-    <span class="c"># this; in the meantime we have to use our own implementation (which for</span>
-    <span class="c"># now is pretty naive)</span>
-
     <span class="c"># First, if value is a string, try to convert to the appropriate scalar</span>
     <span class="c"># value</span>
     <span class="k">for</span> <span class="n">type_</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">):</span>
@@ -2162,22 +2164,14 @@
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="k">continue</span>
 
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="c"># Could be a boolean</span>
-        <span class="k">return</span> <span class="s">&#39;L&#39;</span>
-    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">,</span> <span class="s">&#39;J&#39;</span><span class="p">,</span> <span class="s">&#39;K&#39;</span><span class="p">):</span>
-            <span class="n">type_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">FITS2NUMPY</span><span class="p">[</span><span class="n">char</span><span class="p">])</span><span class="o">.</span><span class="n">type</span>
-            <span class="k">if</span> <span class="n">type_</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">char</span>
-    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
-        <span class="c"># For now just assume double precision</span>
-        <span class="k">return</span> <span class="s">&#39;D&#39;</span>
-    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">complex</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;M&#39;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">&#39;A&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="n">numpy_dtype_str</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min_scalar_type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">str</span>
+    <span class="n">numpy_dtype_str</span> <span class="o">=</span> <span class="n">numpy_dtype_str</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c"># Strip endianness</span>
 
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fits_format</span> <span class="o">=</span> <span class="n">NUMPY2FITS</span><span class="p">[</span><span class="n">numpy_dtype_str</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">FITSUPCONVERTERS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fits_format</span><span class="p">,</span> <span class="n">fits_format</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;A&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">_cmp_recformats</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -2387,7 +2381,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

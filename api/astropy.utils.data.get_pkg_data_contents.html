@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>get_pkg_data_contents &mdash; Astropy v1.2.dev15003</title>
+    <title>get_pkg_data_contents &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astropy Core Package Utilities (astropy.utils)" href="../utils/index.html" />
     <link rel="next" title="get_pkg_data_fileobjs" href="astropy.utils.data.get_pkg_data_fileobjs.html" />
     <link rel="prev" title="get_pkg_data_filename" href="astropy.utils.data.get_pkg_data_filename.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../utils/index.html" accesskey="U">Astropy Core Package Utilities (<code class="docutils literal"><span class="pre">astropy.utils</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>get_pkg_data_contents<a class="headerlink" href="#get-pkg-data-contents" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.utils.data.get_pkg_data_contents">
-<code class="descclassname">astropy.utils.data.</code><code class="descname">get_pkg_data_contents</code><span class="sig-paren">(</span><em>data_name</em>, <em>package=None</em>, <em>encoding=None</em>, <em>cache=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/data.py#L606" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/utils/data.html#get_pkg_data_contents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.utils.data.get_pkg_data_contents" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.utils.data.</code><code class="descname">get_pkg_data_contents</code><span class="sig-paren">(</span><em>data_name</em>, <em>package=None</em>, <em>encoding=None</em>, <em>cache=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/utils/data.html#get_pkg_data_contents"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/utils/data.py#L606" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.utils.data.get_pkg_data_contents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a data file from the standard locations and returns its
 contents as a bytes object.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -125,16 +125,16 @@ than the default of looking relative to the calling module&#8217;s package.</p>
 </div></blockquote>
 <p><strong>encoding</strong> : str, optional</p>
 <blockquote>
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> (default), returns a file-like object with a
-<code class="docutils literal"><span class="pre">read</span></code> method that on Python 2.x returns <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a> objects and
-on Python 3.x returns <a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a> (<a class="reference external" href="http://docs.python.org/library/functions.html#unicode" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a>) objects, using
-<a class="reference external" href="http://docs.python.org/library/locale.html#locale.getpreferredencoding" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">locale.getpreferredencoding</span></code></a> as an encoding.  This matches
-the default behavior of the built-in <a class="reference external" href="http://docs.python.org/library/functions.html#open" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">open</span></code></a> when no <code class="docutils literal"><span class="pre">mode</span></code>
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> (default), returns a file-like object with a
+<code class="docutils literal"><span class="pre">read</span></code> method that on Python 2.x returns <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a> objects and
+on Python 3.x returns <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a> (<code class="docutils literal"><span class="pre">unicode</span></code>) objects, using
+<a class="reference external" href="http://docs.python.org/3/library/locale.html#locale.getpreferredencoding" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">locale.getpreferredencoding</span></code></a> as an encoding.  This matches
+the default behavior of the built-in <a class="reference external" href="http://docs.python.org/3/library/functions.html#open" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">open</span></code></a> when no <code class="docutils literal"><span class="pre">mode</span></code>
 argument is provided.</p>
 <p>When <code class="docutils literal"><span class="pre">'binary'</span></code>, returns a file-like object where its <code class="docutils literal"><span class="pre">read</span></code>
-method returns <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a> objects.</p>
+method returns <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a> objects.</p>
 <p>When another string, it is the name of an encoding, and the
-file-like object&#8217;s <code class="docutils literal"><span class="pre">read</span></code> method will return <a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a> (<a class="reference external" href="http://docs.python.org/library/functions.html#unicode" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a>)
+file-like object&#8217;s <code class="docutils literal"><span class="pre">read</span></code> method will return <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></a> (<code class="docutils literal"><span class="pre">unicode</span></code>)
 objects, decoded from binary using the given encoding.</p>
 </div></blockquote>
 <p><strong>cache</strong> : bool</p>
@@ -143,7 +143,7 @@ objects, decoded from binary using the given encoding.</p>
 already-cached local copy will be accessed. If False, the
 file-like object will directly access the resource (e.g. if a
 remote URL is accessed, an object like that from
-<a class="reference external" href="http://docs.python.org/library/urllib2.html#urllib2.urlopen" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">urllib2.urlopen</span></code></a> on Python 2 or <a class="reference external" href="http://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">urllib.request.urlopen</span></code></a> on
+<a class="reference external" href="http://docs.python.org/2/library/urllib2.html#urllib2.urlopen" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">urllib2.urlopen</span></code></a> on Python 2 or <a class="reference external" href="http://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">urllib.request.urlopen</span></code></a> on
 Python 3 is returned).</p>
 </div></blockquote>
 </td>
@@ -202,7 +202,7 @@ Python 3 is returned).</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

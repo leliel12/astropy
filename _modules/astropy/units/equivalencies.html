@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.units.equivalencies &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.units.equivalencies &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -93,7 +93,8 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;parallax&#39;</span><span class="p">,</span> <span class="s">&#39;spectral&#39;</span><span class="p">,</span> <span class="s">&#39;spectral_density&#39;</span><span class="p">,</span> <span class="s">&#39;doppler_radio&#39;</span><span class="p">,</span>
            <span class="s">&#39;doppler_optical&#39;</span><span class="p">,</span> <span class="s">&#39;doppler_relativistic&#39;</span><span class="p">,</span> <span class="s">&#39;mass_energy&#39;</span><span class="p">,</span>
            <span class="s">&#39;brightness_temperature&#39;</span><span class="p">,</span> <span class="s">&#39;dimensionless_angles&#39;</span><span class="p">,</span>
-           <span class="s">&#39;logarithmic&#39;</span><span class="p">,</span> <span class="s">&#39;temperature&#39;</span><span class="p">,</span> <span class="s">&#39;temperature_energy&#39;</span><span class="p">]</span>
+           <span class="s">&#39;logarithmic&#39;</span><span class="p">,</span> <span class="s">&#39;temperature&#39;</span><span class="p">,</span> <span class="s">&#39;temperature_energy&#39;</span><span class="p">,</span>
+           <span class="s">&#39;pixel_scale&#39;</span><span class="p">,</span> <span class="s">&#39;plate_scale&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="dimensionless_angles"><a class="viewcode-back" href="../../../api/astropy.units.equivalencies.dimensionless_angles.html#astropy.units.dimensionless_angles">[docs]</a><span class="k">def</span> <span class="nf">dimensionless_angles</span><span class="p">():</span>
@@ -554,12 +555,14 @@
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">deg_C</span><span class="p">,</span> <span class="n">deg_F</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span><span class="p">),</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">deg_F</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">,</span>
          <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">)]</span>
+
 </div>
 <div class="viewcode-block" id="temperature_energy"><a class="viewcode-back" href="../../../api/astropy.units.temperature_energy.html#astropy.units.temperature_energy">[docs]</a><span class="k">def</span> <span class="nf">temperature_energy</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Convert between Kelvin and keV(eV) to an equivalent amount.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span>
         <span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">_si</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">k_B</span><span class="p">),</span>
          <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">_si</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">_si</span><span class="o">.</span><span class="n">k_B</span><span class="p">))]</span>
+
 </div>
 <span class="k">def</span> <span class="nf">assert_is_spectral_unit</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
@@ -567,6 +570,48 @@
     <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="n">UnitsError</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;The &#39;rest&#39; value must be a spectral equivalent &quot;</span>
                          <span class="s">&quot;(frequency, wavelength, or energy).&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pixel_scale"><a class="viewcode-back" href="../../../api/astropy.units.pixel_scale.html#astropy.units.pixel_scale">[docs]</a><span class="k">def</span> <span class="nf">pixel_scale</span><span class="p">(</span><span class="n">pixscale</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert between pixel distances (in units of ``pix``) and angular units,</span>
+<span class="sd">    given a particular ``pixscale``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pixscale : `~astropy.units.Quantity`</span>
+<span class="sd">        The pixel scale either in units of angle/pixel or pixel/angle.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">pixscale</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">arcsec</span><span class="o">/</span><span class="n">astrophys</span><span class="o">.</span><span class="n">pix</span><span class="p">):</span>
+        <span class="n">pixscale_val</span> <span class="o">=</span> <span class="n">pixscale</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="o">/</span><span class="n">astrophys</span><span class="o">.</span><span class="n">pix</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">elif</span> <span class="n">pixscale</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">astrophys</span><span class="o">.</span><span class="n">pix</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">arcsec</span><span class="p">):</span>
+        <span class="n">pixscale_val</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">pixscale</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="o">/</span><span class="n">astrophys</span><span class="o">.</span><span class="n">pix</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;The pixel scale must be in angle/pixel or &quot;</span>
+                         <span class="s">&quot;pixel/angle&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[(</span><span class="n">astrophys</span><span class="o">.</span><span class="n">pix</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">px</span><span class="p">:</span> <span class="n">px</span><span class="o">*</span><span class="n">pixscale_val</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">rad</span><span class="p">:</span> <span class="n">rad</span><span class="o">/</span><span class="n">pixscale_val</span><span class="p">)]</span>
+
+</div>
+<div class="viewcode-block" id="plate_scale"><a class="viewcode-back" href="../../../api/astropy.units.plate_scale.html#astropy.units.plate_scale">[docs]</a><span class="k">def</span> <span class="nf">plate_scale</span><span class="p">(</span><span class="n">platescale</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert between lengths (to be interpreted as lengths in the focal plane)</span>
+<span class="sd">    and angular units with a specified ``platescale``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    platescale : `~astropy.units.Quantity`</span>
+<span class="sd">        The pixel scale either in units of distance/pixel or distance/angle.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">platescale</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">arcsec</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">platescale_val</span> <span class="o">=</span> <span class="n">platescale</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">elif</span> <span class="n">platescale</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">m</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">arcsec</span><span class="p">):</span>
+        <span class="n">platescale_val</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">platescale</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="o">/</span><span class="n">si</span><span class="o">.</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UnitsError</span><span class="p">(</span><span class="s">&quot;The pixel scale must be in angle/distance or &quot;</span>
+                         <span class="s">&quot;distance/angle&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[(</span><span class="n">si</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="n">si</span><span class="o">.</span><span class="n">radian</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="o">*</span><span class="n">platescale_val</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">rad</span><span class="p">:</span> <span class="n">rad</span><span class="o">/</span><span class="n">platescale_val</span><span class="p">)]</span></div>
 </pre></div>
 
           </div>
@@ -586,7 +631,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

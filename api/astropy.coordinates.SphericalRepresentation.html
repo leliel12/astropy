@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SphericalRepresentation &mdash; Astropy v1.2.dev15003</title>
+    <title>SphericalRepresentation &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astronomical Coordinate Systems (astropy.coordinates)" href="../coordinates/index.html" />
     <link rel="next" title="StaticMatrixTransform" href="astropy.coordinates.StaticMatrixTransform.html" />
-    <link rel="prev" title="SkyCoord" href="astropy.coordinates.SkyCoord.html" />
+    <link rel="prev" title="SkyOffsetFrame" href="astropy.coordinates.SkyOffsetFrame.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -63,13 +63,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="astropy.coordinates.SkyCoord.html" title="SkyCoord">
+	<a href="astropy.coordinates.SkyOffsetFrame.html" title="SkyOffsetFrame">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../coordinates/index.html" accesskey="U">Astronomical Coordinate Systems (<code class="docutils literal"><span class="pre">astropy.coordinates</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>SphericalRepresentation<a class="headerlink" href="#sphericalrepresentation" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.coordinates.SphericalRepresentation">
-<em class="property">class </em><code class="descclassname">astropy.coordinates.</code><code class="descname">SphericalRepresentation</code><span class="sig-paren">(</span><em>lon</em>, <em>lat</em>, <em>distance</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L384" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.coordinates.</code><code class="descname">SphericalRepresentation</code><span class="sig-paren">(</span><em>lon</em>, <em>lat</em>, <em>distance</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L441" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="astropy.coordinates.BaseRepresentation.html#astropy.coordinates.BaseRepresentation" title="astropy.coordinates.representation.BaseRepresentation"><code class="docutils literal"><span class="pre">astropy.coordinates.BaseRepresentation</span></code></a></p>
 <p>Representation of points in 3D spherical coordinates.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -185,25 +185,25 @@ it is passed to the <a class="reference internal" href="astropy.units.Quantity.h
 
 <dl class="attribute">
 <dt id="astropy.coordinates.SphericalRepresentation.recommended_units">
-<code class="descname">recommended_units</code><em class="property"> = {'lat': Unit(&quot;deg&quot;), 'lon': Unit(&quot;deg&quot;)}</em><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.recommended_units" title="Permalink to this definition">¶</a></dt>
+<code class="descname">recommended_units</code><em class="property"> = {'lon': Unit(&quot;deg&quot;), 'lat': Unit(&quot;deg&quot;)}</em><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.recommended_units" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="classmethod">
 <dt id="astropy.coordinates.SphericalRepresentation.from_cartesian">
-<em class="property">classmethod </em><code class="descname">from_cartesian</code><span class="sig-paren">(</span><em>cart</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L488" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation.from_cartesian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.from_cartesian" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_cartesian</code><span class="sig-paren">(</span><em>cart</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation.from_cartesian"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L546" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.from_cartesian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts 3D rectangular cartesian coordinates to spherical polar
 coordinates.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.coordinates.SphericalRepresentation.represent_as">
-<code class="descname">represent_as</code><span class="sig-paren">(</span><em>other_class</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L460" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation.represent_as"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.represent_as" title="Permalink to this definition">¶</a></dt>
+<code class="descname">represent_as</code><span class="sig-paren">(</span><em>other_class</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation.represent_as"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L517" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.represent_as" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="astropy.coordinates.SphericalRepresentation.to_cartesian">
-<code class="descname">to_cartesian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L470" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation.to_cartesian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.to_cartesian" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_cartesian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/coordinates/representation.html#SphericalRepresentation.to_cartesian"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/coordinates/representation.py#L528" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.coordinates.SphericalRepresentation.to_cartesian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts spherical polar coordinates to 3D rectangular cartesian
 coordinates.</p>
 </dd></dl>
@@ -235,7 +235,7 @@ coordinates.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

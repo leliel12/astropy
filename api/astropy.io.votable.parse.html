@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>parse &mdash; Astropy v1.2.dev15003</title>
+    <title>parse &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="VOTable XML handling (astropy.io.votable)" href="../io/votable/index.html" />
     <link rel="next" title="parse_single_table" href="astropy.io.votable.parse_single_table.html" />
     <link rel="prev" title="astropy.io.votable.exceptions" href="../io/votable/api_exceptions.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../io/votable/index.html" accesskey="U">VOTable XML handling (<code class="docutils literal"><span class="pre">astropy.io.votable</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>parse<a class="headerlink" href="#parse" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.io.votable.parse">
-<code class="descclassname">astropy.io.votable.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>source</em>, <em>columns=None</em>, <em>invalid='exception'</em>, <em>pedantic=None</em>, <em>chunk_size=256</em>, <em>table_number=None</em>, <em>table_id=None</em>, <em>filename=None</em>, <em>unit_format=None</em>, <em>datatype_mapping=None</em>, <em>_debug_python_based_parser=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/table.py#L31" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/io/votable/table.html#parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.votable.parse" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.io.votable.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>source</em>, <em>columns=None</em>, <em>invalid='exception'</em>, <em>pedantic=None</em>, <em>chunk_size=256</em>, <em>table_number=None</em>, <em>table_id=None</em>, <em>filename=None</em>, <em>unit_format=None</em>, <em>datatype_mapping=None</em>, <em>_debug_python_based_parser=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/io/votable/table.html#parse"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/votable/table.py#L31" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.votable.parse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses a <a class="reference external" href="http://www.ivoa.net/Documents/PR/VOTable/VOTable-20040322.html#ToC9">VOTABLE</a> xml file (or file-like object), and returns a
 <a class="reference internal" href="astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile" title="astropy.io.votable.tree.VOTableFile"><code class="xref py py-obj docutils literal"><span class="pre">VOTableFile</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -117,9 +117,9 @@ encountered (default)</li>
 </div></blockquote>
 <p><strong>pedantic</strong> : bool, optional</p>
 <blockquote>
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, raise an error when the file violates the spec,
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, raise an error when the file violates the spec,
 otherwise issue a warning.  Warnings may be controlled using
-the standard Python mechanisms.  See the <a class="reference external" href="http://docs.python.org/library/warnings.html#module-warnings" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">warnings</span></code></a>
+the standard Python mechanisms.  See the <a class="reference external" href="http://docs.python.org/3/library/warnings.html#module-warnings" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">warnings</span></code></a>
 module in the Python standard library for more information.
 When not provided, uses the configuration setting
 <code class="docutils literal"><span class="pre">astropy.io.votable.pedantic</span></code>, which defaults to False.</p>
@@ -132,7 +132,7 @@ memory.</p>
 </div></blockquote>
 <p><strong>table_number</strong> : int, optional</p>
 <blockquote>
-<div><p>The number of table in the file to read in.  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, all
+<div><p>The number of table in the file to read in.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, all
 tables will be read.  If a number, 0 refers to the first table
 in the file, and only that numbered table will be parsed and
 read in.  Should not be used with <code class="docutils literal"><span class="pre">table_id</span></code>.</p>
@@ -156,7 +156,7 @@ file-like object.</p>
 string, must be the name of a unit formatter. The built-in
 formats include <code class="docutils literal"><span class="pre">generic</span></code>, <code class="docutils literal"><span class="pre">fits</span></code>, <code class="docutils literal"><span class="pre">cds</span></code>, and
 <code class="docutils literal"><span class="pre">vounit</span></code>.  A custom formatter may be provided by passing a
-<a class="reference internal" href="astropy.units.UnitBase.html#astropy.units.UnitBase" title="astropy.units.UnitBase"><code class="xref py py-obj docutils literal"><span class="pre">UnitBase</span></code></a> instance.  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> (default),
+<a class="reference internal" href="astropy.units.UnitBase.html#astropy.units.UnitBase" title="astropy.units.UnitBase"><code class="xref py py-obj docutils literal"><span class="pre">UnitBase</span></code></a> instance.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> (default),
 the unit format to use will be the one specified by the
 VOTable specification (which is <code class="docutils literal"><span class="pre">cds</span></code> up to version 1.2 of
 VOTable, and (probably) <code class="docutils literal"><span class="pre">vounit</span></code> in future versions of the
@@ -210,7 +210,7 @@ mapping <code class="docutils literal"><span class="pre">{&quot;unsignedInt&quot
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

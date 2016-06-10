@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.io.ascii.core &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.io.ascii.core &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../../index.html" />
     <link rel="up" title="Module code" href="../../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -100,7 +100,7 @@
 <span class="kn">from</span> <span class="nn">...utils.exceptions</span> <span class="kn">import</span> <span class="n">AstropyWarning</span>
 
 <span class="kn">from</span> <span class="nn">...table</span> <span class="kn">import</span> <span class="n">Table</span>
-<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">ignored</span>
+<span class="kn">from</span> <span class="nn">...utils.compat</span> <span class="kn">import</span> <span class="n">suppress</span>
 <span class="kn">from</span> <span class="nn">...utils.data</span> <span class="kn">import</span> <span class="n">get_readable_fileobj</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">connect</span>
 
@@ -820,7 +820,7 @@
                     <span class="n">col</span><span class="o">.</span><span class="n">fill_values</span> <span class="o">=</span> <span class="p">{}</span>
 
             <span class="c"># if input is only one &lt;fill_spec&gt;, then make it a list</span>
-            <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fill_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;&#39;</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fill_values</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">fill_values</span><span class="p">]</span>
 
@@ -945,6 +945,9 @@
 <span class="sd">        Convert values &quot;False&quot; and &quot;True&quot; to bools.  Raise an exception</span>
 <span class="sd">        for any other string values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
         <span class="c"># Try a smaller subset first for a long array</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">:</span>
             <span class="n">svals</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vals</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
@@ -1090,7 +1093,7 @@
 
 
 <span class="k">def</span> <span class="nf">_is_number</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
     <span class="k">return</span> <span class="bp">False</span>
@@ -1203,7 +1206,7 @@
         <span class="c"># If ``table`` is a file then store the name in the ``data``</span>
         <span class="c"># attribute. The ``table`` is a &quot;file&quot; if it is a string</span>
         <span class="c"># without the new line specific to the OS.</span>
-        <span class="k">with</span> <span class="n">ignored</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
             <span class="c"># Strings only</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">linesep</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span> <span class="o">+</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">table_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
@@ -1556,7 +1559,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

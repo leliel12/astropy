@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Testing Guidelines &mdash; Astropy v1.2.dev15003</title>
+    <title>Testing Guidelines &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Writing Command-Line Scripts" href="scripts.html" />
     <link rel="prev" title="Astropy Docstring Rules" href="docrules.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -206,7 +206,7 @@ above.</p>
 </div>
 <div class="section" id="tox">
 <h3>Tox<a class="headerlink" href="#tox" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://tox.readthedocs.org">Tox</a> is a sort of meta-test runner for Python.
+<p><a class="reference external" href="http://tox.readthedocs.io">Tox</a> is a sort of meta-test runner for Python.
 It installs a project into one or more virtualenvs (usually one for each Python
 version supported), build and installs the project into each virtualenv, and
 runs the projects tests (or any other build processes one might want to test).
@@ -667,7 +667,7 @@ AstroPy&#8217;s tests.</p>
 <h3>Testing warnings<a class="headerlink" href="#testing-warnings" title="Permalink to this headline">¶</a></h3>
 <p>In order to test that warnings are triggered as expected in certain
 situations, you can use the <a class="reference internal" href="../api/astropy.tests.helper.catch_warnings.html#astropy.tests.helper.catch_warnings" title="astropy.tests.helper.catch_warnings"><code class="xref py py-obj docutils literal"><span class="pre">astropy.tests.helper.catch_warnings</span></code></a>
-context manager.  Unlike the <a class="reference external" href="http://docs.python.org/library/warnings.html#warnings.catch_warnings" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">warnings.catch_warnings</span></code></a> context manager
+context manager.  Unlike the <a class="reference external" href="http://docs.python.org/3/library/warnings.html#warnings.catch_warnings" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">warnings.catch_warnings</span></code></a> context manager
 in the standard library, this one will reset all warning state before
 hand so one is assured to get the warnings reported, regardless of
 what errors may have been emitted by other tests previously.  Here is
@@ -712,8 +712,8 @@ context, and have it automatically return to its original value.</p>
 <div class="section" id="testing-with-unicode-literals">
 <h3>Testing with Unicode literals<a class="headerlink" href="#testing-with-unicode-literals" title="Permalink to this headline">¶</a></h3>
 <p>Python 2 can run code in two modes: by default, string literals are
-8-bit <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a> objects.  However, when <code class="docutils literal"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span>
-<span class="pre">unicode_literals</span></code> is used, string literals are <a class="reference external" href="http://docs.python.org/library/functions.html#unicode" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a> objects.  In
+8-bit <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a> objects.  However, when <code class="docutils literal"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span>
+<span class="pre">unicode_literals</span></code> is used, string literals are <a class="reference external" href="http://docs.python.org/2/library/functions.html#unicode" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a> objects.  In
 order to ensure that astropy supports user code written in both
 styles, the testing framework has a special feature to run a module
 containing tests in both modes.  Simply add the comment:</p>
@@ -721,8 +721,8 @@ containing tests in both modes.  Simply add the comment:</p>
 </pre></div>
 </div>
 <p>anywhere in the file, and all tests in that file will be tested twice:
-once in the default mode where string literals are <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.4)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a>, and again
-where string literals are <a class="reference external" href="http://docs.python.org/library/functions.html#unicode" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a>.</p>
+once in the default mode where string literals are <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bytes</span></code></a>, and again
+where string literals are <a class="reference external" href="http://docs.python.org/2/library/functions.html#unicode" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">unicode</span></code></a>.</p>
 </div>
 <div class="section" id="marking-blocks-of-code-to-exclude-from-coverage">
 <h3>Marking blocks of code to exclude from coverage<a class="headerlink" href="#marking-blocks-of-code-to-exclude-from-coverage" title="Permalink to this headline">¶</a></h3>
@@ -763,7 +763,7 @@ running that code in an interactive session.</p>
 <p>The idea is to write usage examples in docstrings that users can enter
 verbatim and check their output against the expected output to confirm that
 they are using the interface properly.</p>
-<p>Furthermore, Python includes a <a class="reference external" href="http://docs.python.org/library/doctest.html#module-doctest" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">doctest</span></code></a> module that can detect these
+<p>Furthermore, Python includes a <a class="reference external" href="http://docs.python.org/3/library/doctest.html#module-doctest" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">doctest</span></code></a> module that can detect these
 doctests and execute them as part of a project&#8217;s automated test suite.  This
 way we can automatically ensure that all doctest-like examples in our
 docstrings are correct.</p>
@@ -771,7 +771,7 @@ docstrings are correct.</p>
 the Astropy source code or documentation, or in affiliated packages
 using the Astropy test running framework. For example doctests and
 detailed documentation on how to write them, see the full
-<a class="reference external" href="http://docs.python.org/library/doctest.html#module-doctest" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">doctest</span></code></a> documentation.</p>
+<a class="reference external" href="http://docs.python.org/3/library/doctest.html#module-doctest" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">doctest</span></code></a> documentation.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Since the narrative Sphinx documentation is not installed alongside
@@ -880,7 +880,7 @@ on each run), or a test that expects an exception may output a traceback.</p>
 </div>
 <p>This doctest expects an exception with a traceback, but the text of the
 traceback is skipped in the example output&#8211;only the first and last lines
-of the output are checked.  See the <a class="reference external" href="http://docs.python.org/library/doctest.html#module-doctest" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">doctest</span></code></a> documentation for
+of the output are checked.  See the <a class="reference external" href="http://docs.python.org/3/library/doctest.html#module-doctest" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">doctest</span></code></a> documentation for
 more examples of skipping output.</p>
 <div class="section" id="ignoring-all-output">
 <h4>Ignoring all output<a class="headerlink" href="#ignoring-all-output" title="Permalink to this headline">¶</a></h4>
@@ -914,7 +914,7 @@ strings this can cause such tests to fail.</p>
 </div>
 <p>When this flag is used, the expected and actual outputs are both parsed to find
 any floating point values in the strings.  Those are then converted to actual
-Python <a class="reference external" href="http://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">float</span></code></a> objects and compared numerically.  This means that small
+Python <a class="reference external" href="http://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">float</span></code></a> objects and compared numerically.  This means that small
 differences in representation of roundoff digits will be ignored by the
 doctest.  The values are otherwise compared exactly, so more significant
 (albeit possibly small) differences will still be caught by these tests.</p>
@@ -1018,7 +1018,7 @@ details on how to set up this machinery, see the <a class="reference external" h
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.modeling.functional_models &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.modeling.functional_models &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -95,7 +95,7 @@
            <span class="s">&#39;GaussianAbsorption1D&#39;</span><span class="p">,</span> <span class="s">&#39;Gaussian2D&#39;</span><span class="p">,</span> <span class="s">&#39;Linear1D&#39;</span><span class="p">,</span> <span class="s">&#39;Lorentz1D&#39;</span><span class="p">,</span>
            <span class="s">&#39;MexicanHat1D&#39;</span><span class="p">,</span> <span class="s">&#39;MexicanHat2D&#39;</span><span class="p">,</span> <span class="s">&#39;RedshiftScaleFactor&#39;</span><span class="p">,</span> <span class="s">&#39;Redshift&#39;</span><span class="p">,</span>
            <span class="s">&#39;Scale&#39;</span><span class="p">,</span> <span class="s">&#39;Sersic1D&#39;</span><span class="p">,</span> <span class="s">&#39;Sersic2D&#39;</span><span class="p">,</span> <span class="s">&#39;Shift&#39;</span><span class="p">,</span> <span class="s">&#39;Sine1D&#39;</span><span class="p">,</span> <span class="s">&#39;Trapezoid1D&#39;</span><span class="p">,</span>
-           <span class="s">&#39;TrapezoidDisk2D&#39;</span><span class="p">,</span> <span class="s">&#39;Ring2D&#39;</span><span class="p">,</span> <span class="s">&#39;custom_model_1d&#39;</span><span class="p">,</span> <span class="s">&#39;Voigt1D&#39;</span><span class="p">]</span>
+           <span class="s">&#39;TrapezoidDisk2D&#39;</span><span class="p">,</span> <span class="s">&#39;Ring2D&#39;</span><span class="p">,</span> <span class="s">&#39;Voigt1D&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="Gaussian1D"><a class="viewcode-back" href="../../../api/astropy.modeling.functional_models.Gaussian1D.html#astropy.modeling.functional_models.Gaussian1D">[docs]</a><span class="k">class</span> <span class="nc">Gaussian1D</span><span class="p">(</span><span class="n">Fittable1DModel</span><span class="p">):</span>
@@ -2087,19 +2087,7 @@
         <span class="n">x_min</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_0</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin_theta</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_0</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos_theta</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x_maj</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x_min</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">bn</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-
-</div></div>
-<span class="nd">@deprecated</span><span class="p">(</span><span class="s">&#39;1.0&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;astropy.modeling.models.custom_model&#39;</span><span class="p">,</span>
-            <span class="n">pending</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<div class="viewcode-block" id="custom_model_1d"><a class="viewcode-back" href="../../../api/astropy.modeling.functional_models.custom_model_1d.html#astropy.modeling.functional_models.custom_model_1d">[docs]</a><span class="k">def</span> <span class="nf">custom_model_1d</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">func_fit_deriv</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-    <span class="n">inputs</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">get_inputs_and_params</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">ModelDefinitionError</span><span class="p">(</span>
-            <span class="s">&quot;All parameters must be keyword arguments&quot;</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">custom_model</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">fit_deriv</span><span class="o">=</span><span class="n">func_fit_deriv</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">bn</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span></div></div>
 </pre></div>
 
           </div>
@@ -2119,7 +2107,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

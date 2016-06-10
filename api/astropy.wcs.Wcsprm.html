@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Wcsprm &mdash; Astropy v1.2.dev15003</title>
+    <title>Wcsprm &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="World Coordinate System (astropy.wcs)" href="../wcs/index.html" />
     <link rel="next" title="add_stokes_axis_to_wcs" href="astropy.wcs.utils.add_stokes_axis_to_wcs.html" />
     <link rel="prev" title="WcsError" href="astropy.wcs.WcsError.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../wcs/index.html" accesskey="U">World Coordinate System (<code class="docutils literal"><span class="pre">astropy.wcs</span></code>)</a> &raquo;</li>
@@ -89,7 +89,7 @@
 <dl class="class">
 <dt id="astropy.wcs.Wcsprm">
 <em class="property">class </em><code class="descclassname">astropy.wcs.</code><code class="descname">Wcsprm</code><span class="sig-paren">(</span><em>header=None</em>, <em>key=' '</em>, <em>relax=False</em>, <em>naxis=2</em>, <em>keysel=0</em>, <em>colsel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#astropy.wcs.Wcsprm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p><a class="reference internal" href="#astropy.wcs.Wcsprm" title="astropy.wcs.Wcsprm"><code class="xref py py-obj docutils literal"><span class="pre">Wcsprm</span></code></a> performs the core WCS transformations.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -109,7 +109,7 @@ Sect. 5.2.1), integer (Sect. 5.2.3), and floating-point values
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header</strong> : An <a class="reference internal" href="../io/fits/api/headers.html#astropy.io.fits.Header" title="astropy.io.fits.Header"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.fits.Header</span></code></a>, string, or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header</strong> : An <a class="reference internal" href="../io/fits/api/headers.html#astropy.io.fits.Header" title="astropy.io.fits.Header"><code class="xref py py-obj docutils literal"><span class="pre">astropy.io.fits.Header</span></code></a>, string, or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
 <blockquote>
 <div><p>If <code class="docutils literal"><span class="pre">None</span></code>, the object will be initialized to default values.</p>
 </div></blockquote>
@@ -124,18 +124,18 @@ provided if <em>header</em> is also provided.)</p>
 <blockquote>
 <div><p>Degree of permissiveness:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: Recognize only FITS keywords defined by the published
+<li><a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: Recognize only FITS keywords defined by the published
 WCS standard.</li>
-<li><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: Admit all recognized informal extensions of the WCS
+<li><a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: Admit all recognized informal extensions of the WCS
 standard.</li>
-<li><a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to accept.  See
+<li><a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to accept.  See
 <a class="reference internal" href="../wcs/relax.html#relaxread"><span>Header-reading relaxation constants</span></a> for details.</li>
 </ul>
 </div></blockquote>
 <p><strong>naxis</strong> : int, optional</p>
 <blockquote>
 <div><p>The number of world coordinates axes for the object.  (<em>naxis</em> may
-only be provided if <em>header</em> is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.)</p>
+only be provided if <em>header</em> is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.)</p>
 </div></blockquote>
 <p><strong>keysel</strong> : sequence of flag bits, optional</p>
 <blockquote>
@@ -154,7 +154,7 @@ function <code class="docutils literal"><span class="pre">wcspih()</span></code>
 <p><strong>colsel</strong> : sequence of int</p>
 <blockquote>
 <div><p>A sequence of table column numbers used to restrict the keywords
-considered.  <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> indicates no restriction.</p>
+considered.  <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> indicates no restriction.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -365,25 +365,25 @@ considered.  <a class="reference external" href="http://docs.python.org/library/
 <td>Returns <code class="docutils literal"><span class="pre">PVi_ma</span></code> keywords for each <em>i</em> and <em>m</em>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.has_cd" title="astropy.wcs.Wcsprm.has_cd"><code class="xref py py-obj docutils literal"><span class="pre">has_cd</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CDi_ja</span></code> is present.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CDi_ja</span></code> is present.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.has_cdi_ja" title="astropy.wcs.Wcsprm.has_cdi_ja"><code class="xref py py-obj docutils literal"><span class="pre">has_cdi_ja</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
 <td>Alias for <a class="reference internal" href="#astropy.wcs.Wcsprm.has_cd" title="astropy.wcs.Wcsprm.has_cd"><code class="xref py py-obj docutils literal"><span class="pre">has_cd</span></code></a>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.has_crota" title="astropy.wcs.Wcsprm.has_crota"><code class="xref py py-obj docutils literal"><span class="pre">has_crota</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CROTAia</span></code> is present.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CROTAia</span></code> is present.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.has_crotaia" title="astropy.wcs.Wcsprm.has_crotaia"><code class="xref py py-obj docutils literal"><span class="pre">has_crotaia</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
 <td>Alias for <a class="reference internal" href="#astropy.wcs.Wcsprm.has_crota" title="astropy.wcs.Wcsprm.has_crota"><code class="xref py py-obj docutils literal"><span class="pre">has_crota</span></code></a>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.has_pc" title="astropy.wcs.Wcsprm.has_pc"><code class="xref py py-obj docutils literal"><span class="pre">has_pc</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">PCi_ja</span></code> is present.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">PCi_ja</span></code> is present.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.has_pci_ja" title="astropy.wcs.Wcsprm.has_pci_ja"><code class="xref py py-obj docutils literal"><span class="pre">has_pci_ja</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
 <td>Alias for <a class="reference internal" href="#astropy.wcs.Wcsprm.has_pc" title="astropy.wcs.Wcsprm.has_pc"><code class="xref py py-obj docutils literal"><span class="pre">has_pc</span></code></a>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.is_unity" title="astropy.wcs.Wcsprm.is_unity"><code class="xref py py-obj docutils literal"><span class="pre">is_unity</span></code></a>(()&nbsp;-&gt;&nbsp;bool)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the linear transformation matrix (<a class="reference internal" href="#astropy.wcs.Wcsprm.cd" title="astropy.wcs.Wcsprm.cd"><code class="xref py py-obj docutils literal"><span class="pre">cd</span></code></a>) is unity.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the linear transformation matrix (<a class="reference internal" href="#astropy.wcs.Wcsprm.cd" title="astropy.wcs.Wcsprm.cd"><code class="xref py py-obj docutils literal"><span class="pre">cd</span></code></a>) is unity.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.wcs.Wcsprm.mix" title="astropy.wcs.Wcsprm.mix"><code class="xref py py-obj docutils literal"><span class="pre">mix</span></code></a>(mixpix,&nbsp;mixcel,&nbsp;vspan,&nbsp;vstep,&nbsp;viter,&nbsp;...)</td>
 <td>Given either the celestial longitude or latitude plus an element of the pixel coordinate, solves for the remaining elements by iterating on the unknown celestial coordinate element using <a class="reference internal" href="#astropy.wcs.Wcsprm.s2p" title="astropy.wcs.Wcsprm.s2p"><code class="xref py py-obj docutils literal"><span class="pre">s2p</span></code></a>.</td>
@@ -514,8 +514,8 @@ matrix may be deleted by:</p>
 <dt id="astropy.wcs.Wcsprm.cel_offset">
 <code class="descname">cel_offset</code><a class="headerlink" href="#astropy.wcs.Wcsprm.cel_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">boolean</span></code> Is there an offset?</p>
-<p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, an offset will be applied to <code class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></code> to force <code class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span> <span class="pre">=</span>
-<span class="pre">(0,</span> <span class="pre">0)</span></code> at the fiducial point, (phi_0, theta_0).  Default is <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.</p>
+<p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, an offset will be applied to <code class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></code> to force <code class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span> <span class="pre">=</span>
+<span class="pre">(0,</span> <span class="pre">0)</span></code> at the fiducial point, (phi_0, theta_0).  Default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -994,13 +994,13 @@ coordinate, <code class="docutils literal"><span class="pre">VELOSYSa</span></co
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pix2world</strong> : bool, optional</p>
 <blockquote>
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, enable bounds checking for the pixel-to-world (p2x)
-transformations.  Default is <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.</p>
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, enable bounds checking for the pixel-to-world (p2x)
+transformations.  Default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.</p>
 </div></blockquote>
 <p><strong>world2pix</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, enable bounds checking for the world-to-pixel (s2x)
-transformations.  Default is <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.</p>
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, enable bounds checking for the world-to-pixel (s2x)
+transformations.  Default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1128,7 +1128,7 @@ already set.</p>
 <p>Alternatively, if <a class="reference internal" href="#astropy.wcs.Wcsprm.mjdobs" title="astropy.wcs.Wcsprm.mjdobs"><code class="xref py py-obj docutils literal"><span class="pre">mjdobs</span></code></a> is set and
 <a class="reference internal" href="#astropy.wcs.Wcsprm.dateobs" title="astropy.wcs.Wcsprm.dateobs"><code class="xref py py-obj docutils literal"><span class="pre">dateobs</span></code></a> isn&#8217;t, then <a class="reference internal" href="#astropy.wcs.Wcsprm.datfix" title="astropy.wcs.Wcsprm.datfix"><code class="xref py py-obj docutils literal"><span class="pre">datfix</span></code></a>
 derives <a class="reference internal" href="#astropy.wcs.Wcsprm.dateobs" title="astropy.wcs.Wcsprm.dateobs"><code class="xref py py-obj docutils literal"><span class="pre">dateobs</span></code></a> from it.  If both are set but
-disagree by more than half a day then <a class="reference external" href="http://docs.python.org/library/exceptions.html#exceptions.ValueError" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">ValueError</span></code></a> is raised.</p>
+disagree by more than half a day then <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">ValueError</span></code></a> is raised.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1291,7 +1291,7 @@ and <code class="docutils literal"><span class="pre">LATPOLEa</span></code>.</p>
 <dl class="method">
 <dt id="astropy.wcs.Wcsprm.has_cd">
 <code class="descname">has_cd</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#astropy.wcs.Wcsprm.has_cd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CDi_ja</span></code> is present.</p>
+<dd><p>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CDi_ja</span></code> is present.</p>
 <p><code class="docutils literal"><span class="pre">CDi_ja</span></code> is an alternate specification of the linear transformation
 matrix, maintained for historical compatibility.</p>
 <p>Matrix elements in the IRAF convention are equivalent to the product
@@ -1323,7 +1323,7 @@ compatibility.</p>
 <dl class="method">
 <dt id="astropy.wcs.Wcsprm.has_crota">
 <code class="descname">has_crota</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#astropy.wcs.Wcsprm.has_crota" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CROTAia</span></code> is present.</p>
+<dd><p>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">CROTAia</span></code> is present.</p>
 <p><code class="docutils literal"><span class="pre">CROTAia</span></code> is an alternate specification of the linear transformation
 matrix, maintained for historical compatibility.</p>
 <p>In the AIPS convention, <code class="docutils literal"><span class="pre">CROTAia</span></code> may only be associated with the
@@ -1352,7 +1352,7 @@ compatibility.</p>
 <dl class="method">
 <dt id="astropy.wcs.Wcsprm.has_pc">
 <code class="descname">has_pc</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#astropy.wcs.Wcsprm.has_pc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">PCi_ja</span></code> is present.  <code class="docutils literal"><span class="pre">PCi_ja</span></code> is the
+<dd><p>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">PCi_ja</span></code> is present.  <code class="docutils literal"><span class="pre">PCi_ja</span></code> is the
 recommended way to specify the linear transformation matrix.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -1373,7 +1373,7 @@ compatibility.</p>
 <dl class="method">
 <dt id="astropy.wcs.Wcsprm.is_unity">
 <code class="descname">is_unity</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#astropy.wcs.Wcsprm.is_unity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the linear transformation matrix
+<dd><p>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the linear transformation matrix
 (<a class="reference internal" href="#astropy.wcs.Wcsprm.cd" title="astropy.wcs.Wcsprm.cd"><code class="xref py py-obj docutils literal"><span class="pre">cd</span></code></a>) is unity.</p>
 </dd></dl>
 
@@ -1641,7 +1641,7 @@ coordinate, in SI units.</li>
 <dd><p>Print the contents of the <a class="reference internal" href="#astropy.wcs.Wcsprm" title="astropy.wcs.Wcsprm"><code class="xref py py-obj docutils literal"><span class="pre">Wcsprm</span></code></a> object to stdout.
 Probably only useful for debugging purposes, and may be removed in the
 future.</p>
-<p>To get a string of the contents, use <a class="reference external" href="http://docs.python.org/library/functions.html#repr" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">repr</span></code></a>.</p>
+<p>To get a string of the contents, use <a class="reference external" href="http://docs.python.org/3/library/functions.html#repr" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">repr</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2084,11 +2084,11 @@ object.</p>
 <blockquote>
 <div><p>Degree of permissiveness:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: Recognize only FITS keywords defined by the published
+<li><a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>: Recognize only FITS keywords defined by the published
 WCS standard.</li>
-<li><a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: Admit all recognized informal extensions of the WCS
+<li><a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>: Admit all recognized informal extensions of the WCS
 standard.</li>
-<li><a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to write.
+<li><a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>: a bit field selecting specific extensions to write.
 See <a class="reference internal" href="../wcs/relax.html#relaxwrite"><span>Header-writing relaxation constants</span></a> for details.</li>
 </ul>
 </div></blockquote>
@@ -2171,7 +2171,7 @@ does all of them.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

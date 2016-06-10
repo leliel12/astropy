@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OrthoPolynomialBase &mdash; Astropy v1.2.dev15003</title>
+    <title>OrthoPolynomialBase &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Models and Fitting (astropy.modeling)" href="../modeling/index.html" />
     <link rel="next" title="PolynomialModel" href="astropy.modeling.polynomial.PolynomialModel.html" />
     <link rel="prev" title="SIP" href="astropy.modeling.polynomial.SIP.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../modeling/index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>OrthoPolynomialBase<a class="headerlink" href="#orthopolynomialbase" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase">
-<em class="property">class </em><code class="descclassname">astropy.modeling.polynomial.</code><code class="descname">OrthoPolynomialBase</code><span class="sig-paren">(</span><em>x_degree</em>, <em>y_degree</em>, <em>x_domain=None</em>, <em>x_window=None</em>, <em>y_domain=None</em>, <em>y_window=None</em>, <em>n_models=None</em>, <em>model_set_axis=None</em>, <em>name=None</em>, <em>meta=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L155" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.modeling.polynomial.</code><code class="descname">OrthoPolynomialBase</code><span class="sig-paren">(</span><em>x_degree</em>, <em>y_degree</em>, <em>x_domain=None</em>, <em>x_window=None</em>, <em>y_domain=None</em>, <em>y_window=None</em>, <em>n_models=None</em>, <em>model_set_axis=None</em>, <em>name=None</em>, <em>meta=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L155" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.modeling.polynomial.PolynomialBase</span></code></p>
 <p>This is a base class for the 2D Chebyshev and Legendre models.</p>
 <p>The polynomials implemented here require a maximum degree in x and y.</p>
@@ -153,11 +153,8 @@
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.modeling.polynomial.OrthoPolynomialBase.__call__" title="astropy.modeling.polynomial.OrthoPolynomialBase.__call__"><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code></a>(x,&nbsp;y[,&nbsp;model_set_axis])</td>
 <td>Evaluate this model using the given input(s) and the parameter values that were specified when the model was instantiated.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#astropy.modeling.polynomial.OrthoPolynomialBase.eval" title="astropy.modeling.polynomial.OrthoPolynomialBase.eval"><code class="xref py py-obj docutils literal"><span class="pre">eval</span></code></a>(x,&nbsp;y,&nbsp;*coeffs)</td>
-<td><div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 1.0.</span></p>
-</div>
-</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">OrthoPolynomialBase.eval</span></code></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#astropy.modeling.polynomial.OrthoPolynomialBase.evaluate" title="astropy.modeling.polynomial.OrthoPolynomialBase.evaluate"><code class="xref py py-obj docutils literal"><span class="pre">evaluate</span></code></a>(x,&nbsp;y,&nbsp;*coeffs)</td>
 <td>Evaluate the model on some input variables.</td>
@@ -190,30 +187,20 @@
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase.__call__">
-<code class="descname">__call__</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>model_set_axis=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L399" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.__call__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>model_set_axis=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L378" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate this model using the given input(s) and the parameter values
 that were specified when the model was instantiated.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="astropy.modeling.polynomial.OrthoPolynomialBase.eval">
-<code class="descname">eval</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>*coeffs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.eval" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 1.0: </span>The eval function is deprecated and may be removed in a future version.
-    Use OrthoPolynomialBase.evaluate instead.</p>
-</div>
-<p>Evaluate the model on some input variables.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase.evaluate">
-<code class="descname">evaluate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>*coeffs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L299" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.evaluate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>*coeffs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.evaluate"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L299" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the model on some input variables.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase.get_num_coeff">
-<code class="descname">get_num_coeff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L211" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.get_num_coeff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.get_num_coeff" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_num_coeff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.get_num_coeff"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L211" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.get_num_coeff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine how many coefficients are needed</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -231,17 +218,17 @@ that were specified when the model was instantiated.</p>
 
 <dl class="method">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase.imhorner">
-<code class="descname">imhorner</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>coeff</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L256" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.imhorner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.imhorner" title="Permalink to this definition">¶</a></dt>
+<code class="descname">imhorner</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>coeff</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.imhorner"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L256" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.imhorner" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase.invlex_coeff">
-<code class="descname">invlex_coeff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L234" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.invlex_coeff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.invlex_coeff" title="Permalink to this definition">¶</a></dt>
+<code class="descname">invlex_coeff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.invlex_coeff"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L234" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.invlex_coeff" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="astropy.modeling.polynomial.OrthoPolynomialBase.prepare_inputs">
-<code class="descname">prepare_inputs</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L307" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.prepare_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.prepare_inputs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prepare_inputs</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/modeling/polynomial.html#OrthoPolynomialBase.prepare_inputs"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/polynomial.py#L307" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.modeling.polynomial.OrthoPolynomialBase.prepare_inputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is used in <a class="reference internal" href="astropy.modeling.Model.html#astropy.modeling.Model.__call__" title="astropy.modeling.Model.__call__"><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code></a> to ensure
 that all the inputs to the model can be broadcast into compatible
 shapes (if one or both of them are input as arrays), particularly if
@@ -275,7 +262,7 @@ there are more than one parameter sets.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

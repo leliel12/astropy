@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Known Issues &mdash; Astropy v1.2.dev15003</title>
+    <title>Known Issues &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
     <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="index.html" />
     <link rel="next" title="Authors and Credits" href="credits.html" />
     <link rel="prev" title="What’s New in Astropy 0.1" href="whatsnew/0.1.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="index.html">Astropy v1.2.dev15003</a>
+	<a href="index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -129,7 +129,7 @@ platform on which it was run.</p>
 <h2><a class="toc-backref" href="#id5">Known deficiencies</a><a class="headerlink" href="#known-deficiencies" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="quantities-lose-their-units-with-some-operations">
 <span id="quantity-issues"></span><h3><a class="toc-backref" href="#id6">Quantities lose their units with some operations</a><a class="headerlink" href="#quantities-lose-their-units-with-some-operations" title="Permalink to this headline">¶</a></h3>
-<p>Quantities are subclassed from numpy&#8217;s <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> and in some numpy operations
+<p>Quantities are subclassed from numpy&#8217;s <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a> and in some numpy operations
 (and in scipy operations using numpy internally) the subclass is ignored, which
 means that either a plain array is returned, or a <a class="reference internal" href="api/astropy.units.quantity.Quantity.html#astropy.units.quantity.Quantity" title="astropy.units.quantity.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">Quantity</span></code></a> without units.
 E.g.:</p>
@@ -143,7 +143,7 @@ E.g.:</p>
 <span class="go">            5., 6., 7., 8., 9.] (Unit not initialised)&gt;</span>
 </pre></div>
 </div>
-<p>Also in-place operations where the output is a normal <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>
+<p>Also in-place operations where the output is a normal <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>
 will drop the unit silently (at least in numpy &lt;= 1.9):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">*=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">kg</span>
@@ -162,18 +162,18 @@ will drop the unit silently (at least in numpy &lt;= 1.9):</p>
 </div>
 <p>An incomplete list of specific functions which are known to exhibit this behavior follows.</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.dot</span></code></a></li>
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html#numpy.hstack" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.hstack</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html#numpy.vstack" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.vstack</span></code></a>, <code class="docutils literal"><span class="pre">numpy.c_</span></code>, <code class="docutils literal"><span class="pre">numpy.r_</span></code>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.append.html#numpy.append" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.append</span></code></a></li>
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.where</span></code></a></li>
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.choose.html#numpy.choose" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.choose</span></code></a></li>
-<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.vectorize.html#numpy.vectorize" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.vectorize</span></code></a></li>
+<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.dot</span></code></a></li>
+<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html#numpy.hstack" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.hstack</span></code></a>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html#numpy.vstack" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.vstack</span></code></a>, <code class="docutils literal"><span class="pre">numpy.c_</span></code>, <code class="docutils literal"><span class="pre">numpy.r_</span></code>, <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.append.html#numpy.append" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.append</span></code></a></li>
+<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.where</span></code></a></li>
+<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.choose.html#numpy.choose" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.choose</span></code></a></li>
+<li><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.vectorize.html#numpy.vectorize" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.vectorize</span></code></a></li>
 <li>pandas DataFrame(s)</li>
 </ul>
 <p>See: <a class="reference external" href="https://github.com/astropy/astropy/issues/1274">https://github.com/astropy/astropy/issues/1274</a></p>
 </div>
 <div class="section" id="quantities-float-comparison-with-np-isclose-fails">
 <h3><a class="toc-backref" href="#id7">Quantities float comparison with np.isclose fails</a><a class="headerlink" href="#quantities-float-comparison-with-np-isclose-fails" title="Permalink to this headline">¶</a></h3>
-<p>Comparing Quantities floats using the numpy function <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">isclose</span></code></a> fails on
+<p>Comparing Quantities floats using the numpy function <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">isclose</span></code></a> fails on
 numpy 1.9 as the comparison between <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> is made using the formula</p>
 <div class="math">
 <p><img src="_images/math/e33c399c9eacb29006baec6083328b6e610fb744.png" alt="|a - b| \le (a_\textrm{tol} + r_\textrm{tol} \times |b|)"/></p>
@@ -193,7 +193,7 @@ numpy 1.9 as the comparison between <code class="docutils literal"><span class="
 </div>
 <div class="section" id="quantities-in-np-linspace-failure-on-numpy-1-10">
 <h3><a class="toc-backref" href="#id8">Quantities in np.linspace failure on numpy 1.10</a><a class="headerlink" href="#quantities-in-np-linspace-failure-on-numpy-1-10" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">linspace</span></code></a> does not work correctly with quantities when using numpy
+<p><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">linspace</span></code></a> does not work correctly with quantities when using numpy
 1.10.0 to 1.10.5 due to a bug in numpy. The solution is to upgrade to numpy
 1.10.6 or later, in which the bug was fixed.</p>
 </div>
@@ -210,8 +210,8 @@ to a more recent version of Numpy.</p>
 <div class="section" id="remote-data-utilities-in-astropy-utils-data-fail-on-some-python-distributions">
 <h3><a class="toc-backref" href="#id10">Remote data utilities in <a class="reference internal" href="utils/index.html#module-astropy.utils.data" title="astropy.utils.data"><code class="xref py py-obj docutils literal"><span class="pre">astropy.utils.data</span></code></a> fail on some Python distributions</a><a class="headerlink" href="#remote-data-utilities-in-astropy-utils-data-fail-on-some-python-distributions" title="Permalink to this headline">¶</a></h3>
 <p>The remote data utilities in <a class="reference internal" href="utils/index.html#module-astropy.utils.data" title="astropy.utils.data"><code class="xref py py-obj docutils literal"><span class="pre">astropy.utils.data</span></code></a> depend on the Python
-standard library <a class="reference external" href="http://docs.python.org/library/shelve.html#module-shelve" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">shelve</span></code></a> module, which in some cases depends on the
-standard library <a class="reference external" href="http://docs.python.org/library/bsddb.html#module-bsddb" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">bsddb</span></code></a> module. Some Python distributions, including but
+standard library <a class="reference external" href="http://docs.python.org/3/library/shelve.html#module-shelve" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">shelve</span></code></a> module, which in some cases depends on the
+standard library <a class="reference external" href="http://docs.python.org/2/library/bsddb.html#module-bsddb" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">bsddb</span></code></a> module. Some Python distributions, including but
 not limited to</p>
 <ul class="simple">
 <li>OS X, Python 2.7.5 via homebrew</li>
@@ -265,21 +265,21 @@ supported in the basic Python command-line interpreter on Windows.</p>
 </div>
 <div class="section" id="pickling-error-on-compound-models">
 <h3><a class="toc-backref" href="#id16">Pickling error on compound models</a><a class="headerlink" href="#pickling-error-on-compound-models" title="Permalink to this headline">¶</a></h3>
-<p>When calling <a class="reference external" href="http://docs.python.org/library/pickle.html#pickle.dumps" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.dumps</span></code></a> on a <a class="reference internal" href="modeling/compound-models.html#compound-models"><span>compound model</span></a>, it
-is possible to get an exception with a <a class="reference external" href="http://docs.python.org/library/pickle.html#pickle.PickleError" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.PickleError</span></code></a> or, depending on
-the Python version or whether the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-cPickle" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">cPickle</span></code></a> module was being used, an
-<code class="xref py py-obj docutils literal"><span class="pre">AttributeError</span></code> like:</p>
+<p>When calling <a class="reference external" href="http://docs.python.org/3/library/pickle.html#pickle.dumps" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.dumps</span></code></a> on a <a class="reference internal" href="modeling/compound-models.html#compound-models"><span>compound model</span></a>, it
+is possible to get an exception with a <a class="reference external" href="http://docs.python.org/3/library/pickle.html#pickle.PickleError" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">pickle.PickleError</span></code></a> or, depending on
+the Python version or whether the <a class="reference external" href="http://docs.python.org/2/library/pickle.html#module-cPickle" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">cPickle</span></code></a> module was being used, an
+<a class="reference external" href="http://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">AttributeError</span></code></a> like:</p>
 <div class="highlight-python"><div class="highlight"><pre>AttributeError: &#39;module&#39; object has no attribute &#39;CompoundModel0&#39;
 </pre></div>
 </div>
 <p>as originally reported in issue
 <a class="reference external" href="https://github.com/astropy/astropy/pull/3867">#3867</a>.  You may also get a
-<code class="xref py py-obj docutils literal"><span class="pre">RuntimeError</span></code> that directed you to this documentation.</p>
+<a class="reference external" href="http://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">RuntimeError</span></code></a> that directed you to this documentation.</p>
 <p>This is due to a bug in Python versions older than 2.7.3 (see
 <a class="reference external" href="http://bugs.python.org/issue7689">http://bugs.python.org/issue7689</a>) that is very difficult to work around when
 trying to pickle compound models.  If the need is dire it may be possible
-to work around by using a patched copy of the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle</span></code></a> module (i.e.
-backporting a copy of the Python <a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">pickle</span></code></a> module from newer Python versions
+to work around by using a patched copy of the <a class="reference external" href="http://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">pickle</span></code></a> module (i.e.
+backporting a copy of the Python <a class="reference external" href="http://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">pickle</span></code></a> module from newer Python versions
 and using it instead of the copy built-in to your Python).</p>
 </div>
 </div>
@@ -489,7 +489,7 @@ this will be fixed in their next Python build.</td></tr>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

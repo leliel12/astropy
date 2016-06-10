@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Constructing a table &mdash; Astropy v1.2.dev15003</title>
+    <title>Constructing a table &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Data Tables (astropy.table)" href="index.html" />
     <link rel="next" title="Accessing a table" href="access_table.html" />
     <link rel="prev" title="Data Tables (astropy.table)" href="index.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="index.html" accesskey="U">Data Tables (<code class="docutils literal"><span class="pre">astropy.table</span></code>)</a> &raquo;</li>
@@ -95,12 +95,12 @@ easiest way to understand how to make a table is by example.</p>
 <p>Much of the flexibility lies in the types of data structures
 which can be used to initialize the table data.  The examples below show how to
 create a table from scratch with no initial data, create a table with a list of
-columns, a dictionary of columns, or from <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> arrays (either structured or
+columns, a dictionary of columns, or from <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> arrays (either structured or
 homogeneous).</p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
 <p>For the following examples you need to import the <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> and <a class="reference internal" href="../api/astropy.table.Column.html#astropy.table.Column" title="astropy.table.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> classes
-along with the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> package:</p>
+along with the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> package:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Column</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
@@ -145,7 +145,7 @@ Quantities</a> for details):</p>
 <div class="section" id="list-of-columns">
 <h3>List of columns<a class="headerlink" href="#list-of-columns" title="Permalink to this headline">¶</a></h3>
 <p>A typical case is where you have a number of data columns with the same length
-defined in different variables.  These might be Python lists or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> arrays
+defined in different variables.  These might be Python lists or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> arrays
 or a mix of the two.  These can be used to create a <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> by putting the column
 data variables into a Python list.  In this case the column names are not
 defined by the input data, so they must either be set using the <code class="docutils literal"><span class="pre">names</span></code>
@@ -176,7 +176,7 @@ and putting this into a Python list, e.g. <code class="docutils literal"><span c
 </pre></div>
 </div>
 <p><strong>Make a new table using expressions involving columns</strong></p>
-<p>The <a class="reference internal" href="../api/astropy.table.Column.html#astropy.table.Column" title="astropy.table.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> object is derived from the standard <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array and can be used
+<p>The <a class="reference internal" href="../api/astropy.table.Column.html#astropy.table.Column" title="astropy.table.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> object is derived from the standard <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array and can be used
 directly in arithmetic expressions.  This allows for a compact way of making a
 new table with modified column values:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Table</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span><span class="p">])</span>
@@ -322,7 +322,7 @@ accepted.  However, a list of records must always be provided using the
 </div>
 <div class="section" id="numpy-structured-array">
 <h3>NumPy structured array<a class="headerlink" href="#numpy-structured-array" title="Permalink to this headline">¶</a></h3>
-<p>The structured array is the standard mechanism in <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> for storing
+<p>The structured array is the standard mechanism in <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> for storing
 heterogeneous table data.  Most scientific I/O packages that read table
 files (e.g.  <a class="reference external" href="http://www.stsci.edu/resources/software_hardware/pyfits">PyFITS</a>, <a class="reference external" href="http://stsdas.stsci.edu/astrolib/vo/html/intro_table.html">vo.table</a>, <a class="reference external" href="http://cxc.harvard.edu/contrib/asciitable/">asciitable</a>) will return the table in an
 object that is based on the structured array.  A structured array can be
@@ -387,7 +387,7 @@ table to see what we made.  In real code you might do something like:</p>
 </div>
 <div class="section" id="numpy-homogeneous-array">
 <h3>NumPy homogeneous array<a class="headerlink" href="#numpy-homogeneous-array" title="Permalink to this headline">¶</a></h3>
-<p>A <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> 1-d array is treated as a single row table where each element of the
+<p>A <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> 1-d array is treated as a single row table where each element of the
 array corresponds to a column:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Table</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;i8&#39;</span><span class="p">,</span> <span class="s">&#39;i8&#39;</span><span class="p">,</span> <span class="s">&#39;i8&#39;</span><span class="p">))</span>
 <span class="go">&lt;Table length=1&gt;</span>
@@ -397,7 +397,7 @@ array corresponds to a column:</p>
 <span class="go">    1     2     3</span>
 </pre></div>
 </div>
-<p>A <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> 2-d array (where all elements have the same type) can also be
+<p>A <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> 2-d array (where all elements have the same type) can also be
 converted into a <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a>.  In this case the column names are not specified by
 the data and must either be provided by the user or will be automatically
 generated as <code class="docutils literal"><span class="pre">col&lt;N&gt;</span></code> where <code class="docutils literal"><span class="pre">&lt;N&gt;</span></code> is the column number.</p>
@@ -433,7 +433,7 @@ as the data types are not changed:</p>
 <p>There is a slightly subtle issue that is important to understand in the way
 that <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> objects are created.  Any data input that looks like a Python list
 (including a tuple) is considered to be a list of columns.  In contrast an
-homogeneous <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array input is interpreted as a list of rows:</p>
+homogeneous <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> array input is interpreted as a list of rows:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -453,7 +453,7 @@ homogeneous <a class="reference external" href="http://docs.scipy.org/doc/numpy/
 </pre></div>
 </div>
 <p>This dichotomy is needed to support flexible list input while retaining the
-natural interpretation of 2-d <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> arrays where the first index corresponds
+natural interpretation of 2-d <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> arrays where the first index corresponds
 to data &#8220;rows&#8221; and the second index corresponds to data &#8220;columns&#8221;.</p>
 </div>
 <div class="section" id="from-existing-table">
@@ -570,6 +570,10 @@ to specify column ordering.  If it is not provided, the column order will
 default to alphabetical.  The <code class="docutils literal"><span class="pre">dtype</span></code> list may be specified, and must
 correspond to the order of output columns.  If any row&#8217;s keys do no match
 the rest of the rows, a ValueError will be thrown.</dd>
+<dt><strong>table-like object</strong></dt>
+<dd>If another table-like object has a <code class="docutils literal"><span class="pre">__astropy_table__</span></code> method then
+that object can be used to directly create a <code class="docutils literal"><span class="pre">Table</span></code> object.  See
+the <a class="reference internal" href="#table-like-objects">Table-like objects</a> section for details.</dd>
 <dt><strong>None</strong></dt>
 <dd>Initialize a zero-length table.  If <code class="docutils literal"><span class="pre">names</span></code> and optionally <code class="docutils literal"><span class="pre">dtype</span></code>
 are provided then the corresponding columns are created.</dd>
@@ -969,6 +973,96 @@ a <a class="reference internal" href="../api/astropy.table.Column.html#astropy.t
 units, see the <a class="reference internal" href="access_table.html#columns-with-units"><span>Columns with Units</span></a> section.</p>
 </div>
 </div>
+<div class="section" id="table-like-objects">
+<h2>Table-like objects<a class="headerlink" href="#table-like-objects" title="Permalink to this headline">¶</a></h2>
+<p>In order to improve interoperability between different table classes, an
+astropy <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> object can be created directly from any other table-like
+object that provides an <code class="docutils literal"><span class="pre">__astropy_table__</span></code> method.  In this case the
+<code class="docutils literal"><span class="pre">__astropy_table__</span></code> method will be called as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">SomeOtherTableClass</span><span class="p">({</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">strict_copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  
+</pre></div>
+</div>
+<p>Internally the following call will be made to ask the <code class="docutils literal"><span class="pre">data</span></code> object
+to return a representation of itself as an astropy <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a>, respecting
+the <code class="docutils literal"><span class="pre">copy</span></code> preference of the original call to <code class="docutils literal"><span class="pre">QTable()</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">.</span><span class="n">__astropy_table__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal"><span class="pre">cls</span></code> is the <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> class or subclass that is being instantiated
+(<a class="reference internal" href="../api/astropy.table.QTable.html#astropy.table.QTable" title="astropy.table.QTable"><code class="xref py py-class docutils literal"><span class="pre">QTable</span></code></a> in this example), <code class="docutils literal"><span class="pre">copy</span></code> indicates whether a copy of the values in
+<code class="docutils literal"><span class="pre">data</span></code> should be provided, and <code class="docutils literal"><span class="pre">**kwargs</span></code> are any extra keyword arguments
+which are not valid <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a> init keyword arguments.  In the example above,
+<code class="docutils literal"><span class="pre">strict_copy=True</span></code> would end up in <code class="docutils literal"><span class="pre">**kwargs</span></code> and get passed to
+<code class="docutils literal"><span class="pre">__astropy_table__()</span></code>.</p>
+<p>If <code class="docutils literal"><span class="pre">copy</span></code> is <code class="docutils literal"><span class="pre">True</span></code> then the <code class="docutils literal"><span class="pre">__astropy_table__</span></code> method must ensure that
+a copy of the original data is returned.  If <code class="docutils literal"><span class="pre">copy</span></code> is <code class="docutils literal"><span class="pre">False</span></code> then a
+reference to the table data should returned if possible.  If it is not possible
+(e.g. the original data are in a Python list or must be otherwise transformed in
+memory) then <code class="docutils literal"><span class="pre">__astropy_table__</span></code> method is free to either return a copy or
+else raise an exception.  This choice depends on the preference of the
+implementation.  The implementation might choose to allow an additional keyword
+argument (e.g. <code class="docutils literal"><span class="pre">strict_copy</span></code> which gets passed via <code class="docutils literal"><span class="pre">**kwargs</span></code>) to control the
+behavior in this case.</p>
+<p>As a simple example, imagine a dict-based table class.  (Note that <a class="reference internal" href="../api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="xref py py-class docutils literal"><span class="pre">Table</span></code></a>
+already can be initialized from a dict-like object, so this is a bit contrived
+but does illustrate the principles involved.)  Please pay attention to the
+method signature:</p>
+<div class="highlight-python"><div class="highlight"><pre>def __astropy_table__(self, cls, copy, **kwargs):
+</pre></div>
+</div>
+<p>Your class implementation of this must use the <code class="docutils literal"><span class="pre">**kwargs</span></code> technique for
+catching keyword arguments at the end.  This is to ensure future compatibility
+in case additional keywords are added to the internal <code class="docutils literal"><span class="pre">table</span> <span class="pre">=</span>
+<span class="pre">data.__astropy_table__(cls,</span> <span class="pre">copy)</span></code> call.  Including <code class="docutils literal"><span class="pre">**kwargs</span></code> will prevent
+breakage in this case.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">DictTable</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Trivial &quot;table&quot; class that just uses a dict to hold columns.</span>
+<span class="sd">    This does not actually implement anything useful that makes</span>
+<span class="sd">    this a table.</span>
+
+<span class="sd">    The non-standard ``strict_copy=False`` keyword arg here will be passed</span>
+<span class="sd">    via the **kwargs of Table __init__().</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__astropy_table__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">strict_copy</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return an astropy Table of type ``cls``.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cls : type</span>
+<span class="sd">             Astropy ``Table`` class or subclass</span>
+<span class="sd">        copy : bool</span>
+<span class="sd">             Copy input data (True) or return a reference (False)</span>
+<span class="sd">        strict_copy : bool, optional</span>
+<span class="sd">             Raise an exception if copy is False but reference is not</span>
+<span class="sd">             possible</span>
+<span class="sd">        **kwargs : dict, optional</span>
+<span class="sd">             Additional keyword args (ignored currently)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;unexpected keyword args {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+
+        <span class="n">cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="c"># If returning a reference to existing data (copy=False) and</span>
+        <span class="c"># strict_copy=True, make sure that each column is a numpy ndarray.</span>
+        <span class="c"># If a column is a Python list or tuple then it must be copied for</span>
+        <span class="c"># representation in an astropy Table.</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">copy</span> <span class="ow">and</span> <span class="n">strict_copy</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;cannot have copy=False because column {} is &#39;</span>
+                                     <span class="s">&#39;not an ndarray&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -1013,6 +1107,7 @@ units, see the <a class="reference internal" href="access_table.html#columns-wit
 <li><a class="reference internal" href="#columns-and-quantities">Columns and Quantities</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#table-like-objects">Table-like objects</a></li>
 </ul>
 </li>
 </ul>
@@ -1031,7 +1126,7 @@ units, see the <a class="reference internal" href="access_table.html#columns-wit
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

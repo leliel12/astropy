@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Astropy Core Package Utilities (astropy.utils) &mdash; Astropy v1.2.dev15003</title>
+    <title>Astropy Core Package Utilities (astropy.utils) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
-    <link rel="next" title="make_function_with_signature" href="../api/astropy.utils.codegen.make_function_with_signature.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
+    <link rel="next" title="IERS data access (astropy.utils.iers)" href="iers.html" />
     <link rel="prev" title="Python warnings system" href="../warnings.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
@@ -57,7 +57,7 @@
     <h3>Navigation</h3>
     <ul>
       <li class="right">
-	<a href="../api/astropy.utils.codegen.make_function_with_signature.html" title="make_function_with_signature">
+	<a href="iers.html" title="IERS data access (astropy.utils.iers)">
 	  next &raquo;
 	</a>
       </li>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -95,7 +95,13 @@ and classes are typically more complicated or specific to a particular need of
 Astropy.</p>
 <p>Because of the mostly standalone and grab-bag nature of these utilities, they
 are generally best understood through their docstrings, and hence this
-documentation does not have detailed sections like the other packages.</p>
+documentation generally does not have detailed sections like the other packages.
+The exception is below:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="iers.html">IERS data access (<code class="docutils literal"><span class="pre">astropy.utils.iers</span></code>)</a></li>
+</ul>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <code class="docutils literal"><span class="pre">astropy.utils.compat</span></code> subpackage is not included in this
@@ -159,7 +165,7 @@ compatibility between different versions.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.console.isatty.html#astropy.utils.console.isatty" title="astropy.utils.console.isatty"><code class="xref py py-obj docutils literal"><span class="pre">isatty</span></code></a>(file)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <a class="reference external" href="http://docs.python.org/library/functions.html#file" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">file</span></code></a> is a tty.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <code class="docutils literal"><span class="pre">file</span></code> is a tty.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.console.color_print.html#astropy.utils.console.color_print" title="astropy.utils.console.color_print"><code class="xref py py-obj docutils literal"><span class="pre">color_print</span></code></a>(*args,&nbsp;**kwargs)</td>
 <td>Prints colors and styles to the terminal uses ANSI escape sequences.</td>
@@ -218,7 +224,7 @@ compatibility between different versions.</p>
 <td>Used to mark a public attribute as deprecated.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.decorators.wraps.html#astropy.utils.decorators.wraps" title="astropy.utils.decorators.wraps"><code class="xref py py-obj docutils literal"><span class="pre">wraps</span></code></a>(wrapped[,&nbsp;assigned,&nbsp;updated,&nbsp;exclude_args])</td>
-<td>An alternative to <a class="reference external" href="http://docs.python.org/library/functools.html#functools.wraps" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">functools.wraps</span></code></a> which also preserves the original function&#8217;s call signature by way of <a class="reference internal" href="../api/astropy.utils.codegen.make_function_with_signature.html#astropy.utils.codegen.make_function_with_signature" title="astropy.utils.codegen.make_function_with_signature"><code class="xref py py-obj docutils literal"><span class="pre">make_function_with_signature</span></code></a>.</td>
+<td>An alternative to <a class="reference external" href="http://docs.python.org/3/library/functools.html#functools.wraps" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">functools.wraps</span></code></a> which also preserves the original function&#8217;s call signature by way of <a class="reference internal" href="../api/astropy.utils.codegen.make_function_with_signature.html#astropy.utils.codegen.make_function_with_signature" title="astropy.utils.codegen.make_function_with_signature"><code class="xref py py-obj docutils literal"><span class="pre">make_function_with_signature</span></code></a>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.decorators.format_doc.html#astropy.utils.decorators.format_doc" title="astropy.utils.decorators.format_doc"><code class="xref py py-obj docutils literal"><span class="pre">format_doc</span></code></a>(docstring,&nbsp;*args,&nbsp;**kwargs)</td>
 <td>Replaces the docstring of the decorated object and then formats it.</td>
@@ -235,13 +241,13 @@ compatibility between different versions.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.decorators.classproperty.html#astropy.utils.decorators.classproperty" title="astropy.utils.decorators.classproperty"><code class="xref py py-obj docutils literal"><span class="pre">classproperty</span></code></a>(fget[,&nbsp;doc,&nbsp;lazy])</td>
-<td>Similar to <a class="reference external" href="http://docs.python.org/library/functions.html#property" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">property</span></code></a>, but allows class-level properties.</td>
+<td>Similar to <a class="reference external" href="http://docs.python.org/3/library/functions.html#property" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">property</span></code></a>, but allows class-level properties.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.decorators.lazyproperty.html#astropy.utils.decorators.lazyproperty" title="astropy.utils.decorators.lazyproperty"><code class="xref py py-obj docutils literal"><span class="pre">lazyproperty</span></code></a>(fget[,&nbsp;fset,&nbsp;fdel,&nbsp;doc])</td>
 <td>Works similarly to property(), but computes the value only once.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.decorators.sharedmethod.html#astropy.utils.decorators.sharedmethod" title="astropy.utils.decorators.sharedmethod"><code class="xref py py-obj docutils literal"><span class="pre">sharedmethod</span></code></a></td>
-<td>This is a method decorator that allows both an instancemethod and a <a class="reference external" href="http://docs.python.org/library/functions.html#classmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a> to share the same name.</td>
+<td>This is a method decorator that allows both an instancemethod and a <a class="reference external" href="http://docs.python.org/3/library/functions.html#classmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a> to share the same name.</td>
 </tr>
 </tbody>
 </table>
@@ -279,11 +285,46 @@ be here, but rather in the particular subpackage.</p>
 </table>
 </div>
 </div>
+<div class="section" id="module-astropy.utils.iers">
+<span id="astropy-utils-iers-package"></span><h3>astropy.utils.iers Package<a class="headerlink" href="#module-astropy.utils.iers" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>Classes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.iers.Conf.html#astropy.utils.iers.Conf" title="astropy.utils.iers.Conf"><code class="xref py py-obj docutils literal"><span class="pre">Conf</span></code></a></td>
+<td>Configuration parameters for <a class="reference internal" href="#module-astropy.utils.iers" title="astropy.utils.iers"><code class="xref py py-obj docutils literal"><span class="pre">astropy.utils.iers</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.iers.IERS.html#astropy.utils.iers.IERS" title="astropy.utils.iers.IERS"><code class="xref py py-obj docutils literal"><span class="pre">IERS</span></code></a>([data,&nbsp;masked,&nbsp;names,&nbsp;dtype,&nbsp;meta,&nbsp;...])</td>
+<td>Generic IERS table class, defining interpolation functions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.iers.IERSRangeError.html#astropy.utils.iers.IERSRangeError" title="astropy.utils.iers.IERSRangeError"><code class="xref py py-obj docutils literal"><span class="pre">IERSRangeError</span></code></a></td>
+<td>Any error for when dates are outside of the valid range for IERS</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.iers.IERSStaleWarning.html#astropy.utils.iers.IERSStaleWarning" title="astropy.utils.iers.IERSStaleWarning"><code class="xref py py-obj docutils literal"><span class="pre">IERSStaleWarning</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.iers.IERS_A.html#astropy.utils.iers.IERS_A" title="astropy.utils.iers.IERS_A"><code class="xref py py-obj docutils literal"><span class="pre">IERS_A</span></code></a>([data,&nbsp;masked,&nbsp;names,&nbsp;dtype,&nbsp;meta,&nbsp;...])</td>
+<td>IERS Table class targeted to IERS A, provided by USNO.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.iers.IERS_Auto.html#astropy.utils.iers.IERS_Auto" title="astropy.utils.iers.IERS_Auto"><code class="xref py py-obj docutils literal"><span class="pre">IERS_Auto</span></code></a>([data,&nbsp;masked,&nbsp;names,&nbsp;dtype,&nbsp;...])</td>
+<td>Provide most-recent IERS data and automatically handle downloading of updated values as necessary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.iers.IERS_B.html#astropy.utils.iers.IERS_B" title="astropy.utils.iers.IERS_B"><code class="xref py py-obj docutils literal"><span class="pre">IERS_B</span></code></a>([data,&nbsp;masked,&nbsp;names,&nbsp;dtype,&nbsp;meta,&nbsp;...])</td>
+<td>IERS Table class targeted to IERS B, provided by IERS itself.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="section" id="module-astropy.utils.introspection">
 <span id="astropy-utils-introspection-module"></span><h3>astropy.utils.introspection Module<a class="headerlink" href="#module-astropy.utils.introspection" title="Permalink to this headline">¶</a></h3>
 <p>Functions related to Python runtime introspection.</p>
-<div class="section" id="id6">
-<h4>Functions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4>Functions<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -294,13 +335,13 @@ be here, but rather in the particular subpackage.</p>
 <td>Resolve a name like <code class="docutils literal"><span class="pre">module.object</span></code> to an object and return it.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.introspection.minversion.html#astropy.utils.introspection.minversion" title="astropy.utils.introspection.minversion"><code class="xref py py-obj docutils literal"><span class="pre">minversion</span></code></a>(module,&nbsp;version[,&nbsp;inclusive,&nbsp;...])</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the specified Python module satisfies a minimum version requirement, and <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> if not.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the specified Python module satisfies a minimum version requirement, and <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a> if not.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.introspection.find_current_module.html#astropy.utils.introspection.find_current_module" title="astropy.utils.introspection.find_current_module"><code class="xref py py-obj docutils literal"><span class="pre">find_current_module</span></code></a>([depth,&nbsp;finddiff])</td>
 <td>Determines the module/package from which this function is called.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.introspection.isinstancemethod.html#astropy.utils.introspection.isinstancemethod" title="astropy.utils.introspection.isinstancemethod"><code class="xref py py-obj docutils literal"><span class="pre">isinstancemethod</span></code></a>(cls,&nbsp;obj)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the given object is an instance method of the class it is defined on (as opposed to a <a class="reference external" href="http://docs.python.org/library/functions.html#staticmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a> or a <a class="reference external" href="http://docs.python.org/library/functions.html#classmethod" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>).</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the given object is an instance method of the class it is defined on (as opposed to a <a class="reference external" href="http://docs.python.org/3/library/functions.html#staticmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a> or a <a class="reference external" href="http://docs.python.org/3/library/functions.html#classmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>).</td>
 </tr>
 </tbody>
 </table>
@@ -309,8 +350,8 @@ be here, but rather in the particular subpackage.</p>
 <div class="section" id="module-astropy.utils.metadata">
 <span id="astropy-utils-metadata-module"></span><h3>astropy.utils.metadata Module<a class="headerlink" href="#module-astropy.utils.metadata" title="Permalink to this headline">¶</a></h3>
 <p>This module contains helper functions and classes for handling metadata.</p>
-<div class="section" id="id7">
-<h4>Functions<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>Functions<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -329,8 +370,8 @@ be here, but rather in the particular subpackage.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="id8">
-<h4>Classes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h4>Classes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -355,7 +396,7 @@ be here, but rather in the particular subpackage.</p>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.metadata.MergeStrategyMeta.html#astropy.utils.metadata.MergeStrategyMeta" title="astropy.utils.metadata.MergeStrategyMeta"><code class="xref py py-obj docutils literal"><span class="pre">MergeStrategyMeta</span></code></a></td>
 <td>Metaclass that registers MergeStrategy subclasses into the MERGE_STRATEGIES registry.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.metadata.MetaData.html#astropy.utils.metadata.MetaData" title="astropy.utils.metadata.MetaData"><code class="xref py py-obj docutils literal"><span class="pre">MetaData</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.metadata.MetaData.html#astropy.utils.metadata.MetaData" title="astropy.utils.metadata.MetaData"><code class="xref py py-obj docutils literal"><span class="pre">MetaData</span></code></a>([doc,&nbsp;copy])</td>
 <td>A descriptor for classes that have a <code class="docutils literal"><span class="pre">meta</span></code> property.</td>
 </tr>
 </tbody>
@@ -366,8 +407,8 @@ be here, but rather in the particular subpackage.</p>
 <span id="astropy-utils-misc-module"></span><h3>astropy.utils.misc Module<a class="headerlink" href="#module-astropy.utils.misc" title="Permalink to this headline">¶</a></h3>
 <p>A &#8220;grab bag&#8221; of relatively small general-purpose utilities that don&#8217;t have
 a clear module/package to live in.</p>
-<div class="section" id="id9">
-<h4>Functions<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>Functions<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -375,7 +416,7 @@ a clear module/package to live in.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.misc.isiterable.html#astropy.utils.misc.isiterable" title="astropy.utils.misc.isiterable"><code class="xref py py-obj docutils literal"><span class="pre">isiterable</span></code></a>(obj)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the given object is iterable.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if the given object is iterable.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.misc.silence.html#astropy.utils.misc.silence" title="astropy.utils.misc.silence"><code class="xref py py-obj docutils literal"><span class="pre">silence</span></code></a>()</td>
 <td>A context manager that silences sys.stdout and sys.stderr.</td>
@@ -390,7 +431,7 @@ a clear module/package to live in.</p>
 <td>Determines if a given file or directory is hidden.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.misc.walk_skip_hidden.html#astropy.utils.misc.walk_skip_hidden" title="astropy.utils.misc.walk_skip_hidden"><code class="xref py py-obj docutils literal"><span class="pre">walk_skip_hidden</span></code></a>(top[,&nbsp;onerror,&nbsp;followlinks])</td>
-<td>A wrapper for <a class="reference external" href="http://docs.python.org/library/os.html#os.walk" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">os.walk</span></code></a> that skips hidden files and directories.</td>
+<td>A wrapper for <a class="reference external" href="http://docs.python.org/3/library/os.html#os.walk" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">os.walk</span></code></a> that skips hidden files and directories.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.misc.indent.html#astropy.utils.misc.indent" title="astropy.utils.misc.indent"><code class="xref py py-obj docutils literal"><span class="pre">indent</span></code></a>(s[,&nbsp;shift,&nbsp;width])</td>
 <td>Indent a block of text.</td>
@@ -401,8 +442,8 @@ a clear module/package to live in.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="id10">
-<h4>Classes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h4>Classes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -432,8 +473,8 @@ a clear module/package to live in.</p>
 <span id="astropy-utils-state-module"></span><h3>astropy.utils.state Module<a class="headerlink" href="#module-astropy.utils.state" title="Permalink to this headline">¶</a></h3>
 <p>A simple class to manage a piece of global science state.  See
 <a class="reference internal" href="../config/index.html#config-developer"><span>Adding new configuration items</span></a> for more details.</p>
-<div class="section" id="id11">
-<h4>Classes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id12">
+<h4>Classes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -450,8 +491,8 @@ a clear module/package to live in.</p>
 <div class="section" id="module-astropy.utils.timer">
 <span id="astropy-utils-timer-module"></span><h3>astropy.utils.timer Module<a class="headerlink" href="#module-astropy.utils.timer" title="Permalink to this headline">¶</a></h3>
 <p>General purpose timer related functions.</p>
-<div class="section" id="id12">
-<h4>Functions<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h4>Functions<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -464,8 +505,8 @@ a clear module/package to live in.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="id13">
-<h4>Classes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id14">
+<h4>Classes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -486,8 +527,8 @@ a clear module/package to live in.</p>
 <span id="astropy-utils-data-module"></span><h3>astropy.utils.data Module<a class="headerlink" href="#module-astropy.utils.data" title="Permalink to this headline">¶</a></h3>
 <p>This module contains helper functions for accessing, downloading, and
 caching data files.</p>
-<div class="section" id="id14">
-<h4>Functions<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id15">
+<h4>Functions<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -539,8 +580,8 @@ caching data files.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="id15">
-<h4>Classes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id16">
+<h4>Classes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -565,8 +606,8 @@ caching data files.</p>
 <span id="astropy-utils-xml-check-module"></span><h4>astropy.utils.xml.check Module<a class="headerlink" href="#module-astropy.utils.xml.check" title="Permalink to this headline">¶</a></h4>
 <p>A collection of functions for checking various XML-related strings for
 standards compliance.</p>
-<div class="section" id="id17">
-<h5>Functions<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id18">
+<h5>Functions<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -574,16 +615,16 @@ standards compliance.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.xml.check.check_anyuri.html#astropy.utils.xml.check.check_anyuri" title="astropy.utils.xml.check.check_anyuri"><code class="xref py py-obj docutils literal"><span class="pre">check_anyuri</span></code></a>(uri)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>uri</em> is a valid URI as defined in RFC 2396.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>uri</em> is a valid URI as defined in RFC 2396.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.xml.check.check_id.html#astropy.utils.xml.check.check_id" title="astropy.utils.xml.check.check_id"><code class="xref py py-obj docutils literal"><span class="pre">check_id</span></code></a>(ID)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>ID</em> is a valid XML ID.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>ID</em> is a valid XML ID.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.xml.check.check_mime_content_type.html#astropy.utils.xml.check.check_mime_content_type" title="astropy.utils.xml.check.check_mime_content_type"><code class="xref py py-obj docutils literal"><span class="pre">check_mime_content_type</span></code></a>(content_type)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>content_type</em> is a valid MIME content type (syntactically at least), as defined by RFC 2045.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>content_type</em> is a valid MIME content type (syntactically at least), as defined by RFC 2045.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../api/astropy.utils.xml.check.check_token.html#astropy.utils.xml.check.check_token" title="astropy.utils.xml.check.check_token"><code class="xref py py-obj docutils literal"><span class="pre">check_token</span></code></a>(token)</td>
-<td>Returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>token</em> is a valid XML token, as defined by XML Schema Part 2.</td>
+<td>Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> if <em>token</em> is a valid XML token, as defined by XML Schema Part 2.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="../api/astropy.utils.xml.check.fix_id.html#astropy.utils.xml.check.fix_id" title="astropy.utils.xml.check.fix_id"><code class="xref py py-obj docutils literal"><span class="pre">fix_id</span></code></a>(ID)</td>
 <td>Given an arbitrary string, create one that can be used as an xml id.</td>
@@ -595,8 +636,8 @@ standards compliance.</p>
 <div class="section" id="module-astropy.utils.xml.iterparser">
 <span id="astropy-utils-xml-iterparser-module"></span><h4>astropy.utils.xml.iterparser Module<a class="headerlink" href="#module-astropy.utils.xml.iterparser" title="Permalink to this headline">¶</a></h4>
 <p>This module includes a fast iterator-based XML parser.</p>
-<div class="section" id="id18">
-<h5>Functions<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id19">
+<h5>Functions<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -619,8 +660,8 @@ standards compliance.</p>
 <div class="section" id="module-astropy.utils.xml.unescaper">
 <span id="astropy-utils-xml-unescaper-module"></span><h4>astropy.utils.xml.unescaper Module<a class="headerlink" href="#module-astropy.utils.xml.unescaper" title="Permalink to this headline">¶</a></h4>
 <p>URL unescaper functions.</p>
-<div class="section" id="id19">
-<h5>Functions<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id20">
+<h5>Functions<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -640,8 +681,8 @@ standards compliance.</p>
 makes a subprocess call to xmllint.  This could use a Python-based
 library at some point in the future, if something appropriate could be
 found.</p>
-<div class="section" id="id20">
-<h5>Functions<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id21">
+<h5>Functions<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -659,8 +700,8 @@ found.</p>
 <span id="astropy-utils-xml-writer-module"></span><h4>astropy.utils.xml.writer Module<a class="headerlink" href="#module-astropy.utils.xml.writer" title="Permalink to this headline">¶</a></h4>
 <p>Contains a class that makes it simple to stream out well-formed and
 nicely-indented XML.</p>
-<div class="section" id="id21">
-<h5>Classes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id22">
+<h5>Classes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -710,54 +751,58 @@ nicely-indented XML.</p>
 <li><a class="reference internal" href="#id5">Classes</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#module-astropy.utils.iers">astropy.utils.iers Package</a><ul>
+<li><a class="reference internal" href="#id6">Classes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-astropy.utils.introspection">astropy.utils.introspection Module</a><ul>
-<li><a class="reference internal" href="#id6">Functions</a></li>
+<li><a class="reference internal" href="#id7">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-astropy.utils.metadata">astropy.utils.metadata Module</a><ul>
-<li><a class="reference internal" href="#id7">Functions</a></li>
-<li><a class="reference internal" href="#id8">Classes</a></li>
+<li><a class="reference internal" href="#id8">Functions</a></li>
+<li><a class="reference internal" href="#id9">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-astropy.utils.misc">astropy.utils.misc Module</a><ul>
-<li><a class="reference internal" href="#id9">Functions</a></li>
-<li><a class="reference internal" href="#id10">Classes</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-astropy.utils.state">astropy.utils.state Module</a><ul>
+<li><a class="reference internal" href="#id10">Functions</a></li>
 <li><a class="reference internal" href="#id11">Classes</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#module-astropy.utils.state">astropy.utils.state Module</a><ul>
+<li><a class="reference internal" href="#id12">Classes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-astropy.utils.timer">astropy.utils.timer Module</a><ul>
-<li><a class="reference internal" href="#id12">Functions</a></li>
-<li><a class="reference internal" href="#id13">Classes</a></li>
+<li><a class="reference internal" href="#id13">Functions</a></li>
+<li><a class="reference internal" href="#id14">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#file-downloads">File Downloads</a></li>
 <li><a class="reference internal" href="#module-astropy.utils.data">astropy.utils.data Module</a><ul>
-<li><a class="reference internal" href="#id14">Functions</a></li>
-<li><a class="reference internal" href="#id15">Classes</a></li>
+<li><a class="reference internal" href="#id15">Functions</a></li>
+<li><a class="reference internal" href="#id16">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#xml">XML</a><ul>
 <li><a class="reference internal" href="#module-astropy.utils.xml.check">astropy.utils.xml.check Module</a><ul>
-<li><a class="reference internal" href="#id17">Functions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-astropy.utils.xml.iterparser">astropy.utils.xml.iterparser Module</a><ul>
 <li><a class="reference internal" href="#id18">Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-astropy.utils.xml.unescaper">astropy.utils.xml.unescaper Module</a><ul>
+<li><a class="reference internal" href="#module-astropy.utils.xml.iterparser">astropy.utils.xml.iterparser Module</a><ul>
 <li><a class="reference internal" href="#id19">Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-astropy.utils.xml.validate">astropy.utils.xml.validate Module</a><ul>
+<li><a class="reference internal" href="#module-astropy.utils.xml.unescaper">astropy.utils.xml.unescaper Module</a><ul>
 <li><a class="reference internal" href="#id20">Functions</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#module-astropy.utils.xml.validate">astropy.utils.xml.validate Module</a><ul>
+<li><a class="reference internal" href="#id21">Functions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-astropy.utils.xml.writer">astropy.utils.xml.writer Module</a><ul>
-<li><a class="reference internal" href="#id21">Classes</a></li>
+<li><a class="reference internal" href="#id22">Classes</a></li>
 </ul>
 </li>
 </ul>
@@ -782,7 +827,7 @@ nicely-indented XML.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

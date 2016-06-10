@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.table.table &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.table.table &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="astropy.table" href="../table.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" >Module code</a> &raquo;</li>
@@ -93,7 +93,7 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
 <span class="kn">from</span> <span class="nn">..io</span> <span class="kn">import</span> <span class="n">registry</span> <span class="k">as</span> <span class="n">io_registry</span>
 <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">Quantity</span>
-<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">isiterable</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="n">minversion</span>
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">isiterable</span><span class="p">,</span> <span class="n">deprecated</span>
 <span class="kn">from</span> <span class="nn">..utils.console</span> <span class="kn">import</span> <span class="n">color_print</span>
 <span class="kn">from</span> <span class="nn">..utils.metadata</span> <span class="kn">import</span> <span class="n">MetaData</span>
 <span class="kn">from</span> <span class="nn">..utils.data_info</span> <span class="kn">import</span> <span class="n">BaseColumnInfo</span><span class="p">,</span> <span class="n">MixinInfo</span><span class="p">,</span> <span class="n">ParentDtypeInfo</span>
@@ -105,11 +105,7 @@
 <span class="kn">from</span> <span class="nn">.np_utils</span> <span class="kn">import</span> <span class="n">fix_column_name</span><span class="p">,</span> <span class="n">recarray_fromrecords</span>
 <span class="kn">from</span> <span class="nn">.info</span> <span class="kn">import</span> <span class="n">TableInfo</span>
 <span class="kn">from</span> <span class="nn">.index</span> <span class="kn">import</span> <span class="n">Index</span><span class="p">,</span> <span class="n">_IndexModeContext</span><span class="p">,</span> <span class="n">get_index</span>
-
-<span class="c"># Prior to Numpy 1.6.2, there was a bug (in Numpy) that caused</span>
-<span class="c"># sorting of structured arrays containing Unicode columns to</span>
-<span class="c"># silently fail.</span>
-<span class="n">_BROKEN_UNICODE_TABLE_SORT</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">minversion</span><span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="s">&#39;1.6.2&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">conf</span>
 
 
 <span class="n">__doctest_skip__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Table.read&#39;</span><span class="p">,</span> <span class="s">&#39;Table.write&#39;</span><span class="p">,</span>
@@ -175,7 +171,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">OrderedDict</span><span class="o">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="n">item</span><span class="p">]</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">([</span><span class="bp">self</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">item</span><span class="p">])</span>
@@ -229,7 +225,7 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data : numpy ndarray, dict, list, or Table, optional</span>
+<span class="sd">    data : numpy ndarray, dict, list, Table, or table-like object, optional</span>
 <span class="sd">        Data to initialize table.</span>
 <span class="sd">    masked : bool, optional</span>
 <span class="sd">        Specify whether the table is masked.</span>
@@ -245,6 +241,8 @@
 <span class="sd">        Row-oriented data for table instead of ``data`` argument</span>
 <span class="sd">    copy_indices : bool, optional</span>
 <span class="sd">        Copy any indices in the input data (default=True)</span>
+<span class="sd">    **kwargs : dict, optional</span>
+<span class="sd">        Additional keyword args when converting table-like object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">meta</span> <span class="o">=</span> <span class="n">MetaData</span><span class="p">()</span>
@@ -317,7 +315,8 @@
         <span class="k">return</span> <span class="n">data</span>
 </div>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                 <span class="n">meta</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy_indices</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+                 <span class="n">meta</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy_indices</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
         <span class="c"># Set up a placeholder empty table</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_masked</span><span class="p">(</span><span class="n">masked</span><span class="p">)</span>
@@ -352,6 +351,18 @@
         <span class="c"># function, number of columns, and potentially the default col names</span>
 
         <span class="n">default_names</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;__astropy_table__&#39;</span><span class="p">):</span>
+            <span class="c"># Data object implements the __astropy_table__ interface method.</span>
+            <span class="c"># Calling that method returns an appropriate instance of</span>
+            <span class="c"># self.__class__ and respects the `copy` arg.  The returned</span>
+            <span class="c"># Table object should NOT then be copied (though the meta</span>
+            <span class="c"># will be deep-copied anyway).</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">__astropy_table__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">copy</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;__init__() got unexpected keyword argument {!r}&#39;</span>
+                            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]))</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span>
                 <span class="n">data</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span> <span class="ow">and</span>
@@ -435,7 +446,7 @@
         <span class="n">init_func</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span>
 
         <span class="c"># Whatever happens above, the masked property should be set to a boolean</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">masked</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">masked</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;masked property has not been set to True or False&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__getstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -739,6 +750,7 @@
         <span class="n">table</span> <span class="o">=</span> <span class="n">data</span>  <span class="c"># data is really a Table, rename for clarity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">meta</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">primary_key</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">primary_key</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_init_from_list</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span>
@@ -750,7 +762,7 @@
 <span class="sd">        MaskedColumn if the table is masked.  Table subclasses like QTable</span>
 <span class="sd">        override this method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">Column</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">col</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColumnClass</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColumnClass</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">Column</span><span class="p">):</span>
             <span class="n">col</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColumnClass</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>  <span class="c"># copy attributes and reference data</span>
         <span class="k">return</span> <span class="n">col</span>
 
@@ -778,6 +790,7 @@
         <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">masked</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">masked</span><span class="p">)</span>
         <span class="n">table</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="n">table</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">))</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">primary_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary_key</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 
         <span class="n">newcols</span> <span class="o">=</span> <span class="p">[]</span>
@@ -812,6 +825,31 @@
 
         <span class="n">table</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
 
+    <span class="k">def</span> <span class="nf">itercols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Iterate over the columns of this table.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+
+<span class="sd">        To iterate over the columns of a table::</span>
+
+<span class="sd">            &gt;&gt;&gt; t = Table([[1], [2]])</span>
+<span class="sd">            &gt;&gt;&gt; for col in t.itercols():</span>
+<span class="sd">            ...     print(col)</span>
+<span class="sd">            col0</span>
+<span class="sd">            ----</span>
+<span class="sd">               1</span>
+<span class="sd">            col1</span>
+<span class="sd">            ----</span>
+<span class="sd">               2</span>
+
+<span class="sd">        Using ``itercols()`` is similar to  ``for col in t.columns.values()``</span>
+<span class="sd">        but is syntactically preferred.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
+
     <span class="k">def</span> <span class="nf">_base_repr_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">descr_vals</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                     <span class="n">tableid</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">show_dtype</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">max_lines</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                     <span class="n">tableclass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -842,7 +880,8 @@
         <span class="k">return</span> <span class="n">out</span>
 
     <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base_repr_</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base_repr_</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                                <span class="n">tableclass</span><span class="o">=</span><span class="n">conf</span><span class="o">.</span><span class="n">default_notebook_table_class</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base_repr_</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
@@ -940,8 +979,7 @@
             <span class="k">return</span> <span class="bp">self</span>
 
 <div class="viewcode-block" id="Table.show_in_notebook"><a class="viewcode-back" href="../../../api/astropy.table.Table.html#astropy.table.Table.show_in_notebook">[docs]</a>    <span class="k">def</span> <span class="nf">show_in_notebook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableid</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">display_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-                         <span class="n">table_class</span><span class="o">=</span><span class="s">&#39;table table-striped table-bordered &#39;</span>
-                         <span class="s">&#39;table-condensed&#39;</span><span class="p">,</span> <span class="n">show_row_index</span><span class="o">=</span><span class="s">&#39;idx&#39;</span><span class="p">):</span>
+                         <span class="n">table_class</span><span class="o">=</span><span class="s">&#39;astropy-default&#39;</span><span class="p">,</span> <span class="n">show_row_index</span><span class="o">=</span><span class="s">&#39;idx&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Render the table in HTML and show it in the IPython notebook.</span>
 
 <span class="sd">        Parameters</span>
@@ -953,9 +991,12 @@
 <span class="sd">            multiple times.</span>
 <span class="sd">        table_class : str or `None`</span>
 <span class="sd">            A string with a list of HTML classes used to style the table.</span>
-<span class="sd">            Default is &quot;table table-striped table-bordered table-condensed&quot;,</span>
-<span class="sd">            using Bootstrap which is available in the notebook. See `this page</span>
-<span class="sd">            &lt;http://getbootstrap.com/css/#tables&gt;`_ for the list of classes.</span>
+<span class="sd">            The special default string (&#39;from-apy-default&#39;) means that the string</span>
+<span class="sd">            will be retreived from the configuration item</span>
+<span class="sd">            ``astropy.table.default_notebook_table_class``. Note that these</span>
+<span class="sd">            table classes may make use of bootstrap, as this is loaded with the</span>
+<span class="sd">            notebook.  See `this page &lt;http://getbootstrap.com/css/#tables&gt;`_</span>
+<span class="sd">            for the list of classes.</span>
 <span class="sd">        css : string</span>
 <span class="sd">            A valid CSS string declaring the formatting for the table. Default</span>
 <span class="sd">            to ``astropy.table.jsviewer.DEFAULT_CSS_NB``.</span>
@@ -990,6 +1031,8 @@
             <span class="n">display_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_index_row_display_table</span><span class="p">(</span><span class="n">show_row_index</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">display_table</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">if</span> <span class="n">table_class</span> <span class="o">==</span> <span class="s">&#39;astropy-default&#39;</span><span class="p">:</span>
+            <span class="n">table_class</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="n">default_notebook_table_class</span>
         <span class="n">html</span> <span class="o">=</span> <span class="n">display_table</span><span class="o">.</span><span class="n">_base_repr_</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tableid</span><span class="o">=</span><span class="n">tableid</span><span class="p">,</span>
                                          <span class="n">max_lines</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_dtype</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                                          <span class="n">tableclass</span><span class="o">=</span><span class="n">table_class</span><span class="p">)</span>
@@ -2251,11 +2294,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_array</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">_BROKEN_UNICODE_TABLE_SORT</span> <span class="ow">and</span> <span class="n">keys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span>
-                <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s">&#39;U&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">))):</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">lexsort</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Table.sort"><a class="viewcode-back" href="../../../api/astropy.table.Table.html#astropy.table.Table.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
@@ -2603,7 +2642,7 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data : numpy ndarray, dict, list, or Table, optional</span>
+<span class="sd">    data : numpy ndarray, dict, list, Table, or table-like object, optional</span>
 <span class="sd">        Data to initialize table.</span>
 <span class="sd">    masked : bool, optional</span>
 <span class="sd">        Specify whether the table is masked.</span>
@@ -2617,13 +2656,12 @@
 <span class="sd">        Copy the input data (default=True).</span>
 <span class="sd">    rows : numpy ndarray, list of lists, optional</span>
 <span class="sd">        Row-oriented data for table instead of ``data`` argument</span>
+<span class="sd">    copy_indices : bool, optional</span>
+<span class="sd">        Copy any indices in the input data (default=True)</span>
+<span class="sd">    **kwargs : dict, optional</span>
+<span class="sd">        Additional keyword args when converting table-like object</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                 <span class="n">meta</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">copy_indices</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">QTable</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">masked</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span>
-                                     <span class="n">copy</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">copy_indices</span><span class="p">)</span>
-
     <span class="k">def</span> <span class="nf">_add_as_mixin_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determine if ``col`` should be added to the table directly as</span>
@@ -2702,7 +2740,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

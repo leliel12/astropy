@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Images &mdash; Astropy v1.2.dev15003</title>
+    <title>Images &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="FITS File handling (astropy.io.fits)" href="../index.html" />
     <link rel="next" title="Differs" href="diff.html" />
     <link rel="prev" title="Tables" href="tables.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../index.html" accesskey="U">FITS File handling (<code class="docutils literal"><span class="pre">astropy.io.fits</span></code>)</a> &raquo;</li>
@@ -90,7 +90,7 @@
 <h2><a class="reference internal" href="#astropy.io.fits.ImageHDU" title="astropy.io.fits.ImageHDU"><code class="xref py py-obj docutils literal"><span class="pre">ImageHDU</span></code></a><a class="headerlink" href="#imagehdu" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.ImageHDU">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">ImageHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em>, <em>do_not_scale_image_data=False</em>, <em>uint=True</em>, <em>scale_back=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/image.py#L959" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/image.html#ImageHDU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.ImageHDU" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">ImageHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em>, <em>do_not_scale_image_data=False</em>, <em>uint=True</em>, <em>scale_back=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/image.html#ImageHDU"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/image.py#L959" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.ImageHDU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.io.fits.hdu.image._ImageBaseHDU</span></code>, <code class="xref py py-class docutils literal"><span class="pre">astropy.io.fits.hdu.base.ExtensionHDU</span></code></p>
 <p>FITS image extension HDU class.</p>
 <p>Construct an image HDU.</p>
@@ -105,7 +105,7 @@
 <p><strong>header</strong> : Header instance</p>
 <blockquote>
 <div><p>The header to be used (as a template).  If <code class="docutils literal"><span class="pre">header</span></code> is
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, a minimal header will be provided.</p>
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, a minimal header will be provided.</p>
 </div></blockquote>
 <p><strong>name</strong> : str, optional</p>
 <blockquote>
@@ -114,7 +114,7 @@
 </div></blockquote>
 <p><strong>do_not_scale_image_data</strong> : bool, optional</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, image data is not scaled using BSCALE/BZERO values
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, image data is not scaled using BSCALE/BZERO values
 when read. (default: False)</p>
 </div></blockquote>
 <p><strong>uint</strong> : bool, optional</p>
@@ -127,12 +127,12 @@ and <code class="docutils literal"><span class="pre">BSCALE</span> <span class="
 </div></blockquote>
 <p><strong>scale_back</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, when saving changes to a file that contained scaled
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, when saving changes to a file that contained scaled
 image data, restore the data to the original type and reapply the
 original BSCALE/BZERO values.  This could lead to loss of accuracy
 if scaling back to integer values after performing floating point
 operations on the data.  Pseudo-unsigned integers are automatically
-rescaled unless scale_back is explicitly set to <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.
+rescaled unless scale_back is explicitly set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.
 (default: None)</p>
 </div></blockquote>
 </td>
@@ -201,7 +201,7 @@ in which a different keyword should be used</p>
 <p class="rubric">Notes</p>
 <p>For testing purposes, first call <a class="reference internal" href="#astropy.io.fits.ImageHDU.add_datasum" title="astropy.io.fits.ImageHDU.add_datasum"><code class="xref py py-obj docutils literal"><span class="pre">add_datasum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code>
 argument, then call <a class="reference internal" href="#astropy.io.fits.ImageHDU.add_checksum" title="astropy.io.fits.ImageHDU.add_checksum"><code class="xref py py-obj docutils literal"><span class="pre">add_checksum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code> argument and
-<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
+<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
 comments for both cards and enable the generation of a <code class="docutils literal"><span class="pre">CHECKSUM</span></code>
 card with a consistent value.</p>
 </dd></dl>
@@ -256,7 +256,7 @@ generation of a <code class="docutils literal"><span class="pre">CHECKSUM</span>
 <dl class="attribute">
 <dt id="astropy.io.fits.ImageHDU.data">
 <code class="descname">data</code><a class="headerlink" href="#astropy.io.fits.ImageHDU.data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Image/array data as a <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>.</p>
+<dd><p>Image/array data as a <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">ndarray</span></code></a>.</p>
 <p>Please remember that the order of axes on an Numpy array are opposite
 of the order specified in the FITS file.  For example for a 2D image
 the &#8220;rows&#8221; or y-axis are the first dimension, and the &#8220;columns&#8221; or
@@ -287,7 +287,7 @@ intervening changes to the <a class="reference internal" href="hdulists.html#ast
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict or None</p>
 <blockquote class="last">
 <div><p>The dictionary details information about the locations of
-this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
+this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
 the HDU is not associated with a file.</p>
 <p>Dictionary contents:</p>
 <table border="1" class="docutils">
@@ -334,7 +334,7 @@ containing the HDU&#8217;s entire header and, optionally, its data.</p>
 <p>Note: When creating a new HDU from a string without a backing file
 object, the data of that HDU may be read-only.  It depends on whether
 the underlying string was an immutable Python str/bytes object, or some
-kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/library/stdtypes.html#memoryview" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
+kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#memoryview" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -386,7 +386,7 @@ beginning of the HDU.</p>
 </div></blockquote>
 <p><strong>checksum</strong> : bool</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
 values (when present in the HDU header) match the header and data
 of all HDU&#8217;s in the file.</p>
 </div></blockquote>
@@ -419,7 +419,7 @@ of all HDU&#8217;s in the file.</p>
 have in the header.  Remember that Python is zero-indexed, so this
 means <code class="docutils literal"><span class="pre">pos=0</span></code> requires the card to be the first card in the
 header.  If given a callable, it should take one argument&#8211;the
-actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
+actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
 can be used for custom evaluation.  For example if
 <code class="docutils literal"><span class="pre">pos=lambda</span> <span class="pre">idx:</span> <span class="pre">idx</span> <span class="pre">&gt;</span> <span class="pre">10</span></code> this will check that the keyword&#8217;s
 index is greater than 10.</p>
@@ -427,7 +427,7 @@ index is greater than 10.</p>
 <p><strong>test</strong> : callable</p>
 <blockquote>
 <div><p>This should be a callable (generally a function) that is passed the
-value of the given keyword and returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
+value of the given keyword and returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
 be used to validate the value associated with the given keyword.</p>
 </div></blockquote>
 <p><strong>fix_value</strong> : str, int, float, complex, bool, None</p>
@@ -435,7 +435,7 @@ be used to validate the value associated with the given keyword.</p>
 <div><p>A valid value for a FITS keyword to to use if the given <code class="docutils literal"><span class="pre">test</span></code>
 fails to replace an invalid value.  In other words, this provides
 a default value to use as a replacement if the keyword&#8217;s current
-value is invalid.  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
+value is invalid.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
 keyword is unfixable.</p>
 </div></blockquote>
 <p><strong>option</strong> : str</p>
@@ -485,7 +485,7 @@ scaled and is therefore not very usable after the call.</p>
 <blockquote>
 <div><p>destination data type, use a string representing a numpy
 dtype name, (e.g. <code class="docutils literal"><span class="pre">'uint8'</span></code>, <code class="docutils literal"><span class="pre">'int16'</span></code>, <code class="docutils literal"><span class="pre">'float32'</span></code>
-etc.).  If is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, use the current data type.</p>
+etc.).  If is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, use the current data type.</p>
 </div></blockquote>
 <p><strong>option</strong> : str</p>
 <blockquote>
@@ -569,7 +569,7 @@ the new card will be placed in the Header</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -619,7 +619,7 @@ the new card will be placed in the Header.</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -730,7 +730,7 @@ their own).</p>
 <h2><a class="reference internal" href="#astropy.io.fits.CompImageHDU" title="astropy.io.fits.CompImageHDU"><code class="xref py py-obj docutils literal"><span class="pre">CompImageHDU</span></code></a><a class="headerlink" href="#compimagehdu" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="astropy.io.fits.CompImageHDU">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">CompImageHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em>, <em>compression_type='RICE_1'</em>, <em>tile_size=None</em>, <em>hcomp_scale=0</em>, <em>hcomp_smooth=0</em>, <em>quantize_level=16.0</em>, <em>quantize_method=-1</em>, <em>dither_seed=0</em>, <em>do_not_scale_image_data=False</em>, <em>uint=False</em>, <em>scale_back=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L367" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">CompImageHDU</code><span class="sig-paren">(</span><em>data=None</em>, <em>header=None</em>, <em>name=None</em>, <em>compression_type='RICE_1'</em>, <em>tile_size=None</em>, <em>hcomp_scale=0</em>, <em>hcomp_smooth=0</em>, <em>quantize_level=16.0</em>, <em>quantize_method=-1</em>, <em>dither_seed=0</em>, <em>do_not_scale_image_data=False</em>, <em>uint=False</em>, <em>scale_back=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L367" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tables.html#astropy.io.fits.BinTableHDU" title="astropy.io.fits.hdu.table.BinTableHDU"><code class="docutils literal"><span class="pre">astropy.io.fits.BinTableHDU</span></code></a></p>
 <p>Compressed Image HDU class.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -748,7 +748,7 @@ file (data=DELAYED), the header read from the file</p>
 </div></blockquote>
 <p><strong>name</strong> : str, optional</p>
 <blockquote>
-<div><p>The <code class="docutils literal"><span class="pre">EXTNAME</span></code> value; if this value is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, then the name from
+<div><p>The <code class="docutils literal"><span class="pre">EXTNAME</span></code> value; if this value is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, then the name from
 the input image header will be used; if there is no name in the
 input image header then the default name <code class="docutils literal"><span class="pre">COMPRESSED_IMAGE</span></code> is
 used.</p>
@@ -982,7 +982,7 @@ in which a different keyword should be used</p>
 <p class="rubric">Notes</p>
 <p>For testing purposes, first call <a class="reference internal" href="#astropy.io.fits.CompImageHDU.add_datasum" title="astropy.io.fits.CompImageHDU.add_datasum"><code class="xref py py-obj docutils literal"><span class="pre">add_datasum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code>
 argument, then call <a class="reference internal" href="#astropy.io.fits.CompImageHDU.add_checksum" title="astropy.io.fits.CompImageHDU.add_checksum"><code class="xref py py-obj docutils literal"><span class="pre">add_checksum</span></code></a> with a <code class="docutils literal"><span class="pre">when</span></code> argument and
-<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
+<code class="docutils literal"><span class="pre">override_datasum</span></code> set to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.  This will provide consistent
 comments for both cards and enable the generation of a <code class="docutils literal"><span class="pre">CHECKSUM</span></code>
 card with a consistent value.</p>
 </dd></dl>
@@ -1068,12 +1068,12 @@ extension <code class="docutils literal"><span class="pre">.txt</span></code>.</
 </div></blockquote>
 <p><strong>cdfile</strong> : file path, file object or file-like object, optional</p>
 <blockquote>
-<div><p>Output column definitions file.  The default is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, no
+<div><p>Output column definitions file.  The default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, no
 column definitions output is produced.</p>
 </div></blockquote>
 <p><strong>hfile</strong> : file path, file object or file-like object, optional</p>
 <blockquote>
-<div><p>Output header parameters file.  The default is <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
+<div><p>Output header parameters file.  The default is <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>,
 no header parameters output is produced.</p>
 </div></blockquote>
 <p><strong>clobber</strong> : bool</p>
@@ -1161,7 +1161,7 @@ intervening changes to the <a class="reference internal" href="hdulists.html#ast
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict or None</p>
 <blockquote class="last">
 <div><p>The dictionary details information about the locations of
-this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
+this HDU within an associated file.  Returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> when
 the HDU is not associated with a file.</p>
 <p>Dictionary contents:</p>
 <table border="1" class="docutils">
@@ -1205,7 +1205,7 @@ update, append, ostream)</td>
 <code class="descname">from_columns</code><span class="sig-paren">(</span><em>columns</em>, <em>header=None</em>, <em>nrows=0</em>, <em>fill=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/table.py#L74" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.from_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given either a <a class="reference internal" href="tables.html#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> object, a sequence of <a class="reference internal" href="tables.html#astropy.io.fits.Column" title="astropy.io.fits.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a> objects,
 or another table HDU or table data (a <a class="reference internal" href="tables.html#astropy.io.fits.FITS_rec" title="astropy.io.fits.FITS_rec"><code class="xref py py-obj docutils literal"><span class="pre">FITS_rec</span></code></a> or multi-field
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> object, return a new table HDU of
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a> or <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> object, return a new table HDU of
 the class this method was called on using the column definition from
 the input.</p>
 <p>This is an alternative to the now deprecated <a class="reference internal" href="tables.html#astropy.io.fits.new_table" title="astropy.io.fits.new_table"><code class="xref py py-obj docutils literal"><span class="pre">new_table</span></code></a> function,
@@ -1220,7 +1220,7 @@ and otherwise accepts the same arguments.  See also
 <div><p>The columns from which to create the table data, or an object with
 a column-like structure from which a <a class="reference internal" href="tables.html#astropy.io.fits.ColDefs" title="astropy.io.fits.ColDefs"><code class="xref py py-obj docutils literal"><span class="pre">ColDefs</span></code></a> can be instantiated.
 This includes an existing <a class="reference internal" href="tables.html#astropy.io.fits.BinTableHDU" title="astropy.io.fits.BinTableHDU"><code class="xref py py-obj docutils literal"><span class="pre">BinTableHDU</span></code></a> or <a class="reference internal" href="tables.html#astropy.io.fits.TableHDU" title="astropy.io.fits.TableHDU"><code class="xref py py-obj docutils literal"><span class="pre">TableHDU</span></code></a>, or a
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> to give some examples.</p>
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.recarray</span></code></a> to give some examples.</p>
 <p>If these columns have data arrays attached that data may be used in
 initializing the new table.  Otherwise the input columns will be
 used as a template for a new table with the requested number of
@@ -1242,7 +1242,7 @@ Otherwise the default is 0.</p>
 </div></blockquote>
 <p><strong>fill</strong> : bool</p>
 <blockquote class="last">
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>,
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will fill all cells with zeros or blanks.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>,
 copy the data from input, undefined cells will still be filled with
 zeros/blanks.</p>
 </div></blockquote>
@@ -1263,7 +1263,7 @@ containing the HDU&#8217;s entire header and, optionally, its data.</p>
 <p>Note: When creating a new HDU from a string without a backing file
 object, the data of that HDU may be read-only.  It depends on whether
 the underlying string was an immutable Python str/bytes object, or some
-kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/library/stdtypes.html#memoryview" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
+kind of read-write memory buffer such as a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#memoryview" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">memoryview</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1322,19 +1322,19 @@ defaults are inferred (though this mode is not recommended).</p>
 formats, display formats, physical units, multidimensional
 array dimensions, undefined values, scale factors, and
 offsets associated with the columns in the table.  If
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the column definitions are taken from the current
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the column definitions are taken from the current
 values in this object.</p>
 </div></blockquote>
 <p><strong>hfile</strong> : file path, file object, file-like object, optional</p>
 <blockquote>
 <div><p>Input parameter definition file containing the header
 parameter definitions to be associated with the table.  If
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the header parameter definitions are taken from
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, the header parameter definitions are taken from
 the current values in this objects header.</p>
 </div></blockquote>
 <p><strong>replace</strong> : bool</p>
 <blockquote>
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, indicates that the entire header should be
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, indicates that the entire header should be
 replaced with the contents of the ASCII file instead of
 just updating the current header.</p>
 </div></blockquote>
@@ -1424,7 +1424,7 @@ beginning of the HDU.</p>
 </div></blockquote>
 <p><strong>checksum</strong> : bool</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, verifies that both <code class="docutils literal"><span class="pre">DATASUM</span></code> and <code class="docutils literal"><span class="pre">CHECKSUM</span></code> card
 values (when present in the HDU header) match the header and data
 of all HDU&#8217;s in the file.</p>
 </div></blockquote>
@@ -1457,7 +1457,7 @@ of all HDU&#8217;s in the file.</p>
 have in the header.  Remember that Python is zero-indexed, so this
 means <code class="docutils literal"><span class="pre">pos=0</span></code> requires the card to be the first card in the
 header.  If given a callable, it should take one argument&#8211;the
-actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
+actual position of the keyword&#8211;and return <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This
 can be used for custom evaluation.  For example if
 <code class="docutils literal"><span class="pre">pos=lambda</span> <span class="pre">idx:</span> <span class="pre">idx</span> <span class="pre">&gt;</span> <span class="pre">10</span></code> this will check that the keyword&#8217;s
 index is greater than 10.</p>
@@ -1465,7 +1465,7 @@ index is greater than 10.</p>
 <p><strong>test</strong> : callable</p>
 <blockquote>
 <div><p>This should be a callable (generally a function) that is passed the
-value of the given keyword and returns <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
+value of the given keyword and returns <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a> or <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.  This can
 be used to validate the value associated with the given keyword.</p>
 </div></blockquote>
 <p><strong>fix_value</strong> : str, int, float, complex, bool, None</p>
@@ -1473,7 +1473,7 @@ be used to validate the value associated with the given keyword.</p>
 <div><p>A valid value for a FITS keyword to to use if the given <code class="docutils literal"><span class="pre">test</span></code>
 fails to replace an invalid value.  In other words, this provides
 a default value to use as a replacement if the keyword&#8217;s current
-value is invalid.  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
+value is invalid.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, there is no replacement value and the
 keyword is unfixable.</p>
 </div></blockquote>
 <p><strong>option</strong> : str</p>
@@ -1509,7 +1509,7 @@ argument.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.scale">
-<code class="descname">scale</code><span class="sig-paren">(</span><em>type=None</em>, <em>option='old'</em>, <em>bscale=1</em>, <em>bzero=0</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L1706" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.scale" title="Permalink to this definition">¶</a></dt>
+<code class="descname">scale</code><span class="sig-paren">(</span><em>type=None</em>, <em>option='old'</em>, <em>bscale=1</em>, <em>bzero=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.scale"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L1706" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale image data by using <code class="docutils literal"><span class="pre">BSCALE</span></code> and <code class="docutils literal"><span class="pre">BZERO</span></code>.</p>
 <p>Calling this method will scale <code class="docutils literal"><span class="pre">self.data</span></code> and update the keywords of
 <code class="docutils literal"><span class="pre">BSCALE</span></code> and <code class="docutils literal"><span class="pre">BZERO</span></code> in <code class="docutils literal"><span class="pre">self._header</span></code> and <code class="docutils literal"><span class="pre">self._image_header</span></code>.
@@ -1524,7 +1524,7 @@ the call.</p>
 <blockquote>
 <div><p>destination data type, use a string representing a numpy dtype
 name, (e.g. <code class="docutils literal"><span class="pre">'uint8'</span></code>, <code class="docutils literal"><span class="pre">'int16'</span></code>, <code class="docutils literal"><span class="pre">'float32'</span></code> etc.).  If is
-<a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, use the current data type.</p>
+<a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, use the current data type.</p>
 </div></blockquote>
 <p><strong>option</strong> : str, optional</p>
 <blockquote>
@@ -1584,7 +1584,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.updateCompressedData">
-<code class="descname">updateCompressedData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateCompressedData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateCompressedData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">updateCompressedData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateCompressedData"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateCompressedData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The updateCompressedData function is deprecated and may be removed in a future version.
     Use (refactor your code) instead.</p>
@@ -1594,7 +1594,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.updateHeader">
-<code class="descname">updateHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">updateHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeader"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeader" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The updateHeader function is deprecated and may be removed in a future version.
     Use (refactor your code; this function no longer does anything) instead.</p>
@@ -1604,7 +1604,7 @@ values.</p>
 
 <dl class="method">
 <dt id="astropy.io.fits.CompImageHDU.updateHeaderData">
-<code class="descname">updateHeaderData</code><span class="sig-paren">(</span><em>image_header</em>, <em>name=None</em>, <em>compressionType=None</em>, <em>tileSize=None</em>, <em>hcompScale=None</em>, <em>hcompSmooth=None</em>, <em>quantizeLevel=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeaderData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeaderData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">updateHeaderData</code><span class="sig-paren">(</span><em>image_header</em>, <em>name=None</em>, <em>compressionType=None</em>, <em>tileSize=None</em>, <em>hcompScale=None</em>, <em>hcompSmooth=None</em>, <em>quantizeLevel=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/compressed.html#CompImageHDU.updateHeaderData"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/compressed.py#L112" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.CompImageHDU.updateHeaderData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.3: </span>The updateHeaderData function will be deprecated in a future version.
     Use (refactor your code) instead.</p>
@@ -1650,7 +1650,7 @@ the new card will be placed in the Header</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -1700,7 +1700,7 @@ the new card will be placed in the Header.</p>
 </div></blockquote>
 <p><strong>savecomment</strong> : bool, optional</p>
 <blockquote class="last">
-<div><p>When <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
+<div><p>When <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, preserve the current comment for an existing
 keyword.  The argument <code class="docutils literal"><span class="pre">savecomment</span></code> takes precedence over
 <code class="docutils literal"><span class="pre">comment</span></code> if both specified.  If <code class="docutils literal"><span class="pre">comment</span></code> is not
 specified then the current comment will automatically be
@@ -1804,8 +1804,8 @@ their own).</p>
 <h3><a class="reference internal" href="#astropy.io.fits.Section" title="astropy.io.fits.Section"><code class="xref py py-obj docutils literal"><span class="pre">Section</span></code></a><a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="astropy.io.fits.Section">
-<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>hdu</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/image.py#L772" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/image.html#Section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.io.fits.Section" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.4)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">astropy.io.fits.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>hdu</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/astropy/io/fits/hdu/image.html#Section"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/io/fits/hdu/image.py#L772" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.io.fits.Section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/3/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>Image section.</p>
 <p>Slices of this object load the corresponding section of an image array from
 the underlying FITS file on disk, and applies any BSCALE/BZERO factors.</p>
@@ -1850,7 +1850,7 @@ details.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

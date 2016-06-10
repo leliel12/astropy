@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>astropy.time.core &mdash; Astropy v1.2.dev15003</title>
+    <title>astropy.time.core &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../../../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../../../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../../../_static/copybutton.js"></script>
@@ -56,7 +56,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../index.html">Astropy v1.2.dev15003</a>
+	<a href="../../../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li>
@@ -94,7 +94,6 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_erfa</span> <span class="k">as</span> <span class="n">erfa</span>
 <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">UnitConversionError</span>
 <span class="kn">from</span> <span class="nn">..utils.decorators</span> <span class="kn">import</span> <span class="n">lazyproperty</span>
-<span class="kn">from</span> <span class="nn">..utils.compat.numpycompat</span> <span class="kn">import</span> <span class="n">NUMPY_LT_1_7</span>
 <span class="kn">from</span> <span class="nn">..utils.compat.misc</span> <span class="kn">import</span> <span class="n">override__dir__</span>
 <span class="kn">from</span> <span class="nn">..utils.data_info</span> <span class="kn">import</span> <span class="n">MixinInfo</span><span class="p">,</span> <span class="n">data_info_factory</span>
 <span class="kn">from</span> <span class="nn">..utils.compat.numpy</span> <span class="kn">import</span> <span class="n">broadcast_to</span>
@@ -1084,12 +1083,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># first get the minimum at normal precision.</span>
         <span class="n">jd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
-        <span class="k">if</span> <span class="n">NUMPY_LT_1_7</span><span class="p">:</span>
-            <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">approx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">approx</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
         <span class="c"># Approx is very close to the true minimum, and by subtracting it at</span>
         <span class="c"># full precision, all numbers near 0 can be represented correctly,</span>
@@ -1111,12 +1105,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c"># For procedure, see comment on argmin.</span>
         <span class="n">jd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
-        <span class="k">if</span> <span class="n">NUMPY_LT_1_7</span><span class="p">:</span>
-            <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">approx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">approx</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">approx</span> <span class="o">=</span> <span class="n">jd</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
         <span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jd1</span> <span class="o">-</span> <span class="n">approx</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">jd2</span>
         <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
@@ -1284,7 +1273,7 @@
 <span class="sd">            ``astropy.utils.iers``)</span>
 <span class="sd">        return_status : bool</span>
 <span class="sd">            Whether to return status values.  If `False` (default), iers</span>
-<span class="sd">            raises `~.exceptions.IndexError` if any time is out of the range</span>
+<span class="sd">            raises `IndexError` if any time is out of the range</span>
 <span class="sd">            covered by the IERS table.</span>
 
 <span class="sd">        Returns</span>
@@ -1313,22 +1302,6 @@
 <span class="sd">            &gt;&gt;&gt; delta, status = t.get_delta_ut1_utc(return_status=True)</span>
 <span class="sd">            &gt;&gt;&gt; status == TIME_BEFORE_IERS_RANGE</span>
 <span class="sd">            array([ True, False], dtype=bool)</span>
-
-<span class="sd">        To use an updated IERS A bulletin to calculate UT1-UTC</span>
-<span class="sd">        (see also ``astropy.utils.iers``)::</span>
-
-<span class="sd">            &gt;&gt;&gt; from astropy.utils.iers import IERS_A, IERS_A_URL</span>
-<span class="sd">            &gt;&gt;&gt; from astropy.utils.data import download_file</span>
-<span class="sd">            &gt;&gt;&gt; t = Time([&#39;1974-01-01&#39;, &#39;2000-01-01&#39;], scale=&#39;utc&#39;)</span>
-<span class="sd">            &gt;&gt;&gt; iers_a_file = download_file(IERS_A_URL,</span>
-<span class="sd">            ...                             cache=True)        # doctest: +REMOTE_DATA</span>
-<span class="sd">            Downloading ... [Done]</span>
-<span class="sd">            &gt;&gt;&gt; iers_a = IERS_A.open(iers_a_file)              # doctest: +REMOTE_DATA</span>
-<span class="sd">            &gt;&gt;&gt; t.delta_ut1_utc = t.get_delta_ut1_utc(iers_a)  # doctest: +REMOTE_DATA</span>
-
-<span class="sd">        The delta_ut1_utc property will be used to calculate t.ut1;</span>
-<span class="sd">        raises IndexError if any of the times is out of range.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">iers_table</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">..utils.iers</span> <span class="kn">import</span> <span class="n">IERS</span>
@@ -1347,8 +1320,8 @@
         <span class="c"># Sec. 4.3.1: the arg DUT is the quantity delta_UT1 = UT1 - UTC in</span>
         <span class="c"># seconds. It is obtained from tables published by the IERS.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_delta_ut1_utc&#39;</span><span class="p">):</span>
-            <span class="kn">from</span> <span class="nn">..utils.iers</span> <span class="kn">import</span> <span class="n">IERS</span>
-            <span class="n">iers_table</span> <span class="o">=</span> <span class="n">IERS</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+            <span class="kn">from</span> <span class="nn">..utils.iers</span> <span class="kn">import</span> <span class="n">IERS_Auto</span>
+            <span class="n">iers_table</span> <span class="o">=</span> <span class="n">IERS_Auto</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
             <span class="c"># jd1, jd2 are normally set (see above), except if delta_ut1_utc</span>
             <span class="c"># is access directly; ensure we behave as expected for that case</span>
             <span class="k">if</span> <span class="n">jd1</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
@@ -1893,7 +1866,7 @@
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

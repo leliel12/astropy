@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Writing Documentation &mdash; Astropy v1.2.dev15003</title>
+    <title>Writing Documentation &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="Astropy Docstring Rules" href="docrules.html" />
     <link rel="prev" title="Emacs setup for following coding guidelines" href="codeguide_emacs.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -68,7 +68,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -112,7 +112,9 @@ numpydoc included with Astropy, and should follow the <a class="reference intern
 <li>Examples and/or tutorials are strongly encouraged for typical use-cases of a
 particular module or class.</li>
 <li>Any external package dependencies aside from <a class="reference external" href="http://numpy.scipy.org/">NumPy</a>, <a class="reference external" href="http://www.scipy.org">SciPy</a>, or <a class="reference external" href="http://matplotlib.sourceforge.net/">Matplotlib</a>
-must be explicitly mentioned in the documentation.</li>
+must be explicitly mentioned in the documentation. They should also be
+recorded in the <code class="docutils literal"><span class="pre">pip-requirements-doc</span></code> file in the root of the astropy
+repository.</li>
 <li>Configuration options using the <a class="reference internal" href="../config/index.html#module-astropy.config" title="astropy.config"><code class="xref py py-mod docutils literal"><span class="pre">astropy.config</span></code></a> mechanisms must be
 explicitly mentioned in the documentation.</li>
 </ul>
@@ -251,6 +253,16 @@ currently being documented are included.</p>
 </dd>
 </dl>
 </li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">:inherited-members:</span></code> / <code class="docutils literal"><span class="pre">:no-inherited-members:</span></code></dt>
+<dd><p class="first last">The global sphinx configuration option
+<code class="docutils literal"><span class="pre">automodsumm_inherited_members</span></code> decides if members that a class
+inherits from a base class are included in the generated
+documentation. The option <code class="docutils literal"><span class="pre">:inherited-members:</span></code> or <code class="docutils literal"><span class="pre">:no-inherited-members:</span></code>
+allows the user to overrride the global setting.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </div></blockquote>
 <p>This extension also adds two sphinx configuration options:</p>
@@ -266,11 +278,18 @@ Defaults to <code class="docutils literal"><span class="pre">'api'</span></code>
 </li>
 <li><dl class="first docutils">
 <dt><code class="docutils literal"><span class="pre">automodapi_writereprocessed</span></code></dt>
-<dd><p class="first last">Should be a bool, and if <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will cause <a class="reference internal" href="#automodapi">automodapi</a> to write files
+<dd><p class="first last">Should be a bool, and if <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, will cause <a class="reference internal" href="#automodapi">automodapi</a> to write files
 with any <a class="reference internal" href="#automodapi">automodapi</a> sections replaced with the content Sphinx
 processes after <a class="reference internal" href="#automodapi">automodapi</a> has run.  The output files are not
 actually used by sphinx, so this option is only for figuring out the
-cause of sphinx warnings or other debugging.  Defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.</p>
+cause of sphinx warnings or other debugging.  Defaults to <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">automodsumm_inherited_members</span></code></dt>
+<dd><p class="first last">Should be a bool and if <code class="docutils literal"><span class="pre">True</span></code> members that a class inherits from a base
+class are included in the generated documentation. Defaults to <code class="docutils literal"><span class="pre">False</span></code>.</p>
 </dd>
 </dl>
 </li>
@@ -293,7 +312,7 @@ that appear in the table, while this captures the entries automatically.</p>
 <p>This directive requires a single argument that must be a module or
 package.</p>
 <p>It also accepts any options supported by the <a class="reference external" href="http://sphinx-doc.org/latest/ext/autosummary.html#directive-autosummary">autosummary</a> directive-
-see <a class="reference external" href="http://sphinx-doc.org/latest/ext/autosummary.html">sphinx.ext.autosummary</a> for details. It also accepts two additional
+see <a class="reference external" href="http://sphinx-doc.org/latest/ext/autosummary.html">sphinx.ext.autosummary</a> for details. It also accepts some additional
 options:</p>
 <blockquote>
 <div><ul>
@@ -330,17 +349,36 @@ currently being documented are included.</p>
 </dd>
 </dl>
 </li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">:inherited-members:</span></code> or <code class="docutils literal"><span class="pre">:no-inherited-members:</span></code></dt>
+<dd><p class="first last">The global sphinx configuration option <code class="docutils literal"><span class="pre">automodsumm_inherited_members</span></code>
+decides if members that a class inherits from a base class are included
+in the generated documentation. The flags <code class="docutils literal"><span class="pre">:inherited-members:</span></code> or
+<code class="docutils literal"><span class="pre">:no-inherited-members:</span></code> allows overrriding this global setting.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </div></blockquote>
-<p>This extension also adds one sphinx configuration option:</p>
+<p>This extension also adds two sphinx configuration options:</p>
 <ul>
 <li><dl class="first docutils">
 <dt><code class="docutils literal"><span class="pre">automodsumm_writereprocessed</span></code></dt>
-<dd><p class="first last">Should be a bool, and if True, will cause <a class="reference internal" href="#automodsumm">automodsumm</a> to write files
+<dd><p class="first last">Should be a bool, and if <code class="docutils literal"><span class="pre">True</span></code>, will cause <a class="reference internal" href="#automodsumm">automodsumm</a> to write files
 with any <code class="docutils literal"><span class="pre">automodsumm</span></code> sections replaced with the content Sphinx
 processes after <code class="docutils literal"><span class="pre">automodsumm</span></code> has run.  The output files are not
 actually used by sphinx, so this option is only for figuring out the
-cause of sphinx warnings or other debugging.  Defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>.</p>
+cause of sphinx warnings or other debugging.  Defaults to <code class="docutils literal"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">automodsumm_inherited_members</span></code></dt>
+<dd><p class="first last">Should be a bool and if <code class="docutils literal"><span class="pre">True</span></code>, will cause <a class="reference internal" href="#automodsumm">automodsumm</a> to document
+class members that are inherited from a base class. This value can be
+overriden for any particular automodsumm directive by including the
+<code class="docutils literal"><span class="pre">:inherited-members:</span></code> or <code class="docutils literal"><span class="pre">:no-inherited-members:</span></code> options.  Defaults to
+<code class="docutils literal"><span class="pre">False</span></code>.</p>
 </dd>
 </dl>
 </li>
@@ -499,7 +537,7 @@ future.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

@@ -60,6 +60,70 @@ defined::
     >>> sep  # doctest: +FLOAT_CMP
     <Distance 28.743988157814094 kpc>
 
+There is also a :meth:`~astropy.coordinates.SkyCoord.spherical_offsets_to` method
+for computing angular offsets (e.g., small shifts like you might give a
+telescope operator to move from a bright star to a fainter target.)::
+
+    >>> from astropy.coordinates import SkyCoord
+    >>> bright_star = SkyCoord('8h50m59.75s', '+11d39m22.15s', frame='icrs')
+    >>> faint_galaxy = SkyCoord('8h50m47.92s', '+11d39m32.74s', frame='icrs')
+    >>> dra, ddec = bright_star.spherical_offsets_to(faint_galaxy)
+    >>> dra.to(u.arcsec)  # doctest: +FLOAT_CMP
+    <Angle -173.78873354064126 arcsec>
+    >>> ddec.to(u.arcsec)  # doctest: +FLOAT_CMP
+    <Angle 10.605103417374696 arcsec>
+
+.. _astropy-skyoffset-frames:
+
+"Sky Offset" Frames
+===================
+
+To extend the concept of spherical offsets, `~astropy.coordinates` has
+a frame class :class:`~astropy.coordinates.builtin_frames.skyoffset.SkyOffsetFrame`
+which creates distinct frames that are centered on a specific point.
+These are known as "sky offset frames", as they are a convenient way to create
+a frame centered on an arbitrary position on the sky, suitable for computing
+positional offsets (e.g., for astrometry)::
+
+    >>> from astropy.coordinates import SkyOffsetFrame, ICRS
+    >>> center = ICRS(10*u.deg, 45*u.deg)
+    >>> center.transform_to(SkyOffsetFrame(origin=center))  # doctest: +SKIP
+    <SkyOffsetICRS Coordinate (rotation=0.0 deg, origin=<ICRS Coordinate: (ra, dec) in deg
+        (10.0, 45.0)>): (lon, lat) in deg
+        (0.0, 0.0)>
+    >>> target = ICRS(11*u.deg, 46*u.deg)
+    >>> target.transform_to(SkyOffsetFrame(origin=center))  # doctest: +FLOAT_CMP
+    <SkyOffsetICRS Coordinate (rotation=0.0 deg, origin=<ICRS Coordinate: (ra, dec) in deg
+        (10.0, 45.0)>): (lon, lat) in deg
+        (0.69474685, 1.00428706)>
+
+
+Alternatively, the convenience method
+:meth:`~astropy.coordinates.SkyCoord.skyoffset_frame` lets you create an skyoffset
+frame from an already-existing |SkyCoord|::
+
+    >>> center = SkyCoord(10*u.deg, 45*u.deg)
+    >>> aframe = center.skyoffset_frame()
+    >>> target.transform_to(aframe)  # doctest: +FLOAT_CMP
+    <SkyOffsetICRS Coordinate (rotation=0.0 deg, origin=<ICRS Coordinate: (ra, dec) in deg
+        (10.0, 45.0)>): (lon, lat) in deg
+        (0.69474685, 1.00428706)>
+    >>> other = SkyCoord(9*u.deg, 44*u.deg, frame='fk5')
+    >>> other.transform_to(aframe)  # doctest: +FLOAT_CMP
+    <SkyCoord (SkyOffsetICRS: rotation=0.0 deg, origin=<ICRS Coordinate: (ra, dec) in deg
+        (10.0, 45.0)>): (lon, lat) in deg
+        (-0.71943945, -0.99556216)>
+
+.. note ::
+    While sky offset frames *appear* to be all the same class, this not the
+    case: the sky offset frame for each different type of frame for ``origin`` is
+    actually a distinct class.  E.g., ``SkyOffsetFrame(origin=ICRS(...))``
+    yields an object of class ``SkyOffsetICRS``, *not* ``SkyOffsetFrame``.
+    While this is not important for most uses of this class, it is important for
+    things like type-checking, because something like
+    ``SkyOffsetFrame(origin=ICRS(...)).__class__ is SkyOffsetFrame`` will
+    *not* be ``True``, as it would be for most classes.
+
 .. _astropy-coordinates-matching:
 
 Matching Catalogs
@@ -93,8 +157,7 @@ the catalog::
     >>> matches = catalog[idx]  # doctest: +SKIP
     >>> (matches.separation_3d(c) == d3d).all()  # doctest: +SKIP
     True
-    >>> dra = (matches.ra - c.ra).arcmin  # doctest: +SKIP
-    >>> ddec = (matches.dec - c.dec).arcmin  # doctest: +SKIP
+    >>> dra, ddec = c.spherical_offsets_to(matches)  # doctest: +SKIP
 
 This functionality can also be accessed from the
 :func:`~astropy.coordinates.match_coordinates_sky` and

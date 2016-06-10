@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sigma_clip &mdash; Astropy v1.2.dev15003</title>
+    <title>sigma_clip &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="sigma_clipped_stats" href="astropy.stats.sigma_clipped_stats.html" />
     <link rel="prev" title="scott_bin_width" href="astropy.stats.scott_bin_width.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>sigma_clip<a class="headerlink" href="#sigma-clip" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.stats.sigma_clip">
-<code class="descclassname">astropy.stats.</code><code class="descname">sigma_clip</code><span class="sig-paren">(</span><em>data</em>, <em>sigma=3</em>, <em>sigma_lower=None</em>, <em>sigma_upper=None</em>, <em>iters=5</em>, <em>cenfunc=np.ma.median</em>, <em>stdfunc=np.std</em>, <em>axis=None</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/sigma_clipping.py#L13" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/sigma_clipping.html#sigma_clip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.sigma_clip" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.stats.</code><code class="descname">sigma_clip</code><span class="sig-paren">(</span><em>data</em>, <em>sigma=3</em>, <em>sigma_lower=None</em>, <em>sigma_upper=None</em>, <em>iters=5</em>, <em>cenfunc=np.ma.median</em>, <em>stdfunc=np.std</em>, <em>axis=None</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/stats/sigma_clipping.html#sigma_clip"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/sigma_clipping.py#L13" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.stats.sigma_clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform sigma-clipping on the provided data.</p>
 <p>The data will be iterated over, each time rejecting points that are
 discrepant by more than a specified number of standard deviations from a
@@ -113,21 +113,21 @@ provides a subset of the functionality in this function.</p>
 upper clipping limit. These limits are overridden by
 <code class="docutils literal"><span class="pre">sigma_lower</span></code> and <code class="docutils literal"><span class="pre">sigma_upper</span></code>, if input. Defaults to 3.</p>
 </div></blockquote>
-<p><strong>sigma_lower</strong> : float or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
+<p><strong>sigma_lower</strong> : float or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
 <blockquote>
 <div><p>The number of standard deviations to use as the lower bound for
-the clipping limit. If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> then the value of <code class="docutils literal"><span class="pre">sigma</span></code> is
-used. Defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
+the clipping limit. If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> then the value of <code class="docutils literal"><span class="pre">sigma</span></code> is
+used. Defaults to <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
 </div></blockquote>
-<p><strong>sigma_upper</strong> : float or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
+<p><strong>sigma_upper</strong> : float or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
 <blockquote>
 <div><p>The number of standard deviations to use as the upper bound for
-the clipping limit. If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> then the value of <code class="docutils literal"><span class="pre">sigma</span></code> is
-used. Defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
+the clipping limit. If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> then the value of <code class="docutils literal"><span class="pre">sigma</span></code> is
+used. Defaults to <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
 </div></blockquote>
-<p><strong>iters</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
+<p><strong>iters</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
 <blockquote>
-<div><p>The number of iterations to perform sigma clipping, or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to
+<div><p>The number of iterations to perform sigma clipping, or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a> to
 clip until convergence is achieved (i.e., continue until the
 last iteration clips nothing). Defaults to 5.</p>
 </div></blockquote>
@@ -135,7 +135,7 @@ last iteration clips nothing). Defaults to 5.</p>
 <blockquote>
 <div><p>The function used to compute the center for the clipping. Must
 be a callable that takes in a masked array and outputs the
-central value. Defaults to the median (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ma.median.html#numpy.ma.median" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ma.median</span></code></a>).</p>
+central value. Defaults to the median (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ma.median.html#numpy.ma.median" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ma.median</span></code></a>).</p>
 </div></blockquote>
 <p><strong>stdfunc</strong> : callable, optional</p>
 <blockquote>
@@ -151,25 +151,25 @@ where:</p>
 <div class="highlight-python"><div class="highlight"><pre>deviation = data - cenfunc(data [,axis=int])
 </pre></div>
 </div>
-<p>Defaults to the standard deviation (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.std</span></code></a>).</p>
+<p>Defaults to the standard deviation (<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.std</span></code></a>).</p>
 </div></blockquote>
-<p><strong>axis</strong> : int or <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
+<p><strong>axis</strong> : int or <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, optional</p>
 <blockquote>
-<div><p>If not <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, clip along the given axis.  For this case,
+<div><p>If not <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, clip along the given axis.  For this case,
 <code class="docutils literal"><span class="pre">axis</span></code> will be passed on to <code class="docutils literal"><span class="pre">cenfunc</span></code> and <code class="docutils literal"><span class="pre">stdfunc</span></code>, which
 are expected to return an array with the axis dimension removed
-(like the numpy functions).  If <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, clip over all axes.
-Defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
+(like the numpy functions).  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, clip over all axes.
+Defaults to <a class="reference external" href="http://docs.python.org/3/library/constants.html#None" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>.</p>
 </div></blockquote>
 <p><strong>copy</strong> : bool, optional</p>
 <blockquote>
-<div><p>If <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, the <code class="docutils literal"><span class="pre">data</span></code> array will be copied.  If <a class="reference external" href="http://docs.python.org/library/constants.html#False" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, the
+<div><p>If <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>, the <code class="docutils literal"><span class="pre">data</span></code> array will be copied.  If <a class="reference external" href="http://docs.python.org/3/library/constants.html#False" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">False</span></code></a>, the
 returned masked array data will contain the same array as
-<code class="docutils literal"><span class="pre">data</span></code>.  Defaults to <a class="reference external" href="http://docs.python.org/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.</p>
+<code class="docutils literal"><span class="pre">data</span></code>.  Defaults to <a class="reference external" href="http://docs.python.org/3/library/constants.html#True" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">True</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>filtered_data</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ma.MaskedArray</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>filtered_data</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ma.MaskedArray</span></code></a></p>
 <blockquote class="last">
 <div><p>A masked array with the same shape as <code class="docutils literal"><span class="pre">data</span></code> input, where the
 points rejected by the algorithm have been masked.</p>
@@ -263,7 +263,7 @@ variance is higher.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

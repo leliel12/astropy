@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SerialCompositeModel &mdash; Astropy v1.2.dev15003</title>
+    <title>SerialCompositeModel &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
-    <link rel="up" title="Models and Fitting (astropy.modeling)" href="../modeling/index.html" />
-    <link rel="next" title="SummedCompositeModel" href="astropy.modeling.SummedCompositeModel.html" />
-    <link rel="prev" title="Parameter" href="astropy.modeling.Parameter.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -57,24 +54,12 @@
 <div class="related">
     <h3>Navigation</h3>
     <ul>
-      <li class="right">
-	<a href="astropy.modeling.SummedCompositeModel.html" title="SummedCompositeModel">
-	  next &raquo;
-	</a>
-      </li>
-      <li class="right">
-	<a href="astropy.modeling.Parameter.html" title="Parameter">
-	  &laquo; previous
-	</a>
-	 |
-      </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
-      <li><a href="../modeling/index.html" accesskey="U">Models and Fitting (<code class="docutils literal"><span class="pre">astropy.modeling</span></code>)</a> &raquo;</li>
       
-      <li>SerialCompositeModel</li> 
+       
     </ul>
 </div>
   
@@ -86,72 +71,6 @@
             
   <div class="section" id="serialcompositemodel">
 <h1>SerialCompositeModel<a class="headerlink" href="#serialcompositemodel" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="astropy.modeling.SerialCompositeModel">
-<em class="property">class </em><code class="descclassname">astropy.modeling.</code><code class="descname">SerialCompositeModel</code><span class="sig-paren">(</span><em>transforms</em>, <em>inmap=None</em>, <em>outmap=None</em>, <em>n_inputs=None</em>, <em>n_outputs=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/modeling/_compound_deprecated.py#L305" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/modeling/_compound_deprecated.html#SerialCompositeModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.modeling.SerialCompositeModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">astropy.modeling._compound_deprecated._CompositeModel</span></code></p>
-<div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 1.0: </span>The SerialCompositeModel class is deprecated and may be removed in a future version.
-    Use <a class="reference internal" href="../modeling/compound-models.html#compound-models"><span>Compound Models</span></a> as described in the Astropy documentation instead.</p>
-</div>
-<p>Composite model that evaluates models in series.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transforms</strong> : list</p>
-<blockquote>
-<div><p>a list of transforms in the order to be executed</p>
-</div></blockquote>
-<p><strong>inmap</strong> : list of lists or None</p>
-<blockquote>
-<div><p>labels in an input instance of LabeledInput
-if None, the number of input coordinates is exactly what
-the transforms expect</p>
-</div></blockquote>
-<p><strong>outmap</strong> : list or None</p>
-<blockquote>
-<div><p>labels in an input instance of LabeledInput
-if None, the number of output coordinates is exactly what
-the transforms expect</p>
-</div></blockquote>
-<p><strong>n_inputs</strong> : int</p>
-<blockquote>
-<div><p>dimension of input space (e.g. 2 for a spatial model)</p>
-</div></blockquote>
-<p><strong>n_outputs</strong> : int</p>
-<blockquote class="last">
-<div><p>dimension of output</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Notes</p>
-<p>Output values of one model are used as input values of another.
-Obviously the order of the models matters.</p>
-<p class="rubric">Examples</p>
-<p>Apply a 2D rotation followed by a shift in x and y:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span><span class="p">,</span> <span class="n">LabeledInput</span><span class="p">,</span> <span class="n">SerialCompositeModel</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rotation</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Rotation2D</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mf">23.5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">offset_x</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Shift</span><span class="p">(</span><span class="o">-</span><span class="mf">4.23</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">offset_y</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Shift</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">labeled_input</span> <span class="o">=</span> <span class="n">LabeledInput</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">SerialCompositeModel</span><span class="p">([</span><span class="n">rotation</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">],</span>
-<span class="gp">... </span>                                 <span class="n">inmap</span><span class="o">=</span><span class="p">[[</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]],</span>
-<span class="gp">... </span>                                 <span class="n">outmap</span><span class="o">=</span><span class="p">[[</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">labeled_input</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="deprecated">
-<p><span class="versionmodified">Deprecated since version 1.0: </span>The SerialCompositeModel class is deprecated and may be removed in a future version.
-    Use <a class="reference internal" href="../modeling/compound-models.html#compound-models"><span>Compound Models</span></a> as described in the Astropy documentation instead.</p>
-</div>
-<p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
 </div>
 
 
@@ -177,7 +96,7 @@ Obviously the order of the models matters.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

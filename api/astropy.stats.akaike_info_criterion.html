@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>akaike_info_criterion &mdash; Astropy v1.2.dev15003</title>
+    <title>akaike_info_criterion &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Astrostatistics Tools (astropy.stats)" href="../stats/index.html" />
     <link rel="next" title="akaike_info_criterion_lsq" href="astropy.stats.akaike_info_criterion_lsq.html" />
     <link rel="prev" title="RegularEvents" href="astropy.stats.RegularEvents.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../stats/index.html" accesskey="U">Astrostatistics Tools (<code class="docutils literal"><span class="pre">astropy.stats</span></code>)</a> &raquo;</li>
@@ -88,7 +88,7 @@
 <h1>akaike_info_criterion<a class="headerlink" href="#akaike-info-criterion" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.stats.akaike_info_criterion">
-<code class="descclassname">astropy.stats.</code><code class="descname">akaike_info_criterion</code><span class="sig-paren">(</span><em>log_likelihood</em>, <em>n_params</em>, <em>n_samples</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/info_theory.py#L201" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/stats/info_theory.html#akaike_info_criterion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.stats.akaike_info_criterion" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.stats.</code><code class="descname">akaike_info_criterion</code><span class="sig-paren">(</span><em>log_likelihood</em>, <em>n_params</em>, <em>n_samples</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/stats/info_theory.html#akaike_info_criterion"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/stats/info_theory.py#L201" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.stats.akaike_info_criterion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the Akaike Information Criterion (AIC).</p>
 <p>Like the Bayesian Information Criterion, the AIC is a measure of
 relative fitting quality which is used for fitting evaluation and model
@@ -104,14 +104,14 @@ which L is maximized).</p>
 applied, i.e.</p>
 <div class="math">
 <p><img src="../_images/math/ce2982215d9763b814f0a84a382e181c929edbe7.png" alt="\mathrm{AIC} = 2(k - L) + \dfrac{2k(k+1)}{n - k - 1}"/></p>
-</div><p>Rule of thumb <a class="reference internal" href="#r14" id="id1">[R14]</a>:</p>
+</div><p>Rule of thumb <a class="reference internal" href="#r17" id="id1">[R17]</a>:</p>
 <p><img class="math" src="../_images/math/9b7d49f9b900775c7699bd69a531d0bdb4f292e9.png" alt="\Delta\mathrm{AIC}_i = \mathrm{AIC}_i - \mathrm{AIC}_{min}"/></p>
 <p><img class="math" src="../_images/math/98290c1f125109eeb620d005c39f1f8b8fcdec2a.png" alt="\Delta\mathrm{AIC}_i &lt; 2"/>: substantial support for model i</p>
 <p><img class="math" src="../_images/math/6bcde5e21cdb8778e08734a03bc79184d6de66e5.png" alt="3 &lt; \Delta\mathrm{AIC}_i &lt; 7"/>: considerably less support for model i</p>
 <p><img class="math" src="../_images/math/9609bdcdc0b816e876dd679ec95c81d7bc606def.png" alt="\Delta\mathrm{AIC}_i &gt; 10"/>: essentially none support for model i</p>
 <p>in which <img class="math" src="../_images/math/356a0d13298d68bed5aee35b30ecd10bd6c4a0d3.png" alt="\mathrm{AIC}_{min}"/> stands for the lower AIC among the
 models which are being compared.</p>
-<p>For detailed explanations see <a class="reference internal" href="#r14" id="id2">[R14]</a>-<a class="reference internal" href="#r19" id="id3">[R19]</a>.</p>
+<p>For detailed explanations see <a class="reference internal" href="#r17" id="id2">[R17]</a>-<a class="reference internal" href="#r22" id="id3">[R22]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -141,53 +141,53 @@ parameter space.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r14" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[R14]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id4">3</a>)</em> Cavanaugh, J. E.  Model Selection Lecture II: The Akaike
-Information Criterion.
-&lt;<a class="reference external" href="http://myweb.uiowa.edu/cavaaugh/ms_lec_2_ho.pdf">http://myweb.uiowa.edu/cavaaugh/ms_lec_2_ho.pdf</a>&gt;</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="r15" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[R15]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id10">2</a>)</em> Mazerolle, M. J. Making sense out of Akaike&#8217;s Information
-Criterion (AIC): its use and interpretation in model selection and
-inference from ecological data.
-&lt;<a class="reference external" href="http://theses.ulaval.ca/archimede/fichiers/21842/apa.html">http://theses.ulaval.ca/archimede/fichiers/21842/apa.html</a>&gt;</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="r16" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R16]</a></td><td>Wikipedia. Akaike Information Criterion.
-&lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Akaike_information_criterion">https://en.wikipedia.org/wiki/Akaike_information_criterion</a>&gt;</td></tr>
-</tbody>
-</table>
 <table class="docutils citation" frame="void" id="r17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R17]</a></td><td>Origin Lab. Comparing Two Fitting Functions.
-&lt;<a class="reference external" href="http://www.originlab.com/doc/Origin-Help/PostFit-CompareFitFunc">http://www.originlab.com/doc/Origin-Help/PostFit-CompareFitFunc</a>&gt;</td></tr>
+<tr><td class="label">[R17]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id4">3</a>)</em> Cavanaugh, J. E.  Model Selection Lecture II: The Akaike
+Information Criterion.
+&lt;<a class="reference external" href="http://myweb.uiowa.edu/cavaaugh/ms_lec_2_ho.pdf">http://myweb.uiowa.edu/cavaaugh/ms_lec_2_ho.pdf</a>&gt;</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="r18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R18]</a></td><td>Liddle, A. R. Information Criteria for Astrophysical Model
-Selection. 2008. &lt;<a class="reference external" href="http://arxiv.org/pdf/astro-ph/0701113v2.pdf">http://arxiv.org/pdf/astro-ph/0701113v2.pdf</a>&gt;</td></tr>
+<tr><td class="label">[R18]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id10">2</a>)</em> Mazerolle, M. J. Making sense out of Akaike&#8217;s Information
+Criterion (AIC): its use and interpretation in model selection and
+inference from ecological data.
+&lt;<a class="reference external" href="http://theses.ulaval.ca/archimede/fichiers/21842/apa.html">http://theses.ulaval.ca/archimede/fichiers/21842/apa.html</a>&gt;</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="r19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R19]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> Liddle, A. R. How many cosmological parameters? 2008.
+<tr><td class="label"><a class="fn-backref" href="#id6">[R19]</a></td><td>Wikipedia. Akaike Information Criterion.
+&lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Akaike_information_criterion">https://en.wikipedia.org/wiki/Akaike_information_criterion</a>&gt;</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[R20]</a></td><td>Origin Lab. Comparing Two Fitting Functions.
+&lt;<a class="reference external" href="http://www.originlab.com/doc/Origin-Help/PostFit-CompareFitFunc">http://www.originlab.com/doc/Origin-Help/PostFit-CompareFitFunc</a>&gt;</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r21" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[R21]</a></td><td>Liddle, A. R. Information Criteria for Astrophysical Model
+Selection. 2008. &lt;<a class="reference external" href="http://arxiv.org/pdf/astro-ph/0701113v2.pdf">http://arxiv.org/pdf/astro-ph/0701113v2.pdf</a>&gt;</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R22]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> Liddle, A. R. How many cosmological parameters? 2008.
 &lt;<a class="reference external" href="http://arxiv.org/pdf/astro-ph/0401198v3.pdf">http://arxiv.org/pdf/astro-ph/0401198v3.pdf</a>&gt;</td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<p>The following example was originally presented in <a class="reference internal" href="#r15" id="id10">[R15]</a>. Basically, two
+<p>The following example was originally presented in <a class="reference internal" href="#r18" id="id10">[R18]</a>. Basically, two
 models are being compared. One with six parameters (model 1) and another
 with five parameters (model 2). Despite of the fact that model 2 has a
 lower AIC, we could decide in favor of model 1 since the difference (in
@@ -232,7 +232,7 @@ it has more free parameters.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

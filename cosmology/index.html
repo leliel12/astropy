@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Cosmological Calculations (astropy.cosmology) &mdash; Astropy v1.2.dev15003</title>
+    <title>Cosmological Calculations (astropy.cosmology) &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="next" title="z_at_value" href="../api/astropy.cosmology.z_at_value.html" />
-    <link rel="prev" title="ImageNormalize" href="../api/astropy.visualization.mpl_normalize.ImageNormalize.html" />
+    <link rel="prev" title="WebProfileDialog" href="../api/astropy.vo.samp.WebProfileDialog.html" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="../_static/copybutton.js"></script>
 
@@ -62,13 +62,13 @@
 	</a>
       </li>
       <li class="right">
-	<a href="../api/astropy.visualization.mpl_normalize.ImageNormalize.html" title="ImageNormalize">
+	<a href="../api/astropy.vo.samp.WebProfileDialog.html" title="WebProfileDialog">
 	  &laquo; previous
 	</a>
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       
@@ -531,6 +531,15 @@ calculations in refereed papers. You can check the range of redshifts
 over which the code is regularly tested in the module
 <code class="docutils literal"><span class="pre">astropy.cosmology.tests.test_cosmology</span></code>. If you find any bugs,
 please let us know by <a class="reference external" href="https://github.com/astropy/astropy/issues">opening an issue at the github repository</a>!</p>
+<p>A more difficult question is the range of redshifts over which
+the code is expected to return valid results.  This is necessarily
+model-dependent, but in general you should not expect the numeric
+results to be well behaved for redshifts more than a few times
+larger than the epoch of matter-radiation equality (so, for typical
+models, not above z = 5-6,000, but for some models much lower redshifts
+may be ill-behaved).  In particular, one should pay attention to warnings
+from the scipy integration package about integrals failing to converge (which
+may only be issued once per session).</p>
 <p>The built in cosmologies use the parameters as listed in the
 respective papers.  These provide only a limited range of precision,
 and so you should not expect derived quantities to match beyond
@@ -605,7 +614,7 @@ detailed usage examples and references.</p>
 <div class="section" id="class-inheritance-diagram">
 <h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h4>
 <p class="graphviz">
-<img src="../_images/inheritance-d1a1ea0f90fa1e800ff414afaf547e01ed373432.svg" alt="Inheritance diagram of astropy.cosmology.core.FLRW, astropy.cosmology.core.FlatLambdaCDM, astropy.cosmology.core.Flatw0waCDM, astropy.cosmology.core.FlatwCDM, astropy.cosmology.core.LambdaCDM, astropy.cosmology.core.default_cosmology, astropy.cosmology.core.w0waCDM, astropy.cosmology.core.w0wzCDM, astropy.cosmology.core.wCDM, astropy.cosmology.core.wpwaCDM" class="inheritance"/>
+<img src="../_images/inheritance-f180f3f8a42c900dec25ff830a72eb5c5d054846.svg" alt="Inheritance diagram of astropy.cosmology.core.FLRW, astropy.cosmology.core.FlatLambdaCDM, astropy.cosmology.core.Flatw0waCDM, astropy.cosmology.core.FlatwCDM, astropy.cosmology.core.LambdaCDM, astropy.cosmology.core.default_cosmology, astropy.cosmology.core.w0waCDM, astropy.cosmology.core.w0wzCDM, astropy.cosmology.core.wCDM, astropy.cosmology.core.wpwaCDM" class="inheritance"/>
 </p>
 </div>
 </div>
@@ -659,7 +668,7 @@ detailed usage examples and references.</p>
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>

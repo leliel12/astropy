@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What’s New in Astropy 1.2? &mdash; Astropy v1.2.dev15690</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.dev15690',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
+    <link rel="up" title="Major Release History" href="index.html" />
+    <link rel="next" title="What’s New in Astropy 1.1?" href="1.1.html" />
+    <link rel="prev" title="Major Release History" href="index.html" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="../_static/copybutton.js"></script>
+
+
+  </head>
+  <body role="document">
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">astro</span><span id="logotext2">py</span><span id="logotext3">:docs</span></a>
+  <ul>
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="1.1.html" title="What’s New in Astropy 1.1?">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="index.html" title="Major Release History">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
+	 &raquo;
+      </li>
+      <li><a href="index.html" accesskey="U">Major Release History</a> &raquo;</li>
+      
+      <li>What&#8217;s New in Astropy 1.2?</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="what-s-new-in-astropy-1-2">
+<span id="whatsnew-1-2"></span><h1>What&#8217;s New in Astropy 1.2?<a class="headerlink" href="#what-s-new-in-astropy-1-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Astropy 1.2 is a major release that adds significant new functionality since
+the 1.1.x series of releases.</p>
+<p>In particular, this release includes:</p>
+<ul class="simple">
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>In addition to these major changes, Astropy 1.2 includes a large number of
+smaller improvements and bug fixes, which are described in the
+<a class="reference internal" href="../changelog.html#changelog"><span>Full Changelog</span></a>. By the numbers:</p>
+<ul class="simple">
+<li>??? issues have been closed since v1.1</li>
+<li>??? pull requests have been merged since v1.1</li>
+<li>??? distinct people have contributed code</li>
+</ul>
+</div>
+<div class="section" id="solar-system-ephemerides">
+<h2>Solar system ephemerides<a class="headerlink" href="#solar-system-ephemerides" title="Permalink to this headline">¶</a></h2>
+<p>Positions of the major solar-system bodies, including the moon, can now be
+calculated.  These integrate with the coordinates subpackage, allowing use of
+apparent (e.g. <code class="docutils literal"><span class="pre">AltAz</span></code>) positions or barycentric values.  These can be
+calculated using either using built-in approximations or more precisely
+using JPL ephemeris models (the latter requiring the <code class="docutils literal"><span class="pre">jplephem</span></code> package).
+For more details, see <a class="reference internal" href="../coordinates/solarsystem.html#astropy-coordinates-solarsystem"><span>Solar System Ephemerides</span></a>.</p>
+</div>
+<div class="section" id="barycentric-light-travel-time-corrections">
+<h2>Barycentric light-travel time corrections<a class="headerlink" href="#barycentric-light-travel-time-corrections" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time" title="astropy.time.Time"><code class="xref py py-class docutils literal"><span class="pre">Time</span></code></a> class has gained a new method
+<a class="reference internal" href="../api/astropy.time.Time.html#astropy.time.Time.light_travel_time" title="astropy.time.Time.light_travel_time"><code class="xref py py-meth docutils literal"><span class="pre">light_travel_time()</span></code></a> for calculating barycentric
+(or heliocentric) corrections. For more details, see
+<a class="reference internal" href="../time/index.html#time-light-travel-time"><span>Barycentric and Heliocentric Light Travel Time Corrections</span></a>.</p>
+</div>
+<div class="section" id="astrometric-coordinate-frames">
+<h2>Astrometric coordinate frames<a class="headerlink" href="#astrometric-coordinate-frames" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="lomb-scargle-periodograms">
+<h2>Lomb-scargle periodograms<a class="headerlink" href="#lomb-scargle-periodograms" title="Permalink to this headline">¶</a></h2>
+<p>The new <a class="reference internal" href="../api/astropy.stats.LombScargle.html#astropy.stats.LombScargle" title="astropy.stats.LombScargle"><code class="xref py py-class docutils literal"><span class="pre">LombScargle</span></code></a> class implements a fast Lomb-Scargle
+periodogram, useful for detecting periodic signals in noisy, unevenly-spaced
+data. For example, here is an irregular sinusoidal signal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">rand</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dy</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">rand</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Given this data, we can compute the Lomb-Scargle periodogram and find the
+frequency at which the power is maximized:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">LombScargle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">LombScargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span><span class="o">.</span><span class="n">autopower</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">power</span><span class="p">)]</span>
+<span class="go">0.99962825294969382</span>
+</pre></div>
+</div>
+<p>The maximum is very near the input frequency of 1.0 cycles per unit time.</p>
+<p>As a more realistic example, here is a periodogram computed for six
+months of nightly observations of a simulated RR-Lyrae-type variable
+(this particular example is discussed more fully in
+<a class="reference internal" href="../stats/lombscargle.html#lomb-scargle-example"><span>RR-Lyrae Example</span></a>):</p>
+<p>(<a class="reference external" href="../whatsnew/1-2-1.py">Source code</a>, <a class="reference external" href="../whatsnew/1-2-1.png">png</a>, <a class="reference external" href="../whatsnew/1-2-1.hires.png">hires.png</a>, <a class="reference external" href="../whatsnew/1-2-1.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../_images/1-2-1.png" src="../_images/1-2-1.png" />
+</div>
+<p>For more information on astropy&#8217;s Lomb-Scargle functionality,
+see <a class="reference internal" href="../stats/lombscargle.html#stats-lombscargle"><span>Lomb-Scargle Periodograms</span></a>.</p>
+</div>
+<div class="section" id="other-new-statistics-features">
+<h2>Other new statistics features<a class="headerlink" href="#other-new-statistics-features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The Jackknife resampling method is available in astropy.stats.jackknife.
+Jackknife resampling generates n deterministic samples of size n-1 from
+a measured sample of size n. Those samples can then be used for various
+statistics estimation such as variance and bias.</li>
+<li>Circular statistics (circular mean, variance, etc) are provided in
+astropy.stats.circstats. The API basically follows the same conventions of
+R CircStats package. In addition, the circular stats are compatible with
+astropy.units.Quantity.</li>
+<li>Akaike and Bayesian information criterions are implemented in
+astropy.stats.info_theory. Basically, these information criterions are used
+to decided whether increasing the number of parameters in a model truly
+improves the fitting. Conversely, they are also used to verify whether
+improvements in fitting are due to the increasing of the number of
+parameters.</li>
+</ul>
+</div>
+<div class="section" id="apparent-absolute-bolometric-magnitudes-and-other-new-units">
+<h2>Apparent/absolute bolometric magnitudes and other new units<a class="headerlink" href="#apparent-absolute-bolometric-magnitudes-and-other-new-units" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../units/index.html#module-astropy.units" title="astropy.units"><code class="xref py py-obj docutils literal"><span class="pre">astropy.units</span></code></a> package now supports bolometric magnitudes, based on the
+bolometric flux and luminosity scales adopted in IAU 2015 resolution B2.</p>
+<p>Furthermore, earth and jupiter radii have been made available as units.</p>
+</div>
+<div class="section" id="zscale-implementation">
+<h2>Zscale implementation<a class="headerlink" href="#zscale-implementation" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://iraf.net/forum/viewtopic.php?showtopic=134139">zscale</a> algorithm
+from IRAF is now included in Astropy&#8217;s <a class="reference internal" href="../visualization/normalization.html"><em>visualization</em></a> sub-package, and available as
+a <a class="reference internal" href="../api/astropy.visualization.ZScaleInterval.html#astropy.visualization.ZScaleInterval" title="astropy.visualization.ZScaleInterval"><code class="xref py py-obj docutils literal"><span class="pre">ZScaleInterval</span></code></a> interval class. The implementation is
+based on <a class="reference external" href="http://stsdas.stsci.edu/numdisplay/">Numdisplay’s</a> one, slightly
+modified to expose more arguments and work with data with any number of
+dimensions.</p>
+</div>
+<div class="section" id="nddata-improvements">
+<h2>NDData improvements<a class="headerlink" href="#nddata-improvements" title="Permalink to this headline">¶</a></h2>
+<p>Arithmetic and uncertainty handling have been enhanced for astropy 1.2, and a
+new class, <a class="reference internal" href="../api/astropy.nddata.NDDataRef.html#astropy.nddata.NDDataRef" title="astropy.nddata.NDDataRef"><code class="xref py py-obj docutils literal"><span class="pre">astropy.nddata.NDDataRef</span></code></a>, has been added that should be the
+starting point for new users of <a class="reference internal" href="../nddata/index.html#module-astropy.nddata" title="astropy.nddata"><code class="xref py py-obj docutils literal"><span class="pre">astropy.nddata</span></code></a>. One can now do arithmetic
+between an <a class="reference internal" href="../api/astropy.nddata.NDDataRef.html#astropy.nddata.NDDataRef" title="astropy.nddata.NDDataRef"><code class="xref py py-obj docutils literal"><span class="pre">astropy.nddata.NDDataRef</span></code></a> object and a scalar, an
+<a class="reference internal" href="../api/astropy.units.Quantity.html#astropy.units.Quantity" title="astropy.units.Quantity"><code class="xref py py-obj docutils literal"><span class="pre">astropy.units.Quantity</span></code></a> or another <a class="reference internal" href="../api/astropy.nddata.NDDataRef.html#astropy.nddata.NDDataRef" title="astropy.nddata.NDDataRef"><code class="xref py py-obj docutils literal"><span class="pre">astropy.nddata.NDDataRef</span></code></a> object (or any
+class that implements the nddata interface). Limited support for propagating
+correlated errors was added to <a class="reference internal" href="../api/astropy.nddata.StdDevUncertainty.html#astropy.nddata.StdDevUncertainty" title="astropy.nddata.StdDevUncertainty"><code class="xref py py-obj docutils literal"><span class="pre">astropy.nddata.StdDevUncertainty</span></code></a>.</p>
+<p>Several internal changes were made to the classes in the nddata package to
+make writing custom classes that implement the nddata interface more
+straightforward.</p>
+</div>
+<div class="section" id="automatic-updates-to-iers-earth-rotation-data">
+<h2>Automatic updates to IERS Earth rotation data<a class="headerlink" href="#automatic-updates-to-iers-earth-rotation-data" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../utils/index.html#module-astropy.utils.iers" title="astropy.utils.iers"><code class="xref py py-obj docutils literal"><span class="pre">astropy.utils.iers</span></code></a> sub-package provides access to the tables provided by
+the International Earth Rotation and Reference Systems (IERS) service.  These
+are used in <a class="reference internal" href="../time/index.html#module-astropy.time" title="astropy.time"><code class="xref py py-obj docutils literal"><span class="pre">astropy.time</span></code></a> to tranform to/from UT1 values and for determining
+Earth orientation for celestional-to-terrestrial coordinate transformations (in
+<a class="reference internal" href="../coordinates/index.html#module-astropy.coordinates" title="astropy.coordinates"><code class="xref py py-obj docutils literal"><span class="pre">astropy.coordinates</span></code></a>).</p>
+<p>Starting with astropy 1.2, the latest IERS values (which include approximately
+one year of predictive values) are automatically downloaded from the IERS
+service when required.  This happens when a time or coordinate transformation
+needs a value which is not already available via the download cache.</p>
+<p>For details see the <a class="reference internal" href="../utils/index.html#module-astropy.utils.iers" title="astropy.utils.iers"><code class="xref py py-obj docutils literal"><span class="pre">astropy.utils.iers</span></code></a> sub-package documentation.</p>
+</div>
+<div class="section" id="new-example-gallery">
+<h2>New example gallery<a class="headerlink" href="#new-example-gallery" title="Permalink to this headline">¶</a></h2>
+<p>The Astropy documentation now contains an example gallery that highlights key
+functionality of the package in short snippets of code with descriptive text.
+The examples are meant to demonstrate the functionality and interoperability of
+the subpackages in shorter-form worked examples. Longer form tutorials are still
+maintained at <a class="reference external" href="http://tutorials.astropy.org/">http://tutorials.astropy.org/</a>.</p>
+</div>
+<div class="section" id="other-significant-changes">
+<h2>Other significant changes<a class="headerlink" href="#other-significant-changes" title="Permalink to this headline">¶</a></h2>
+<p>Astropy now requires Numpy 1.7.0 or later.</p>
+</div>
+<div class="section" id="full-change-log">
+<h2>Full change log<a class="headerlink" href="#full-change-log" title="Permalink to this headline">¶</a></h2>
+<p>To see a detailed list of all changes in version v1.2, including changes in
+API, please see the <a class="reference internal" href="../changelog.html#changelog"><span>Full Changelog</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">What&#8217;s New in Astropy 1.2?</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#solar-system-ephemerides">Solar system ephemerides</a></li>
+<li><a class="reference internal" href="#barycentric-light-travel-time-corrections">Barycentric light-travel time corrections</a></li>
+<li><a class="reference internal" href="#astrometric-coordinate-frames">Astrometric coordinate frames</a></li>
+<li><a class="reference internal" href="#lomb-scargle-periodograms">Lomb-scargle periodograms</a></li>
+<li><a class="reference internal" href="#other-new-statistics-features">Other new statistics features</a></li>
+<li><a class="reference internal" href="#apparent-absolute-bolometric-magnitudes-and-other-new-units">Apparent/absolute bolometric magnitudes and other new units</a></li>
+<li><a class="reference internal" href="#zscale-implementation">Zscale implementation</a></li>
+<li><a class="reference internal" href="#nddata-improvements">NDData improvements</a></li>
+<li><a class="reference internal" href="#automatic-updates-to-iers-earth-rotation-data">Automatic updates to IERS Earth rotation data</a></li>
+<li><a class="reference internal" href="#new-example-gallery">New example gallery</a></li>
+<li><a class="reference internal" href="#other-significant-changes">Other significant changes</a></li>
+<li><a class="reference internal" href="#full-change-log">Full change log</a></li>
+</ul>
+</li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="http://github.com/astropy/astropy/tree/master/docs/whatsnew/1.2.rst">Edit This Page on Github</a> &nbsp;
+    <a href="../_sources/whatsnew/1.2.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2011-2016, The Astropy Developers.<br/>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
+    Last built 10 Jun 2016. <br/>
+  </p>
+</footer>
+  </body>
+</html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>convolve_fft &mdash; Astropy v1.2.dev15003</title>
+    <title>convolve_fft &mdash; Astropy v1.2.dev15690</title>
     
     <link rel="stylesheet" href="../_static/bootstrap-astropy.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.dev15003',
+        VERSION:     '1.2.dev15690',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
-    <link rel="top" title="Astropy v1.2.dev15003" href="../index.html" />
+    <link rel="top" title="Astropy v1.2.dev15690" href="../index.html" />
     <link rel="up" title="Convolution and filtering (astropy.convolution)" href="../convolution/index.html" />
     <link rel="next" title="discretize_model" href="astropy.convolution.discretize_model.html" />
     <link rel="prev" title="convolve" href="astropy.convolution.convolve.html" />
@@ -69,7 +69,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">Astropy v1.2.dev15003</a>
+	<a href="../index.html">Astropy v1.2.dev15690</a>
 	 &raquo;
       </li>
       <li><a href="../convolution/index.html" accesskey="U">Convolution and filtering (<code class="docutils literal"><span class="pre">astropy.convolution</span></code>)</a> &raquo;</li>
@@ -88,10 +88,10 @@
 <h1>convolve_fft<a class="headerlink" href="#convolve-fft" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="astropy.convolution.convolve_fft">
-<code class="descclassname">astropy.convolution.</code><code class="descname">convolve_fft</code><span class="sig-paren">(</span><em>array</em>, <em>kernel</em>, <em>boundary='fill'</em>, <em>fill_value=0</em>, <em>crop=True</em>, <em>return_fft=False</em>, <em>fft_pad=None</em>, <em>psf_pad=None</em>, <em>interpolate_nan=False</em>, <em>quiet=False</em>, <em>ignore_edge_zeros=False</em>, <em>min_wt=0.0</em>, <em>normalize_kernel=False</em>, <em>allow_huge=False</em>, <em>fftn=&lt;function fftn&gt;</em>, <em>ifftn=&lt;function ifftn&gt;</em>, <em>complex_dtype=&lt;class 'complex'&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/convolution/convolve.py#L226" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="reference internal" href="../_modules/astropy/convolution/convolve.html#convolve_fft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#astropy.convolution.convolve_fft" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">astropy.convolution.</code><code class="descname">convolve_fft</code><span class="sig-paren">(</span><em>array</em>, <em>kernel</em>, <em>boundary='fill'</em>, <em>fill_value=0</em>, <em>crop=True</em>, <em>return_fft=False</em>, <em>fft_pad=None</em>, <em>psf_pad=None</em>, <em>interpolate_nan=False</em>, <em>quiet=False</em>, <em>ignore_edge_zeros=False</em>, <em>min_wt=0.0</em>, <em>normalize_kernel=False</em>, <em>allow_huge=False</em>, <em>fftn=&lt;function fftn&gt;</em>, <em>ifftn=&lt;function ifftn&gt;</em>, <em>complex_dtype=&lt;class 'complex'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/astropy/convolution/convolve.html#convolve_fft"><span class="viewcode-link">[source]</span></a><a class="reference external" href="http://github.com/astropy/astropy/tree/master/astropy/convolution/convolve.py#L226" title="Push the Edit button on the next page"><span class="edit-on-github viewcode-link">&nbsp;[edit on github]</span></a><a class="headerlink" href="#astropy.convolution.convolve_fft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convolve an ndarray with an nd-kernel.  Returns a convolved image with
 shape = array.shape.  Assumes kernel is centered.</p>
-<p><a class="reference internal" href="#astropy.convolution.convolve_fft" title="astropy.convolution.convolve_fft"><code class="xref py py-obj docutils literal"><span class="pre">convolve_fft</span></code></a> differs from <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v0.17.0)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.signal.fftconvolve</span></code></a> in a few ways:</p>
+<p><a class="reference internal" href="#astropy.convolution.convolve_fft" title="astropy.convolution.convolve_fft"><code class="xref py py-obj docutils literal"><span class="pre">convolve_fft</span></code></a> differs from <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v0.17.1)"><code class="xref py py-obj docutils literal"><span class="pre">scipy.signal.fftconvolve</span></code></a> in a few ways:</p>
 <ul class="simple">
 <li>It can treat <code class="docutils literal"><span class="pre">NaN</span></code> values as zeros or interpolate over them.</li>
 <li><code class="docutils literal"><span class="pre">inf</span></code> values are treated as <code class="docutils literal"><span class="pre">NaN</span></code></li>
@@ -104,17 +104,17 @@ performance improvements, depending on your system configuration.  pyFFTW3
 is threaded, and therefore may yield significant performance benefits on
 multi-core machines at the cost of greater memory requirements.  Specify
 the <code class="docutils literal"><span class="pre">fftn</span></code> and <code class="docutils literal"><span class="pre">ifftn</span></code> keywords to override the default, which is
-<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html#numpy.fft.fft" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.fft.fft</span></code></a> and <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.ifft.html#numpy.fft.ifft" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.fft.ifft</span></code></a>.</li>
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html#numpy.fft.fft" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.fft.fft</span></code></a> and <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.ifft.html#numpy.fft.ifft" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.fft.ifft</span></code></a>.</li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>array</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>array</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a></p>
 <blockquote>
 <div><p>Array to be convolved with <code class="docutils literal"><span class="pre">kernel</span></code></p>
 </div></blockquote>
-<p><strong>kernel</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a></p>
+<p><strong>kernel</strong> : <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy.ndarray</span></code></a></p>
 <blockquote>
 <div><p>Will be normalized if <code class="docutils literal"><span class="pre">normalize_kernel</span></code> is set.  Assumed to be
 centered (i.e., shifts may result if your kernel is asymmetric)</p>
@@ -204,7 +204,7 @@ ffts, e.g. an fftw3 wrapper or scipy&#8217;s fftn, e.g.
 </div></blockquote>
 <p><strong>complex_dtype</strong> : np.complex, optional</p>
 <blockquote>
-<div><p>Which complex dtype to use.  <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.10)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> has a range of options, from 64 to
+<div><p>Which complex dtype to use.  <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" title="(in NumPy v1.11)"><code class="xref py py-obj docutils literal"><span class="pre">numpy</span></code></a> has a range of options, from 64 to
 256.</p>
 </div></blockquote>
 <p><strong>quiet</strong> : bool, optional</p>
@@ -308,7 +308,7 @@ large and consume a lot of memory.  See Issue
   <p>
     &copy; Copyright 2011-2016, The Astropy Developers.<br/>
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1. &nbsp;
-    Last built 12 May 2016. <br/>
+    Last built 10 Jun 2016. <br/>
   </p>
 </footer>
   </body>
