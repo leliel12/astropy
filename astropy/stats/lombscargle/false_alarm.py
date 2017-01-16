@@ -17,6 +17,7 @@ The three methods include:
 """
 import numpy as np
 from scipy.special import gammaln
+from scipy import interpolate, optimize
 
 from .core import LombScargle
 
@@ -38,26 +39,59 @@ def _gamma(N):
     return np.sqrt(2 / N) * np.exp(gammaln(N / 2) - gammaln((N - 1) / 2))
 
 
-def FAP_single(Z, N, normalization='standard', dH=1, dK=3):
-    """
-    False Alarm Probability for a single observation
+def vectorize_first_argument(func):
+    def vectorized_func(x, *args, **kwargs):
+        x = np.asarray(x)
+        y = np.array([func(xi, *args, **kwargs) for xi in x.flat])
+        return y.reshape(x.shape)
+    return vectorized_func
 
+
+def inverted(func):
+    """
+    Numerically invert a monotonic function with domain (0, inf)
+
+    Parameters
+    ----------
+    func : function
+        The function to be inverted. Assumed to be monotonic with positive domain.
+
+    Returns
+    -------
+    invfunc : function
+        The numerical inverse of func.
+    """
+    @vectorize_first_argument
+    def invf(y, *args, **kwargs):
+        # solve for logx to avoid domain errors
+        minfunc = lambda logx: (func(np.exp(logx), *args, **kwargs) - y) ** 2
+        result = optimize.minimize_scalar(minfunc)
+        if not result.success:
+            raise ValueError("could not invert function '{0.__name__}' "
+                             "at y={1}".format(func, y))
+        return np.exp(result.x)
+    return invf
+
+
+def P_single(Z, N, normalization='standard', dH=1, dK=3):
+    """
+    Cumulative probability for a single frequency
     These are adapted from table 1 of Baluev 2008
     """
     NH = N - dH  # DOF for null hypothesis
     NK = N - dK  # DOF for periodic hypothesis
     if normalization == 'psd':
         # 'psd' normalization is same as Baluev's z
-        return np.exp(-Z)
+        return 1 - np.exp(-Z)
     elif normalization == 'standard':
         # 'standard' normalization is Z = 2/NH * z_1
-        return (1 - Z) ** (NK / 2)
+        return 1 - (1 - Z) ** (NK / 2)
     elif normalization == 'model':
         # 'model' normalization is Z = 2/NK * z_2
-        return (1 + Z) ** -(NK / 2)
+        return 1 - (1 + Z) ** -(NK / 2)
     elif normalization == 'log':
         # 'log' normalization is Z = 2/NK * z_3
-        return np.exp(-0.5 * NK * Z)
+        return 1 - np.exp(-0.5 * NK * Z)
     else:
         raise NotImplementedError("normalization={0}".format(normalization))
 
@@ -94,13 +128,13 @@ def FAP_simple(Z, fmax, t, y, dy, normalization='standard'):
     N = len(t)
     T = max(t) - min(t)
     N_eff = fmax * T
-    return 1 - (1 - FAP_single(Z, N, normalization=normalization)) ** N_eff
+    return 1 - P_single(Z, N, normalization=normalization) ** N_eff
 
 
 def FAP_davies(Z, fmax, t, y, dy, normalization='standard'):
     """Davies bound (Eqn 5 of Baluev 2008)"""
     N = len(t)
-    FAP_s = FAP_single(Z, N, normalization=normalization)
+    FAP_s = 1 - P_single(Z, N, normalization=normalization)
     tau = tau_davies(Z, fmax, t, y, dy, normalization=normalization)
     return FAP_s + tau
 
@@ -108,13 +142,13 @@ def FAP_davies(Z, fmax, t, y, dy, normalization='standard'):
 def FAP_baluev(Z, fmax, t, y, dy, normalization='standard'):
     """Alias-free approximation to FAP (Eqn 6 of Baluev 2008)"""
     N = len(t)
-    P_s = 1 - FAP_single(Z, N, normalization=normalization)
+    P_s = P_single(Z, N, normalization=normalization)
     tau = tau_davies(Z, fmax, t, y, dy, normalization=normalization)
     return 1 - P_s * np.exp(-tau)
 
 
-def FAP_bootstrap(Z, fmax, t, y, dy, normalization='standard',
-                  n_bootstraps=1000, random_seed=None):
+def _bootstrap(fmax, t, y, dy, normalization='standard',
+               n_bootstraps=1000, random_seed=None):
     rng = np.random.RandomState(random_seed)
 
     def bootstrapped_power():
@@ -125,8 +159,25 @@ def FAP_bootstrap(Z, fmax, t, y, dy, normalization='standard',
         return power.max()
 
     pmax = np.array([bootstrapped_power() for i in range(n_bootstraps)])
+    return pmax
+
+
+def FAP_bootstrap(Z, fmax, t, y, dy, normalization='standard',
+                  n_bootstraps=1000, random_seed=None):
+    pmax = _bootstrap(fmax, t, y, dy, normalization=normalization,
+                      n_bootstraps=n_bootstraps, random_seed=random_seed)
     pmax.sort()
     return 1 - np.searchsorted(pmax, Z) / len(pmax)
+
+
+def significance_bootstrap(significance, fmax, t, y, dy,
+                           normalization='standard',
+                           n_bootstraps=1000, random_seed=None):
+    pmax = _bootstrap(fmax, t, y, dy, normalization=normalization,
+                      n_bootstraps=n_bootstraps, random_seed=random_seed)
+    pmax.sort()
+    sig = np.linspace(0, 1, n_bootstraps, endpoint=False)
+    return interpolate.interp1d(sig, pmax)(significance)
 
 
 METHODS = {'simple': FAP_simple,
@@ -136,12 +187,15 @@ METHODS = {'simple': FAP_simple,
 
 
 def false_alarm_probability(Z, fmax, t, y, dy, normalization,
-                            method='baluev',
-                            method_kwds=None):
+                            method='baluev', method_kwds=None):
     """Approximate the False Alarm Probability
 
     Parameters
     ----------
+    TODO
+
+    Returns
+    -------
     TODO
     """
     if method not in METHODS:
@@ -152,7 +206,27 @@ def false_alarm_probability(Z, fmax, t, y, dy, normalization,
     return method(Z, fmax, t, y, dy, normalization, **method_kwds)
 
 
-def significance_level(sig, fmax, t, y, dy, normalization,
-                       method='baluev',
-                       method_kwds=None):
-    pass
+def significance_level(significance, fmax, t, y, dy, normalization,
+                       method='baluev', method_kwds=None):
+    """Peak significance level
+
+    Parameters
+    ----------
+    TODO
+
+    Returns
+    -------
+    TODO
+    """
+    significance = np.asarray(significance)
+    method_kwds = method_kwds or {}
+    if np.any((significance <= 0) | (significance > 1)):
+        raise ValueError("significance is out of range (0, 1]")
+    if method == 'bootstrap':
+        return significance_bootstrap(significance, fmax, t, y, dy,
+                                      normalization, **method_kwds)
+    else:
+        return inverted(false_alarm_probability)(1 - significance, fmax, t, y, dy,
+                                                 normalization=normalization,
+                                                 method=method,
+                                                 method_kwds=method_kwds)
