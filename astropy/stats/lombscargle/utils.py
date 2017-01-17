@@ -1,9 +1,13 @@
 import numpy as np
 
-def compute_chi2_ref(y, dy):
+
+NORMALIZATIONS = ['standard', 'psd', 'model', 'log']
+
+
+def compute_chi2_ref(y, dy, center_data=True, fit_mean=True):
     """Compute the reference chi-square for a particular dataset.
 
-    Note: this is only valid for center_data=True or fit_mean=True.
+    Note: this is not valid center_data=False and fit_mean=False.
 
     Parameters
     ----------
@@ -15,12 +19,16 @@ def compute_chi2_ref(y, dy):
     """
     y, dy = np.broadcast_arrays(y, dy)
     w = dy ** -2.0
-    yw = (y - np.dot(w, y) / w.sum()) / dy
+    if center_data or fit_mean:
+        mu = np.dot(w, y) / w.sum()
+    else:
+        mu = 0
+    yw = (y - mu) / dy
     return np.dot(yw, yw) / w.mean()
 
 
 def convert_normalization(Z, N, from_normalization, to_normalization,
-                          chi2_ref=None, dH=1, dK=3):
+                          chi2_ref=None):
     """Convert power from one normalization to another.
 
     This currently only works for standard & floating-mean models.
@@ -33,21 +41,15 @@ def convert_normalization(Z, N, from_normalization, to_normalization,
     -------
     TODO
     """
-    NK = N - dK
-    NH = N - dH
-    valid_norms = ['standard', 'psd', 'model', 'log']
+    from_to = (from_normalization, to_normalization)
 
-    if from_normalization not in valid_norms:
-        raise ValueError("{0} is not a valid normalization"
-                         "".format(from_normalization))
-    if to_normalization not in valid_norms:
-        raise ValueError("{0} is not a valid normalization"
-                         "".format(to_normalization))
+    for norm in from_to:
+        if norm not in NORMALIZATIONS:
+            raise ValueError("{0} is not a valid normalization"
+                             "".format(from_normalization))
 
     if from_normalization == to_normalization:
         return Z
-
-    from_to = (from_normalization, to_normalization)
 
     if "psd" in from_to and chi2_ref is None:
         raise ValueError("must supply reference chi^2 when converting "
@@ -68,12 +70,11 @@ def convert_normalization(Z, N, from_normalization, to_normalization,
     elif from_normalization == "psd":
         return convert_normalization(2 / chi2_ref * Z, N,
                                      from_normalization='standard',
-                                     to_normalization=to_normalization,
-                                     dK=dK, dH=dH)
+                                     to_normalization=to_normalization)
     elif to_normalization == "psd":
         Z_standard = convert_normalization(Z, N,
                                            from_normalization=from_normalization,
-                                           to_normalization='standard', dK=dK, dH=dH)
+                                           to_normalization='standard')
         return 0.5 * chi2_ref * Z_standard
     else:
         raise NotImplementedError("conversion from '{0}' to '{1}'"

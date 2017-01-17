@@ -230,14 +230,14 @@ def log_FAP_bootstrap(Z, fmax, t, y, dy, normalization='standard',
     return np.log1p(-np.searchsorted(pmax, Z) / len(pmax))
 
 
-def significance_bootstrap(significance, fmax, t, y, dy,
-                           normalization='standard',
-                           n_bootstraps=1000, random_seed=None):
-    pmax = _bootstrap(fmax, t, y, dy, normalization=normalization,
-                      n_bootstraps=n_bootstraps, random_seed=random_seed)
-    pmax.sort()
-    sig = np.linspace(0, 1, n_bootstraps, endpoint=False)
-    return interpolate.interp1d(sig, pmax)(significance)
+# def significance_bootstrap(significance, fmax, t, y, dy,
+#                            normalization='standard',
+#                            n_bootstraps=1000, random_seed=None):
+#     pmax = _bootstrap(fmax, t, y, dy, normalization=normalization,
+#                       n_bootstraps=n_bootstraps, random_seed=random_seed)
+#     pmax.sort()
+#     sig = np.linspace(0, 1, n_bootstraps, endpoint=False)
+#     return interpolate.interp1d(sig, pmax)(significance)
 
 
 METHODS = {'simple': log_FAP_simple,
