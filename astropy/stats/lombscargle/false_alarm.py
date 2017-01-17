@@ -43,40 +43,6 @@ def _log_gamma(N):
     return 0.5 * np.log(2 / N) + gammaln(N / 2) - gammaln((N - 1) / 2)
 
 
-def vectorize_first_argument(func):
-    def vectorized_func(x, *args, **kwargs):
-        x = np.asarray(x)
-        y = np.array([func(xi, *args, **kwargs) for xi in x.flat])
-        return y.reshape(x.shape)
-    return vectorized_func
-
-
-def inverted(func):
-    """
-    Numerically invert a monotonic function with domain (0, inf)
-
-    Parameters
-    ----------
-    func : function
-        The function to be inverted. Assumed to be monotonic with positive domain.
-
-    Returns
-    -------
-    invfunc : function
-        The numerical inverse of func.
-    """
-    @vectorize_first_argument
-    def invf(y, *args, **kwargs):
-        # solve for logx to avoid domain errors
-        minfunc = lambda logx: (func(np.exp(logx), *args, **kwargs) - y) ** 2
-        result = optimize.minimize_scalar(minfunc)
-        if not result.success:
-            raise ValueError("could not invert function '{0.__name__}' "
-                             "at y={1}".format(func, y))
-        return np.exp(result.x)
-    return invf
-
-
 def FAP_single(Z, N, normalization='standard', dH=1, dK=3):
     """
     Cumulative probability for a single frequency
@@ -125,6 +91,7 @@ def log_FAP_single(Z, N, normalization='standard', dH=1, dK=3):
 
 def P_single(Z, N, normalization='standard', dH=1, dK=3):
     return 1 - FAP_single(Z, N, normalization=normalization, dH=dH, dK=dK)
+
 
 def log_P_single(Z, N, normalization='standard', dH=1, dK=3):
     return np.log1p(-FAP_single(Z, N, normalization=normalization, dH=dH, dK=dK))
@@ -255,6 +222,14 @@ def FAP_bootstrap(Z, fmax, t, y, dy, normalization='standard',
     return 1 - np.searchsorted(pmax, Z) / len(pmax)
 
 
+def log_FAP_bootstrap(Z, fmax, t, y, dy, normalization='standard',
+                      n_bootstraps=1000, random_seed=None):
+    pmax = _bootstrap(fmax, t, y, dy, normalization=normalization,
+                      n_bootstraps=n_bootstraps, random_seed=random_seed)
+    pmax.sort()
+    return np.log1p(-np.searchsorted(pmax, Z) / len(pmax))
+
+
 def significance_bootstrap(significance, fmax, t, y, dy,
                            normalization='standard',
                            n_bootstraps=1000, random_seed=None):
@@ -265,14 +240,21 @@ def significance_bootstrap(significance, fmax, t, y, dy,
     return interpolate.interp1d(sig, pmax)(significance)
 
 
-METHODS = {'simple': FAP_simple,
-           'davies': FAP_davies,
-           'baluev': FAP_baluev,
-           'bootstrap': FAP_bootstrap}
+METHODS = {'simple': log_FAP_simple,
+           'davies': log_FAP_davies,
+           'baluev': log_FAP_baluev,
+           'bootstrap': log_FAP_bootstrap}
 
 
 def false_alarm_probability(Z, fmax, t, y, dy, normalization,
                             method='baluev', method_kwds=None):
+    return np.exp(log_false_alarm_probability(Z, fmax, t, y, dy,
+                                              normalization,
+                                              method, method_kwds))
+
+
+def log_false_alarm_probability(Z, fmax, t, y, dy, normalization,
+                                method='baluev', method_kwds=None):
     """Approximate the False Alarm Probability
 
     Parameters
@@ -289,29 +271,3 @@ def false_alarm_probability(Z, fmax, t, y, dy, normalization,
     method_kwds = method_kwds or {}
 
     return method(Z, fmax, t, y, dy, normalization, **method_kwds)
-
-
-def significance_level(significance, fmax, t, y, dy, normalization,
-                       method='baluev', method_kwds=None):
-    """Peak significance level
-
-    Parameters
-    ----------
-    TODO
-
-    Returns
-    -------
-    TODO
-    """
-    significance = np.asarray(significance)
-    method_kwds = method_kwds or {}
-    if np.any((significance <= 0) | (significance > 1)):
-        raise ValueError("significance is out of range (0, 1]")
-    if method == 'bootstrap':
-        return significance_bootstrap(significance, fmax, t, y, dy,
-                                      normalization, **method_kwds)
-    else:
-        return inverted(false_alarm_probability)(1 - significance, fmax, t, y, dy,
-                                                 normalization=normalization,
-                                                 method=method,
-                                                 method_kwds=method_kwds)
