@@ -24,7 +24,7 @@ def compute_chi2_ref(y, dy, center_data=True, fit_mean=True):
     else:
         mu = 0
     yw = (y - mu) / dy
-    return np.dot(yw, yw) / w.mean()
+    return np.dot(yw, yw)
 
 
 def convert_normalization(Z, N, from_normalization, to_normalization,
