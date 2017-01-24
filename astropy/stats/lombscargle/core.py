@@ -357,15 +357,42 @@ class LombScargle(object):
                              nterms=self.nterms)
         return y_fit * get_unit(self.y)
 
+    def distribution(self, power, normalization, cumulative=False):
+        """Compute the expected null-hypothesis periodogram distribution
+
+        This computes the expected probability distribution or cumulative
+        probability distribution of periodogram power, under the null
+        hypothesis of a non-varying signal with Gaussian noise. Note that
+        this is not the same as the expected distribution of peak values;
+        for that see the ``false_alarm_probability()`` method.
+
+        Parameters
+        ----------
+        power : array_like
+            the periodogram power at which to compute the distribution
+        normalization : string
+            the normalization for which to compute the distribution
+        cumulative : bool (optional)
+            if True, then return the cumulative distribution
+
+        Returns
+        -------
+        dist : np.ndarray
+            The probability density or cumulative probability associated with
+            the provided powers.
+        """
+        dH = 1 if self.fit_mean or self.center_data else 0
+        dK = dH + 2 * self.nterms
+        dist = statistics.cdf_single if cumulative else statistics.pdf_single
+        return dist(power, len(self.t), normalization, dH=dH, dK=dK)
+
     def false_alarm_probability(self, power, fmax, normalization,
                                 method='baluev', method_kwds=None):
         """Compute the approximate false alarm probability
 
         This gives an estimate of the false alarm probability given the height
         of the largest peak in the periodogram, based on the null hypothesis
-        of non-varying data with Gaussian noise. The true probability cannot
-        be computed analytically, so each method available here is an
-        approximation to the true value.
+        of non-varying data with Gaussian noise.
 
         Parameters
         ----------
@@ -377,8 +404,8 @@ class LombScargle(object):
             The periodogram normalization. Must be one of
             ['standard', 'model', 'log', 'psd']
         method : string
-            The approximation method to use. Must be one of
-            ['baluev', 'davies', 'simple', 'bootstrap']
+            The approximation method to use; default='baluev'. Must be one of
+            ['baluev', 'davies', 'simple', 'bootstrap', 'singe;']
         method_kwds : dict (optional)
             Additional method-specific keywords
 
@@ -391,6 +418,18 @@ class LombScargle(object):
         -----
         For normalization='psd', the distribution can only be computed for
         periodograms constructed with errors specified.
+
+        The true probability distribution for the largest peak cannot be
+        determined analytically, so each method here provides an approximation
+        to the value. The available methods are:
+
+        - "baluev" (default): the upper-limit to the alias-free probability,
+          using the approach of Baluev (2008) [1]_.
+        - "davies" : the Davies upper bound from Baluev (2008) [1]_.
+        - "simple" : the approximate probability based on an estimated
+          effective number of independent frequencies.
+        - "bootstrap" : the approximate probability based on bootstrap
+          resamplings of the input data.
 
         References
         ----------
@@ -414,9 +453,7 @@ class LombScargle(object):
 
         This gives an estimate of the periodogram level corresponding to a
         specified false alarm probability for the largest peak, assuming a
-        null hypothesis of non-varying data with Gaussian noise. The true
-        level cannot be computed analytically, so each method available here
-        is an approximation to the true value.
+        null hypothesis of non-varying data with Gaussian noise.
 
         Parameters
         ----------
@@ -428,8 +465,8 @@ class LombScargle(object):
             The periodogram normalization. Must be one of
             ['standard', 'model', 'log', 'psd']
         method : string
-            The approximation method to use. Must be one of
-            ['baluev', 'davies', 'simple', 'bootstrap']
+            The approximation method to use; default='baluev'. Must be one of
+            ['baluev', 'davies', 'simple', 'bootstrap', 'single']
         method_kwds : dict (optional)
             Additional method-specific keywords
 
@@ -443,6 +480,18 @@ class LombScargle(object):
         -----
         For normalization='psd', the distribution can only be computed for
         periodograms constructed with errors specified.
+
+        The true probability distribution for the largest peak cannot be
+        determined analytically, so each method here provides an approximation
+        to the value. The available methods are:
+
+        - "baluev" (default): the upper-limit to the alias-free probability,
+          using the approach of Baluev (2008) [1]_.
+        - "davies" : the Davies upper bound from Baluev (2008) [1]_.
+        - "simple" : the approximate probability based on an estimated
+          effective number of independent frequencies.
+        - "bootstrap" : the approximate probability based on bootstrap
+          resamplings of the input data.
 
         References
         ----------
